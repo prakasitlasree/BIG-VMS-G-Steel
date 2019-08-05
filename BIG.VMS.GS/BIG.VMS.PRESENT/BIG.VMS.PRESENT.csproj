@@ -1,0 +1,624 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DAF9B415-2617-4101-A2C8-49FDA5831F02}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BIG.VMS.PRESENT</RootNamespace>
+    <AssemblyName>BIG.VMS.GS.V1.0</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>delivery.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Controls, Version=2.2.5.0, Culture=neutral, PublicKeyToken=a8ac264d1dc6b9d9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\AForge.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging, Version=2.2.5.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math, Version=2.2.5.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\AForge.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML, Version=0.94.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.94.2\lib\net40\ClosedXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DGV Printer">
+      <HintPath>..\DGV Printer.dll</HintPath>
+    </Reference>
+    <Reference Include="DirectShowLib-2005, Version=2.1.0.0, Culture=neutral, PublicKeyToken=67e7b740cdfc2d3f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\DirectShowLib-2005.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.9.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.9.1\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.0.6.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.0.6\lib\net20\ExcelNumberFormat.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FastMember, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FastMember.1.3.0\lib\net40\FastMember.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="MakarovDev.ExpandCollapsePanel, Version=1.0.6072.26716, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\MakarovDev.ExpandCollapsePanel.dll</HintPath>
+    </Reference>
+    <Reference Include="pcsc-sharp, Version=3.1.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\pcsc-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Device" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.Ribbon35, Version=3.5.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\System.Windows.Forms.Ribbon35.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebCam_Capture, Version=1.0.2395.24959, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\WebCam_Capture.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enums\Enums.cs" />
+    <Compile Include="Forms\FormCarMasterDetail\frmCarBrandMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCarMasterDetail\frmCarBrandMaster.Designer.cs">
+      <DependentUpon>frmCarBrandMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCarMasterDetail\frmCarMasterDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCarMasterDetail\frmCarMasterDetail.Designer.cs">
+      <DependentUpon>frmCarMasterDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCarMasterDetail\frmCarModelMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCarMasterDetail\frmCarModelMaster.Designer.cs">
+      <DependentUpon>frmCarModelMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCarMasterDetail\frmCarTypeMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCarMasterDetail\frmCarTypeMaster.Designer.cs">
+      <DependentUpon>frmCarTypeMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormReport\frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormReport\frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormReport\frmReportKeyIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormReport\frmReportKeyIn.Designer.cs">
+      <DependentUpon>frmReportKeyIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormReport\frmReportList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormReport\frmReportList.Designer.cs">
+      <DependentUpon>frmReportList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormReport\frmReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormReport\frmReportViewer.Designer.cs">
+      <DependentUpon>frmReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormReport\ReportDBSet.cs">
+      <DependentUpon>ReportDBSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormReport\ReportDBSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportDBSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmBlacklistList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmBlacklistList.Designer.cs">
+      <DependentUpon>frmBlacklistList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmKeyboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmKeyboard.Designer.cs">
+      <DependentUpon>frmKeyboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmNumber.Designer.cs">
+      <DependentUpon>frmNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmSelectAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmSelectAppointment.Designer.cs">
+      <DependentUpon>frmSelectAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSlip.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportSlip.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="VisitorListReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VisitorListReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="VisitorReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VisitorReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmAppointment.Designer.cs">
+      <DependentUpon>frmAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmAppointmentList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmAppointmentList.Designer.cs">
+      <DependentUpon>frmAppointmentList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmBlackList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmBlackList.Designer.cs">
+      <DependentUpon>frmBlackList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmCar.Designer.cs">
+      <DependentUpon>frmCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmEmployee.Designer.cs">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmProvince.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmProvince.Designer.cs">
+      <DependentUpon>frmProvince.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmReason.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmReason.Designer.cs">
+      <DependentUpon>frmReason.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmRegulary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmRegulary.Designer.cs">
+      <DependentUpon>frmRegulary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmVisitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmVisitor.Designer.cs">
+      <DependentUpon>frmVisitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmVisitorOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmVisitorOut.Designer.cs">
+      <DependentUpon>frmVisitorOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmVisitorList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmVisitorList.Designer.cs">
+      <DependentUpon>frmVisitorList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master\CameraSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Master\CameraSelection.Designer.cs">
+      <DependentUpon>CameraSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master\CardSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Master\CardSelection.Designer.cs">
+      <DependentUpon>CardSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master\DrivingLicenseCardInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Master\DrivingLicenseCardInfo.Designer.cs">
+      <DependentUpon>DrivingLicenseCardInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Master\ReadCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Master\ReadCard.Designer.cs">
+      <DependentUpon>ReadCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\Capture.cs" />
+    <Compile Include="Lib\RDNIDWRAPPER.cs" />
+    <Compile Include="Lib\WebCam.cs" />
+    <Compile Include="LogOn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogOn.Designer.cs">
+      <DependentUpon>LogOn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Message.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Message.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PageBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageBase.Designer.cs">
+      <DependentUpon>PageBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\CardHelper.cs" />
+    <EmbeddedResource Include="Forms\FormCarMasterDetail\frmCarBrandMaster.resx">
+      <DependentUpon>frmCarBrandMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCarMasterDetail\frmCarMasterDetail.resx">
+      <DependentUpon>frmCarMasterDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCarMasterDetail\frmCarModelMaster.resx">
+      <DependentUpon>frmCarModelMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCarMasterDetail\frmCarTypeMaster.resx">
+      <DependentUpon>frmCarTypeMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormReport\frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormReport\frmReportKeyIn.resx">
+      <DependentUpon>frmReportKeyIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormReport\frmReportList.resx">
+      <DependentUpon>frmReportList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormReport\frmReportViewer.resx">
+      <DependentUpon>frmReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVisitor\frmBlacklistList.resx">
+      <DependentUpon>frmBlacklistList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVisitor\frmKeyboard.resx">
+      <DependentUpon>frmKeyboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVisitor\frmNumber.resx">
+      <DependentUpon>frmNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVisitor\frmSelectAppointment.resx">
+      <DependentUpon>frmSelectAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportSlip.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportSlip.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisitorListReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>VisitorListReport.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisitorReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>VisitorReport.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVisitor\frmAppointment.resx">
+      <DependentUpon>frmAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVisitor\frmAppointmentList.resx">
+      <DependentUpon>frmAppointmentList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVisitor\frmBlackList.resx">
+      <DependentUpon>frmBlackList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVisitor\frmCar.resx">
+      <DependentUpon>frmCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVisitor\frmEmployee.resx">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVisitor\frmProvince.resx">
+      <DependentUpon>frmProvince.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVisitor\frmReason.resx">
+      <DependentUpon>frmReason.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVisitor\frmRegulary.resx">
+      <DependentUpon>frmRegulary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVisitor\frmVisitor.resx">
+      <DependentUpon>frmVisitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVisitor\frmVisitorOut.resx">
+      <DependentUpon>frmVisitorOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVisitor\frmVisitorList.resx">
+      <DependentUpon>frmVisitorList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master\CameraSelection.resx">
+      <DependentUpon>CameraSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master\CardSelection.resx">
+      <DependentUpon>CardSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master\DrivingLicenseCardInfo.resx">
+      <DependentUpon>DrivingLicenseCardInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master\ReadCard.resx">
+      <DependentUpon>ReadCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogOn.resx">
+      <DependentUpon>LogOn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Message.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Message.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageBase.resx">
+      <DependentUpon>PageBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Forms\FormReport\ReportDBSet.xsc">
+      <DependentUpon>ReportDBSet.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\FormReport\ReportDBSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportDBSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Forms\FormReport\ReportDBSet.xss">
+      <DependentUpon>ReportDBSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="RDNIDLib.DLD">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BIG.VMS.DATASERVICE\BIG.VMS.DATASERVICE.csproj">
+      <Project>{7be3d784-ec8b-42df-b8a6-4caab78faea9}</Project>
+      <Name>BIG.VMS.DATASERVICE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BIG.VMS.MODEL\BIG.VMS.MODEL.csproj">
+      <Project>{f56fb522-311d-431e-9e75-1d0de55898b2}</Project>
+      <Name>BIG.VMS.MODEL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ResourceFile\icon\" />
+    <Folder Include="ResourceFile\ico\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="delivery.ico" />
+    <Content Include="dll\AForge.Controls.dll" />
+    <Content Include="dll\AForge.dll" />
+    <Content Include="dll\AForge.Imaging.dll" />
+    <Content Include="dll\AForge.Math.dll" />
+    <Content Include="dll\AForge.Video.DirectShow.dll" />
+    <Content Include="dll\AForge.Video.dll" />
+    <Content Include="dll\DirectShowLib-2005.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="dll\MakarovDev.ExpandCollapsePanel.dll" />
+    <Content Include="dll\pcsc-sharp.dll" />
+    <Content Include="dll\RDNIDlibD.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="dll\System.Windows.Forms.Ribbon35.dll" />
+    <Content Include="dll\WebCam_Capture.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lock.ico" />
+    <Content Include="RDNIDlibD.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ResourceFile\48_add.png" />
+    <Content Include="ResourceFile\48_close.png" />
+    <Content Include="ResourceFile\48_home.png" />
+    <Content Include="ResourceFile\48_load.png" />
+    <Content Include="ResourceFile\48_logout.png" />
+    <Content Include="ResourceFile\48_man_woman.png" />
+    <Content Include="ResourceFile\48_print.png" />
+    <Content Include="ResourceFile\48_save_1.jpg" />
+    <Content Include="ResourceFile\48_save_2.png" />
+    <Content Include="ResourceFile\48_search1.png" />
+    <Content Include="ResourceFile\bg.jpg" />
+    <Content Include="ResourceFile\BIG New LOGO 10-3-2016 บางบัวทอง.png" />
+    <Content Include="ResourceFile\big_bg.png" />
+    <Content Include="ResourceFile\big_employee.png" />
+    <Content Include="ResourceFile\big_logo.png" />
+    <Content Include="ResourceFile\ee.jpg" />
+    <Content Include="ResourceFile\emploee.png" />
+    <Content Include="ResourceFile\eval.png" />
+    <Content Include="ResourceFile\exit.png" />
+    <Content Include="ResourceFile\exit1.png" />
+    <Content Include="ResourceFile\finger_icon.jpg" />
+    <Content Include="ResourceFile\finger_icon1.jpg" />
+    <Content Include="ResourceFile\finger_icon2.jpg" />
+    <Content Include="ResourceFile\Flow-HRMI.gif" />
+    <Content Include="ResourceFile\icon24_edit_male_user.png" />
+    <Content Include="ResourceFile\idcard_template.jpg" />
+    <Content Include="ResourceFile\lock_1.png" />
+    <Content Include="ResourceFile\lock_2.png" />
+    <Content Include="ResourceFile\lock_3.png" />
+    <Content Include="ResourceFile\login_icon.png" />
+    <Content Include="ResourceFile\login_icon_png.png" />
+    <Content Include="ResourceFile\LOGO BIG INTERSAVEGUARD GROUP.png" />
+    <Content Include="ResourceFile\network.png" />
+    <Content Include="ResourceFile\people.png" />
+    <Content Include="ResourceFile\personal.png" />
+    <Content Include="ResourceFile\pid_icon.png" />
+    <Content Include="ResourceFile\pid_icon1.png" />
+    <Content Include="ResourceFile\pid_img.png" />
+    <Content Include="ResourceFile\pid_img1.png" />
+    <Content Include="ResourceFile\ppl.png" />
+    <Content Include="ResourceFile\restart.png" />
+    <Content Include="ResourceFile\search_.png" />
+    <Content Include="ResourceFile\search_1.png" />
+    <Content Include="ResourceFile\setting.png" />
+    <Content Include="ResourceFile\setting_1.png" />
+    <Content Include="ResourceFile\skill.png" />
+    <Content Include="ResourceFile\User group.png" />
+    <Content Include="ResourceFile\user-add-icon.png" />
+    <None Include="Resources\approve.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

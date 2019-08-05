@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="LOGOUT" xml:space="preserve">
+    <value>ยืนยันการออกจากระบบ?</value>
+  </data>
+  <data name="MSG_APPLICATION_ALREADLY_RUN" xml:space="preserve">
+    <value>Application is already running.</value>
+  </data>
+  <data name="MSG_APPLICATION_FAIL" xml:space="preserve">
+    <value>Something wrong on appliction, Please contact your Administrator.</value>
+  </data>
+  <data name="MSG_DELETE_COMPLETE" xml:space="preserve">
+    <value>ลบข้อมูลเรียบร้อย</value>
+  </data>
+  <data name="MSG_DELETE_CONFIRM" xml:space="preserve">
+    <value>ต้องการ ลบ ข้อมูล?</value>
+  </data>
+  <data name="MSG_DELETE_CONFIRM_BY" xml:space="preserve">
+    <value>ต้องการ ลบ ข้อมูล?</value>
+  </data>
+  <data name="MSG_DELETE_INCOMPLETE" xml:space="preserve">
+    <value>ไม่สามารถลบข้อมูลได้ </value>
+  </data>
+  <data name="MSG_DELETE_INCOMPLETE_BY" xml:space="preserve">
+    <value>ไม่สามารถลบข้อมูลได้ {0}</value>
+    <comment>ไม่สามารถลบข้อมูลได้ {0}</comment>
+  </data>
+  <data name="MSG_ERROR_TITLE" xml:space="preserve">
+    <value>ระบบทำงานผิดพลาด</value>
+    <comment>ระบบทำงานผิดพลาด</comment>
+  </data>
+  <data name="MSG_ERROR_UNKNOWN" xml:space="preserve">
+    <value>ระบบเกิดข้อผิดพลาด  กรุณาติดต่อผู้ดูแลระบบ</value>
+    <comment>ระบบเกิดข้อผิดพลาด</comment>
+  </data>
+  <data name="MSG_ERROR_UNKNOWN_BY" xml:space="preserve">
+    <value>ระบบเกิดข้อผิดพลาด {0}</value>
+    <comment>ระบบเกิดข้อผิดพลาด {0}</comment>
+  </data>
+  <data name="MSG_LOGOFF_FAIL" xml:space="preserve">
+    <value>ออกจากระบบไม่สำเร็จ</value>
+  </data>
+  <data name="MSG_LOGOFF_SUCCESS" xml:space="preserve">
+    <value>ออกจากระบบสำเร็จ</value>
+  </data>
+  <data name="MSG_LOGOUT_QUESTION" xml:space="preserve">
+    <value>ยืนยันการออกจากระบบ?</value>
+    <comment>ยืนยันการออกจากระบบ?</comment>
+  </data>
+  <data name="MSG_NOT_FOUND" xml:space="preserve">
+    <value>ไม่พบข้อมูล</value>
+    <comment>ไม่พบข้อมูล</comment>
+  </data>
+  <data name="MSG_NOT_FOUND_TARGET_FILE" xml:space="preserve">
+    <value>ไม่พบไฟล์</value>
+    <comment>ไม่พบไฟล์</comment>
+  </data>
+  <data name="MSG_NOT_FOUND_TARGET_PATH" xml:space="preserve">
+    <value>ไม่พบปลายทาง</value>
+    <comment>ไม่พบปลายทาง</comment>
+  </data>
+  <data name="MSG_REVISE_CONFIRM" xml:space="preserve">
+    <value>แจ้งเตือนการ revise ข้อมูล</value>
+    <comment>แจ้งเตือนการ revise ข้อมูล</comment>
+  </data>
+  <data name="MSG_SAVE_COMPLETE" xml:space="preserve">
+    <value>บันทึกข้อมูลเรียบร้อย</value>
+    <comment>บันทึกข้อมูลเรียบร้อย</comment>
+  </data>
+  <data name="MSG_SAVE_CONFIRM" xml:space="preserve">
+    <value>ต้องการบันทึกข้อมูล?</value>
+    <comment>ต้องการบันทึกข้อมูล?</comment>
+  </data>
+  <data name="MSG_SAVE_CONFIRM_BY_KEY" xml:space="preserve">
+    <value>ต้องการบันทึกข้อมูล?</value>
+    <comment>ต้องการบันทึกข้อมูล?</comment>
+  </data>
+  <data name="MSG_SAVE_INCOMPLETE" xml:space="preserve">
+    <value>ไม่สามารถบันทึกข้อมูลได้</value>
+    <comment>ไม่สามารถบันทึกข้อมูลได้</comment>
+  </data>
+  <data name="MSG_SAVE_INCOMPLETE_BY" xml:space="preserve">
+    <value>ไม่สามารถบันทึกข้อมูลได้  "{0}"</value>
+    <comment>ไม่สามารถบันทึกข้อมูลได้  {0}</comment>
+  </data>
+  <data name="MSG_SHUTDOWN_SYSTEM" xml:space="preserve">
+    <value>ยืนยันการออกจากระบบ?</value>
+  </data>
+  <data name="MSG_TIME_EXPIRED" xml:space="preserve">
+    <value>กรุณาทำการ login ใหม่</value>
+    <comment>กรุณาทำการ login ใหม่</comment>
+  </data>
+  <data name="MSG_VALIDATE_COMPLELY" xml:space="preserve">
+    <value>กรุณาระบุ username และ password</value>
+    <comment>กรุณาระบุ username และ password</comment>
+  </data>
+  <data name="MSG_VALIDATE_LOGIN" xml:space="preserve">
+    <value>กรุณาระบุ username และ password</value>
+    <comment>กรุณาระบุ username และ password</comment>
+  </data>
+  <data name="MSG_VALIDATE_NUMBER_INPUT" xml:space="preserve">
+    <value>Please input number.  "{0}"</value>
+  </data>
+  <data name="MSG_VALIDATE_OVER_LENGTH" xml:space="preserve">
+    <value>ความยาวของของ {0} ต้องไม่เกิน {1} ตัวอักษร</value>
+    <comment>ความยาวของของ {0} ต้องไม่เกิน {1} ตัวอักษร</comment>
+  </data>
+  <data name="MSG_VALIDATE_REQ_INPUT" xml:space="preserve">
+    <value>กรุณาระบุข้อมูล</value>
+    <comment>กรุณาระบุข้อมูล</comment>
+  </data>
+  <data name="MSG_VALIDATE_REQ_INPUT_BY" xml:space="preserve">
+    <value>กรุณาระบุข้อมูล {0}</value>
+    <comment>กรุณาระบุข้อมูล {0}</comment>
+  </data>
+  <data name="MSG_WARNING_CAPTION" xml:space="preserve">
+    <value>คำเตือน</value>
+  </data>
+  <data name="MSG_WARNING_REQUIRED_FIELD" xml:space="preserve">
+    <value>เตือน Require Fields</value>
+    <comment>เตือน Require Fields</comment>
+  </data>
+</root>
