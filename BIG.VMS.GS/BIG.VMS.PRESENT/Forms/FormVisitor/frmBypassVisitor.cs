@@ -18,10 +18,11 @@ using CrystalDecisions.CrystalReports.Engine;
 using BIG.VMS.PRESENT.Forms.FormReport;
 using System.Drawing.Imaging;
 using CrystalDecisions.Shared;
+using BIG.VMS.PRESENT.Forms.FormVisitor;
 
-namespace BIG.VMS.PRESENT.Forms.FormVisitor
+namespace BIG.VMS.PRESENT.Forms.FormVisitorBypass
 {
-    public partial class frmVisitor : PageBase
+    public partial class frmVisitorByPass : PageBase
     {
         public FormMode formMode = new FormMode();
         public VisitorMode visitorMode = new VisitorMode();
@@ -48,7 +49,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
 
         public byte[] BYTE_IMAGE { get; set; }
 
-        public frmVisitor()
+        public frmVisitorByPass()
         {
             InitializeComponent();
         }
@@ -332,8 +333,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     UPDATED_DATE = DateTime.Now,
                     YEAR = DateTime.Now.Year,
                     MONTH = DateTime.Now.Month,
-                    BY_PASS = "N"
-
+                    BY_PASS = "Y"
                 };
 
                 if (provinceId == 0)
@@ -412,7 +412,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     string dir = DIRECTORY_IN + "\\" + obj.NO + "\\";
                     Directory.CreateDirectory(dir);
                     var attachment = new TRN_ATTACHEDMENT();
-                    if (isChangePhoto || isChangeCardPhoto || isChangePass)
+                    if (isChangePhoto || isChangeCardPhoto)
                     {
 
                         if (isChangePhoto)
@@ -423,7 +423,14 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                         {
                             attachment.CONTACT_PHOTO = BYTE_IMAGE;
                         }
-
+                        if (isChangeCardPhoto)
+                        {
+                            attachment.ID_CARD_PHOTO = ImageToByte(picCard);
+                        }
+                        else
+                        {
+                            attachment.ID_CARD_PHOTO = BYTE_IMAGE;
+                        }
 
                         obj.TRN_ATTACHEDMENT = new List<TRN_ATTACHEDMENT>();
                         obj.TRN_ATTACHEDMENT.Add(attachment);
@@ -524,7 +531,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
 
                 ReportDocument rpt = new ReportDocument();
                 string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
-                var appPath = Application.StartupPath + "\\" + "ReportSlip.rpt";
+                var appPath = Application.StartupPath + "\\" + "ReportSlipByPass.rpt";
 
                 rpt.Load(appPath);
                 rpt.SetDataSource(dt);
@@ -619,22 +626,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
         }
 
         #region ============= EVENTS  =============
-        private void chkKeyIn_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkKeyIn.Checked)
-            {
-                txtFirstName.Enabled = true;
-                txtLastName.Enabled = true;
-                txtIDCard.Enabled = true;
 
-            }
-            else
-            {
-                txtFirstName.Enabled = false;
-                txtLastName.Enabled = false;
-                txtIDCard.Enabled = false;
-            }
-        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -793,68 +785,92 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
         {
             try
             {
-                var frm = new CardSelection();
+                var frm = new CameraSelection();
                 frm.StartPosition = FormStartPosition.CenterParent;
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    if (frm.READ_CARD_STATUS)
+
+                    if (frm.CAMERA != null)
                     {
-                        if (frm.CARD_TYPE == "PID")
-                        {
-                            //บัตรประชาชน
-                            txtFirstName.Text = frm.CARD.TH_FIRST_NAME;
-                            txtLastName.Text = frm.CARD.TH_LAST_NAME;
-                            txtIDCard.Text = frm.CARD.NO;
-                            picCard.Image = (Image)frm.CARD.PHOTO;
-                            CARD_IMAGE = frm.CARD.CARD_IMAGE;
-                            BYTE_IMAGE = frm.CARD.BYTE_IMAGE;
-                            isChangeCardPhoto = true;
-                            var data = _blService.GetBlackListByIdCard(txtIDCard.Text);
-                            if (data.TRN_BLACKLIST == null)
-                            {
-                                MessageBox.Show("อ่านข้อมูลจากบัตรประชาชน เรียบร้อย!!!");
-                            }
-                            else
-                            {
-                                var blData = data.TRN_BLACKLIST;
-                                var msg = "เลขบัตรประชาชน : " + blData.ID_CARD + Environment.NewLine + "ชื่อ-สกุล : " + blData.FIRST_NAME + " " + blData.LAST_NAME;
-                                msg += Environment.NewLine + "เหตุผล : " + blData.REASON;
-                                msg += Environment.NewLine + "ณ วันที่ : " + blData.UPDATED_DATE;
-                                MessageBox.Show(msg, "บุคคล Blacklist", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                //this.Close();
-                            }
-
-                        }
-                        else
-                        {
-                            //ใบขับขี่
-                            txtFirstName.Text = frm.DID.FIRST_NAME_EN;
-                            txtLastName.Text = frm.DID.LAST_NAME_EN;
-                            txtIDCard.Text = frm.DID.NO;
-                            var data = _blService.GetBlackListByIdCard(txtIDCard.Text);
-                            if (data.TRN_BLACKLIST == null)
-                            {
-                                MessageBox.Show("อ่านข้อมูลจากใบขับขี่ เรียบร้อย!!!");
-                            }
-                            else
-                            {
-                                var blData = data.TRN_BLACKLIST;
-                                var msg = "เลขบัตรประชาชน : " + blData.ID_CARD + Environment.NewLine + "ชื่อ-สกุล : " + blData.FIRST_NAME + " " + blData.LAST_NAME;
-                                msg += Environment.NewLine + "เหตุผล : " + blData.REASON;
-                                msg += Environment.NewLine + "ณ วันที่ : " + blData.UPDATED_DATE;
-                                MessageBox.Show(msg, "บุคคล Blacklist", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                //this.Close();
-                            }
-
-                        }
+                        isChangeCardPhoto = true;
+                        picCard.Image = frm.CAMERA;
                     }
+
                 }
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
 
             }
+
+            #region === Old ===
+            //try
+            //{
+            //    var frm = new CardSelection();
+            //    frm.StartPosition = FormStartPosition.CenterParent;
+            //    if (frm.ShowDialog() == DialogResult.OK)
+            //    {
+            //        if (frm.READ_CARD_STATUS)
+            //        {
+            //            if (frm.CARD_TYPE == "PID")
+            //            {
+            //                //บัตรประชาชน
+            //                txtFirstName.Text = frm.CARD.TH_FIRST_NAME;
+            //                txtLastName.Text = frm.CARD.TH_LAST_NAME;
+            //                txtIDCard.Text = frm.CARD.NO;
+            //                picCard.Image = (Image)frm.CARD.PHOTO;
+            //                CARD_IMAGE = frm.CARD.CARD_IMAGE;
+            //                BYTE_IMAGE = frm.CARD.BYTE_IMAGE;
+            //                isChangeCardPhoto = true;
+            //                var data = _blService.GetBlackListByIdCard(txtIDCard.Text);
+            //                if (data.TRN_BLACKLIST == null)
+            //                {
+            //                    MessageBox.Show("อ่านข้อมูลจากบัตรประชาชน เรียบร้อย!!!");
+            //                }
+            //                else
+            //                {
+            //                    var blData = data.TRN_BLACKLIST;
+            //                    var msg = "เลขบัตรประชาชน : " + blData.ID_CARD + Environment.NewLine + "ชื่อ-สกุล : " + blData.FIRST_NAME + " " + blData.LAST_NAME;
+            //                    msg += Environment.NewLine + "เหตุผล : " + blData.REASON;
+            //                    msg += Environment.NewLine + "ณ วันที่ : " + blData.UPDATED_DATE;
+            //                    MessageBox.Show(msg, "บุคคล Blacklist", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //                    //this.Close();
+            //                }
+
+            //            }
+            //            else
+            //            {
+            //                //ใบขับขี่
+            //                txtFirstName.Text = frm.DID.FIRST_NAME_EN;
+            //                txtLastName.Text = frm.DID.LAST_NAME_EN;
+            //                txtIDCard.Text = frm.DID.NO;
+            //                var data = _blService.GetBlackListByIdCard(txtIDCard.Text);
+            //                if (data.TRN_BLACKLIST == null)
+            //                {
+            //                    MessageBox.Show("อ่านข้อมูลจากใบขับขี่ เรียบร้อย!!!");
+            //                }
+            //                else
+            //                {
+            //                    var blData = data.TRN_BLACKLIST;
+            //                    var msg = "เลขบัตรประชาชน : " + blData.ID_CARD + Environment.NewLine + "ชื่อ-สกุล : " + blData.FIRST_NAME + " " + blData.LAST_NAME;
+            //                    msg += Environment.NewLine + "เหตุผล : " + blData.REASON;
+            //                    msg += Environment.NewLine + "ณ วันที่ : " + blData.UPDATED_DATE;
+            //                    MessageBox.Show(msg, "บุคคล Blacklist", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //                    //this.Close();
+            //                }
+
+            //            }
+            //        }
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+
+            //}
+            #endregion
         }
 
         private void BtnTakePhoto_Click(object sender, EventArgs e)
@@ -1000,31 +1016,12 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
             picPhoto.Image = defaultPhoto;
         }
 
-        private void btnAddPic_Click(object sender, EventArgs e)
+
+
+
+        private void label8_Click(object sender, EventArgs e)
         {
-            try
-            {
-                OpenFileDialog dialog = new OpenFileDialog();
-                dialog.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
-                dialog.InitialDirectory = @"C:\";
-                dialog.Title = "Please select an image file to encrypt.";
 
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    string path = dialog.FileName;
-
-                    isChangePass = true;
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
-
-
-
-
     }
 }

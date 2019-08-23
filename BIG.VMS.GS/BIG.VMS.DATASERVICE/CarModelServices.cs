@@ -62,9 +62,9 @@ namespace BIG.VMS.DATASERVICE
             {
                 using (BIG_VMSEntities ctx = new BIG_VMSEntities())
                 {
-                    var data = ctx.MAS_CAR_MODEL.Where(o=>o.NAME == model).FirstOrDefault();
+                    var data = ctx.MAS_CAR_MODEL.Where(o => o.NAME == model).FirstOrDefault();
                     result.ResultObj = data.AUTO_ID;
-                    result.Status = true ;
+                    result.Status = true;
                 }
             }
             catch (Exception ex)

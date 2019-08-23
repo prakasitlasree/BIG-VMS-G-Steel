@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BIG.VMS.MODEL.CustomModel.Filter
 {
-   public  class AppointmentFilter
+    public class AppointmentFilter
     {
         public string FIRST_NAME { get; set; }
         public string LAST_NAME { get; set; }

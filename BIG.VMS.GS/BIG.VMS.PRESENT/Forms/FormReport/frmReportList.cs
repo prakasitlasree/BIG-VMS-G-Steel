@@ -9,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DGVPrinterHelper;
 using System.Globalization;
 using ClosedXML.Excel;
 using BIG.VMS.MODEL.CustomModel.CustomContainer;
@@ -355,6 +354,11 @@ namespace BIG.VMS.PRESENT.Forms.FormReport
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }

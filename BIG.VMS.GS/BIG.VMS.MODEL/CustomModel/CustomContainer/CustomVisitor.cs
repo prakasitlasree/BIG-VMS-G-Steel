@@ -12,7 +12,7 @@ namespace BIG.VMS.MODEL.CustomModel.CustomContainer
         public int? NO { get; set; }
         public string ID_CARD { get; set; }
         public string TYPE { get; set; }
-        public string NAME { get; set; }      
+        public string NAME { get; set; }
         public string PROVINCE { get; set; }
         public string LICENSE_PLATE { get; set; }
         public string CAR_TYPE_NAME { get; set; }
@@ -26,7 +26,7 @@ namespace BIG.VMS.MODEL.CustomModel.CustomContainer
         public byte[] CONTACT_PHOTO { get; set; }
         public string FIRST_NAME { get; set; }
         public string LAST_NAME { get; set; }
-        public Nullable<int> CAR_MODEL_ID { get; set; }
+        public Nullable<int> CAR_TYPE_ID { get; set; }
         public Nullable<int> LICENSE_PLATE_PROVINCE_ID { get; set; }
         public Nullable<int> REASON_ID { get; set; }
         public Nullable<int> CONTACT_EMPLOYEE_ID { get; set; }
@@ -36,7 +36,7 @@ namespace BIG.VMS.MODEL.CustomModel.CustomContainer
         public string UPDATED_BY { get; set; }
         public Nullable<System.DateTime> UPDATED_DATE { get; set; }
         public string FULL_NAME { get; set; }
-
+        public string BY_PASS { get; set; }
         public string COMPANY_NAME { get; set; }
     }
 }

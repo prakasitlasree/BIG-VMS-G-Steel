@@ -126,6 +126,7 @@
     <Compile Include="IService.cs" />
     <Compile Include="CustomModel\Pagination.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransactionModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

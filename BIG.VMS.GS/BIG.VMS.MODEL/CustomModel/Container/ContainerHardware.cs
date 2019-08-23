@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BIG.VMS.MODEL.CustomModel
 {
-  public  class ContainerHardware
+    public class ContainerHardware
     {
         public bool Status { get; set; }
 

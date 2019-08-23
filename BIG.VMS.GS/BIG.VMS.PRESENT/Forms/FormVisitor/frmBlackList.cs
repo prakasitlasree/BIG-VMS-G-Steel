@@ -51,7 +51,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                 if (string.IsNullOrEmpty(txtFirstName.Text)) listMsg.Add("ชื่อจริง");
                 if (string.IsNullOrEmpty(txtLastName.Text)) listMsg.Add("นามสกุล");
                 if (string.IsNullOrEmpty(txtIDCard.Text)) listMsg.Add("รหัสบัตรประชาชน");
-                if (string.IsNullOrEmpty(txtReason.Text)) listMsg.Add("เหตุผล");              
+                if (string.IsNullOrEmpty(txtReason.Text)) listMsg.Add("เหตุผล");
                 string joined = string.Join("," + Environment.NewLine, listMsg);
                 MessageBox.Show("กรุณากรอกข้อมูลให้ครบ " + joined, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 

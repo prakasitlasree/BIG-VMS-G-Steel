@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BIG.VMS.MODEL.CustomModel.CustomContainer
 {
-   public class ReportParameter
+    public class ReportParameter
     {
         public string MODULE { get; set; }
         public string NAME { get; set; }

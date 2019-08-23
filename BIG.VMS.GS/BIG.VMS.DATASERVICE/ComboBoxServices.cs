@@ -228,6 +228,30 @@ namespace BIG.VMS.DATASERVICE
             return listData;
         }
 
+        public List<ComboBoxItem> GetComboReasonByDepartmentID(int deptID)
+        {
+            List<ComboBoxItem> listData = new List<ComboBoxItem>();
+            try
+            {
+                using (BIG_VMSEntities ctx = new BIG_VMSEntities())
+                {
+                    var list = ctx.MAS_REASON.Where(o => o.DEPT_ID == deptID).ToList();
+                    foreach (var item in list)
+                    {
+                        ComboBoxItem data = new ComboBoxItem();
+                        data.Text = item.REASON;
+                        data.Value = item.AUTO_ID;
+                        listData.Add(data);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return listData;
+        }
+
         public List<ComboBoxItem> GetComboDepartment()
         {
             List<ComboBoxItem> listData = new List<ComboBoxItem>();
@@ -335,7 +359,7 @@ namespace BIG.VMS.DATASERVICE
             {
                 using (BIG_VMSEntities ctx = new BIG_VMSEntities())
                 {
-                    var list = ctx.MAS_PROVINCE.OrderByDescending(o => o.PRIORITY ).ThenBy(o=>o.NAME).Take(10).ToList();
+                    var list = ctx.MAS_PROVINCE.OrderByDescending(o => o.PRIORITY).ThenBy(o => o.NAME).Take(10).ToList();
                     foreach (var item in list)
                     {
                         ComboBoxItem data = new ComboBoxItem();

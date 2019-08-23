@@ -113,7 +113,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     !string.IsNullOrEmpty(txtTopic.Text) &&
                     !string.IsNullOrEmpty(dtContactDate.Text) &&
                      !string.IsNullOrEmpty(dtTime.Text) &&
-                    contactEmployeeId > 0  && reasonId > 0 &&
+                    contactEmployeeId > 0 && reasonId > 0 &&
                     dtContactDate.Value != null &&
                     dtTime.Value != null &&
                     dtContactDate.Value != DateTime.MinValue &&
@@ -179,7 +179,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
             frmCar frm = new frmCar();
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                carModelId = frm.SELECTED_CAR_ID;
+                carModelId = frm.SELECTED_CAR_NAME_ID;
                 //txtCar.Text = frm.SELECTED_CAR_TEXT;
             }
         }

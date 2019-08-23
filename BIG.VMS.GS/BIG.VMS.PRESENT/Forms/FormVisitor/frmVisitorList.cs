@@ -5,6 +5,7 @@ using BIG.VMS.MODEL.CustomModel.CustomContainer;
 using BIG.VMS.MODEL.EntityModel;
 using BIG.VMS.PRESENT.Forms.FormReport;
 using BIG.VMS.PRESENT.Forms.FormVisitor;
+using BIG.VMS.PRESENT.Forms.FormVisitorBypass;
 using CrystalDecisions.CrystalReports.Engine;
 using System;
 using System.Collections.Generic;
@@ -35,7 +36,6 @@ namespace BIG.VMS.PRESENT.Forms.Home
 
             InitialComboBox();
             InitialEventHandler();
-            SetControl();
             ResetScreen();
             gridVisitorList.DataBindingComplete += BindingComplete;
 
@@ -51,6 +51,9 @@ namespace BIG.VMS.PRESENT.Forms.Home
                 gridVisitorList.Columns[1].Visible = false;
                 gridVisitorList.Columns[2].Visible = false;
             }
+
+
+
         }
 
         private void BindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -73,7 +76,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
 
             if (comboType.SelectedIndex == 0)
             {
-                //filter.TYPE = "In";
+
             }
             else if (comboType.SelectedIndex == 1)
             {
@@ -111,14 +114,14 @@ namespace BIG.VMS.PRESENT.Forms.Home
                 {
                     gridVisitorList.Rows[i].DefaultCellStyle.BackColor = Color.White;
                 }
-                
+
             }
             foreach (DataGridViewRow row in gridVisitorList.Rows)
             {
                 if (row.Cells["TYPE"].Value.ToString() == "ออก" || row.Cells["TYPE"].Value.ToString() == "นัดล่วงหน้า(ออก)")
                 {
-                    
-                    
+
+
                     row.Cells[2].Value = Properties.Resources.approve;
                 }
             }
@@ -134,6 +137,12 @@ namespace BIG.VMS.PRESENT.Forms.Home
             _container.PageInfo = new Pagination();
             BindGridData();
             CustomGrid();
+            SetControl();
+
+            TransactionModel obj = _service.GetVistorTracsaction();
+            lblAllCount.Text = obj.ALL_VISITOR_IN.ToString();
+            lblTodayIn.Text = obj.TODAY_VISITOR_IN.ToString();
+            lblTodayOut.Text = obj.TODAY_VISITOR_OUT.ToString();
         }
 
         private List<HeaderGrid> ListHeader()
@@ -242,10 +251,8 @@ namespace BIG.VMS.PRESENT.Forms.Home
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            frmVisitor frm = new frmVisitor();
+            frmSelectInType frm = new frmSelectInType();
             frm.StartPosition = FormStartPosition.CenterParent;
-            frm.formMode = FormMode.Add;
-            frm.visitorMode = VisitorMode.In;
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 ResetScreen();
@@ -358,7 +365,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
                     else if (e.ColumnIndex == 2)
                     {
                         var type = gridVisitorList.Rows[e.RowIndex].Cells["TYPE"].Value.ToString();
-                        if(type != "ออก" && type != "นัดล่วงหน้า(ออก)")
+                        if (type != "ออก" && type != "นัดล่วงหน้า(ออก)")
                         {
                             #region ===================== print =====================
                             var id = Convert.ToInt32(gridVisitorList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
@@ -371,14 +378,22 @@ namespace BIG.VMS.PRESENT.Forms.Home
 
                                 ReportDocument rpt = new ReportDocument();
                                 string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
-                                var appPath = Application.StartupPath + "\\" + "ReportSlip.rpt";
-                                rpt.Load(appPath);
-                                rpt.SetDataSource(dt);
-                                //===== View Report =====
-                                //frmReportViewer frm = new frmReportViewer();
-                                //frm.crystalReportViewer1.ReportSource = rpt;
-                                //frm.ShowDialog();
-                                rpt.PrintToPrinter(1, true, 0, 0);
+                                if (listData.FirstOrDefault().BY_PASS == "N" || listData.FirstOrDefault().BY_PASS == null)
+                                {
+                                    var appPath = Application.StartupPath + "\\" + "ReportSlip.rpt";
+                                    rpt.Load(appPath);
+                                    rpt.SetDataSource(dt);
+                                    rpt.PrintToPrinter(1, true, 0, 0);
+                                }
+                                else
+                                {
+                                    var appPath = Application.StartupPath + "\\" + "ReportSlipByPass.rpt";
+                                    rpt.Load(appPath);
+                                    rpt.SetDataSource(dt);
+                                    rpt.PrintToPrinter(1, true, 0, 0);
+                                }
+
+
                             }
                             #endregion
                         }
@@ -401,6 +416,24 @@ namespace BIG.VMS.PRESENT.Forms.Home
         private void btnNext_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnListExit_Click(object sender, EventArgs e)
+        {
+            frmVisitorOutList frm = new frmVisitorOutList();
+            frm.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmVisitorByPass frm = new frmVisitorByPass();
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.formMode = FormMode.Add;
+            frm.visitorMode = VisitorMode.In;
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                ResetScreen();
+            }
         }
     }
 }
