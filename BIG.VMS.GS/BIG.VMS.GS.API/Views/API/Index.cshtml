@@ -1,0 +1,169 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container" style="background-color: lightyellow">
+        <div class="row">
+            <div class="col-md-12">
+                <hr>
+                <h2>Big Visitor Management</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label>กรุณากรอกเลขใบผ่าน</label>
+                <br>
+                <input type="number" class="form-control" id="txtNo">
+                <br>
+                <button class="btn btn-primary" onclick="GetVisitorData()">ค้นหา</button>
+                <hr>
+                <input class="form-control" type="text" id="txtInfo" readonly>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4" style="background-color: bisque">
+                <hr>
+                <div>
+                    <label for="files" class="btn btn-info">ถ่ายรููปใบผ่าน 1</label>
+                    <input id="files" style="visibility:hidden;" name="photo[]" type="file">
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Antu_folder-camera.svg/512px-Antu_folder-camera.svg.png"
+                     alt="" class="img-fluid" style="cursor: pointer;max-height: 350px" id="img1">
+                <script>
+                    $("#files").change(function () {
+                        readURL(this, 1);
+                    });
+                </script>
+                <hr>
+            </div>
+            <div class="col-md-4" style="background-color:burlywood">
+                <hr>
+                <label for="files2" class="btn btn-info">ถ่ายรููปใบผ่าน 2</label>
+                <input id="files2" style="visibility:hidden;" name="photo[]" type="file">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Antu_folder-camera.svg/512px-Antu_folder-camera.svg.png"
+                     alt="" class="img-fluid" style="cursor: pointer;max-height: 350px" id="img2">
+                <script>
+                    $("#files2").change(function () {
+                        readURL(this, 2);
+                    });
+                </script>
+                <hr>
+            </div>
+            <div class="col-md-4" style="background-color: bisque">
+                <hr>
+                <label for="files3" class="btn btn-info">ถ่ายรููปใบผ่าน 3</label>
+                <input id="files3" style="visibility:hidden;" name="photo[]" type="file">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Antu_folder-camera.svg/512px-Antu_folder-camera.svg.png"
+                     alt="" class="img-fluid" style="cursor: pointer;max-height: 350px"  id="img3">
+                <script>
+                    $("#files3").change(function () {
+                        readURL(this, 3);
+                    });
+                </script>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <hr>
+                <button class="btn btn-primary" onclick="Upload()">บันทึก</button>
+                <button class="btn btn-danger">ปิด</button>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <script>
+        function readURL(input, imgId) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    if (imgId == 1) {
+                        document.getElementById("img1").src = e.target.result;
+                    }
+                    else if (imgId == 2) {
+                        document.getElementById("img2").src = e.target.result;
+                    }
+                    else if (imgId == 3) {
+                        document.getElementById("img3").src = e.target.result;
+                    }
+
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function GetVisitorData() {
+            $.ajax({
+                url: '/api/GetVisitorData',
+                type: 'GET',
+                data: {
+                    "no": $('#txtNo').val()
+                },
+                success: function (response) {
+                    console.log(response)
+                    if (response.Status) {
+                        var name = "ชื่อ-นามสกุล:" + response.TRN_VISITOR.FIRST_NAME + " " + response.TRN_VISITOR.LAST_NAME
+                        var id_card = "หมายเลขบัตร:" + response.TRN_VISITOR.ID_CARD;
+                        var license_plate = "ทะเบียนรถ:" + response.TRN_VISITOR.LICENSE_PLATE
+
+                        var info = name + " " + id_card + " " + license_plate;
+                        $('#txtInfo').val(info)
+                    }
+                },
+                error: function () {
+                    alert(response.ERROR_MESSAGE);
+                }
+            });
+        }
+
+
+        function Upload() {
+            var files = $("#files").get(0).files;
+            var files2 = $("#files2").get(0).files;
+            var files3 = $("#files3").get(0).files;
+
+            var fileData = new FormData();
+            for (var i = 0; i < files.length; i++) {
+                fileData.append("fileInput", files[i]);
+            }
+            for (var i = 0; i < files2.length; i++) {
+                fileData.append("fileInput", files[i]);
+            }
+            for (var i = 0; i < files3.length; i++) {
+                fileData.append("fileInput", files[i]);
+            }
+            $.ajax({
+                type: "POST",
+                url: "/api/UploadFiles",
+                dataType: "json",
+                contentType: false, // Not to set any content header
+                processData: false, // Not to process data
+                data: fileData,
+                success: function (result, status, xhr) {
+                    alert(result);
+                },
+                error: function (xhr, status, error) {
+                    alert(status);
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
