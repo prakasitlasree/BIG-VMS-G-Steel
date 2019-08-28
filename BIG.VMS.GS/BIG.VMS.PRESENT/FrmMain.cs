@@ -67,26 +67,14 @@ namespace BIG.VMS.PRESENT
         }
 
         #endregion
-
-        private void Home_Click(object sender, EventArgs e)
+  
+        private void logout_Click(object sender, EventArgs e)
         {
-            frmVisitorList frm = new frmVisitorList();
-            frm.StartPosition = FormStartPosition.CenterScreen;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.MdiParent = this;
-            frm.Show();
+            OnCloseAllChildrenForm();
+            Application.Exit();
         }
 
-        private void readIDCardToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var frm = new frmBlacklistList();
-            frm.StartPosition = FormStartPosition.CenterScreen;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.MdiParent = this;
-            frm.Show();
-        }
-
-        private void scheduling_Click(object sender, EventArgs e)
+        private void appointment_Click(object sender, EventArgs e)
         {
             frmAppointmenList frm = new frmAppointmenList();
             frm.StartPosition = FormStartPosition.CenterScreen;
@@ -95,24 +83,31 @@ namespace BIG.VMS.PRESENT
             frm.Show();
         }
 
-        private void report_Click(object sender, EventArgs e)
+        private void BlacklistToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new frmBlacklistList();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void report_in_out_Click(object sender, EventArgs e)
         {
             frmReportList frm = new frmReportList();
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.WindowState = FormWindowState.Maximized;
             frm.MdiParent = this;
             frm.Show();
-
         }
 
-        private void logout_Click(object sender, EventArgs e)
+        private void visitor_transaction_Click(object sender, EventArgs e)
         {
-            OnCloseAllChildrenForm();
-            Application.Exit();
+            frmVisitorList frm = new frmVisitorList();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.MdiParent = this;
+            frm.Show();
         }
-
-      
-
-        
     }
 }
