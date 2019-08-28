@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCar));
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtCarType = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowCarType = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel3.SuspendLayout();
@@ -51,8 +51,19 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(627, 60);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(627, 40);
             this.tableLayoutPanel3.TabIndex = 2;
+            // 
+            // txtCarType
+            // 
+            this.txtCarType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCarType.BackColor = System.Drawing.Color.White;
+            this.txtCarType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCarType.Location = new System.Drawing.Point(82, 4);
+            this.txtCarType.Name = "txtCarType";
+            this.txtCarType.Size = new System.Drawing.Size(542, 31);
+            this.txtCarType.TabIndex = 0;
+            this.txtCarType.TextChanged += new System.EventHandler(this.txtCarType_TextChanged);
             // 
             // label2
             // 
@@ -60,22 +71,11 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 17);
+            this.label2.Location = new System.Drawing.Point(3, 7);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "ประเภท";
-            // 
-            // txtCarType
-            // 
-            this.txtCarType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCarType.BackColor = System.Drawing.Color.White;
-            this.txtCarType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCarType.Location = new System.Drawing.Point(82, 14);
-            this.txtCarType.Name = "txtCarType";
-            this.txtCarType.Size = new System.Drawing.Size(542, 31);
-            this.txtCarType.TabIndex = 0;
-            this.txtCarType.TextChanged += new System.EventHandler(this.txtCarType_TextChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -90,15 +90,15 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(633, 661);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(633, 467);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // flowCarType
             // 
             this.flowCarType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowCarType.Location = new System.Drawing.Point(3, 69);
+            this.flowCarType.Location = new System.Drawing.Point(3, 49);
             this.flowCarType.Name = "flowCarType";
-            this.flowCarType.Size = new System.Drawing.Size(627, 589);
+            this.flowCarType.Size = new System.Drawing.Size(627, 415);
             this.flowCarType.TabIndex = 3;
             // 
             // frmCar
@@ -106,7 +106,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(633, 661);
+            this.ClientSize = new System.Drawing.Size(633, 467);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

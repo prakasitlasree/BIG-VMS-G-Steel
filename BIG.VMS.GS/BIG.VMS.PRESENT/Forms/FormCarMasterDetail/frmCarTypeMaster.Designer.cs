@@ -134,7 +134,10 @@
             this.ClientSize = new System.Drawing.Size(485, 108);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmCarTypeMaster";
+            this.ShowInTaskbar = false;
             this.Text = "frmCarTypeMaster";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
