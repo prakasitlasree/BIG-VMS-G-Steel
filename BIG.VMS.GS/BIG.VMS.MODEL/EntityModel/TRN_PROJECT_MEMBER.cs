@@ -12,17 +12,16 @@ namespace BIG.VMS.MODEL.EntityModel
     using System;
     using System.Collections.Generic;
     
-    public partial class TRN_ATTACHEDMENT
+    public partial class TRN_PROJECT_MEMBER
     {
         public int AUTO_ID { get; set; }
-        public Nullable<int> VISITOR_ID { get; set; }
-        public byte[] ID_CARD_PHOTO { get; set; }
-        public byte[] CONTACT_PHOTO { get; set; }
-        public string PHOTO_URL { get; set; }
-        public byte[] REF_PHOTO1 { get; set; }
-        public byte[] REF_PHOTO2 { get; set; }
-        public byte[] REF_PHOTO3 { get; set; }
+        public int PROJECT_ID { get; set; }
+        public string CARD_TYPE { get; set; }
+        public string ID_CARD { get; set; }
+        public string FULLNAME { get; set; }
+        public string POSITION { get; set; }
+        public string SAFETY_TRAINING_FLAG { get; set; }
     
-        public virtual TRN_VISITOR TRN_VISITOR { get; set; }
+        public virtual TRN_PROJECT_MASTER TRN_PROJECT_MASTER { get; set; }
     }
 }
