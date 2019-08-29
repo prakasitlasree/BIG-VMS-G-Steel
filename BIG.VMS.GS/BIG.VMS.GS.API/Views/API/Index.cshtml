@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -89,6 +88,10 @@
     </div>
     <script>
 
+        $(document).ready(function () {
+            SetEmptyData()
+        });
+
         var default_img_src = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Antu_folder-camera.svg/512px-Antu_folder-camera.svg.png"
 
         var vistor_data = {
@@ -107,8 +110,8 @@
             vistor_data.photo_ref_1 = null;
             vistor_data.photo_ref_2 = null;
             vistor_data.photo_ref_3 = null;
-
-            $("txtInfo").val("")
+            let text = null
+            document.getElementById("txtInfo").value = "";
             $("#btnFiles1").hide();
             $("#btnFiles2").hide();
             $("#btnFiles3").hide();
@@ -194,7 +197,6 @@
                 }
             });
         }
-
 
         function Upload() {
 

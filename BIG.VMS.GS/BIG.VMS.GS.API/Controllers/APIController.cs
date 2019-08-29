@@ -46,13 +46,12 @@ namespace BIG.VMS.GS.API.Controllers
         [HttpPost]
         public JsonResult UpdateVisitorOut()
         {
-            string path = Server.MapPath("~/Content/Upload/");
+           
             HttpFileCollectionBase files = Request.Files;
-
             var no = int.Parse(Request.Form["NO"].ToString());
             var auto_id = int.Parse(Request.Form["AUTO_ID"].ToString());
-            TRN_ATTACHEDMENT attachment = new TRN_ATTACHEDMENT();
 
+            TRN_ATTACHEDMENT attachment = new TRN_ATTACHEDMENT();
             for (int i = 0; i < files.Count; i++)
             {
                 HttpPostedFileBase file = files[i];
@@ -82,7 +81,7 @@ namespace BIG.VMS.GS.API.Controllers
 
             var resp = new VisitorServices().UpdateVistorOutByAPI(no, auto_id, attachment);
 
-            return Json(1,JsonRequestBehavior.AllowGet);
+            return Json(resp,JsonRequestBehavior.AllowGet);
         }
 
         private byte[] GetImageBinary(HttpPostedFileBase file)

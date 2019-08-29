@@ -983,7 +983,7 @@ namespace BIG.VMS.DATASERVICE
                             NO = reTrnVisitor.NO,
                             REASON_ID = reTrnVisitor.REASON_ID,
                             STATUS = reTrnVisitor.STATUS,
-                            TYPE = reTrnVisitor.TYPE,
+                            TYPE = "Out",
                             UPDATED_BY = "API",
                             UPDATED_DATE = DateTime.Now
                         };
