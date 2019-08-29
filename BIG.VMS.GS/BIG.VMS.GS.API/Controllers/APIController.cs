@@ -1,6 +1,8 @@
 ﻿using BIG.VMS.DATASERVICE;
+using BIG.VMS.MODEL.EntityModel;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -36,24 +38,45 @@ namespace BIG.VMS.GS.API.Controllers
                 }
               
             }
-            //Set data to return json
-         
-
+          
+        
             return Json(resp, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
-        public ActionResult UploadFiles()
+        public ActionResult UpdateVisitorOut()
         {
             string path = Server.MapPath("~/Content/Upload/");
             HttpFileCollectionBase files = Request.Files;
+
+            var no = int.Parse(Request.Form["NO"].ToString());
+            var auto_id = int.Parse(Request.Form["AUTO_ID"].ToString());
+
             for (int i = 0; i < files.Count; i++)
             {
                 HttpPostedFileBase file = files[i];
-                file.SaveAs(path + file.FileName);
+
+                byte[] image = GetImageBinary(file);
+
+                TRN_VISITOR visitor = new TRN_VISITOR();
+                TRN_ATTACHEDMENT attachment = new TRN_ATTACHEDMENT();
             }
 
             return Json(files.Count + " Files Uploaded!");
         }
+
+        private byte[] GetImageBinary(HttpPostedFileBase file)
+        {
+            Image img = Image.FromStream(file.InputStream, true, true);           
+            using (var ms = new MemoryStream())
+            {
+                Bitmap bmp = new Bitmap(img, 240, 120);
+                bmp.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+                return ms.ToArray();
+
+            }
+
+        }
+
     }
 }

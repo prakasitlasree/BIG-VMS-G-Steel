@@ -29,7 +29,7 @@
                 <br>
                 <input type="number" class="form-control" id="txtNo" onkeydown="SetEmptyData()">
                 <br>
-                <button class="btn btn-primary"  onclick="GetVisitorData()">ค้นหา</button>
+                <button class="btn btn-primary" onclick="GetVisitorData()">ค้นหา</button>
                 <hr>
                 <input class="form-control" type="text" id="txtInfo" readonly>
                 <hr>
@@ -69,7 +69,7 @@
                 <label for="files3" class="btn btn-info" id="btnFiles3">ถ่ายรููปใบผ่าน 3</label>
                 <input id="files3" style="visibility:hidden;" name="photo[]" type="file">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Antu_folder-camera.svg/512px-Antu_folder-camera.svg.png"
-                     alt="" class="img-fluid" style="cursor: pointer;max-height: 350px"  id="img3">
+                     alt="" class="img-fluid" style="cursor: pointer;max-height: 350px" id="img3">
                 <script>
                     $("#files3").change(function () {
                         readURL(this, 3);
@@ -90,13 +90,14 @@
     <script>
 
         var default_img_src = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Antu_folder-camera.svg/512px-Antu_folder-camera.svg.png"
+
         var vistor_data = {
             no: 0,
-            auto_id:0,
+            auto_id: 0,
             photo_ref_1: null,
             photo_ref_2: null,
             photo_ref_3: null,
-            
+
         }
 
         function SetEmptyData() {
@@ -107,7 +108,7 @@
             vistor_data.photo_ref_2 = null;
             vistor_data.photo_ref_3 = null;
 
-           $("txtInfo").val("")
+            $("txtInfo").val("")
             $("#btnFiles1").hide();
             $("#btnFiles2").hide();
             $("#btnFiles3").hide();
@@ -119,7 +120,7 @@
             $("#img3").prop("src", default_img_src);
         }
 
-        function SetVisitorData(no,auto_id) {
+        function SetVisitorData(no, auto_id) {
 
             vistor_data.no = no;
             vistor_data.auto_id = auto_id;
@@ -151,7 +152,7 @@
                     }
                     else if (imgId == 3) {
                         document.getElementById("img3").src = e.target.result;
-                        vistor_data.photo_ref_ = e.target.result;
+                        vistor_data.photo_ref_3 = e.target.result;
                     }
 
                 }
@@ -173,14 +174,18 @@
                         var id_card = "หมายเลขบัตร:" + response.TRN_VISITOR.ID_CARD;
                         var license_plate = "ทะเบียนรถ:" + response.TRN_VISITOR.LICENSE_PLATE
                         var info = name + " " + id_card + " " + license_plate;
+
                         $('#txtInfo').val(info)
+
                         let no = response.TRN_VISITOR.NO;
                         let auto_id = response.TRN_VISITOR.AUTO_ID;
-                        SetVisitorData(no)
+
+                        SetVisitorData(no, auto_id)
                     }
                     else {
                         alert(response.Message)
                         SetEmptyData();
+                        $('#txtInfo').val("")
                     }
                 },
                 error: function () {
@@ -193,26 +198,37 @@
 
         function Upload() {
 
-            var files = $("#files").get(0).files;
-            var files2 = $("#files2").get(0).files;
-            var files3 = $("#files3").get(0).files;
-
             var fileData = new FormData();
-            for (var i = 0; i < files.length; i++) {
-                fileData.append("fileInput", files[i]);
+            //if()
+
+
+            if (vistor_data.no > 0 && vistor_data.auto_id > 0) {
+                fileData.append('NO', vistor_data.no);
+                fileData.append('AUTO_ID', vistor_data.auto_id);
+                if (vistor_data.photo_ref_1 != null) {
+                    var photo_ref_1 = $('#files').prop('files');
+                    fileData.append("FILE#1", photo_ref_1[0]);
+                }
+                if (vistor_data.photo_ref_2 != null) {
+                    var photo_ref_2 = $('#files2').prop('files');
+                    fileData.append("FILE#2", photo_ref_2[0]);
+                }
+                if (vistor_data.photo_ref_3 != null) {
+                    var photo_ref_3 = $('#files3').prop('files');
+                    fileData.append("FILE#3", photo_ref_3[0]);
+                }
             }
-            for (var i = 0; i < files2.length; i++) {
-                fileData.append("fileInput", files[i]);
-            }
-            for (var i = 0; i < files3.length; i++) {
-                fileData.append("fileInput", files[i]);
-            }
+           
+            
+            
+
+
             $.ajax({
                 type: "POST",
-                url: "/api/UploadFiles",
+                url: "/api/UpdateVisitorOut",
                 dataType: "json",
-                contentType: false, // Not to set any content header
-                processData: false, // Not to process data
+                contentType: false,
+                processData: false,
                 data: fileData,
                 success: function (result, status, xhr) {
                     alert(result);

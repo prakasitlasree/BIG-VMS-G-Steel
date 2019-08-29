@@ -953,5 +953,42 @@ namespace BIG.VMS.DATASERVICE
             }
             return result;
         }
+
+        public Response UpdateVistorOutByAPI(int no, int auto_id, TRN_ATTACHEDMENT attachment)
+        {
+            using (var ctx = new BIG_VMSEntities())
+            {
+
+                var reTrnVisitor = ctx.TRN_VISITOR.Where(o => o.AUTO_ID == auto_id).FirstOrDefault();
+
+                if (reTrnVisitor != null)
+                {
+                    reTrnVisitor.STATUS = 2;
+
+                    TRN_VISITOR trn = new TRN_VISITOR()
+                    {
+                        BY_PASS = reTrnVisitor.BY_PASS,
+                        CAR_TYPE_ID = reTrnVisitor.CAR_TYPE_ID,
+                        CONTACT_EMPLOYEE_ID = reTrnVisitor.CONTACT_EMPLOYEE_ID,
+                        CREATED_BY = "API",
+                        CREATED_DATE = DateTime.Now,
+                        FIRST_NAME = reTrnVisitor.FIRST_NAME,
+                        ID_CARD = reTrnVisitor.ID_CARD,
+                        LAST_NAME = reTrnVisitor.LAST_NAME,
+                        LICENSE_PLATE = reTrnVisitor.LICENSE_PLATE,
+                        LICENSE_PLATE_PROVINCE_ID = reTrnVisitor.LICENSE_PLATE_PROVINCE_ID,
+                        MONTH = reTrnVisitor.MONTH,
+                        YEAR = reTrnVisitor.YEAR,
+                        NO = reTrnVisitor.NO,
+                        REASON_ID = reTrnVisitor.REASON_ID,
+                        STATUS = reTrnVisitor.STATUS,
+                        TYPE = reTrnVisitor.TYPE,
+                        UPDATED_BY = "API",
+                        UPDATED_DATE = DateTime.Now
+
+                    };
+                }
+            }
+        }
     }
 }
