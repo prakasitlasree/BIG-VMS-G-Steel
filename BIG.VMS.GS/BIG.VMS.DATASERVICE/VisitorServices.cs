@@ -956,39 +956,81 @@ namespace BIG.VMS.DATASERVICE
 
         public Response UpdateVistorOutByAPI(int no, int auto_id, TRN_ATTACHEDMENT attachment)
         {
-            using (var ctx = new BIG_VMSEntities())
+            Response resp = new Response();
+            try
             {
-
-                var reTrnVisitor = ctx.TRN_VISITOR.Where(o => o.AUTO_ID == auto_id).FirstOrDefault();
-
-                if (reTrnVisitor != null)
+                using (var ctx = new BIG_VMSEntities())
                 {
-                    reTrnVisitor.STATUS = 2;
-
-                    TRN_VISITOR trn = new TRN_VISITOR()
+                    var reTrnVisitor = ctx.TRN_VISITOR.Where(o => o.AUTO_ID == auto_id).FirstOrDefault();
+                    if (reTrnVisitor != null)
                     {
-                        BY_PASS = reTrnVisitor.BY_PASS,
-                        CAR_TYPE_ID = reTrnVisitor.CAR_TYPE_ID,
-                        CONTACT_EMPLOYEE_ID = reTrnVisitor.CONTACT_EMPLOYEE_ID,
-                        CREATED_BY = "API",
-                        CREATED_DATE = DateTime.Now,
-                        FIRST_NAME = reTrnVisitor.FIRST_NAME,
-                        ID_CARD = reTrnVisitor.ID_CARD,
-                        LAST_NAME = reTrnVisitor.LAST_NAME,
-                        LICENSE_PLATE = reTrnVisitor.LICENSE_PLATE,
-                        LICENSE_PLATE_PROVINCE_ID = reTrnVisitor.LICENSE_PLATE_PROVINCE_ID,
-                        MONTH = reTrnVisitor.MONTH,
-                        YEAR = reTrnVisitor.YEAR,
-                        NO = reTrnVisitor.NO,
-                        REASON_ID = reTrnVisitor.REASON_ID,
-                        STATUS = reTrnVisitor.STATUS,
-                        TYPE = reTrnVisitor.TYPE,
-                        UPDATED_BY = "API",
-                        UPDATED_DATE = DateTime.Now
+                        reTrnVisitor.STATUS = 2;
 
-                    };
+                        TRN_VISITOR trn = new TRN_VISITOR()
+                        {
+                            BY_PASS = reTrnVisitor.BY_PASS,
+                            CAR_TYPE_ID = reTrnVisitor.CAR_TYPE_ID,
+                            CONTACT_EMPLOYEE_ID = reTrnVisitor.CONTACT_EMPLOYEE_ID,
+                            CREATED_BY = "API",
+                            CREATED_DATE = DateTime.Now,
+                            FIRST_NAME = reTrnVisitor.FIRST_NAME,
+                            ID_CARD = reTrnVisitor.ID_CARD,
+                            LAST_NAME = reTrnVisitor.LAST_NAME,
+                            LICENSE_PLATE = reTrnVisitor.LICENSE_PLATE,
+                            LICENSE_PLATE_PROVINCE_ID = reTrnVisitor.LICENSE_PLATE_PROVINCE_ID,
+                            MONTH = reTrnVisitor.MONTH,
+                            YEAR = reTrnVisitor.YEAR,
+                            NO = reTrnVisitor.NO,
+                            REASON_ID = reTrnVisitor.REASON_ID,
+                            STATUS = reTrnVisitor.STATUS,
+                            TYPE = reTrnVisitor.TYPE,
+                            UPDATED_BY = "API",
+                            UPDATED_DATE = DateTime.Now
+                        };
+
+
+                        if (reTrnVisitor.TRN_ATTACHEDMENT.Count > 0)
+                        {
+                            TRN_ATTACHEDMENT attach = new TRN_ATTACHEDMENT()
+                            {
+                                CONTACT_PHOTO = reTrnVisitor.TRN_ATTACHEDMENT.First().CONTACT_PHOTO,
+                                ID_CARD_PHOTO = reTrnVisitor.TRN_ATTACHEDMENT.First().ID_CARD_PHOTO,
+                                PHOTO_URL = reTrnVisitor.TRN_ATTACHEDMENT.First().PHOTO_URL,
+                                REF_PHOTO1 = attachment.REF_PHOTO1,
+                                REF_PHOTO2 = attachment.REF_PHOTO2,
+                                REF_PHOTO3 = attachment.REF_PHOTO3,
+
+                            };
+
+                            trn.TRN_ATTACHEDMENT.Add(attach);
+                        }
+                        else
+                        {
+                            TRN_ATTACHEDMENT attach = new TRN_ATTACHEDMENT()
+                            {
+                                REF_PHOTO1 = attachment.REF_PHOTO1,
+                                REF_PHOTO2 = attachment.REF_PHOTO2,
+                                REF_PHOTO3 = attachment.REF_PHOTO3,
+                            };
+
+                            trn.TRN_ATTACHEDMENT.Add(attach);
+                        }
+
+                        ctx.TRN_VISITOR.Add(trn);
+                        ctx.SaveChanges();
+
+                        resp.Status = true;
+                        resp.Message = "บันทึกข้อมูลเรียบร้อย";
+                    }
                 }
             }
+            catch (Exception)
+            {
+                resp.Status = false;
+                resp.Message = "บันทึกข้อมูลเรียบร้อย";
+            }
+
+            return resp;
         }
     }
 }
