@@ -7,7 +7,7 @@
       <Diagram DiagramId="e07cd239b82547f9895d6e7d4ba01238" Name="Diagram1" ZoomLevel="57">
         <EntityTypeShape EntityType="BIG_VMSModel.MAS_CAR_BRAND" Width="1.5" PointX="0.75" PointY="7.25" />
         <EntityTypeShape EntityType="BIG_VMSModel.MAS_CAR_MODEL" Width="1.5" PointX="3" PointY="7.125" />
-        <EntityTypeShape EntityType="BIG_VMSModel.MAS_CAR_TYPE" Width="1.5" PointX="1.5" PointY="3.375" />
+        <EntityTypeShape EntityType="BIG_VMSModel.MAS_CAR_TYPE" Width="1.5" PointX="4.75" PointY="3.375" />
         <EntityTypeShape EntityType="BIG_VMSModel.MAS_CONTRACTOR" Width="1.5" PointX="5.75" PointY="3.125" />
         <EntityTypeShape EntityType="BIG_VMSModel.MAS_DEPARTMENT" Width="1.5" PointX="0.75" PointY="12.625" />
         <EntityTypeShape EntityType="BIG_VMSModel.MAS_EMPLOYEE" Width="1.5" PointX="0.5" PointY="19" />

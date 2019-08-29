@@ -27,9 +27,9 @@
             <div class="col-md-12">
                 <label>กรุณากรอกเลขใบผ่าน</label>
                 <br>
-                <input type="number" class="form-control" id="txtNo">
+                <input type="number" class="form-control" id="txtNo" onkeydown="SetEmptyData()">
                 <br>
-                <button class="btn btn-primary" onclick="GetVisitorData()">ค้นหา</button>
+                <button class="btn btn-primary"  onclick="GetVisitorData()">ค้นหา</button>
                 <hr>
                 <input class="form-control" type="text" id="txtInfo" readonly>
                 <hr>
@@ -39,7 +39,7 @@
             <div class="col-md-4" style="background-color: bisque">
                 <hr>
                 <div>
-                    <label for="files" class="btn btn-info">ถ่ายรููปใบผ่าน 1</label>
+                    <label for="files" class="btn btn-info" id="btnFiles1">ถ่ายรููปใบผ่าน 1</label>
                     <input id="files" style="visibility:hidden;" name="photo[]" type="file">
                 </div>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Antu_folder-camera.svg/512px-Antu_folder-camera.svg.png"
@@ -53,7 +53,7 @@
             </div>
             <div class="col-md-4" style="background-color:burlywood">
                 <hr>
-                <label for="files2" class="btn btn-info">ถ่ายรููปใบผ่าน 2</label>
+                <label for="files2" class="btn btn-info" id="btnFiles2">ถ่ายรููปใบผ่าน 2</label>
                 <input id="files2" style="visibility:hidden;" name="photo[]" type="file">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Antu_folder-camera.svg/512px-Antu_folder-camera.svg.png"
                      alt="" class="img-fluid" style="cursor: pointer;max-height: 350px" id="img2">
@@ -66,7 +66,7 @@
             </div>
             <div class="col-md-4" style="background-color: bisque">
                 <hr>
-                <label for="files3" class="btn btn-info">ถ่ายรููปใบผ่าน 3</label>
+                <label for="files3" class="btn btn-info" id="btnFiles3">ถ่ายรููปใบผ่าน 3</label>
                 <input id="files3" style="visibility:hidden;" name="photo[]" type="file">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Antu_folder-camera.svg/512px-Antu_folder-camera.svg.png"
                      alt="" class="img-fluid" style="cursor: pointer;max-height: 350px"  id="img3">
@@ -81,13 +81,61 @@
         <div class="row">
             <div class="col-md-12">
                 <hr>
-                <button class="btn btn-primary" onclick="Upload()">บันทึก</button>
+                <button class="btn btn-primary" onclick="Upload()" id="btnSave">บันทึก</button>
                 <button class="btn btn-danger">ปิด</button>
                 <hr>
             </div>
         </div>
     </div>
     <script>
+
+        var default_img_src = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Antu_folder-camera.svg/512px-Antu_folder-camera.svg.png"
+        var vistor_data = {
+            no: 0,
+            auto_id:0,
+            photo_ref_1: null,
+            photo_ref_2: null,
+            photo_ref_3: null,
+            
+        }
+
+        function SetEmptyData() {
+
+            vistor_data.no = 0;
+            vistor_data.auto_id = 0;
+            vistor_data.photo_ref_1 = null;
+            vistor_data.photo_ref_2 = null;
+            vistor_data.photo_ref_3 = null;
+
+           $("txtInfo").val("")
+            $("#btnFiles1").hide();
+            $("#btnFiles2").hide();
+            $("#btnFiles3").hide();
+
+            $("#btnSave").hide();
+
+            $("#img1").prop("src", default_img_src);
+            $("#img2").prop("src", default_img_src);
+            $("#img3").prop("src", default_img_src);
+        }
+
+        function SetVisitorData(no,auto_id) {
+
+            vistor_data.no = no;
+            vistor_data.auto_id = auto_id;
+
+            $("#btnFiles1").show();
+            $("#btnFiles2").show();
+            $("#btnFiles3").show();
+
+            $("#img1").prop("src", default_img_src);
+            $("#img2").prop("src", default_img_src);
+            $("#img3").prop("src", default_img_src);
+
+            $("#btnSave").show();
+
+        }
+
         function readURL(input, imgId) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
@@ -95,12 +143,15 @@
                 reader.onload = function (e) {
                     if (imgId == 1) {
                         document.getElementById("img1").src = e.target.result;
+                        vistor_data.photo_ref_1 = e.target.result;
                     }
                     else if (imgId == 2) {
                         document.getElementById("img2").src = e.target.result;
+                        vistor_data.photo_ref_2 = e.target.result;
                     }
                     else if (imgId == 3) {
                         document.getElementById("img3").src = e.target.result;
+                        vistor_data.photo_ref_ = e.target.result;
                     }
 
                 }
@@ -121,19 +172,27 @@
                         var name = "ชื่อ-นามสกุล:" + response.TRN_VISITOR.FIRST_NAME + " " + response.TRN_VISITOR.LAST_NAME
                         var id_card = "หมายเลขบัตร:" + response.TRN_VISITOR.ID_CARD;
                         var license_plate = "ทะเบียนรถ:" + response.TRN_VISITOR.LICENSE_PLATE
-
                         var info = name + " " + id_card + " " + license_plate;
                         $('#txtInfo').val(info)
+                        let no = response.TRN_VISITOR.NO;
+                        let auto_id = response.TRN_VISITOR.AUTO_ID;
+                        SetVisitorData(no)
+                    }
+                    else {
+                        alert(response.Message)
+                        SetEmptyData();
                     }
                 },
                 error: function () {
-                    alert(response.ERROR_MESSAGE);
+                    alert("ไม่สามารถค้นหาข้อมูลได้");
+                    SetEmptyData();
                 }
             });
         }
 
 
         function Upload() {
+
             var files = $("#files").get(0).files;
             var files2 = $("#files2").get(0).files;
             var files3 = $("#files3").get(0).files;

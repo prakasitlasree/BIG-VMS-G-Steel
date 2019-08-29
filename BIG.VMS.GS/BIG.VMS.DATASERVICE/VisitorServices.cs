@@ -369,6 +369,8 @@ namespace BIG.VMS.DATASERVICE
                         {
                             AUTO_ID = 0,
                             NO = 0,
+                            STATUS = 2,
+
                         };
                         result.TRN_VISITOR = visit;
                         result.Status = true;
