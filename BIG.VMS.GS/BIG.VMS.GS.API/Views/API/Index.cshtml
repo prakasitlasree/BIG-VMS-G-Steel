@@ -11,6 +11,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.6/dist/loadingoverlay.min.js"></script>
 </head>
 
 <body>
@@ -29,8 +30,18 @@
                 <input type="number" class="form-control" id="txtNo" onkeydown="SetEmptyData()">
                 <br>
                 <button class="btn btn-primary" onclick="GetVisitorData()">ค้นหา</button>
+               
+            </div>
+            <div class="col-md-10">
                 <hr>
+                <label>ข้อมูล</label>
                 <input class="form-control" type="text" id="txtInfo" readonly>
+                <hr>
+            </div>
+            <div class="col-md-2">
+                <hr>
+                <label>ประเภท</label>
+                <input class="form-control" type="text" id="txtType" readonly>
                 <hr>
             </div>
         </div>
@@ -90,6 +101,7 @@
 
         $(document).ready(function () {
             SetEmptyData()
+            GetVisitorDataOnload();
         });
 
         var default_img_src = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Antu_folder-camera.svg/512px-Antu_folder-camera.svg.png"
@@ -112,6 +124,7 @@
             vistor_data.photo_ref_3 = null;
             let text = null
             document.getElementById("txtInfo").value = "";
+            document.getElementById("txtType").value = "";
             $("#btnFiles1").hide();
             $("#btnFiles2").hide();
             $("#btnFiles3").hide();
@@ -164,6 +177,7 @@
         }
 
         function GetVisitorData() {
+            $.LoadingOverlay("show");
             $.ajax({
                 url: '/api/GetVisitorData',
                 type: 'GET',
@@ -173,37 +187,90 @@
                 success: function (response) {
                     console.log(response)
                     if (response.Status) {
-                        var name = "ชื่อ-นามสกุล:" + response.TRN_VISITOR.FIRST_NAME + " " + response.TRN_VISITOR.LAST_NAME
-                        var id_card = "หมายเลขบัตร:" + response.TRN_VISITOR.ID_CARD;
-                        var license_plate = "ทะเบียนรถ:" + response.TRN_VISITOR.LICENSE_PLATE
+                        var name = "ชื่อ-นามสกุล:" + response.ResultObj.FIRST_NAME + " " + response.ResultObj.LAST_NAME
+                        var id_card = "หมายเลขบัตร:" + response.ResultObj.ID_CARD;
+                        var license_plate = "ทะเบียนรถ:" + response.ResultObj.LICENSE_PLATE
                         var info = name + " " + id_card + " " + license_plate;
-
+                        if (response.ResultObj.TYPE == "In" || response.ResultObj.TYPE == "Appointment") {
+                            $('#txtType').val("เข้า")
+                        }
+                        else{
+                            $('#txtType').val("ออก")
+                        }
+                       
                         $('#txtInfo').val(info)
-
-                        let no = response.TRN_VISITOR.NO;
-                        let auto_id = response.TRN_VISITOR.AUTO_ID;
+                        $('#txtNo').val(response.ResultObj.NO)
+                        let no = response.ResultObj.NO;
+                        let auto_id = response.ResultObj.AUTO_ID;
 
                         SetVisitorData(no, auto_id)
+                        $.LoadingOverlay("hide");
                     }
                     else {
                         alert(response.Message)
                         SetEmptyData();
                         $('#txtInfo').val("")
+                        $.LoadingOverlay("hide");
                     }
                 },
                 error: function () {
                     alert("ไม่สามารถค้นหาข้อมูลได้");
                     SetEmptyData();
+                    $.LoadingOverlay("hide");
+                }
+            });
+        }
+
+        function GetVisitorDataOnload() {
+            $.LoadingOverlay("show");
+            $.ajax({
+                url: '/api/GetLastVistorTransaction',
+                type: 'GET',
+                data: {
+                    
+                },
+                success: function (response) {
+                    console.log(response)
+                    if (response.Status) {
+                        var name = "ชื่อ-นามสกุล:" + response.ResultObj.FIRST_NAME + " " + response.ResultObj.LAST_NAME
+                        var id_card = "หมายเลขบัตร:" + response.ResultObj.ID_CARD;
+                        var license_plate = "ทะเบียนรถ:" + response.ResultObj.LICENSE_PLATE
+                        var info = name + " " + id_card + " " + license_plate;
+                        if (response.ResultObj.TYPE == "In" || response.ResultObj.TYPE == "Appointment") {
+                            $('#txtType').val("เข้า")
+                        }
+                        else {
+                            $('#txtType').val("ออก")
+                        }
+
+                        $('#txtInfo').val(info)
+                        $('#txtNo').val(response.ResultObj.NO)
+                        let no = response.ResultObj.NO;
+                        let auto_id = response.ResultObj.AUTO_ID;
+
+                        SetVisitorData(no, auto_id)
+                        $.LoadingOverlay("hide");
+                    }
+                    else {
+                      
+                        SetEmptyData();
+                        $.LoadingOverlay("hide");
+                       
+                    }
+                },
+                error: function () {
+                   
+                    SetEmptyData();
+                    $.LoadingOverlay("hide");
                 }
             });
         }
 
         function Upload() {
 
+            $.LoadingOverlay("show");
             var fileData = new FormData();
             //if()
-
-
             if (vistor_data.no > 0 && vistor_data.auto_id > 0) {
                 fileData.append('NO', vistor_data.no);
                 fileData.append('AUTO_ID', vistor_data.auto_id);
@@ -220,9 +287,6 @@
                     fileData.append("FILE#3", photo_ref_3[0]);
                 }
             }
-           
-            
-            
 
 
             $.ajax({
@@ -233,10 +297,22 @@
                 processData: false,
                 data: fileData,
                 success: function (result, status, xhr) {
-                    alert(result);
+                    if (result.Status) {
+                        alert("บันทึกข้อมูลสำเร็จ");
+                        $.LoadingOverlay("hide");
+                    }
+                    else {
+                        alert(result.Message)
+                        $.LoadingOverlay("hide");
+                    }
+
+                    SetEmptyData();
+
                 },
                 error: function (xhr, status, error) {
-                    alert(status);
+                    alert(error);
+                    SetEmptyData();
+                    $.LoadingOverlay("hide");
                 }
             });
         }

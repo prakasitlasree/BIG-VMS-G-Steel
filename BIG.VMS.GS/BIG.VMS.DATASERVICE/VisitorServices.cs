@@ -964,45 +964,12 @@ namespace BIG.VMS.DATASERVICE
                     var reTrnVisitor = ctx.TRN_VISITOR.Where(o => o.AUTO_ID == auto_id).FirstOrDefault();
                     if (reTrnVisitor != null)
                     {
-                        reTrnVisitor.STATUS = 2;
-
-                        TRN_VISITOR trn = new TRN_VISITOR()
-                        {
-                            BY_PASS = reTrnVisitor.BY_PASS,
-                            CAR_TYPE_ID = reTrnVisitor.CAR_TYPE_ID,
-                            CONTACT_EMPLOYEE_ID = reTrnVisitor.CONTACT_EMPLOYEE_ID,
-                            CREATED_BY = "API",
-                            CREATED_DATE = DateTime.Now,
-                            FIRST_NAME = reTrnVisitor.FIRST_NAME,
-                            ID_CARD = reTrnVisitor.ID_CARD,
-                            LAST_NAME = reTrnVisitor.LAST_NAME,
-                            LICENSE_PLATE = reTrnVisitor.LICENSE_PLATE,
-                            LICENSE_PLATE_PROVINCE_ID = reTrnVisitor.LICENSE_PLATE_PROVINCE_ID,
-                            MONTH = reTrnVisitor.MONTH,
-                            YEAR = reTrnVisitor.YEAR,
-                            NO = reTrnVisitor.NO,
-                            REASON_ID = reTrnVisitor.REASON_ID,
-                            STATUS = reTrnVisitor.STATUS,
-                            TYPE = "Out",
-                            UPDATED_BY = "API",
-                            UPDATED_DATE = DateTime.Now
-                        };
-
 
                         if (reTrnVisitor.TRN_ATTACHEDMENT.Count > 0)
                         {
-                            TRN_ATTACHEDMENT attach = new TRN_ATTACHEDMENT()
-                            {
-                                CONTACT_PHOTO = reTrnVisitor.TRN_ATTACHEDMENT.First().CONTACT_PHOTO,
-                                ID_CARD_PHOTO = reTrnVisitor.TRN_ATTACHEDMENT.First().ID_CARD_PHOTO,
-                                PHOTO_URL = reTrnVisitor.TRN_ATTACHEDMENT.First().PHOTO_URL,
-                                REF_PHOTO1 = attachment.REF_PHOTO1,
-                                REF_PHOTO2 = attachment.REF_PHOTO2,
-                                REF_PHOTO3 = attachment.REF_PHOTO3,
-
-                            };
-
-                            trn.TRN_ATTACHEDMENT.Add(attach);
+                            reTrnVisitor.TRN_ATTACHEDMENT.First().REF_PHOTO1 = attachment.REF_PHOTO1;
+                            reTrnVisitor.TRN_ATTACHEDMENT.First().REF_PHOTO2 = attachment.REF_PHOTO2;
+                            reTrnVisitor.TRN_ATTACHEDMENT.First().REF_PHOTO3 = attachment.REF_PHOTO3;
                         }
                         else
                         {
@@ -1011,25 +978,168 @@ namespace BIG.VMS.DATASERVICE
                                 REF_PHOTO1 = attachment.REF_PHOTO1,
                                 REF_PHOTO2 = attachment.REF_PHOTO2,
                                 REF_PHOTO3 = attachment.REF_PHOTO3,
+
                             };
 
-                            trn.TRN_ATTACHEDMENT.Add(attach);
+                            reTrnVisitor.TRN_ATTACHEDMENT.Add(attach);
                         }
 
-                        ctx.TRN_VISITOR.Add(trn);
                         ctx.SaveChanges();
-
                         resp.Status = true;
                         resp.Message = "บันทึกข้อมูลเรียบร้อย";
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 resp.Status = false;
-                resp.Message = "บันทึกข้อมูลเรียบร้อย";
+                resp.Message = ex.Message;
             }
 
+            return resp;
+        }
+
+        public Response GetVisitorTransactionByNo(int no)
+        {
+            Response resp = new Response();
+            try
+            {
+                using (var ctx = new BIG_VMSEntities())
+                {
+                    DateTime today = DateTime.Today;
+                    DateTime endOfMonth = new DateTime(today.Year, today.Month, 1).AddMonths(1).AddDays(-1);
+
+                    var startMonth = DateTime.Now.Month;
+                    var year = DateTime.Now.Year;
+                    var endMonth = DateTime.Now.Month;
+                    if (today == endOfMonth)
+                    {
+                        endMonth = endMonth - 1;
+
+                    }
+                    var startDate = DateTime.Now.AddDays(-5);
+                    var endDate = DateTime.Now.AddDays(5);
+
+
+                    var listData = ctx.TRN_VISITOR
+                                    .Include("MAS_PROVINCE")
+                                    .Include("TRN_ATTACHEDMENT")
+                                    .Where(o => o.NO == no)
+                                    .Where(o => (o.CREATED_DATE >= startDate && o.CREATED_DATE <= endDate) && o.YEAR == year)
+                                    .OrderByDescending(o=>o.AUTO_ID)
+                                    .ToList();
+                    if (listData.Count > 0)
+                    {
+                        var reTrnVisitor = listData.FirstOrDefault();
+                        if (reTrnVisitor.TRN_ATTACHEDMENT.Count > 0)
+                        {
+                            var existAttachment = reTrnVisitor.TRN_ATTACHEDMENT.FirstOrDefault();
+                            if (existAttachment.REF_PHOTO1 != null || existAttachment.REF_PHOTO2 != null || existAttachment.REF_PHOTO3 != null)
+                            {
+                                resp.Status = false;
+                                resp.Message = "หมายเลขนี้ได้ทำการถ่ายรูปแล้ว";
+                            }
+                            else
+                            {
+                                reTrnVisitor.MAS_CAR_TYPE = new MODEL.EntityModel.MAS_CAR_TYPE();
+                                reTrnVisitor.MAS_EMPLOYEE = new MODEL.EntityModel.MAS_EMPLOYEE();
+                                reTrnVisitor.MAS_PROVINCE = new MODEL.EntityModel.MAS_PROVINCE();
+                                reTrnVisitor.MAS_REASON = new MODEL.EntityModel.MAS_REASON();
+                                reTrnVisitor.TRN_ATTACHEDMENT = new List<MODEL.EntityModel.TRN_ATTACHEDMENT>();
+                                resp.ResultObj = reTrnVisitor;
+                                resp.Status = true;
+                            }
+                        }
+                        else
+                        {
+                            reTrnVisitor.MAS_CAR_TYPE = new MODEL.EntityModel.MAS_CAR_TYPE();
+                            reTrnVisitor.MAS_EMPLOYEE = new MODEL.EntityModel.MAS_EMPLOYEE();
+                            reTrnVisitor.MAS_PROVINCE = new MODEL.EntityModel.MAS_PROVINCE();
+                            reTrnVisitor.MAS_REASON = new MODEL.EntityModel.MAS_REASON();
+                            reTrnVisitor.TRN_ATTACHEDMENT = new List<MODEL.EntityModel.TRN_ATTACHEDMENT>();
+                            resp.ResultObj = reTrnVisitor;
+                            resp.Status = true;
+                        }
+
+
+                    }
+                    else
+                    {
+                        resp.Message = "ไม่พบข้อมููล";
+                        resp.Status = false;
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                resp.Status = false;
+                resp.Message = ex.Message;
+            }
+            return resp;
+        }
+
+        public Response GetLastVistorTransaction()
+        {
+            Response resp = new Response();
+            try
+            {
+                using (var ctx = new BIG_VMSEntities())
+                {
+
+
+                    var reTrnVisitor = ctx.TRN_VISITOR
+                                    .Include("TRN_ATTACHEDMENT")
+                                    .OrderByDescending(o=>o.AUTO_ID)
+                                    .FirstOrDefault();
+                               
+
+                    if (reTrnVisitor !=  null)
+                    {
+                      
+                        if (reTrnVisitor.TRN_ATTACHEDMENT.Count > 0)
+                        {
+                            var existAttachment = reTrnVisitor.TRN_ATTACHEDMENT.FirstOrDefault();
+                            if (existAttachment.REF_PHOTO1 != null || existAttachment.REF_PHOTO2 != null || existAttachment.REF_PHOTO3 != null)
+                            {
+                                resp.Status = false;
+                                //resp.Message = "หมายเลขนี้ได้ทำการถ่ายรูปแล้ว";
+                            }
+                            else
+                            {
+                                reTrnVisitor.MAS_CAR_TYPE = new MODEL.EntityModel.MAS_CAR_TYPE();
+                                reTrnVisitor.MAS_EMPLOYEE = new MODEL.EntityModel.MAS_EMPLOYEE();
+                                reTrnVisitor.MAS_PROVINCE = new MODEL.EntityModel.MAS_PROVINCE();
+                                reTrnVisitor.MAS_REASON = new MODEL.EntityModel.MAS_REASON();
+                                reTrnVisitor.TRN_ATTACHEDMENT = new List<MODEL.EntityModel.TRN_ATTACHEDMENT>();
+                                resp.ResultObj = reTrnVisitor;
+                                resp.Status = true;
+                            }
+                        }
+                        else
+                        {
+                            reTrnVisitor.MAS_CAR_TYPE = new MODEL.EntityModel.MAS_CAR_TYPE();
+                            reTrnVisitor.MAS_EMPLOYEE = new MODEL.EntityModel.MAS_EMPLOYEE();
+                            reTrnVisitor.MAS_PROVINCE = new MODEL.EntityModel.MAS_PROVINCE();
+                            reTrnVisitor.MAS_REASON = new MODEL.EntityModel.MAS_REASON();
+                            reTrnVisitor.TRN_ATTACHEDMENT = new List<MODEL.EntityModel.TRN_ATTACHEDMENT>();
+                            resp.ResultObj = reTrnVisitor;
+                            resp.Status = true;
+                        }
+                    }
+                    else
+                    {
+                        //resp.Message = "ไม่พบข้อมููล";
+                        resp.Status = false;
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                resp.Status = false;
+                resp.Message = ex.Message;
+            }
             return resp;
         }
     }

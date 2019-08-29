@@ -164,6 +164,14 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                                 MONTH = org_obj.MONTH,
                                 TRN_ATTACHEDMENT = org_obj.TRN_ATTACHEDMENT,
                             };
+
+                            if (obj.TRN_ATTACHEDMENT.Count > 0)
+                            {
+                                obj.TRN_ATTACHEDMENT.FirstOrDefault().REF_PHOTO1 = null;
+                                obj.TRN_ATTACHEDMENT.FirstOrDefault().REF_PHOTO2 = null;
+                                obj.TRN_ATTACHEDMENT.FirstOrDefault().REF_PHOTO3 = null;
+                            }
+                            
                             if (isChangePhoto)
                             {
                                 if (obj.TRN_ATTACHEDMENT.Count > 0)
