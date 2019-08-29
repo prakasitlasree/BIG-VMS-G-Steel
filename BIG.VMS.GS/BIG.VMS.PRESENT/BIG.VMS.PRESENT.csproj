@@ -153,6 +153,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\Enums.cs" />
+    <Compile Include="Forms\Appointment\frmGSAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Appointment\frmGSAppointment.Designer.cs">
+      <DependentUpon>frmGSAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Appointment\frmGSAppointmentList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Appointment\frmGSAppointmentList.Designer.cs">
+      <DependentUpon>frmGSAppointmentList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomerVisit\frmPlantVisit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomerVisit\frmPlantVisit.Designer.cs">
+      <DependentUpon>frmPlantVisit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomerVisit\frmPlantVisitList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomerVisit\frmPlantVisitList.Designer.cs">
+      <DependentUpon>frmPlantVisitList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormCarMasterDetail\frmCarBrandMaster.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,6 +274,18 @@
     </Compile>
     <Compile Include="Forms\FormVisitor\frmVisitorOutList.Designer.cs">
       <DependentUpon>frmVisitorOutList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Vendor\frmProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Vendor\frmProject.Designer.cs">
+      <DependentUpon>frmProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Vendor\frmProjectList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Vendor\frmProjectList.Designer.cs">
+      <DependentUpon>frmProjectList.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportSlip.cs">
       <AutoGen>True</AutoGen>
