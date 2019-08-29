@@ -1,4 +1,5 @@
 ﻿using BIG.VMS.DATASERVICE;
+using BIG.VMS.MODEL.CustomModel;
 using BIG.VMS.MODEL.EntityModel;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ namespace BIG.VMS.GS.API.Controllers
         }
         public JsonResult GetVisitorData(int no)
         {
-            var resp = new VisitorServices().GetVisitorTransactionByNo(no);      
+            var resp = new VisitorServices().GetVisitorTransactionByNo(no);
             return Json(resp, JsonRequestBehavior.AllowGet);
         }
 
@@ -32,7 +33,7 @@ namespace BIG.VMS.GS.API.Controllers
         [HttpPost]
         public JsonResult UpdateVisitorOut()
         {
-           
+
             HttpFileCollectionBase files = Request.Files;
             var no = int.Parse(Request.Form["NO"].ToString());
             var auto_id = int.Parse(Request.Form["AUTO_ID"].ToString());
@@ -62,17 +63,35 @@ namespace BIG.VMS.GS.API.Controllers
                         }
                         break;
                 }
-                   
+
             }
 
             var resp = new VisitorServices().UpdateVistorOutByAPI(no, auto_id, attachment);
 
-            return Json(resp,JsonRequestBehavior.AllowGet);
+            return Json(resp, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult UpdateVistorImgRef()
+        {
+            Response resp = new MODEL.CustomModel.Response();
+            HttpFileCollectionBase files = Request.Files;
+            var no = int.Parse(Request.Form["NO"].ToString());
+            var auto_id = int.Parse(Request.Form["AUTO_ID"].ToString());
+
+            for (int i = 0; i < files.Count; i++)
+            {
+                HttpPostedFileBase file = files[i];
+                byte[] image = GetImageBinary(file);
+                resp = new VisitorServices().UpdateVistorImgRef(no, auto_id, files.AllKeys[i], image);
+            }
+
+            return Json(resp, JsonRequestBehavior.AllowGet);
         }
 
         private byte[] GetImageBinary(HttpPostedFileBase file)
         {
-            Image img = Image.FromStream(file.InputStream, true, true);           
+            Image img = Image.FromStream(file.InputStream, true, true);
             using (var ms = new MemoryStream())
             {
                 Bitmap bmp = new Bitmap(img, 240, 120);

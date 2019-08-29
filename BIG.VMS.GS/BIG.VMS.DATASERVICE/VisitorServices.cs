@@ -999,6 +999,52 @@ namespace BIG.VMS.DATASERVICE
             return resp;
         }
 
+        public Response UpdateVistorImgRef(int no, int auto_id,string key,byte[] image)
+        {
+            Response resp = new Response();
+            try
+            {
+                using (var ctx = new BIG_VMSEntities())
+                {
+                    var reTrnVisitor = ctx.TRN_VISITOR.Where(o => o.AUTO_ID == auto_id).FirstOrDefault();
+                    if (reTrnVisitor != null)
+                    {
+
+                        if (reTrnVisitor.TRN_ATTACHEDMENT.Count > 0)
+                        {
+                            switch (key)
+                            {
+                                case ("FILE#1"):
+                                    {
+                                        reTrnVisitor.TRN_ATTACHEDMENT.First().REF_PHOTO1 = image;
+                                    }
+                                    break;
+                                case ("FILE#2"):
+                                    {
+                                        reTrnVisitor.TRN_ATTACHEDMENT.First().REF_PHOTO2 = image;
+                                    }
+                                    break;
+                                case ("FILE#3"):
+                                    {
+                                        reTrnVisitor.TRN_ATTACHEDMENT.First().REF_PHOTO3 = image;
+                                    }
+                                    break;
+                            }
+                        }
+                    }
+
+                    ctx.SaveChanges();
+                    resp.Status = true;
+                   
+                }
+            }
+            catch(Exception ex)
+            {
+                resp.Status = false;
+            }
+            return resp;
+        }
+
         public Response GetVisitorTransactionByNo(int no)
         {
             Response resp = new Response();

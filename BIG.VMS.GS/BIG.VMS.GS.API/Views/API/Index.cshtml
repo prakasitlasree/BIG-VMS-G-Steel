@@ -25,12 +25,12 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <label>กรุณากรอกเลขใบผ่าน</label>
+                <label>กรุณากรอกเลขใบผ่าน (ไม่ใส่เลขเพื่อค้นหาการ เข้า-ออก ล่าสุด)</label>
                 <br>
                 <input type="number" class="form-control" id="txtNo" onkeydown="SetEmptyData()">
                 <br>
                 <button class="btn btn-primary" onclick="GetVisitorData()">ค้นหา</button>
-               
+
             </div>
             <div class="col-md-10">
                 <hr>
@@ -92,7 +92,7 @@
             <div class="col-md-12">
                 <hr>
                 <button class="btn btn-primary" onclick="Upload()" id="btnSave">บันทึก</button>
-                <button class="btn btn-danger">ปิด</button>
+                
                 <hr>
             </div>
         </div>
@@ -177,48 +177,55 @@
         }
 
         function GetVisitorData() {
-            $.LoadingOverlay("show");
-            $.ajax({
-                url: '/api/GetVisitorData',
-                type: 'GET',
-                data: {
-                    "no": $('#txtNo').val()
-                },
-                success: function (response) {
-                    console.log(response)
-                    if (response.Status) {
-                        var name = "ชื่อ-นามสกุล:" + response.ResultObj.FIRST_NAME + " " + response.ResultObj.LAST_NAME
-                        var id_card = "หมายเลขบัตร:" + response.ResultObj.ID_CARD;
-                        var license_plate = "ทะเบียนรถ:" + response.ResultObj.LICENSE_PLATE
-                        var info = name + " " + id_card + " " + license_plate;
-                        if (response.ResultObj.TYPE == "In" || response.ResultObj.TYPE == "Appointment") {
-                            $('#txtType').val("เข้า")
-                        }
-                        else{
-                            $('#txtType').val("ออก")
-                        }
-                       
-                        $('#txtInfo').val(info)
-                        $('#txtNo').val(response.ResultObj.NO)
-                        let no = response.ResultObj.NO;
-                        let auto_id = response.ResultObj.AUTO_ID;
+          
+            if ($('#txtNo').val() == null || $('#txtNo').val() == 0) {
+                GetVisitorDataOnload();
+            }
+            else {
+                $.LoadingOverlay("show");
 
-                        SetVisitorData(no, auto_id)
-                        $.LoadingOverlay("hide");
-                    }
-                    else {
-                        alert(response.Message)
+                $.ajax({
+                    url: '/api/GetVisitorData',
+                    type: 'GET',
+                    data: {
+                        "no": $('#txtNo').val()
+                    },
+                    success: function (response) {
+                        console.log(response)
+                        if (response.Status) {
+                            var name = "ชื่อ-นามสกุล:" + response.ResultObj.FIRST_NAME + " " + response.ResultObj.LAST_NAME
+                            var id_card = "หมายเลขบัตร:" + response.ResultObj.ID_CARD;
+                            var license_plate = "ทะเบียนรถ:" + response.ResultObj.LICENSE_PLATE
+                            var info = name + " " + id_card + " " + license_plate;
+                            if (response.ResultObj.TYPE == "In" || response.ResultObj.TYPE == "Appointment") {
+                                $('#txtType').val("เข้า")
+                            }
+                            else {
+                                $('#txtType').val("ออก")
+                            }
+
+                            $('#txtInfo').val(info)
+                            $('#txtNo').val(response.ResultObj.NO)
+                            let no = response.ResultObj.NO;
+                            let auto_id = response.ResultObj.AUTO_ID;
+
+                            SetVisitorData(no, auto_id)
+                            $.LoadingOverlay("hide");
+                        }
+                        else {
+                            alert(response.Message)
+                            SetEmptyData();
+                            $('#txtInfo').val("")
+                            $.LoadingOverlay("hide");
+                        }
+                    },
+                    error: function () {
+                        alert("ไม่สามารถค้นหาข้อมูลได้");
                         SetEmptyData();
-                        $('#txtInfo').val("")
                         $.LoadingOverlay("hide");
                     }
-                },
-                error: function () {
-                    alert("ไม่สามารถค้นหาข้อมูลได้");
-                    SetEmptyData();
-                    $.LoadingOverlay("hide");
-                }
-            });
+                });
+            }
         }
 
         function GetVisitorDataOnload() {
@@ -227,7 +234,7 @@
                 url: '/api/GetLastVistorTransaction',
                 type: 'GET',
                 data: {
-                    
+
                 },
                 success: function (response) {
                     console.log(response)
@@ -252,14 +259,14 @@
                         $.LoadingOverlay("hide");
                     }
                     else {
-                      
+
                         SetEmptyData();
                         $.LoadingOverlay("hide");
-                       
+
                     }
                 },
                 error: function () {
-                   
+
                     SetEmptyData();
                     $.LoadingOverlay("hide");
                 }
@@ -269,23 +276,11 @@
         function Upload() {
 
             $.LoadingOverlay("show");
-            var fileData = new FormData();
-            //if()
+
+            let fileData = new FormData();
             if (vistor_data.no > 0 && vistor_data.auto_id > 0) {
                 fileData.append('NO', vistor_data.no);
                 fileData.append('AUTO_ID', vistor_data.auto_id);
-                if (vistor_data.photo_ref_1 != null) {
-                    var photo_ref_1 = $('#files').prop('files');
-                    fileData.append("FILE#1", photo_ref_1[0]);
-                }
-                if (vistor_data.photo_ref_2 != null) {
-                    var photo_ref_2 = $('#files2').prop('files');
-                    fileData.append("FILE#2", photo_ref_2[0]);
-                }
-                if (vistor_data.photo_ref_3 != null) {
-                    var photo_ref_3 = $('#files3').prop('files');
-                    fileData.append("FILE#3", photo_ref_3[0]);
-                }
             }
 
 
@@ -297,7 +292,81 @@
                 processData: false,
                 data: fileData,
                 success: function (result, status, xhr) {
+
                     if (result.Status) {
+
+                        if (vistor_data.photo_ref_1 != null) {
+                            let fileData = new FormData();
+                            let photo_ref_1 = $('#files').prop('files');
+                            fileData.append("FILE#1", photo_ref_1[0]);
+                            fileData.append('NO', vistor_data.no);
+                            fileData.append('AUTO_ID', vistor_data.auto_id);
+                            $.ajax({
+                                type: "POST",
+                                url: "/api/UpdateVistorImgRef",
+                                dataType: "json",
+                                contentType: false,
+                                processData: false,
+                                data: fileData,
+                                success: function (result, status, xhr) {
+                                    if (result.Status) {
+                                        //alert("บันทึกภาพที่ 1 สำเร็จ")
+                                    }
+                                    else {
+                                        alert("บันทึกภาพที่ 1 ไม่สำเร็จ")
+                                    }
+                                }
+                            })
+                        }
+
+                        if (vistor_data.photo_ref_2 != null) {
+                            let fileData = new FormData();
+                            let photo_ref_2 = $('#files2').prop('files');
+                            fileData.append("FILE#2", photo_ref_2[0]);
+                            fileData.append('NO', vistor_data.no);
+                            fileData.append('AUTO_ID', vistor_data.auto_id);
+                            $.ajax({
+                                type: "POST",
+                                url: "/api/UpdateVistorImgRef",
+                                dataType: "json",
+                                contentType: false,
+                                processData: false,
+                                data: fileData,
+                                success: function (result, status, xhr) {
+                                    if (result.Status) {
+                                        //alert("บันทึกภาพที่ 2 สำเร็จ")
+                                    }
+                                    else {
+                                        alert("บันทึกภาพที่ 2 ไม่สำเร็จ")
+                                    }
+                                }
+                            })
+                        }
+
+                        if (vistor_data.photo_ref_3 != null) {
+                            let fileData = new FormData();
+                            let photo_ref_3 = $('#files3').prop('files');
+                            fileData.append("FILE#3", photo_ref_3[0]);
+                            fileData.append('NO', vistor_data.no);
+                            fileData.append('AUTO_ID', vistor_data.auto_id);
+                            $.ajax({
+                                type: "POST",
+                                url: "/api/UpdateVistorImgRef",
+                                dataType: "json",
+                                contentType: false,
+                                processData: false,
+                                data: fileData,
+                                success: function (result, status, xhr) {
+                                    if (result.Status) {
+                                        //alert("บันทึกภาพที่ 3 สำเร็จ")
+                                    }
+                                    else {
+                                        alert("บันทึกภาพที่ 3 ไม่สำเร็จ")
+                                    }
+                                }
+                            })
+                        }
+
                         alert("บันทึกข้อมูลสำเร็จ");
                         $.LoadingOverlay("hide");
                     }
