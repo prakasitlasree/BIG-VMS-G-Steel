@@ -19,7 +19,7 @@ namespace BIG.VMS.PRESENT.Forms.Master
         public ReadCard()
         {
             InitializeComponent();
-            
+            ListCardReader();
             string fileName = CardHelper.StartupPath + "\\RDNIDLib.DLD";
             if (System.IO.File.Exists(fileName) == false)
             {
@@ -66,7 +66,7 @@ namespace BIG.VMS.PRESENT.Forms.Master
          
         protected int ReadPIDCard()
         {
-            String strTerminal = m_ListReaderCard.GetItemText(m_ListReaderCard.SelectedItem);
+            string strTerminal = m_ListReaderCard.GetItemText(m_ListReaderCard.SelectedItem);
 
             IntPtr obj = CardHelper.SelectReader(strTerminal);
 
@@ -75,8 +75,8 @@ namespace BIG.VMS.PRESENT.Forms.Master
             nInsertCard = RDNID.connectCardRD(obj);
             if (nInsertCard != 0)
             {
-                String m;
-                m = String.Format(" error no {0} ", nInsertCard);
+                string m;
+                m = string.Format(" error no {0} ", nInsertCard);
                 MessageBox.Show(m);
 
                 RDNID.disconnectCardRD(obj);
@@ -90,7 +90,7 @@ namespace BIG.VMS.PRESENT.Forms.Master
             int res = RDNID.getNIDNumberRD(obj, id);
             if (res != DefineConstants.NID_SUCCESS)
                 return res;
-            String NIDNum = CardHelper.ByteToString(id);
+            string NIDNum = CardHelper.ByteToString(id);
 
 
 
@@ -99,7 +99,7 @@ namespace BIG.VMS.PRESENT.Forms.Master
             if (res != DefineConstants.NID_SUCCESS)
                 return res;
 
-            String NIDData = CardHelper.ByteToString(data);
+            string NIDData = CardHelper.ByteToString(data);
             if (NIDData == "")
             {
                 MessageBox.Show("Read Text error");

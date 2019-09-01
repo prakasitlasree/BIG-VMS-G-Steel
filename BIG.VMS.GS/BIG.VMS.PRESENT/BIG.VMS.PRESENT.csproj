@@ -275,6 +275,12 @@
     <Compile Include="Forms\FormVisitor\frmVisitorOutList.Designer.cs">
       <DependentUpon>frmVisitorOutList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Master\Website.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Master\Website.Designer.cs">
+      <DependentUpon>Website.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Vendor\frmProject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -478,6 +484,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormVisitor\frmVisitorOutList.resx">
       <DependentUpon>frmVisitorOutList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Master\Website.resx">
+      <DependentUpon>Website.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportSlip.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -683,6 +692,7 @@
     <Content Include="ResourceFile\skill.png" />
     <Content Include="ResourceFile\User group.png" />
     <Content Include="ResourceFile\user-add-icon.png" />
+    <None Include="Resources\sso_card.jpg" />
     <None Include="Resources\approve.bmp" />
   </ItemGroup>
   <ItemGroup>

@@ -67,12 +67,7 @@ namespace BIG.VMS.PRESENT
         }
 
         #endregion
-  
-        private void logout_Click(object sender, EventArgs e)
-        {
-            OnCloseAllChildrenForm();
-            Application.Exit();
-        }
+   
 
         private void appointment_Click(object sender, EventArgs e)
         {
@@ -108,6 +103,34 @@ namespace BIG.VMS.PRESENT
             frm.WindowState = FormWindowState.Maximized;
             frm.MdiParent = this;
             frm.Show();
+        }
+
+        private void website_Click(object sender, EventArgs e)
+        {
+            Website frm = new Website();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void test_readcard_Click(object sender, EventArgs e)
+        {
+            ReadCard frm = new ReadCard();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void logout_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void lbLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

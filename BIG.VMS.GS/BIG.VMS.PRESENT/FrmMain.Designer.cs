@@ -31,20 +31,25 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.Home = new System.Windows.Forms.ToolStripMenuItem();
+            this.visitor_transaction = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.Contractor = new System.Windows.Forms.ToolStripMenuItem();
             this.appointment = new System.Windows.Forms.ToolStripMenuItem();
             this.planVisitRequestForm = new System.Windows.Forms.ToolStripMenuItem();
             this.contractorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.report = new System.Windows.Forms.ToolStripMenuItem();
+            this.report_in_out = new System.Windows.Forms.ToolStripMenuItem();
             this.contractor_management = new System.Windows.Forms.ToolStripMenuItem();
             this.BlacklistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.เวบไซตToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.website = new System.Windows.Forms.ToolStripMenuItem();
+            this.help = new System.Windows.Forms.ToolStripMenuItem();
+            this.test_readcard = new System.Windows.Forms.ToolStripMenuItem();
             this.logout = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.report_in_out = new System.Windows.Forms.ToolStripMenuItem();
-            this.visitor_transaction = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbLogout = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -58,7 +63,8 @@
             this.Contractor,
             this.report,
             this.contractor_management,
-            this.logout});
+            this.เวบไซตToolStripMenuItem,
+            this.help});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -73,6 +79,13 @@
             this.Home.Name = "Home";
             this.Home.Size = new System.Drawing.Size(58, 20);
             this.Home.Text = "หน้าหลัก";
+            // 
+            // visitor_transaction
+            // 
+            this.visitor_transaction.Name = "visitor_transaction";
+            this.visitor_transaction.Size = new System.Drawing.Size(155, 22);
+            this.visitor_transaction.Text = "ระบบผ่านเข้า-ออก";
+            this.visitor_transaction.Click += new System.EventHandler(this.visitor_transaction_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -116,6 +129,13 @@
             this.report.Size = new System.Drawing.Size(52, 20);
             this.report.Text = "รายงาน";
             // 
+            // report_in_out
+            // 
+            this.report_in_out.Name = "report_in_out";
+            this.report_in_out.Size = new System.Drawing.Size(182, 22);
+            this.report_in_out.Text = "รายงานการผ่านเข้า-ออก";
+            this.report_in_out.Click += new System.EventHandler(this.report_in_out_Click);
+            // 
             // contractor_management
             // 
             this.contractor_management.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -127,23 +147,55 @@
             // BlacklistToolStripMenuItem
             // 
             this.BlacklistToolStripMenuItem.Name = "BlacklistToolStripMenuItem";
-            this.BlacklistToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.BlacklistToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.BlacklistToolStripMenuItem.Text = "รายชื่อ Blacklist";
             this.BlacklistToolStripMenuItem.Click += new System.EventHandler(this.BlacklistToolStripMenuItem_Click);
+            // 
+            // เวบไซตToolStripMenuItem
+            // 
+            this.เวบไซตToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.website});
+            this.เวบไซตToolStripMenuItem.Name = "เวบไซตToolStripMenuItem";
+            this.เวบไซตToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.เวบไซตToolStripMenuItem.Text = "เว็บไซต์";
+            // 
+            // website
+            // 
+            this.website.Name = "website";
+            this.website.Size = new System.Drawing.Size(143, 22);
+            this.website.Text = "อัพโหลดรูปภาพ";
+            this.website.Click += new System.EventHandler(this.website_Click);
+            // 
+            // help
+            // 
+            this.help.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.test_readcard,
+            this.logout});
+            this.help.Name = "help";
+            this.help.Size = new System.Drawing.Size(59, 20);
+            this.help.Text = "ช่วยเหลือ";
+            // 
+            // test_readcard
+            // 
+            this.test_readcard.Name = "test_readcard";
+            this.test_readcard.Size = new System.Drawing.Size(180, 22);
+            this.test_readcard.Text = "ทดสอบอ่านบัตร";
+            this.test_readcard.Click += new System.EventHandler(this.test_readcard_Click);
             // 
             // logout
             // 
             this.logout.Name = "logout";
-            this.logout.Size = new System.Drawing.Size(79, 20);
+            this.logout.Size = new System.Drawing.Size(180, 22);
             this.logout.Text = "ออกจากระบบ";
-            this.logout.Click += new System.EventHandler(this.logout_Click);
+            this.logout.Click += new System.EventHandler(this.logout_Click_1);
             // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
-            this.toolStripStatusLabel2});
+            this.toolStripStatusLabel2,
+            this.lbLogout});
             this.statusStrip1.Location = new System.Drawing.Point(0, 499);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
@@ -153,9 +205,10 @@
             // 
             // toolStripStatusLabel1
             // 
+            this.toolStripStatusLabel1.BackColor = System.Drawing.Color.ForestGreen;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(41, 17);
-            this.toolStripStatusLabel1.Text = "Logon";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(47, 17);
+            this.toolStripStatusLabel1.Text = "Logon :";
             this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // toolStripStatusLabel2
@@ -164,19 +217,13 @@
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(118, 17);
             this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
             // 
-            // report_in_out
+            // lbLogout
             // 
-            this.report_in_out.Name = "report_in_out";
-            this.report_in_out.Size = new System.Drawing.Size(182, 22);
-            this.report_in_out.Text = "รายงานการผ่านเข้า-ออก";
-            this.report_in_out.Click += new System.EventHandler(this.report_in_out_Click);
-            // 
-            // visitor_transaction
-            // 
-            this.visitor_transaction.Name = "visitor_transaction";
-            this.visitor_transaction.Size = new System.Drawing.Size(180, 22);
-            this.visitor_transaction.Text = "ระบบผ่านเข้า-ออก";
-            this.visitor_transaction.Click += new System.EventHandler(this.visitor_transaction_Click);
+            this.lbLogout.BackColor = System.Drawing.Color.IndianRed;
+            this.lbLogout.Name = "lbLogout";
+            this.lbLogout.Size = new System.Drawing.Size(45, 17);
+            this.lbLogout.Text = "Logout";
+            this.lbLogout.Click += new System.EventHandler(this.lbLogout_Click);
             // 
             // FrmMain
             // 
@@ -214,7 +261,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripMenuItem contractor_management;
-        private System.Windows.Forms.ToolStripMenuItem logout;
+        private System.Windows.Forms.ToolStripMenuItem help;
         private System.Windows.Forms.ToolStripMenuItem report;
         private System.Windows.Forms.ToolStripMenuItem appointment;
         private System.Windows.Forms.ToolStripMenuItem planVisitRequestForm;
@@ -222,5 +269,10 @@
         private System.Windows.Forms.ToolStripMenuItem BlacklistToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem report_in_out;
         private System.Windows.Forms.ToolStripMenuItem visitor_transaction;
+        private System.Windows.Forms.ToolStripMenuItem เวบไซตToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem website;
+        private System.Windows.Forms.ToolStripMenuItem test_readcard;
+        private System.Windows.Forms.ToolStripMenuItem logout;
+        private System.Windows.Forms.ToolStripStatusLabel lbLogout;
     }
 }
