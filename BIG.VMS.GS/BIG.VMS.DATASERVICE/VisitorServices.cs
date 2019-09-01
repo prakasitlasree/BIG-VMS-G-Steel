@@ -1063,8 +1063,8 @@ namespace BIG.VMS.DATASERVICE
                         endMonth = endMonth - 1;
 
                     }
-                    var startDate = DateTime.Now.AddDays(-5);
-                    var endDate = DateTime.Now.AddDays(5);
+                    var startDate = DateTime.Now.AddDays(-0.5);
+                    var endDate = DateTime.Now.AddDays(0.5);
 
 
                     var listData = ctx.TRN_VISITOR
