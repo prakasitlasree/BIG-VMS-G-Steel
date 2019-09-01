@@ -32,7 +32,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.Home = new System.Windows.Forms.ToolStripMenuItem();
             this.visitor_transaction = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.Contractor = new System.Windows.Forms.ToolStripMenuItem();
             this.appointment = new System.Windows.Forms.ToolStripMenuItem();
             this.planVisitRequestForm = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,7 +58,6 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Home,
-            this.toolStripMenuItem1,
             this.Contractor,
             this.report,
             this.contractor_management,
@@ -86,11 +84,6 @@
             this.visitor_transaction.Size = new System.Drawing.Size(155, 22);
             this.visitor_transaction.Text = "ระบบผ่านเข้า-ออก";
             this.visitor_transaction.Click += new System.EventHandler(this.visitor_transaction_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 20);
             // 
             // Contractor
             // 
@@ -178,14 +171,14 @@
             // test_readcard
             // 
             this.test_readcard.Name = "test_readcard";
-            this.test_readcard.Size = new System.Drawing.Size(180, 22);
+            this.test_readcard.Size = new System.Drawing.Size(144, 22);
             this.test_readcard.Text = "ทดสอบอ่านบัตร";
             this.test_readcard.Click += new System.EventHandler(this.test_readcard_Click);
             // 
             // logout
             // 
             this.logout.Name = "logout";
-            this.logout.Size = new System.Drawing.Size(180, 22);
+            this.logout.Size = new System.Drawing.Size(144, 22);
             this.logout.Text = "ออกจากระบบ";
             this.logout.Click += new System.EventHandler(this.logout_Click_1);
             // 
@@ -258,7 +251,6 @@
         private System.Windows.Forms.ToolStripMenuItem Contractor;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripMenuItem contractor_management;
         private System.Windows.Forms.ToolStripMenuItem help;
