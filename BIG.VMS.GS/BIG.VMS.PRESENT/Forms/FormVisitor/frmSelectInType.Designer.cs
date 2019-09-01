@@ -105,6 +105,7 @@
             this.id_card.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.id_card.TabIndex = 2;
             this.id_card.TabStop = false;
+            this.id_card.Click += new System.EventHandler(this.id_card_Click);
             // 
             // other_card
             // 
@@ -117,6 +118,7 @@
             this.other_card.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.other_card.TabIndex = 3;
             this.other_card.TabStop = false;
+            this.other_card.Click += new System.EventHandler(this.other_card_Click);
             // 
             // frmSelectInType
             // 
