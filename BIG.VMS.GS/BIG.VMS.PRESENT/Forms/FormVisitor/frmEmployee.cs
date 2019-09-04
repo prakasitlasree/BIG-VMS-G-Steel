@@ -135,7 +135,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                 }
             }
             ((Button)((Control)sender)).ForeColor = Color.Red;
-
+            flgSelectDepartment = true;
             if (flgSelectEmployee)
             {
                 this.DialogResult = DialogResult.OK;
@@ -208,8 +208,9 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
         {
             SELECTED_EMPLOYEE_ID = Convert.ToInt32(((Control)sender).Tag.ToString());
             SELECTED_EMPLOYEE_TEXT = ((Control)sender).Text.ToString();
+            flgSelectEmployee = true;
 
-            if(flgSelectDepartment){
+            if (flgSelectDepartment){
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }

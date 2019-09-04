@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using BIG.VMS.PRESENT.Forms.Master;
 using BIG.VMS.PRESENT.Forms.FormVisitor;
 using BIG.VMS.PRESENT.Forms.FormReport;
+using BIG.VMS.PRESENT.Forms.Contractor;
 
 namespace BIG.VMS.PRESENT
 {
@@ -131,6 +132,15 @@ namespace BIG.VMS.PRESENT
         private void lbLogout_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void contractorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new frmContractorList();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.MdiParent = this;
+            frm.Show();
         }
     }
 }

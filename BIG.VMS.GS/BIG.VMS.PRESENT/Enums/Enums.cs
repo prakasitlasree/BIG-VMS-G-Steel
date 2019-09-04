@@ -8,6 +8,14 @@ namespace BIG.VMS.PRESENT
 {
    public class Enums
     {
+
+        public enum FormMode
+        {
+            View,
+            Edit,
+            Add,
+        }
+
         public enum NID_FIELD
         {
             NID_Number,   //1234567890123#

@@ -113,6 +113,7 @@
             this.contractorToolStripMenuItem.Name = "contractorToolStripMenuItem";
             this.contractorToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
             this.contractorToolStripMenuItem.Text = "Vendor Management (ผู้รับเหมา)";
+            this.contractorToolStripMenuItem.Click += new System.EventHandler(this.contractorToolStripMenuItem_Click);
             // 
             // report
             // 
