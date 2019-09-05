@@ -52,7 +52,11 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             {
                 var listEmployee = (List<TRN_PROJECT_MEMBER>)gridEmployee.DataSource;
                 listEmployee.Add(frm.TRN_PROJECT_MEMBER);
+                gridEmployee.AutoGenerateColumns = true;
+
                
+
+                gridEmployee.DataSource = listEmployee.ToList();
             }
         }
     }
