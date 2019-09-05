@@ -136,7 +136,7 @@ namespace BIG.VMS.PRESENT
 
         private void contractorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frm = new frmContractorList();
+            var frm = new frmProjectMasterList();
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.WindowState = FormWindowState.Maximized;
             frm.MdiParent = this;

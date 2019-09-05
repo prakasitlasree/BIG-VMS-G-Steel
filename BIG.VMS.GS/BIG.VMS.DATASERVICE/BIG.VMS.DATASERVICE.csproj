@@ -60,6 +60,7 @@
     <Compile Include="ComboBoxServices.cs" />
     <Compile Include="ConstractorServices.cs" />
     <Compile Include="HardwareServices.cs" />
+    <Compile Include="ProjectServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VisitorServices.cs" />
   </ItemGroup>

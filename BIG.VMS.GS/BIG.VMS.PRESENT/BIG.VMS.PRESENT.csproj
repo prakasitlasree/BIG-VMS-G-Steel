@@ -189,6 +189,12 @@
     <Compile Include="Forms\Contractor\frmProjectMasters.Designer.cs">
       <DependentUpon>frmProjectMasters.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Contractor\frmProjectMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Contractor\frmProjectMember.Designer.cs">
+      <DependentUpon>frmProjectMember.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CustomerVisit\frmPlantVisit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -475,6 +481,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Contractor\frmProjectMasters.resx">
       <DependentUpon>frmProjectMasters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Contractor\frmProjectMember.resx">
+      <DependentUpon>frmProjectMember.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCarMasterDetail\frmCarBrandMaster.resx">
       <DependentUpon>frmCarBrandMaster.cs</DependentUpon>

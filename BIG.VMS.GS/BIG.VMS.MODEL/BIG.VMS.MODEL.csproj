@@ -70,6 +70,8 @@
     <Compile Include="CustomModel\HeaderGrid.cs" />
     <Compile Include="CustomModel\PIDCard.cs" />
     <Compile Include="CustomModel\Filter\VisitorFilter.cs" />
+    <Compile Include="GsteelModel\ContainerModel\ContainerProject.cs" />
+    <Compile Include="GsteelModel\FilterModel\FilterProject.cs" />
     <Compile Include="GsteelModel\FilterModel\FilterConstractor.cs" />
     <Compile Include="Response.cs" />
     <Compile Include="CustomModel\VisitorGroupModel.cs" />
