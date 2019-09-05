@@ -19,7 +19,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            var frm = new frmContractor();
+            var frm = new frmProjectMasters();
             if(frm.ShowDialog() == DialogResult.OK)
             {
 
