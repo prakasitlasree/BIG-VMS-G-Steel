@@ -142,5 +142,23 @@ namespace BIG.VMS.PRESENT
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void contratorcompany_Click(object sender, EventArgs e)
+        {
+            var frm = new frmContractorList();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void contractorบรษทผรบเหมาToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new frmContractorList();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

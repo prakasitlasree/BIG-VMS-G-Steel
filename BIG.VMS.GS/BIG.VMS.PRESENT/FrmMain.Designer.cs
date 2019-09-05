@@ -49,6 +49,7 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lbLogout = new System.Windows.Forms.ToolStripStatusLabel();
+            this.contractorlist = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -81,7 +82,7 @@
             // visitor_transaction
             // 
             this.visitor_transaction.Name = "visitor_transaction";
-            this.visitor_transaction.Size = new System.Drawing.Size(155, 22);
+            this.visitor_transaction.Size = new System.Drawing.Size(180, 22);
             this.visitor_transaction.Text = "ระบบผ่านเข้า-ออก";
             this.visitor_transaction.Click += new System.EventHandler(this.visitor_transaction_Click);
             // 
@@ -133,16 +134,17 @@
             // contractor_management
             // 
             this.contractor_management.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.BlacklistToolStripMenuItem});
+            this.BlacklistToolStripMenuItem,
+            this.contractorlist});
             this.contractor_management.Name = "contractor_management";
-            this.contractor_management.Size = new System.Drawing.Size(100, 20);
-            this.contractor_management.Text = "การจัดการผู้ติดต่อ";
+            this.contractor_management.Size = new System.Drawing.Size(53, 20);
+            this.contractor_management.Text = "admin";
             // 
             // BlacklistToolStripMenuItem
             // 
             this.BlacklistToolStripMenuItem.Name = "BlacklistToolStripMenuItem";
-            this.BlacklistToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
-            this.BlacklistToolStripMenuItem.Text = "รายชื่อ Blacklist";
+            this.BlacklistToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.BlacklistToolStripMenuItem.Text = "รายชื่อผู้ต้องห้าม Blacklist";
             this.BlacklistToolStripMenuItem.Click += new System.EventHandler(this.BlacklistToolStripMenuItem_Click);
             // 
             // เวบไซตToolStripMenuItem
@@ -156,7 +158,7 @@
             // website
             // 
             this.website.Name = "website";
-            this.website.Size = new System.Drawing.Size(143, 22);
+            this.website.Size = new System.Drawing.Size(180, 22);
             this.website.Text = "อัพโหลดรูปภาพ";
             this.website.Click += new System.EventHandler(this.website_Click);
             // 
@@ -172,14 +174,14 @@
             // test_readcard
             // 
             this.test_readcard.Name = "test_readcard";
-            this.test_readcard.Size = new System.Drawing.Size(144, 22);
+            this.test_readcard.Size = new System.Drawing.Size(180, 22);
             this.test_readcard.Text = "ทดสอบอ่านบัตร";
             this.test_readcard.Click += new System.EventHandler(this.test_readcard_Click);
             // 
             // logout
             // 
             this.logout.Name = "logout";
-            this.logout.Size = new System.Drawing.Size(144, 22);
+            this.logout.Size = new System.Drawing.Size(180, 22);
             this.logout.Text = "ออกจากระบบ";
             this.logout.Click += new System.EventHandler(this.logout_Click_1);
             // 
@@ -218,6 +220,13 @@
             this.lbLogout.Size = new System.Drawing.Size(45, 17);
             this.lbLogout.Text = "Logout";
             this.lbLogout.Click += new System.EventHandler(this.lbLogout_Click);
+            // 
+            // contractorlist
+            // 
+            this.contractorlist.Name = "contractorlist";
+            this.contractorlist.Size = new System.Drawing.Size(203, 22);
+            this.contractorlist.Text = "Contractor/บริษัทผู้รับเหมา";
+            this.contractorlist.Click += new System.EventHandler(this.contractorบรษทผรบเหมาToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
@@ -267,5 +276,6 @@
         private System.Windows.Forms.ToolStripMenuItem test_readcard;
         private System.Windows.Forms.ToolStripMenuItem logout;
         private System.Windows.Forms.ToolStripStatusLabel lbLogout;
+        private System.Windows.Forms.ToolStripMenuItem contractorlist;
     }
 }
