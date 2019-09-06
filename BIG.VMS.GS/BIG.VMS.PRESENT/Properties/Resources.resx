@@ -124,14 +124,11 @@
   <data name="network" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ResourceFile\network.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ee" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ResourceFile\ee.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="_48_print" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ResourceFile\48_print.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon24_edit_male_user" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ResourceFile\icon24_edit_male_user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="search_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ResourceFile\search_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="restart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ResourceFile\restart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,9 +154,6 @@
   <data name="pid_img" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ResourceFile\pid_img.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="personal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ResourceFile\personal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="_48_save_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ResourceFile\48_save_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -168,6 +162,9 @@
   </data>
   <data name="lock_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ResourceFile\lock_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="people" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ResourceFile\people.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="login_icon_png" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ResourceFile\login_icon_png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,17 +178,14 @@
   <data name="idcard_template" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ResourceFile\idcard_template.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="emploee" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ResourceFile\emploee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Flow_HRMI" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ResourceFile\Flow-HRMI.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="finger_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ResourceFile\finger_icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="big_employee" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ResourceFile\big_employee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="big_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ResourceFile\big_bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="search_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ResourceFile\search_.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -201,6 +195,9 @@
   </data>
   <data name="pid_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ResourceFile\pid_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ResourceFile\bg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="finger_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ResourceFile\finger_icon1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,8 +214,14 @@
   <data name="user_add_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ResourceFile\user-add-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_48_save_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ResourceFile\48_save_1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ee" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ResourceFile\ee.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boss" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Boss.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_48_close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ResourceFile\48_close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pid_img1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ResourceFile\pid_img1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,26 +229,20 @@
   <data name="LOGO_BIG_INTERSAVEGUARD_GROUP" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ResourceFile\LOGO BIG INTERSAVEGUARD GROUP.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Flow_HRMI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ResourceFile\Flow-HRMI.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon24_edit_male_user" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ResourceFile\icon24_edit_male_user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="sso_card" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sso_card.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_48_search1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ResourceFile\48_search1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="eval" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ResourceFile\eval.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="search_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ResourceFile\search_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="big_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ResourceFile\big_bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_48_home" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ResourceFile\48_home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_48_close" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ResourceFile\48_close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="emploee" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ResourceFile\emploee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="login_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ResourceFile\login_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -253,14 +250,20 @@
   <data name="lock_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ResourceFile\lock_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="big_logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ResourceFile\big_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_48_search1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ResourceFile\48_search1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_48_man_woman" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ResourceFile\48_man_woman.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ResourceFile\bg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="big_logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ResourceFile\big_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="eval" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ResourceFile\eval.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_48_save_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ResourceFile\48_save_1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="finger_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ResourceFile\finger_icon2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -268,10 +271,10 @@
   <data name="skill" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ResourceFile\skill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="people" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ResourceFile\people.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="personal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ResourceFile\personal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Boss" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Boss.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

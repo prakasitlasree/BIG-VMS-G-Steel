@@ -44,8 +44,8 @@
             this.txtobjective = new System.Windows.Forms.TextBox();
             this.txtcontractperson = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.clbfac_req = new System.Windows.Forms.CheckedListBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.gridVisitor = new System.Windows.Forms.DataGridView();
@@ -53,6 +53,7 @@
             this.CUSTOMER_VISIT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SEQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FULLNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAddvisitor = new System.Windows.Forms.Button();
             this.txtDepartment = new System.Windows.Forms.TextBox();
             this.lb4 = new System.Windows.Forms.Label();
             this.txtGroup = new System.Windows.Forms.TextBox();
@@ -62,13 +63,13 @@
             this.lb1 = new System.Windows.Forms.Label();
             this.tbmain = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.group_requester = new System.Windows.Forms.GroupBox();
             this.tb1 = new System.Windows.Forms.TableLayoutPanel();
             this.txtReqPosition = new System.Windows.Forms.TextBox();
+            this.lbType = new System.Windows.Forms.Label();
             this.group_detail = new System.Windows.Forms.GroupBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnProvince = new System.Windows.Forms.Button();
             this.tabmain.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tb2.SuspendLayout();
@@ -103,7 +104,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Visitor Group/Company";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // tb2
             // 
@@ -151,22 +151,22 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(44, 11);
+            this.label5.Location = new System.Drawing.Point(35, 11);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(153, 17);
+            this.label5.Size = new System.Drawing.Size(162, 17);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Visitor Group/Organize";
+            this.label5.Text = "Visitor Group/Organize *";
             // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(110, 51);
+            this.label6.Location = new System.Drawing.Point(101, 51);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 17);
+            this.label6.Size = new System.Drawing.Size(96, 17);
             this.label6.TabIndex = 10;
-            this.label6.Text = "No. of visitor";
+            this.label6.Text = "No. of visitor *";
             // 
             // txtnoofvisit
             // 
@@ -193,11 +193,11 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(579, 11);
+            this.label8.Location = new System.Drawing.Point(570, 11);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(68, 17);
+            this.label8.Size = new System.Drawing.Size(77, 17);
             this.label8.TabIndex = 14;
-            this.label8.Text = "Visit Date";
+            this.label8.Text = "Visit Date *";
             // 
             // label9
             // 
@@ -226,11 +226,11 @@
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(42, 91);
+            this.label10.Location = new System.Drawing.Point(33, 91);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(155, 17);
+            this.label10.Size = new System.Drawing.Size(164, 17);
             this.label10.TabIndex = 18;
-            this.label10.Text = "Contract person on site";
+            this.label10.Text = "Contract person on site *";
             // 
             // txtobjective
             // 
@@ -257,23 +257,11 @@
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(100, 120);
+            this.label7.Location = new System.Drawing.Point(91, 120);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 17);
+            this.label7.Size = new System.Drawing.Size(106, 17);
             this.label7.TabIndex = 12;
-            this.label7.Text = "Visit Objective";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(516, 120);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(131, 17);
-            this.label11.TabIndex = 20;
-            this.label11.Text = "Facility requirement";
+            this.label7.Text = "Visit Objective *";
             // 
             // clbfac_req
             // 
@@ -292,6 +280,17 @@
             this.clbfac_req.Size = new System.Drawing.Size(245, 145);
             this.clbfac_req.TabIndex = 10;
             // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(516, 120);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(131, 17);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "Facility requirement";
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.tableLayoutPanel1);
@@ -302,14 +301,13 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Visitor List";
             this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.gridVisitor, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.btnProvince, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnAddvisitor, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -319,7 +317,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(901, 271);
             this.tableLayoutPanel1.TabIndex = 1;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // gridVisitor
             // 
@@ -339,7 +336,6 @@
             this.gridVisitor.RowTemplate.Height = 24;
             this.gridVisitor.Size = new System.Drawing.Size(895, 207);
             this.gridVisitor.TabIndex = 0;
-            this.gridVisitor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridEmployee_CellContentClick);
             // 
             // AUTO_ID
             // 
@@ -374,6 +370,25 @@
             this.FULLNAME.Name = "FULLNAME";
             this.FULLNAME.ReadOnly = true;
             this.FULLNAME.Width = 105;
+            // 
+            // btnAddvisitor
+            // 
+            this.btnAddvisitor.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnAddvisitor.BackColor = System.Drawing.Color.White;
+            this.btnAddvisitor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddvisitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddvisitor.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.btnAddvisitor.Image = ((System.Drawing.Image)(resources.GetObject("btnAddvisitor.Image")));
+            this.btnAddvisitor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddvisitor.Location = new System.Drawing.Point(783, 6);
+            this.btnAddvisitor.Margin = new System.Windows.Forms.Padding(6);
+            this.btnAddvisitor.Name = "btnAddvisitor";
+            this.btnAddvisitor.Size = new System.Drawing.Size(112, 35);
+            this.btnAddvisitor.TabIndex = 1;
+            this.btnAddvisitor.Text = "Add";
+            this.btnAddvisitor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddvisitor.UseVisualStyleBackColor = false;
+            this.btnAddvisitor.Click += new System.EventHandler(this.btnAddvisitor_Click);
             // 
             // txtDepartment
             // 
@@ -429,22 +444,22 @@
             this.lb2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb2.AutoSize = true;
             this.lb2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb2.Location = new System.Drawing.Point(69, 47);
+            this.lb2.Location = new System.Drawing.Point(60, 47);
             this.lb2.Name = "lb2";
-            this.lb2.Size = new System.Drawing.Size(128, 17);
+            this.lb2.Size = new System.Drawing.Size(137, 17);
             this.lb2.TabIndex = 2;
-            this.lb2.Text = "Requestor Position";
+            this.lb2.Text = "Requestor Position *";
             // 
             // lb1
             // 
             this.lb1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb1.AutoSize = true;
             this.lb1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb1.Location = new System.Drawing.Point(82, 10);
+            this.lb1.Location = new System.Drawing.Point(73, 10);
             this.lb1.Name = "lb1";
-            this.lb1.Size = new System.Drawing.Size(115, 17);
+            this.lb1.Size = new System.Drawing.Size(124, 17);
             this.lb1.TabIndex = 1;
-            this.lb1.Text = "Requestor Name";
+            this.lb1.Text = "Requestor Name *";
             // 
             // tbmain
             // 
@@ -474,16 +489,50 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(921, 72);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.White;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.Location = new System.Drawing.Point(6, 6);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(6);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(159, 55);
+            this.btnSave.TabIndex = 3;
+            this.btnSave.Text = "บันทึก";
+            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.White;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancel.Location = new System.Drawing.Point(177, 6);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(6);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(151, 55);
+            this.btnCancel.TabIndex = 4;
+            this.btnCancel.Text = "ยกเลิก";
+            this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // group_requester
             // 
             this.group_requester.Controls.Add(this.tb1);
+            this.group_requester.Controls.Add(this.lbType);
             this.group_requester.Dock = System.Windows.Forms.DockStyle.Fill;
             this.group_requester.Location = new System.Drawing.Point(3, 3);
             this.group_requester.Name = "group_requester";
             this.group_requester.Size = new System.Drawing.Size(921, 99);
             this.group_requester.TabIndex = 3;
             this.group_requester.TabStop = false;
-            this.group_requester.Text = "Requester";
             // 
             // tb1
             // 
@@ -518,6 +567,18 @@
             this.txtReqPosition.Size = new System.Drawing.Size(251, 23);
             this.txtReqPosition.TabIndex = 1;
             // 
+            // lbType
+            // 
+            this.lbType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbType.AutoSize = true;
+            this.lbType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbType.ForeColor = System.Drawing.Color.Black;
+            this.lbType.Location = new System.Drawing.Point(9, -3);
+            this.lbType.Name = "lbType";
+            this.lbType.Size = new System.Drawing.Size(171, 20);
+            this.lbType.TabIndex = 22;
+            this.lbType.Text = "Add new customer visit";
+            // 
             // group_detail
             // 
             this.group_detail.Controls.Add(this.tabmain);
@@ -528,56 +589,6 @@
             this.group_detail.TabIndex = 16;
             this.group_detail.TabStop = false;
             this.group_detail.Text = "Detail of request";
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.White;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSave.Location = new System.Drawing.Point(6, 6);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(6);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(159, 55);
-            this.btnSave.TabIndex = 3;
-            this.btnSave.Text = "บันทึก";
-            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSave.UseVisualStyleBackColor = false;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.White;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
-            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancel.Location = new System.Drawing.Point(177, 6);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(6);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(151, 55);
-            this.btnCancel.TabIndex = 4;
-            this.btnCancel.Text = "ยกเลิก";
-            this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCancel.UseVisualStyleBackColor = false;
-            // 
-            // btnProvince
-            // 
-            this.btnProvince.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnProvince.BackColor = System.Drawing.Color.White;
-            this.btnProvince.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProvince.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProvince.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btnProvince.Image = ((System.Drawing.Image)(resources.GetObject("btnProvince.Image")));
-            this.btnProvince.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnProvince.Location = new System.Drawing.Point(783, 6);
-            this.btnProvince.Margin = new System.Windows.Forms.Padding(6);
-            this.btnProvince.Name = "btnProvince";
-            this.btnProvince.Size = new System.Drawing.Size(112, 35);
-            this.btnProvince.TabIndex = 1;
-            this.btnProvince.Text = "Add";
-            this.btnProvince.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnProvince.UseVisualStyleBackColor = false;
             // 
             // frmPlantVisit
             // 
@@ -594,6 +605,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Customer visit request form";
+            this.Load += new System.EventHandler(this.frmPlantVisit_Load);
             this.tabmain.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tb2.ResumeLayout(false);
@@ -605,6 +617,7 @@
             this.tbmain.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.group_requester.ResumeLayout(false);
+            this.group_requester.PerformLayout();
             this.tb1.ResumeLayout(false);
             this.tb1.PerformLayout();
             this.group_detail.ResumeLayout(false);
@@ -653,6 +666,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CUSTOMER_VISIT_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn SEQ;
         private System.Windows.Forms.DataGridViewTextBoxColumn FULLNAME;
-        private System.Windows.Forms.Button btnProvince;
+        private System.Windows.Forms.Button btnAddvisitor;
+        private System.Windows.Forms.Label lbType;
     }
 }

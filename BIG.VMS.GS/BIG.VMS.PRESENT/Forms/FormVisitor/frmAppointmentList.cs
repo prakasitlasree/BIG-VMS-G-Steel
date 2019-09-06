@@ -41,9 +41,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
             BindGridData();
             CustomGrid();
         }
-
-
-
+         
         private void InitialEventHandler()
         {
 
@@ -62,7 +60,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
 
                 ID_CARD = txtIDCard.Text,
                 FIRST_NAME = txtName.Text,
-                LAST_NAME = txtLastName.Text,
+                
                 LICENSE_PLATE = txtLicense.Text,
 
             };
@@ -273,6 +271,18 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
         private void frmAppointmenList_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void chkDate_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkDate.Checked)
+            {
+                dtContactDate.Enabled = true;
+            }
+            else
+            {
+                dtContactDate.Enabled = false;
+            }
         }
     }
 }
