@@ -44,6 +44,7 @@ namespace BIG.VMS.PRESENT.Forms.CustomerVisit
         {
             ResetScreen();
         }
+
         private void ResetScreen()
         {
             _container.PageInfo = new Pagination();
@@ -254,6 +255,53 @@ namespace BIG.VMS.PRESENT.Forms.CustomerVisit
         private void BindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             CustomGrid();
+        }
+
+        private void gridVisitorList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                if (e.ColumnIndex == 0) //Edit
+                { 
+                    //var id = Convert.ToInt32(gridVisitorList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
+                    //MAS_CONTRACTOR con = new MAS_CONTRACTOR(); 
+                    //var result = _service.GetContractor(id);
+                    //con.AUTO_ID = result.AUTO_ID;
+                    //con.NAME = result.NAME;
+                    //con.ADDRESS = result.ADDRESS;
+                    //con.TEL = result.TEL;
+                    //con.UPDATED_BY = result.UPDATED_BY;
+                    //con.UPDATED_DATE = result.UPDATED_DATE;
+
+                    //frmContractor frm = new frmContractor();
+                    //frm.MAS_CONTRACTOR = con;
+                    //frm.formMode = FormMode.Edit;
+                    //if (frm.ShowDialog() == DialogResult.OK)
+                    //{
+                    //    ResetScreen();
+                    //}
+                }
+                if (e.ColumnIndex == 1) //Delete
+                {
+                    if (MessageBox.Show("ต้องการ ลบ!!!ข้อมูลใช่หรือไม่ ?", "แจ้งเตือน", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        var id = Convert.ToInt32(gridVisitorList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
+
+                        var resp = _service.Delete(id);
+                        if (resp.Status)
+                        {
+                            MessageBox.Show(Message.MSG_SAVE_COMPLETE, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.DialogResult = DialogResult.OK;
+                            ResetScreen();
+                        }
+                        else
+                        {
+                            MessageBox.Show(resp.Message);
+                        }
+                    }
+
+                }
+            }
         }
     }
 }

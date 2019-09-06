@@ -311,6 +311,7 @@
             this.gridVisitorList.ReadOnly = true;
             this.gridVisitorList.Size = new System.Drawing.Size(1085, 522);
             this.gridVisitorList.TabIndex = 0;
+            this.gridVisitorList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridVisitorList_CellContentClick);
             // 
             // colPrint
             // 

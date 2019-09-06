@@ -300,7 +300,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
                         {
                             MessageBox.Show(Message.MSG_SAVE_COMPLETE, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.DialogResult = DialogResult.OK;
-                            this.Close();
+                            ResetScreen();
                         }
                         else
                         {
