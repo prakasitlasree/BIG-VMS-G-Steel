@@ -78,7 +78,7 @@ namespace BIG.VMS.DATASERVICE
             return resp;
         }
 
-        public Response AddConstractor(MAS_CONTRACTOR source)
+        public Response UpdateConstractor(MAS_CONTRACTOR source)
         {
             var resp = new Response();
 
@@ -86,8 +86,9 @@ namespace BIG.VMS.DATASERVICE
             {
                 using (var ctx = new BIG_VMSEntities())
                 {
-                    var query = ctx.MAS_CONTRACTOR;
-                    query.Add(source);
+                    var obj = ctx.MAS_CONTRACTOR.Where(o=>o.AUTO_ID == source.AUTO_ID).FirstOrDefault();
+                    ctx.MAS_CONTRACTOR.Attach(obj);
+                    obj = source;
                     ctx.SaveChanges();
                     resp.Status = true;
 
@@ -170,7 +171,7 @@ namespace BIG.VMS.DATASERVICE
         public Response GetProjectbyProjectID(int id)
         {
             var resp = new Response();
-           
+
 
             try
             {
@@ -182,13 +183,43 @@ namespace BIG.VMS.DATASERVICE
                         .Include("TRN_PROJECT_MASTER")
                         .Include("TRN_PROJECT_MASTER.TRN_PROJECT_MEMBER")
                         .Where(o => o.AUTO_ID == project.CONTRACTOR_ID).FirstOrDefault();
-                 
+
                     resp.ResultObj = contractor;
                     resp.Status = true;
                 }
 
-                
+
             }
+            catch (Exception ex)
+            {
+                resp.Status = false;
+                resp.ExceptionMessage = ex.Message.ToString();
+            }
+
+
+            return resp;
+        }
+
+        public Response GetConstractor(int id)
+        {
+            var resp = new Response();
+
+
+            try
+            {
+                using (var ctx = new BIG_VMSEntities())
+                {
+
+                    var contractor = ctx.MAS_CONTRACTOR
+                        .Include("TRN_PROJECT_MASTER")
+                        .Include("TRN_PROJECT_MASTER.TRN_PROJECT_MEMBER")
+                        .Where(o => o.AUTO_ID == id)
+                        .FirstOrDefault();
+
+                    resp.ResultObj = contractor;
+                    resp.Status = true;
+                }
+           }
             catch (Exception ex)
             {
                 resp.Status = false;
