@@ -7,6 +7,7 @@ using BIG.VMS.PRESENT.Forms.Master;
 using BIG.VMS.PRESENT.Forms.FormVisitor;
 using BIG.VMS.PRESENT.Forms.FormReport;
 using BIG.VMS.PRESENT.Forms.Contractor;
+using BIG.VMS.PRESENT.Forms.CustomerVisit;
 
 namespace BIG.VMS.PRESENT
 {
@@ -155,6 +156,15 @@ namespace BIG.VMS.PRESENT
         private void contractorบรษทผรบเหมาToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new frmContractorList();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void planVisitRequestForm_Click(object sender, EventArgs e)
+        {
+            var frm = new frmPlantVisitList();
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.WindowState = FormWindowState.Maximized;
             frm.MdiParent = this;

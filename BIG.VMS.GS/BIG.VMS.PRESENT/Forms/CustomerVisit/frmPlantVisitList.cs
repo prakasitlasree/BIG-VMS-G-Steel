@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BIG.VMS.MODEL.CustomModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,16 @@ namespace BIG.VMS.PRESENT.Forms.CustomerVisit
         public frmPlantVisitList()
         {
             InitializeComponent();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            var frm = new frmPlantVisit();
+            frm.formMode = FormMode.Add;
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                //BindGridData();
+            }
         }
     }
 }

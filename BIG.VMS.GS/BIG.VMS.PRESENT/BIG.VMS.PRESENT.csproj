@@ -488,6 +488,12 @@
     <EmbeddedResource Include="Forms\Contractor\frmProjectMember.resx">
       <DependentUpon>frmProjectMember.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomerVisit\frmPlantVisit.resx">
+      <DependentUpon>frmPlantVisit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomerVisit\frmPlantVisitList.resx">
+      <DependentUpon>frmPlantVisitList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCarMasterDetail\frmCarBrandMaster.resx">
       <DependentUpon>frmCarBrandMaster.cs</DependentUpon>
     </EmbeddedResource>
