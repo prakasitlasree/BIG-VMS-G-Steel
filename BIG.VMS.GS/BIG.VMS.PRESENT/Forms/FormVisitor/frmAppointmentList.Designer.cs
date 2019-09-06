@@ -85,12 +85,12 @@
             this.tableLayoutPanel3.Controls.Add(this.gridAppointmentList, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 239);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 226);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1159, 439);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1159, 452);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // gridAppointmentList
@@ -107,7 +107,7 @@
             this.gridAppointmentList.ReadOnly = true;
             this.gridAppointmentList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.gridAppointmentList.RowTemplate.Height = 30;
-            this.gridAppointmentList.Size = new System.Drawing.Size(1153, 389);
+            this.gridAppointmentList.Size = new System.Drawing.Size(1153, 400);
             this.gridAppointmentList.TabIndex = 0;
             this.gridAppointmentList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridAppointmentList_CellContentClick);
             // 
@@ -137,19 +137,19 @@
             this.tableLayoutPanel4.Controls.Add(this.btnNext, 3, 0);
             this.tableLayoutPanel4.Controls.Add(this.btnLast, 4, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 398);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 409);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1153, 38);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1153, 40);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // txtPage
             // 
             this.txtPage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPage.Enabled = false;
-            this.txtPage.Location = new System.Drawing.Point(21, 3);
+            this.txtPage.Location = new System.Drawing.Point(21, 4);
             this.txtPage.Name = "txtPage";
             this.txtPage.Size = new System.Drawing.Size(188, 31);
             this.txtPage.TabIndex = 1;
@@ -163,7 +163,7 @@
             this.btnFirst.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFirst.Location = new System.Drawing.Point(233, 3);
             this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(224, 32);
+            this.btnFirst.Size = new System.Drawing.Size(224, 34);
             this.btnFirst.TabIndex = 0;
             this.btnFirst.Text = "หน้าแรก";
             this.btnFirst.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -177,7 +177,7 @@
             this.btnPrevious.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPrevious.Location = new System.Drawing.Point(463, 3);
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(224, 32);
+            this.btnPrevious.Size = new System.Drawing.Size(224, 34);
             this.btnPrevious.TabIndex = 1;
             this.btnPrevious.Text = "หน้าก่อนหน้า";
             this.btnPrevious.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -191,7 +191,7 @@
             this.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNext.Location = new System.Drawing.Point(693, 3);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(224, 32);
+            this.btnNext.Size = new System.Drawing.Size(224, 34);
             this.btnNext.TabIndex = 2;
             this.btnNext.Text = "หน้าถัดไป";
             this.btnNext.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -205,7 +205,7 @@
             this.btnLast.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLast.Location = new System.Drawing.Point(923, 3);
             this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(227, 32);
+            this.btnLast.Size = new System.Drawing.Size(227, 34);
             this.btnLast.TabIndex = 3;
             this.btnLast.Text = "หน้าสุดท้าย";
             this.btnLast.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -274,13 +274,12 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1159, 143);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1159, 130);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.White;
-            this.btnSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.Blue;
@@ -288,7 +287,7 @@
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.Location = new System.Drawing.Point(126, 77);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(264, 63);
+            this.btnSearch.Size = new System.Drawing.Size(156, 47);
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "ค้นหา";
             this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

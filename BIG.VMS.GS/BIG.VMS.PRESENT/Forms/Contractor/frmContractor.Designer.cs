@@ -36,12 +36,12 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtTel = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.Lbl_IDCard = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.txtTel = new System.Windows.Forms.MaskedTextBox();
             this.tableLayoutPanel4.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -137,11 +137,11 @@
             this.tableLayoutPanel4.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.Lbl_FirstName, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.txtName, 1, 1);
-            this.tableLayoutPanel4.Controls.Add(this.txtTel, 1, 2);
             this.tableLayoutPanel4.Controls.Add(this.txtAddress, 1, 3);
             this.tableLayoutPanel4.Controls.Add(this.Lbl_IDCard, 0, 2);
             this.tableLayoutPanel4.Controls.Add(this.label3, 0, 3);
             this.tableLayoutPanel4.Controls.Add(this.flowLayoutPanel1, 1, 4);
+            this.tableLayoutPanel4.Controls.Add(this.txtTel, 1, 2);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -154,21 +154,11 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(609, 261);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
-            // txtTel
-            // 
-            this.txtTel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTel.Location = new System.Drawing.Point(143, 65);
-            this.txtTel.MaxLength = 20;
-            this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(463, 31);
-            this.txtTel.TabIndex = 1;
-            // 
             // txtAddress
             // 
             this.txtAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.Location = new System.Drawing.Point(143, 102);
+            this.txtAddress.Location = new System.Drawing.Point(143, 91);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(463, 77);
@@ -180,7 +170,7 @@
             this.Lbl_IDCard.AutoSize = true;
             this.Lbl_IDCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_IDCard.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.Lbl_IDCard.Location = new System.Drawing.Point(32, 68);
+            this.Lbl_IDCard.Location = new System.Drawing.Point(32, 62);
             this.Lbl_IDCard.Name = "Lbl_IDCard";
             this.Lbl_IDCard.Size = new System.Drawing.Size(105, 25);
             this.Lbl_IDCard.TabIndex = 1;
@@ -192,7 +182,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label3.Location = new System.Drawing.Point(72, 128);
+            this.label3.Location = new System.Drawing.Point(72, 117);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 25);
             this.label3.TabIndex = 16;
@@ -203,7 +193,7 @@
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.Controls.Add(this.btnSave);
             this.flowLayoutPanel1.Controls.Add(this.btnCancel);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(143, 185);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(143, 174);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(334, 67);
             this.flowLayoutPanel1.TabIndex = 1;
@@ -211,6 +201,14 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // txtTel
+            // 
+            this.txtTel.Location = new System.Drawing.Point(143, 65);
+            this.txtTel.Mask = "000-000-0000";
+            this.txtTel.Name = "txtTel";
+            this.txtTel.Size = new System.Drawing.Size(463, 20);
+            this.txtTel.TabIndex = 22;
             // 
             // frmContractor
             // 
@@ -248,7 +246,7 @@
         private System.Windows.Forms.Label Lbl_IDCard;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtAddress;
-        private System.Windows.Forms.TextBox txtTel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.MaskedTextBox txtTel;
     }
 }

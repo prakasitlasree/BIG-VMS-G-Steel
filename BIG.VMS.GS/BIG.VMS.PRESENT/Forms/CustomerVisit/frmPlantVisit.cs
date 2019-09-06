@@ -32,28 +32,7 @@ namespace BIG.VMS.PRESENT.Forms.CustomerVisit
 
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(comboBox2.SelectedIndex == 0)
-            {
-                tabPurpose.SelectTab(0);
-                tabPlantTour.Hide();
-                tabPurchasing.Hide();
-            }
-            if (comboBox2.SelectedIndex == 1)
-            {
-                tabPurpose.SelectTab(1);
-                tabPlantTour.Hide();
-                tabDiscussion.Hide();
-            }
-            if (comboBox2.SelectedIndex == 2)
-            {
-                tabPurpose.SelectTab(2);
-                tabDiscussion.Hide();
-                tabPurchasing.Hide();
-            }
-        }
-
+         
         private void tabPage1_Click(object sender, EventArgs e)
         {
 

@@ -106,7 +106,7 @@
             this.btnMeet.Name = "btnMeet";
             this.btnMeet.Size = new System.Drawing.Size(330, 55);
             this.btnMeet.TabIndex = 1;
-            this.btnMeet.Text = "(3) เลือกบุคคลที่ต้องการเข้าพบ";
+            this.btnMeet.Text = "เลือกบุคคลที่ต้องการเข้าพบ";
             this.btnMeet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMeet.UseVisualStyleBackColor = false;
             this.btnMeet.Click += new System.EventHandler(this.btnMeet_Click);
@@ -386,6 +386,8 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmAppointment";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
