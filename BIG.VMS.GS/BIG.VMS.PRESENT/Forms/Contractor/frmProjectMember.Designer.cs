@@ -53,15 +53,15 @@
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.White;
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave.Location = new System.Drawing.Point(8, 7);
             this.btnSave.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(212, 52);
+            this.btnSave.Size = new System.Drawing.Size(134, 46);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "บันทึก";
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -72,36 +72,36 @@
             // 
             this.Lbl_FirstName.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Lbl_FirstName.AutoSize = true;
-            this.Lbl_FirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_FirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_FirstName.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.Lbl_FirstName.Location = new System.Drawing.Point(4, 7);
+            this.Lbl_FirstName.Location = new System.Drawing.Point(4, 5);
             this.Lbl_FirstName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_FirstName.Name = "Lbl_FirstName";
-            this.Lbl_FirstName.Size = new System.Drawing.Size(148, 31);
+            this.Lbl_FirstName.Size = new System.Drawing.Size(107, 25);
             this.Lbl_FirstName.TabIndex = 0;
             this.Lbl_FirstName.Text = "ประเภทบัตร";
             // 
             // txtCardType
             // 
             this.txtCardType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCardType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCardType.Location = new System.Drawing.Point(160, 4);
-            this.txtCardType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCardType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCardType.Location = new System.Drawing.Point(119, 4);
+            this.txtCardType.Margin = new System.Windows.Forms.Padding(4);
             this.txtCardType.Name = "txtCardType";
-            this.txtCardType.Size = new System.Drawing.Size(649, 37);
+            this.txtCardType.Size = new System.Drawing.Size(560, 27);
             this.txtCardType.TabIndex = 0;
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.White;
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancel.Location = new System.Drawing.Point(236, 7);
+            this.btnCancel.Location = new System.Drawing.Point(158, 7);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(201, 52);
+            this.btnCancel.Size = new System.Drawing.Size(161, 46);
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "ยกเลิก";
             this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -125,8 +125,9 @@
             this.tableLayoutPanel4.Controls.Add(this.txtIDCard, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.flowLayoutPanel1, 1, 5);
             this.tableLayoutPanel4.Controls.Add(this.flowLayoutPanel2, 1, 4);
+            this.tableLayoutPanel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel4.Location = new System.Drawing.Point(16, 15);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 6;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -135,54 +136,54 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(813, 373);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(683, 325);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label2.Location = new System.Drawing.Point(33, 243);
+            this.label2.Location = new System.Drawing.Point(27, 216);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 31);
+            this.label2.Size = new System.Drawing.Size(84, 25);
             this.label2.TabIndex = 24;
             this.label2.Text = "การอบรบ";
             // 
             // txtName
             // 
             this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(160, 94);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(119, 74);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(649, 37);
+            this.txtName.Size = new System.Drawing.Size(560, 27);
             this.txtName.TabIndex = 1;
             // 
             // txtPosition
             // 
             this.txtPosition.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPosition.Location = new System.Drawing.Point(160, 139);
-            this.txtPosition.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPosition.Location = new System.Drawing.Point(119, 109);
+            this.txtPosition.Margin = new System.Windows.Forms.Padding(4);
             this.txtPosition.MaxLength = 14;
             this.txtPosition.Multiline = true;
             this.txtPosition.Name = "txtPosition";
-            this.txtPosition.Size = new System.Drawing.Size(649, 94);
+            this.txtPosition.Size = new System.Drawing.Size(560, 94);
             this.txtPosition.TabIndex = 2;
             // 
             // Lbl_IDCard
             // 
             this.Lbl_IDCard.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Lbl_IDCard.AutoSize = true;
-            this.Lbl_IDCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_IDCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_IDCard.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.Lbl_IDCard.Location = new System.Drawing.Point(107, 97);
+            this.Lbl_IDCard.Location = new System.Drawing.Point(77, 75);
             this.Lbl_IDCard.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_IDCard.Name = "Lbl_IDCard";
-            this.Lbl_IDCard.Size = new System.Drawing.Size(45, 31);
+            this.Lbl_IDCard.Size = new System.Drawing.Size(34, 25);
             this.Lbl_IDCard.TabIndex = 1;
             this.Lbl_IDCard.Text = "ชื่อ";
             // 
@@ -190,12 +191,12 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label3.Location = new System.Drawing.Point(47, 170);
+            this.label3.Location = new System.Drawing.Point(32, 143);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 31);
+            this.label3.Size = new System.Drawing.Size(79, 25);
             this.label3.TabIndex = 16;
             this.label3.Text = "ตำแหน่ง";
             // 
@@ -203,23 +204,23 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(45, 52);
+            this.label1.Location = new System.Drawing.Point(34, 40);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 31);
+            this.label1.Size = new System.Drawing.Size(77, 25);
             this.label1.TabIndex = 22;
             this.label1.Text = "รหัสบัตร";
             // 
             // txtIDCard
             // 
             this.txtIDCard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtIDCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDCard.Location = new System.Drawing.Point(160, 49);
-            this.txtIDCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIDCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDCard.Location = new System.Drawing.Point(119, 39);
+            this.txtIDCard.Margin = new System.Windows.Forms.Padding(4);
             this.txtIDCard.Name = "txtIDCard";
-            this.txtIDCard.Size = new System.Drawing.Size(649, 37);
+            this.txtIDCard.Size = new System.Drawing.Size(560, 27);
             this.txtIDCard.TabIndex = 23;
             // 
             // flowLayoutPanel1
@@ -227,19 +228,19 @@
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.Controls.Add(this.btnSave);
             this.flowLayoutPanel1.Controls.Add(this.btnCancel);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(160, 285);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(119, 255);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(445, 66);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(327, 60);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Controls.Add(this.radRequire);
             this.flowLayoutPanel2.Controls.Add(this.radNotRequire);
-            this.flowLayoutPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(160, 241);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(119, 211);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(389, 36);
             this.flowLayoutPanel2.TabIndex = 25;
@@ -248,10 +249,11 @@
             // 
             this.radRequire.AutoSize = true;
             this.radRequire.Checked = true;
+            this.radRequire.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radRequire.Location = new System.Drawing.Point(4, 4);
-            this.radRequire.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radRequire.Margin = new System.Windows.Forms.Padding(4);
             this.radRequire.Name = "radRequire";
-            this.radRequire.Size = new System.Drawing.Size(94, 35);
+            this.radRequire.Size = new System.Drawing.Size(72, 24);
             this.radRequire.TabIndex = 0;
             this.radRequire.TabStop = true;
             this.radRequire.Text = "อบรม";
@@ -260,10 +262,11 @@
             // radNotRequire
             // 
             this.radNotRequire.AutoSize = true;
-            this.radNotRequire.Location = new System.Drawing.Point(106, 4);
-            this.radNotRequire.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radNotRequire.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radNotRequire.Location = new System.Drawing.Point(84, 4);
+            this.radNotRequire.Margin = new System.Windows.Forms.Padding(4);
             this.radNotRequire.Name = "radNotRequire";
-            this.radNotRequire.Size = new System.Drawing.Size(123, 35);
+            this.radNotRequire.Size = new System.Drawing.Size(93, 24);
             this.radNotRequire.TabIndex = 1;
             this.radNotRequire.Text = "ไม่อบรม";
             this.radNotRequire.UseVisualStyleBackColor = true;
@@ -276,9 +279,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(864, 417);
+            this.ClientSize = new System.Drawing.Size(717, 361);
             this.Controls.Add(this.tableLayoutPanel4);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmProjectMember";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
