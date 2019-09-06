@@ -59,6 +59,7 @@
     <Compile Include="CarModelServices.cs" />
     <Compile Include="ComboBoxServices.cs" />
     <Compile Include="ConstractorServices.cs" />
+    <Compile Include="ContratorServices.cs" />
     <Compile Include="HardwareServices.cs" />
     <Compile Include="ProjectServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

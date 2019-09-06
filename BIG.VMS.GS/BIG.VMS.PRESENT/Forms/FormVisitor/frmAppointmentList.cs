@@ -259,10 +259,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
 
         }
 
-        private void gridAppointmentList_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+      
 
         private void btnComein_Click(object sender, EventArgs e)
         {
