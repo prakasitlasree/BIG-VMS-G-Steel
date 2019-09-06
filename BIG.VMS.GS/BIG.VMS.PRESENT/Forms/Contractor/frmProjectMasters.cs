@@ -36,23 +36,15 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
                 gridEmployee.DataSource = new List<TRN_PROJECT_MEMBER>();
                 txtDate.Text = DateTime.Now.ToString();
             }
+
+            AddRangeComboBox(comboCompany, new ComboBoxServices().GetComboConstractor());
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("ต้องการบันทึกข้อมูลใช่หรือไม่ ?", "แจ้งเตือน", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                MAS_CONTRACTOR constractor = new MAS_CONTRACTOR()
-                {
-                    NAME = comboCompany.Text,
-                    ADDRESS = txtAddress.Text,
-                    TEL = txtTel.Text,
-                    CREATED_BY = LOGIN,
-                    CREATED_DATE = DateTime.Now,
-                    UPDATED_BY = LOGIN,
-                    UPDATED_DATE = DateTime.Now,
-                    TRN_PROJECT_MASTER = new List<TRN_PROJECT_MASTER>()
-                };
+               
                 TRN_PROJECT_MASTER project = new TRN_PROJECT_MASTER()
                 {
                     REGISTER_DATE = DateTime.Now,
@@ -83,14 +75,19 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
 
                 };
                 LIST_TRN_PROJECT_MEMBER = (List<TRN_PROJECT_MEMBER>)gridEmployee.DataSource;
+
                 foreach (var item in LIST_TRN_PROJECT_MEMBER)
                 {
                     project.TRN_PROJECT_MEMBER.Add(item);
                 }
 
-                constractor.TRN_PROJECT_MASTER.Add(project);
+                if(MAS_CONTRACTOR.TRN_PROJECT_MASTER != null)
+                {
+                    MAS_CONTRACTOR.TRN_PROJECT_MASTER.Add(project);
+                }
+                
 
-                var resp = service.AddConstractor(constractor);
+                var resp = service.UpdateConstractor(MAS_CONTRACTOR);
                 if (resp.Status)
                 {
                     MessageBox.Show(Message.MSG_SAVE_COMPLETE, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -122,6 +119,22 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
         private void txtTel_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboCompany_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var id   = Convert.ToInt32(comboCompany.SelectedValue);
+            if (id != 0)
+            {
+                var resp = service.GetConstractor(id);
+                if (resp.Status)
+                {
+                    MAS_CONTRACTOR obj = (MAS_CONTRACTOR)resp.ResultObj;
+                    this.MAS_CONTRACTOR = obj;
+                    txtAddress.Text = obj.ADDRESS;
+                    txtTel.Text = obj.TEL;
+                }
+            }
         }
     }
 }

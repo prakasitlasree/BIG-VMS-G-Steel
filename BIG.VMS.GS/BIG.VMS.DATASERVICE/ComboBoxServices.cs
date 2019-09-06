@@ -466,5 +466,29 @@ namespace BIG.VMS.DATASERVICE
             }
             return listData;
         }
+
+        public List<ComboBoxItem> GetComboConstractor()
+        {
+            List<ComboBoxItem> listData = new List<ComboBoxItem>();
+            try
+            {
+                using (BIG_VMSEntities ctx = new BIG_VMSEntities())
+                {
+                    var list = ctx.MAS_CONTRACTOR.ToList();
+                    foreach (var item in list)
+                    {
+                        ComboBoxItem data = new ComboBoxItem();
+                        data.Text = item.NAME;
+                        data.Value = item.AUTO_ID;
+                        listData.Add(data);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return listData;
+        }
     }
 }
