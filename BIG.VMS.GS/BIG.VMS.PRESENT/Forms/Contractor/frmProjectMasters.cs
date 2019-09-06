@@ -44,7 +44,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             {
                 MAS_CONTRACTOR constractor = new MAS_CONTRACTOR()
                 {
-                    NAME = txtCompany.Text,
+                    NAME = comboCompany.Text,
                     ADDRESS = txtAddress.Text,
                     TEL = txtTel.Text,
                     CREATED_BY = LOGIN,

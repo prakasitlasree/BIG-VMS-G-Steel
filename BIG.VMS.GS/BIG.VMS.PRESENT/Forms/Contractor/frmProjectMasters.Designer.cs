@@ -30,10 +30,12 @@
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboCompany = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTel = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.txtDate = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
@@ -106,8 +108,6 @@
             this.txtProjectname = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.flowLayoutPanel6.SuspendLayout();
@@ -128,7 +128,7 @@
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel1.Controls.Add(this.label1);
-            this.flowLayoutPanel1.Controls.Add(this.comboBox2);
+            this.flowLayoutPanel1.Controls.Add(this.comboCompany);
             this.flowLayoutPanel1.Controls.Add(this.label2);
             this.flowLayoutPanel1.Controls.Add(this.txtAddress);
             this.flowLayoutPanel1.Controls.Add(this.label3);
@@ -143,17 +143,25 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Location = new System.Drawing.Point(3, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(255, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Company Name (ชื่อบริษัท):";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // comboCompany
+            // 
+            this.comboCompany.FormattingEnabled = true;
+            this.comboCompany.Location = new System.Drawing.Point(264, 3);
+            this.comboCompany.Name = "comboCompany";
+            this.comboCompany.Size = new System.Drawing.Size(581, 33);
+            this.comboCompany.TabIndex = 7;
+            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label2.Location = new System.Drawing.Point(3, 61);
+            this.label2.Location = new System.Drawing.Point(3, 68);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(255, 25);
             this.label2.TabIndex = 2;
@@ -162,7 +170,7 @@
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(264, 35);
+            this.txtAddress.Location = new System.Drawing.Point(264, 42);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.ReadOnly = true;
@@ -172,7 +180,7 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(3, 116);
+            this.label3.Location = new System.Drawing.Point(3, 123);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(255, 25);
             this.label3.TabIndex = 4;
@@ -181,12 +189,20 @@
             // 
             // txtTel
             // 
-            this.txtTel.Location = new System.Drawing.Point(264, 119);
+            this.txtTel.Location = new System.Drawing.Point(264, 126);
             this.txtTel.Name = "txtTel";
             this.txtTel.ReadOnly = true;
             this.txtTel.Size = new System.Drawing.Size(582, 30);
             this.txtTel.TabIndex = 5;
             this.txtTel.TextChanged += new System.EventHandler(this.txtTel_TextChanged);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(3, 162);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 33);
+            this.comboBox1.TabIndex = 6;
             // 
             // txtDate
             // 
@@ -890,22 +906,6 @@
             this.label25.Text = "Project Name (ชื่อโครงการ):";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(3, 155);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 33);
-            this.comboBox1.TabIndex = 6;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(264, 3);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(581, 33);
-            this.comboBox2.TabIndex = 7;
-            // 
             // frmProjectMasters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -1034,7 +1034,7 @@
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboCompany;
         private System.Windows.Forms.ComboBox comboBox1;
     }
 }
