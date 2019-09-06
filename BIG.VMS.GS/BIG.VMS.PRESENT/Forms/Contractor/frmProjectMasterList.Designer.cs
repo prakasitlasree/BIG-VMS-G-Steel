@@ -82,7 +82,7 @@
             this.btnSearch.ForeColor = System.Drawing.Color.Blue;
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSearch.Location = new System.Drawing.Point(114, 40);
+            this.btnSearch.Location = new System.Drawing.Point(141, 46);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(306, 46);
             this.btnSearch.TabIndex = 3;
@@ -97,16 +97,16 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 25);
+            this.label1.Size = new System.Drawing.Size(132, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "ชื่อโครงการ";
             // 
             // txtName
             // 
             this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtName.Location = new System.Drawing.Point(114, 3);
+            this.txtName.Location = new System.Drawing.Point(141, 3);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(868, 31);
+            this.txtName.Size = new System.Drawing.Size(841, 37);
             this.txtName.TabIndex = 6;
             // 
             // tableLayoutPanel1
@@ -213,9 +213,9 @@
             // 
             this.txtPage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPage.Enabled = false;
-            this.txtPage.Location = new System.Drawing.Point(3, 6);
+            this.txtPage.Location = new System.Drawing.Point(3, 3);
             this.txtPage.Name = "txtPage";
-            this.txtPage.Size = new System.Drawing.Size(188, 31);
+            this.txtPage.Size = new System.Drawing.Size(188, 37);
             this.txtPage.TabIndex = 1;
             this.txtPage.Text = "หน้า";
             // 
@@ -295,7 +295,7 @@
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.Location = new System.Drawing.Point(0, 0);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(260, 100);
+            this.btnAdd.Size = new System.Drawing.Size(326, 100);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "เพิ่มโครงการ";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -305,7 +305,7 @@
             // 
             // frmProjectMasterList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(991, 611);
             this.Controls.Add(this.tableLayoutPanel1);

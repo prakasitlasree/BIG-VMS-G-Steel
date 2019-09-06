@@ -116,7 +116,17 @@ namespace BIG.VMS.PRESENT
             {
                 DataRow row = table.NewRow();
                 foreach (PropertyDescriptor prop in properties)
-                    row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
+
+                    try
+                    {
+                        row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
+                      
+                    }
+                    catch
+                    {
+
+                    }
+
                 table.Rows.Add(row);
             }
             return table;

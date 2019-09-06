@@ -39,7 +39,7 @@
           <Key>
             <PropertyRef Name="AUTO_ID" />
           </Key>
-          <Property Name="AUTO_ID" Type="int" Nullable="false" />
+          <Property Name="AUTO_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NAME" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="ADDRESS" Type="nvarchar" MaxLength="2000" Nullable="false" />
           <Property Name="TEL" Type="nvarchar" MaxLength="500" />
@@ -176,7 +176,7 @@
           <Key>
             <PropertyRef Name="AUTO_ID" />
           </Key>
-          <Property Name="AUTO_ID" Type="int" Nullable="false" />
+          <Property Name="AUTO_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="REQUESTOR_EMP_ID" Type="int" />
           <Property Name="REQUESTOR_FULLNAME" Type="nvarchar" MaxLength="250" />
           <Property Name="REQUESTOR_POSITION" Type="nvarchar" MaxLength="250" />
@@ -196,7 +196,7 @@
           <Key>
             <PropertyRef Name="AUTO_ID" />
           </Key>
-          <Property Name="AUTO_ID" Type="int" Nullable="false" />
+          <Property Name="AUTO_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CUSTOMER_VISIT_ID" Type="int" Nullable="false" />
           <Property Name="SEQ" Type="int" Nullable="false" />
           <Property Name="FULLNAME" Type="nvarchar" MaxLength="250" Nullable="false" />
@@ -205,7 +205,7 @@
           <Key>
             <PropertyRef Name="AUTO_ID" />
           </Key>
-          <Property Name="AUTO_ID" Type="int" Nullable="false" />
+          <Property Name="AUTO_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CUSTOMER_VISIT_ID" Type="int" Nullable="false" />
           <Property Name="SEQ" Type="int" Nullable="false" />
           <Property Name="PURPOSE_TYPE" Type="nvarchar" MaxLength="250" Nullable="false" />
@@ -233,7 +233,7 @@
           <Key>
             <PropertyRef Name="AUTO_ID" />
           </Key>
-          <Property Name="AUTO_ID" Type="int" Nullable="false" />
+          <Property Name="AUTO_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CONTRACTOR_ID" Type="int" Nullable="false" />
           <Property Name="REGISTER_DATE" Type="date" Nullable="false" />
           <Property Name="RESPONSIBLE_MANAGER" Type="nvarchar" MaxLength="250" />
@@ -265,7 +265,7 @@
           <Key>
             <PropertyRef Name="AUTO_ID" />
           </Key>
-          <Property Name="AUTO_ID" Type="int" Nullable="false" />
+          <Property Name="AUTO_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PROJECT_ID" Type="int" Nullable="false" />
           <Property Name="CARD_TYPE" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ID_CARD" Type="nvarchar" MaxLength="50" Nullable="false" />
