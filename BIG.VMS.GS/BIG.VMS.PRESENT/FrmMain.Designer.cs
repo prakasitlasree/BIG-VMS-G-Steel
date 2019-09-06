@@ -40,6 +40,7 @@
             this.report_in_out = new System.Windows.Forms.ToolStripMenuItem();
             this.contractor_management = new System.Windows.Forms.ToolStripMenuItem();
             this.BlacklistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contractorlist = new System.Windows.Forms.ToolStripMenuItem();
             this.เวบไซตToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.website = new System.Windows.Forms.ToolStripMenuItem();
             this.help = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +50,6 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lbLogout = new System.Windows.Forms.ToolStripStatusLabel();
-            this.contractorlist = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -76,8 +76,8 @@
             this.Home.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.visitor_transaction});
             this.Home.Name = "Home";
-            this.Home.Size = new System.Drawing.Size(58, 20);
-            this.Home.Text = "หน้าหลัก";
+            this.Home.Size = new System.Drawing.Size(122, 20);
+            this.Home.Text = "หน้าหลัก (ผ่านเข้าออก)";
             // 
             // visitor_transaction
             // 
@@ -93,8 +93,8 @@
             this.planVisitRequestForm,
             this.contractorToolStripMenuItem});
             this.Contractor.Name = "Contractor";
-            this.Contractor.Size = new System.Drawing.Size(63, 20);
-            this.Contractor.Text = "การติดต่อ";
+            this.Contractor.Size = new System.Drawing.Size(75, 20);
+            this.Contractor.Text = "การนัดหมาย";
             // 
             // appointment
             // 
@@ -137,15 +137,22 @@
             this.BlacklistToolStripMenuItem,
             this.contractorlist});
             this.contractor_management.Name = "contractor_management";
-            this.contractor_management.Size = new System.Drawing.Size(53, 20);
-            this.contractor_management.Text = "admin";
+            this.contractor_management.Size = new System.Drawing.Size(83, 20);
+            this.contractor_management.Text = "จัดการผู้ติดต่อ";
             // 
             // BlacklistToolStripMenuItem
             // 
             this.BlacklistToolStripMenuItem.Name = "BlacklistToolStripMenuItem";
-            this.BlacklistToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.BlacklistToolStripMenuItem.Text = "รายชื่อผู้ต้องห้าม Blacklist";
+            this.BlacklistToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.BlacklistToolStripMenuItem.Text = "รายชื่อผู้ต้องห้าม/Blacklist";
             this.BlacklistToolStripMenuItem.Click += new System.EventHandler(this.BlacklistToolStripMenuItem_Click);
+            // 
+            // contractorlist
+            // 
+            this.contractorlist.Name = "contractorlist";
+            this.contractorlist.Size = new System.Drawing.Size(232, 22);
+            this.contractorlist.Text = "รายชื่อบริษัทผู้รับเหมา/Contractor";
+            this.contractorlist.Click += new System.EventHandler(this.contractorบรษทผรบเหมาToolStripMenuItem_Click);
             // 
             // เวบไซตToolStripMenuItem
             // 
@@ -158,7 +165,7 @@
             // website
             // 
             this.website.Name = "website";
-            this.website.Size = new System.Drawing.Size(180, 22);
+            this.website.Size = new System.Drawing.Size(143, 22);
             this.website.Text = "อัพโหลดรูปภาพ";
             this.website.Click += new System.EventHandler(this.website_Click);
             // 
@@ -174,14 +181,14 @@
             // test_readcard
             // 
             this.test_readcard.Name = "test_readcard";
-            this.test_readcard.Size = new System.Drawing.Size(180, 22);
+            this.test_readcard.Size = new System.Drawing.Size(144, 22);
             this.test_readcard.Text = "ทดสอบอ่านบัตร";
             this.test_readcard.Click += new System.EventHandler(this.test_readcard_Click);
             // 
             // logout
             // 
             this.logout.Name = "logout";
-            this.logout.Size = new System.Drawing.Size(180, 22);
+            this.logout.Size = new System.Drawing.Size(144, 22);
             this.logout.Text = "ออกจากระบบ";
             this.logout.Click += new System.EventHandler(this.logout_Click_1);
             // 
@@ -220,13 +227,6 @@
             this.lbLogout.Size = new System.Drawing.Size(45, 17);
             this.lbLogout.Text = "Logout";
             this.lbLogout.Click += new System.EventHandler(this.lbLogout_Click);
-            // 
-            // contractorlist
-            // 
-            this.contractorlist.Name = "contractorlist";
-            this.contractorlist.Size = new System.Drawing.Size(203, 22);
-            this.contractorlist.Text = "Contractor/บริษัทผู้รับเหมา";
-            this.contractorlist.Click += new System.EventHandler(this.contractorบรษทผรบเหมาToolStripMenuItem_Click);
             // 
             // FrmMain
             // 

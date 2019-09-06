@@ -55,6 +55,7 @@
     <Compile Include="CustomModel\Container\ContainerCarBrand.cs" />
     <Compile Include="CustomModel\Container\ContainerCarModel.cs" />
     <Compile Include="CustomModel\Container\ContainerCarType.cs" />
+    <Compile Include="CustomModel\Container\ContainerContractor.cs" />
     <Compile Include="CustomModel\CustomContainer\CustomAppointment.cs" />
     <Compile Include="CustomModel\CustomContainer\CustomVisitor.cs" />
     <Compile Include="CustomModel\CustomContainer\ReportParameter.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="CustomModel\Container\ContainerHardware.cs" />
     <Compile Include="CustomModel\Container\ContainerVisitor.cs" />
     <Compile Include="CustomModel\Filter\BlacklistFilter.cs" />
+    <Compile Include="CustomModel\Filter\ContractorFilter.cs" />
     <Compile Include="CustomModel\HeaderGrid.cs" />
     <Compile Include="CustomModel\PIDCard.cs" />
     <Compile Include="CustomModel\Filter\VisitorFilter.cs" />

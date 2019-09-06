@@ -52,19 +52,20 @@
             this.Lbl_FirstName.AutoSize = true;
             this.Lbl_FirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_FirstName.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.Lbl_FirstName.Location = new System.Drawing.Point(100, 31);
+            this.Lbl_FirstName.Location = new System.Drawing.Point(84, 31);
             this.Lbl_FirstName.Name = "Lbl_FirstName";
-            this.Lbl_FirstName.Size = new System.Drawing.Size(37, 25);
+            this.Lbl_FirstName.Size = new System.Drawing.Size(53, 25);
             this.Lbl_FirstName.TabIndex = 0;
-            this.Lbl_FirstName.Text = "ชื่อ";
+            this.Lbl_FirstName.Text = "ชื่อ *";
             // 
             // txtName
             // 
             this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(143, 28);
+            this.txtName.MaxLength = 1000;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(437, 31);
+            this.txtName.Size = new System.Drawing.Size(463, 31);
             this.txtName.TabIndex = 0;
             // 
             // label4
@@ -72,6 +73,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label4.Location = new System.Drawing.Point(3, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(134, 25);
@@ -86,7 +88,7 @@
             this.lbType.ForeColor = System.Drawing.Color.Red;
             this.lbType.Location = new System.Drawing.Point(143, 0);
             this.lbType.Name = "lbType";
-            this.lbType.Size = new System.Drawing.Size(437, 25);
+            this.lbType.Size = new System.Drawing.Size(463, 25);
             this.lbType.TabIndex = 21;
             this.lbType.Text = "เพิ่มผู้รับเหมา";
             // 
@@ -100,8 +102,8 @@
             this.btnCancel.Location = new System.Drawing.Point(177, 6);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(6);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(151, 42);
-            this.btnCancel.TabIndex = 1;
+            this.btnCancel.Size = new System.Drawing.Size(151, 55);
+            this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "ยกเลิก";
             this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -117,8 +119,8 @@
             this.btnSave.Location = new System.Drawing.Point(6, 6);
             this.btnSave.Margin = new System.Windows.Forms.Padding(6);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(159, 42);
-            this.btnSave.TabIndex = 0;
+            this.btnSave.Size = new System.Drawing.Size(159, 55);
+            this.btnSave.TabIndex = 3;
             this.btnSave.Text = "บันทึก";
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSave.UseVisualStyleBackColor = false;
@@ -140,7 +142,8 @@
             this.tableLayoutPanel4.Controls.Add(this.Lbl_IDCard, 0, 2);
             this.tableLayoutPanel4.Controls.Add(this.label3, 0, 3);
             this.tableLayoutPanel4.Controls.Add(this.flowLayoutPanel1, 1, 4);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(12, 12);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 5;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -148,7 +151,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(583, 242);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(609, 261);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // txtTel
@@ -156,8 +159,9 @@
             this.txtTel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTel.Location = new System.Drawing.Point(143, 65);
+            this.txtTel.MaxLength = 20;
             this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(437, 31);
+            this.txtTel.Size = new System.Drawing.Size(463, 31);
             this.txtTel.TabIndex = 1;
             // 
             // txtAddress
@@ -165,10 +169,9 @@
             this.txtAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress.Location = new System.Drawing.Point(143, 102);
-            this.txtAddress.MaxLength = 14;
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(437, 77);
+            this.txtAddress.Size = new System.Drawing.Size(463, 77);
             this.txtAddress.TabIndex = 2;
             // 
             // Lbl_IDCard
@@ -177,11 +180,11 @@
             this.Lbl_IDCard.AutoSize = true;
             this.Lbl_IDCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_IDCard.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.Lbl_IDCard.Location = new System.Drawing.Point(48, 68);
+            this.Lbl_IDCard.Location = new System.Drawing.Point(32, 68);
             this.Lbl_IDCard.Name = "Lbl_IDCard";
-            this.Lbl_IDCard.Size = new System.Drawing.Size(89, 25);
+            this.Lbl_IDCard.Size = new System.Drawing.Size(105, 25);
             this.Lbl_IDCard.TabIndex = 1;
-            this.Lbl_IDCard.Text = "เบอร์โทร";
+            this.Lbl_IDCard.Text = "เบอร์โทร *";
             // 
             // label3
             // 
@@ -189,11 +192,11 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label3.Location = new System.Drawing.Point(88, 128);
+            this.label3.Location = new System.Drawing.Point(72, 128);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 25);
+            this.label3.Size = new System.Drawing.Size(65, 25);
             this.label3.TabIndex = 16;
-            this.label3.Text = "ที่อยู่";
+            this.label3.Text = "ที่อยู่ *";
             // 
             // flowLayoutPanel1
             // 
@@ -202,7 +205,7 @@
             this.flowLayoutPanel1.Controls.Add(this.btnCancel);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(143, 185);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(334, 54);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(334, 67);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // openFileDialog1
@@ -217,8 +220,11 @@
             this.Controls.Add(this.tableLayoutPanel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(625, 300);
             this.MinimizeBox = false;
             this.Name = "frmContractor";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ผู้รับเหมา";
             this.Load += new System.EventHandler(this.frmContractor_Load);

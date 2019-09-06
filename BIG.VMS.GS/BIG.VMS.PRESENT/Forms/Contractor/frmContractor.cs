@@ -1,5 +1,6 @@
 ﻿using BIG.VMS.DATASERVICE;
 using BIG.VMS.MODEL.EntityModel;
+using BIG.VMS.MODEL.CustomModel.Container;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
     {
         public MAS_CONTRACTOR MAS_CONTRACTOR { get; set; }
         private ConstractorServices service = new ConstractorServices();
-
+        
         public frmContractor()
         {
             InitializeComponent();
@@ -29,7 +30,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
 
         private void frmContractor_Load(object sender, EventArgs e)
         {
-
+            SetControl();
         }
 
 
@@ -91,7 +92,29 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
                     }
                     if (formMode == MODEL.CustomModel.FormMode.Edit)
                     {
-
+                        MAS_CONTRACTOR obj = new MAS_CONTRACTOR()
+                        {
+                            AUTO_ID = MAS_CONTRACTOR.AUTO_ID,
+                            NAME = txtName.Text,
+                            ADDRESS = txtAddress.Text,
+                            TEL = txtTel.Text,
+                            CREATED_BY = LOGIN,
+                            UPDATED_BY = LOGIN,
+                            CREATED_DATE = DateTime.Now,
+                            UPDATED_DATE = DateTime.Now
+                        };
+                         
+                        var resp = service.UpdateContractor(obj);
+                        if (resp.Status)
+                        {
+                            MessageBox.Show(Message.MSG_SAVE_COMPLETE, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show(resp.Message);
+                        }
                     }
 
                 }
