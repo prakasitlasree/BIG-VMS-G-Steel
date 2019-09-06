@@ -30,12 +30,10 @@
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCompany = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTel = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtDate = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
@@ -70,6 +68,12 @@
             this.label10 = new System.Windows.Forms.Label();
             this.chkWorkDay = new System.Windows.Forms.RadioButton();
             this.chkHoliday = new System.Windows.Forms.RadioButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.dtFrom = new System.Windows.Forms.DateTimePicker();
@@ -97,11 +101,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtResponseTel = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.label24 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.label25 = new System.Windows.Forms.Label();
             this.txtProjectname = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.flowLayoutPanel6.SuspendLayout();
@@ -122,93 +128,81 @@
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel1.Controls.Add(this.label1);
-            this.flowLayoutPanel1.Controls.Add(this.txtCompany);
+            this.flowLayoutPanel1.Controls.Add(this.comboBox2);
             this.flowLayoutPanel1.Controls.Add(this.label2);
             this.flowLayoutPanel1.Controls.Add(this.txtAddress);
             this.flowLayoutPanel1.Controls.Add(this.label3);
             this.flowLayoutPanel1.Controls.Add(this.txtTel);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 46);
+            this.flowLayoutPanel1.Controls.Add(this.comboBox1);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 40);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(996, 178);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(854, 154);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label1.Location = new System.Drawing.Point(3, 1);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(297, 37);
+            this.label1.Size = new System.Drawing.Size(255, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Company Name (ชื่อบริษัท):";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtCompany
-            // 
-            this.txtCompany.Location = new System.Drawing.Point(306, 3);
-            this.txtCompany.Name = "txtCompany";
-            this.txtCompany.Size = new System.Drawing.Size(677, 34);
-            this.txtCompany.TabIndex = 1;
-            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label2.Location = new System.Drawing.Point(3, 73);
+            this.label2.Location = new System.Drawing.Point(3, 61);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(297, 29);
+            this.label2.Size = new System.Drawing.Size(255, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Address (ที่อยู่):";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(306, 43);
+            this.txtAddress.Location = new System.Drawing.Point(264, 35);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(677, 90);
+            this.txtAddress.ReadOnly = true;
+            this.txtAddress.Size = new System.Drawing.Size(581, 78);
             this.txtAddress.TabIndex = 3;
+            this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(3, 136);
+            this.label3.Location = new System.Drawing.Point(3, 116);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(297, 29);
+            this.label3.Size = new System.Drawing.Size(255, 25);
             this.label3.TabIndex = 4;
             this.label3.Text = "Tel (เบอร์โทร):";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtTel
             // 
-            this.txtTel.Location = new System.Drawing.Point(306, 139);
+            this.txtTel.Location = new System.Drawing.Point(264, 119);
             this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(678, 34);
+            this.txtTel.ReadOnly = true;
+            this.txtTel.Size = new System.Drawing.Size(582, 30);
             this.txtTel.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(632, -72);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 29);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "วันที่ (Date)";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.txtTel.TextChanged += new System.EventHandler(this.txtTel_TextChanged);
             // 
             // txtDate
             // 
-            this.txtDate.Location = new System.Drawing.Point(152, 6);
+            this.txtDate.Location = new System.Drawing.Point(666, 3);
             this.txtDate.Name = "txtDate";
             this.txtDate.ReadOnly = true;
-            this.txtDate.Size = new System.Drawing.Size(232, 34);
+            this.txtDate.Size = new System.Drawing.Size(199, 30);
             this.txtDate.TabIndex = 2;
             // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.flowLayoutPanel6);
-            this.tabPage4.Location = new System.Drawing.Point(4, 38);
+            this.tabPage4.Location = new System.Drawing.Point(4, 34);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(988, 351);
+            this.tabPage4.Size = new System.Drawing.Size(846, 349);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "HRA";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -227,9 +221,9 @@
             this.flowLayoutPanel6.Controls.Add(this.dtHraExpire);
             this.flowLayoutPanel6.Controls.Add(this.label23);
             this.flowLayoutPanel6.Controls.Add(this.txtHraApprove);
-            this.flowLayoutPanel6.Location = new System.Drawing.Point(7, 21);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(6, 43);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(974, 324);
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(835, 280);
             this.flowLayoutPanel6.TabIndex = 3;
             // 
             // label20
@@ -237,90 +231,89 @@
             this.label20.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label20.Location = new System.Drawing.Point(3, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(955, 29);
+            this.label20.Size = new System.Drawing.Size(819, 25);
             this.label20.TabIndex = 0;
             this.label20.Text = "Contractor ID Badge issuing";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // radTemp
             // 
+            this.radTemp.AutoSize = true;
             this.radTemp.Checked = true;
-            this.radTemp.Location = new System.Drawing.Point(3, 32);
+            this.radTemp.Location = new System.Drawing.Point(3, 28);
             this.radTemp.Name = "radTemp";
-            this.radTemp.Size = new System.Drawing.Size(264, 33);
+            this.radTemp.Size = new System.Drawing.Size(196, 29);
             this.radTemp.TabIndex = 13;
             this.radTemp.TabStop = true;
             this.radTemp.Text = "Temporary(ชั่วคราว)";
-            this.radTemp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.radTemp.UseVisualStyleBackColor = true;
             // 
             // label21
             // 
-            this.label21.Location = new System.Drawing.Point(273, 29);
+            this.label21.Location = new System.Drawing.Point(205, 25);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(123, 37);
+            this.label21.Size = new System.Drawing.Size(105, 32);
             this.label21.TabIndex = 4;
             this.label21.Text = "Issue Date:";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // dtHraIssue
             // 
-            this.dtHraIssue.Location = new System.Drawing.Point(402, 32);
+            this.dtHraIssue.Location = new System.Drawing.Point(316, 28);
             this.dtHraIssue.Name = "dtHraIssue";
-            this.dtHraIssue.Size = new System.Drawing.Size(535, 34);
+            this.dtHraIssue.Size = new System.Drawing.Size(459, 30);
             this.dtHraIssue.TabIndex = 17;
             // 
             // radPerm
             // 
-            this.radPerm.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radPerm.Location = new System.Drawing.Point(3, 72);
+            this.radPerm.AutoSize = true;
+            this.radPerm.Location = new System.Drawing.Point(3, 64);
             this.radPerm.Name = "radPerm";
-            this.radPerm.Size = new System.Drawing.Size(253, 33);
+            this.radPerm.Size = new System.Drawing.Size(181, 29);
             this.radPerm.TabIndex = 14;
             this.radPerm.TabStop = true;
             this.radPerm.Text = "Permanent (ถาวร)";
-            this.radPerm.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.radPerm.UseVisualStyleBackColor = true;
             // 
             // label22
             // 
-            this.label22.Location = new System.Drawing.Point(262, 69);
+            this.label22.Location = new System.Drawing.Point(190, 61);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(113, 37);
+            this.label22.Size = new System.Drawing.Size(97, 32);
             this.label22.TabIndex = 18;
             this.label22.Text = "Expire Date:";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // dtHraExpire
             // 
-            this.dtHraExpire.Location = new System.Drawing.Point(381, 72);
+            this.dtHraExpire.Location = new System.Drawing.Point(293, 64);
             this.dtHraExpire.Name = "dtHraExpire";
-            this.dtHraExpire.Size = new System.Drawing.Size(535, 34);
+            this.dtHraExpire.Size = new System.Drawing.Size(459, 30);
             this.dtHraExpire.TabIndex = 19;
             // 
             // label23
             // 
-            this.label23.Location = new System.Drawing.Point(3, 109);
+            this.label23.Location = new System.Drawing.Point(3, 97);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(322, 29);
+            this.label23.Size = new System.Drawing.Size(276, 25);
             this.label23.TabIndex = 6;
             this.label23.Text = "Approved by HRA Manager:";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtHraApprove
             // 
-            this.txtHraApprove.Location = new System.Drawing.Point(331, 112);
+            this.txtHraApprove.Location = new System.Drawing.Point(285, 100);
             this.txtHraApprove.Name = "txtHraApprove";
-            this.txtHraApprove.Size = new System.Drawing.Size(535, 34);
+            this.txtHraApprove.Size = new System.Drawing.Size(459, 30);
             this.txtHraApprove.TabIndex = 7;
             // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.flowLayoutPanel4);
-            this.tabPage3.Location = new System.Drawing.Point(4, 38);
+            this.tabPage3.Location = new System.Drawing.Point(4, 34);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(988, 351);
+            this.tabPage3.Size = new System.Drawing.Size(846, 349);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Safety";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -339,17 +332,17 @@
             this.flowLayoutPanel4.Controls.Add(this.dtExpireDate);
             this.flowLayoutPanel4.Controls.Add(this.label18);
             this.flowLayoutPanel4.Controls.Add(this.txtSafetyApprove);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(11, 6);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(9, 30);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(969, 339);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(831, 293);
             this.flowLayoutPanel4.TabIndex = 2;
             // 
             // label16
             // 
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label16.Location = new System.Drawing.Point(3, 5);
+            this.label16.Location = new System.Drawing.Point(3, 4);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(224, 29);
+            this.label16.Size = new System.Drawing.Size(192, 25);
             this.label16.TabIndex = 0;
             this.label16.Text = "Safety Training Require:";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -357,9 +350,9 @@
             // chkTraingRequire
             // 
             this.chkTraingRequire.Checked = true;
-            this.chkTraingRequire.Location = new System.Drawing.Point(233, 3);
+            this.chkTraingRequire.Location = new System.Drawing.Point(201, 3);
             this.chkTraingRequire.Name = "chkTraingRequire";
-            this.chkTraingRequire.Size = new System.Drawing.Size(103, 33);
+            this.chkTraingRequire.Size = new System.Drawing.Size(88, 28);
             this.chkTraingRequire.TabIndex = 13;
             this.chkTraingRequire.TabStop = true;
             this.chkTraingRequire.Text = "อบรม";
@@ -367,9 +360,9 @@
             // 
             // chkNotTrRequire
             // 
-            this.chkNotTrRequire.Location = new System.Drawing.Point(342, 3);
+            this.chkNotTrRequire.Location = new System.Drawing.Point(295, 3);
             this.chkNotTrRequire.Name = "chkNotTrRequire";
-            this.chkNotTrRequire.Size = new System.Drawing.Size(591, 33);
+            this.chkNotTrRequire.Size = new System.Drawing.Size(507, 28);
             this.chkNotTrRequire.TabIndex = 14;
             this.chkNotTrRequire.TabStop = true;
             this.chkNotTrRequire.Text = "ไม่อบรม";
@@ -377,59 +370,59 @@
             // 
             // label17
             // 
-            this.label17.Location = new System.Drawing.Point(3, 39);
+            this.label17.Location = new System.Drawing.Point(3, 34);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(224, 37);
+            this.label17.Size = new System.Drawing.Size(192, 32);
             this.label17.TabIndex = 4;
             this.label17.Text = "Issue Date:";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // dtIssuseDate
             // 
-            this.dtIssuseDate.Location = new System.Drawing.Point(233, 42);
+            this.dtIssuseDate.Location = new System.Drawing.Point(201, 37);
             this.dtIssuseDate.Name = "dtIssuseDate";
-            this.dtIssuseDate.Size = new System.Drawing.Size(599, 34);
+            this.dtIssuseDate.Size = new System.Drawing.Size(514, 30);
             this.dtIssuseDate.TabIndex = 17;
             // 
             // label19
             // 
-            this.label19.Location = new System.Drawing.Point(3, 79);
+            this.label19.Location = new System.Drawing.Point(3, 70);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(224, 37);
+            this.label19.Size = new System.Drawing.Size(192, 32);
             this.label19.TabIndex = 18;
             this.label19.Text = "Expire Date:";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // dtExpireDate
             // 
-            this.dtExpireDate.Location = new System.Drawing.Point(233, 82);
+            this.dtExpireDate.Location = new System.Drawing.Point(201, 73);
             this.dtExpireDate.Name = "dtExpireDate";
-            this.dtExpireDate.Size = new System.Drawing.Size(599, 34);
+            this.dtExpireDate.Size = new System.Drawing.Size(514, 30);
             this.dtExpireDate.TabIndex = 19;
             // 
             // label18
             // 
-            this.label18.Location = new System.Drawing.Point(3, 119);
+            this.label18.Location = new System.Drawing.Point(3, 106);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(224, 29);
+            this.label18.Size = new System.Drawing.Size(192, 25);
             this.label18.TabIndex = 6;
             this.label18.Text = "Approved by Safety Manager:";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtSafetyApprove
             // 
-            this.txtSafetyApprove.Location = new System.Drawing.Point(233, 122);
+            this.txtSafetyApprove.Location = new System.Drawing.Point(201, 109);
             this.txtSafetyApprove.Name = "txtSafetyApprove";
-            this.txtSafetyApprove.Size = new System.Drawing.Size(599, 34);
+            this.txtSafetyApprove.Size = new System.Drawing.Size(514, 30);
             this.txtSafetyApprove.TabIndex = 7;
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.flowLayoutPanel5);
-            this.tabPage2.Location = new System.Drawing.Point(4, 38);
+            this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(988, 351);
+            this.tabPage2.Size = new System.Drawing.Size(846, 349);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Purchasing";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -448,6 +441,12 @@
             this.flowLayoutPanel5.Controls.Add(this.label10);
             this.flowLayoutPanel5.Controls.Add(this.chkWorkDay);
             this.flowLayoutPanel5.Controls.Add(this.chkHoliday);
+            this.flowLayoutPanel5.Controls.Add(this.label4);
+            this.flowLayoutPanel5.Controls.Add(this.radioButton1);
+            this.flowLayoutPanel5.Controls.Add(this.radioButton2);
+            this.flowLayoutPanel5.Controls.Add(this.radioButton3);
+            this.flowLayoutPanel5.Controls.Add(this.radioButton4);
+            this.flowLayoutPanel5.Controls.Add(this.textBox1);
             this.flowLayoutPanel5.Controls.Add(this.label11);
             this.flowLayoutPanel5.Controls.Add(this.label12);
             this.flowLayoutPanel5.Controls.Add(this.dtFrom);
@@ -457,9 +456,9 @@
             this.flowLayoutPanel5.Controls.Add(this.txtVerifyPurchase);
             this.flowLayoutPanel5.Controls.Add(this.label15);
             this.flowLayoutPanel5.Controls.Add(this.txtPurchaseDate);
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(6, 6);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(5, 30);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(974, 339);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(835, 318);
             this.flowLayoutPanel5.TabIndex = 1;
             // 
             // label7
@@ -467,55 +466,55 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label7.Location = new System.Drawing.Point(3, 5);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(364, 29);
+            this.label7.Size = new System.Drawing.Size(312, 25);
             this.label7.TabIndex = 0;
             this.label7.Text = "Project Scope (ขอบเขตการทำงาน):";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtScope
             // 
-            this.txtScope.Location = new System.Drawing.Point(373, 3);
+            this.txtScope.Location = new System.Drawing.Point(321, 3);
             this.txtScope.Name = "txtScope";
-            this.txtScope.Size = new System.Drawing.Size(589, 34);
+            this.txtScope.Size = new System.Drawing.Size(505, 30);
             this.txtScope.TabIndex = 1;
             // 
             // label9
             // 
-            this.label9.Location = new System.Drawing.Point(3, 40);
+            this.label9.Location = new System.Drawing.Point(3, 36);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(364, 37);
+            this.label9.Size = new System.Drawing.Size(312, 32);
             this.label9.TabIndex = 4;
             this.label9.Text = "Working Area (สถานที่ทำงาน):";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtWorkArea
             // 
-            this.txtWorkArea.Location = new System.Drawing.Point(373, 43);
+            this.txtWorkArea.Location = new System.Drawing.Point(321, 39);
             this.txtWorkArea.Name = "txtWorkArea";
-            this.txtWorkArea.Size = new System.Drawing.Size(589, 34);
+            this.txtWorkArea.Size = new System.Drawing.Size(505, 30);
             this.txtWorkArea.TabIndex = 5;
             // 
             // label8
             // 
-            this.label8.Location = new System.Drawing.Point(3, 80);
+            this.label8.Location = new System.Drawing.Point(3, 72);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(364, 29);
+            this.label8.Size = new System.Drawing.Size(312, 25);
             this.label8.TabIndex = 6;
             this.label8.Text = "G-Steel Section Manager (ชื่อผู้จัดการแผนก):";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtPurchaseManager
             // 
-            this.txtPurchaseManager.Location = new System.Drawing.Point(373, 83);
+            this.txtPurchaseManager.Location = new System.Drawing.Point(321, 75);
             this.txtPurchaseManager.Name = "txtPurchaseManager";
-            this.txtPurchaseManager.Size = new System.Drawing.Size(589, 34);
+            this.txtPurchaseManager.Size = new System.Drawing.Size(505, 30);
             this.txtPurchaseManager.TabIndex = 7;
             // 
             // label10
             // 
-            this.label10.Location = new System.Drawing.Point(3, 120);
+            this.label10.Location = new System.Drawing.Point(3, 108);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(364, 29);
+            this.label10.Size = new System.Drawing.Size(312, 25);
             this.label10.TabIndex = 8;
             this.label10.Text = "Working Day (วันทำงาน):";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -524,9 +523,9 @@
             // 
             this.chkWorkDay.AutoSize = true;
             this.chkWorkDay.Checked = true;
-            this.chkWorkDay.Location = new System.Drawing.Point(373, 123);
+            this.chkWorkDay.Location = new System.Drawing.Point(321, 111);
             this.chkWorkDay.Name = "chkWorkDay";
-            this.chkWorkDay.Size = new System.Drawing.Size(122, 33);
+            this.chkWorkDay.Size = new System.Drawing.Size(100, 29);
             this.chkWorkDay.TabIndex = 12;
             this.chkWorkDay.TabStop = true;
             this.chkWorkDay.Text = "วันทำการ";
@@ -534,94 +533,151 @@
             // 
             // chkHoliday
             // 
-            this.chkHoliday.Location = new System.Drawing.Point(501, 123);
+            this.chkHoliday.Location = new System.Drawing.Point(427, 111);
             this.chkHoliday.Name = "chkHoliday";
-            this.chkHoliday.Size = new System.Drawing.Size(144, 33);
+            this.chkHoliday.Size = new System.Drawing.Size(123, 28);
             this.chkHoliday.TabIndex = 13;
-            this.chkHoliday.TabStop = true;
             this.chkHoliday.Text = "วันหยุด";
             this.chkHoliday.UseVisualStyleBackColor = true;
             // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(3, 143);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(275, 25);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Working Time (เวลาทำงาน)";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(284, 146);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(129, 29);
+            this.radioButton1.TabIndex = 12;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "8:00-17:30";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(419, 146);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(129, 29);
+            this.radioButton2.TabIndex = 12;
+            this.radioButton2.Text = "After 17:30";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(554, 146);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(80, 29);
+            this.radioButton3.TabIndex = 12;
+            this.radioButton3.Text = "24Hr.";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(640, 146);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(67, 29);
+            this.radioButton4.TabIndex = 12;
+            this.radioButton4.Text = "อื่นๆ";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(713, 146);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(86, 30);
+            this.textBox1.TabIndex = 7;
+            // 
             // label11
             // 
-            this.label11.Location = new System.Drawing.Point(3, 159);
+            this.label11.Location = new System.Drawing.Point(3, 179);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(381, 29);
+            this.label11.Size = new System.Drawing.Size(327, 25);
             this.label11.TabIndex = 10;
             this.label11.Text = "Period of Work (ระยะเวลาทำงาน):";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label12
             // 
-            this.label12.Location = new System.Drawing.Point(390, 159);
+            this.label12.Location = new System.Drawing.Point(336, 179);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(153, 29);
+            this.label12.Size = new System.Drawing.Size(131, 25);
             this.label12.TabIndex = 14;
             this.label12.Text = "From (จากวันที่)";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // dtFrom
             // 
-            this.dtFrom.Location = new System.Drawing.Point(549, 162);
+            this.dtFrom.Location = new System.Drawing.Point(473, 182);
             this.dtFrom.Name = "dtFrom";
-            this.dtFrom.Size = new System.Drawing.Size(413, 34);
+            this.dtFrom.Size = new System.Drawing.Size(326, 30);
             this.dtFrom.TabIndex = 16;
             // 
             // label13
             // 
-            this.label13.Location = new System.Drawing.Point(3, 199);
+            this.label13.Location = new System.Drawing.Point(3, 215);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(540, 29);
+            this.label13.Size = new System.Drawing.Size(463, 25);
             this.label13.TabIndex = 15;
             this.label13.Text = "To (ถึงวันที่)";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // dtTo
             // 
-            this.dtTo.Location = new System.Drawing.Point(549, 202);
+            this.dtTo.Location = new System.Drawing.Point(472, 218);
             this.dtTo.Name = "dtTo";
-            this.dtTo.Size = new System.Drawing.Size(413, 34);
+            this.dtTo.Size = new System.Drawing.Size(327, 30);
             this.dtTo.TabIndex = 17;
             // 
             // label14
             // 
-            this.label14.Location = new System.Drawing.Point(3, 239);
+            this.label14.Location = new System.Drawing.Point(3, 251);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(519, 29);
+            this.label14.Size = new System.Drawing.Size(445, 25);
             this.label14.TabIndex = 18;
             this.label14.Text = "Verrified By Purchasing Officer (ตรวจสอบโดยเจ้าหน้าฝ่ายจัดซื้อ):";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtVerifyPurchase
             // 
-            this.txtVerifyPurchase.Location = new System.Drawing.Point(528, 242);
+            this.txtVerifyPurchase.Location = new System.Drawing.Point(454, 254);
             this.txtVerifyPurchase.Name = "txtVerifyPurchase";
-            this.txtVerifyPurchase.Size = new System.Drawing.Size(434, 34);
+            this.txtVerifyPurchase.Size = new System.Drawing.Size(345, 30);
             this.txtVerifyPurchase.TabIndex = 19;
             // 
             // label15
             // 
-            this.label15.Location = new System.Drawing.Point(3, 279);
+            this.label15.Location = new System.Drawing.Point(3, 287);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(519, 29);
+            this.label15.Size = new System.Drawing.Size(445, 25);
             this.label15.TabIndex = 20;
             this.label15.Text = "Date (วันที่):";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtPurchaseDate
             // 
-            this.txtPurchaseDate.Location = new System.Drawing.Point(528, 282);
+            this.txtPurchaseDate.Location = new System.Drawing.Point(454, 290);
             this.txtPurchaseDate.Name = "txtPurchaseDate";
-            this.txtPurchaseDate.Size = new System.Drawing.Size(434, 34);
+            this.txtPurchaseDate.Size = new System.Drawing.Size(345, 30);
             this.txtPurchaseDate.TabIndex = 21;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.tableLayoutPanel1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 38);
+            this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(988, 351);
+            this.tabPage1.Size = new System.Drawing.Size(846, 349);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "พนักงานเข้า-ออก";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -634,17 +690,18 @@
             this.tableLayoutPanel1.Controls.Add(this.gridEmployee, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel3, 0, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 6);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(5, 5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(982, 344);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(843, 346);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // gridEmployee
             // 
+            this.gridEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.gridEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridEmployee.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.AUTO_ID,
@@ -654,10 +711,10 @@
             this.FULLNAME,
             this.POSITION,
             this.SAFETY_TRAINING_FLAG});
-            this.gridEmployee.Location = new System.Drawing.Point(3, 51);
+            this.gridEmployee.Location = new System.Drawing.Point(3, 45);
             this.gridEmployee.Name = "gridEmployee";
             this.gridEmployee.RowTemplate.Height = 24;
-            this.gridEmployee.Size = new System.Drawing.Size(976, 199);
+            this.gridEmployee.Size = new System.Drawing.Size(837, 214);
             this.gridEmployee.TabIndex = 0;
             // 
             // AUTO_ID
@@ -679,6 +736,7 @@
             this.CARD_TYPE.DataPropertyName = "CARD_TYPE";
             this.CARD_TYPE.HeaderText = "ประเภทบัตร";
             this.CARD_TYPE.Name = "CARD_TYPE";
+            this.CARD_TYPE.Width = 127;
             // 
             // ID_CARD
             // 
@@ -691,18 +749,21 @@
             this.FULLNAME.DataPropertyName = "FULLNAME";
             this.FULLNAME.HeaderText = "ชื่อ-สกุล";
             this.FULLNAME.Name = "FULLNAME";
+            this.FULLNAME.Width = 96;
             // 
             // POSITION
             // 
             this.POSITION.DataPropertyName = "POSITION";
             this.POSITION.HeaderText = "ตำแหน่ง";
             this.POSITION.Name = "POSITION";
+            this.POSITION.Width = 102;
             // 
             // SAFETY_TRAINING_FLAG
             // 
             this.SAFETY_TRAINING_FLAG.DataPropertyName = "SAFETY_TRAINING_FLAG";
             this.SAFETY_TRAINING_FLAG.HeaderText = "การอบรม";
             this.SAFETY_TRAINING_FLAG.Name = "SAFETY_TRAINING_FLAG";
+            this.SAFETY_TRAINING_FLAG.Width = 106;
             // 
             // flowLayoutPanel2
             // 
@@ -710,7 +771,7 @@
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(976, 42);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(837, 36);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
             // btnAddEmployee
@@ -719,7 +780,7 @@
             this.btnAddEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddEmployee.Location = new System.Drawing.Point(3, 3);
             this.btnAddEmployee.Name = "btnAddEmployee";
-            this.btnAddEmployee.Size = new System.Drawing.Size(294, 39);
+            this.btnAddEmployee.Size = new System.Drawing.Size(252, 34);
             this.btnAddEmployee.TabIndex = 0;
             this.btnAddEmployee.Text = "เพิ่มพนักงานเข้า-ออก";
             this.btnAddEmployee.UseVisualStyleBackColor = false;
@@ -731,9 +792,9 @@
             this.flowLayoutPanel3.Controls.Add(this.txtResponse);
             this.flowLayoutPanel3.Controls.Add(this.label6);
             this.flowLayoutPanel3.Controls.Add(this.txtResponseTel);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 256);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 265);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(968, 85);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(830, 78);
             this.flowLayoutPanel3.TabIndex = 2;
             // 
             // label5
@@ -741,33 +802,33 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.Location = new System.Drawing.Point(3, 5);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(477, 29);
+            this.label5.Size = new System.Drawing.Size(409, 25);
             this.label5.TabIndex = 5;
             this.label5.Text = "Responsible Manager/Foreman at G-Steel:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtResponse
             // 
-            this.txtResponse.Location = new System.Drawing.Point(486, 3);
+            this.txtResponse.Location = new System.Drawing.Point(418, 3);
             this.txtResponse.Name = "txtResponse";
-            this.txtResponse.Size = new System.Drawing.Size(477, 34);
+            this.txtResponse.Size = new System.Drawing.Size(409, 30);
             this.txtResponse.TabIndex = 6;
             // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.Location = new System.Drawing.Point(3, 45);
+            this.label6.Location = new System.Drawing.Point(3, 41);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(477, 29);
+            this.label6.Size = new System.Drawing.Size(409, 25);
             this.label6.TabIndex = 7;
             this.label6.Text = "Responsible Telephone:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtResponseTel
             // 
-            this.txtResponseTel.Location = new System.Drawing.Point(486, 43);
+            this.txtResponseTel.Location = new System.Drawing.Point(418, 39);
             this.txtResponseTel.Name = "txtResponseTel";
-            this.txtResponseTel.Size = new System.Drawing.Size(477, 34);
+            this.txtResponseTel.Size = new System.Drawing.Size(409, 30);
             this.txtResponseTel.TabIndex = 8;
             // 
             // tabControl1
@@ -776,29 +837,18 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(12, 230);
+            this.tabControl1.Location = new System.Drawing.Point(7, 233);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(996, 393);
+            this.tabControl1.Size = new System.Drawing.Size(854, 387);
             this.tabControl1.TabIndex = 3;
-            // 
-            // label24
-            // 
-            this.label24.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label24.Location = new System.Drawing.Point(11, 9);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(135, 29);
-            this.label24.TabIndex = 4;
-            this.label24.Text = "Date (วันที่)";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label24.Click += new System.EventHandler(this.label24_Click);
             // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnSave.Location = new System.Drawing.Point(688, 629);
+            this.btnSave.Location = new System.Drawing.Point(586, 625);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(159, 39);
+            this.btnSave.Size = new System.Drawing.Size(136, 34);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "บันทึก";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -807,37 +857,60 @@
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnClose.Location = new System.Drawing.Point(853, 629);
+            this.btnClose.Location = new System.Drawing.Point(728, 625);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(128, 39);
+            this.btnClose.Size = new System.Drawing.Size(110, 34);
             this.btnClose.TabIndex = 6;
             this.btnClose.Text = "ปิด";
             this.btnClose.UseVisualStyleBackColor = false;
             // 
-            // label25
-            // 
-            this.label25.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label25.ForeColor = System.Drawing.Color.Red;
-            this.label25.Location = new System.Drawing.Point(390, 9);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(291, 29);
-            this.label25.TabIndex = 7;
-            this.label25.Text = "Project Name (ชื่อโครงการ)";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // txtProjectname
             // 
-            this.txtProjectname.Location = new System.Drawing.Point(684, 6);
+            this.txtProjectname.Location = new System.Drawing.Point(273, 198);
             this.txtProjectname.Name = "txtProjectname";
-            this.txtProjectname.Size = new System.Drawing.Size(320, 34);
+            this.txtProjectname.Size = new System.Drawing.Size(591, 30);
             this.txtProjectname.TabIndex = 8;
-            this.txtProjectname.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label24
+            // 
+            this.label24.Location = new System.Drawing.Point(545, 6);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(116, 25);
+            this.label24.TabIndex = 4;
+            this.label24.Text = "Date (วันที่)";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label25
+            // 
+            this.label25.ForeColor = System.Drawing.Color.Red;
+            this.label25.Location = new System.Drawing.Point(10, 201);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(258, 25);
+            this.label25.TabIndex = 7;
+            this.label25.Text = "Project Name (ชื่อโครงการ):";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(3, 155);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 33);
+            this.comboBox1.TabIndex = 6;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(264, 3);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(581, 33);
+            this.comboBox2.TabIndex = 7;
             // 
             // frmProjectMasters
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1018, 675);
+            this.ClientSize = new System.Drawing.Size(873, 669);
             this.Controls.Add(this.txtProjectname);
             this.Controls.Add(this.label25);
             this.Controls.Add(this.btnClose);
@@ -845,11 +918,10 @@
             this.Controls.Add(this.label24);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.txtDate);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(7);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmProjectMasters";
@@ -886,12 +958,10 @@
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtCompany;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTel;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDate;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage3;
@@ -946,7 +1016,6 @@
         private System.Windows.Forms.DateTimePicker dtHraExpire;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox txtHraApprove;
-        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.DataGridViewTextBoxColumn AUTO_ID;
@@ -956,7 +1025,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FULLNAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn POSITION;
         private System.Windows.Forms.DataGridViewTextBoxColumn SAFETY_TRAINING_FLAG;
-        private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox txtProjectname;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

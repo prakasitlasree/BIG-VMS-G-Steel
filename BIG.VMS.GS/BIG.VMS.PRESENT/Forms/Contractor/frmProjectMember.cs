@@ -36,5 +36,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             this.Close();
             
         }
+
+
     }
 }

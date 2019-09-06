@@ -14,6 +14,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
 {
     public partial class frmProjectMasters : PageBase
     {
+        public MAS_CONTRACTOR MAS_CONTRACTOR = new MAS_CONTRACTOR();
         public List<TRN_PROJECT_MEMBER> LIST_TRN_PROJECT_MEMBER = new List<TRN_PROJECT_MEMBER>();
         private ProjectServices service = new ProjectServices();
         public frmProjectMasters()
@@ -63,8 +64,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
                     RESPONSIBLE_DEP_HEAD = txtPurchaseManager.Text,
                     WORKING_DAY = chkWorkDay.Checked ? "วันทำงาน" : "วันหยุด",
                     PROJECT_START_DATE = dtFrom.Value,
-                    PROJECT_END_DATE = dtTo.Value,
-                    //PROJECT_WORKING_TIME = ch
+                    PROJECT_END_DATE = dtTo.Value,                   
                     PURCHASING_VERIFY_BY = txtPurchaseManager.Text,
                     PURCHASING_VERIFY_DATE = txtPurchaseDate.Value,
                     SAFETY_MANAGER_APP_BY = txtSafetyApprove.Text,
@@ -82,7 +82,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
                     TRN_PROJECT_MEMBER = new List<TRN_PROJECT_MEMBER>()
 
                 };
-
+                LIST_TRN_PROJECT_MEMBER = (List<TRN_PROJECT_MEMBER>)gridEmployee.DataSource;
                 foreach (var item in LIST_TRN_PROJECT_MEMBER)
                 {
                     project.TRN_PROJECT_MEMBER.Add(item);
@@ -114,12 +114,12 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             }
         }
 
-        private void label24_Click(object sender, EventArgs e)
+        private void txtAddress_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void txtTel_TextChanged(object sender, EventArgs e)
         {
 
         }

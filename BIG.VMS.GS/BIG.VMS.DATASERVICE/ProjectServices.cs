@@ -32,7 +32,7 @@ namespace BIG.VMS.DATASERVICE
                         {
                             query.Where(o => o.PROJECT_NAME.ToUpper().Contains(filter.PROJECT_NAME.ToUpper()));
                         }
-                        
+
                     }
                     #endregion
 
@@ -156,6 +156,38 @@ namespace BIG.VMS.DATASERVICE
 
                 }
 
+            }
+            catch (Exception ex)
+            {
+                resp.Status = false;
+                resp.ExceptionMessage = ex.Message.ToString();
+            }
+
+
+            return resp;
+        }
+
+        public Response GetProjectbyProjectID(int id)
+        {
+            var resp = new Response();
+           
+
+            try
+            {
+                using (var ctx = new BIG_VMSEntities())
+                {
+                    var project = ctx.TRN_PROJECT_MASTER.Where(o => o.AUTO_ID == id).FirstOrDefault();
+
+                    var contractor = ctx.MAS_CONTRACTOR
+                        .Include("TRN_PROJECT_MASTER")
+                        .Include("TRN_PROJECT_MASTER.TRN_PROJECT_MEMBER")
+                        .Where(o => o.AUTO_ID == project.CONTRACTOR_ID).FirstOrDefault();
+                 
+                    resp.ResultObj = contractor;
+                    resp.Status = true;
+                }
+
+                
             }
             catch (Exception ex)
             {

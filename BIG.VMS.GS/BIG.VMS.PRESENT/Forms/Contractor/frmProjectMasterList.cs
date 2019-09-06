@@ -1,5 +1,6 @@
 ﻿using BIG.VMS.DATASERVICE;
 using BIG.VMS.MODEL.CustomModel;
+using BIG.VMS.MODEL.EntityModel;
 using BIG.VMS.MODEL.GsteelModel.ContainerModel;
 using BIG.VMS.MODEL.GsteelModel.FilterModel;
 using System;
@@ -26,6 +27,12 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
         {
             BindGridData();
             CustomGrid();
+
+        }
+
+        private void BindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            CustomGrid();
         }
 
         private void BindGridData()
@@ -46,19 +53,21 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
 
                 var containerData = (ContainerProject)response.ResultObj;
                 SetDataSourceHeader(gridVisitorList, ListHeader(), containerData.ListData);
+                gridVisitorList.DataBindingComplete += BindingComplete;
             }
             else
             {
 
             }
-            
+
         }
 
 
         private List<HeaderGrid> ListHeader()
         {
             List<HeaderGrid> listCol = new List<HeaderGrid>();
-            listCol.Add(new HeaderGrid { HEADER_TEXT = "วันที่เพิ่ม", FIELD = "REGISTER_DATE", VISIBLE = false, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "AUTO_ID", FIELD = "AUTO_ID", VISIBLE = false, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "วันที่เพิ่ม", FIELD = "REGISTER_DATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "เบอร์โทรผู้รับผิดชอบ", FIELD = "RESPONSIBLE_TEL", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "ชื่อโรคงการ", FIELD = "PROJECT_NAME", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "ขอบเขตโครงการ", FIELD = "PROJECT_SCOPE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
@@ -108,7 +117,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             }
             foreach (DataGridViewRow row in gridVisitorList.Rows)
             {
-               
+
             }
         }
 
@@ -119,6 +128,52 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 BindGridData();
+            }
+        }
+
+        private void gridVisitorList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex > -1)
+                {
+                    if (e.ColumnIndex == 0)
+                    {
+                        #region ===================== edit =====================
+                        var id = Convert.ToInt32(gridVisitorList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
+                        var response = service.GetProjectbyProjectID(id);
+                        if (response.Status)
+                        {
+                            var frm = new frmProjectMasters();
+                            frm.formMode = FormMode.Edit;
+                            frm.MAS_CONTRACTOR = (MAS_CONTRACTOR)response.ResultObj;
+                            if (frm.ShowDialog() == DialogResult.OK)
+                            {
+                                BindGridData();
+                            }
+                        }
+                        #endregion
+                    }
+                    else if (e.ColumnIndex == 1)
+                    {
+                        #region ===================== delete =====================
+
+                        #endregion
+                    }
+                    else if (e.ColumnIndex == 2)
+                    {
+                        {
+                            #region ===================== delete =====================
+
+                            #endregion
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }
