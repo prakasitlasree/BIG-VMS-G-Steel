@@ -26,7 +26,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
                 CARD_TYPE = txtCardType.Text,
                 FULLNAME = txtName.Text,
                 ID_CARD = txtIDCard.Text,
-                SAFETY_TRAINING_FLAG = radRequire.Checked ? "Y" : "N",
+                SAFETY_TRAINING_FLAG = radRequire.Checked ? "อบรม" : "ไม่อบรม",
                 POSITION = txtPosition.Text
             };
 

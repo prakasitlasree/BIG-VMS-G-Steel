@@ -82,6 +82,13 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.gridEmployee = new System.Windows.Forms.DataGridView();
+            this.AUTO_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PROJECT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CARD_TYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_CARD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FULLNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.POSITION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SAFETY_TRAINING_FLAG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAddEmployee = new System.Windows.Forms.Button();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
@@ -93,6 +100,8 @@
             this.label24 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.label25 = new System.Windows.Forms.Label();
+            this.txtProjectname = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.flowLayoutPanel6.SuspendLayout();
@@ -126,7 +135,7 @@
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Location = new System.Drawing.Point(3, 1);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(297, 37);
             this.label1.TabIndex = 0;
@@ -137,13 +146,13 @@
             // 
             this.txtCompany.Location = new System.Drawing.Point(306, 3);
             this.txtCompany.Name = "txtCompany";
-            this.txtCompany.Size = new System.Drawing.Size(677, 28);
+            this.txtCompany.Size = new System.Drawing.Size(677, 34);
             this.txtCompany.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label2.Location = new System.Drawing.Point(3, 70);
+            this.label2.Location = new System.Drawing.Point(3, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(297, 29);
             this.label2.TabIndex = 2;
@@ -152,7 +161,7 @@
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(306, 40);
+            this.txtAddress.Location = new System.Drawing.Point(306, 43);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(677, 90);
@@ -160,7 +169,7 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(3, 133);
+            this.label3.Location = new System.Drawing.Point(3, 136);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(297, 29);
             this.label3.TabIndex = 4;
@@ -169,37 +178,37 @@
             // 
             // txtTel
             // 
-            this.txtTel.Location = new System.Drawing.Point(306, 136);
+            this.txtTel.Location = new System.Drawing.Point(306, 139);
             this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(678, 28);
+            this.txtTel.Size = new System.Drawing.Size(678, 34);
             this.txtTel.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(632, -39);
+            this.label4.Location = new System.Drawing.Point(632, -72);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 24);
+            this.label4.Size = new System.Drawing.Size(127, 29);
             this.label4.TabIndex = 1;
             this.label4.Text = "วันที่ (Date)";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtDate
             // 
-            this.txtDate.Location = new System.Drawing.Point(765, 6);
+            this.txtDate.Location = new System.Drawing.Point(152, 6);
             this.txtDate.Name = "txtDate";
             this.txtDate.ReadOnly = true;
-            this.txtDate.Size = new System.Drawing.Size(232, 28);
+            this.txtDate.Size = new System.Drawing.Size(232, 34);
             this.txtDate.TabIndex = 2;
             // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.flowLayoutPanel6);
-            this.tabPage4.Location = new System.Drawing.Point(4, 31);
+            this.tabPage4.Location = new System.Drawing.Point(4, 38);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(988, 422);
+            this.tabPage4.Size = new System.Drawing.Size(988, 351);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "HRA";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -218,9 +227,9 @@
             this.flowLayoutPanel6.Controls.Add(this.dtHraExpire);
             this.flowLayoutPanel6.Controls.Add(this.label23);
             this.flowLayoutPanel6.Controls.Add(this.txtHraApprove);
-            this.flowLayoutPanel6.Location = new System.Drawing.Point(7, 6);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(7, 21);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(974, 403);
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(974, 324);
             this.flowLayoutPanel6.TabIndex = 3;
             // 
             // label20
@@ -235,9 +244,10 @@
             // 
             // radTemp
             // 
+            this.radTemp.Checked = true;
             this.radTemp.Location = new System.Drawing.Point(3, 32);
             this.radTemp.Name = "radTemp";
-            this.radTemp.Size = new System.Drawing.Size(193, 33);
+            this.radTemp.Size = new System.Drawing.Size(264, 33);
             this.radTemp.TabIndex = 13;
             this.radTemp.TabStop = true;
             this.radTemp.Text = "Temporary(ชั่วคราว)";
@@ -246,7 +256,7 @@
             // 
             // label21
             // 
-            this.label21.Location = new System.Drawing.Point(202, 29);
+            this.label21.Location = new System.Drawing.Point(273, 29);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(123, 37);
             this.label21.TabIndex = 4;
@@ -255,17 +265,17 @@
             // 
             // dtHraIssue
             // 
-            this.dtHraIssue.Location = new System.Drawing.Point(331, 32);
+            this.dtHraIssue.Location = new System.Drawing.Point(402, 32);
             this.dtHraIssue.Name = "dtHraIssue";
-            this.dtHraIssue.Size = new System.Drawing.Size(535, 28);
+            this.dtHraIssue.Size = new System.Drawing.Size(535, 34);
             this.dtHraIssue.TabIndex = 17;
             // 
             // radPerm
             // 
             this.radPerm.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radPerm.Location = new System.Drawing.Point(3, 71);
+            this.radPerm.Location = new System.Drawing.Point(3, 72);
             this.radPerm.Name = "radPerm";
-            this.radPerm.Size = new System.Drawing.Size(182, 33);
+            this.radPerm.Size = new System.Drawing.Size(253, 33);
             this.radPerm.TabIndex = 14;
             this.radPerm.TabStop = true;
             this.radPerm.Text = "Permanent (ถาวร)";
@@ -274,23 +284,23 @@
             // 
             // label22
             // 
-            this.label22.Location = new System.Drawing.Point(191, 68);
+            this.label22.Location = new System.Drawing.Point(262, 69);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(134, 37);
+            this.label22.Size = new System.Drawing.Size(113, 37);
             this.label22.TabIndex = 18;
             this.label22.Text = "Expire Date:";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // dtHraExpire
             // 
-            this.dtHraExpire.Location = new System.Drawing.Point(331, 71);
+            this.dtHraExpire.Location = new System.Drawing.Point(381, 72);
             this.dtHraExpire.Name = "dtHraExpire";
-            this.dtHraExpire.Size = new System.Drawing.Size(535, 28);
+            this.dtHraExpire.Size = new System.Drawing.Size(535, 34);
             this.dtHraExpire.TabIndex = 19;
             // 
             // label23
             // 
-            this.label23.Location = new System.Drawing.Point(3, 107);
+            this.label23.Location = new System.Drawing.Point(3, 109);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(322, 29);
             this.label23.TabIndex = 6;
@@ -299,18 +309,18 @@
             // 
             // txtHraApprove
             // 
-            this.txtHraApprove.Location = new System.Drawing.Point(331, 110);
+            this.txtHraApprove.Location = new System.Drawing.Point(331, 112);
             this.txtHraApprove.Name = "txtHraApprove";
-            this.txtHraApprove.Size = new System.Drawing.Size(535, 28);
+            this.txtHraApprove.Size = new System.Drawing.Size(535, 34);
             this.txtHraApprove.TabIndex = 7;
             // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.flowLayoutPanel4);
-            this.tabPage3.Location = new System.Drawing.Point(4, 31);
+            this.tabPage3.Location = new System.Drawing.Point(4, 38);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(988, 422);
+            this.tabPage3.Size = new System.Drawing.Size(988, 351);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Safety";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -331,7 +341,7 @@
             this.flowLayoutPanel4.Controls.Add(this.txtSafetyApprove);
             this.flowLayoutPanel4.Location = new System.Drawing.Point(11, 6);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(974, 403);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(969, 339);
             this.flowLayoutPanel4.TabIndex = 2;
             // 
             // label16
@@ -346,6 +356,7 @@
             // 
             // chkTraingRequire
             // 
+            this.chkTraingRequire.Checked = true;
             this.chkTraingRequire.Location = new System.Drawing.Point(233, 3);
             this.chkTraingRequire.Name = "chkTraingRequire";
             this.chkTraingRequire.Size = new System.Drawing.Size(103, 33);
@@ -377,12 +388,12 @@
             // 
             this.dtIssuseDate.Location = new System.Drawing.Point(233, 42);
             this.dtIssuseDate.Name = "dtIssuseDate";
-            this.dtIssuseDate.Size = new System.Drawing.Size(599, 28);
+            this.dtIssuseDate.Size = new System.Drawing.Size(599, 34);
             this.dtIssuseDate.TabIndex = 17;
             // 
             // label19
             // 
-            this.label19.Location = new System.Drawing.Point(3, 76);
+            this.label19.Location = new System.Drawing.Point(3, 79);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(224, 37);
             this.label19.TabIndex = 18;
@@ -391,14 +402,14 @@
             // 
             // dtExpireDate
             // 
-            this.dtExpireDate.Location = new System.Drawing.Point(233, 79);
+            this.dtExpireDate.Location = new System.Drawing.Point(233, 82);
             this.dtExpireDate.Name = "dtExpireDate";
-            this.dtExpireDate.Size = new System.Drawing.Size(599, 28);
+            this.dtExpireDate.Size = new System.Drawing.Size(599, 34);
             this.dtExpireDate.TabIndex = 19;
             // 
             // label18
             // 
-            this.label18.Location = new System.Drawing.Point(3, 113);
+            this.label18.Location = new System.Drawing.Point(3, 119);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(224, 29);
             this.label18.TabIndex = 6;
@@ -407,18 +418,18 @@
             // 
             // txtSafetyApprove
             // 
-            this.txtSafetyApprove.Location = new System.Drawing.Point(233, 116);
+            this.txtSafetyApprove.Location = new System.Drawing.Point(233, 122);
             this.txtSafetyApprove.Name = "txtSafetyApprove";
-            this.txtSafetyApprove.Size = new System.Drawing.Size(599, 28);
+            this.txtSafetyApprove.Size = new System.Drawing.Size(599, 34);
             this.txtSafetyApprove.TabIndex = 7;
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.flowLayoutPanel5);
-            this.tabPage2.Location = new System.Drawing.Point(4, 31);
+            this.tabPage2.Location = new System.Drawing.Point(4, 38);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(988, 422);
+            this.tabPage2.Size = new System.Drawing.Size(988, 351);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Purchasing";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -448,13 +459,13 @@
             this.flowLayoutPanel5.Controls.Add(this.txtPurchaseDate);
             this.flowLayoutPanel5.Location = new System.Drawing.Point(6, 6);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(974, 403);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(974, 339);
             this.flowLayoutPanel5.TabIndex = 1;
             // 
             // label7
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label7.Location = new System.Drawing.Point(3, 2);
+            this.label7.Location = new System.Drawing.Point(3, 5);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(364, 29);
             this.label7.TabIndex = 0;
@@ -465,12 +476,12 @@
             // 
             this.txtScope.Location = new System.Drawing.Point(373, 3);
             this.txtScope.Name = "txtScope";
-            this.txtScope.Size = new System.Drawing.Size(589, 28);
+            this.txtScope.Size = new System.Drawing.Size(589, 34);
             this.txtScope.TabIndex = 1;
             // 
             // label9
             // 
-            this.label9.Location = new System.Drawing.Point(3, 34);
+            this.label9.Location = new System.Drawing.Point(3, 40);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(364, 37);
             this.label9.TabIndex = 4;
@@ -479,14 +490,14 @@
             // 
             // txtWorkArea
             // 
-            this.txtWorkArea.Location = new System.Drawing.Point(373, 37);
+            this.txtWorkArea.Location = new System.Drawing.Point(373, 43);
             this.txtWorkArea.Name = "txtWorkArea";
-            this.txtWorkArea.Size = new System.Drawing.Size(589, 28);
+            this.txtWorkArea.Size = new System.Drawing.Size(589, 34);
             this.txtWorkArea.TabIndex = 5;
             // 
             // label8
             // 
-            this.label8.Location = new System.Drawing.Point(3, 71);
+            this.label8.Location = new System.Drawing.Point(3, 80);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(364, 29);
             this.label8.TabIndex = 6;
@@ -495,14 +506,14 @@
             // 
             // txtPurchaseManager
             // 
-            this.txtPurchaseManager.Location = new System.Drawing.Point(373, 74);
+            this.txtPurchaseManager.Location = new System.Drawing.Point(373, 83);
             this.txtPurchaseManager.Name = "txtPurchaseManager";
-            this.txtPurchaseManager.Size = new System.Drawing.Size(589, 28);
+            this.txtPurchaseManager.Size = new System.Drawing.Size(589, 34);
             this.txtPurchaseManager.TabIndex = 7;
             // 
             // label10
             // 
-            this.label10.Location = new System.Drawing.Point(3, 105);
+            this.label10.Location = new System.Drawing.Point(3, 120);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(364, 29);
             this.label10.TabIndex = 8;
@@ -512,9 +523,10 @@
             // chkWorkDay
             // 
             this.chkWorkDay.AutoSize = true;
-            this.chkWorkDay.Location = new System.Drawing.Point(373, 108);
+            this.chkWorkDay.Checked = true;
+            this.chkWorkDay.Location = new System.Drawing.Point(373, 123);
             this.chkWorkDay.Name = "chkWorkDay";
-            this.chkWorkDay.Size = new System.Drawing.Size(95, 28);
+            this.chkWorkDay.Size = new System.Drawing.Size(122, 33);
             this.chkWorkDay.TabIndex = 12;
             this.chkWorkDay.TabStop = true;
             this.chkWorkDay.Text = "วันทำการ";
@@ -522,7 +534,7 @@
             // 
             // chkHoliday
             // 
-            this.chkHoliday.Location = new System.Drawing.Point(474, 108);
+            this.chkHoliday.Location = new System.Drawing.Point(501, 123);
             this.chkHoliday.Name = "chkHoliday";
             this.chkHoliday.Size = new System.Drawing.Size(144, 33);
             this.chkHoliday.TabIndex = 13;
@@ -532,7 +544,7 @@
             // 
             // label11
             // 
-            this.label11.Location = new System.Drawing.Point(3, 144);
+            this.label11.Location = new System.Drawing.Point(3, 159);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(381, 29);
             this.label11.TabIndex = 10;
@@ -541,7 +553,7 @@
             // 
             // label12
             // 
-            this.label12.Location = new System.Drawing.Point(390, 144);
+            this.label12.Location = new System.Drawing.Point(390, 159);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(153, 29);
             this.label12.TabIndex = 14;
@@ -550,14 +562,14 @@
             // 
             // dtFrom
             // 
-            this.dtFrom.Location = new System.Drawing.Point(549, 147);
+            this.dtFrom.Location = new System.Drawing.Point(549, 162);
             this.dtFrom.Name = "dtFrom";
-            this.dtFrom.Size = new System.Drawing.Size(413, 28);
+            this.dtFrom.Size = new System.Drawing.Size(413, 34);
             this.dtFrom.TabIndex = 16;
             // 
             // label13
             // 
-            this.label13.Location = new System.Drawing.Point(3, 178);
+            this.label13.Location = new System.Drawing.Point(3, 199);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(540, 29);
             this.label13.TabIndex = 15;
@@ -566,14 +578,14 @@
             // 
             // dtTo
             // 
-            this.dtTo.Location = new System.Drawing.Point(549, 181);
+            this.dtTo.Location = new System.Drawing.Point(549, 202);
             this.dtTo.Name = "dtTo";
-            this.dtTo.Size = new System.Drawing.Size(413, 28);
+            this.dtTo.Size = new System.Drawing.Size(413, 34);
             this.dtTo.TabIndex = 17;
             // 
             // label14
             // 
-            this.label14.Location = new System.Drawing.Point(3, 212);
+            this.label14.Location = new System.Drawing.Point(3, 239);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(519, 29);
             this.label14.TabIndex = 18;
@@ -582,14 +594,14 @@
             // 
             // txtVerifyPurchase
             // 
-            this.txtVerifyPurchase.Location = new System.Drawing.Point(528, 215);
+            this.txtVerifyPurchase.Location = new System.Drawing.Point(528, 242);
             this.txtVerifyPurchase.Name = "txtVerifyPurchase";
-            this.txtVerifyPurchase.Size = new System.Drawing.Size(434, 28);
+            this.txtVerifyPurchase.Size = new System.Drawing.Size(434, 34);
             this.txtVerifyPurchase.TabIndex = 19;
             // 
             // label15
             // 
-            this.label15.Location = new System.Drawing.Point(3, 246);
+            this.label15.Location = new System.Drawing.Point(3, 279);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(519, 29);
             this.label15.TabIndex = 20;
@@ -598,18 +610,18 @@
             // 
             // txtPurchaseDate
             // 
-            this.txtPurchaseDate.Location = new System.Drawing.Point(528, 249);
+            this.txtPurchaseDate.Location = new System.Drawing.Point(528, 282);
             this.txtPurchaseDate.Name = "txtPurchaseDate";
-            this.txtPurchaseDate.Size = new System.Drawing.Size(434, 28);
+            this.txtPurchaseDate.Size = new System.Drawing.Size(434, 34);
             this.txtPurchaseDate.TabIndex = 21;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.tableLayoutPanel1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 31);
+            this.tabPage1.Location = new System.Drawing.Point(4, 38);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(988, 422);
+            this.tabPage1.Size = new System.Drawing.Size(988, 351);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "พนักงานเข้า-ออก";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -628,17 +640,69 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(982, 403);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(982, 344);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // gridEmployee
             // 
             this.gridEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridEmployee.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.AUTO_ID,
+            this.PROJECT_ID,
+            this.CARD_TYPE,
+            this.ID_CARD,
+            this.FULLNAME,
+            this.POSITION,
+            this.SAFETY_TRAINING_FLAG});
             this.gridEmployee.Location = new System.Drawing.Point(3, 51);
             this.gridEmployee.Name = "gridEmployee";
             this.gridEmployee.RowTemplate.Height = 24;
-            this.gridEmployee.Size = new System.Drawing.Size(976, 258);
+            this.gridEmployee.Size = new System.Drawing.Size(976, 199);
             this.gridEmployee.TabIndex = 0;
+            // 
+            // AUTO_ID
+            // 
+            this.AUTO_ID.DataPropertyName = "AUTO_ID";
+            this.AUTO_ID.HeaderText = "AUTO_ID";
+            this.AUTO_ID.Name = "AUTO_ID";
+            this.AUTO_ID.Visible = false;
+            // 
+            // PROJECT_ID
+            // 
+            this.PROJECT_ID.DataPropertyName = "PROJECT_ID";
+            this.PROJECT_ID.HeaderText = "PROJECT_ID";
+            this.PROJECT_ID.Name = "PROJECT_ID";
+            this.PROJECT_ID.Visible = false;
+            // 
+            // CARD_TYPE
+            // 
+            this.CARD_TYPE.DataPropertyName = "CARD_TYPE";
+            this.CARD_TYPE.HeaderText = "ประเภทบัตร";
+            this.CARD_TYPE.Name = "CARD_TYPE";
+            // 
+            // ID_CARD
+            // 
+            this.ID_CARD.DataPropertyName = "ID_CARD";
+            this.ID_CARD.HeaderText = "รหัสบัตร";
+            this.ID_CARD.Name = "ID_CARD";
+            // 
+            // FULLNAME
+            // 
+            this.FULLNAME.DataPropertyName = "FULLNAME";
+            this.FULLNAME.HeaderText = "ชื่อ-สกุล";
+            this.FULLNAME.Name = "FULLNAME";
+            // 
+            // POSITION
+            // 
+            this.POSITION.DataPropertyName = "POSITION";
+            this.POSITION.HeaderText = "ตำแหน่ง";
+            this.POSITION.Name = "POSITION";
+            // 
+            // SAFETY_TRAINING_FLAG
+            // 
+            this.SAFETY_TRAINING_FLAG.DataPropertyName = "SAFETY_TRAINING_FLAG";
+            this.SAFETY_TRAINING_FLAG.HeaderText = "การอบรม";
+            this.SAFETY_TRAINING_FLAG.Name = "SAFETY_TRAINING_FLAG";
             // 
             // flowLayoutPanel2
             // 
@@ -667,7 +731,7 @@
             this.flowLayoutPanel3.Controls.Add(this.txtResponse);
             this.flowLayoutPanel3.Controls.Add(this.label6);
             this.flowLayoutPanel3.Controls.Add(this.txtResponseTel);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 315);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 256);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(968, 85);
             this.flowLayoutPanel3.TabIndex = 2;
@@ -675,7 +739,7 @@
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.Location = new System.Drawing.Point(3, 2);
+            this.label5.Location = new System.Drawing.Point(3, 5);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(477, 29);
             this.label5.TabIndex = 5;
@@ -686,13 +750,13 @@
             // 
             this.txtResponse.Location = new System.Drawing.Point(486, 3);
             this.txtResponse.Name = "txtResponse";
-            this.txtResponse.Size = new System.Drawing.Size(477, 28);
+            this.txtResponse.Size = new System.Drawing.Size(477, 34);
             this.txtResponse.TabIndex = 6;
             // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.Location = new System.Drawing.Point(3, 36);
+            this.label6.Location = new System.Drawing.Point(3, 45);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(477, 29);
             this.label6.TabIndex = 7;
@@ -701,9 +765,9 @@
             // 
             // txtResponseTel
             // 
-            this.txtResponseTel.Location = new System.Drawing.Point(486, 37);
+            this.txtResponseTel.Location = new System.Drawing.Point(486, 43);
             this.txtResponseTel.Name = "txtResponseTel";
-            this.txtResponseTel.Size = new System.Drawing.Size(477, 28);
+            this.txtResponseTel.Size = new System.Drawing.Size(477, 34);
             this.txtResponseTel.TabIndex = 8;
             // 
             // tabControl1
@@ -715,23 +779,24 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 230);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(996, 457);
+            this.tabControl1.Size = new System.Drawing.Size(996, 393);
             this.tabControl1.TabIndex = 3;
             // 
             // label24
             // 
             this.label24.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label24.Location = new System.Drawing.Point(460, 6);
+            this.label24.Location = new System.Drawing.Point(11, 9);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(297, 29);
+            this.label24.Size = new System.Drawing.Size(135, 29);
             this.label24.TabIndex = 4;
             this.label24.Text = "Date (วันที่)";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label24.Click += new System.EventHandler(this.label24_Click);
             // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnSave.Location = new System.Drawing.Point(692, 693);
+            this.btnSave.Location = new System.Drawing.Point(688, 629);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(159, 39);
             this.btnSave.TabIndex = 5;
@@ -742,18 +807,39 @@
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnClose.Location = new System.Drawing.Point(857, 693);
+            this.btnClose.Location = new System.Drawing.Point(853, 629);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(128, 39);
             this.btnClose.TabIndex = 6;
             this.btnClose.Text = "ปิด";
             this.btnClose.UseVisualStyleBackColor = false;
             // 
+            // label25
+            // 
+            this.label25.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label25.ForeColor = System.Drawing.Color.Red;
+            this.label25.Location = new System.Drawing.Point(390, 9);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(291, 29);
+            this.label25.TabIndex = 7;
+            this.label25.Text = "Project Name (ชื่อโครงการ)";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtProjectname
+            // 
+            this.txtProjectname.Location = new System.Drawing.Point(684, 6);
+            this.txtProjectname.Name = "txtProjectname";
+            this.txtProjectname.Size = new System.Drawing.Size(320, 34);
+            this.txtProjectname.TabIndex = 8;
+            this.txtProjectname.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // frmProjectMasters
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1018, 741);
+            this.ClientSize = new System.Drawing.Size(1018, 675);
+            this.Controls.Add(this.txtProjectname);
+            this.Controls.Add(this.label25);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label24);
@@ -863,5 +949,14 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AUTO_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PROJECT_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CARD_TYPE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_CARD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FULLNAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn POSITION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SAFETY_TRAINING_FLAG;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox txtProjectname;
     }
 }

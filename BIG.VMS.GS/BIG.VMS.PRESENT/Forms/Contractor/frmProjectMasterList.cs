@@ -25,6 +25,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
         private void FrmProjectMasterList_Load(object sender, EventArgs e)
         {
             BindGridData();
+            CustomGrid();
         }
 
         private void BindGridData()
@@ -42,8 +43,9 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             var response = service.GetListProject(container);
             if (response.Status)
             {
-                gridVisitorList.DataSource = container.ListData;
-                //SetDataSourceHeader(gridVisitorList, ListHeader(), _container.ResultObj);
+
+                var containerData = (ContainerProject)response.ResultObj;
+                SetDataSourceHeader(gridVisitorList, ListHeader(), containerData.ListData);
             }
             else
             {
@@ -56,20 +58,58 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
         private List<HeaderGrid> ListHeader()
         {
             List<HeaderGrid> listCol = new List<HeaderGrid>();
-            listCol.Add(new HeaderGrid { HEADER_TEXT = "REGISTER_DATE", FIELD = "REGISTER_DATE", VISIBLE = false, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
-            listCol.Add(new HeaderGrid { HEADER_TEXT = "รหัสบัตรประชาชน", FIELD = "ID_CARD", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
-            listCol.Add(new HeaderGrid { HEADER_TEXT = "ชื่อ", FIELD = "FIRST_NAME", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
-            listCol.Add(new HeaderGrid { HEADER_TEXT = "นามสกุล", FIELD = "LAST_NAME", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
-            listCol.Add(new HeaderGrid { HEADER_TEXT = "เหตุผล", FIELD = "REASON", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.Fill });
-            listCol.Add(new HeaderGrid { HEADER_TEXT = "วันที่บันทึก", FIELD = "CREATED_DATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
-            //listCol.Add(new HeaderGrid { HEADER_TEXT = "สถานะ", FIELD = "STATUS", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.Fill });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "วันที่เพิ่ม", FIELD = "REGISTER_DATE", VISIBLE = false, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "เบอร์โทรผู้รับผิดชอบ", FIELD = "RESPONSIBLE_TEL", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "ชื่อโรคงการ", FIELD = "PROJECT_NAME", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "ขอบเขตโครงการ", FIELD = "PROJECT_SCOPE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "พื้นที่การทำงาน", FIELD = "WORKING_AREA", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "หัวหน้าผูรับผิดชอบ", FIELD = "RESPONSIBLE_DEP_HEAD", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "วันทำงาน", FIELD = "WORKING_DAY", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "วันที่เริ่ม", FIELD = "PROJECT_START_DATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "วันที่สิ้นสุด", FIELD = "PROJECT_END_DATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "เวลาทำงาน", FIELD = "PROJECT_WORKING_TIME", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "ฝ่ายจัดซื้อรับรองโดย", FIELD = "PURCHASING_VERIFY_BY", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "วันทำงาน", FIELD = "WORKING_DAY", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "วันที่ฝ่ายจัดซื้อรับรอง", FIELD = "PURCHASING_VERIFY_DATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "การรองรับการอบรม", FIELD = "SAFETY_TRAINING_REQUIRE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "วันที่รับรอง", FIELD = "SAFETY_TRAINING_ISSUED_DATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "วันหมดอายุการรับรอง", FIELD = "SAFETY_TRAINING_EXPIRED_DATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "ผู้รับรองฝ่ายความปลอดภัย", FIELD = "SAFETY_MANAGER_APP_BY", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "ID_BADGE_TYPE", FIELD = "ID_BADGE_TYPE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "ID_BADGE_ISSUED_DATE", FIELD = "ID_BADGE_ISSUED_DATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "ID_BADGE_EXPIRED_DATE", FIELD = "ID_BADGE_EXPIRED_DATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "HRA_MANAGER_APP_BY", FIELD = "HRA_MANAGER_APP_BY", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+
 
             return listCol;
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
+            BindGridData();
+            CustomGrid();
+        }
 
+
+        private void CustomGrid()
+        {
+            gridVisitorList.RowTemplate.Height = 30;
+            for (int i = 0; i < gridVisitorList.Rows.Count; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    gridVisitorList.Rows[i].DefaultCellStyle.BackColor = Color.SeaShell;
+                }
+                else
+                {
+                    gridVisitorList.Rows[i].DefaultCellStyle.BackColor = Color.White;
+                }
+
+            }
+            foreach (DataGridViewRow row in gridVisitorList.Rows)
+            {
+               
+            }
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
