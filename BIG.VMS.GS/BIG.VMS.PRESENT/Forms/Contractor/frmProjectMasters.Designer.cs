@@ -94,10 +94,10 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtResponseTel = new System.Windows.Forms.TextBox();
+            this.txtForemanTel = new System.Windows.Forms.TextBox();
             this.btnAddEmployee = new System.Windows.Forms.Button();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtResponse = new System.Windows.Forms.TextBox();
+            this.txtForeman = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.gridEmployee = new System.Windows.Forms.DataGridView();
             this.AUTO_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -924,7 +924,7 @@
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel9.Controls.Add(this.label6, 0, 0);
-            this.tableLayoutPanel9.Controls.Add(this.txtResponseTel, 1, 0);
+            this.tableLayoutPanel9.Controls.Add(this.txtForemanTel, 1, 0);
             this.tableLayoutPanel9.Location = new System.Drawing.Point(2, 284);
             this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
@@ -943,13 +943,13 @@
             this.label6.Text = "Responsible Telephone:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtResponseTel
+            // txtForemanTel
             // 
-            this.txtResponseTel.Location = new System.Drawing.Point(422, 2);
-            this.txtResponseTel.Margin = new System.Windows.Forms.Padding(2);
-            this.txtResponseTel.Name = "txtResponseTel";
-            this.txtResponseTel.Size = new System.Drawing.Size(412, 26);
-            this.txtResponseTel.TabIndex = 8;
+            this.txtForemanTel.Location = new System.Drawing.Point(422, 2);
+            this.txtForemanTel.Margin = new System.Windows.Forms.Padding(2);
+            this.txtForemanTel.Name = "txtForemanTel";
+            this.txtForemanTel.Size = new System.Drawing.Size(412, 26);
+            this.txtForemanTel.TabIndex = 8;
             // 
             // btnAddEmployee
             // 
@@ -970,7 +970,7 @@
             this.tableLayoutPanel8.ColumnCount = 2;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Controls.Add(this.txtResponse, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.txtForeman, 1, 0);
             this.tableLayoutPanel8.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel8.Location = new System.Drawing.Point(2, 250);
             this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(2);
@@ -980,13 +980,13 @@
             this.tableLayoutPanel8.Size = new System.Drawing.Size(838, 30);
             this.tableLayoutPanel8.TabIndex = 16;
             // 
-            // txtResponse
+            // txtForeman
             // 
-            this.txtResponse.Location = new System.Drawing.Point(422, 2);
-            this.txtResponse.Margin = new System.Windows.Forms.Padding(2);
-            this.txtResponse.Name = "txtResponse";
-            this.txtResponse.Size = new System.Drawing.Size(414, 26);
-            this.txtResponse.TabIndex = 6;
+            this.txtForeman.Location = new System.Drawing.Point(422, 2);
+            this.txtForeman.Margin = new System.Windows.Forms.Padding(2);
+            this.txtForeman.Name = "txtForeman";
+            this.txtForeman.Size = new System.Drawing.Size(414, 26);
+            this.txtForeman.TabIndex = 6;
             // 
             // label5
             // 
@@ -1380,9 +1380,9 @@
         private System.Windows.Forms.DataGridView gridEmployee;
         private System.Windows.Forms.Button btnAddEmployee;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtResponse;
+        private System.Windows.Forms.TextBox txtForeman;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtResponseTel;
+        private System.Windows.Forms.TextBox txtForemanTel;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtScope;
         private System.Windows.Forms.Label label9;

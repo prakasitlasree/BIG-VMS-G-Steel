@@ -4,6 +4,7 @@ using BIG.VMS.MODEL.EntityModel;
 using BIG.VMS.MODEL.GsteelModel.ContainerModel;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -87,8 +88,31 @@ namespace BIG.VMS.DATASERVICE
                 using (var ctx = new BIG_VMSEntities())
                 {
                     var obj = ctx.TRN_PROJECT_MASTER.Where(o => o.AUTO_ID == source.AUTO_ID).FirstOrDefault();
-                    ctx.TRN_PROJECT_MASTER.Attach(obj);
-                    obj = source;
+
+                    obj.HRA_MANAGER_APP_BY = source.HRA_MANAGER_APP_BY;
+                    obj.ID_BADGE_EXPIRED_DATE = source.ID_BADGE_EXPIRED_DATE;
+                    obj.ID_BADGE_ISSUED_DATE = source.ID_BADGE_ISSUED_DATE;
+                    obj.ID_BADGE_TYPE = source.ID_BADGE_TYPE;
+                    obj.PROJECT_END_DATE = source.PROJECT_END_DATE;
+                    obj.PROJECT_NAME = source.PROJECT_NAME;
+                    obj.PROJECT_SCOPE = source.PROJECT_SCOPE;
+                    obj.PROJECT_START_DATE = source.PROJECT_START_DATE;
+                    obj.PROJECT_WORKING_TIME = source.PROJECT_WORKING_TIME;
+                    obj.PURCHASING_VERIFY_BY = source.PURCHASING_VERIFY_BY;
+                    obj.PURCHASING_VERIFY_DATE = source.PURCHASING_VERIFY_DATE;
+                    obj.REGISTER_DATE = source.REGISTER_DATE;
+                    obj.RESPONSIBLE_DEP_HEAD = source.RESPONSIBLE_DEP_HEAD;
+                    obj.RESPONSIBLE_MANAGER = source.RESPONSIBLE_MANAGER;
+                    obj.RESPONSIBLE_TEL = source.RESPONSIBLE_TEL;
+                    obj.SAFETY_MANAGER_APP_BY = source.SAFETY_MANAGER_APP_BY;
+                    obj.SAFETY_TRAINING_EXPIRED_DATE = source.SAFETY_TRAINING_EXPIRED_DATE;
+                    obj.SAFETY_TRAINING_ISSUED_DATE = source.SAFETY_TRAINING_ISSUED_DATE;
+                    obj.SAFETY_TRAINING_REQUIRE = source.SAFETY_TRAINING_REQUIRE;
+                    obj.UPDATED_BY = source.UPDATED_BY;
+                    obj.UPDATED_DATE = source.UPDATED_DATE;
+                    obj.WORKING_AREA = source.WORKING_AREA;
+                    obj.WORKING_DAY = source.WORKING_DAY;
+
                     ctx.SaveChanges();
                     resp.Status = true;
 
@@ -114,6 +138,32 @@ namespace BIG.VMS.DATASERVICE
                 using (var ctx = new BIG_VMSEntities())
                 {
                     ctx.TRN_PROJECT_MASTER.Add(project);
+                    ctx.SaveChanges();
+                    resp.Status = true;
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                resp.Status = false;
+                resp.ExceptionMessage = ex.Message.ToString();
+            }
+
+
+            return resp;
+        }
+
+
+        public Response AddProjectMember(TRN_PROJECT_MEMBER source)
+        {
+            var resp = new Response();
+
+            try
+            {
+                using (var ctx = new BIG_VMSEntities())
+                {
+                    ctx.TRN_PROJECT_MEMBER.Add(source);
                     ctx.SaveChanges();
                     resp.Status = true;
 
@@ -205,8 +255,6 @@ namespace BIG.VMS.DATASERVICE
                     var project = ctx.TRN_PROJECT_MASTER
                         .Include("TRN_PROJECT_MEMBER")
                         .Where(o => o.AUTO_ID == id).FirstOrDefault();
-
-                   
 
                     resp.ResultObj = project;
                     resp.Status = true;

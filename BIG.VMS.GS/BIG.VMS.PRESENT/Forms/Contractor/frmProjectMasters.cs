@@ -42,8 +42,8 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
                 comboCompany.Enabled = false;
                 txtProjectname.ReadOnly = false;
                 btnAddEmployee.Enabled = false;
-                txtResponse.ReadOnly = false;
-                txtResponseTel.ReadOnly = false;
+                txtForeman.ReadOnly = false;
+                txtForemanTel.ReadOnly = false;
                 txtScope.ReadOnly = false;
                 txtWorkArea.ReadOnly = false;
                 txtVerifyPurchase.ReadOnly = false;
@@ -87,15 +87,14 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             txtProjectname.Text = obj.PROJECT_NAME;
             comboCompany.SelectedValue = obj.CONTRACTOR_ID;
             gridEmployee.DataSource = obj.TRN_PROJECT_MEMBER.ToList();
-            txtResponse.Text = obj.RESPONSIBLE_DEP_HEAD;
-            txtResponseTel.Text = obj.RESPONSIBLE_TEL;
-            txtResponse.Text = obj.PROJECT_SCOPE;
+            txtForeman.Text = obj.RESPONSIBLE_MANAGER;
+            txtForemanTel.Text = obj.RESPONSIBLE_TEL;
             txtWorkArea.Text = obj.WORKING_AREA;
             txtVerifyPurchase.Text = obj.PURCHASING_VERIFY_BY;
-            txtVerifyPurchase.Text = obj.SAFETY_MANAGER_APP_BY;
+           
             txtHraApprove.Text = obj.HRA_MANAGER_APP_BY;
             txtScope.Text = obj.PROJECT_SCOPE;
-            txtPurchaseManager.Text = obj.RESPONSIBLE_MANAGER;
+            txtPurchaseManager.Text = obj.RESPONSIBLE_DEP_HEAD;
             txtSafetyApprove.Text = obj.SAFETY_MANAGER_APP_BY;
             dtFrom.Value = Convert.ToDateTime(obj.PROJECT_START_DATE);
             dtTo.Value = Convert.ToDateTime(obj.PROJECT_END_DATE);
@@ -170,28 +169,34 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
                         TRN_PROJECT_MASTER project = new TRN_PROJECT_MASTER()
                         {
                             REGISTER_DATE = DateTime.Now,
-                            RESPONSIBLE_MANAGER = txtResponse.Text,
-                            RESPONSIBLE_TEL = txtResponseTel.Text,
+
+                            RESPONSIBLE_MANAGER = txtForeman.Text,
+                            RESPONSIBLE_TEL = txtForemanTel.Text,
                             PROJECT_NAME = txtProjectname.Text,
+
                             PROJECT_SCOPE = txtScope.Text,
                             WORKING_AREA = txtWorkArea.Text,
-                            RESPONSIBLE_DEP_HEAD = txtResponse.Text,
+                            RESPONSIBLE_DEP_HEAD = txtPurchaseManager.Text,
                             WORKING_DAY = chkWorkDay.Checked ? "วันทำงาน" : "วันหยุด",
                             PROJECT_START_DATE = dtFrom.Value,
                             PROJECT_END_DATE = dtTo.Value,
-                            PURCHASING_VERIFY_BY = txtPurchaseManager.Text,
+                            PURCHASING_VERIFY_BY = txtVerifyPurchase.Text,
                             PURCHASING_VERIFY_DATE = dtPurchase.Value,
+
                             SAFETY_MANAGER_APP_BY = txtSafetyApprove.Text,
                             SAFETY_TRAINING_EXPIRED_DATE = dtExpireDate.Value,
                             SAFETY_TRAINING_ISSUED_DATE = dtIssuseDate.Value,
-                            HRA_MANAGER_APP_BY = txtHraApprove.Text,
                             SAFETY_TRAINING_REQUIRE = chkTraingRequire.Checked ? "อบรม" : "ไม่อบรม",
+
+                            HRA_MANAGER_APP_BY = txtHraApprove.Text,
                             ID_BADGE_TYPE = radPerm.Checked ? "ถาวร" : "ชั่วคราว",
+
                             CREATED_BY = LOGIN,
                             CREATED_DATE = DateTime.Now,
                             UPDATED_BY = LOGIN,
                             UPDATED_DATE = DateTime.Now,
                             CONTRACTOR_ID = Convert.ToInt32(comboCompany.SelectedValue),
+
                             TRN_PROJECT_MEMBER = new List<TRN_PROJECT_MEMBER>()
 
                         };
@@ -230,25 +235,26 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
                     {
                         var project = _TRN_PROJECT_MASTER;
 
-                     
-                        project.RESPONSIBLE_MANAGER = txtResponse.Text;
-                        project.RESPONSIBLE_TEL = txtResponseTel.Text;
+                        project.RESPONSIBLE_MANAGER = txtForeman.Text;
+                        project.RESPONSIBLE_TEL = txtForemanTel.Text;
                         project.PROJECT_NAME = txtProjectname.Text;
                         project.PROJECT_SCOPE = txtScope.Text;
                         project.WORKING_AREA = txtWorkArea.Text;
-                        project.RESPONSIBLE_DEP_HEAD = txtResponse.Text;
+
+                        project.RESPONSIBLE_DEP_HEAD = txtPurchaseManager.Text;
                         project.WORKING_DAY = chkWorkDay.Checked ? "วันทำงาน" : "วันหยุด";
                         project.PROJECT_START_DATE = dtFrom.Value;
                         project.PROJECT_END_DATE = dtTo.Value;
-                        project.PURCHASING_VERIFY_BY = txtPurchaseManager.Text;
+                        project.PURCHASING_VERIFY_BY = txtVerifyPurchase.Text;
                         project.PURCHASING_VERIFY_DATE = dtPurchase.Value;
+
                         project.SAFETY_MANAGER_APP_BY = txtSafetyApprove.Text;
                         project.SAFETY_TRAINING_EXPIRED_DATE = dtExpireDate.Value;
                         project.SAFETY_TRAINING_ISSUED_DATE = dtIssuseDate.Value;
                         project.HRA_MANAGER_APP_BY = txtHraApprove.Text;
                         project.SAFETY_TRAINING_REQUIRE = chkTraingRequire.Checked ? "อบรม" : "ไม่อบรม";
                         project.ID_BADGE_TYPE = radPerm.Checked ? "ถาวร" : "ชั่วคราว";
-                  
+
                         project.UPDATED_BY = LOGIN;
                         project.UPDATED_DATE = DateTime.Now;
                         project.CONTRACTOR_ID = Convert.ToInt32(comboCompany.SelectedValue);
@@ -295,7 +301,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
         {
             List<string> listMsg = new List<string>();
             if (string.IsNullOrEmpty(txtProjectname.Text)) listMsg.Add("Requester name");
-            if (string.IsNullOrEmpty(txtResponse.Text)) listMsg.Add("Requester position");
+            if (string.IsNullOrEmpty(txtForeman.Text)) listMsg.Add("Requester position");
             if (Convert.ToInt32(comboCompany.SelectedValue) == 0) listMsg.Add("Company name");
 
             if (radOther.Checked && txtOtherTime.Text == "  :")
@@ -326,7 +332,21 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 var listEmployee = (List<TRN_PROJECT_MEMBER>)gridEmployee.DataSource;
-                listEmployee.Add(frm.TRN_PROJECT_MEMBER);
+                if (formMode == MODEL.CustomModel.FormMode.Add)
+                {
+                    listEmployee.Add(frm.TRN_PROJECT_MEMBER);
+                }
+                else
+                {
+                    listEmployee.Add(frm.TRN_PROJECT_MEMBER);
+                    frm.TRN_PROJECT_MEMBER.PROJECT_ID = _TRN_PROJECT_MASTER.AUTO_ID;
+                    var resp = service.AddProjectMember(frm.TRN_PROJECT_MEMBER);
+                    if (!resp.Status)
+                    {
+                        MessageBox.Show(resp.Message + resp.ExceptionMessage);
+                    }
+                }
+
                 gridEmployee.DataSource = listEmployee.ToList();
             }
         }
