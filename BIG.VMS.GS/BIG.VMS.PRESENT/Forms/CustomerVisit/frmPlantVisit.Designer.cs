@@ -220,6 +220,7 @@
             this.visitortime.Size = new System.Drawing.Size(245, 23);
             this.visitortime.TabIndex = 9;
             this.visitortime.ValidatingType = typeof(System.DateTime);
+            this.visitortime.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.Visitortime_MaskInputRejected);
             // 
             // label10
             // 
@@ -488,6 +489,7 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(921, 72);
             this.flowLayoutPanel1.TabIndex = 2;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.FlowLayoutPanel1_Paint);
             // 
             // btnSave
             // 

@@ -26,7 +26,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
         private void FrmProjectMasterList_Load(object sender, EventArgs e)
         {
             BindGridData();
-            CustomGrid();
+            
 
         }
 
@@ -41,7 +41,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             var filter = new FilterProject()
             {
 
-                PROJECT_NAME = txtName.Text,
+                PROJECT_NAME = txtProjectName.Text,
 
 
             };
@@ -67,13 +67,13 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
         {
             List<HeaderGrid> listCol = new List<HeaderGrid>();
             listCol.Add(new HeaderGrid { HEADER_TEXT = "AUTO_ID", FIELD = "AUTO_ID", VISIBLE = false, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
-            listCol.Add(new HeaderGrid { HEADER_TEXT = "วันที่เพิ่ม", FIELD = "REGISTER_DATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
-            listCol.Add(new HeaderGrid { HEADER_TEXT = "เบอร์โทรผู้รับผิดชอบ", FIELD = "RESPONSIBLE_TEL", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
-            listCol.Add(new HeaderGrid { HEADER_TEXT = "ชื่อโรคงการ", FIELD = "PROJECT_NAME", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "ชื่อโครงการ", FIELD = "PROJECT_NAME", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "ขอบเขตโครงการ", FIELD = "PROJECT_SCOPE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "พื้นที่การทำงาน", FIELD = "WORKING_AREA", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "หัวหน้าผูรับผิดชอบ", FIELD = "RESPONSIBLE_DEP_HEAD", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
-            listCol.Add(new HeaderGrid { HEADER_TEXT = "วันทำงาน", FIELD = "WORKING_DAY", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "วันที่เพิ่ม", FIELD = "REGISTER_DATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "เบอร์โทรผู้รับผิดชอบ", FIELD = "RESPONSIBLE_TEL", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+             listCol.Add(new HeaderGrid { HEADER_TEXT = "วันทำงาน", FIELD = "WORKING_DAY", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "วันที่เริ่ม", FIELD = "PROJECT_START_DATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "วันที่สิ้นสุด", FIELD = "PROJECT_END_DATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "เวลาทำงาน", FIELD = "PROJECT_WORKING_TIME", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
@@ -96,7 +96,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             BindGridData();
-            CustomGrid();
+            
         }
 
 
@@ -131,7 +131,11 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             }
         }
 
-        private void gridVisitorList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+      
+
+       
+
+        private void GridVisitorList_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -146,7 +150,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
                         {
                             var frm = new frmProjectMasters();
                             frm.formMode = FormMode.Edit;
-                            frm.MAS_CONTRACTOR = (MAS_CONTRACTOR)response.ResultObj;
+                            frm._TRN_PROJECT_MASTER = (TRN_PROJECT_MASTER)response.ResultObj;
                             if (frm.ShowDialog() == DialogResult.OK)
                             {
                                 BindGridData();
@@ -177,64 +181,6 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             }
         }
 
-        private void tableLayoutPanel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void txtPage_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnFirst_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnPrevious_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnNext_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLast_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+       
     }
 }

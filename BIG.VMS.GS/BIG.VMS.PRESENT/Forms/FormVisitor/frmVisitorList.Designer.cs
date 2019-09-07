@@ -185,9 +185,9 @@
             // 
             this.txtPage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPage.Enabled = false;
-            this.txtPage.Location = new System.Drawing.Point(8, 3);
+            this.txtPage.Location = new System.Drawing.Point(8, 6);
             this.txtPage.Name = "txtPage";
-            this.txtPage.Size = new System.Drawing.Size(188, 37);
+            this.txtPage.Size = new System.Drawing.Size(188, 31);
             this.txtPage.TabIndex = 1;
             this.txtPage.Text = "หน้า";
             // 
@@ -286,17 +286,17 @@
             // txtIDCard
             // 
             this.txtIDCard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtIDCard.Location = new System.Drawing.Point(825, 3);
+            this.txtIDCard.Location = new System.Drawing.Point(796, 3);
             this.txtIDCard.Name = "txtIDCard";
-            this.txtIDCard.Size = new System.Drawing.Size(206, 37);
+            this.txtIDCard.Size = new System.Drawing.Size(235, 31);
             this.txtIDCard.TabIndex = 10;
             // 
             // txtLastName
             // 
             this.txtLastName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLastName.Location = new System.Drawing.Point(451, 3);
+            this.txtLastName.Location = new System.Drawing.Point(428, 3);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(205, 37);
+            this.txtLastName.Size = new System.Drawing.Size(233, 31);
             this.txtLastName.TabIndex = 8;
             // 
             // label1
@@ -305,7 +305,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 31);
+            this.label1.Size = new System.Drawing.Size(35, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "ชื่อ";
             // 
@@ -313,9 +313,9 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 49);
+            this.label2.Location = new System.Drawing.Point(3, 43);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 31);
+            this.label2.Size = new System.Drawing.Size(96, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "ทะเบียนรถ";
             // 
@@ -323,9 +323,9 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(345, 6);
+            this.label3.Location = new System.Drawing.Point(344, 6);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 31);
+            this.label3.Size = new System.Drawing.Size(78, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "นามสกุล";
             // 
@@ -333,53 +333,53 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(662, 6);
+            this.label5.Location = new System.Drawing.Point(667, 6);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(157, 31);
+            this.label5.Size = new System.Drawing.Size(123, 25);
             this.label5.TabIndex = 4;
             this.label5.Text = "บัตรประชาชน";
             // 
             // txtName
             // 
             this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtName.Location = new System.Drawing.Point(134, 3);
+            this.txtName.Location = new System.Drawing.Point(105, 3);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(205, 37);
+            this.txtName.Size = new System.Drawing.Size(233, 31);
             this.txtName.TabIndex = 6;
             // 
             // txtLicense
             // 
             this.txtLicense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLicense.Location = new System.Drawing.Point(134, 46);
+            this.txtLicense.Location = new System.Drawing.Point(105, 40);
             this.txtLicense.Name = "txtLicense";
-            this.txtLicense.Size = new System.Drawing.Size(205, 37);
+            this.txtLicense.Size = new System.Drawing.Size(233, 31);
             this.txtLicense.TabIndex = 7;
             // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(345, 49);
+            this.label6.Location = new System.Drawing.Point(344, 43);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 31);
+            this.label6.Size = new System.Drawing.Size(52, 25);
             this.label6.TabIndex = 11;
             this.label6.Text = "เลขที่";
             // 
             // txtNo
             // 
             this.txtNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNo.Location = new System.Drawing.Point(451, 46);
+            this.txtNo.Location = new System.Drawing.Point(428, 40);
             this.txtNo.Name = "txtNo";
-            this.txtNo.Size = new System.Drawing.Size(205, 37);
+            this.txtNo.Size = new System.Drawing.Size(233, 31);
             this.txtNo.TabIndex = 12;
             // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(662, 49);
+            this.label4.Location = new System.Drawing.Point(667, 43);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 31);
+            this.label4.Size = new System.Drawing.Size(73, 25);
             this.label4.TabIndex = 13;
             this.label4.Text = "ประเภท";
             // 
@@ -393,9 +393,9 @@
             "ออก",
             "นัดล่วงหน้า(เข้า)",
             "นัดล่วงหน้า(ออก)"});
-            this.comboType.Location = new System.Drawing.Point(825, 52);
+            this.comboType.Location = new System.Drawing.Point(796, 45);
             this.comboType.Name = "comboType";
-            this.comboType.Size = new System.Drawing.Size(206, 38);
+            this.comboType.Size = new System.Drawing.Size(235, 33);
             this.comboType.TabIndex = 14;
             // 
             // panel2
@@ -405,9 +405,9 @@
             this.panel2.Controls.Add(this.btnListExit);
             this.panel2.Controls.Add(this.btnSearch);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(134, 89);
+            this.panel2.Location = new System.Drawing.Point(105, 77);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(897, 46);
+            this.panel2.Size = new System.Drawing.Size(926, 46);
             this.panel2.TabIndex = 16;
             // 
             // btnBlacklist
@@ -418,7 +418,7 @@
             this.btnBlacklist.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBlacklist.ForeColor = System.Drawing.Color.Red;
             this.btnBlacklist.Image = ((System.Drawing.Image)(resources.GetObject("btnBlacklist.Image")));
-            this.btnBlacklist.Location = new System.Drawing.Point(709, 0);
+            this.btnBlacklist.Location = new System.Drawing.Point(738, 0);
             this.btnBlacklist.Name = "btnBlacklist";
             this.btnBlacklist.Size = new System.Drawing.Size(188, 46);
             this.btnBlacklist.TabIndex = 15;
@@ -496,7 +496,7 @@
             this.lblTodayOut.AutoSize = true;
             this.lblTodayOut.Location = new System.Drawing.Point(199, 36);
             this.lblTodayOut.Name = "lblTodayOut";
-            this.lblTodayOut.Size = new System.Drawing.Size(29, 31);
+            this.lblTodayOut.Size = new System.Drawing.Size(24, 25);
             this.lblTodayOut.TabIndex = 5;
             this.lblTodayOut.Text = "0";
             // 
@@ -505,7 +505,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(19, 36);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(207, 31);
+            this.label9.Size = new System.Drawing.Size(161, 25);
             this.label9.TabIndex = 4;
             this.label9.Text = "จำนวนคนออกวันนี้";
             // 
@@ -514,7 +514,7 @@
             this.lblAllCount.AutoSize = true;
             this.lblAllCount.Location = new System.Drawing.Point(199, 68);
             this.lblAllCount.Name = "lblAllCount";
-            this.lblAllCount.Size = new System.Drawing.Size(29, 31);
+            this.lblAllCount.Size = new System.Drawing.Size(24, 25);
             this.lblAllCount.TabIndex = 3;
             this.lblAllCount.Text = "0";
             // 
@@ -525,7 +525,7 @@
             this.lblTodayIn.AutoSize = true;
             this.lblTodayIn.Location = new System.Drawing.Point(199, 4);
             this.lblTodayIn.Name = "lblTodayIn";
-            this.lblTodayIn.Size = new System.Drawing.Size(29, 31);
+            this.lblTodayIn.Size = new System.Drawing.Size(24, 25);
             this.lblTodayIn.TabIndex = 2;
             this.lblTodayIn.Text = "0";
             // 
@@ -534,7 +534,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(3, 68);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(225, 31);
+            this.label8.Size = new System.Drawing.Size(177, 25);
             this.label8.TabIndex = 1;
             this.label8.Text = "จำนวนคนเข้าทั้งหมด";
             // 
@@ -543,7 +543,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(19, 6);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(198, 31);
+            this.label7.Size = new System.Drawing.Size(155, 25);
             this.label7.TabIndex = 0;
             this.label7.Text = "จำนวนคนเข้าวันนี้";
             // 
@@ -621,7 +621,7 @@
             // 
             // frmVisitorList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 30F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1040, 676);
             this.Controls.Add(this.tableLayoutPanel1);

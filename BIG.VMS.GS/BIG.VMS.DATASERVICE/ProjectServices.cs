@@ -78,7 +78,7 @@ namespace BIG.VMS.DATASERVICE
             return resp;
         }
 
-        public Response UpdateConstractor(MAS_CONTRACTOR source)
+        public Response UpdateProject(TRN_PROJECT_MASTER source)
         {
             var resp = new Response();
 
@@ -86,9 +86,34 @@ namespace BIG.VMS.DATASERVICE
             {
                 using (var ctx = new BIG_VMSEntities())
                 {
-                    var obj = ctx.MAS_CONTRACTOR.Where(o=>o.AUTO_ID == source.AUTO_ID).FirstOrDefault();
-                    ctx.MAS_CONTRACTOR.Attach(obj);
+                    var obj = ctx.TRN_PROJECT_MASTER.Where(o => o.AUTO_ID == source.AUTO_ID).FirstOrDefault();
+                    ctx.TRN_PROJECT_MASTER.Attach(obj);
                     obj = source;
+                    ctx.SaveChanges();
+                    resp.Status = true;
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                resp.Status = false;
+                resp.ExceptionMessage = ex.Message.ToString();
+            }
+
+
+            return resp;
+        }
+
+        public Response AddProject(TRN_PROJECT_MASTER project)
+        {
+            var resp = new Response();
+
+            try
+            {
+                using (var ctx = new BIG_VMSEntities())
+                {
+                    ctx.TRN_PROJECT_MASTER.Add(project);
                     ctx.SaveChanges();
                     resp.Status = true;
 
@@ -177,14 +202,13 @@ namespace BIG.VMS.DATASERVICE
             {
                 using (var ctx = new BIG_VMSEntities())
                 {
-                    var project = ctx.TRN_PROJECT_MASTER.Where(o => o.AUTO_ID == id).FirstOrDefault();
+                    var project = ctx.TRN_PROJECT_MASTER
+                        .Include("TRN_PROJECT_MEMBER")
+                        .Where(o => o.AUTO_ID == id).FirstOrDefault();
 
-                    var contractor = ctx.MAS_CONTRACTOR
-                        .Include("TRN_PROJECT_MASTER")
-                        .Include("TRN_PROJECT_MASTER.TRN_PROJECT_MEMBER")
-                        .Where(o => o.AUTO_ID == project.CONTRACTOR_ID).FirstOrDefault();
+                   
 
-                    resp.ResultObj = contractor;
+                    resp.ResultObj = project;
                     resp.Status = true;
                 }
 
@@ -219,7 +243,7 @@ namespace BIG.VMS.DATASERVICE
                     resp.ResultObj = contractor;
                     resp.Status = true;
                 }
-           }
+            }
             catch (Exception ex)
             {
                 resp.Status = false;

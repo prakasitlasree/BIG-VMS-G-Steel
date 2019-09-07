@@ -182,6 +182,14 @@ namespace BIG.VMS.PRESENT.Forms.CustomerVisit
 
         }
 
-      
+        private void Visitortime_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void FlowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
