@@ -19,7 +19,9 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             InitializeComponent();
         }
 
-        private void BtnSave_Click(object sender, EventArgs e)
+        
+
+        private void BtnSave_Click_1(object sender, EventArgs e)
         {
             TRN_PROJECT_MEMBER obj = new TRN_PROJECT_MEMBER()
             {
@@ -34,9 +36,21 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
 
             this.DialogResult = DialogResult.OK;
             this.Close();
-            
         }
 
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
+        private void TableLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void FrmProjectMember_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

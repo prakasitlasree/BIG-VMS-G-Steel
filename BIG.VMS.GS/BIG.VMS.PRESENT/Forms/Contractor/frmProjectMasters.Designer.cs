@@ -95,7 +95,6 @@
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.txtForemanTel = new System.Windows.Forms.TextBox();
-            this.btnAddEmployee = new System.Windows.Forms.Button();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.txtForeman = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -110,8 +109,6 @@
             this.SAFETY_TRAINING_FLAG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
             this.txtProjectname = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -122,6 +119,9 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnSave1 = new System.Windows.Forms.Button();
+            this.btnClose2 = new System.Windows.Forms.Button();
+            this.btnAddEmployee = new System.Windows.Forms.Button();
             this.tabPage4.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -199,6 +199,8 @@
             this.label3.Size = new System.Drawing.Size(238, 24);
             this.label3.TabIndex = 4;
             this.label3.Text = "Tel (เบอร์โทร):";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // txtTel
             // 
@@ -233,6 +235,7 @@
             // 
             // tableLayoutPanel12
             // 
+            this.tableLayoutPanel12.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tableLayoutPanel12.ColumnCount = 3;
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -377,6 +380,7 @@
             // 
             // tableLayoutPanel19
             // 
+            this.tableLayoutPanel19.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tableLayoutPanel19.ColumnCount = 2;
             this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -518,6 +522,7 @@
             // 
             // tableLayoutPanel20
             // 
+            this.tableLayoutPanel20.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tableLayoutPanel20.ColumnCount = 2;
             this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.61074F));
             this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.38926F));
@@ -900,6 +905,7 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.AutoSize = true;
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel9, 0, 3);
@@ -914,7 +920,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(842, 317);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(842, 328);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel9
@@ -925,7 +931,7 @@
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel9.Controls.Add(this.label6, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.txtForemanTel, 1, 0);
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(2, 284);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(2, 295);
             this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
@@ -951,19 +957,6 @@
             this.txtForemanTel.Size = new System.Drawing.Size(412, 26);
             this.txtForemanTel.TabIndex = 8;
             // 
-            // btnAddEmployee
-            // 
-            this.btnAddEmployee.BackColor = System.Drawing.Color.LightGreen;
-            this.btnAddEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddEmployee.Location = new System.Drawing.Point(2, 2);
-            this.btnAddEmployee.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAddEmployee.Name = "btnAddEmployee";
-            this.btnAddEmployee.Size = new System.Drawing.Size(236, 32);
-            this.btnAddEmployee.TabIndex = 0;
-            this.btnAddEmployee.Text = "เพิ่มพนักงานเข้า-ออก";
-            this.btnAddEmployee.UseVisualStyleBackColor = false;
-            this.btnAddEmployee.Click += new System.EventHandler(this.BtnAddEmployee_Click);
-            // 
             // tableLayoutPanel8
             // 
             this.tableLayoutPanel8.AutoSize = true;
@@ -972,7 +965,7 @@
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel8.Controls.Add(this.txtForeman, 1, 0);
             this.tableLayoutPanel8.Controls.Add(this.label5, 0, 0);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(2, 250);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(2, 261);
             this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
@@ -1014,7 +1007,7 @@
             this.FULLNAME,
             this.POSITION,
             this.SAFETY_TRAINING_FLAG});
-            this.gridEmployee.Location = new System.Drawing.Point(2, 38);
+            this.gridEmployee.Location = new System.Drawing.Point(2, 49);
             this.gridEmployee.Margin = new System.Windows.Forms.Padding(2);
             this.gridEmployee.Name = "gridEmployee";
             this.gridEmployee.ReadOnly = true;
@@ -1120,32 +1113,6 @@
             this.imageList1.Images.SetKeyName(1, "Message.png");
             this.imageList1.Images.SetKeyName(2, "Unlock.png");
             this.imageList1.Images.SetKeyName(3, "3d bar chart.png");
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Location = new System.Drawing.Point(632, 602);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(127, 32);
-            this.btnSave.TabIndex = 5;
-            this.btnSave.Text = "บันทึก";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(763, 602);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(104, 32);
-            this.btnClose.TabIndex = 6;
-            this.btnClose.Text = "ปิด";
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // txtProjectname
             // 
@@ -1300,23 +1267,73 @@
             this.tableLayoutPanel11.Size = new System.Drawing.Size(0, 0);
             this.tableLayoutPanel11.TabIndex = 17;
             // 
+            // btnSave1
+            // 
+            this.btnSave1.BackColor = System.Drawing.Color.White;
+            this.btnSave1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave1.Image = ((System.Drawing.Image)(resources.GetObject("btnSave1.Image")));
+            this.btnSave1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave1.Location = new System.Drawing.Point(599, 597);
+            this.btnSave1.Margin = new System.Windows.Forms.Padding(6);
+            this.btnSave1.Name = "btnSave1";
+            this.btnSave1.Size = new System.Drawing.Size(132, 36);
+            this.btnSave1.TabIndex = 18;
+            this.btnSave1.Text = "บันทึก";
+            this.btnSave1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSave1.UseVisualStyleBackColor = false;
+            this.btnSave1.Click += new System.EventHandler(this.BtnSave_Click);
+            // 
+            // btnClose2
+            // 
+            this.btnClose2.BackColor = System.Drawing.Color.White;
+            this.btnClose2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose2.Image = ((System.Drawing.Image)(resources.GetObject("btnClose2.Image")));
+            this.btnClose2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnClose2.Location = new System.Drawing.Point(743, 597);
+            this.btnClose2.Margin = new System.Windows.Forms.Padding(6);
+            this.btnClose2.Name = "btnClose2";
+            this.btnClose2.Size = new System.Drawing.Size(124, 36);
+            this.btnClose2.TabIndex = 19;
+            this.btnClose2.Text = "ยกเลิก";
+            this.btnClose2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnClose2.UseVisualStyleBackColor = false;
+            this.btnClose2.Click += new System.EventHandler(this.BtnClose_Click);
+            // 
+            // btnAddEmployee
+            // 
+            this.btnAddEmployee.BackColor = System.Drawing.Color.White;
+            this.btnAddEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddEmployee.ForeColor = System.Drawing.Color.Black;
+            this.btnAddEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btnAddEmployee.Image")));
+            this.btnAddEmployee.Location = new System.Drawing.Point(2, 2);
+            this.btnAddEmployee.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddEmployee.Name = "btnAddEmployee";
+            this.btnAddEmployee.Size = new System.Drawing.Size(199, 43);
+            this.btnAddEmployee.TabIndex = 0;
+            this.btnAddEmployee.Text = "เพิ่มพนักงานเข้า-ออก";
+            this.btnAddEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddEmployee.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddEmployee.UseVisualStyleBackColor = false;
+            this.btnAddEmployee.Click += new System.EventHandler(this.BtnAddEmployee_Click);
+            // 
             // frmProjectMasters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 647);
+            this.Controls.Add(this.btnSave1);
+            this.Controls.Add(this.btnClose2);
             this.Controls.Add(this.tableLayoutPanel11);
             this.Controls.Add(this.tableLayoutPanel7);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnSave);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmProjectMasters";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ผู้รับเหมา";
             this.Load += new System.EventHandler(this.FrmProjectMasters_Load);
@@ -1378,7 +1395,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView gridEmployee;
-        private System.Windows.Forms.Button btnAddEmployee;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtForeman;
         private System.Windows.Forms.Label label6;
@@ -1417,8 +1433,6 @@
         private System.Windows.Forms.DateTimePicker dtHraExpire;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox txtHraApprove;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.TextBox txtProjectname;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label4;
@@ -1457,5 +1471,8 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
         private System.Windows.Forms.MaskedTextBox txtOtherTime;
+        private System.Windows.Forms.Button btnSave1;
+        private System.Windows.Forms.Button btnClose2;
+        private System.Windows.Forms.Button btnAddEmployee;
     }
 }

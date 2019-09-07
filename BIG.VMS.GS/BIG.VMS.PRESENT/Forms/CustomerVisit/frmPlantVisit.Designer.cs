@@ -62,7 +62,6 @@
             this.lb2 = new System.Windows.Forms.Label();
             this.lb1 = new System.Windows.Forms.Label();
             this.tbmain = new System.Windows.Forms.TableLayoutPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.group_requester = new System.Windows.Forms.GroupBox();
@@ -70,6 +69,7 @@
             this.txtReqPosition = new System.Windows.Forms.TextBox();
             this.lbType = new System.Windows.Forms.Label();
             this.group_detail = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.tabmain.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tb2.SuspendLayout();
@@ -77,10 +77,10 @@
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridVisitor)).BeginInit();
             this.tbmain.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.group_requester.SuspendLayout();
             this.tb1.SuspendLayout();
             this.group_detail.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabmain
@@ -91,7 +91,7 @@
             this.tabmain.Location = new System.Drawing.Point(3, 22);
             this.tabmain.Name = "tabmain";
             this.tabmain.SelectedIndex = 0;
-            this.tabmain.Size = new System.Drawing.Size(915, 310);
+            this.tabmain.Size = new System.Drawing.Size(915, 302);
             this.tabmain.TabIndex = 0;
             // 
             // tabPage1
@@ -298,7 +298,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(907, 277);
+            this.tabPage2.Size = new System.Drawing.Size(907, 269);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Visitor List";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -316,7 +316,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(901, 271);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(901, 263);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // gridVisitor
@@ -395,7 +395,7 @@
             // 
             this.txtDepartment.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDepartment.Location = new System.Drawing.Point(660, 44);
+            this.txtDepartment.Location = new System.Drawing.Point(660, 41);
             this.txtDepartment.Name = "txtDepartment";
             this.txtDepartment.Size = new System.Drawing.Size(252, 23);
             this.txtDepartment.TabIndex = 3;
@@ -405,7 +405,7 @@
             this.lb4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb4.AutoSize = true;
             this.lb4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb4.Location = new System.Drawing.Point(572, 47);
+            this.lb4.Location = new System.Drawing.Point(572, 44);
             this.lb4.Name = "lb4";
             this.lb4.Size = new System.Drawing.Size(82, 17);
             this.lb4.TabIndex = 6;
@@ -415,7 +415,7 @@
             // 
             this.txtGroup.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGroup.Location = new System.Drawing.Point(660, 7);
+            this.txtGroup.Location = new System.Drawing.Point(660, 6);
             this.txtGroup.Name = "txtGroup";
             this.txtGroup.Size = new System.Drawing.Size(252, 23);
             this.txtGroup.TabIndex = 2;
@@ -425,7 +425,7 @@
             this.lb3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb3.AutoSize = true;
             this.lb3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb3.Location = new System.Drawing.Point(572, 10);
+            this.lb3.Location = new System.Drawing.Point(572, 9);
             this.lb3.Name = "lb3";
             this.lb3.Size = new System.Drawing.Size(82, 17);
             this.lb3.TabIndex = 4;
@@ -435,7 +435,7 @@
             // 
             this.txtReqname.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtReqname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReqname.Location = new System.Drawing.Point(203, 7);
+            this.txtReqname.Location = new System.Drawing.Point(203, 6);
             this.txtReqname.Name = "txtReqname";
             this.txtReqname.Size = new System.Drawing.Size(251, 23);
             this.txtReqname.TabIndex = 0;
@@ -445,7 +445,7 @@
             this.lb2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb2.AutoSize = true;
             this.lb2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb2.Location = new System.Drawing.Point(60, 47);
+            this.lb2.Location = new System.Drawing.Point(60, 44);
             this.lb2.Name = "lb2";
             this.lb2.Size = new System.Drawing.Size(137, 17);
             this.lb2.TabIndex = 2;
@@ -456,7 +456,7 @@
             this.lb1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb1.AutoSize = true;
             this.lb1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb1.Location = new System.Drawing.Point(73, 10);
+            this.lb1.Location = new System.Drawing.Point(73, 9);
             this.lb1.Name = "lb1";
             this.lb1.Size = new System.Drawing.Size(124, 17);
             this.lb1.TabIndex = 1;
@@ -465,31 +465,19 @@
             // tbmain
             // 
             this.tbmain.ColumnCount = 1;
-            this.tbmain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tbmain.Controls.Add(this.flowLayoutPanel1, 0, 2);
+            this.tbmain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tbmain.Controls.Add(this.group_requester, 0, 0);
             this.tbmain.Controls.Add(this.group_detail, 0, 1);
+            this.tbmain.Controls.Add(this.panel1, 0, 2);
             this.tbmain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbmain.Location = new System.Drawing.Point(0, 0);
             this.tbmain.Name = "tbmain";
             this.tbmain.RowCount = 3;
             this.tbmain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.5426F));
             this.tbmain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.4574F));
-            this.tbmain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 77F));
-            this.tbmain.Size = new System.Drawing.Size(927, 524);
+            this.tbmain.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tbmain.Size = new System.Drawing.Size(927, 494);
             this.tbmain.TabIndex = 1;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.Controls.Add(this.btnSave);
-            this.flowLayoutPanel1.Controls.Add(this.btnCancel);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 449);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(921, 72);
-            this.flowLayoutPanel1.TabIndex = 2;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.FlowLayoutPanel1_Paint);
             // 
             // btnSave
             // 
@@ -498,10 +486,10 @@
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSave.Location = new System.Drawing.Point(6, 6);
+            this.btnSave.Location = new System.Drawing.Point(593, 9);
             this.btnSave.Margin = new System.Windows.Forms.Padding(6);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(159, 55);
+            this.btnSave.Size = new System.Drawing.Size(159, 37);
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "บันทึก";
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -515,10 +503,10 @@
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancel.Location = new System.Drawing.Point(177, 6);
+            this.btnCancel.Location = new System.Drawing.Point(764, 9);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(6);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(151, 55);
+            this.btnCancel.Size = new System.Drawing.Size(151, 37);
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "ยกเลิก";
             this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -532,7 +520,7 @@
             this.group_requester.Dock = System.Windows.Forms.DockStyle.Fill;
             this.group_requester.Location = new System.Drawing.Point(3, 3);
             this.group_requester.Name = "group_requester";
-            this.group_requester.Size = new System.Drawing.Size(921, 99);
+            this.group_requester.Size = new System.Drawing.Size(921, 96);
             this.group_requester.TabIndex = 3;
             this.group_requester.TabStop = false;
             // 
@@ -557,14 +545,14 @@
             this.tb1.RowCount = 2;
             this.tb1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tb1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tb1.Size = new System.Drawing.Size(915, 74);
+            this.tb1.Size = new System.Drawing.Size(915, 71);
             this.tb1.TabIndex = 0;
             // 
             // txtReqPosition
             // 
             this.txtReqPosition.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtReqPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReqPosition.Location = new System.Drawing.Point(203, 44);
+            this.txtReqPosition.Location = new System.Drawing.Point(203, 41);
             this.txtReqPosition.Name = "txtReqPosition";
             this.txtReqPosition.Size = new System.Drawing.Size(251, 23);
             this.txtReqPosition.TabIndex = 1;
@@ -575,7 +563,7 @@
             this.lbType.AutoSize = true;
             this.lbType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbType.ForeColor = System.Drawing.Color.Black;
-            this.lbType.Location = new System.Drawing.Point(9, -3);
+            this.lbType.Location = new System.Drawing.Point(9, -5);
             this.lbType.Name = "lbType";
             this.lbType.Size = new System.Drawing.Size(171, 20);
             this.lbType.TabIndex = 22;
@@ -585,23 +573,31 @@
             // 
             this.group_detail.Controls.Add(this.tabmain);
             this.group_detail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.group_detail.Location = new System.Drawing.Point(3, 108);
+            this.group_detail.Location = new System.Drawing.Point(3, 105);
             this.group_detail.Name = "group_detail";
-            this.group_detail.Size = new System.Drawing.Size(921, 335);
+            this.group_detail.Size = new System.Drawing.Size(921, 327);
             this.group_detail.TabIndex = 16;
             this.group_detail.TabStop = false;
             this.group_detail.Text = "Detail of request";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnCancel);
+            this.panel1.Controls.Add(this.btnSave);
+            this.panel1.Location = new System.Drawing.Point(3, 438);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(921, 52);
+            this.panel1.TabIndex = 17;
             // 
             // frmPlantVisit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(927, 524);
+            this.ClientSize = new System.Drawing.Size(927, 494);
             this.Controls.Add(this.tbmain);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(982, 563);
             this.MinimizeBox = false;
             this.Name = "frmPlantVisit";
             this.ShowInTaskbar = false;
@@ -616,13 +612,12 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridVisitor)).EndInit();
             this.tbmain.ResumeLayout(false);
-            this.tbmain.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.group_requester.ResumeLayout(false);
             this.group_requester.PerformLayout();
             this.tb1.ResumeLayout(false);
             this.tb1.PerformLayout();
             this.group_detail.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -649,7 +644,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView gridVisitor;
         private System.Windows.Forms.TableLayoutPanel tbmain;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.GroupBox group_requester;
@@ -670,5 +664,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FULLNAME;
         private System.Windows.Forms.Button btnAddvisitor;
         private System.Windows.Forms.Label lbType;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -40,16 +40,16 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             if (formMode == MODEL.CustomModel.FormMode.View)
             {
                 comboCompany.Enabled = false;
-                txtProjectname.ReadOnly = false;
+                txtProjectname.ReadOnly = true;
                 btnAddEmployee.Enabled = false;
-                txtForeman.ReadOnly = false;
-                txtForemanTel.ReadOnly = false;
-                txtScope.ReadOnly = false;
-                txtWorkArea.ReadOnly = false;
-                txtVerifyPurchase.ReadOnly = false;
-                txtPurchaseManager.ReadOnly = false;
-                txtSafetyApprove.ReadOnly = false;
-                txtHraApprove.ReadOnly = false;
+                txtForeman.ReadOnly = true;
+                txtForemanTel.ReadOnly = true;
+                txtScope.ReadOnly = true;
+                txtWorkArea.ReadOnly = true;
+                txtVerifyPurchase.ReadOnly = true;
+                txtPurchaseManager.ReadOnly = true;
+                txtSafetyApprove.ReadOnly = true;
+                txtHraApprove.ReadOnly = true;
                 dtFrom.Enabled = false;
                 dtTo.Enabled = false;
                 dtPurchase.Enabled = false;
@@ -68,9 +68,12 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
                 radMoring.Enabled = false;
                 radTemp.Enabled = false;
                 radAlldays.Enabled = false;
-
+                radOther.Enabled = false;
+                radPerm.Enabled =false;
+                txtOtherTime.ReadOnly = true;
                 btnAddEmployee.Enabled = false;
-                btnSave.Enabled = false;
+                btnSave1.Enabled = false;
+                SetControlData();
             }
             if (formMode == MODEL.CustomModel.FormMode.Edit)
             {
@@ -391,6 +394,16 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
         }
 
         private void DtHraIssue_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnAddemp_Click(object sender, EventArgs e)
         {
 
         }

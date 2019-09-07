@@ -154,7 +154,6 @@ namespace BIG.VMS.DATASERVICE
             return resp;
         }
 
-
         public Response AddProjectMember(TRN_PROJECT_MEMBER source)
         {
             var resp = new Response();
@@ -213,7 +212,7 @@ namespace BIG.VMS.DATASERVICE
             return resp;
         }
 
-        public Response DeleteContractor(int id)
+        public Response DeleteProject(int id)
         {
             var resp = new Response();
 
@@ -221,12 +220,20 @@ namespace BIG.VMS.DATASERVICE
             {
                 using (var ctx = new BIG_VMSEntities())
                 {
-                    var obj = ctx.MAS_CONTRACTOR.Where(o => o.AUTO_ID == id).FirstOrDefault();
-                    if (obj != null)
+                    var member = ctx.TRN_PROJECT_MEMBER.Where(o => o.PROJECT_ID == id).ToList();
+                    if (member != null)
                     {
-                        ctx.MAS_CONTRACTOR.Remove(obj);
+                        ctx.TRN_PROJECT_MEMBER.RemoveRange(member);
                         ctx.SaveChanges();
-                        resp.Status = true;
+
+                        var project = ctx.TRN_PROJECT_MASTER.Where(o => o.AUTO_ID == id).First();
+                        if (project != null)
+                        {
+                            ctx.TRN_PROJECT_MASTER.Remove(project);
+                            ctx.SaveChanges();
+                            resp.Status = true;
+                        }
+                        
                     }
 
 
