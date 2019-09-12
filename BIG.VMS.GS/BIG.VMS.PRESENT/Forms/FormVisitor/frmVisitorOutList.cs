@@ -91,7 +91,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
             {
                 if (i % 2 == 0)
                 {
-                    gridVisitorOut.Rows[i].DefaultCellStyle.BackColor = Color.MistyRose;
+                    gridVisitorOut.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(240, 248, 255);
                 }
                 else
                 {

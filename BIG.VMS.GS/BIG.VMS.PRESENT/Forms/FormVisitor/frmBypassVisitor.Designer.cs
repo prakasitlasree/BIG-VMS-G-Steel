@@ -37,7 +37,6 @@
             this.btnMeet = new System.Windows.Forms.Button();
             this.btnVehicle = new System.Windows.Forms.Button();
             this.btnReadCard = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.btnBlacklist = new System.Windows.Forms.Button();
             this.BtnTakePhoto = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -69,9 +68,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.picCard = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.brn_UploadImgCard = new System.Windows.Forms.Button();
-            this.bthCardDelete = new System.Windows.Forms.Button();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.picPhoto = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
@@ -80,9 +76,12 @@
             this.btnUploadCam = new System.Windows.Forms.Button();
             this.btnDeleteCam = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.brn_UploadImgCard = new System.Windows.Forms.Button();
+            this.bthCardDelete = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
@@ -95,6 +94,7 @@
             this.tableLayoutPanel7.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -215,23 +215,9 @@
             this.btnReadCard.UseVisualStyleBackColor = false;
             this.btnReadCard.Click += new System.EventHandler(this.btnReadCard_Click);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.Control;
-            this.panel2.Controls.Add(this.btnBlacklist);
-            this.panel2.Controls.Add(this.BtnTakePhoto);
-            this.panel2.Controls.Add(this.btnSave);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(6, 567);
-            this.panel2.Margin = new System.Windows.Forms.Padding(6);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1260, 88);
-            this.panel2.TabIndex = 1;
-            // 
             // btnBlacklist
             // 
             this.btnBlacklist.BackColor = System.Drawing.Color.White;
-            this.btnBlacklist.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnBlacklist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBlacklist.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBlacklist.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -250,7 +236,6 @@
             // BtnTakePhoto
             // 
             this.BtnTakePhoto.BackColor = System.Drawing.Color.White;
-            this.BtnTakePhoto.Dock = System.Windows.Forms.DockStyle.Left;
             this.BtnTakePhoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnTakePhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnTakePhoto.Image = ((System.Drawing.Image)(resources.GetObject("BtnTakePhoto.Image")));
@@ -268,7 +253,6 @@
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.White;
-            this.btnSave.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
@@ -669,40 +653,6 @@
             this.picCard.TabIndex = 0;
             this.picCard.TabStop = false;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 6);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(129, 25);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "รูปบัตรทดแทน";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // brn_UploadImgCard
-            // 
-            this.brn_UploadImgCard.Dock = System.Windows.Forms.DockStyle.Right;
-            this.brn_UploadImgCard.Image = ((System.Drawing.Image)(resources.GetObject("brn_UploadImgCard.Image")));
-            this.brn_UploadImgCard.Location = new System.Drawing.Point(356, 0);
-            this.brn_UploadImgCard.Margin = new System.Windows.Forms.Padding(0);
-            this.brn_UploadImgCard.Name = "brn_UploadImgCard";
-            this.brn_UploadImgCard.Size = new System.Drawing.Size(38, 39);
-            this.brn_UploadImgCard.TabIndex = 3;
-            this.brn_UploadImgCard.UseVisualStyleBackColor = true;
-            this.brn_UploadImgCard.Click += new System.EventHandler(this.brn_UploadImgCard_Click);
-            // 
-            // bthCardDelete
-            // 
-            this.bthCardDelete.Dock = System.Windows.Forms.DockStyle.Right;
-            this.bthCardDelete.Image = ((System.Drawing.Image)(resources.GetObject("bthCardDelete.Image")));
-            this.bthCardDelete.Location = new System.Drawing.Point(394, 0);
-            this.bthCardDelete.Margin = new System.Windows.Forms.Padding(0);
-            this.bthCardDelete.Name = "bthCardDelete";
-            this.bthCardDelete.Size = new System.Drawing.Size(38, 39);
-            this.bthCardDelete.TabIndex = 6;
-            this.bthCardDelete.UseVisualStyleBackColor = true;
-            this.bthCardDelete.Click += new System.EventHandler(this.bthCardDelete_Click);
-            // 
             // tableLayoutPanel10
             // 
             this.tableLayoutPanel10.ColumnCount = 1;
@@ -798,6 +748,53 @@
             this.panel4.Size = new System.Drawing.Size(432, 39);
             this.panel4.TabIndex = 7;
             // 
+            // brn_UploadImgCard
+            // 
+            this.brn_UploadImgCard.Dock = System.Windows.Forms.DockStyle.Right;
+            this.brn_UploadImgCard.Image = ((System.Drawing.Image)(resources.GetObject("brn_UploadImgCard.Image")));
+            this.brn_UploadImgCard.Location = new System.Drawing.Point(356, 0);
+            this.brn_UploadImgCard.Margin = new System.Windows.Forms.Padding(0);
+            this.brn_UploadImgCard.Name = "brn_UploadImgCard";
+            this.brn_UploadImgCard.Size = new System.Drawing.Size(38, 39);
+            this.brn_UploadImgCard.TabIndex = 3;
+            this.brn_UploadImgCard.UseVisualStyleBackColor = true;
+            this.brn_UploadImgCard.Click += new System.EventHandler(this.brn_UploadImgCard_Click);
+            // 
+            // bthCardDelete
+            // 
+            this.bthCardDelete.Dock = System.Windows.Forms.DockStyle.Right;
+            this.bthCardDelete.Image = ((System.Drawing.Image)(resources.GetObject("bthCardDelete.Image")));
+            this.bthCardDelete.Location = new System.Drawing.Point(394, 0);
+            this.bthCardDelete.Margin = new System.Windows.Forms.Padding(0);
+            this.bthCardDelete.Name = "bthCardDelete";
+            this.bthCardDelete.Size = new System.Drawing.Size(38, 39);
+            this.bthCardDelete.TabIndex = 6;
+            this.bthCardDelete.UseVisualStyleBackColor = true;
+            this.bthCardDelete.Click += new System.EventHandler(this.bthCardDelete_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 6);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(129, 25);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "รูปบัตรทดแทน";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.panel2.Controls.Add(this.btnBlacklist);
+            this.panel2.Controls.Add(this.BtnTakePhoto);
+            this.panel2.Controls.Add(this.btnSave);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(6, 567);
+            this.panel2.Margin = new System.Windows.Forms.Padding(6);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1260, 88);
+            this.panel2.TabIndex = 1;
+            // 
             // frmVisitorByPass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -816,7 +813,6 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
@@ -835,6 +831,7 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -864,7 +861,6 @@
         private System.Windows.Forms.Button btnMeet;
         private System.Windows.Forms.Button btnVehicle;
         private System.Windows.Forms.Button btnReadCard;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnBlacklist;
         private System.Windows.Forms.Button BtnTakePhoto;
         private System.Windows.Forms.Button btnSave;
@@ -892,5 +888,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel2;
     }
 }

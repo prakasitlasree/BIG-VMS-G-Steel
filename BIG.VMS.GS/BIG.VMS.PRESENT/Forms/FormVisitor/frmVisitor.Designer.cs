@@ -145,7 +145,7 @@
             this.txtNo.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.txtNo.Location = new System.Drawing.Point(1139, 47);
             this.txtNo.Name = "txtNo";
-            this.txtNo.Size = new System.Drawing.Size(118, 37);
+            this.txtNo.Size = new System.Drawing.Size(118, 31);
             this.txtNo.TabIndex = 1;
             // 
             // label1
@@ -156,7 +156,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label1.Location = new System.Drawing.Point(1187, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 31);
+            this.label1.Size = new System.Drawing.Size(56, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "เลขที่";
             // 
@@ -353,7 +353,7 @@
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.Controls.Add(this.btnLicense, 1, 0);
             this.tableLayoutPanel8.Controls.Add(this.txtLicense, 0, 0);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(245, 322);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(195, 292);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -383,17 +383,17 @@
             // 
             this.txtLicense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLicense.Enabled = false;
-            this.txtLicense.Location = new System.Drawing.Point(3, 14);
+            this.txtLicense.Location = new System.Drawing.Point(3, 17);
             this.txtLicense.Name = "txtLicense";
-            this.txtLicense.Size = new System.Drawing.Size(278, 37);
+            this.txtLicense.Size = new System.Drawing.Size(278, 31);
             this.txtLicense.TabIndex = 3;
             // 
             // chkKeyIn
             // 
             this.chkKeyIn.AutoSize = true;
-            this.chkKeyIn.Location = new System.Drawing.Point(245, 37);
+            this.chkKeyIn.Location = new System.Drawing.Point(195, 37);
             this.chkKeyIn.Name = "chkKeyIn";
-            this.chkKeyIn.Size = new System.Drawing.Size(184, 35);
+            this.chkKeyIn.Size = new System.Drawing.Size(145, 29);
             this.chkKeyIn.TabIndex = 17;
             this.chkKeyIn.Text = "กรอกข้อมูลเอง";
             this.chkKeyIn.UseVisualStyleBackColor = true;
@@ -405,9 +405,9 @@
             this.Lbl_IDCard.AutoSize = true;
             this.Lbl_IDCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_IDCard.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.Lbl_IDCard.Location = new System.Drawing.Point(33, 167);
+            this.Lbl_IDCard.Location = new System.Drawing.Point(25, 149);
             this.Lbl_IDCard.Name = "Lbl_IDCard";
-            this.Lbl_IDCard.Size = new System.Drawing.Size(206, 31);
+            this.Lbl_IDCard.Size = new System.Drawing.Size(164, 25);
             this.Lbl_IDCard.TabIndex = 1;
             this.Lbl_IDCard.Text = "เลขบัตรประชาชน";
             // 
@@ -417,9 +417,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label3.Location = new System.Drawing.Point(133, 124);
+            this.label3.Location = new System.Drawing.Point(105, 112);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 31);
+            this.label3.Size = new System.Drawing.Size(84, 25);
             this.label3.TabIndex = 16;
             this.label3.Text = "นามสกุล";
             // 
@@ -429,9 +429,9 @@
             this.Lbl_FirstName.AutoSize = true;
             this.Lbl_FirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_FirstName.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.Lbl_FirstName.Location = new System.Drawing.Point(194, 81);
+            this.Lbl_FirstName.Location = new System.Drawing.Point(152, 75);
             this.Lbl_FirstName.Name = "Lbl_FirstName";
-            this.Lbl_FirstName.Size = new System.Drawing.Size(45, 31);
+            this.Lbl_FirstName.Size = new System.Drawing.Size(37, 25);
             this.Lbl_FirstName.TabIndex = 0;
             this.Lbl_FirstName.Text = "ชื่อ";
             // 
@@ -439,10 +439,10 @@
             // 
             this.txtIDCard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtIDCard.Enabled = false;
-            this.txtIDCard.Location = new System.Drawing.Point(245, 164);
+            this.txtIDCard.Location = new System.Drawing.Point(195, 146);
             this.txtIDCard.MaxLength = 250;
             this.txtIDCard.Name = "txtIDCard";
-            this.txtIDCard.Size = new System.Drawing.Size(568, 37);
+            this.txtIDCard.Size = new System.Drawing.Size(618, 31);
             this.txtIDCard.TabIndex = 2;
             this.txtIDCard.TextChanged += new System.EventHandler(this.txtIDCard_TextChanged);
             this.txtIDCard.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIDCard_KeyPress);
@@ -451,9 +451,9 @@
             // 
             this.txtLastName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLastName.Enabled = false;
-            this.txtLastName.Location = new System.Drawing.Point(245, 121);
+            this.txtLastName.Location = new System.Drawing.Point(195, 109);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(568, 37);
+            this.txtLastName.Size = new System.Drawing.Size(618, 31);
             this.txtLastName.TabIndex = 1;
             // 
             // txtFirstName
@@ -461,9 +461,9 @@
             this.txtFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFirstName.Enabled = false;
             this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFirstName.Location = new System.Drawing.Point(245, 78);
+            this.txtFirstName.Location = new System.Drawing.Point(195, 72);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(568, 37);
+            this.txtFirstName.Size = new System.Drawing.Size(618, 31);
             this.txtFirstName.TabIndex = 0;
             // 
             // lbl_keyin
@@ -473,7 +473,7 @@
             this.lbl_keyin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_keyin.Location = new System.Drawing.Point(3, 39);
             this.lbl_keyin.Name = "lbl_keyin";
-            this.lbl_keyin.Size = new System.Drawing.Size(236, 31);
+            this.lbl_keyin.Size = new System.Drawing.Size(186, 25);
             this.lbl_keyin.TabIndex = 19;
             this.lbl_keyin.Text = "ประเภทการคีย์ข้อมูล";
             // 
@@ -482,9 +482,9 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(71, 1);
+            this.label4.Location = new System.Drawing.Point(55, 4);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(168, 31);
+            this.label4.Size = new System.Drawing.Size(134, 25);
             this.label4.TabIndex = 20;
             this.label4.Text = "การทำรายการ";
             // 
@@ -494,9 +494,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Crimson;
-            this.label2.Location = new System.Drawing.Point(59, 210);
+            this.label2.Location = new System.Drawing.Point(48, 186);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(180, 31);
+            this.label2.Size = new System.Drawing.Size(141, 25);
             this.label2.TabIndex = 13;
             this.label2.Text = "ประเภทรถยนต์";
             // 
@@ -504,9 +504,9 @@
             // 
             this.txtCar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCar.Enabled = false;
-            this.txtCar.Location = new System.Drawing.Point(245, 207);
+            this.txtCar.Location = new System.Drawing.Point(195, 183);
             this.txtCar.Name = "txtCar";
-            this.txtCar.Size = new System.Drawing.Size(568, 37);
+            this.txtCar.Size = new System.Drawing.Size(618, 31);
             this.txtCar.TabIndex = 14;
             // 
             // tableLayoutPanel2
@@ -516,7 +516,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.btnProvince, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtProvince, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(245, 250);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(195, 220);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -546,9 +546,9 @@
             // 
             this.txtProvince.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtProvince.Enabled = false;
-            this.txtProvince.Location = new System.Drawing.Point(3, 14);
+            this.txtProvince.Location = new System.Drawing.Point(3, 17);
             this.txtProvince.Name = "txtProvince";
-            this.txtProvince.Size = new System.Drawing.Size(278, 37);
+            this.txtProvince.Size = new System.Drawing.Size(278, 31);
             this.txtProvince.TabIndex = 11;
             // 
             // Lbl_Vahicle
@@ -557,9 +557,9 @@
             this.Lbl_Vahicle.AutoSize = true;
             this.Lbl_Vahicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_Vahicle.ForeColor = System.Drawing.Color.Crimson;
-            this.Lbl_Vahicle.Location = new System.Drawing.Point(152, 267);
+            this.Lbl_Vahicle.Location = new System.Drawing.Point(118, 240);
             this.Lbl_Vahicle.Name = "Lbl_Vahicle";
-            this.Lbl_Vahicle.Size = new System.Drawing.Size(87, 31);
+            this.Lbl_Vahicle.Size = new System.Drawing.Size(71, 25);
             this.Lbl_Vahicle.TabIndex = 2;
             this.Lbl_Vahicle.Text = "จังหวัด";
             // 
@@ -569,9 +569,9 @@
             this.Lbl_LicensePlate.AutoSize = true;
             this.Lbl_LicensePlate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_LicensePlate.ForeColor = System.Drawing.Color.Crimson;
-            this.Lbl_LicensePlate.Location = new System.Drawing.Point(36, 339);
+            this.Lbl_LicensePlate.Location = new System.Drawing.Point(28, 312);
             this.Lbl_LicensePlate.Name = "Lbl_LicensePlate";
-            this.Lbl_LicensePlate.Size = new System.Drawing.Size(203, 31);
+            this.Lbl_LicensePlate.Size = new System.Drawing.Size(161, 25);
             this.Lbl_LicensePlate.TabIndex = 3;
             this.Lbl_LicensePlate.Text = "หมายเลขทะเบียน";
             // 
@@ -581,9 +581,9 @@
             this.Lbl_Topic.AutoSize = true;
             this.Lbl_Topic.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_Topic.ForeColor = System.Drawing.Color.OliveDrab;
-            this.Lbl_Topic.Location = new System.Drawing.Point(92, 441);
+            this.Lbl_Topic.Location = new System.Drawing.Point(72, 408);
             this.Lbl_Topic.Name = "Lbl_Topic";
-            this.Lbl_Topic.Size = new System.Drawing.Size(147, 31);
+            this.Lbl_Topic.Size = new System.Drawing.Size(117, 25);
             this.Lbl_Topic.TabIndex = 4;
             this.Lbl_Topic.Text = "วัตถุประสงค์";
             // 
@@ -593,9 +593,9 @@
             this.Lbl_MeetPeople.AutoSize = true;
             this.Lbl_MeetPeople.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_MeetPeople.ForeColor = System.Drawing.Color.OliveDrab;
-            this.Lbl_MeetPeople.Location = new System.Drawing.Point(24, 397);
+            this.Lbl_MeetPeople.Location = new System.Drawing.Point(18, 367);
             this.Lbl_MeetPeople.Name = "Lbl_MeetPeople";
-            this.Lbl_MeetPeople.Size = new System.Drawing.Size(215, 31);
+            this.Lbl_MeetPeople.Size = new System.Drawing.Size(171, 25);
             this.Lbl_MeetPeople.TabIndex = 5;
             this.Lbl_MeetPeople.Text = "บุคคลที่ต้องการพบ";
             // 
@@ -603,18 +603,18 @@
             // 
             this.txtTopic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTopic.Enabled = false;
-            this.txtTopic.Location = new System.Drawing.Point(245, 438);
+            this.txtTopic.Location = new System.Drawing.Point(195, 405);
             this.txtTopic.Name = "txtTopic";
-            this.txtTopic.Size = new System.Drawing.Size(568, 37);
+            this.txtTopic.Size = new System.Drawing.Size(618, 31);
             this.txtTopic.TabIndex = 10;
             // 
             // txtMeet
             // 
             this.txtMeet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMeet.Enabled = false;
-            this.txtMeet.Location = new System.Drawing.Point(245, 394);
+            this.txtMeet.Location = new System.Drawing.Point(195, 364);
             this.txtMeet.Name = "txtMeet";
-            this.txtMeet.Size = new System.Drawing.Size(568, 37);
+            this.txtMeet.Size = new System.Drawing.Size(618, 31);
             this.txtMeet.TabIndex = 12;
             // 
             // tableLayoutPanel9
@@ -624,7 +624,7 @@
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel9.Controls.Add(this.label6, 1, 0);
             this.tableLayoutPanel9.Controls.Add(this.label5, 0, 0);
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(245, 3);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(195, 3);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -637,9 +637,9 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(60, 0);
+            this.label6.Location = new System.Drawing.Point(51, 1);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(505, 31);
+            this.label6.Size = new System.Drawing.Size(514, 25);
             this.label6.TabIndex = 22;
             this.label6.Text = "time stamp";
             // 
@@ -649,9 +649,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(3, 0);
+            this.label5.Location = new System.Drawing.Point(3, 1);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 31);
+            this.label5.Size = new System.Drawing.Size(42, 25);
             this.label5.TabIndex = 21;
             this.label5.Text = "เข้า";
             // 
@@ -716,7 +716,7 @@
             this.label7.Dock = System.Windows.Forms.DockStyle.Left;
             this.label7.Location = new System.Drawing.Point(0, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(267, 31);
+            this.label7.Size = new System.Drawing.Size(208, 25);
             this.label7.TabIndex = 6;
             this.label7.Text = "รูปบัตรประชาชน/ใบขับขี่";
             // 
@@ -790,7 +790,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(3, 6);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(83, 31);
+            this.label9.Size = new System.Drawing.Size(65, 25);
             this.label9.TabIndex = 3;
             this.label9.Text = "รูปถ่าย";
             // 
@@ -820,7 +820,7 @@
             // 
             // frmVisitor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 30F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1272, 661);

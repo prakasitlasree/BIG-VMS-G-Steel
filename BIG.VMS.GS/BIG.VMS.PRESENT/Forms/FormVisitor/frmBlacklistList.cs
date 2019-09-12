@@ -54,7 +54,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
             {
                 if (i % 2 == 0)
                 {
-                    gridBlackList.Rows[i].DefaultCellStyle.BackColor = Color.Aquamarine;
+                    gridBlackList.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(240, 248, 255);
                 }
                 else
                 {

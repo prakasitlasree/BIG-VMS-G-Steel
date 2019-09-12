@@ -321,7 +321,7 @@ namespace BIG.VMS.DATASERVICE
                     if (string.IsNullOrEmpty(filter.FIRST_NAME) && string.IsNullOrEmpty(filter.LAST_NAME) &&
                         string.IsNullOrEmpty(filter.LICENSE_PLATE) && filter.NO == 0)
                     {
-                        var date = DateTime.Now.AddDays(-5);
+                        var date = DateTime.Now.AddDays(-30);
                         query = query.Where(x => x.CREATED_DATE >= date);
                     }
 
