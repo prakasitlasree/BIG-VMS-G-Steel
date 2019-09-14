@@ -130,7 +130,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             {
                 if (i % 2 == 0)
                 {
-                    gridContractorList.Rows[i].DefaultCellStyle.BackColor = Color.MistyRose;
+                    gridContractorList.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(240, 248, 255);
                 }
                 else
                 {

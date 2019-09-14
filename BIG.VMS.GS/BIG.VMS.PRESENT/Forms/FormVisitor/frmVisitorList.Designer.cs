@@ -315,7 +315,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 44);
+            this.label2.Location = new System.Drawing.Point(3, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 25);
             this.label2.TabIndex = 1;
@@ -352,7 +352,7 @@
             // txtLicense
             // 
             this.txtLicense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLicense.Location = new System.Drawing.Point(105, 41);
+            this.txtLicense.Location = new System.Drawing.Point(105, 40);
             this.txtLicense.Name = "txtLicense";
             this.txtLicense.Size = new System.Drawing.Size(280, 31);
             this.txtLicense.TabIndex = 7;
@@ -361,7 +361,7 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(391, 44);
+            this.label6.Location = new System.Drawing.Point(391, 43);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 25);
             this.label6.TabIndex = 11;
@@ -370,7 +370,7 @@
             // txtNo
             // 
             this.txtNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNo.Location = new System.Drawing.Point(475, 41);
+            this.txtNo.Location = new System.Drawing.Point(475, 40);
             this.txtNo.Name = "txtNo";
             this.txtNo.Size = new System.Drawing.Size(280, 31);
             this.txtNo.TabIndex = 12;
@@ -379,7 +379,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(761, 44);
+            this.label4.Location = new System.Drawing.Point(761, 43);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 25);
             this.label4.TabIndex = 13;
@@ -395,7 +395,7 @@
             "ออก",
             "นัดล่วงหน้า(เข้า)",
             "นัดล่วงหน้า(ออก)"});
-            this.comboType.Location = new System.Drawing.Point(890, 40);
+            this.comboType.Location = new System.Drawing.Point(890, 45);
             this.comboType.Name = "comboType";
             this.comboType.Size = new System.Drawing.Size(282, 33);
             this.comboType.TabIndex = 14;
@@ -407,7 +407,7 @@
             this.flowLayoutPanel1.Controls.Add(this.btnSearch);
             this.flowLayoutPanel1.Controls.Add(this.btnListExit);
             this.flowLayoutPanel1.Controls.Add(this.btnBlacklist);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(105, 79);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(105, 77);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(616, 49);
             this.flowLayoutPanel1.TabIndex = 17;

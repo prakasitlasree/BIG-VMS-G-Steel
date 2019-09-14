@@ -19,23 +19,47 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             InitializeComponent();
         }
 
-        
+        private bool ValidateControl()
+        {
+            List<string> listMsg = new List<string>();
+            if (string.IsNullOrEmpty(comboType.Text)) listMsg.Add("ประเภท");
+            if (string.IsNullOrEmpty(txtIDCard.Text)) listMsg.Add("รหัสบัตร");
+            if (string.IsNullOrEmpty(txtName.Text)) listMsg.Add("ชื่อ");
+            if (string.IsNullOrEmpty(txtPosition.Text)) listMsg.Add("ตำแหน่ง");
+            string joined = string.Join("," + Environment.NewLine, listMsg);
+
+            if (listMsg.Count > 0)
+            {
+                MessageBox.Show("กรุณากรอกข้อมูลให้ครบ " + joined, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+
+        }
 
         private void BtnSave_Click_1(object sender, EventArgs e)
         {
-            TRN_PROJECT_MEMBER obj = new TRN_PROJECT_MEMBER()
+            if (ValidateControl())
             {
-                CARD_TYPE = txtCardType.Text,
-                FULLNAME = txtName.Text,
-                ID_CARD = txtIDCard.Text,
-                SAFETY_TRAINING_FLAG = radRequire.Checked ? "Y" : "N",
-                POSITION = txtPosition.Text
-            };
+                TRN_PROJECT_MEMBER obj = new TRN_PROJECT_MEMBER()
+                {
+                    CARD_TYPE = comboType.Text,
+                    FULLNAME = txtName.Text,
+                    ID_CARD = txtIDCard.Text,
+                    SAFETY_TRAINING_FLAG = radRequire.Checked ? "Y" : "N",
+                    POSITION = txtPosition.Text
+                };
 
-            TRN_PROJECT_MEMBER = obj;
+                TRN_PROJECT_MEMBER = obj;
 
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+           
         }
 
         private void BtnClose_Click(object sender, EventArgs e)

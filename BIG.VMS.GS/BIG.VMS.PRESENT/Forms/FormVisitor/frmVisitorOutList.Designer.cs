@@ -400,6 +400,7 @@
             this.ClientSize = new System.Drawing.Size(1018, 601);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmVisitorOutList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

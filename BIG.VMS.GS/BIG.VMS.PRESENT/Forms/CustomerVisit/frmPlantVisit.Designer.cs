@@ -62,14 +62,14 @@
             this.lb2 = new System.Windows.Forms.Label();
             this.lb1 = new System.Windows.Forms.Label();
             this.tbmain = new System.Windows.Forms.TableLayoutPanel();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.group_requester = new System.Windows.Forms.GroupBox();
             this.tb1 = new System.Windows.Forms.TableLayoutPanel();
             this.txtReqPosition = new System.Windows.Forms.TextBox();
             this.lbType = new System.Windows.Forms.Label();
             this.group_detail = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.tabmain.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tb2.SuspendLayout();
@@ -100,7 +100,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(907, 277);
+            this.tabPage1.Size = new System.Drawing.Size(907, 269);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Visitor Group/Company";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -134,7 +134,7 @@
             this.tb2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tb2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tb2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tb2.Size = new System.Drawing.Size(901, 271);
+            this.tb2.Size = new System.Drawing.Size(901, 263);
             this.tb2.TabIndex = 16;
             // 
             // txtvisitgroup
@@ -241,7 +241,7 @@
             this.txtobjective.Multiline = true;
             this.txtobjective.Name = "txtobjective";
             this.txtobjective.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtobjective.Size = new System.Drawing.Size(244, 145);
+            this.txtobjective.Size = new System.Drawing.Size(244, 137);
             this.txtobjective.TabIndex = 7;
             // 
             // txtcontractperson
@@ -278,7 +278,7 @@
             "Other..."});
             this.clbfac_req.Location = new System.Drawing.Point(653, 123);
             this.clbfac_req.Name = "clbfac_req";
-            this.clbfac_req.Size = new System.Drawing.Size(245, 145);
+            this.clbfac_req.Size = new System.Drawing.Size(245, 137);
             this.clbfac_req.TabIndex = 10;
             // 
             // label11
@@ -375,9 +375,9 @@
             // btnAddvisitor
             // 
             this.btnAddvisitor.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnAddvisitor.BackColor = System.Drawing.Color.White;
+            this.btnAddvisitor.BackColor = System.Drawing.Color.LightGreen;
             this.btnAddvisitor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddvisitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddvisitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddvisitor.ForeColor = System.Drawing.SystemColors.Desktop;
             this.btnAddvisitor.Image = ((System.Drawing.Image)(resources.GetObject("btnAddvisitor.Image")));
             this.btnAddvisitor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -479,40 +479,6 @@
             this.tbmain.Size = new System.Drawing.Size(927, 494);
             this.tbmain.TabIndex = 1;
             // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.White;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSave.Location = new System.Drawing.Point(593, 9);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(6);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(159, 37);
-            this.btnSave.TabIndex = 3;
-            this.btnSave.Text = "บันทึก";
-            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.White;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
-            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancel.Location = new System.Drawing.Point(764, 9);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(6);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(151, 37);
-            this.btnCancel.TabIndex = 4;
-            this.btnCancel.Text = "ยกเลิก";
-            this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // group_requester
             // 
             this.group_requester.Controls.Add(this.tb1);
@@ -588,6 +554,40 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(921, 52);
             this.panel1.TabIndex = 17;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.SeaShell;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancel.Location = new System.Drawing.Point(764, 9);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(6);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(151, 37);
+            this.btnCancel.TabIndex = 4;
+            this.btnCancel.Text = "ยกเลิก";
+            this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.LightGreen;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.Location = new System.Drawing.Point(593, 9);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(6);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(159, 37);
+            this.btnSave.TabIndex = 3;
+            this.btnSave.Text = "บันทึก";
+            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // frmPlantVisit
             // 

@@ -178,7 +178,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             {
                 if (i % 2 == 0)
                 {
-                    gridVisitorList.Rows[i].DefaultCellStyle.BackColor = Color.SeaShell;
+                    gridVisitorList.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(240, 248, 255);
                 }
                 else
                 {

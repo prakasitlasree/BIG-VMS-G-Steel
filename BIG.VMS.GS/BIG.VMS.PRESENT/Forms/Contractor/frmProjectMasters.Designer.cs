@@ -95,6 +95,7 @@
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.txtForemanTel = new System.Windows.Forms.TextBox();
+            this.btnAddEmployee = new System.Windows.Forms.Button();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.txtForeman = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -121,7 +122,6 @@
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSave1 = new System.Windows.Forms.Button();
             this.btnClose2 = new System.Windows.Forms.Button();
-            this.btnAddEmployee = new System.Windows.Forms.Button();
             this.tabPage4.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -957,6 +957,23 @@
             this.txtForemanTel.Size = new System.Drawing.Size(412, 26);
             this.txtForemanTel.TabIndex = 8;
             // 
+            // btnAddEmployee
+            // 
+            this.btnAddEmployee.BackColor = System.Drawing.Color.LightGreen;
+            this.btnAddEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddEmployee.ForeColor = System.Drawing.Color.Black;
+            this.btnAddEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btnAddEmployee.Image")));
+            this.btnAddEmployee.Location = new System.Drawing.Point(2, 2);
+            this.btnAddEmployee.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddEmployee.Name = "btnAddEmployee";
+            this.btnAddEmployee.Size = new System.Drawing.Size(199, 43);
+            this.btnAddEmployee.TabIndex = 0;
+            this.btnAddEmployee.Text = "เพิ่มพนักงานเข้า-ออก";
+            this.btnAddEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddEmployee.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddEmployee.UseVisualStyleBackColor = false;
+            this.btnAddEmployee.Click += new System.EventHandler(this.BtnAddEmployee_Click);
+            // 
             // tableLayoutPanel8
             // 
             this.tableLayoutPanel8.AutoSize = true;
@@ -1269,7 +1286,7 @@
             // 
             // btnSave1
             // 
-            this.btnSave1.BackColor = System.Drawing.Color.White;
+            this.btnSave1.BackColor = System.Drawing.Color.LightGreen;
             this.btnSave1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave1.Image = ((System.Drawing.Image)(resources.GetObject("btnSave1.Image")));
@@ -1286,7 +1303,7 @@
             // 
             // btnClose2
             // 
-            this.btnClose2.BackColor = System.Drawing.Color.White;
+            this.btnClose2.BackColor = System.Drawing.Color.SeaShell;
             this.btnClose2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose2.Image = ((System.Drawing.Image)(resources.GetObject("btnClose2.Image")));
@@ -1300,23 +1317,6 @@
             this.btnClose2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClose2.UseVisualStyleBackColor = false;
             this.btnClose2.Click += new System.EventHandler(this.BtnClose_Click);
-            // 
-            // btnAddEmployee
-            // 
-            this.btnAddEmployee.BackColor = System.Drawing.Color.White;
-            this.btnAddEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddEmployee.ForeColor = System.Drawing.Color.Black;
-            this.btnAddEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btnAddEmployee.Image")));
-            this.btnAddEmployee.Location = new System.Drawing.Point(2, 2);
-            this.btnAddEmployee.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAddEmployee.Name = "btnAddEmployee";
-            this.btnAddEmployee.Size = new System.Drawing.Size(199, 43);
-            this.btnAddEmployee.TabIndex = 0;
-            this.btnAddEmployee.Text = "เพิ่มพนักงานเข้า-ออก";
-            this.btnAddEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddEmployee.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddEmployee.UseVisualStyleBackColor = false;
-            this.btnAddEmployee.Click += new System.EventHandler(this.BtnAddEmployee_Click);
             // 
             // frmProjectMasters
             // 

@@ -303,9 +303,9 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
         private bool ValidateControl()
         {
             List<string> listMsg = new List<string>();
-            if (string.IsNullOrEmpty(txtProjectname.Text)) listMsg.Add("Requester name");
-            if (string.IsNullOrEmpty(txtForeman.Text)) listMsg.Add("Requester position");
-            if (Convert.ToInt32(comboCompany.SelectedValue) == 0) listMsg.Add("Company name");
+            if (string.IsNullOrEmpty(txtProjectname.Text)) listMsg.Add("Project name");
+            if (string.IsNullOrEmpty(txtForeman.Text)) listMsg.Add("Forman Name");
+            if (Convert.ToInt32(comboCompany.SelectedValue) == 0) listMsg.Add("Company");
 
             if (radOther.Checked && txtOtherTime.Text == "  :")
             {

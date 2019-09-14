@@ -91,6 +91,26 @@ namespace BIG.VMS.PRESENT.Forms.FormReport
         private void frmReportList_Load(object sender, EventArgs e)
         {
             BindGridData();
+            AddRangeComboBox(ddlDept, new ComboBoxServices().GetComboDepartment(), false);
+            CustomGrid();
+        }
+
+        private void CustomGrid()
+        {
+                     
+            for (int i = 0; i < gridReportList.Rows.Count; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    gridReportList.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(240, 248, 255);
+                }
+                else
+                {
+                    gridReportList.Rows[i].DefaultCellStyle.BackColor = Color.White;
+                }
+            }
+
+            gridReportList.Columns[0].DefaultCellStyle.ForeColor = Color.White;
         }
 
         private void BindGridData()
@@ -102,6 +122,24 @@ namespace BIG.VMS.PRESENT.Forms.FormReport
                 DATE_TO = (dtTo.Value == null || dtTo.Value == DateTime.MinValue) ? DateTime.Now : dtTo.Value
 
             };
+
+            if (radAll.Checked)
+            {
+
+            }
+            else if (radIn.Checked)
+            {
+                filter.TYPE = nameof(VisitorMode.In);
+            }
+            else
+            {
+                filter.TYPE = nameof(VisitorMode.Out);
+            }
+
+            if( Convert.ToInt32(ddlDept.SelectedValue) > 0)
+            {
+                filter.DEPT_ID = Convert.ToInt32(ddlDept.SelectedValue);
+            }
 
             _container.Filter = filter;
             _container = _service.GetVisitorForReport(_container);
@@ -137,6 +175,7 @@ namespace BIG.VMS.PRESENT.Forms.FormReport
         private void btnSearch_Click(object sender, EventArgs e)
         {
             BindGridData();
+            CustomGrid();
         }
 
         private void btnExport_Click(object sender, EventArgs e)
@@ -362,5 +401,7 @@ namespace BIG.VMS.PRESENT.Forms.FormReport
         {
             this.Close();
         }
+
+        
     }
 }
