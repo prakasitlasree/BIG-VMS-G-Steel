@@ -74,7 +74,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
 
         private void FrmProjectMember_Load(object sender, EventArgs e)
         {
-
+            comboType.SelectedIndex = 0;
         }
     }
 }

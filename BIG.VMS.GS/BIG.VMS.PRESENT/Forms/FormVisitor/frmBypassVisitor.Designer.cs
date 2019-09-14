@@ -34,12 +34,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnMeet = new System.Windows.Forms.Button();
-            this.btnVehicle = new System.Windows.Forms.Button();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnReadCard = new System.Windows.Forms.Button();
-            this.btnBlacklist = new System.Windows.Forms.Button();
-            this.BtnTakePhoto = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.btnVehicle = new System.Windows.Forms.Button();
+            this.btnMeet = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
@@ -80,9 +78,12 @@
             this.bthCardDelete = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.BtnTakePhoto = new System.Windows.Forms.Button();
+            this.btnBlacklist = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
@@ -96,7 +97,6 @@
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -105,7 +105,7 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.Control;
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
@@ -124,7 +124,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.txtNo);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.flowLayoutPanel2);
@@ -158,41 +158,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "เลขที่";
             // 
-            // btnMeet
+            // flowLayoutPanel2
             // 
-            this.btnMeet.BackColor = System.Drawing.Color.LavenderBlush;
-            this.btnMeet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMeet.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMeet.ForeColor = System.Drawing.Color.Black;
-            this.btnMeet.Image = ((System.Drawing.Image)(resources.GetObject("btnMeet.Image")));
-            this.btnMeet.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMeet.Location = new System.Drawing.Point(568, 6);
-            this.btnMeet.Margin = new System.Windows.Forms.Padding(6);
-            this.btnMeet.Name = "btnMeet";
-            this.btnMeet.Size = new System.Drawing.Size(372, 80);
-            this.btnMeet.TabIndex = 1;
-            this.btnMeet.Text = "(3) เลือกบุคคลที่ต้องการเข้าพบ";
-            this.btnMeet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMeet.UseVisualStyleBackColor = false;
-            this.btnMeet.Click += new System.EventHandler(this.btnMeet_Click);
-            // 
-            // btnVehicle
-            // 
-            this.btnVehicle.BackColor = System.Drawing.Color.LightBlue;
-            this.btnVehicle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVehicle.ForeColor = System.Drawing.Color.Black;
-            this.btnVehicle.Image = ((System.Drawing.Image)(resources.GetObject("btnVehicle.Image")));
-            this.btnVehicle.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnVehicle.Location = new System.Drawing.Point(272, 6);
-            this.btnVehicle.Margin = new System.Windows.Forms.Padding(6);
-            this.btnVehicle.Name = "btnVehicle";
-            this.btnVehicle.Size = new System.Drawing.Size(284, 80);
-            this.btnVehicle.TabIndex = 2;
-            this.btnVehicle.Text = "(2) เลือกประเภทรถยนต์";
-            this.btnVehicle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnVehicle.UseVisualStyleBackColor = false;
-            this.btnVehicle.Click += new System.EventHandler(this.btnVehicle_Click);
+            this.flowLayoutPanel2.Controls.Add(this.btnReadCard);
+            this.flowLayoutPanel2.Controls.Add(this.btnVehicle);
+            this.flowLayoutPanel2.Controls.Add(this.btnMeet);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(994, 94);
+            this.flowLayoutPanel2.TabIndex = 22;
             // 
             // btnReadCard
             // 
@@ -213,60 +188,41 @@
             this.btnReadCard.UseVisualStyleBackColor = false;
             this.btnReadCard.Click += new System.EventHandler(this.btnReadCard_Click);
             // 
-            // btnBlacklist
+            // btnVehicle
             // 
-            this.btnBlacklist.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnBlacklist.BackColor = System.Drawing.Color.SeaShell;
-            this.btnBlacklist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBlacklist.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBlacklist.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnBlacklist.Image = ((System.Drawing.Image)(resources.GetObject("btnBlacklist.Image")));
-            this.btnBlacklist.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBlacklist.Location = new System.Drawing.Point(430, 6);
-            this.btnBlacklist.Margin = new System.Windows.Forms.Padding(6);
-            this.btnBlacklist.Name = "btnBlacklist";
-            this.btnBlacklist.Size = new System.Drawing.Size(200, 80);
-            this.btnBlacklist.TabIndex = 3;
-            this.btnBlacklist.Text = "Blacklist";
-            this.btnBlacklist.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBlacklist.UseVisualStyleBackColor = false;
-            this.btnBlacklist.Click += new System.EventHandler(this.btnBlacklist_Click);
+            this.btnVehicle.BackColor = System.Drawing.Color.LightBlue;
+            this.btnVehicle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVehicle.ForeColor = System.Drawing.Color.Black;
+            this.btnVehicle.Image = ((System.Drawing.Image)(resources.GetObject("btnVehicle.Image")));
+            this.btnVehicle.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVehicle.Location = new System.Drawing.Point(272, 6);
+            this.btnVehicle.Margin = new System.Windows.Forms.Padding(6);
+            this.btnVehicle.Name = "btnVehicle";
+            this.btnVehicle.Size = new System.Drawing.Size(284, 80);
+            this.btnVehicle.TabIndex = 2;
+            this.btnVehicle.Text = "(2) เลือกประเภทรถยนต์";
+            this.btnVehicle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVehicle.UseVisualStyleBackColor = false;
+            this.btnVehicle.Click += new System.EventHandler(this.btnVehicle_Click);
             // 
-            // BtnTakePhoto
+            // btnMeet
             // 
-            this.BtnTakePhoto.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.BtnTakePhoto.BackColor = System.Drawing.Color.LavenderBlush;
-            this.BtnTakePhoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnTakePhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnTakePhoto.Image = ((System.Drawing.Image)(resources.GetObject("BtnTakePhoto.Image")));
-            this.BtnTakePhoto.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnTakePhoto.Location = new System.Drawing.Point(218, 6);
-            this.BtnTakePhoto.Margin = new System.Windows.Forms.Padding(6);
-            this.BtnTakePhoto.Name = "BtnTakePhoto";
-            this.BtnTakePhoto.Size = new System.Drawing.Size(200, 80);
-            this.BtnTakePhoto.TabIndex = 1;
-            this.BtnTakePhoto.Text = "ถ่ายรูปผู้ติดต่อ";
-            this.BtnTakePhoto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnTakePhoto.UseVisualStyleBackColor = false;
-            this.BtnTakePhoto.Click += new System.EventHandler(this.BtnTakePhoto_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnSave.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSave.Location = new System.Drawing.Point(6, 6);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(6);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(200, 80);
-            this.btnSave.TabIndex = 0;
-            this.btnSave.Text = "บันทึก/พิมพ์";
-            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnMeet.BackColor = System.Drawing.Color.LavenderBlush;
+            this.btnMeet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMeet.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMeet.ForeColor = System.Drawing.Color.Black;
+            this.btnMeet.Image = ((System.Drawing.Image)(resources.GetObject("btnMeet.Image")));
+            this.btnMeet.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMeet.Location = new System.Drawing.Point(568, 6);
+            this.btnMeet.Margin = new System.Windows.Forms.Padding(6);
+            this.btnMeet.Name = "btnMeet";
+            this.btnMeet.Size = new System.Drawing.Size(372, 80);
+            this.btnMeet.TabIndex = 1;
+            this.btnMeet.Text = "(3) เลือกบุคคลที่ต้องการเข้าพบ";
+            this.btnMeet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMeet.UseVisualStyleBackColor = false;
+            this.btnMeet.Click += new System.EventHandler(this.btnMeet_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -796,16 +752,60 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1266, 94);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
-            // flowLayoutPanel2
+            // btnSave
             // 
-            this.flowLayoutPanel2.Controls.Add(this.btnReadCard);
-            this.flowLayoutPanel2.Controls.Add(this.btnVehicle);
-            this.flowLayoutPanel2.Controls.Add(this.btnMeet);
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(994, 94);
-            this.flowLayoutPanel2.TabIndex = 22;
+            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnSave.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.Location = new System.Drawing.Point(6, 6);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(6);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(200, 80);
+            this.btnSave.TabIndex = 0;
+            this.btnSave.Text = "บันทึก/พิมพ์";
+            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // BtnTakePhoto
+            // 
+            this.BtnTakePhoto.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.BtnTakePhoto.BackColor = System.Drawing.Color.LavenderBlush;
+            this.BtnTakePhoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnTakePhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnTakePhoto.Image = ((System.Drawing.Image)(resources.GetObject("BtnTakePhoto.Image")));
+            this.BtnTakePhoto.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnTakePhoto.Location = new System.Drawing.Point(218, 6);
+            this.BtnTakePhoto.Margin = new System.Windows.Forms.Padding(6);
+            this.BtnTakePhoto.Name = "BtnTakePhoto";
+            this.BtnTakePhoto.Size = new System.Drawing.Size(200, 80);
+            this.BtnTakePhoto.TabIndex = 1;
+            this.BtnTakePhoto.Text = "ถ่ายรูปผู้ติดต่อ";
+            this.BtnTakePhoto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnTakePhoto.UseVisualStyleBackColor = false;
+            this.BtnTakePhoto.Click += new System.EventHandler(this.BtnTakePhoto_Click);
+            // 
+            // btnBlacklist
+            // 
+            this.btnBlacklist.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnBlacklist.BackColor = System.Drawing.Color.SeaShell;
+            this.btnBlacklist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBlacklist.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBlacklist.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnBlacklist.Image = ((System.Drawing.Image)(resources.GetObject("btnBlacklist.Image")));
+            this.btnBlacklist.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBlacklist.Location = new System.Drawing.Point(430, 6);
+            this.btnBlacklist.Margin = new System.Windows.Forms.Padding(6);
+            this.btnBlacklist.Name = "btnBlacklist";
+            this.btnBlacklist.Size = new System.Drawing.Size(200, 80);
+            this.btnBlacklist.TabIndex = 3;
+            this.btnBlacklist.Text = "Blacklist";
+            this.btnBlacklist.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBlacklist.UseVisualStyleBackColor = false;
+            this.btnBlacklist.Click += new System.EventHandler(this.btnBlacklist_Click);
             // 
             // frmVisitorByPass
             // 
@@ -826,6 +826,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
@@ -845,7 +846,6 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

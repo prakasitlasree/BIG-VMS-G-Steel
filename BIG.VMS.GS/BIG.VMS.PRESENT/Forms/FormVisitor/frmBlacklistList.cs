@@ -27,6 +27,12 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
         private void frmBlacklistList_Load(object sender, EventArgs e)
         {
             ResetScreen();
+            gridBlackList.DataBindingComplete += BindingComplete;
+        }
+
+        private void BindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            CustomGrid();
         }
 
         private void BindGridData()

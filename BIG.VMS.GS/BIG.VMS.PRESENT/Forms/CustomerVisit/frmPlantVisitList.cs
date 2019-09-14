@@ -2,6 +2,7 @@
 using BIG.VMS.MODEL.CustomModel;
 using BIG.VMS.MODEL.CustomModel.Container;
 using BIG.VMS.MODEL.CustomModel.Filter;
+using BIG.VMS.MODEL.EntityModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -241,7 +242,7 @@ namespace BIG.VMS.PRESENT.Forms.CustomerVisit
             {
                 if (i % 2 == 0)
                 {
-                    gridVisitorList.Rows[i].DefaultCellStyle.BackColor = Color.MistyRose;
+                    gridVisitorList.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(240, 248, 255);
                 }
                 else
                 {
@@ -262,24 +263,19 @@ namespace BIG.VMS.PRESENT.Forms.CustomerVisit
             if (e.RowIndex > -1)
             {
                 if (e.ColumnIndex == 0) //Edit
-                { 
-                    //var id = Convert.ToInt32(gridVisitorList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
-                    //MAS_CONTRACTOR con = new MAS_CONTRACTOR(); 
-                    //var result = _service.GetContractor(id);
-                    //con.AUTO_ID = result.AUTO_ID;
-                    //con.NAME = result.NAME;
-                    //con.ADDRESS = result.ADDRESS;
-                    //con.TEL = result.TEL;
-                    //con.UPDATED_BY = result.UPDATED_BY;
-                    //con.UPDATED_DATE = result.UPDATED_DATE;
-
-                    //frmContractor frm = new frmContractor();
-                    //frm.MAS_CONTRACTOR = con;
-                    //frm.formMode = FormMode.Edit;
-                    //if (frm.ShowDialog() == DialogResult.OK)
-                    //{
-                    //    ResetScreen();
-                    //}
+                {
+                    var id = Convert.ToInt32(gridVisitorList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
+                    var response = _service.GetItem(id);
+                    if (response.Status)
+                    {
+                        var frm = new frmPlantVisit();
+                        frm.formMode = FormMode.Edit;
+                        frm._TRN_CUSTOMER_VISIT = (TRN_CUSTOMER_VISIT)response.ResultObj;
+                        if (frm.ShowDialog() == DialogResult.OK)
+                        {
+                            BindGridData();
+                        }
+                    }
                 }
                 if (e.ColumnIndex == 1) //Delete
                 {

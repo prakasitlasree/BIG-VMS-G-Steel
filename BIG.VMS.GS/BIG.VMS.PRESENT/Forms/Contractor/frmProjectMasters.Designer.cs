@@ -100,6 +100,7 @@
             this.txtForeman = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.gridEmployee = new System.Windows.Forms.DataGridView();
+            this.DELETE = new System.Windows.Forms.DataGridViewImageColumn();
             this.AUTO_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TRN_PROJECT_MASTER = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PROJECT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -200,7 +201,6 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Tel (เบอร์โทร):";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // txtTel
             // 
@@ -331,7 +331,6 @@
             this.dtHraIssue.Name = "dtHraIssue";
             this.dtHraIssue.Size = new System.Drawing.Size(394, 26);
             this.dtHraIssue.TabIndex = 17;
-            this.dtHraIssue.ValueChanged += new System.EventHandler(this.DtHraIssue_ValueChanged);
             // 
             // label20
             // 
@@ -575,7 +574,6 @@
             this.txtPurchaseManager.Name = "txtPurchaseManager";
             this.txtPurchaseManager.Size = new System.Drawing.Size(483, 26);
             this.txtPurchaseManager.TabIndex = 7;
-            this.txtPurchaseManager.TextChanged += new System.EventHandler(this.TxtPurchaseManager_TextChanged);
             // 
             // label15
             // 
@@ -1016,6 +1014,7 @@
             this.gridEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.gridEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridEmployee.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DELETE,
             this.AUTO_ID,
             this.TRN_PROJECT_MASTER,
             this.PROJECT_ID,
@@ -1029,9 +1028,19 @@
             this.gridEmployee.Name = "gridEmployee";
             this.gridEmployee.ReadOnly = true;
             this.gridEmployee.RowHeadersWidth = 51;
-            this.gridEmployee.RowTemplate.Height = 24;
+            this.gridEmployee.RowTemplate.Height = 30;
             this.gridEmployee.Size = new System.Drawing.Size(836, 208);
             this.gridEmployee.TabIndex = 0;
+            this.gridEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridEmployee_CellContentClick);
+            // 
+            // DELETE
+            // 
+            this.DELETE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.DELETE.HeaderText = "ลบ";
+            this.DELETE.Image = ((System.Drawing.Image)(resources.GetObject("DELETE.Image")));
+            this.DELETE.Name = "DELETE";
+            this.DELETE.ReadOnly = true;
+            this.DELETE.Width = 50;
             // 
             // AUTO_ID
             // 
@@ -1041,7 +1050,7 @@
             this.AUTO_ID.Name = "AUTO_ID";
             this.AUTO_ID.ReadOnly = true;
             this.AUTO_ID.Visible = false;
-            this.AUTO_ID.Width = 110;
+            this.AUTO_ID.Width = 104;
             // 
             // TRN_PROJECT_MASTER
             // 
@@ -1051,7 +1060,7 @@
             this.TRN_PROJECT_MASTER.Name = "TRN_PROJECT_MASTER";
             this.TRN_PROJECT_MASTER.ReadOnly = true;
             this.TRN_PROJECT_MASTER.Visible = false;
-            this.TRN_PROJECT_MASTER.Width = 237;
+            this.TRN_PROJECT_MASTER.Width = 224;
             // 
             // PROJECT_ID
             // 
@@ -1061,7 +1070,7 @@
             this.PROJECT_ID.Name = "PROJECT_ID";
             this.PROJECT_ID.ReadOnly = true;
             this.PROJECT_ID.Visible = false;
-            this.PROJECT_ID.Width = 142;
+            this.PROJECT_ID.Width = 133;
             // 
             // CARD_TYPE
             // 
@@ -1454,14 +1463,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AUTO_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TRN_PROJECT_MASTER;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PROJECT_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CARD_TYPE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_CARD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FULLNAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn POSITION;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SAFETY_TRAINING_FLAG;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
@@ -1474,5 +1475,14 @@
         private System.Windows.Forms.Button btnSave1;
         private System.Windows.Forms.Button btnClose2;
         private System.Windows.Forms.Button btnAddEmployee;
+        private System.Windows.Forms.DataGridViewImageColumn DELETE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AUTO_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TRN_PROJECT_MASTER;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PROJECT_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CARD_TYPE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_CARD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FULLNAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn POSITION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SAFETY_TRAINING_FLAG;
     }
 }

@@ -71,7 +71,7 @@
             this.txtCarInfo.Location = new System.Drawing.Point(91, 108);
             this.txtCarInfo.Name = "txtCarInfo";
             this.txtCarInfo.ReadOnly = true;
-            this.txtCarInfo.Size = new System.Drawing.Size(542, 31);
+            this.txtCarInfo.Size = new System.Drawing.Size(680, 31);
             this.txtCarInfo.TabIndex = 3;
             // 
             // btnCancel
@@ -79,7 +79,7 @@
             this.btnCancel.BackColor = System.Drawing.Color.SeaShell;
             this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.Location = new System.Drawing.Point(206, 3);
@@ -98,7 +98,7 @@
             this.btnSave.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSave.Enabled = false;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Black;
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.Location = new System.Drawing.Point(3, 3);
@@ -128,7 +128,7 @@
             this.txtPersonInfo.Location = new System.Drawing.Point(91, 71);
             this.txtPersonInfo.Name = "txtPersonInfo";
             this.txtPersonInfo.ReadOnly = true;
-            this.txtPersonInfo.Size = new System.Drawing.Size(542, 31);
+            this.txtPersonInfo.Size = new System.Drawing.Size(680, 31);
             this.txtPersonInfo.TabIndex = 2;
             // 
             // label2
@@ -227,7 +227,7 @@
             // 
             this.btnPhoto.BackColor = System.Drawing.Color.Snow;
             this.btnPhoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPhoto.ForeColor = System.Drawing.Color.Black;
             this.btnPhoto.Image = ((System.Drawing.Image)(resources.GetObject("btnPhoto.Image")));
             this.btnPhoto.Location = new System.Drawing.Point(205, 3);
@@ -244,7 +244,7 @@
             // 
             this.btnFind.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFind.ForeColor = System.Drawing.Color.Black;
             this.btnFind.Image = ((System.Drawing.Image)(resources.GetObject("btnFind.Image")));
             this.btnFind.Location = new System.Drawing.Point(3, 3);

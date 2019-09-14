@@ -35,11 +35,9 @@
             this.txtvisitgroup = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtnoofvisit = new System.Windows.Forms.MaskedTextBox();
             this.visitordate = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.visitortime = new System.Windows.Forms.MaskedTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtobjective = new System.Windows.Forms.TextBox();
             this.txtcontractperson = new System.Windows.Forms.TextBox();
@@ -53,6 +51,7 @@
             this.CUSTOMER_VISIT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SEQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FULLNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TRN_CUSTOMER_VISIT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAddvisitor = new System.Windows.Forms.Button();
             this.txtDepartment = new System.Windows.Forms.TextBox();
             this.lb4 = new System.Windows.Forms.Label();
@@ -70,6 +69,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.numNo = new System.Windows.Forms.NumericUpDown();
+            this.dtVisitTime = new System.Windows.Forms.DateTimePicker();
             this.tabmain.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tb2.SuspendLayout();
@@ -81,6 +82,7 @@
             this.tb1.SuspendLayout();
             this.group_detail.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numNo)).BeginInit();
             this.SuspendLayout();
             // 
             // tabmain
@@ -112,20 +114,20 @@
             this.tb2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tb2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tb2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tb2.Controls.Add(this.dtVisitTime, 3, 1);
             this.tb2.Controls.Add(this.txtvisitgroup, 1, 0);
             this.tb2.Controls.Add(this.label5, 0, 0);
             this.tb2.Controls.Add(this.label6, 0, 1);
-            this.tb2.Controls.Add(this.txtnoofvisit, 1, 1);
             this.tb2.Controls.Add(this.visitordate, 3, 0);
             this.tb2.Controls.Add(this.label8, 2, 0);
             this.tb2.Controls.Add(this.label9, 2, 1);
-            this.tb2.Controls.Add(this.visitortime, 3, 1);
             this.tb2.Controls.Add(this.label10, 0, 2);
             this.tb2.Controls.Add(this.txtobjective, 1, 3);
             this.tb2.Controls.Add(this.txtcontractperson, 1, 2);
             this.tb2.Controls.Add(this.label7, 0, 3);
             this.tb2.Controls.Add(this.clbfac_req, 3, 3);
             this.tb2.Controls.Add(this.label11, 2, 3);
+            this.tb2.Controls.Add(this.numNo, 1, 1);
             this.tb2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tb2.Location = new System.Drawing.Point(3, 3);
             this.tb2.Name = "tb2";
@@ -168,17 +170,6 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "No. of visitor *";
             // 
-            // txtnoofvisit
-            // 
-            this.txtnoofvisit.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtnoofvisit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnoofvisit.Location = new System.Drawing.Point(203, 48);
-            this.txtnoofvisit.Mask = "00000";
-            this.txtnoofvisit.Name = "txtnoofvisit";
-            this.txtnoofvisit.Size = new System.Drawing.Size(244, 23);
-            this.txtnoofvisit.TabIndex = 5;
-            this.txtnoofvisit.ValidatingType = typeof(int);
-            // 
             // visitordate
             // 
             this.visitordate.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -209,18 +200,6 @@
             this.label9.Size = new System.Drawing.Size(69, 17);
             this.label9.TabIndex = 16;
             this.label9.Text = "Visit Time";
-            // 
-            // visitortime
-            // 
-            this.visitortime.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.visitortime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.visitortime.Location = new System.Drawing.Point(653, 48);
-            this.visitortime.Mask = "90:00";
-            this.visitortime.Name = "visitortime";
-            this.visitortime.Size = new System.Drawing.Size(245, 23);
-            this.visitortime.TabIndex = 9;
-            this.visitortime.ValidatingType = typeof(System.DateTime);
-            this.visitortime.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.Visitortime_MaskInputRejected);
             // 
             // label10
             // 
@@ -298,7 +277,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(907, 269);
+            this.tabPage2.Size = new System.Drawing.Size(907, 275);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Visitor List";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -316,7 +295,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(901, 263);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(901, 269);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // gridVisitor
@@ -329,7 +308,8 @@
             this.AUTO_ID,
             this.CUSTOMER_VISIT_ID,
             this.SEQ,
-            this.FULLNAME});
+            this.FULLNAME,
+            this.TRN_CUSTOMER_VISIT});
             this.gridVisitor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridVisitor.Location = new System.Drawing.Point(3, 50);
             this.gridVisitor.Name = "gridVisitor";
@@ -345,7 +325,7 @@
             this.AUTO_ID.Name = "AUTO_ID";
             this.AUTO_ID.ReadOnly = true;
             this.AUTO_ID.Visible = false;
-            this.AUTO_ID.Width = 79;
+            this.AUTO_ID.Width = 104;
             // 
             // CUSTOMER_VISIT_ID
             // 
@@ -354,7 +334,7 @@
             this.CUSTOMER_VISIT_ID.Name = "CUSTOMER_VISIT_ID";
             this.CUSTOMER_VISIT_ID.ReadOnly = true;
             this.CUSTOMER_VISIT_ID.Visible = false;
-            this.CUSTOMER_VISIT_ID.Width = 143;
+            this.CUSTOMER_VISIT_ID.Width = 201;
             // 
             // SEQ
             // 
@@ -371,6 +351,15 @@
             this.FULLNAME.Name = "FULLNAME";
             this.FULLNAME.ReadOnly = true;
             this.FULLNAME.Width = 105;
+            // 
+            // TRN_CUSTOMER_VISIT
+            // 
+            this.TRN_CUSTOMER_VISIT.DataPropertyName = "TRN_CUSTOMER_VISIT";
+            this.TRN_CUSTOMER_VISIT.HeaderText = "TRN_CUSTOMER_VISIT";
+            this.TRN_CUSTOMER_VISIT.Name = "TRN_CUSTOMER_VISIT";
+            this.TRN_CUSTOMER_VISIT.ReadOnly = true;
+            this.TRN_CUSTOMER_VISIT.Visible = false;
+            this.TRN_CUSTOMER_VISIT.Width = 216;
             // 
             // btnAddvisitor
             // 
@@ -567,7 +556,7 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(151, 37);
             this.btnCancel.TabIndex = 4;
-            this.btnCancel.Text = "ยกเลิก";
+            this.btnCancel.Text = "Close";
             this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -584,10 +573,29 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(159, 37);
             this.btnSave.TabIndex = 3;
-            this.btnSave.Text = "บันทึก";
+            this.btnSave.Text = "Save";
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // numNo
+            // 
+            this.numNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numNo.Location = new System.Drawing.Point(203, 50);
+            this.numNo.Name = "numNo";
+            this.numNo.Size = new System.Drawing.Size(120, 26);
+            this.numNo.TabIndex = 21;
+            // 
+            // dtVisitTime
+            // 
+            this.dtVisitTime.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dtVisitTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtVisitTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtVisitTime.Location = new System.Drawing.Point(653, 48);
+            this.dtVisitTime.Name = "dtVisitTime";
+            this.dtVisitTime.ShowUpDown = true;
+            this.dtVisitTime.Size = new System.Drawing.Size(245, 23);
+            this.dtVisitTime.TabIndex = 22;
             // 
             // frmPlantVisit
             // 
@@ -618,6 +626,7 @@
             this.tb1.PerformLayout();
             this.group_detail.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numNo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -652,18 +661,19 @@
         private System.Windows.Forms.GroupBox group_detail;
         private System.Windows.Forms.TableLayoutPanel tb2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.MaskedTextBox txtnoofvisit;
-        private System.Windows.Forms.MaskedTextBox visitortime;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtcontractperson;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.CheckedListBox clbfac_req;
+        private System.Windows.Forms.Button btnAddvisitor;
+        private System.Windows.Forms.Label lbType;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn AUTO_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn CUSTOMER_VISIT_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn SEQ;
         private System.Windows.Forms.DataGridViewTextBoxColumn FULLNAME;
-        private System.Windows.Forms.Button btnAddvisitor;
-        private System.Windows.Forms.Label lbType;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TRN_CUSTOMER_VISIT;
+        private System.Windows.Forms.NumericUpDown numNo;
+        private System.Windows.Forms.DateTimePicker dtVisitTime;
     }
 }

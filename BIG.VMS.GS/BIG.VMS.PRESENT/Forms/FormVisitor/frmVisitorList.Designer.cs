@@ -416,7 +416,7 @@
             // 
             this.btnSearch.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnSearch.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.Black;
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
@@ -433,7 +433,7 @@
             // btnListExit
             // 
             this.btnListExit.BackColor = System.Drawing.SystemColors.Info;
-            this.btnListExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnListExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListExit.ForeColor = System.Drawing.Color.Black;
             this.btnListExit.Image = ((System.Drawing.Image)(resources.GetObject("btnListExit.Image")));
@@ -450,7 +450,7 @@
             // 
             this.btnBlacklist.AutoSize = true;
             this.btnBlacklist.BackColor = System.Drawing.Color.MistyRose;
-            this.btnBlacklist.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBlacklist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBlacklist.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBlacklist.ForeColor = System.Drawing.Color.Black;
             this.btnBlacklist.Image = ((System.Drawing.Image)(resources.GetObject("btnBlacklist.Image")));

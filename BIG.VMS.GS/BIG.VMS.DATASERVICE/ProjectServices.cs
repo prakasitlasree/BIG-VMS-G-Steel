@@ -179,6 +179,40 @@ namespace BIG.VMS.DATASERVICE
             return resp;
         }
 
+
+        public Response DeleteProjectMember(int id)
+        {
+            var resp = new Response();
+
+            try
+            {
+                using (var ctx = new BIG_VMSEntities())
+                {
+                    var obj = ctx.TRN_PROJECT_MEMBER.Where(o => o.AUTO_ID == id).FirstOrDefault();
+                   
+                    if (obj != null)
+                    {
+                        ctx.TRN_PROJECT_MEMBER.Remove(obj);
+                        ctx.SaveChanges();
+                        resp.ResultObj = ctx.TRN_PROJECT_MEMBER.Where(o => o.PROJECT_ID == obj.PROJECT_ID).ToList();
+                        resp.Status = true;
+                    }
+
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                resp.Status = false;
+                resp.ExceptionMessage = ex.Message.ToString();
+            }
+
+
+            return resp;
+        }
+
+
         public Response UpdateContractor(MAS_CONTRACTOR source)
         {
             var resp = new Response();
@@ -220,22 +254,14 @@ namespace BIG.VMS.DATASERVICE
             {
                 using (var ctx = new BIG_VMSEntities())
                 {
-                    var member = ctx.TRN_PROJECT_MEMBER.Where(o => o.PROJECT_ID == id).ToList();
-                    if (member != null)
+
+                    var project = ctx.TRN_PROJECT_MASTER.Where(o => o.AUTO_ID == id).First();
+                    if (project != null)
                     {
-                        ctx.TRN_PROJECT_MEMBER.RemoveRange(member);
+                        ctx.TRN_PROJECT_MASTER.Remove(project);
                         ctx.SaveChanges();
-
-                        var project = ctx.TRN_PROJECT_MASTER.Where(o => o.AUTO_ID == id).First();
-                        if (project != null)
-                        {
-                            ctx.TRN_PROJECT_MASTER.Remove(project);
-                            ctx.SaveChanges();
-                            resp.Status = true;
-                        }
-                        
+                        resp.Status = true;
                     }
-
 
                 }
 

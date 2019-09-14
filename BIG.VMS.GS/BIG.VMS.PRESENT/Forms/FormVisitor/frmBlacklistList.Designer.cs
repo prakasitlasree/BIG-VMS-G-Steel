@@ -100,6 +100,7 @@
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtIDCard, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel1, 3, 1);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(8, 8);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(8);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";

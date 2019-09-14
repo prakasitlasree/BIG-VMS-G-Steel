@@ -69,10 +69,11 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
                 radTemp.Enabled = false;
                 radAlldays.Enabled = false;
                 radOther.Enabled = false;
-                radPerm.Enabled =false;
+                radPerm.Enabled = false;
                 txtOtherTime.ReadOnly = true;
                 btnAddEmployee.Enabled = false;
                 btnSave1.Enabled = false;
+                gridEmployee.Columns[0].Visible = false;
                 SetControlData();
             }
             if (formMode == MODEL.CustomModel.FormMode.Edit)
@@ -94,7 +95,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             txtForemanTel.Text = obj.RESPONSIBLE_TEL;
             txtWorkArea.Text = obj.WORKING_AREA;
             txtVerifyPurchase.Text = obj.PURCHASING_VERIFY_BY;
-           
+
             txtHraApprove.Text = obj.HRA_MANAGER_APP_BY;
             txtScope.Text = obj.PROJECT_SCOPE;
             txtPurchaseManager.Text = obj.RESPONSIBLE_DEP_HEAD;
@@ -135,17 +136,17 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
                 chkHoliday.Checked = true;
             }
 
-            if (obj.PROJECT_WORKING_TIME == "8:00-17:30")
+            if (obj.PROJECT_WORKING_TIME == radMoring.Text)
             {
                 radMoring.Checked = true;
             }
-            else if (obj.PROJECT_WORKING_TIME == "After 17:30")
+            else if (obj.PROJECT_WORKING_TIME == radEvening.Text)
             {
-                radMoring.Checked = true;
+                radEvening.Checked = true;
             }
-            else if (obj.PROJECT_WORKING_TIME == "After 17:30")
+            else if (obj.PROJECT_WORKING_TIME == radAlldays.Text)
             {
-                radMoring.Checked = true;
+                radAlldays.Checked = true;
             }
             else
             {
@@ -388,24 +389,45 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             dtHraExpire.Enabled = true;
         }
 
-        private void TxtPurchaseManager_TextChanged(object sender, EventArgs e)
+
+
+        private void GridEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-        }
+            if (e.RowIndex > -1)
+            {
+                if (e.ColumnIndex == 0) //Edit
+                {
+                    if (MessageBox.Show(Message.MSG_DELETE_CONFIRM, "แจ้งเตือน", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                    {
+                        var id = Convert.ToInt32(gridEmployee.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
+                        var listEmployee = (List<TRN_PROJECT_MEMBER>)gridEmployee.DataSource;
+                        if (id > 0)
+                        {
+                            var resp = service.DeleteProjectMember(id);
+                            if (!resp.Status)
+                            {
+                                MessageBox.Show(resp.Message + resp.ExceptionMessage);
+                            }
+                            else
+                            {
+                                gridEmployee.DataSource = (List<TRN_PROJECT_MEMBER>)resp.ResultObj;
+                            }
+                        }
+                        else
+                        {
+                            List<TRN_PROJECT_MEMBER> temp = new List<TRN_PROJECT_MEMBER>();
+                            listEmployee.RemoveAt(e.RowIndex);
+                            foreach (var item in listEmployee)
+                            {
+                                temp.Add(item);
 
-        private void DtHraIssue_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BtnAddemp_Click(object sender, EventArgs e)
-        {
-
+                            };
+                            gridEmployee.DataSource = (List<TRN_PROJECT_MEMBER>)temp;
+                        }
+                    }
+                }
+            }
         }
     }
 }
