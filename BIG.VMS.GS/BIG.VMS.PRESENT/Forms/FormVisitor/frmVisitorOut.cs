@@ -23,6 +23,8 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
         private bool isChangePhoto;
         public bool outFlag = false;
         public int inID = 0;
+        private int selectOutId = 0;
+
 
         public frmVisitorOut()
         {
@@ -46,7 +48,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     if (_container.TRN_VISITOR != null && _container.TRN_VISITOR.AUTO_ID > 0)
                     {
                         btnSave.Enabled = true;
-
+                        selectOutId = _container.TRN_VISITOR.AUTO_ID;
                         txtPersonInfo.Text = _container.TRN_VISITOR.FIRST_NAME + " " + _container.TRN_VISITOR.LAST_NAME;
                         if (_container.TRN_VISITOR.MAS_PROVINCE != null)
                         {
@@ -128,7 +130,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     }
                     else
                     {
-                        res = _service.UpdateVisitorOut(_container);
+                        res = _service.UpdateVisitorOut(selectOutId);
                     }
 
                     if (res.Status)
@@ -147,7 +149,9 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                                 ID_CARD = org_obj.ID_CARD,
 
                                 TYPE = org_obj.TYPE == "Appointment" ? "AppointmentOut" : 
-                                (org_obj.TYPE == "ConstructorIn"? "ConstructorOut" : "Out"),
+                                (org_obj.TYPE == "ConstructorIn" ? "ConstructorOut" :
+                                (org_obj.TYPE == "CustomerIn" ? "CustomerOut" :
+                                "Out")),
                                 FIRST_NAME = org_obj.FIRST_NAME,
                                 LAST_NAME = org_obj.LAST_NAME,
                                 CAR_TYPE_ID = org_obj.CAR_TYPE_ID,

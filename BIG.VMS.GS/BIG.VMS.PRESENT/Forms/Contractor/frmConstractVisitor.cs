@@ -24,7 +24,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
     public partial class frmConstractorVisitor : PageBase
     {
 
-       
+
         private VisitorServices _service = new VisitorServices();
         private ContainerVisitor _container = new ContainerVisitor();
         private ComboBoxServices _comboService = new ComboBoxServices();
@@ -100,10 +100,65 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     obj.LICENSE_PLATE_PROVINCE_ID = provinceId;
                 }
 
+                if (carModelId == 0)
+                {
+                    obj.CAR_TYPE_ID = null;
+                }
+                else
+                {
+                    obj.CAR_TYPE_ID = carModelId;
+                }
+
                 if (formMode == FormMode.Add)
                 {
                     obj.CREATED_BY = LOGIN;
                     obj.UPDATED_BY = LOGIN;
+                }
+
+                if (formMode == FormMode.Edit)
+                {
+                    obj.AUTO_ID = visitorObj.AUTO_ID;
+                }
+
+                if (formMode == FormMode.Edit)
+                {
+                    obj.UPDATED_BY = LOGIN;
+                    obj.AUTO_ID = visitorObj.AUTO_ID;
+                    if (isChangePhoto || isChangeCardPhoto || isChangePass)
+                    {
+                        var attachment = new TRN_ATTACHEDMENT();
+
+                        if (isChangePhoto)
+                        {
+                            attachment.CONTACT_PHOTO = ImageToByte(picPhoto);
+                        }
+                        else
+                        {
+                            if (visitorObj.TRN_ATTACHEDMENT.Count > 0)
+                            {
+                                attachment.CONTACT_PHOTO = visitorObj.TRN_ATTACHEDMENT.FirstOrDefault().CONTACT_PHOTO;
+                            }
+                        }
+                        if (isChangeCardPhoto)
+                        {
+                            attachment.ID_CARD_PHOTO = ImageToByte(picCard);
+                        }
+                        else
+                        {
+                            if (visitorObj.TRN_ATTACHEDMENT.Count > 0)
+                            {
+                                attachment.ID_CARD_PHOTO = visitorObj.TRN_ATTACHEDMENT.FirstOrDefault().ID_CARD_PHOTO;
+                            }
+
+                        }
+
+
+
+                        obj.TRN_ATTACHEDMENT = new List<TRN_ATTACHEDMENT>();
+                        obj.TRN_ATTACHEDMENT.Add(attachment);
+                    }
+
+
                 }
 
                 return obj;
@@ -137,15 +192,14 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
         {
             try
             {
-                if (!string.IsNullOrEmpty(txtFirstName.Text) &&
-                    !string.IsNullOrEmpty(txtIDCard.Text) &&
+                if (!string.IsNullOrEmpty(txtFirstName.Text) &&                    
                     !string.IsNullOrEmpty(txtMeet.Text) &&
                     !string.IsNullOrEmpty(txtTopic.Text) &&
                     !string.IsNullOrEmpty(txtCar.Text) &&
                     IsNeedProvice() &&
                     carModelId > 0)
                 {
-                  
+
                     var data = _blService.GetBlackListByIdCard(txtIDCard.Text);
                     if (data.TRN_BLACKLIST == null)
                     {
@@ -169,8 +223,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                 else
                 {
                     List<string> listMsg = new List<string>();
-                    if (string.IsNullOrEmpty(txtFirstName.Text)) listMsg.Add("ชื่อจริง");
-                    if (string.IsNullOrEmpty(txtIDCard.Text)) listMsg.Add("รหัสบัตรประชาชน");
+                    if (string.IsNullOrEmpty(txtFirstName.Text)) listMsg.Add("ชื่อจริง");                  
                     if (string.IsNullOrEmpty(txtMeet.Text)) listMsg.Add("ผู้ที่ต้องการเข้าพบ");
                     if (string.IsNullOrEmpty(txtTopic.Text)) listMsg.Add("วัตถุประสงค์");
                     if (!IsNeedProvice()) listMsg.Add("จังหวัด");
@@ -528,6 +581,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
 
                 if (formMode == FormMode.Add)
                 {
+                    #region === ImageProcess ===
                     var obj = GetObjectfromControl();
                     string dir = DIRECTORY_IN + "\\" + obj.NO + "\\";
                     Directory.CreateDirectory(dir);
@@ -549,19 +603,36 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                         obj.TRN_ATTACHEDMENT.Add(attachment);
                         attachment.PHOTO_URL = dir;
                     }
+                    #endregion
 
                     if (visitorMode == VisitorMode.ConstructorIn)
                     {
                         obj.TYPE = VisitorMode.ConstructorIn.ToString();
-                        if (isChangePhoto)
-                        {
-                            picPhoto.Image.Save(dir + "PHOTO.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-                        }
-                        if (isChangeCardPhoto)
-                        {
-                            picCard.Image.Save(dir + "ID_CARD.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-                        }
+                       
+                    }
+                    if (visitorMode == VisitorMode.ConstructorOut)
+                    {
+                        obj.TYPE = VisitorMode.ConstructorOut.ToString();
+                      
+                    }
+                    if (visitorMode == VisitorMode.CustomerIn)
+                    {
+                        obj.TYPE = VisitorMode.CustomerIn.ToString();
+                        
+                    }
+                    if (visitorMode == VisitorMode.CustomerOut)
+                    {
+                        obj.TYPE = VisitorMode.CustomerOut.ToString();
+                       
+                    }
 
+                    if (isChangePhoto)
+                    {
+                        picPhoto.Image.Save(dir + "PHOTO.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                    }
+                    if (isChangeCardPhoto)
+                    {
+                        picCard.Image.Save(dir + "ID_CARD.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
                     }
 
                     var container = new ContainerVisitor { TRN_VISITOR = obj };
@@ -580,6 +651,26 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                         MessageBox.Show(res.Message + res.ExceptionMessage);
                     }
                 }
+                if (formMode == FormMode.Edit)
+                {
+                    var obj = GetObjectfromControl();
+
+                    var container = new ContainerVisitor { TRN_VISITOR = obj };
+
+                    var res = _service.Update(container);
+
+                    if (res.Status)
+                    {
+                        MessageBox.Show(Message.MSG_SAVE_COMPLETE, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show(res.Message + res.ExceptionMessage);
+                    }
+                }
+
 
             }
             catch (Exception ex)
@@ -696,7 +787,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
         {
             try
             {
-                // _container = new ContainerVisitor();
+
                 if (formMode == FormMode.Add)
                 {
                     var res = _service.GetLastUserNo();
@@ -727,17 +818,107 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     StartTimer();
                     btnBlacklist.Visible = false;
                 }
-                if (visitorMode == VisitorMode.ConstructorIn)
+                switch (visitorMode)
                 {
-                    label5.Text = "เข้า";
-                    txtIDCard.Text = visitorObj.ID_CARD;
-                    txtFirstName.Text = visitorObj.FIRST_NAME;
-                    txtLastName.Text = visitorObj.LAST_NAME;
-                    txtLicense.Text = visitorObj.LICENSE_PLATE;
-                    label6.Text = visitorObj.CREATED_DATE.ToString();
-                    txtMeet.Text = visitorObj.CONTACT_EMPLOYEE_NAME;
-                    txtTopic.Text = visitorObj.REASON_TEXT;
+                    case (VisitorMode.ConstructorIn):
+                    case (VisitorMode.ConstructorOut):
+                    case (VisitorMode.CustomerIn):
+                    case (VisitorMode.CustomerOut):
+                        {
+                            switch (visitorMode)
+                            {
+                                case (VisitorMode.ConstructorIn):
+                                    {
+                                        label5.Text = "โครงการเข้า";
+                                        this.Text = "โครงการเข้า";
+                                    }
+                                    break;
+                                case (VisitorMode.ConstructorOut):
+                                    {
+                                        label5.Text = "โครงการออก";
+                                        this.Text = "โครงการออก";
+                                    }
+                                    break;
+                                case (VisitorMode.CustomerIn):
+                                    {
+                                        label5.Text = "ลููกค้าเข้า";
+                                        this.Text = "ลููกค้าเข้า";
+                                    }
+                                    break;
+                                case (VisitorMode.CustomerOut):
+                                    {
+                                        label5.Text = "ลููกค้าออก";
+                                        this.Text = "ลููกค้าออก";
+                                    }
+                                    break;
+                            }
+
+                            if (formMode == FormMode.Edit)
+                            {
+                                txtNo.Text = visitorObj.NO.ToString();
+                            }
+
+                            txtIDCard.Text = visitorObj.ID_CARD;
+                            txtFirstName.Text = visitorObj.FIRST_NAME;
+                            txtLastName.Text = visitorObj.LAST_NAME;
+                            txtLicense.Text = visitorObj.LICENSE_PLATE;
+                            label6.Text = visitorObj.CREATED_DATE.ToString();
+                            txtMeet.Text = visitorObj.CONTACT_EMPLOYEE_NAME;
+                            txtTopic.Text = visitorObj.REASON_TEXT;
+
+                            #region === Child Object ===
+                            if (visitorObj.MAS_CAR_TYPE != null)
+                            {
+                                carModelId = visitorObj.MAS_CAR_TYPE.AUTO_ID;
+                                txtCar.Text = visitorObj.MAS_CAR_TYPE.NAME;
+                            }
+                            else
+                            {
+                                txtCar.Text = "";
+                            }
+
+                            if (visitorObj.MAS_PROVINCE != null)
+                            {
+                                provinceId = visitorObj.MAS_PROVINCE.AUTO_ID;
+                                txtProvince.Text = visitorObj.MAS_PROVINCE.NAME;
+                            }
+                            else
+                            {
+                                txtLicense.Text = "";
+                                txtLicense.Enabled = false;
+                                Lbl_LicensePlate.Visible = false;
+                                txtLicense.Visible = false;
+                                Lbl_Vahicle.Visible = false;
+                                txtProvince.Visible = false;
+                                btnProvince.Visible = false;
+                                btnLicense.Visible = false;
+                                tableLayoutPanel2.Visible = false;
+                                tableLayoutPanel8.Visible = false;
+                                provinceId = 0;
+                            }
+
+                            if (visitorObj.TRN_ATTACHEDMENT != null)
+                            {
+                                if (visitorObj.TRN_ATTACHEDMENT.Count > 0)
+                                {
+                                    if (visitorObj.TRN_ATTACHEDMENT.FirstOrDefault().CONTACT_PHOTO != null)
+                                    {
+                                        picPhoto.Image = ByteToImage(visitorObj.TRN_ATTACHEDMENT.FirstOrDefault().CONTACT_PHOTO);
+                                    }
+                                    if (visitorObj.TRN_ATTACHEDMENT.FirstOrDefault().ID_CARD_PHOTO != null)
+                                    {
+                                        picCard.Image = ByteToImage(visitorObj.TRN_ATTACHEDMENT.FirstOrDefault().ID_CARD_PHOTO);
+                                    }
+
+                                }
+
+                            }
+                            #endregion
+
+                        }
+                        break;
                 }
+
 
             }
             catch (Exception)
@@ -782,5 +963,30 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
             }
         }
         #endregion
+
+        private void BtnPhoto_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var frm = new CameraSelection();
+                frm.StartPosition = FormStartPosition.CenterParent;
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+
+                    if (frm.CAMERA != null)
+                    {
+                        isChangePhoto = true;
+                        picCard.Image = frm.CAMERA;
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+        }
     }
 }

@@ -92,7 +92,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
             frmVisitor frm = new frmVisitor();
             frm.visitorObj = obj.TRN_VISITOR;
             frm.formMode = FormMode.Add;
-            frm.visitorMode = VisitorMode.Regulary;
+           
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 this.DialogResult = DialogResult.OK;

@@ -39,6 +39,8 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.numSeq = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtLastname = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel4.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSeq)).BeginInit();
@@ -55,19 +57,24 @@
             this.tableLayoutPanel4.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.Lbl_FirstName, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.txtName, 1, 1);
-            this.tableLayoutPanel4.Controls.Add(this.Lbl_IDCard, 0, 2);
-            this.tableLayoutPanel4.Controls.Add(this.flowLayoutPanel1, 1, 4);
-            this.tableLayoutPanel4.Controls.Add(this.numSeq, 1, 2);
+            this.tableLayoutPanel4.Controls.Add(this.flowLayoutPanel1, 1, 5);
+            this.tableLayoutPanel4.Controls.Add(this.numSeq, 1, 4);
+            this.tableLayoutPanel4.Controls.Add(this.txtLastname, 1, 2);
+            this.tableLayoutPanel4.Controls.Add(this.Lbl_IDCard, 0, 4);
+            this.tableLayoutPanel4.Controls.Add(this.label1, 0, 2);
             this.tableLayoutPanel4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(12, 12);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(18, 18);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 5;
+            this.tableLayoutPanel4.RowCount = 6;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(558, 156);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(509, 228);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // lbType
@@ -75,10 +82,11 @@
             this.lbType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbType.AutoSize = true;
             this.lbType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbType.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbType.Location = new System.Drawing.Point(132, 0);
+            this.lbType.ForeColor = System.Drawing.Color.Red;
+            this.lbType.Location = new System.Drawing.Point(135, 0);
+            this.lbType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbType.Name = "lbType";
-            this.lbType.Size = new System.Drawing.Size(423, 25);
+            this.lbType.Size = new System.Drawing.Size(370, 25);
             this.lbType.TabIndex = 21;
             this.lbType.Text = "เพิ่มลูกค้า";
             // 
@@ -88,7 +96,8 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(3, 0);
+            this.label4.Location = new System.Drawing.Point(4, 0);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(123, 25);
             this.label4.TabIndex = 20;
@@ -100,20 +109,22 @@
             this.Lbl_FirstName.AutoSize = true;
             this.Lbl_FirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_FirstName.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Lbl_FirstName.Location = new System.Drawing.Point(77, 31);
+            this.Lbl_FirstName.Location = new System.Drawing.Point(78, 33);
+            this.Lbl_FirstName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_FirstName.Name = "Lbl_FirstName";
             this.Lbl_FirstName.Size = new System.Drawing.Size(49, 25);
             this.Lbl_FirstName.TabIndex = 0;
-            this.Lbl_FirstName.Text = "ชื่อ *";
+            this.Lbl_FirstName.Text = "* ชื่อ";
             // 
             // txtName
             // 
-            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(132, 28);
+            this.txtName.Location = new System.Drawing.Point(135, 30);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtName.MaxLength = 1000;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(423, 31);
+            this.txtName.Size = new System.Drawing.Size(286, 31);
             this.txtName.TabIndex = 0;
             // 
             // Lbl_IDCard
@@ -122,7 +133,8 @@
             this.Lbl_IDCard.AutoSize = true;
             this.Lbl_IDCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_IDCard.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Lbl_IDCard.Location = new System.Drawing.Point(71, 68);
+            this.Lbl_IDCard.Location = new System.Drawing.Point(72, 115);
+            this.Lbl_IDCard.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_IDCard.Name = "Lbl_IDCard";
             this.Lbl_IDCard.Size = new System.Drawing.Size(55, 25);
             this.Lbl_IDCard.TabIndex = 1;
@@ -133,9 +145,10 @@
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.Controls.Add(this.btnSave);
             this.flowLayoutPanel1.Controls.Add(this.btnCancel);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(132, 102);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(135, 153);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(334, 49);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(322, 63);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // btnSave
@@ -145,10 +158,10 @@
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSave.Location = new System.Drawing.Point(6, 6);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(6);
+            this.btnSave.Location = new System.Drawing.Point(9, 10);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(9, 10, 9, 10);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(159, 37);
+            this.btnSave.Size = new System.Drawing.Size(154, 43);
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "บันทึก";
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -162,10 +175,10 @@
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancel.Location = new System.Drawing.Point(177, 6);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(6);
+            this.btnCancel.Location = new System.Drawing.Point(181, 10);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(9, 10, 9, 10);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(151, 37);
+            this.btnCancel.Size = new System.Drawing.Size(132, 43);
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "ยกเลิก";
             this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -175,17 +188,47 @@
             // numSeq
             // 
             this.numSeq.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numSeq.Location = new System.Drawing.Point(132, 65);
+            this.numSeq.Location = new System.Drawing.Point(135, 112);
+            this.numSeq.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.numSeq.Name = "numSeq";
-            this.numSeq.Size = new System.Drawing.Size(120, 31);
+            this.numSeq.Size = new System.Drawing.Size(180, 31);
             this.numSeq.TabIndex = 22;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.Location = new System.Drawing.Point(35, 74);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 25);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "* นามสกุล";
+            // 
+            // txtLastname
+            // 
+            this.txtLastname.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtLastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastname.Location = new System.Drawing.Point(135, 71);
+            this.txtLastname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtLastname.MaxLength = 1000;
+            this.txtLastname.Name = "txtLastname";
+            this.txtLastname.Size = new System.Drawing.Size(286, 31);
+            this.txtLastname.TabIndex = 24;
             // 
             // frmPlantVisitor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(589, 183);
+            this.ClientSize = new System.Drawing.Size(552, 262);
             this.Controls.Add(this.tableLayoutPanel4);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmPlantVisitor";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -212,5 +255,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.NumericUpDown numSeq;
+        private System.Windows.Forms.TextBox txtLastname;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -26,6 +26,7 @@ namespace BIG.VMS.PRESENT.Forms.CustomerVisit
             List<string> listMsg = new List<string>();
 
             if (string.IsNullOrEmpty(txtName.Text)) listMsg.Add("ชื่อ");
+            if (string.IsNullOrEmpty(txtName.Text)) listMsg.Add("นามสกุล");
 
             string joined = string.Join("," + Environment.NewLine, listMsg);
 
@@ -53,7 +54,7 @@ namespace BIG.VMS.PRESENT.Forms.CustomerVisit
             {
                 TRN_CUSTOMER_VISIT_LIST obj = new TRN_CUSTOMER_VISIT_LIST()
                 {
-                    FULLNAME = txtName.Text,
+                    FULLNAME = txtName.Text + txtLastname.Text,
                     SEQ = Convert.ToInt32 (numSeq.Value),
                     
                     

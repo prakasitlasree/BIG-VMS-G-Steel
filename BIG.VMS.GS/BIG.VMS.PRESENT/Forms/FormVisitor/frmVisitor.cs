@@ -222,7 +222,6 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
 
                         }
 
-
                     }
 
 
@@ -467,10 +466,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                         }
 
                     }
-                    if (visitorMode == VisitorMode.Regulary)
-                    {
-                        obj.TYPE = VisitorMode.Regulary.ToString();
-                    }
+                  
 
                     var container = new ContainerVisitor { TRN_VISITOR = obj };
 
@@ -652,8 +648,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     IsNeedProvice() &&
                     contactEmployeeId > 0 && carModelId > 0 && reasonId > 0)
                 {
-                    //if (IsValidCheckPersonID(txtIDCard.Text))
-                    //{
+                    
                     var data = _blService.GetBlackListByIdCard(txtIDCard.Text);
                     if (data.TRN_BLACKLIST == null)
                     {
@@ -671,11 +666,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                         msg += Environment.NewLine + "ณ วันที่ : " + blData.UPDATED_DATE;
                         MessageBox.Show(msg, "บุคคล Blacklist", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("บัตรประชาชนไม่ถูกต้อง", "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    //}
+                    
                 }
 
                 else

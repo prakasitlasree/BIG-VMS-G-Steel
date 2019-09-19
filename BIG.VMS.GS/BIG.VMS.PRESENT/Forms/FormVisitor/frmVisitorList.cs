@@ -354,8 +354,8 @@ namespace BIG.VMS.PRESENT.Forms.Home
                                 break;
                             case ("CustomerIn"):
                             case ("CustomerOut"):
-                            case ("ConStructorIn"):
-                            case ("ConStructorOut"):
+                            case ("ConstructorIn"):
+                            case ("ConstructorOut"):
                                 {
                                     #region === Mode ===
                                     frmConstractorVisitor frm = new frmConstractorVisitor();
@@ -370,11 +370,11 @@ namespace BIG.VMS.PRESENT.Forms.Home
                                     {
                                         frm.visitorMode = VisitorMode.CustomerOut;
                                     }
-                                    else if (obj.TRN_VISITOR.TYPE == "ConStructorIn")
+                                    else if (obj.TRN_VISITOR.TYPE == "ConstructorIn")
                                     {
                                         frm.visitorMode = VisitorMode.ConstructorIn;
                                     }
-                                    else if (obj.TRN_VISITOR.TYPE == "ConStructorOut")
+                                    else if (obj.TRN_VISITOR.TYPE == "ConstructorOut")
                                     {
                                         frm.visitorMode = VisitorMode.ConstructorOut;
                                     }

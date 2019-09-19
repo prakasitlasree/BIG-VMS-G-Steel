@@ -156,7 +156,10 @@ namespace BIG.VMS.DATASERVICE
                         (item.TYPE == "Appointment" ? "นัดล่วงหน้า(เข้า)" :
                         (item.TYPE == "AppointmentOut" ? "นัดล่วงหน้า(ออก)" :
                         (item.TYPE == "ConstructorIn" ? "โครงการ(เข้า)" :
-                        (item.TYPE == "ConstructorOut" ? "โครงการ(ออก)" : "ไม่ระบุ"))))),
+                        (item.TYPE == "ConstructorOut" ? "โครงการ(ออก)" :
+                        (item.TYPE == "CustomerIn" ? "ลูกค้า(เข้า)" :
+                        (item.TYPE == "CustomerOut" ? "ลูกค้า(ออก)" :
+                        "ไม่ระบุ"))))))),
 
                         FIRST_NAME = item.FIRST_NAME,
                         LAST_NAME = item.LAST_NAME,
@@ -170,12 +173,21 @@ namespace BIG.VMS.DATASERVICE
                         CREATED_DATE = item.CREATED_DATE,
                         UPDATED_BY = item.UPDATED_BY,
                         UPDATED_DATE = item.UPDATED_DATE,
-                        CONTACT_NAME = item.TYPE == "ConstructorIn" || item.TYPE == "ConstructorOut" ? item.CONTACT_EMPLOYEE_NAME : item.MAS_EMPLOYEE.FIRST_NAME + " " + item.MAS_EMPLOYEE.LAST_NAME,
+
+                        CONTACT_NAME = item.TYPE == "ConstructorIn" || 
+                        item.TYPE == "ConstructorOut" || 
+                        item.TYPE == "CustomerIn" || 
+                        item.TYPE == "CustomerOut" ? item.CONTACT_EMPLOYEE_NAME : item.MAS_EMPLOYEE.FIRST_NAME + " " + item.MAS_EMPLOYEE.LAST_NAME,
+
                         CAR_TYPE_NAME = item.MAS_CAR_TYPE.NAME,
                         FULL_NAME = item.FIRST_NAME + " " + item.LAST_NAME,
                         DEPT_NAME = item.MAS_EMPLOYEE.MAS_DEPARTMENT.NAME,
                         TIME_IN = item.CREATED_DATE,
-                        TOPIC = item.TYPE == "ConstructorIn" || item.TYPE == "ConstructorOut" ? item.REASON_TEXT : item.MAS_REASON.REASON,
+
+                        TOPIC = item.TYPE == "ConstructorIn" || 
+                        item.TYPE == "ConstructorOut" || 
+                        item.TYPE == "CustomerIn" || 
+                        item.TYPE == "CustomerOut" ? item.REASON_TEXT : item.MAS_REASON.REASON,
 
                     });
 
@@ -258,6 +270,8 @@ namespace BIG.VMS.DATASERVICE
                         updateData.LICENSE_PLATE_PROVINCE_ID = visitorObj.LICENSE_PLATE_PROVINCE_ID;
                         updateData.REASON_ID = visitorObj.REASON_ID;
                         updateData.CONTACT_EMPLOYEE_ID = visitorObj.CONTACT_EMPLOYEE_ID;
+                        updateData.REASON_TEXT = visitorObj.REASON_TEXT;
+                        updateData.CONTACT_EMPLOYEE_NAME = visitorObj.CONTACT_EMPLOYEE_NAME;
                         updateData.UPDATED_DATE = DateTime.Now;
                         updateData.UPDATED_BY = visitorObj.UPDATED_BY;
 
@@ -367,7 +381,7 @@ namespace BIG.VMS.DATASERVICE
                     var startDate = DateTime.Now.AddDays(-5);
                     var endDate = DateTime.Now.AddDays(5);
 
-                    var isAlreadyOut = ctx.TRN_VISITOR.Any(o => (o.STATUS == 2) && (o.NO == no && (o.TYPE == "In" || o.TYPE == "Appointment" || o.TYPE == "ConstructorIn")) && (o.CREATED_DATE >= startDate && o.CREATED_DATE <= endDate) && (o.YEAR == year));
+                    var isAlreadyOut = ctx.TRN_VISITOR.Any(o => (o.STATUS == 2) && (o.NO == no && (o.TYPE == "In" || o.TYPE == "Appointment" || o.TYPE == "ConstructorIn" || o.TYPE == "CustomerIn")) && (o.CREATED_DATE >= startDate && o.CREATED_DATE <= endDate) && (o.YEAR == year));
                     if (isAlreadyOut)
                     {
                         TRN_VISITOR visit = new TRN_VISITOR()
@@ -386,7 +400,7 @@ namespace BIG.VMS.DATASERVICE
                         var reTrnVisitor = ctx.TRN_VISITOR
                                         .Include("MAS_PROVINCE")
                                         .Include("TRN_ATTACHEDMENT")
-                                        .Where(o => o.NO == no && (o.TYPE == "In" || o.TYPE == "Appointment" || o.TYPE == "ConstructorIn"))
+                                        .Where(o => o.NO == no && (o.TYPE == "In" || o.TYPE == "Appointment" || o.TYPE == "ConstructorIn" || o.TYPE == "CustomerIn"))
                                         .Where(o => (o.CREATED_DATE >= startDate && o.CREATED_DATE <= endDate) && o.YEAR == year)
                                         .OrderByDescending(x => x.NO).ToList();
 
@@ -631,7 +645,7 @@ namespace BIG.VMS.DATASERVICE
             return listData;
         }
 
-        public ContainerVisitor UpdateVisitorOut(ContainerVisitor obj)
+        public ContainerVisitor UpdateVisitorOut(int id)
         {
             var result = new ContainerVisitor();
             try
@@ -639,7 +653,7 @@ namespace BIG.VMS.DATASERVICE
                 using (var ctx = new BIG_VMSEntities())
                 {
 
-                    var reTrnVisitor = ctx.TRN_VISITOR.Where(o => o.NO == obj.TRN_VISITOR.NO).FirstOrDefault();
+                    var reTrnVisitor = ctx.TRN_VISITOR.Where(o => o.AUTO_ID == id).FirstOrDefault();
 
 
 

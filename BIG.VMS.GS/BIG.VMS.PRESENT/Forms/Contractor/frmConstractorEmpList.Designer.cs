@@ -32,8 +32,8 @@
             this.gridProjectMember = new System.Windows.Forms.DataGridView();
             this.SELECT = new System.Windows.Forms.DataGridViewImageColumn();
             this.AUTO_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CARD_TYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FULLNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CARD_TYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_CARD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.POSITION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridProjectMember)).BeginInit();
@@ -47,8 +47,8 @@
             this.gridProjectMember.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SELECT,
             this.AUTO_ID,
-            this.CARD_TYPE,
             this.FULLNAME,
+            this.CARD_TYPE,
             this.ID_CARD,
             this.POSITION});
             this.gridProjectMember.Location = new System.Drawing.Point(11, 12);
@@ -73,19 +73,19 @@
             this.AUTO_ID.Visible = false;
             this.AUTO_ID.Width = 115;
             // 
-            // CARD_TYPE
-            // 
-            this.CARD_TYPE.DataPropertyName = "CARD_TYPE";
-            this.CARD_TYPE.HeaderText = "บัตร";
-            this.CARD_TYPE.Name = "CARD_TYPE";
-            this.CARD_TYPE.Width = 65;
-            // 
             // FULLNAME
             // 
             this.FULLNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.FULLNAME.DataPropertyName = "FULLNAME";
             this.FULLNAME.HeaderText = "ชื่อ-นามสกุล";
             this.FULLNAME.Name = "FULLNAME";
+            // 
+            // CARD_TYPE
+            // 
+            this.CARD_TYPE.DataPropertyName = "CARD_TYPE";
+            this.CARD_TYPE.HeaderText = "บัตร";
+            this.CARD_TYPE.Name = "CARD_TYPE";
+            this.CARD_TYPE.Width = 65;
             // 
             // ID_CARD
             // 
@@ -124,8 +124,8 @@
         private System.Windows.Forms.DataGridView gridProjectMember;
         private System.Windows.Forms.DataGridViewImageColumn SELECT;
         private System.Windows.Forms.DataGridViewTextBoxColumn AUTO_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CARD_TYPE;
         private System.Windows.Forms.DataGridViewTextBoxColumn FULLNAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CARD_TYPE;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_CARD;
         private System.Windows.Forms.DataGridViewTextBoxColumn POSITION;
     }

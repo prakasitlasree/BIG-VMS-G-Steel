@@ -844,8 +844,29 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
             }
         }
 
+        private void btnPhoto_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var frm = new CameraSelection();
+                frm.StartPosition = FormStartPosition.CenterParent;
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
 
+                    if (frm.CAMERA != null)
+                    {
+                        isChangePhoto = true;
+                        picCard.Image = frm.CAMERA;
+                    }
 
+                }
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+        }
     }
 }

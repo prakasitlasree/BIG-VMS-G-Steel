@@ -82,6 +82,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.btnUploadCam = new System.Windows.Forms.Button();
             this.btnDeleteCam = new System.Windows.Forms.Button();
+            this.btnPhoto = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -666,6 +667,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.btnPhoto);
             this.panel4.Controls.Add(this.brn_UploadImgCard);
             this.panel4.Controls.Add(this.bthCardDelete);
             this.panel4.Controls.Add(this.label7);
@@ -701,13 +703,13 @@
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label7.AutoSize = true;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label7.Location = new System.Drawing.Point(0, 0);
+            this.label7.Location = new System.Drawing.Point(6, 7);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(208, 25);
+            this.label7.Size = new System.Drawing.Size(250, 25);
             this.label7.TabIndex = 6;
-            this.label7.Text = "รูปบัตรประชาชน/ใบขับขี่";
+            this.label7.Text = "รูปบัตรประชาชน/ใบขับขี่/อิ่นๆ";
             // 
             // picCard
             // 
@@ -777,7 +779,7 @@
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 6);
+            this.label9.Location = new System.Drawing.Point(3, 4);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(65, 25);
             this.label9.TabIndex = 3;
@@ -806,6 +808,18 @@
             this.btnDeleteCam.TabIndex = 5;
             this.btnDeleteCam.UseVisualStyleBackColor = true;
             this.btnDeleteCam.Click += new System.EventHandler(this.btnDeleteCam_Click);
+            // 
+            // btnPhoto
+            // 
+            this.btnPhoto.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnPhoto.Image = ((System.Drawing.Image)(resources.GetObject("btnPhoto.Image")));
+            this.btnPhoto.Location = new System.Drawing.Point(318, 0);
+            this.btnPhoto.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPhoto.Name = "btnPhoto";
+            this.btnPhoto.Size = new System.Drawing.Size(38, 38);
+            this.btnPhoto.TabIndex = 7;
+            this.btnPhoto.UseVisualStyleBackColor = true;
+            this.btnPhoto.Click += new System.EventHandler(this.btnPhoto_Click);
             // 
             // frmCustomerVisitor
             // 
@@ -903,5 +917,6 @@
         private System.Windows.Forms.Button BtnTakePhoto;
         private System.Windows.Forms.Button btnBlacklist;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Button btnPhoto;
     }
 }

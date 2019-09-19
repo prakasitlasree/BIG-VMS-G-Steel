@@ -471,10 +471,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitorBypass
                         }
 
                     }
-                    if (visitorMode == VisitorMode.Regulary)
-                    {
-                        obj.TYPE = VisitorMode.Regulary.ToString();
-                    }
+                 
 
                     var container = new ContainerVisitor { TRN_VISITOR = obj };
 
