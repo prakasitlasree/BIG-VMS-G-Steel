@@ -305,6 +305,35 @@ namespace BIG.VMS.DATASERVICE
             return resp;
         }
 
+        public Response GetProjectMemberByProjectID(int id)
+        {
+            var resp = new Response();
+
+
+            try
+            {
+                using (var ctx = new BIG_VMSEntities())
+                {
+                    var project = ctx.TRN_PROJECT_MASTER
+                        .Include("TRN_PROJECT_MEMBER")
+                        .Where(o => o.AUTO_ID == id).FirstOrDefault();
+
+                    resp.ResultObj = project.TRN_PROJECT_MEMBER;
+                    resp.Status = true;
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                resp.Status = false;
+                resp.ExceptionMessage = ex.Message.ToString();
+            }
+
+
+            return resp;
+        }
+
         public Response GetConstractor(int id)
         {
             var resp = new Response();

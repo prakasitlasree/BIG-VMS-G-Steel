@@ -197,6 +197,7 @@
             // 
             this.btnFirst.BackColor = System.Drawing.Color.White;
             this.btnFirst.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFirst.Image = ((System.Drawing.Image)(resources.GetObject("btnFirst.Image")));
             this.btnFirst.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFirst.Location = new System.Drawing.Point(236, 3);
@@ -211,6 +212,7 @@
             // 
             this.btnPrevious.BackColor = System.Drawing.Color.White;
             this.btnPrevious.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrevious.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevious.Image")));
             this.btnPrevious.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPrevious.Location = new System.Drawing.Point(469, 3);
@@ -225,6 +227,7 @@
             // 
             this.btnNext.BackColor = System.Drawing.Color.White;
             this.btnNext.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
             this.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNext.Location = new System.Drawing.Point(702, 3);
@@ -240,6 +243,7 @@
             // 
             this.btnLast.BackColor = System.Drawing.Color.White;
             this.btnLast.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLast.Image = ((System.Drawing.Image)(resources.GetObject("btnLast.Image")));
             this.btnLast.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLast.Location = new System.Drawing.Point(935, 3);
@@ -688,9 +692,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtNo;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.DataGridViewImageColumn colEdit;
-        private System.Windows.Forms.DataGridViewImageColumn colDelete;
-        private System.Windows.Forms.DataGridViewImageColumn colPrint;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboType;
         private System.Windows.Forms.Button btnBlacklist;
@@ -705,5 +706,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.DataGridViewImageColumn colEdit;
+        private System.Windows.Forms.DataGridViewImageColumn colDelete;
+        private System.Windows.Forms.DataGridViewImageColumn colPrint;
     }
 }

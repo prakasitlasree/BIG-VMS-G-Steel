@@ -55,7 +55,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     btn.Dock = DockStyle.Left;
                     btn.Width = 98;
                     btn.Font = new Font(btn.Font.FontFamily, fontSize);
-                    btn.BackColor = Color.FromArgb(232, 249, 102);
+                    btn.BackColor = Color.FromArgb(240, 248, 255);
                     btn.Text = province[i].Text;
                     btn.Tag = province[i].Value;
 
@@ -69,7 +69,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     btn.Dock = DockStyle.Left;
                     btn.Width = 98;
                     btn.Font = new Font(btn.Font.FontFamily, fontSize);
-                    btn.BackColor = Color.FromArgb(232, 249, 102);
+                    btn.BackColor = Color.FromArgb(240, 248, 255);
                     btn.Text = province[i].Text;
                     btn.Tag = province[i].Value;
 
@@ -83,7 +83,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     btn.Dock = DockStyle.Left;
                     btn.Width = 98;
                     btn.Font = new Font(btn.Font.FontFamily, fontSize);
-                    btn.BackColor = Color.FromArgb(232, 249, 102);
+                    btn.BackColor = Color.FromArgb(240, 248, 255);
                     btn.Text = province[i].Text;
                     btn.Tag = province[i].Value;
 
@@ -97,7 +97,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     btn.Dock = DockStyle.Left;
                     btn.Width = 98;
                     btn.Font = new Font(btn.Font.FontFamily, fontSize);
-                    btn.BackColor = Color.FromArgb(232, 249, 102);
+                    btn.BackColor = Color.FromArgb(240, 248, 255);
                     btn.Text = province[i].Text;
                     btn.Tag = province[i].Value;
 
@@ -111,7 +111,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     btn.Dock = DockStyle.Left;
                     btn.Width = 98;
                     btn.Font = new Font(btn.Font.FontFamily, fontSize);
-                    btn.BackColor = Color.FromArgb(232, 249, 102);
+                    btn.BackColor = Color.FromArgb(240, 248, 255);
                     btn.Text = province[i].Text;
                     btn.Tag = province[i].Value;
 
@@ -125,7 +125,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     btn.Dock = DockStyle.Left;
                     btn.Width = 98;
                     btn.Font = new Font(btn.Font.FontFamily, fontSize);
-                    btn.BackColor = Color.FromArgb(232, 249, 102);
+                    btn.BackColor = Color.FromArgb(240, 248, 255);
                     btn.Text = province[i].Text;
                     btn.Tag = province[i].Value;
 
@@ -139,7 +139,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     btn.Dock = DockStyle.Left;
                     btn.Width = 98;
                     btn.Font = new Font(btn.Font.FontFamily, fontSize);
-                    btn.BackColor = Color.FromArgb(232, 249, 102);
+                    btn.BackColor = Color.FromArgb(240, 248, 255);
                     btn.Text = province[i].Text;
                     btn.Tag = province[i].Value;
 
@@ -174,10 +174,10 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     btn.Dock = DockStyle.Left;
                     btn.Width = 98;
                     btn.Font = new Font(btn.Font.FontFamily, fontSize);
-                    btn.BackColor = Color.FromArgb(232, 249, 102);
+                    btn.BackColor = Color.FromArgb(240, 248, 255);
                     btn.Text = province[i].Text;
                     btn.Tag = province[i].Value;
-
+                    btn.FlatStyle = FlatStyle.Flat;
                     row1.Controls.Add(btn);
                     btn.Click += new EventHandler(ProvinceSelected_EventHadler);
 
@@ -188,10 +188,10 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     btn.Dock = DockStyle.Left;
                     btn.Width = 98;
                     btn.Font = new Font(btn.Font.FontFamily, fontSize);
-                    btn.BackColor = Color.FromArgb(232, 249, 102);
+                    btn.BackColor = Color.FromArgb(240, 248, 255);
                     btn.Text = province[i].Text;
                     btn.Tag = province[i].Value;
-
+                    btn.FlatStyle = FlatStyle.Flat;
                     row2.Controls.Add(btn);
                     btn.Click += new EventHandler(ProvinceSelected_EventHadler);
                 }
@@ -202,10 +202,10 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     btn.Dock = DockStyle.Left;
                     btn.Width = 98;
                     btn.Font = new Font(btn.Font.FontFamily, fontSize);
-                    btn.BackColor = Color.FromArgb(232, 249, 102);
+                    btn.BackColor = Color.FromArgb(240, 248, 255);
                     btn.Text = province[i].Text;
                     btn.Tag = province[i].Value;
-
+                    btn.FlatStyle = FlatStyle.Flat;
                     row3.Controls.Add(btn);
                     btn.Click += new EventHandler(ProvinceSelected_EventHadler);
 
@@ -216,10 +216,10 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     btn.Dock = DockStyle.Left;
                     btn.Width = 98;
                     btn.Font = new Font(btn.Font.FontFamily, fontSize);
-                    btn.BackColor = Color.FromArgb(232, 249, 102);
+                    btn.BackColor = Color.FromArgb(240, 248, 255);
                     btn.Text = province[i].Text;
                     btn.Tag = province[i].Value;
-
+                    btn.FlatStyle = FlatStyle.Flat;
                     row4.Controls.Add(btn);
                     btn.Click += new EventHandler(ProvinceSelected_EventHadler);
 
@@ -230,10 +230,10 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     btn.Dock = DockStyle.Left;
                     btn.Width = 98;
                     btn.Font = new Font(btn.Font.FontFamily, fontSize);
-                    btn.BackColor = Color.FromArgb(232, 249, 102);
+                    btn.BackColor = Color.FromArgb(240, 248, 255);
                     btn.Text = province[i].Text;
                     btn.Tag = province[i].Value;
-
+                    btn.FlatStyle = FlatStyle.Flat;
                     row5.Controls.Add(btn);
                     btn.Click += new EventHandler(ProvinceSelected_EventHadler);
 
@@ -244,10 +244,10 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     btn.Dock = DockStyle.Left;
                     btn.Width = 98;
                     btn.Font = new Font(btn.Font.FontFamily, fontSize);
-                    btn.BackColor = Color.FromArgb(232, 249, 102);
+                    btn.BackColor = Color.FromArgb(240, 248, 255);
                     btn.Text = province[i].Text;
                     btn.Tag = province[i].Value;
-
+                    btn.FlatStyle = FlatStyle.Flat;
                     row6.Controls.Add(btn);
                     btn.Click += new EventHandler(ProvinceSelected_EventHadler);
 
@@ -258,10 +258,10 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     btn.Dock = DockStyle.Left;
                     btn.Width = 98;
                     btn.Font = new Font(btn.Font.FontFamily, fontSize);
-                    btn.BackColor = Color.FromArgb(232, 249, 102);
+                    btn.BackColor = Color.FromArgb(240, 248, 255);
                     btn.Text = province[i].Text;
                     btn.Tag = province[i].Value;
-
+                    btn.FlatStyle = FlatStyle.Flat;
                     row7.Controls.Add(btn);
                     btn.Click += new EventHandler(ProvinceSelected_EventHadler);
 

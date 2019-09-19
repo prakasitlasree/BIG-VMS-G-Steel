@@ -168,6 +168,12 @@
     <Compile Include="Forms\Appointment\frmGSAppointmentList.Designer.cs">
       <DependentUpon>frmGSAppointmentList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Contractor\frmConstractorEmpList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Contractor\frmConstractorEmpList.Designer.cs">
+      <DependentUpon>frmConstractorEmpList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Contractor\frmContractor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +203,18 @@
     </Compile>
     <Compile Include="Forms\Contractor\frmProjectMember.Designer.cs">
       <DependentUpon>frmProjectMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Contractor\frmConstractVisitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Contractor\frmConstractVisitor.Designer.cs">
+      <DependentUpon>frmConstractVisitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomerVisit\frmCustomerVisitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomerVisit\frmConstractorVisitor.Designer.cs">
+      <DependentUpon>frmCustomerVisitor.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\CustomerVisit\frmPlantVisit.cs">
       <SubType>Form</SubType>
@@ -271,6 +289,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ReportDBSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmAttachment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmAttachment.Designer.cs">
+      <DependentUpon>frmAttachment.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormVisitor\frmBlacklistList.cs">
       <SubType>Form</SubType>
@@ -479,6 +503,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\CardHelper.cs" />
+    <EmbeddedResource Include="Forms\Contractor\frmConstractorEmpList.resx">
+      <DependentUpon>frmConstractorEmpList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Contractor\frmContractor.resx">
       <DependentUpon>frmContractor.cs</DependentUpon>
     </EmbeddedResource>
@@ -493,6 +520,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Contractor\frmProjectMember.resx">
       <DependentUpon>frmProjectMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Contractor\frmConstractVisitor.resx">
+      <DependentUpon>frmConstractVisitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomerVisit\frmCustomerVisitor.resx">
+      <DependentUpon>frmCustomerVisitor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomerVisit\frmPlantVisit.resx">
       <DependentUpon>frmPlantVisit.cs</DependentUpon>
@@ -526,6 +559,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormReport\frmReportViewer.resx">
       <DependentUpon>frmReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVisitor\frmAttachment.resx">
+      <DependentUpon>frmAttachment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormVisitor\frmBlacklistList.resx">
       <DependentUpon>frmBlacklistList.cs</DependentUpon>

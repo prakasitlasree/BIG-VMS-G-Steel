@@ -139,13 +139,13 @@
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.LightGreen;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
             this.btnAdd.Image = global::BIG.VMS.PRESENT.Properties.Resources.Add;
             this.btnAdd.Location = new System.Drawing.Point(159, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(150, 36);
+            this.btnAdd.Size = new System.Drawing.Size(166, 36);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "เพิ่มผู้รับเหมา";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -156,7 +156,7 @@
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.Black;
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));

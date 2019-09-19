@@ -52,8 +52,6 @@ namespace BIG.VMS.PRESENT.Forms.Home
                 gridVisitorList.Columns[2].Visible = false;
             }
 
-
-
         }
 
         private void BindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -108,7 +106,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
             {
                 if (i % 2 == 0)
                 {
-                    gridVisitorList.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(240, 248, 255) ;
+                    gridVisitorList.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(240, 248, 255);
                 }
                 else
                 {
@@ -118,7 +116,9 @@ namespace BIG.VMS.PRESENT.Forms.Home
             }
             foreach (DataGridViewRow row in gridVisitorList.Rows)
             {
-                if (row.Cells["TYPE"].Value.ToString() == "ออก" || row.Cells["TYPE"].Value.ToString() == "นัดล่วงหน้า(ออก)")
+                if (row.Cells["TYPE"].Value.ToString() == "ออก"
+                    || row.Cells["TYPE"].Value.ToString() == "นัดล่วงหน้า(ออก)"
+                    || row.Cells["TYPE"].Value.ToString() == "โครงการ(ออก)")
                 {
 
 
@@ -168,7 +168,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
         private void InitialComboBox()
         {
 
-            //AddRangeComboBox(comboType, _comboService.GetComboVisitorType());
+
             comboType.SelectedIndex = 0;
 
         }
@@ -314,28 +314,84 @@ namespace BIG.VMS.PRESENT.Forms.Home
                         #region ===================== edit =====================
                         var id = Convert.ToInt32(gridVisitorList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
                         var obj = _service.GetVisitorByAutoID(id);
-                        frmVisitor frm = new frmVisitor();
-                        frm.visitorObj = obj.TRN_VISITOR;
-                        if (obj.TRN_VISITOR.TYPE == "Appointment")
-                        {
-                            frm.visitorMode = VisitorMode.Appointment;
-                        }
-                        if (obj.TRN_VISITOR.TYPE == "In")
-                        {
-                            frm.visitorMode = VisitorMode.In;
-                        }
-                        if (obj.TRN_VISITOR.TYPE == "Out")
-                        {
-                            frm.visitorMode = VisitorMode.Out;
-                        }
-                        frm.formMode = FormMode.Edit;
 
-                        if (frm.ShowDialog() == DialogResult.OK)
+                        switch (obj.TRN_VISITOR.TYPE)
                         {
-                            ResetScreen();
+                            case ("Appointment"):
+                            case ("AppointmentOut"):
+                            case ("Out"):
+                            case ("In"):
+                                {
+                                    #region === Mode ===
+                                    frmVisitor frm = new frmVisitor();
+                                    frm.formMode = FormMode.Edit;
+                                    frm.visitorObj = obj.TRN_VISITOR;
+
+                                    if (obj.TRN_VISITOR.TYPE == "Appointment")
+                                    {
+                                        frm.visitorMode = VisitorMode.Appointment;
+                                    }
+                                    else if (obj.TRN_VISITOR.TYPE == "AppointmentOut")
+                                    {
+                                        frm.visitorMode = VisitorMode.AppointmentOut;
+                                    }
+                                    else if (obj.TRN_VISITOR.TYPE == "In")
+                                    {
+                                        frm.visitorMode = VisitorMode.In;
+                                    }
+                                    else if (obj.TRN_VISITOR.TYPE == "Out")
+                                    {
+                                        frm.visitorMode = VisitorMode.Out;
+                                    }
+
+
+                                    if (frm.ShowDialog() == DialogResult.OK)
+                                    {
+                                        ResetScreen();
+                                    }
+                                    #endregion
+                                }
+                                break;
+                            case ("CustomerIn"):
+                            case ("CustomerOut"):
+                            case ("ConStructorIn"):
+                            case ("ConStructorOut"):
+                                {
+                                    #region === Mode ===
+                                    frmConstractorVisitor frm = new frmConstractorVisitor();
+                                    frm.formMode = FormMode.Edit;
+                                    frm.visitorObj = obj.TRN_VISITOR;
+
+                                    if (obj.TRN_VISITOR.TYPE == "CustomerIn")
+                                    {
+                                        frm.visitorMode = VisitorMode.CustomerIn;
+                                    }
+                                    else if (obj.TRN_VISITOR.TYPE == "CustomerOut")
+                                    {
+                                        frm.visitorMode = VisitorMode.CustomerOut;
+                                    }
+                                    else if (obj.TRN_VISITOR.TYPE == "ConStructorIn")
+                                    {
+                                        frm.visitorMode = VisitorMode.ConstructorIn;
+                                    }
+                                    else if (obj.TRN_VISITOR.TYPE == "ConStructorOut")
+                                    {
+                                        frm.visitorMode = VisitorMode.ConstructorOut;
+                                    }
+
+
+                                    if (frm.ShowDialog() == DialogResult.OK)
+                                    {
+                                        ResetScreen();
+                                    }
+                                    #endregion
+                                }
+                                break;
                         }
+                       
                         #endregion
                     }
+
                     else if (e.ColumnIndex == 1)
                     {
                         #region ===================== delete =====================
@@ -365,7 +421,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
                     else if (e.ColumnIndex == 2)
                     {
                         var type = gridVisitorList.Rows[e.RowIndex].Cells["TYPE"].Value.ToString();
-                        if (type != "ออก" && type != "นัดล่วงหน้า(ออก)")
+                        if (type != "ออก" && type != "นัดล่วงหน้า(ออก)" && type != "ลููกค้า(ออก)" && type != "โครงการ(ออก)")
                         {
                             #region ===================== print =====================
                             var id = Convert.ToInt32(gridVisitorList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
@@ -392,13 +448,12 @@ namespace BIG.VMS.PRESENT.Forms.Home
                                     rpt.SetDataSource(dt);
                                     rpt.PrintToPrinter(1, true, 0, 0);
                                 }
-
-
                             }
                             #endregion
                         }
 
                     }
+
                 }
             }
             catch (Exception ex)

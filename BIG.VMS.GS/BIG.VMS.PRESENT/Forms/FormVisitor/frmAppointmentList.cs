@@ -2,6 +2,7 @@
 using BIG.VMS.MODEL.CustomModel;
 using BIG.VMS.MODEL.CustomModel.Filter;
 using BIG.VMS.MODEL.EntityModel;
+using BIG.VMS.PRESENT.Forms.FormVisitorBypass;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -207,50 +208,87 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
             {
                 if (e.ColumnIndex == 0 && gridAppointmentList.Rows[e.RowIndex].Cells["STATUS"].Value.ToString() != "เข้าพบแล้ว")
                 {
-
-                    var id = Convert.ToInt32(gridAppointmentList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
-                    ContainerAppointment container = new ContainerAppointment();
-                    var filter = new AppointmentFilter();
-                    TRN_VISITOR visitorObj = new TRN_VISITOR();
-                    filter.AUTO_ID = id;
-                    container.Filter = filter;
-                    var obj = _service.GetItem(container);
-                    visitorObj.CONTACT_EMPLOYEE_ID = obj.TRN_APPOINTMENT.CONTACT_EMPLOYEE_ID;
-                    visitorObj.FIRST_NAME = obj.TRN_APPOINTMENT.REQUEST_FIRST_NAME;
-                    visitorObj.LAST_NAME = obj.TRN_APPOINTMENT.REQUEST_LAST_NAME;
-                    visitorObj.ID_CARD = obj.TRN_APPOINTMENT.REQUEST_ID_CARD;
-                    visitorObj.REASON_ID = obj.TRN_APPOINTMENT.REASON_ID;
-                    visitorObj.MAS_EMPLOYEE = obj.TRN_APPOINTMENT.MAS_EMPLOYEE;
-                    visitorObj.MAS_REASON = obj.TRN_APPOINTMENT.MAS_REASON;
-                    frmVisitor frm = new frmVisitor();
-                    frm.visitorObj = visitorObj;
-                    frm.formMode = FormMode.Add;
-                    frm.visitorMode = VisitorMode.Appointment;
-
-                    if (frm.ShowDialog() == DialogResult.OK)
+                    frmSelectInType selectForm = new frmSelectInType();
+                    selectForm.flagAppointment = true;
+                    if(selectForm.ShowDialog() == DialogResult.OK)
                     {
-                        var res = _service.UpdateStatus(id);
-                        if (res.Status)
+                        if(selectForm.TYPE == "CARD")
                         {
-                            //MessageBox.Show(Message.MSG_SAVE_COMPLETE, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            ResetScreen();
+                            #region card_form
+                            var id = Convert.ToInt32(gridAppointmentList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
+                            ContainerAppointment container = new ContainerAppointment();
+                            var filter = new AppointmentFilter();
+                            TRN_VISITOR visitorObj = new TRN_VISITOR();
+                            filter.AUTO_ID = id;
+                            container.Filter = filter;
+                            var obj = _service.GetItem(container);
+                            visitorObj.CONTACT_EMPLOYEE_ID = obj.TRN_APPOINTMENT.CONTACT_EMPLOYEE_ID;
+                            visitorObj.FIRST_NAME = obj.TRN_APPOINTMENT.REQUEST_FIRST_NAME;
+                            visitorObj.LAST_NAME = obj.TRN_APPOINTMENT.REQUEST_LAST_NAME;
+                            visitorObj.ID_CARD = obj.TRN_APPOINTMENT.REQUEST_ID_CARD;
+                            visitorObj.REASON_ID = obj.TRN_APPOINTMENT.REASON_ID;
+                            visitorObj.MAS_EMPLOYEE = obj.TRN_APPOINTMENT.MAS_EMPLOYEE;
+                            visitorObj.MAS_REASON = obj.TRN_APPOINTMENT.MAS_REASON;
+                            frmVisitor frm = new frmVisitor();
+                            frm.visitorObj = visitorObj;
+                            frm.formMode = FormMode.Add;
+                            frm.visitorMode = VisitorMode.Appointment;
+
+                            if (frm.ShowDialog() == DialogResult.OK)
+                            {
+                                var res = _service.UpdateStatus(id);
+                                if (res.Status)
+                                {
+                                    //MessageBox.Show(Message.MSG_SAVE_COMPLETE, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    ResetScreen();
+                                }
+                                else
+                                {
+                                    MessageBox.Show(res.ExceptionMessage, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                            }
+                            #endregion
                         }
                         else
                         {
-                            MessageBox.Show(res.ExceptionMessage, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            #region card_form
+                            var id = Convert.ToInt32(gridAppointmentList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
+                            ContainerAppointment container = new ContainerAppointment();
+                            var filter = new AppointmentFilter();
+                            TRN_VISITOR visitorObj = new TRN_VISITOR();
+                            filter.AUTO_ID = id;
+                            container.Filter = filter;
+                            var obj = _service.GetItem(container);
+                            visitorObj.CONTACT_EMPLOYEE_ID = obj.TRN_APPOINTMENT.CONTACT_EMPLOYEE_ID;
+                            visitorObj.FIRST_NAME = obj.TRN_APPOINTMENT.REQUEST_FIRST_NAME;
+                            visitorObj.LAST_NAME = obj.TRN_APPOINTMENT.REQUEST_LAST_NAME;
+                            visitorObj.ID_CARD = obj.TRN_APPOINTMENT.REQUEST_ID_CARD;
+                            visitorObj.REASON_ID = obj.TRN_APPOINTMENT.REASON_ID;
+                            visitorObj.MAS_EMPLOYEE = obj.TRN_APPOINTMENT.MAS_EMPLOYEE;
+                            visitorObj.MAS_REASON = obj.TRN_APPOINTMENT.MAS_REASON;
+                            frmVisitorByPass frm = new frmVisitorByPass();
+                            frm.visitorObj = visitorObj;
+                            frm.formMode = FormMode.Add;
+                            frm.visitorMode = VisitorMode.Appointment;
+
+                            if (frm.ShowDialog() == DialogResult.OK)
+                            {
+                                var res = _service.UpdateStatus(id);
+                                if (res.Status)
+                                {
+                                    //MessageBox.Show(Message.MSG_SAVE_COMPLETE, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    ResetScreen();
+                                }
+                                else
+                                {
+                                    MessageBox.Show(res.ExceptionMessage, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                            }
+                            #endregion
                         }
                     }
 
-                    //var res = _service.UpdateStatus(id);
-                    //if (res.Status)
-                    //{
-                    //    MessageBox.Show(Message.MSG_SAVE_COMPLETE, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //    ResetScreen();
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show(res.ExceptionMessage, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //}
+                  
 
                 }
             }

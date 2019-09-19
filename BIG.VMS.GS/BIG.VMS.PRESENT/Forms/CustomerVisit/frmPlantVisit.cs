@@ -154,7 +154,7 @@ namespace BIG.VMS.PRESENT.Forms.CustomerVisit
                 //request for 
                 txtcontractperson.ReadOnly = false;
                 txtobjective.ReadOnly = false;
-                numNo.Enabled = false;
+                numNo.Enabled = true;
                 txtvisitgroup.ReadOnly = false;
                 visitordate.Enabled = true;
                 dtVisitTime.Enabled = false;
@@ -171,7 +171,7 @@ namespace BIG.VMS.PRESENT.Forms.CustomerVisit
                 btnAddvisitor.Enabled = false;
                 txtcontractperson.ReadOnly = true;
                 txtobjective.ReadOnly = true;
-                numNo.Enabled = true;
+                numNo.Enabled = false;
                 txtvisitgroup.ReadOnly = true;
                 visitordate.Enabled = false;
                 dtVisitTime.Enabled = true;
@@ -185,7 +185,7 @@ namespace BIG.VMS.PRESENT.Forms.CustomerVisit
             if (string.IsNullOrEmpty(txtReqname.Text)) listMsg.Add("Requester name");
             if (string.IsNullOrEmpty(txtReqPosition.Text)) listMsg.Add("Requester position");
             if (string.IsNullOrEmpty(txtvisitgroup.Text)) listMsg.Add("Customer Group");
-            if (numNo.Value != 0) listMsg.Add("No. of visitor");
+            if (numNo.Value == 0) listMsg.Add("No. of visitor");
             if (string.IsNullOrEmpty(txtobjective.Text)) listMsg.Add("Objective");
 
             string joined = string.Join("," + Environment.NewLine, listMsg);

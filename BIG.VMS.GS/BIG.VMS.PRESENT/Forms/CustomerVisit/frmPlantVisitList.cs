@@ -3,6 +3,7 @@ using BIG.VMS.MODEL.CustomModel;
 using BIG.VMS.MODEL.CustomModel.Container;
 using BIG.VMS.MODEL.CustomModel.Filter;
 using BIG.VMS.MODEL.EntityModel;
+using BIG.VMS.PRESENT.Forms.FormVisitor;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -268,6 +269,33 @@ namespace BIG.VMS.PRESENT.Forms.CustomerVisit
                     var response = _service.GetItem(id);
                     if (response.Status)
                     {
+                        if(((TRN_CUSTOMER_VISIT)response.ResultObj).TRN_CUSTOMER_VISIT_LIST.Count >0)
+                        {
+                            var frm = new frmCustomerVisitor();
+                            frm.formMode = FormMode.Edit;
+                            var customer = (TRN_CUSTOMER_VISIT)response.ResultObj;
+                            TRN_VISITOR obj = new TRN_VISITOR()
+                            {
+                                CONTACT_EMPLOYEE_NAME = customer.REQUESTOR_FULLNAME,
+                                REASON_TEXT = customer.OBJECTIVE_OF_VISIT,
+                                FIRST_NAME = customer.TRN_CUSTOMER_VISIT_LIST.FirstOrDefault().FULLNAME,
+                                //ID_CARD = Convert.ToString(gridProjectMember.Rows[e.RowIndex].Cells["ID_CARD"].Value),
+                            };
+                            frm.visitorObj = obj;
+                            if (frm.ShowDialog() == DialogResult.OK)
+                            {
+                                BindGridData();
+                            }
+                        }
+                       
+                    }
+                }
+                if (e.ColumnIndex == 1) //Edit
+                {
+                    var id = Convert.ToInt32(gridVisitorList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
+                    var response = _service.GetItem(id);
+                    if (response.Status)
+                    {
                         var frm = new frmPlantVisit();
                         frm.formMode = FormMode.Edit;
                         frm._TRN_CUSTOMER_VISIT = (TRN_CUSTOMER_VISIT)response.ResultObj;
@@ -277,7 +305,7 @@ namespace BIG.VMS.PRESENT.Forms.CustomerVisit
                         }
                     }
                 }
-                if (e.ColumnIndex == 1) //Delete
+                if (e.ColumnIndex == 2) //Delete
                 {
                     if (MessageBox.Show("ต้องการ ลบ!!!ข้อมูลใช่หรือไม่ ?", "แจ้งเตือน", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {

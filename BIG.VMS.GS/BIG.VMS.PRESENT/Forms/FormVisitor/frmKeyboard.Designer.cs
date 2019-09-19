@@ -36,6 +36,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnSelect = new System.Windows.Forms.Button();
             this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,20 +72,19 @@
             this.txtLicense.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLicense.Location = new System.Drawing.Point(3, 5);
             this.txtLicense.Name = "txtLicense";
-            this.txtLicense.Size = new System.Drawing.Size(552, 80);
+            this.txtLicense.Size = new System.Drawing.Size(395, 80);
             this.txtLicense.TabIndex = 0;
             // 
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnClear.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.Black;
             this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
-            this.btnClear.Location = new System.Drawing.Point(561, 3);
+            this.btnClear.Location = new System.Drawing.Point(573, 3);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(167, 85);
+            this.btnClear.Size = new System.Drawing.Size(163, 85);
             this.btnClear.TabIndex = 3;
             this.btnClear.Text = "ล้าง";
             this.btnClear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -95,14 +95,13 @@
             // btnSubmit
             // 
             this.btnSubmit.BackColor = System.Drawing.Color.LightGreen;
-            this.btnSubmit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.Black;
             this.btnSubmit.Image = ((System.Drawing.Image)(resources.GetObject("btnSubmit.Image")));
-            this.btnSubmit.Location = new System.Drawing.Point(734, 3);
+            this.btnSubmit.Location = new System.Drawing.Point(404, 3);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(167, 85);
+            this.btnSubmit.Size = new System.Drawing.Size(163, 85);
             this.btnSubmit.TabIndex = 1;
             this.btnSubmit.Text = "ตกลง";
             this.btnSubmit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -113,14 +112,13 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.MistyRose;
-            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
-            this.btnCancel.Location = new System.Drawing.Point(907, 3);
+            this.btnCancel.Location = new System.Drawing.Point(911, 3);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(168, 85);
+            this.btnCancel.Size = new System.Drawing.Size(164, 85);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "ยกเลิก";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -154,15 +152,17 @@
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.BackColor = System.Drawing.Color.White;
-            this.tableLayoutPanel3.ColumnCount = 4;
+            this.tableLayoutPanel3.ColumnCount = 5;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.Controls.Add(this.txtLicense, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnCancel, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnClear, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnSubmit, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnSelect, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnCancel, 4, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnClear, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnSubmit, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 100);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -170,6 +170,23 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1078, 91);
             this.tableLayoutPanel3.TabIndex = 4;
+            // 
+            // btnSelect
+            // 
+            this.btnSelect.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelect.ForeColor = System.Drawing.Color.Black;
+            this.btnSelect.Image = ((System.Drawing.Image)(resources.GetObject("btnSelect.Image")));
+            this.btnSelect.Location = new System.Drawing.Point(742, 3);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(163, 85);
+            this.btnSelect.TabIndex = 4;
+            this.btnSelect.Text = "ไม่ระบุ";
+            this.btnSelect.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSelect.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSelect.UseVisualStyleBackColor = false;
+            this.btnSelect.Click += new System.EventHandler(this.BtnSelect_Click);
             // 
             // frmKeyboard
             // 
@@ -201,5 +218,6 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Button btnSelect;
     }
 }

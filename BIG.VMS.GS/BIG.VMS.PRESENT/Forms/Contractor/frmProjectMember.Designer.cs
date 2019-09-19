@@ -46,6 +46,8 @@
             this.radNotRequire = new System.Windows.Forms.RadioButton();
             this.comboType = new System.Windows.Forms.ComboBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtLastName = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel4.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -69,28 +71,31 @@
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Controls.Add(this.label2, 0, 4);
             this.tableLayoutPanel4.Controls.Add(this.txtName, 1, 2);
-            this.tableLayoutPanel4.Controls.Add(this.txtPosition, 1, 3);
             this.tableLayoutPanel4.Controls.Add(this.Lbl_IDCard, 0, 2);
-            this.tableLayoutPanel4.Controls.Add(this.label3, 0, 3);
             this.tableLayoutPanel4.Controls.Add(this.Lbl_FirstName, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.txtIDCard, 1, 1);
-            this.tableLayoutPanel4.Controls.Add(this.flowLayoutPanel1, 1, 5);
-            this.tableLayoutPanel4.Controls.Add(this.flowLayoutPanel2, 1, 4);
             this.tableLayoutPanel4.Controls.Add(this.comboType, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.flowLayoutPanel1, 1, 6);
+            this.tableLayoutPanel4.Controls.Add(this.label4, 0, 3);
+            this.tableLayoutPanel4.Controls.Add(this.txtLastName, 1, 3);
+            this.tableLayoutPanel4.Controls.Add(this.label3, 0, 4);
+            this.tableLayoutPanel4.Controls.Add(this.label2, 0, 5);
+            this.tableLayoutPanel4.Controls.Add(this.txtPosition, 1, 4);
+            this.tableLayoutPanel4.Controls.Add(this.flowLayoutPanel2, 1, 5);
             this.tableLayoutPanel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel4.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 6;
+            this.tableLayoutPanel4.RowCount = 7;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(514, 269);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(514, 304);
             this.tableLayoutPanel4.TabIndex = 1;
             this.tableLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel4_Paint);
             // 
@@ -100,7 +105,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(20, 182);
+            this.label2.Location = new System.Drawing.Point(20, 212);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 20);
             this.label2.TabIndex = 24;
@@ -119,7 +124,7 @@
             // 
             this.txtPosition.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPosition.Location = new System.Drawing.Point(91, 95);
+            this.txtPosition.Location = new System.Drawing.Point(91, 124);
             this.txtPosition.MaxLength = 14;
             this.txtPosition.Multiline = true;
             this.txtPosition.Name = "txtPosition";
@@ -144,7 +149,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(26, 123);
+            this.label3.Location = new System.Drawing.Point(26, 152);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 20);
             this.label3.TabIndex = 16;
@@ -175,7 +180,7 @@
             // 
             this.flowLayoutPanel1.Controls.Add(this.btnSave);
             this.flowLayoutPanel1.Controls.Add(this.btnClose);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(91, 213);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(91, 243);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(411, 53);
             this.flowLayoutPanel1.TabIndex = 1;
@@ -219,7 +224,7 @@
             this.flowLayoutPanel2.Controls.Add(this.radRequire);
             this.flowLayoutPanel2.Controls.Add(this.radNotRequire);
             this.flowLayoutPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(91, 178);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(91, 207);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(292, 29);
             this.flowLayoutPanel2.TabIndex = 25;
@@ -265,11 +270,32 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(25, 96);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 20);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "นามสกุล";
+            // 
+            // txtLastName
+            // 
+            this.txtLastName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastName.Location = new System.Drawing.Point(91, 95);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(420, 23);
+            this.txtLastName.TabIndex = 28;
+            // 
             // frmProjectMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(538, 293);
+            this.ClientSize = new System.Drawing.Size(538, 330);
             this.Controls.Add(this.tableLayoutPanel4);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -305,5 +331,7 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.ComboBox comboType;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtLastName;
     }
 }

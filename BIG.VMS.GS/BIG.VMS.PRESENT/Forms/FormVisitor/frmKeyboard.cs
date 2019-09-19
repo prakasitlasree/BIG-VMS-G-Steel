@@ -82,5 +82,12 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
         {
 
         }
+
+        private void BtnSelect_Click(object sender, EventArgs e)
+        {
+            text = "ไม่ระบุุ";
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
     }
 }

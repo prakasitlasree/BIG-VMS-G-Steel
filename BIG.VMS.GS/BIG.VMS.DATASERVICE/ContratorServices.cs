@@ -144,7 +144,7 @@ namespace BIG.VMS.DATASERVICE
             return resp;
         }
          
-        public MAS_CONTRACTOR GetContractor(int AUTO_ID)
+        public MAS_CONTRACTOR GetContractor(int id)
         {
             var resp = new MAS_CONTRACTOR();
 
@@ -152,7 +152,7 @@ namespace BIG.VMS.DATASERVICE
             {
                 using (var ctx = new BIG_VMSEntities())
                 {
-                    var obj = ctx.MAS_CONTRACTOR.Where(o => o.AUTO_ID == AUTO_ID).FirstOrDefault();
+                    var obj = ctx.MAS_CONTRACTOR.Where(o => o.AUTO_ID == id).FirstOrDefault();
                     resp = obj;
                 }
 
@@ -190,6 +190,34 @@ namespace BIG.VMS.DATASERVICE
             {
                 resp.Status = false;
                 resp.ExceptionMessage = ex.Message.ToString();
+            }
+
+
+            return resp;
+        }
+
+        public Response GetConstructorEmployee(int id)
+        {
+            var resp = new Response();
+
+            try
+            {
+                using (var ctx = new BIG_VMSEntities())
+                {
+                    var obj = ctx.MAS_CONTRACTOR.Where(o => o.AUTO_ID == id).FirstOrDefault();
+                    if (obj != null)
+                    {
+                        resp.ResultObj = obj.TRN_PROJECT_MASTER.FirstOrDefault().TRN_PROJECT_MEMBER.ToList();
+                        resp.Status = true;
+                    }
+                   
+                }
+
+            }
+            catch (Exception ex)
+            {
+                resp.Status = false;
+                resp.ExceptionMessage = ex.Message;
             }
 
 

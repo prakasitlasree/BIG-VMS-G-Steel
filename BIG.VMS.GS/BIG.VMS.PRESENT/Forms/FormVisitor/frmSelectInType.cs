@@ -14,6 +14,9 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
 {
     public partial class frmSelectInType : Form
     {
+        public bool flagAppointment = false;
+        public string TYPE = "";
+
         public frmSelectInType()
         {
             InitializeComponent();
@@ -21,28 +24,50 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
 
         private void btnInCard_Click(object sender, EventArgs e)
         {
-            frmVisitor frm = new frmVisitor();
-            frm.StartPosition = FormStartPosition.CenterParent;
-            frm.formMode = FormMode.Add;
-            frm.visitorMode = VisitorMode.In;
-            if (frm.ShowDialog() == DialogResult.OK)
+            if (flagAppointment)
             {
+                TYPE = "CARD";
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
+            else
+            {
+                frmVisitor frm = new frmVisitor();
+                frm.StartPosition = FormStartPosition.CenterParent;
+                frm.formMode = FormMode.Add;
+                frm.visitorMode = VisitorMode.In;
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+            }
+
+            
         }
 
         private void btnInWithOutCard_Click(object sender, EventArgs e)
         {
-            frmVisitorByPass frm = new frmVisitorByPass();
-            frm.StartPosition = FormStartPosition.CenterParent;
-            frm.formMode = FormMode.Add;
-            frm.visitorMode = VisitorMode.In;
-            if (frm.ShowDialog() == DialogResult.OK)
+            if (flagAppointment)
             {
+                TYPE = "NOCARD";
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
+            else
+            {
+                frmVisitorByPass frm = new frmVisitorByPass();
+                frm.StartPosition = FormStartPosition.CenterParent;
+                frm.formMode = FormMode.Add;
+                frm.visitorMode = VisitorMode.In;
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+            }
+
+           
         }
 
         private void id_card_Click(object sender, EventArgs e)
@@ -69,6 +94,11 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
+        }
+
+        private void FrmSelectInType_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -21,7 +21,7 @@ using CrystalDecisions.Shared;
 
 namespace BIG.VMS.PRESENT.Forms.FormVisitor
 {
-    public partial class frmVisitor : PageBase
+    public partial class frmCustomerVisitor : PageBase
     {
         public FormMode formMode = new FormMode();
         public VisitorMode visitorMode = new VisitorMode();
@@ -48,7 +48,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
 
         public byte[] BYTE_IMAGE { get; set; }
 
-        public frmVisitor()
+        public frmCustomerVisitor()
         {
             InitializeComponent();
         }
@@ -124,109 +124,18 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     StartTimer();
                     btnBlacklist.Visible = false;
                 }
-                if (visitorMode == VisitorMode.Appointment || formMode == FormMode.Edit)
+                if(visitorMode == VisitorMode.CustomerIn)
                 {
-                    #region === hid control ===
-                    if (formMode == FormMode.Edit)
-                    {
-                        brn_UploadImgCard.Visible = false;
-                        bthCardDelete.Visible = false;
-                        txtNo.Text = visitorObj.NO.ToString();
-                    }
-
-                    if (visitorMode == VisitorMode.Appointment)
-                    {
-                        label5.Text = "นัดล่วงหน้า(เข้า)";
-                    }
-                    if(visitorMode == VisitorMode.AppointmentOut)
-                    {
-                        label5.Text = "นัดล่วงหน้า(ออก)";
-                    }
-                    if (visitorMode == VisitorMode.In)
-                    {
-                        label5.Text = "เข้า";
-                    }
-                    if (visitorMode == VisitorMode.Out)
-                    {
-                        label5.Text = "ออก";
-                    }
-
-                    #endregion
-
+                    label5.Text = "เข้า";
                     txtIDCard.Text = visitorObj.ID_CARD;
                     txtFirstName.Text = visitorObj.FIRST_NAME;
                     txtLastName.Text = visitorObj.LAST_NAME;
                     txtLicense.Text = visitorObj.LICENSE_PLATE;
                     label6.Text = visitorObj.CREATED_DATE.ToString();
-                    if (visitorObj.MAS_EMPLOYEE != null)
-                    {
-                        contactEmployeeId = visitorObj.MAS_EMPLOYEE.AUTO_ID;
-                        txtMeet.Text = visitorObj.MAS_EMPLOYEE.FIRST_NAME + " " + visitorObj.MAS_EMPLOYEE.LAST_NAME;
-                    }
-                    else
-                    {
-                        txtMeet.Text = "";
-                    }
-                    if (visitorObj.MAS_REASON != null)
-                    {
-                        reasonId = visitorObj.MAS_REASON.AUTO_ID;
-                        txtTopic.Text = visitorObj.MAS_REASON.REASON;
-                    }
-                    else
-                    {
-                        txtTopic.Text = "";
-                    }
-
-                    if (visitorObj.MAS_PROVINCE != null)
-                    {
-                        provinceId = visitorObj.MAS_PROVINCE.AUTO_ID;
-                        txtProvince.Text = visitorObj.MAS_PROVINCE.NAME;
-                    }
-                    else
-                    {
-                        txtLicense.Text = "";
-                        txtLicense.Enabled = false;
-                        Lbl_LicensePlate.Visible = false;
-                        txtLicense.Visible = false;
-                        Lbl_Vahicle.Visible = false;
-                        txtProvince.Visible = false;
-                        btnProvince.Visible = false;
-                        btnLicense.Visible = false;
-                        tableLayoutPanel2.Visible = false;
-                        tableLayoutPanel8.Visible = false;
-                        provinceId = 0;
-                    }
-
-                    if (visitorObj.MAS_CAR_TYPE != null)
-                    {
-                        carModelId = visitorObj.MAS_CAR_TYPE.AUTO_ID;
-                        txtCar.Text = visitorObj.MAS_CAR_TYPE.NAME;
-                    }
-                    else
-                    {
-                        txtCar.Text = "";
-                    }
-
-                    if (visitorObj.TRN_ATTACHEDMENT != null)
-                    {
-                        if (visitorObj.TRN_ATTACHEDMENT.Count > 0)
-                        {
-                            if (visitorObj.TRN_ATTACHEDMENT.FirstOrDefault().CONTACT_PHOTO != null)
-                            {
-                                picPhoto.Image = ByteToImage(visitorObj.TRN_ATTACHEDMENT.FirstOrDefault().CONTACT_PHOTO);
-                            }
-                            if (visitorObj.TRN_ATTACHEDMENT.FirstOrDefault().ID_CARD_PHOTO != null)
-                            {
-                                picCard.Image = ByteToImage(visitorObj.TRN_ATTACHEDMENT.FirstOrDefault().ID_CARD_PHOTO);
-                            }
-
-                        }
-
-
-                    }
-
-
+                    txtMeet.Text = visitorObj.CONTACT_EMPLOYEE_NAME;
+                    txtTopic.Text = visitorObj.REASON_TEXT;
                 }
+            
             }
             catch (Exception)
             {
@@ -327,10 +236,9 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     LAST_NAME = txtLastName.Text.Trim(),
                     LICENSE_PLATE = txtLicense.Text.Trim(),
                     STATUS = 1,
-                    CONTACT_EMPLOYEE_ID = contactEmployeeId,
+                    CONTACT_EMPLOYEE_NAME = txtMeet.Text.Trim(),
                     CAR_TYPE_ID = carModelId,
-                    REASON_ID = reasonId,
-
+                    REASON_TEXT = txtTopic.Text.Trim(),
                     CREATED_DATE = DateTime.Now,
                     UPDATED_DATE = DateTime.Now,
                     YEAR = DateTime.Now.Year,
@@ -353,47 +261,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     obj.CREATED_BY = LOGIN;
                     obj.UPDATED_BY = LOGIN;
                 }
-                if (formMode == FormMode.Edit)
-                {
-                    obj.UPDATED_BY = LOGIN;
-                    obj.AUTO_ID = visitorObj.AUTO_ID;
-                    if (isChangePhoto || isChangeCardPhoto || isChangePass)
-                    {
-                        var attachment = new TRN_ATTACHEDMENT();
-
-                        if (isChangePhoto)
-                        {
-                            attachment.CONTACT_PHOTO = ImageToByte(picPhoto);
-                        }
-                        else
-                        {
-                            if (visitorObj.TRN_ATTACHEDMENT.Count > 0)
-                            {
-                                attachment.CONTACT_PHOTO = visitorObj.TRN_ATTACHEDMENT.FirstOrDefault().CONTACT_PHOTO;
-                            }
-                        }
-                        if (isChangeCardPhoto)
-                        {
-                            attachment.ID_CARD_PHOTO = ImageToByte(picCard);
-                        }
-                        else
-                        {
-                            if (visitorObj.TRN_ATTACHEDMENT.Count > 0)
-                            {
-                                attachment.ID_CARD_PHOTO = visitorObj.TRN_ATTACHEDMENT.FirstOrDefault().ID_CARD_PHOTO;
-                            }
-
-                        }
-
-
-
-                        obj.TRN_ATTACHEDMENT = new List<TRN_ATTACHEDMENT>();
-                        obj.TRN_ATTACHEDMENT.Add(attachment);
-                    }
-
-
-                }
-
+    
                 return obj;
             }
             catch (Exception)
@@ -433,30 +301,9 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                         attachment.PHOTO_URL = dir;
                     }
 
-                    if (visitorMode == VisitorMode.In)
+                    if (visitorMode == VisitorMode.ConstructorIn)
                     {
-                        obj.TYPE = VisitorMode.In.ToString();
-                        if (isChangePhoto)
-                        {
-                            picPhoto.Image.Save(dir + "PHOTO.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-                        }
-                        if (isChangeCardPhoto)
-                        {
-                            picCard.Image.Save(dir + "ID_CARD.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-                        }
-
-
-
-
-
-                    }
-                    if (visitorMode == VisitorMode.Out)
-                    {
-                        obj.TYPE = VisitorMode.Out.ToString();
-                    }
-                    if (visitorMode == VisitorMode.Appointment)
-                    {
-                        obj.TYPE = VisitorMode.Appointment.ToString();
+                        obj.TYPE = VisitorMode.ConstructorIn.ToString();
                         if (isChangePhoto)
                         {
                             picPhoto.Image.Save(dir + "PHOTO.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
@@ -467,11 +314,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                         }
 
                     }
-                    if (visitorMode == VisitorMode.Regulary)
-                    {
-                        obj.TYPE = VisitorMode.Regulary.ToString();
-                    }
-
+              
                     var container = new ContainerVisitor { TRN_VISITOR = obj };
 
                     var res = _service.Create(container);
@@ -488,27 +331,9 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                         MessageBox.Show(res.Message + res.ExceptionMessage);
                     }
                 }
-                if (formMode == FormMode.Edit)
-                {
-                    var obj = GetObjectfromControl();
-
-                    var container = new ContainerVisitor { TRN_VISITOR = obj };
-
-                    var res = _service.Update(container);
-
-                    if (res.Status)
-                    {
-                        MessageBox.Show(Message.MSG_SAVE_COMPLETE, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.DialogResult = DialogResult.OK;
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show(res.Message + res.ExceptionMessage);
-                    }
-                }
+                
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 throw;
@@ -644,13 +469,12 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
             try
             {
                 if (!string.IsNullOrEmpty(txtFirstName.Text) &&
-                    !string.IsNullOrEmpty(txtLastName.Text) &&
                     !string.IsNullOrEmpty(txtIDCard.Text) &&
                     !string.IsNullOrEmpty(txtMeet.Text) &&
                     !string.IsNullOrEmpty(txtTopic.Text) &&
                     !string.IsNullOrEmpty(txtCar.Text) &&
                     IsNeedProvice() &&
-                    contactEmployeeId > 0 && carModelId > 0 && reasonId > 0)
+                    carModelId > 0 )
                 {
                     //if (IsValidCheckPersonID(txtIDCard.Text))
                     //{
@@ -671,22 +495,16 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                         msg += Environment.NewLine + "ณ วันที่ : " + blData.UPDATED_DATE;
                         MessageBox.Show(msg, "บุคคล Blacklist", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("บัตรประชาชนไม่ถูกต้อง", "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    //}
+                   
                 }
 
                 else
                 {
                     List<string> listMsg = new List<string>();
-                    if (string.IsNullOrEmpty(txtFirstName.Text)) listMsg.Add("ชื่อจริง");
-                    if (string.IsNullOrEmpty(txtLastName.Text)) listMsg.Add("นามสกุล");
+                    if (string.IsNullOrEmpty(txtFirstName.Text)) listMsg.Add("ชื่อจริง");                    
                     if (string.IsNullOrEmpty(txtIDCard.Text)) listMsg.Add("รหัสบัตรประชาชน");
                     if (string.IsNullOrEmpty(txtMeet.Text)) listMsg.Add("ผู้ที่ต้องการเข้าพบ");
                     if (string.IsNullOrEmpty(txtTopic.Text)) listMsg.Add("วัตถุประสงค์");
-                    if (string.IsNullOrEmpty(txtCar.Text)) listMsg.Add("ยานพาหนะ");
                     if (!IsNeedProvice()) listMsg.Add("จังหวัด");
                     string joined = string.Join("," + Environment.NewLine, listMsg);
 

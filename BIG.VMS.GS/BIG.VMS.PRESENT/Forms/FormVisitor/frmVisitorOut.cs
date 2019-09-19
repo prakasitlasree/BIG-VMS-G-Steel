@@ -146,7 +146,8 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                                 NO = org_obj.NO,
                                 ID_CARD = org_obj.ID_CARD,
 
-                                TYPE = org_obj.TYPE == "Appointment" ? "AppointmentOut" : "Out",
+                                TYPE = org_obj.TYPE == "Appointment" ? "AppointmentOut" : 
+                                (org_obj.TYPE == "ConstructorIn"? "ConstructorOut" : "Out"),
                                 FIRST_NAME = org_obj.FIRST_NAME,
                                 LAST_NAME = org_obj.LAST_NAME,
                                 CAR_TYPE_ID = org_obj.CAR_TYPE_ID,
@@ -154,7 +155,8 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                                 LICENSE_PLATE_PROVINCE_ID = org_obj.LICENSE_PLATE_PROVINCE_ID,
                                 REASON_ID = org_obj.REASON_ID,
                                 CONTACT_EMPLOYEE_ID = org_obj.CONTACT_EMPLOYEE_ID,
-
+                                CONTACT_EMPLOYEE_NAME = org_obj.CONTACT_EMPLOYEE_NAME,
+                                REASON_TEXT = org_obj.REASON_TEXT,
                                 STATUS = 2,
                                 CREATED_BY = LOGIN,
                                 UPDATED_BY = LOGIN,

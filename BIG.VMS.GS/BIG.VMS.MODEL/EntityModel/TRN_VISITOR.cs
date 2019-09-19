@@ -38,6 +38,8 @@ namespace BIG.VMS.MODEL.EntityModel
         public string UPDATED_BY { get; set; }
         public Nullable<System.DateTime> UPDATED_DATE { get; set; }
         public string BY_PASS { get; set; }
+        public string REASON_TEXT { get; set; }
+        public string CONTACT_EMPLOYEE_NAME { get; set; }
     
         public virtual MAS_CAR_TYPE MAS_CAR_TYPE { get; set; }
         public virtual MAS_EMPLOYEE MAS_EMPLOYEE { get; set; }

@@ -23,25 +23,25 @@
         <EntityTypeShape EntityType="BIG_VMSModel.TRN_CUSTOMER_VISIT_PURPOSE" Width="3.5" PointX="8.875" PointY="19.875" />
         <EntityTypeShape EntityType="BIG_VMSModel.TRN_PROJECT_MASTER" Width="1.5" PointX="8" PointY="1.125" />
         <EntityTypeShape EntityType="BIG_VMSModel.TRN_PROJECT_MEMBER" Width="1.5" PointX="10.25" PointY="3.125" />
-        <EntityTypeShape EntityType="BIG_VMSModel.TRN_VISITOR" Width="1.5" PointX="8.25" PointY="12.25" />
         <AssociationConnector Association="BIG_VMSModel.FK_MAS_CAR_BRAND_MAS_CAR_TYPE" />
         <AssociationConnector Association="BIG_VMSModel.FK_MAS_CAR_MODEL_MAS_CAR_BRAND" />
         <AssociationConnector Association="BIG_VMSModel.FK_TRN_APPOINTMENT_MAS_CAR_MODEL" />
-        <AssociationConnector Association="BIG_VMSModel.FK_TRN_VISITOR_MAS_CAR_TYPE" />
         <AssociationConnector Association="BIG_VMSModel.FK_TRN_PROJECT_CONTRACTOR_MAS_CONTRACTOR" />
         <AssociationConnector Association="BIG_VMSModel.FK_MAS_EMPLOYEE_MAS_EMPLOYEE" />
         <AssociationConnector Association="BIG_VMSModel.FK_MAS_REASON_MAS_DEPARTMENT" />
         <AssociationConnector Association="BIG_VMSModel.FK_TRN_APPOINTMENT_MAS_EMPLOYEE" />
         <AssociationConnector Association="BIG_VMSModel.FK_TRN_CUSTOMER_VISIT_MAS_EMPLOYEE" />
-        <AssociationConnector Association="BIG_VMSModel.FK_TRN_VISITOR_MAS_EMPLOYEE" />
         <AssociationConnector Association="BIG_VMSModel.FK_TRN_APPOINTMENT_MAS_PROVINCE" />
-        <AssociationConnector Association="BIG_VMSModel.FK_TRN_VISITOR_MAS_PROVINCE" />
         <AssociationConnector Association="BIG_VMSModel.FK_TRN_APPOINTMENT_MAS_REASON" />
-        <AssociationConnector Association="BIG_VMSModel.FK_TRN_VISITOR_MAS_REASON" />
-        <AssociationConnector Association="BIG_VMSModel.FK_TRN_ATTACHEDMENT_TRN_VISITOR" />
         <AssociationConnector Association="BIG_VMSModel.FK_TRN_CUSTOMER_VISIT_LIST_TRN_CUSTOMER_VISIT_LIST" />
         <AssociationConnector Association="BIG_VMSModel.FK_TRN_VISITOR_PURPOSE_TRN_VISITOR_PURPOSE" />
         <AssociationConnector Association="BIG_VMSModel.FK_TRN_PROJECT_MEMBER_TRN_PROJECT_CONTRACTOR" />
+        <EntityTypeShape EntityType="BIG_VMSModel.TRN_VISITOR" Width="1.5" PointX="8" PointY="11.25" />
+        <AssociationConnector Association="BIG_VMSModel.FK_TRN_VISITOR_MAS_CAR_TYPE" />
+        <AssociationConnector Association="BIG_VMSModel.FK_TRN_VISITOR_MAS_EMPLOYEE" />
+        <AssociationConnector Association="BIG_VMSModel.FK_TRN_VISITOR_MAS_PROVINCE" />
+        <AssociationConnector Association="BIG_VMSModel.FK_TRN_VISITOR_MAS_REASON" />
+        <AssociationConnector Association="BIG_VMSModel.FK_TRN_ATTACHEDMENT_TRN_VISITOR" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

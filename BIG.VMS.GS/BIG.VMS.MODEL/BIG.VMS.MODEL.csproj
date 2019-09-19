@@ -74,6 +74,9 @@
     <Compile Include="CustomModel\HeaderGrid.cs" />
     <Compile Include="CustomModel\PIDCard.cs" />
     <Compile Include="CustomModel\Filter\VisitorFilter.cs" />
+    <Compile Include="EntityModel\TRN_VISITOR.cs">
+      <DependentUpon>BIG_VMS_DB.tt</DependentUpon>
+    </Compile>
     <Compile Include="GsteelModel\ContainerModel\ContainerProject.cs" />
     <Compile Include="GsteelModel\FilterModel\FilterProject.cs" />
     <Compile Include="GsteelModel\FilterModel\FilterConstractor.cs" />
@@ -140,9 +143,6 @@
       <DependentUpon>BIG_VMS_DB.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityModel\TRN_PROJECT_MEMBER.cs">
-      <DependentUpon>BIG_VMS_DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityModel\TRN_VISITOR.cs">
       <DependentUpon>BIG_VMS_DB.tt</DependentUpon>
     </Compile>
     <Compile Include="GsteelModel\ContainerModel\ContainerConstractor.cs" />

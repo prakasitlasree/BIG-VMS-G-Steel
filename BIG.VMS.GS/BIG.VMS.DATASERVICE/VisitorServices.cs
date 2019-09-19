@@ -151,7 +151,13 @@ namespace BIG.VMS.DATASERVICE
                         AUTO_ID = item.AUTO_ID,
                         NO = item.NO,
                         ID_CARD = item.ID_CARD,
-                        TYPE = item.TYPE == "In" ? "เข้า" : (item.TYPE == "Out" ? "ออก" : (item.TYPE == "Appointment" ? "นัดล่วงหน้า(เข้า)" : (item.TYPE == "AppointmentOut" ? "นัดล่วงหน้า(ออก)" : "ไม่ระบุ"))),
+                        TYPE = item.TYPE == "In" ? "เข้า" :
+                        (item.TYPE == "Out" ? "ออก" :
+                        (item.TYPE == "Appointment" ? "นัดล่วงหน้า(เข้า)" :
+                        (item.TYPE == "AppointmentOut" ? "นัดล่วงหน้า(ออก)" :
+                        (item.TYPE == "ConstructorIn" ? "โครงการ(เข้า)" :
+                        (item.TYPE == "ConstructorOut" ? "โครงการ(ออก)" : "ไม่ระบุ"))))),
+
                         FIRST_NAME = item.FIRST_NAME,
                         LAST_NAME = item.LAST_NAME,
                         CAR_TYPE_ID = item.CAR_TYPE_ID,
@@ -164,13 +170,12 @@ namespace BIG.VMS.DATASERVICE
                         CREATED_DATE = item.CREATED_DATE,
                         UPDATED_BY = item.UPDATED_BY,
                         UPDATED_DATE = item.UPDATED_DATE,
-
-                        CONTACT_NAME = item.MAS_EMPLOYEE.FIRST_NAME + " " + item.MAS_EMPLOYEE.LAST_NAME,
+                        CONTACT_NAME = item.TYPE == "ConstructorIn" || item.TYPE == "ConstructorOut" ? item.CONTACT_EMPLOYEE_NAME : item.MAS_EMPLOYEE.FIRST_NAME + " " + item.MAS_EMPLOYEE.LAST_NAME,
                         CAR_TYPE_NAME = item.MAS_CAR_TYPE.NAME,
                         FULL_NAME = item.FIRST_NAME + " " + item.LAST_NAME,
                         DEPT_NAME = item.MAS_EMPLOYEE.MAS_DEPARTMENT.NAME,
                         TIME_IN = item.CREATED_DATE,
-                        TOPIC = item.MAS_REASON.REASON
+                        TOPIC = item.TYPE == "ConstructorIn" || item.TYPE == "ConstructorOut" ? item.REASON_TEXT : item.MAS_REASON.REASON,
 
                     });
 
@@ -362,7 +367,7 @@ namespace BIG.VMS.DATASERVICE
                     var startDate = DateTime.Now.AddDays(-5);
                     var endDate = DateTime.Now.AddDays(5);
 
-                    var isAlreadyOut = ctx.TRN_VISITOR.Any(o => (o.STATUS == 2) && (o.NO == no && (o.TYPE == "In" || o.TYPE == "Appointment")) && (o.CREATED_DATE >= startDate && o.CREATED_DATE <= endDate) && (o.YEAR == year));
+                    var isAlreadyOut = ctx.TRN_VISITOR.Any(o => (o.STATUS == 2) && (o.NO == no && (o.TYPE == "In" || o.TYPE == "Appointment" || o.TYPE == "ConstructorIn")) && (o.CREATED_DATE >= startDate && o.CREATED_DATE <= endDate) && (o.YEAR == year));
                     if (isAlreadyOut)
                     {
                         TRN_VISITOR visit = new TRN_VISITOR()
@@ -381,7 +386,7 @@ namespace BIG.VMS.DATASERVICE
                         var reTrnVisitor = ctx.TRN_VISITOR
                                         .Include("MAS_PROVINCE")
                                         .Include("TRN_ATTACHEDMENT")
-                                        .Where(o => o.NO == no && (o.TYPE == "In" || o.TYPE == "Appointment"))
+                                        .Where(o => o.NO == no && (o.TYPE == "In" || o.TYPE == "Appointment" || o.TYPE == "ConstructorIn"))
                                         .Where(o => (o.CREATED_DATE >= startDate && o.CREATED_DATE <= endDate) && o.YEAR == year)
                                         .OrderByDescending(x => x.NO).ToList();
 
@@ -577,7 +582,7 @@ namespace BIG.VMS.DATASERVICE
                                         CONTACT_NAME = item.MAS_EMPLOYEE != null ? item.MAS_EMPLOYEE.FIRST_NAME + " " + item.MAS_EMPLOYEE.LAST_NAME : "",
                                         TIME_IN = item.CREATED_DATE.Value != null ? Convert.ToDateTime(item.CREATED_DATE.Value, _cultureTHInfo) : item.CREATED_DATE,
                                         TYPE = item.TYPE == "In" ? "เข้า" : (item.TYPE == "Out" ? "ออก" : (item.TYPE == "Regulary" ? "มาประจำ" : "ไม่ระบุ")),
-                                        DEPT_NAME = item.MAS_EMPLOYEE.MAS_DEPARTMENT != null ? item.MAS_EMPLOYEE.MAS_DEPARTMENT.NAME : "ไม่ระบุ",
+                                        DEPT_NAME = item.MAS_EMPLOYEE != null ? (item.MAS_EMPLOYEE.MAS_DEPARTMENT != null ? item.MAS_EMPLOYEE.MAS_DEPARTMENT.NAME : "ไม่ระบุ") : "ไม่ระบุ",
                                         ID_CARD_PHOTO = item.TRN_ATTACHEDMENT != null ? (item.TRN_ATTACHEDMENT.Count() > 0 ? item.TRN_ATTACHEDMENT.FirstOrDefault().ID_CARD_PHOTO : null) : null,
                                         CONTACT_PHOTO = item.TRN_ATTACHEDMENT != null ? (item.TRN_ATTACHEDMENT.Count() > 0 ? item.TRN_ATTACHEDMENT.FirstOrDefault().CONTACT_PHOTO : null) : null,
                                         COMPANY_NAME = company,
@@ -823,12 +828,12 @@ namespace BIG.VMS.DATASERVICE
             {
                 using (var ctx = new BIG_VMSEntities())
                 {
-                    obj.ALL_VISITOR_IN = ctx.TRN_VISITOR.Where(o => o.TYPE == "In" || o.TYPE == "Appointment").Count();
+                    obj.ALL_VISITOR_IN = ctx.TRN_VISITOR.Where(o => o.TYPE == "In" || o.TYPE == "Appointment" || o.TYPE == "ConstructorIn" || o.TYPE == "CustomerIn").Count();
 
-                    obj.TODAY_VISITOR_IN = ctx.TRN_VISITOR.Where(o => ((o.TYPE == "In" || o.TYPE == "Appointment")
+                    obj.TODAY_VISITOR_IN = ctx.TRN_VISITOR.Where(o => ((o.TYPE == "In" || o.TYPE == "Appointment" || o.TYPE == "Appointment" || o.TYPE == "ConstructorIn" || o.TYPE == "CustomerIn")
                     && (o.CREATED_DATE >= startDate && o.CREATED_DATE <= endDate))).Count();
 
-                    obj.TODAY_VISITOR_OUT = ctx.TRN_VISITOR.Where(o => ((o.TYPE == "Out" || o.TYPE == "AppointmentOut")
+                    obj.TODAY_VISITOR_OUT = ctx.TRN_VISITOR.Where(o => ((o.TYPE == "Out" || o.TYPE == "AppointmentOut" || o.TYPE == "Appointment" || o.TYPE == "ConstructorOut" || o.TYPE == "CustomerOut")
                     && (o.CREATED_DATE >= startDate && o.CREATED_DATE <= endDate))).Count();
                 }
             }
@@ -999,7 +1004,7 @@ namespace BIG.VMS.DATASERVICE
             return resp;
         }
 
-        public Response UpdateVistorImgRef(int no, int auto_id,string key,byte[] image)
+        public Response UpdateVistorImgRef(int no, int auto_id, string key, byte[] image)
         {
             Response resp = new Response();
             try
@@ -1035,10 +1040,10 @@ namespace BIG.VMS.DATASERVICE
 
                     ctx.SaveChanges();
                     resp.Status = true;
-                   
+
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 resp.Status = false;
             }
@@ -1072,7 +1077,7 @@ namespace BIG.VMS.DATASERVICE
                                     .Include("TRN_ATTACHEDMENT")
                                     .Where(o => o.NO == no)
                                     .Where(o => (o.CREATED_DATE >= startDate && o.CREATED_DATE <= endDate) && o.YEAR == year)
-                                    .OrderByDescending(o=>o.AUTO_ID)
+                                    .OrderByDescending(o => o.AUTO_ID)
                                     .ToList();
                     if (listData.Count > 0)
                     {
@@ -1136,13 +1141,13 @@ namespace BIG.VMS.DATASERVICE
 
                     var reTrnVisitor = ctx.TRN_VISITOR
                                     .Include("TRN_ATTACHEDMENT")
-                                    .OrderByDescending(o=>o.AUTO_ID)
+                                    .OrderByDescending(o => o.AUTO_ID)
                                     .FirstOrDefault();
-                               
 
-                    if (reTrnVisitor !=  null)
+
+                    if (reTrnVisitor != null)
                     {
-                      
+
                         if (reTrnVisitor.TRN_ATTACHEDMENT.Count > 0)
                         {
                             var existAttachment = reTrnVisitor.TRN_ATTACHEDMENT.FirstOrDefault();

@@ -32,6 +32,7 @@
             this.tabmain = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tb2 = new System.Windows.Forms.TableLayoutPanel();
+            this.dtVisitTime = new System.Windows.Forms.DateTimePicker();
             this.txtvisitgroup = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -44,6 +45,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.clbfac_req = new System.Windows.Forms.CheckedListBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.numNo = new System.Windows.Forms.NumericUpDown();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.gridVisitor = new System.Windows.Forms.DataGridView();
@@ -69,11 +71,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.numNo = new System.Windows.Forms.NumericUpDown();
-            this.dtVisitTime = new System.Windows.Forms.DateTimePicker();
             this.tabmain.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tb2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numNo)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridVisitor)).BeginInit();
@@ -82,7 +83,6 @@
             this.tb1.SuspendLayout();
             this.group_detail.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numNo)).BeginInit();
             this.SuspendLayout();
             // 
             // tabmain
@@ -138,6 +138,17 @@
             this.tb2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tb2.Size = new System.Drawing.Size(901, 263);
             this.tb2.TabIndex = 16;
+            // 
+            // dtVisitTime
+            // 
+            this.dtVisitTime.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dtVisitTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtVisitTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtVisitTime.Location = new System.Drawing.Point(653, 48);
+            this.dtVisitTime.Name = "dtVisitTime";
+            this.dtVisitTime.ShowUpDown = true;
+            this.dtVisitTime.Size = new System.Drawing.Size(245, 23);
+            this.dtVisitTime.TabIndex = 22;
             // 
             // txtvisitgroup
             // 
@@ -270,6 +281,14 @@
             this.label11.Size = new System.Drawing.Size(131, 17);
             this.label11.TabIndex = 20;
             this.label11.Text = "Facility requirement";
+            // 
+            // numNo
+            // 
+            this.numNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numNo.Location = new System.Drawing.Point(203, 47);
+            this.numNo.Name = "numNo";
+            this.numNo.Size = new System.Drawing.Size(120, 26);
+            this.numNo.TabIndex = 21;
             // 
             // tabPage2
             // 
@@ -548,13 +567,13 @@
             // 
             this.btnCancel.BackColor = System.Drawing.Color.SeaShell;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancel.Location = new System.Drawing.Point(764, 9);
+            this.btnCancel.Location = new System.Drawing.Point(801, 9);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(6);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(151, 37);
+            this.btnCancel.Size = new System.Drawing.Size(114, 37);
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Close";
             this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -565,37 +584,18 @@
             // 
             this.btnSave.BackColor = System.Drawing.Color.LightGreen;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSave.Location = new System.Drawing.Point(593, 9);
+            this.btnSave.Location = new System.Drawing.Point(667, 9);
             this.btnSave.Margin = new System.Windows.Forms.Padding(6);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(159, 37);
+            this.btnSave.Size = new System.Drawing.Size(122, 37);
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // numNo
-            // 
-            this.numNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.numNo.Location = new System.Drawing.Point(203, 50);
-            this.numNo.Name = "numNo";
-            this.numNo.Size = new System.Drawing.Size(120, 26);
-            this.numNo.TabIndex = 21;
-            // 
-            // dtVisitTime
-            // 
-            this.dtVisitTime.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dtVisitTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtVisitTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtVisitTime.Location = new System.Drawing.Point(653, 48);
-            this.dtVisitTime.Name = "dtVisitTime";
-            this.dtVisitTime.ShowUpDown = true;
-            this.dtVisitTime.Size = new System.Drawing.Size(245, 23);
-            this.dtVisitTime.TabIndex = 22;
             // 
             // frmPlantVisit
             // 
@@ -616,6 +616,7 @@
             this.tabPage1.ResumeLayout(false);
             this.tb2.ResumeLayout(false);
             this.tb2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numNo)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridVisitor)).EndInit();
@@ -626,7 +627,6 @@
             this.tb1.PerformLayout();
             this.group_detail.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numNo)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -18,6 +18,10 @@ namespace BIG.VMS.MODEL.CustomModel
         In,
         Out,
         Appointment,
-        Regulary,
+        AppointmentOut,
+        ConstructorIn,
+        ConstructorOut,
+        CustomerIn,
+        CustomerOut
     }
 }

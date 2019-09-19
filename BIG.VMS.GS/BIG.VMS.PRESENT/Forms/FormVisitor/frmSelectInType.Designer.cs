@@ -131,7 +131,9 @@
             this.MinimizeBox = false;
             this.Name = "frmSelectInType";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "เลือกวิธีเข้า";
+            this.Load += new System.EventHandler(this.FrmSelectInType_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.id_card)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.other_card)).EndInit();

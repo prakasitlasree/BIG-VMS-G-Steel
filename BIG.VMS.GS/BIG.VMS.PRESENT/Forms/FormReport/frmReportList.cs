@@ -92,9 +92,14 @@ namespace BIG.VMS.PRESENT.Forms.FormReport
         {
             BindGridData();
             AddRangeComboBox(ddlDept, new ComboBoxServices().GetComboDepartment(), false);
-            CustomGrid();
+            gridReportList.DataBindingComplete += BindingComplete;
+         
         }
 
+        private void BindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            CustomGrid();
+        }
         private void CustomGrid()
         {
                      

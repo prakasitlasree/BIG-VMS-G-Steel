@@ -48,7 +48,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
                 TRN_PROJECT_MEMBER obj = new TRN_PROJECT_MEMBER()
                 {
                     CARD_TYPE = comboType.Text,
-                    FULLNAME = txtName.Text,
+                    FULLNAME = txtName.Text + " " + txtLastName.Text,
                     ID_CARD = txtIDCard.Text,
                     SAFETY_TRAINING_FLAG = radRequire.Checked ? "Y" : "N",
                     POSITION = txtPosition.Text
@@ -59,7 +59,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
-           
+
         }
 
         private void BtnClose_Click(object sender, EventArgs e)

@@ -36,7 +36,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
         private void btnAdd_Click(object sender, EventArgs e)
         {
             var frm = new frmContractor();
-            if(frm.ShowDialog() == DialogResult.OK)
+            if (frm.ShowDialog() == DialogResult.OK)
             {
                 ResetScreen();
             }
@@ -77,7 +77,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
 
             };
 
-            
+
             _container.Filter = filter;
             _container = _service.GetListConstractor(_container).ResultObj;
             SetDataSourceHeader(gridContractorList, ListHeader(), _container.ResultObj);
@@ -124,7 +124,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
         }
 
         private void CustomGrid()
-        { 
+        {
             gridContractorList.RowTemplate.Height = 30;
             for (int i = 0; i < gridContractorList.Rows.Count; i++)
             {
@@ -144,12 +144,12 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
         private List<HeaderGrid> ListHeader()
         {
             List<HeaderGrid> listCol = new List<HeaderGrid>();
-           
+
             listCol.Add(new HeaderGrid { HEADER_TEXT = "ID", FIELD = "AUTO_ID", VISIBLE = false, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "ชื่อบริษัทผู้รับเหมา", FIELD = "NAME", VISIBLE = true, ALIGN = align.Center, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "เบอร์โทร", FIELD = "TEL", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "ที่อยู่", FIELD = "ADDRESS", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
-             listCol.Add(new HeaderGrid { HEADER_TEXT = "วันที่บันทึก", FIELD = "UPDATED_DATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "วันที่บันทึก", FIELD = "UPDATED_DATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "ผู้บันทึก", FIELD = "UPDATED_BY", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
 
 
@@ -176,7 +176,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
                     {
                         dt.Columns[item.FIELD].SetOrdinal(columnIndex);
                         columnIndex++;
-                    } 
+                    }
                 }
 
                 control.DataSource = dt;
@@ -267,12 +267,13 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
         {
             if (e.RowIndex > -1)
             {
+               
                 if (e.ColumnIndex == 0) //Edit
                 {
 
-                    var id = Convert.ToInt32(gridContractorList.Rows[e.RowIndex].Cells["AUTO_ID"].Value); 
+                    var id = Convert.ToInt32(gridContractorList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
                     MAS_CONTRACTOR con = new MAS_CONTRACTOR();
-                    
+
                     var result = _service.GetContractor(id);
                     con.AUTO_ID = result.AUTO_ID;
                     con.NAME = result.NAME;
@@ -280,14 +281,14 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
                     con.TEL = result.TEL;
                     con.UPDATED_BY = result.UPDATED_BY;
                     con.UPDATED_DATE = result.UPDATED_DATE;
-                     
+
                     frmContractor frm = new frmContractor();
                     frm.MAS_CONTRACTOR = con;
                     frm.formMode = FormMode.Edit;
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
                         ResetScreen();
-                    } 
+                    }
                 }
                 if (e.ColumnIndex == 1) //Delete
                 {
@@ -307,7 +308,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
                             MessageBox.Show(resp.Message);
                         }
                     }
-                    
+
                 }
             }
         }
