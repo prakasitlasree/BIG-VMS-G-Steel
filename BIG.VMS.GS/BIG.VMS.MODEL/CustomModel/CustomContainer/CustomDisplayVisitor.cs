@@ -14,6 +14,8 @@ namespace BIG.VMS.MODEL.CustomModel.CustomContainer
         public string TYPE { get; set; }
         public string FIRST_NAME { get; set; }
         public string LAST_NAME { get; set; }
+
+        public string FULL_NAME { get; set; }
         public string CAR_TYPE_NAME { get; set; }
         public string LICENSE_PLATE { get; set; }
         public string CONTACT_EMP_NAME { get; set; }

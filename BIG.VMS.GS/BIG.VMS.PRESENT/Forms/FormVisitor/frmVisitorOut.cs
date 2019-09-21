@@ -148,10 +148,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                                 NO = org_obj.NO,
                                 ID_CARD = org_obj.ID_CARD,
 
-                                TYPE = org_obj.TYPE == "Appointment" ? "AppointmentOut" : 
-                                (org_obj.TYPE == "ConstructorIn" ? "ConstructorOut" :
-                                (org_obj.TYPE == "CustomerIn" ? "CustomerOut" :
-                                "Out")),
+                               TYPE = org_obj.TYPE,
                                 FIRST_NAME = org_obj.FIRST_NAME,
                                 LAST_NAME = org_obj.LAST_NAME,
                                 CAR_TYPE_ID = org_obj.CAR_TYPE_ID,
@@ -169,6 +166,9 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                                 YEAR = org_obj.YEAR,
                                 MONTH = org_obj.MONTH,
                                 TRN_ATTACHEDMENT = org_obj.TRN_ATTACHEDMENT,
+                                REF_ID = org_obj.AUTO_ID,
+                                GROUP = org_obj.GROUP,
+                                BY_PASS = org_obj.BY_PASS
                             };
 
                             if (obj.TRN_ATTACHEDMENT.Count > 0)
@@ -185,12 +185,12 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                                     obj.TRN_ATTACHEDMENT.FirstOrDefault().VISITOR_ID = 0;
                                     obj.TRN_ATTACHEDMENT.FirstOrDefault().AUTO_ID = 0;
                                     obj.TRN_ATTACHEDMENT.FirstOrDefault().TRN_VISITOR = null;
-                                    obj.TRN_ATTACHEDMENT.FirstOrDefault().CONTACT_PHOTO = ImageToByte(picSlip);
+                                    
                                 }
                                 else
                                 {
                                     var attach = new TRN_ATTACHEDMENT();
-                                    attach.CONTACT_PHOTO = ImageToByte(picSlip);
+                                   
                                     obj.TRN_ATTACHEDMENT = new List<TRN_ATTACHEDMENT>();
                                     obj.TRN_ATTACHEDMENT.Add(attach);
                                 }
@@ -221,16 +221,6 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                                     SaveImage(picImage, dir + "PHOTO.jpg");
                                     SaveImage(picCard, dir + "ID_CARD.jpg");
                                 }
-
-
-
-
-                                if (isChangePhoto)
-                                {
-                                    SaveImage(picSlip, dir + "SLIP.jpg");
-                                }
-
-
 
                                 MessageBox.Show(Message.MSG_SAVE_COMPLETE, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.DialogResult = DialogResult.OK;
@@ -309,30 +299,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
         }
 
 
-        private void btnPhoto_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var frm = new CameraSelection();
-                frm.StartPosition = FormStartPosition.CenterParent;
-                if (frm.ShowDialog() == DialogResult.OK)
-                {
-
-                    if (frm.CAMERA != null)
-                    {
-                        isChangePhoto = true;
-                        picSlip.Image = frm.CAMERA;
-                    }
-                    // MessageBox.Show("ถ่ายรูป เรียบร้อย!!!");
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-
-            }
-        }
+      
 
         private void txtNo_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -429,6 +396,11 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
         private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

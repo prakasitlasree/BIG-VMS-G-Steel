@@ -18,6 +18,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BIG.VMS.MODEL.CustomModel.Container;
+using BIG.VMS.PRESENT.Forms.FormReportNew;
 using BIG.VMS.PRESENT.Forms.FormVisitorNew;
 
 namespace BIG.VMS.PRESENT.Forms.Home
@@ -118,13 +119,13 @@ namespace BIG.VMS.PRESENT.Forms.Home
             }
             foreach (DataGridViewRow row in gridVisitorList.Rows)
             {
-                if (row.Cells["TYPE"].Value.ToString() == "ออก"
-                    || row.Cells["TYPE"].Value.ToString() == "นัดล่วงหน้า(ออก)"
-                    || row.Cells["TYPE"].Value.ToString() == "โครงการ(ออก)")
+                if (row.Cells["TYPE"].Value.ToString() == "ออก")
                 {
-
-
-                    row.Cells[2].Value = Properties.Resources.approve;
+                    row.Cells[2].Value = Properties.Resources.transparent;
+                }
+                if (row.Cells["BLACKLIST"].Value.ToString() == "Y")
+                {
+                    row.DefaultCellStyle.BackColor = Color.LightCoral;
                 }
             }
         }
@@ -150,17 +151,22 @@ namespace BIG.VMS.PRESENT.Forms.Home
         private List<HeaderGrid> ListHeader()
         {
             List<HeaderGrid> listCol = new List<HeaderGrid>();
-            listCol.Add(new HeaderGrid { HEADER_TEXT = "ID", FIELD = "AUTO_ID", VISIBLE = false, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
-            listCol.Add(new HeaderGrid { HEADER_TEXT = "เลขที่", FIELD = "NO", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "AUTO_ID", FIELD = "AUTO_ID", VISIBLE = false, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "BY_PASS", FIELD = "BY_PASS", VISIBLE = false, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "BLACKLIST", FIELD = "BLACKLIST", VISIBLE = false, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+
+
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "เลขที่", FIELD = "NO", VISIBLE = true, ALIGN = align.Center, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "ประเภท", FIELD = "TYPE", VISIBLE = true, ALIGN = align.Center, AUTO_SIZE = autoSize.CellContent });
-            listCol.Add(new HeaderGrid { HEADER_TEXT = "กลุ่ม", FIELD = "GROUP", VISIBLE = true, ALIGN = align.Center, AUTO_SIZE = autoSize.CellContent });
-            listCol.Add(new HeaderGrid { HEADER_TEXT = "บัตรประชาชน", FIELD = "ID_CARD", VISIBLE = true, ALIGN = align.Center, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "กลุ่ม", FIELD = "GROUP", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "ชื่อ-สกุล", FIELD = "FULL_NAME", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "บัตรประชาชน", FIELD = "ID_CARD", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "ประเภทรถ", FIELD = "CAR_TYPE_NAME", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "ทะเบียนรถ", FIELD = "LICENSE_PLATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
-            listCol.Add(new HeaderGrid { HEADER_TEXT = "บุคคลที่ต้องการพบ", FIELD = "CONTACT_NAME", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "บุคคลที่ต้องการพบ", FIELD = "CONTACT_EMP_NAME", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "แผนก", FIELD = "DEPT_NAME", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
-            listCol.Add(new HeaderGrid { HEADER_TEXT = "วัตถุประสงค์", FIELD = "TOPIC", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "วัตถุประสงค์", FIELD = "REASON_TEXT", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+
             listCol.Add(new HeaderGrid { HEADER_TEXT = "วันที่บันทึก", FIELD = "CREATED_DATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "ผู้บันทึก", FIELD = "CREATED_BY", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "วันที่แก้ไข", FIELD = "UPDATED_DATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
@@ -296,7 +302,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            frmReportList frm = new frmReportList();
+            frmReport frm = new frmReport();
             frm.StartPosition = FormStartPosition.CenterParent;
             //frm.WindowState = FormWindowState.Maximized;
             if (frm.ShowDialog() == DialogResult.OK)
@@ -315,80 +321,40 @@ namespace BIG.VMS.PRESENT.Forms.Home
                     {
                         #region ===================== edit =====================
                         var id = Convert.ToInt32(gridVisitorList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
-                        var obj = _service.GetVisitorByAutoID(id);
+                        var obj = (TRN_VISITOR)_service.GetVisitorByAutoID(id).TRN_VISITOR;
 
-                        switch (obj.TRN_VISITOR.TYPE)
+                        frmVisitorNew frm = new frmVisitorNew();
+                        frm.TrnVisitor = obj;
+                        frm.formMode = FormMode.Edit;
+                        switch (obj.GROUP)
                         {
-                            case ("Appointment"):
-                            case ("AppointmentOut"):
-                            case ("Out"):
-                            case ("In"):
-                                {
-                                    #region === Mode ===
-                                    frmVisitor frm = new frmVisitor();
-                                    frm.formMode = FormMode.Edit;
-                                    frm.visitorObj = obj.TRN_VISITOR;
-
-                                    if (obj.TRN_VISITOR.TYPE == "Appointment")
-                                    {
-                                        frm.visitorMode = VisitorMode.Appointment;
-                                    }
-                                    else if (obj.TRN_VISITOR.TYPE == "AppointmentOut")
-                                    {
-                                        frm.visitorMode = VisitorMode.AppointmentOut;
-                                    }
-                                    else if (obj.TRN_VISITOR.TYPE == "In")
-                                    {
-                                        frm.visitorMode = VisitorMode.In;
-                                    }
-                                    else if (obj.TRN_VISITOR.TYPE == "Out")
-                                    {
-                                        frm.visitorMode = VisitorMode.Out;
-                                    }
-
-
-                                    if (frm.ShowDialog() == DialogResult.OK)
-                                    {
-                                        ResetScreen();
-                                    }
-                                    #endregion
-                                }
+                            case (nameof(VisitorGroup.NORMAL)):
+                                { frm.VISITOR_GROUP = VisitorGroup.NORMAL; }
                                 break;
-                            case ("CustomerIn"):
-                            case ("CustomerOut"):
-                            case ("ConstructorIn"):
-                            case ("ConstructorOut"):
-                                {
-                                    #region === Mode ===
-                                    frmConstractorVisitor frm = new frmConstractorVisitor();
-                                    frm.formMode = FormMode.Edit;
-                                    frm.visitorObj = obj.TRN_VISITOR;
-
-                                    if (obj.TRN_VISITOR.TYPE == "CustomerIn")
-                                    {
-                                        frm.visitorMode = VisitorMode.CustomerIn;
-                                    }
-                                    else if (obj.TRN_VISITOR.TYPE == "CustomerOut")
-                                    {
-                                        frm.visitorMode = VisitorMode.CustomerOut;
-                                    }
-                                    else if (obj.TRN_VISITOR.TYPE == "ConstructorIn")
-                                    {
-                                        frm.visitorMode = VisitorMode.ConstructorIn;
-                                    }
-                                    else if (obj.TRN_VISITOR.TYPE == "ConstructorOut")
-                                    {
-                                        frm.visitorMode = VisitorMode.ConstructorOut;
-                                    }
-
-
-                                    if (frm.ShowDialog() == DialogResult.OK)
-                                    {
-                                        ResetScreen();
-                                    }
-                                    #endregion
-                                }
+                            case (nameof(VisitorGroup.APPOINTMENT)):
+                                { frm.VISITOR_GROUP = VisitorGroup.APPOINTMENT; }
                                 break;
+                            case (nameof(VisitorGroup.CONSTRUCTOR)):
+                                { frm.VISITOR_GROUP = VisitorGroup.CONSTRUCTOR; }
+                                break;
+                            case (nameof(VisitorGroup.CUSTOMER)):
+                                { frm.VISITOR_GROUP = VisitorGroup.CUSTOMER; }
+                                break;
+                        }
+
+                        switch (obj.TYPE)
+                        {
+                            case (nameof(VisitorType.IN)):
+                                { frm.VISITOR_TYPE = VisitorType.IN; }
+                                break;
+                            case (nameof(VisitorType.OUT)):
+                                { frm.VISITOR_TYPE = VisitorType.OUT; }
+                                break;
+                        }
+
+                        if (frm.ShowDialog() == DialogResult.OK)
+                        {
+                            ResetScreen();
                         }
 
                         #endregion

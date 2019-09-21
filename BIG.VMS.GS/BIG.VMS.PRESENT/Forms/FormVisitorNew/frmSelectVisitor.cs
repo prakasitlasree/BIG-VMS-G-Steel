@@ -27,7 +27,8 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitorNew
         private void BtnNormal_Click(object sender, EventArgs e)
         {
             frmVisitorNew frm = new frmVisitorNew();
-            frm.visitorType = VisitorMode.In;
+            frm.VISITOR_GROUP = VisitorGroup.NORMAL;
+            frm.VISITOR_TYPE = VisitorType.IN;
             frm.formMode = FormMode.Add;
 
             frm.ShowDialog();
@@ -46,7 +47,8 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitorNew
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 frmVisitorNew frmVisitor = new frmVisitorNew();
-                frmVisitor.visitorType = VisitorMode.CustomerIn;
+                frmVisitor.VISITOR_GROUP = VisitorGroup.CUSTOMER;
+                frmVisitor.VISITOR_TYPE = VisitorType.IN;
                 frmVisitor.formMode = FormMode.Add;
                 frmVisitor.TrnCustomerVisit = frm.TrnCustomerVisit;
                 frm.Hide();
@@ -61,7 +63,8 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitorNew
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 frmVisitorNew frmVisitor = new frmVisitorNew();
-                frmVisitor.visitorType = VisitorMode.ConstructorIn;
+                frmVisitor.VISITOR_GROUP = VisitorGroup.CONSTRUCTOR;
+                frmVisitor.VISITOR_TYPE = VisitorType.IN;
                 frmVisitor.formMode = FormMode.Add;
                 frmVisitor.TrnProjectMaster = frm.TrnProjectMaster;
                 frm.Hide();

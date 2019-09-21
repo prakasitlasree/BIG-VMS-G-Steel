@@ -40,10 +40,11 @@
             this.btnUploadCam = new System.Windows.Forms.Button();
             this.btnProvince = new System.Windows.Forms.Button();
             this.txtProvince = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbTime = new System.Windows.Forms.Label();
             this.lbType = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnTakeCard = new System.Windows.Forms.Button();
             this.brn_UploadImgCard = new System.Windows.Forms.Button();
             this.bthCardDelete = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -72,8 +73,8 @@
             this.Lbl_LicensePlate = new System.Windows.Forms.Label();
             this.Lbl_Topic = new System.Windows.Forms.Label();
             this.Lbl_MeetPeople = new System.Windows.Forms.Label();
-            this.txtTopic = new System.Windows.Forms.TextBox();
-            this.txtMeet = new System.Windows.Forms.TextBox();
+            this.txtReason = new System.Windows.Forms.TextBox();
+            this.txtEmployee = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -82,9 +83,9 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.lbDayLeft = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.btnTakeCard = new System.Windows.Forms.Button();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -240,27 +241,27 @@
             this.txtProvince.Size = new System.Drawing.Size(310, 31);
             this.txtProvince.TabIndex = 11;
             // 
-            // label6
+            // lbTime
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(51, 1);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(514, 25);
-            this.label6.TabIndex = 22;
-            this.label6.Text = "time stamp";
+            this.lbTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbTime.AutoSize = true;
+            this.lbTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.ForeColor = System.Drawing.Color.Red;
+            this.lbTime.Location = new System.Drawing.Point(48, 1);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(116, 25);
+            this.lbTime.TabIndex = 22;
+            this.lbTime.Text = "time stamp";
             // 
             // lbType
             // 
             this.lbType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbType.AutoSize = true;
-            this.lbType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbType.ForeColor = System.Drawing.Color.Red;
             this.lbType.Location = new System.Drawing.Point(3, 1);
             this.lbType.Name = "lbType";
-            this.lbType.Size = new System.Drawing.Size(42, 25);
+            this.lbType.Size = new System.Drawing.Size(39, 25);
             this.lbType.TabIndex = 21;
             this.lbType.Text = "เข้า";
             // 
@@ -296,6 +297,19 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(432, 38);
             this.panel4.TabIndex = 5;
+            // 
+            // btnTakeCard
+            // 
+            this.btnTakeCard.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnTakeCard.Image = ((System.Drawing.Image)(resources.GetObject("btnTakeCard.Image")));
+            this.btnTakeCard.Location = new System.Drawing.Point(318, 0);
+            this.btnTakeCard.Margin = new System.Windows.Forms.Padding(0);
+            this.btnTakeCard.Name = "btnTakeCard";
+            this.btnTakeCard.Size = new System.Drawing.Size(38, 38);
+            this.btnTakeCard.TabIndex = 9;
+            this.btnTakeCard.UseVisualStyleBackColor = true;
+            this.btnTakeCard.Visible = false;
+            this.btnTakeCard.Click += new System.EventHandler(this.BtnTakeCard_Click);
             // 
             // brn_UploadImgCard
             // 
@@ -668,23 +682,23 @@
             this.Lbl_MeetPeople.TabIndex = 5;
             this.Lbl_MeetPeople.Text = "บุคคลที่ต้องการพบ";
             // 
-            // txtTopic
+            // txtReason
             // 
-            this.txtTopic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTopic.Enabled = false;
-            this.txtTopic.Location = new System.Drawing.Point(180, 405);
-            this.txtTopic.Name = "txtTopic";
-            this.txtTopic.Size = new System.Drawing.Size(633, 31);
-            this.txtTopic.TabIndex = 10;
+            this.txtReason.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtReason.Enabled = false;
+            this.txtReason.Location = new System.Drawing.Point(180, 405);
+            this.txtReason.Name = "txtReason";
+            this.txtReason.Size = new System.Drawing.Size(633, 31);
+            this.txtReason.TabIndex = 10;
             // 
-            // txtMeet
+            // txtEmployee
             // 
-            this.txtMeet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMeet.Enabled = false;
-            this.txtMeet.Location = new System.Drawing.Point(180, 364);
-            this.txtMeet.Name = "txtMeet";
-            this.txtMeet.Size = new System.Drawing.Size(633, 31);
-            this.txtMeet.TabIndex = 12;
+            this.txtEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEmployee.Enabled = false;
+            this.txtEmployee.Location = new System.Drawing.Point(180, 364);
+            this.txtEmployee.Name = "txtEmployee";
+            this.txtEmployee.Size = new System.Drawing.Size(633, 31);
+            this.txtEmployee.TabIndex = 12;
             // 
             // flowLayoutPanel1
             // 
@@ -791,8 +805,8 @@
             this.tableLayoutPanel4.Controls.Add(this.Lbl_LicensePlate, 0, 8);
             this.tableLayoutPanel4.Controls.Add(this.Lbl_Topic, 0, 11);
             this.tableLayoutPanel4.Controls.Add(this.Lbl_MeetPeople, 0, 9);
-            this.tableLayoutPanel4.Controls.Add(this.txtTopic, 1, 11);
-            this.tableLayoutPanel4.Controls.Add(this.txtMeet, 1, 9);
+            this.tableLayoutPanel4.Controls.Add(this.txtReason, 1, 11);
+            this.tableLayoutPanel4.Controls.Add(this.txtEmployee, 1, 9);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel9, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.txtFirstName, 1, 3);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -817,17 +831,30 @@
             // 
             // tableLayoutPanel9
             // 
-            this.tableLayoutPanel9.ColumnCount = 2;
+            this.tableLayoutPanel9.ColumnCount = 3;
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.Controls.Add(this.label6, 1, 0);
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel9.Controls.Add(this.lbTime, 1, 0);
             this.tableLayoutPanel9.Controls.Add(this.lbType, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.lbDayLeft, 2, 0);
             this.tableLayoutPanel9.Location = new System.Drawing.Point(180, 3);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(568, 28);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(633, 28);
             this.tableLayoutPanel9.TabIndex = 21;
+            // 
+            // lbDayLeft
+            // 
+            this.lbDayLeft.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbDayLeft.AutoSize = true;
+            this.lbDayLeft.Location = new System.Drawing.Point(170, 1);
+            this.lbDayLeft.Name = "lbDayLeft";
+            this.lbDayLeft.Size = new System.Drawing.Size(142, 25);
+            this.lbDayLeft.TabIndex = 23;
+            this.lbDayLeft.Text = "จำนวนวันที่เหลือ";
+            this.lbDayLeft.Visible = false;
             // 
             // txtFirstName
             // 
@@ -841,18 +868,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // btnTakeCard
-            // 
-            this.btnTakeCard.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnTakeCard.Image = ((System.Drawing.Image)(resources.GetObject("btnTakeCard.Image")));
-            this.btnTakeCard.Location = new System.Drawing.Point(318, 0);
-            this.btnTakeCard.Margin = new System.Windows.Forms.Padding(0);
-            this.btnTakeCard.Name = "btnTakeCard";
-            this.btnTakeCard.Size = new System.Drawing.Size(38, 38);
-            this.btnTakeCard.TabIndex = 9;
-            this.btnTakeCard.UseVisualStyleBackColor = true;
-            this.btnTakeCard.Click += new System.EventHandler(this.BtnTakeCard_Click);
             // 
             // frmVisitorNew
             // 
@@ -907,7 +922,7 @@
         private System.Windows.Forms.Button btnUploadCam;
         private System.Windows.Forms.Button btnProvince;
         private System.Windows.Forms.TextBox txtProvince;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbTime;
         private System.Windows.Forms.Label lbType;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Panel panel4;
@@ -938,8 +953,8 @@
         private System.Windows.Forms.Label Lbl_LicensePlate;
         private System.Windows.Forms.Label Lbl_Topic;
         private System.Windows.Forms.Label Lbl_MeetPeople;
-        private System.Windows.Forms.TextBox txtTopic;
-        private System.Windows.Forms.TextBox txtMeet;
+        private System.Windows.Forms.TextBox txtReason;
+        private System.Windows.Forms.TextBox txtEmployee;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
@@ -952,5 +967,6 @@
         private System.Windows.Forms.Button btnTakePhotos;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Button btnTakeCard;
+        private System.Windows.Forms.Label lbDayLeft;
     }
 }

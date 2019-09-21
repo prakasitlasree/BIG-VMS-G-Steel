@@ -13,9 +13,18 @@ namespace BIG.VMS.MODEL.CustomModel
         Edit,
     }
 
-    public enum VisitorModeDisplay
+    public enum VisitorGroup
     {
+        CONSTRUCTOR,
+        CUSTOMER,
+        NORMAL,
+        APPOINTMENT,
+    }
 
+    public enum VisitorType
+    {
+        IN,
+        OUT
     }
 
     public enum VisitorMode

@@ -29,11 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReportList));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnPrintToday = new System.Windows.Forms.Button();
-            this.btnPrintMonth = new System.Windows.Forms.Button();
             this.btnPrintReport = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
@@ -48,8 +45,6 @@
             this.radAll = new System.Windows.Forms.RadioButton();
             this.radIn = new System.Windows.Forms.RadioButton();
             this.radOut = new System.Windows.Forms.RadioButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.ddlDept = new System.Windows.Forms.ComboBox();
             this.gridReportList = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -67,7 +62,7 @@
             this.tableLayoutPanel1.Controls.Add(this.gridReportList, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -78,8 +73,6 @@
             // 
             // flowLayoutPanel2
             // 
-            this.flowLayoutPanel2.Controls.Add(this.btnPrintToday);
-            this.flowLayoutPanel2.Controls.Add(this.btnPrintMonth);
             this.flowLayoutPanel2.Controls.Add(this.btnPrintReport);
             this.flowLayoutPanel2.Controls.Add(this.btnExport);
             this.flowLayoutPanel2.Controls.Add(this.btnClose);
@@ -88,42 +81,6 @@
             this.flowLayoutPanel2.Size = new System.Drawing.Size(1083, 64);
             this.flowLayoutPanel2.TabIndex = 10;
             // 
-            // btnPrintToday
-            // 
-            this.btnPrintToday.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnPrintToday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrintToday.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrintToday.ForeColor = System.Drawing.Color.Black;
-            this.btnPrintToday.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintToday.Image")));
-            this.btnPrintToday.Location = new System.Drawing.Point(4, 4);
-            this.btnPrintToday.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnPrintToday.Name = "btnPrintToday";
-            this.btnPrintToday.Size = new System.Drawing.Size(200, 55);
-            this.btnPrintToday.TabIndex = 5;
-            this.btnPrintToday.Text = "พิมพ์รายวัน";
-            this.btnPrintToday.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPrintToday.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPrintToday.UseVisualStyleBackColor = false;
-            this.btnPrintToday.Click += new System.EventHandler(this.btnPrintToday_Click);
-            // 
-            // btnPrintMonth
-            // 
-            this.btnPrintMonth.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnPrintMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrintMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrintMonth.ForeColor = System.Drawing.Color.Black;
-            this.btnPrintMonth.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintMonth.Image")));
-            this.btnPrintMonth.Location = new System.Drawing.Point(212, 4);
-            this.btnPrintMonth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnPrintMonth.Name = "btnPrintMonth";
-            this.btnPrintMonth.Size = new System.Drawing.Size(200, 55);
-            this.btnPrintMonth.TabIndex = 6;
-            this.btnPrintMonth.Text = "พิมพ์รายเดือน";
-            this.btnPrintMonth.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPrintMonth.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPrintMonth.UseVisualStyleBackColor = false;
-            this.btnPrintMonth.Click += new System.EventHandler(this.btnPrintMonth_Click);
-            // 
             // btnPrintReport
             // 
             this.btnPrintReport.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -131,8 +88,8 @@
             this.btnPrintReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrintReport.ForeColor = System.Drawing.Color.Black;
             this.btnPrintReport.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintReport.Image")));
-            this.btnPrintReport.Location = new System.Drawing.Point(420, 4);
-            this.btnPrintReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPrintReport.Location = new System.Drawing.Point(4, 4);
+            this.btnPrintReport.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrintReport.Name = "btnPrintReport";
             this.btnPrintReport.Size = new System.Drawing.Size(244, 55);
             this.btnPrintReport.TabIndex = 7;
@@ -149,8 +106,8 @@
             this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExport.ForeColor = System.Drawing.Color.Black;
             this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
-            this.btnExport.Location = new System.Drawing.Point(672, 4);
-            this.btnExport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExport.Location = new System.Drawing.Point(256, 4);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(4);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(200, 55);
             this.btnExport.TabIndex = 4;
@@ -168,8 +125,8 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.Black;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(880, 4);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Location = new System.Drawing.Point(464, 4);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(135, 55);
             this.btnClose.TabIndex = 3;
@@ -198,10 +155,8 @@
             this.tableLayoutPanel2.Controls.Add(this.dtTo, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnSearch, 6, 0);
             this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel1, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label3, 3, 1);
-            this.tableLayoutPanel2.Controls.Add(this.ddlDept, 6, 1);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 4);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -252,7 +207,7 @@
             this.dtFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtFrom.Location = new System.Drawing.Point(85, 13);
-            this.dtFrom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtFrom.Margin = new System.Windows.Forms.Padding(4);
             this.dtFrom.Name = "dtFrom";
             this.dtFrom.Size = new System.Drawing.Size(230, 31);
             this.dtFrom.TabIndex = 1;
@@ -265,7 +220,7 @@
             this.dtTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtTo.Location = new System.Drawing.Point(390, 13);
-            this.dtTo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtTo.Margin = new System.Windows.Forms.Padding(4);
             this.dtTo.Name = "dtTo";
             this.dtTo.Size = new System.Drawing.Size(230, 31);
             this.dtTo.TabIndex = 4;
@@ -278,7 +233,7 @@
             this.btnSearch.ForeColor = System.Drawing.Color.Black;
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
             this.btnSearch.Location = new System.Drawing.Point(628, 4);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(203, 50);
             this.btnSearch.TabIndex = 2;
@@ -334,42 +289,13 @@
             this.radOut.Text = "ออก";
             this.radOut.UseVisualStyleBackColor = true;
             // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(390, 66);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(230, 25);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "มาพบฝ่าย";
-            // 
-            // ddlDept
-            // 
-            this.ddlDept.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddlDept.FormattingEnabled = true;
-            this.ddlDept.Location = new System.Drawing.Point(627, 61);
-            this.ddlDept.Name = "ddlDept";
-            this.ddlDept.Size = new System.Drawing.Size(204, 33);
-            this.ddlDept.TabIndex = 9;
-            // 
             // gridReportList
             // 
             this.gridReportList.BackgroundColor = System.Drawing.Color.White;
             this.gridReportList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridReportList.DefaultCellStyle = dataGridViewCellStyle1;
             this.gridReportList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridReportList.Location = new System.Drawing.Point(4, 112);
-            this.gridReportList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridReportList.Margin = new System.Windows.Forms.Padding(4);
             this.gridReportList.Name = "gridReportList";
             this.gridReportList.Size = new System.Drawing.Size(1083, 475);
             this.gridReportList.TabIndex = 1;
@@ -410,15 +336,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.DateTimePicker dtTo;
-        private System.Windows.Forms.Button btnPrintToday;
-        private System.Windows.Forms.Button btnPrintMonth;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.RadioButton radAll;
         private System.Windows.Forms.RadioButton radIn;
         private System.Windows.Forms.RadioButton radOut;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox ddlDept;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Button btnPrintReport;
     }

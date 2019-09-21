@@ -91,7 +91,7 @@ namespace BIG.VMS.PRESENT.Forms.FormReport
         private void frmReportList_Load(object sender, EventArgs e)
         {
             BindGridData();
-            AddRangeComboBox(ddlDept, new ComboBoxServices().GetComboDepartment(), true);
+          
             gridReportList.DataBindingComplete += BindingComplete;
          
         }
@@ -141,10 +141,7 @@ namespace BIG.VMS.PRESENT.Forms.FormReport
                 filter.TYPE = nameof(VisitorMode.Out);
             }
 
-            if( Convert.ToInt32(ddlDept.SelectedValue) > 0)
-            {
-                filter.DEPT_ID = Convert.ToInt32(ddlDept.SelectedValue);
-            }
+           
 
             _container.Filter = filter;
             _container = _service.GetVisitorForReport(_container);

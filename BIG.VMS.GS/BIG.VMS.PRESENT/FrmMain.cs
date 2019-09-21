@@ -1,13 +1,14 @@
 ﻿
+using BIG.VMS.PRESENT.Forms.Contractor;
+using BIG.VMS.PRESENT.Forms.CustomerVisit;
+using BIG.VMS.PRESENT.Forms.FormReport;
+using BIG.VMS.PRESENT.Forms.FormVisitor;
 using BIG.VMS.PRESENT.Forms.Home;
+using BIG.VMS.PRESENT.Forms.Master;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using BIG.VMS.PRESENT.Forms.Master;
-using BIG.VMS.PRESENT.Forms.FormVisitor;
-using BIG.VMS.PRESENT.Forms.FormReport;
-using BIG.VMS.PRESENT.Forms.Contractor;
-using BIG.VMS.PRESENT.Forms.CustomerVisit;
+using BIG.VMS.PRESENT.Forms.FormReportNew;
 
 namespace BIG.VMS.PRESENT
 {
@@ -91,7 +92,7 @@ namespace BIG.VMS.PRESENT
 
         private void report_in_out_Click(object sender, EventArgs e)
         {
-            frmReportList frm = new frmReportList();
+            frmReport frm = new frmReport();
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.WindowState = FormWindowState.Maximized;
             frm.MdiParent = this;
@@ -169,6 +170,11 @@ namespace BIG.VMS.PRESENT
             frm.WindowState = FormWindowState.Maximized;
             frm.MdiParent = this;
             frm.Show();
+        }
+
+        private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
         }
     }
 }

@@ -258,11 +258,17 @@
     <Compile Include="Forms\FormCarMasterDetail\frmCarTypeMaster.Designer.cs">
       <DependentUpon>frmCarTypeMaster.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormReport\frmReport.cs">
+    <Compile Include="Forms\FormReportNew\frmReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormReport\frmReport.Designer.cs">
+    <Compile Include="Forms\FormReportNew\frmReport.Designer.cs">
       <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormReportNew\frmSelectReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormReportNew\frmSelectReport.Designer.cs">
+      <DependentUpon>frmSelectReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormReport\frmReportKeyIn.cs">
       <SubType>Form</SubType>
@@ -578,8 +584,11 @@
     <EmbeddedResource Include="Forms\FormCarMasterDetail\frmCarTypeMaster.resx">
       <DependentUpon>frmCarTypeMaster.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormReport\frmReport.resx">
+    <EmbeddedResource Include="Forms\FormReportNew\frmReport.resx">
       <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormReportNew\frmSelectREport.resx">
+      <DependentUpon>frmSelectReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormReport\frmReportKeyIn.resx">
       <DependentUpon>frmReportKeyIn.cs</DependentUpon>
@@ -836,6 +845,7 @@
     <Content Include="ResourceFile\skill.png" />
     <Content Include="ResourceFile\User group.png" />
     <Content Include="ResourceFile\user-add-icon.png" />
+    <None Include="Resources\transparent.png" />
     <None Include="Resources\Add.png" />
     <None Include="Resources\Boss.png" />
     <None Include="Resources\sso_card.jpg" />

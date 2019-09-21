@@ -870,13 +870,13 @@ namespace BIG.VMS.DATASERVICE
             return obj;
         }
 
-        public ContainerVisitor GetListVisitorNotOut(ContainerVisitor obj)
+        public ContainerDisplayVisitor GetListVisitorNotOut(ContainerDisplayVisitor obj)
         {
-            var result = new ContainerVisitor();
+            var result = new ContainerDisplayVisitor();
             var filter = obj.Filter;
             DateTime startDate = filter.DATE_FROM.Date;
             DateTime endDate = DateTime.Now.AddDays(1).Date;
-            List<CustomVisitor> listData = new List<CustomVisitor>();
+            List<CustomDisplayVisitor> listData = new List<CustomDisplayVisitor>();
             CultureInfo _cultureTHInfo = new CultureInfo("th-TH");
 
             try
@@ -928,23 +928,36 @@ namespace BIG.VMS.DATASERVICE
 
 
                         listData = (from item in reTrnVisitor
-                                    select new CustomVisitor
+                                    select new CustomDisplayVisitor()
                                     {
                                         AUTO_ID = item.AUTO_ID,
                                         NO = item.NO,
                                         ID_CARD = item.ID_CARD,
-                                        NAME = item.FIRST_NAME + " " + item.LAST_NAME,
-                                        CAR_TYPE_NAME = item.MAS_CAR_TYPE != null ? item.MAS_CAR_TYPE.NAME : "",
+
+                                        TYPE = item.TYPE == "IN" ? "เข้า" : "ออก",
+                                        GROUP = item.GROUP == "NORMAL" ? "บุคคลทั่วไป" :
+                                            item.GROUP == "APPOINTMENT" ? "บุคคลที่นัดหมาย" :
+                                            item.GROUP == "CONSTRUCTOR" ? "กลุ่มพนักงานรับเหมา" :
+                                            item.GROUP == "CUSTOMER" ? "กลุ่มลูกค้า" : "ไม่ระบุ",
+
+                                        FIRST_NAME = item.FIRST_NAME,
+                                        LAST_NAME = item.LAST_NAME,
                                         LICENSE_PLATE = item.LICENSE_PLATE,
-                                        PROVINCE = item.MAS_PROVINCE != null ? item.MAS_PROVINCE.NAME : "",
-                                        CONTACT_NAME = item.MAS_EMPLOYEE != null ? item.MAS_EMPLOYEE.FIRST_NAME + " " + item.MAS_EMPLOYEE.LAST_NAME : "",
-                                        TIME_IN = item.CREATED_DATE.Value != null ? Convert.ToDateTime(item.CREATED_DATE.Value, _cultureTHInfo) : item.CREATED_DATE,
-                                        TYPE = item.TYPE == "In" ? "เข้า" : (item.TYPE == "Out" ? "ออก" : (item.TYPE == "Appointment" ? "นัดล่วงหน้า(เข้า)" : (item.TYPE == "AppointmentOut" ? "นัดล่วงหน้า(ออก)" : "ไม่ระบุ"))),
-                                        DEPT_NAME = item.MAS_EMPLOYEE.MAS_DEPARTMENT != null ? item.MAS_EMPLOYEE.MAS_DEPARTMENT.NAME : "ไม่ระบุ",
+                                        STATUS = item.STATUS,
+                                        CAR_TYPE_NAME = item.MAS_CAR_TYPE.NAME,
+                                        //DEPT_NAME = item.MAS_EMPLOYEE.MAS_DEPARTMENT.NAME,
+                                        TIME_IN = item.CREATED_DATE,
+                                        BY_PASS = item.BY_PASS,
+                                        CONTACT_EMP_NAME = item.CONTACT_EMPLOYEE_NAME,
+                                        REASON_TEXT = item.REASON_TEXT,
+                                        //BLACKLIST = blList.Any(o => o.ID_CARD == item.ID_CARD) ? "Y" : "N",
+
+                                        FULL_NAME = item.FIRST_NAME + " " + item.LAST_NAME,
+
                                         CREATED_BY = item.CREATED_BY,
                                         CREATED_DATE = item.CREATED_DATE,
                                         UPDATED_BY = item.UPDATED_BY,
-                                        UPDATED_DATE = item.UPDATED_DATE
+                                        UPDATED_DATE = item.UPDATED_DATE,
 
 
 
@@ -1250,6 +1263,78 @@ namespace BIG.VMS.DATASERVICE
             return result;
         }
 
+        public Response UpdateVisitor(TRN_VISITOR source,bool cardChange,bool photoChange)
+        {
+            var result = new Response();
+            using (var ctx = new BIG_VMSEntities())
+            {
+
+                try
+                {
+                    var data = ctx.TRN_VISITOR.Include("TRN_ATTACHEDMENT").FirstOrDefault(o => o.AUTO_ID == source.AUTO_ID);
+
+                    if (data != null)
+                    {
+                        data.YEAR = source.YEAR;
+                        data.MONTH = source.MONTH;
+                        data.NO = source.NO;
+                        data.ID_CARD = source.ID_CARD;
+                        data.TYPE = source.TYPE;
+                        data.GROUP = source.GROUP;
+                        data.BY_PASS = source.BY_PASS;
+                        data.CAR_TYPE_ID = source.CAR_TYPE_ID;
+                        data.CONTACT_EMPLOYEE_ID = source.CONTACT_EMPLOYEE_ID;
+                        data.CONTACT_EMPLOYEE_NAME = source.CONTACT_EMPLOYEE_NAME;
+                        data.FIRST_NAME = source.FIRST_NAME;
+                        data.LAST_NAME = source.LAST_NAME;
+                        data.LICENSE_PLATE = source.LICENSE_PLATE;
+                        data.LICENSE_PLATE_PROVINCE_ID = source.LICENSE_PLATE_PROVINCE_ID;
+                        data.REASON_ID = source.REASON_ID;
+                        data.REASON_TEXT = source.REASON_TEXT;
+                        data.STATUS = source.STATUS;
+                        data.CREATED_BY = source.CREATED_BY;
+                        data.CREATED_DATE = source.CREATED_DATE;
+                        data.UPDATED_BY = source.UPDATED_BY;
+                        data.UPDATED_DATE = source.UPDATED_DATE;
+
+                        if (data.TRN_ATTACHEDMENT.Count > 0)
+                        {
+                            if (cardChange)
+                            {
+                                data.TRN_ATTACHEDMENT.FirstOrDefault().ID_CARD_PHOTO =
+                                    source.TRN_ATTACHEDMENT.FirstOrDefault()?.ID_CARD_PHOTO;
+                            }
+
+                            if (photoChange)
+                            {
+                                data.TRN_ATTACHEDMENT.FirstOrDefault().CONTACT_PHOTO = source.TRN_ATTACHEDMENT.FirstOrDefault()?.CONTACT_PHOTO;
+                            }
+                           
+                        }
+                    }
+
+                    ctx.SaveChanges();
+                    result.ResultObj = source;
+                    result.Status = true;
+                    result.Message = "Save Successful";
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    result.Status = false;
+                    result.ExceptionMessage = ex.Message.ToString();
+                }
+                catch (Exception ex)
+                {
+                    result.Status = false;
+                    result.ExceptionMessage = ex.Message.ToString();
+                }
+            }
+
+            return result;
+        }
+
+
+
         public ContainerDisplayVisitor GetContainerDisplayVisitor(ContainerDisplayVisitor obj)
         {
             var result = new ContainerDisplayVisitor();
@@ -1257,6 +1342,7 @@ namespace BIG.VMS.DATASERVICE
             using (var ctx = new BIG_VMSEntities())
             {
                 var listData = new List<CustomDisplayVisitor>();
+                var blList = ctx.TRN_BLACKLIST.ToList();
                 try
                 {
                     var query = GetListDisplayVisitorQuery(obj).Select(item => new CustomDisplayVisitor()
@@ -1276,12 +1362,15 @@ namespace BIG.VMS.DATASERVICE
                         LICENSE_PLATE = item.LICENSE_PLATE,
                         STATUS = item.STATUS,
                         CAR_TYPE_NAME = item.MAS_CAR_TYPE.NAME,
-                        DEPT_NAME = item.MAS_EMPLOYEE.MAS_DEPARTMENT.NAME,
+                        DEPT_NAME = item.MAS_EMPLOYEE != null ? item.MAS_EMPLOYEE.MAS_DEPARTMENT.NAME : "ไม่ระบุ",
                         TIME_IN = item.CREATED_DATE,
                         BY_PASS = item.BY_PASS,
                         CONTACT_EMP_NAME = item.CONTACT_EMPLOYEE_NAME,
                         REASON_TEXT = item.REASON_TEXT,
-                        BLACKLIST = ctx.TRN_BLACKLIST.Any(o => o.ID_CARD == item.ID_CARD) ? "Y" : "N",
+                        //BLACKLIST = blList.Any(o => o.ID_CARD == item.ID_CARD) ? "Y" : "N",
+
+                        FULL_NAME = item.FIRST_NAME + " " + item.LAST_NAME,
+
                         CREATED_BY = item.CREATED_BY,
                         CREATED_DATE = item.CREATED_DATE,
                         UPDATED_BY = item.UPDATED_BY,
@@ -1299,6 +1388,12 @@ namespace BIG.VMS.DATASERVICE
                                            .Take(obj.PageInfo.PAGE_SIZE)
                                            .ToList();
 
+
+                        foreach (var item in listData)
+                        {
+                            item.BLACKLIST = blList.Any(o => o.ID_CARD == item.ID_CARD) ? "Y" : "N";
+                        }
+
                         result.PageInfo = obj.PageInfo;
                     }
                     else
@@ -1309,6 +1404,11 @@ namespace BIG.VMS.DATASERVICE
                                           .Skip(page.PAGE_SIZE * (page.PAGE - 1))
                                           .Take(page.PAGE_SIZE)
                                           .ToList();
+
+                        foreach (var item in listData)
+                        {
+                            item.BLACKLIST = blList.Any(o => o.ID_CARD == item.ID_CARD) ? "Y" : "N";
+                        }
 
                         result.PageInfo = page;
                     }
