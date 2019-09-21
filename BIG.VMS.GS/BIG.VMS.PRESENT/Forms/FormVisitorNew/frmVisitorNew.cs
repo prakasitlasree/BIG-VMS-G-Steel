@@ -145,6 +145,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     txtFirstName.Text = txtFirstName.Text.Trim() != ""? txtFirstName.Text.Trim() :"ไม่ระบุุ";
                     txtLastName.Text = txtLastName.Text.Trim() != "" ? txtLastName.Text.Trim() : "ไม่ระบุุ";
                     txtIDCard.Text = txtIDCard.Text.Trim() != "" ? txtIDCard.Text.Trim() : "ไม่ระบุุ";
+                    flgCardImgChange = true;
 
                     #endregion
 

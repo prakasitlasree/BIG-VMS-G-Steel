@@ -17,6 +17,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BIG.VMS.MODEL.CustomModel.Container;
 using BIG.VMS.PRESENT.Forms.FormVisitorNew;
 
 namespace BIG.VMS.PRESENT.Forms.Home
@@ -24,7 +25,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
     public partial class frmVisitorList : PageBase
     {
         private readonly VisitorServices _service = new VisitorServices();
-        private ContainerVisitor _container = new ContainerVisitor();
+        private ContainerDisplayVisitor _container = new ContainerDisplayVisitor();
         private ComboBoxServices _comboService = new ComboBoxServices();
 
         public frmVisitorList()
@@ -94,7 +95,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
                 filter.TYPE = "AppointmentOut";
             }
             _container.Filter = filter;
-            _container = _service.Retrieve(_container);
+            _container = _service.GetContainerDisplayVisitor(_container);
             SetDataSourceHeader(gridVisitorList, ListHeader(), _container.ResultObj);
             SetPageControl(_container);
 
@@ -150,8 +151,9 @@ namespace BIG.VMS.PRESENT.Forms.Home
         {
             List<HeaderGrid> listCol = new List<HeaderGrid>();
             listCol.Add(new HeaderGrid { HEADER_TEXT = "ID", FIELD = "AUTO_ID", VISIBLE = false, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
-            listCol.Add(new HeaderGrid { HEADER_TEXT = "เลขที่", FIELD = "NO", VISIBLE = true, ALIGN = align.Center, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "เลขที่", FIELD = "NO", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "ประเภท", FIELD = "TYPE", VISIBLE = true, ALIGN = align.Center, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "กลุ่ม", FIELD = "GROUP", VISIBLE = true, ALIGN = align.Center, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "บัตรประชาชน", FIELD = "ID_CARD", VISIBLE = true, ALIGN = align.Center, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "ชื่อ-สกุล", FIELD = "FULL_NAME", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "ประเภทรถ", FIELD = "CAR_TYPE_NAME", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
@@ -185,7 +187,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
 
         }
 
-        private void SetPageControl(ContainerVisitor obj)
+        private void SetPageControl(ContainerDisplayVisitor obj)
         {
             if (obj.PageInfo == null)
             {
@@ -255,10 +257,8 @@ namespace BIG.VMS.PRESENT.Forms.Home
             //frmSelectInType frm = new frmSelectInType();
             frmSelectVisitor frm = new frmSelectVisitor();
             frm.StartPosition = FormStartPosition.CenterParent;
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                ResetScreen();
-            }
+            frm.ShowDialog();
+            ResetScreen();
 
 
         }
@@ -390,7 +390,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
                                 }
                                 break;
                         }
-                       
+
                         #endregion
                     }
 

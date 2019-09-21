@@ -10,6 +10,7 @@ using BIG.VMS.MODEL.EntityModel;
 using BIG.VMS.MODEL.CustomModel.CustomContainer;
 using System.Globalization;
 using System.Data.Entity.Validation;
+using BIG.VMS.MODEL.CustomModel.Container;
 
 namespace BIG.VMS.DATASERVICE
 {
@@ -1247,6 +1248,147 @@ namespace BIG.VMS.DATASERVICE
             }
 
             return result;
+        }
+
+        public ContainerDisplayVisitor GetContainerDisplayVisitor(ContainerDisplayVisitor obj)
+        {
+            var result = new ContainerDisplayVisitor();
+
+            using (var ctx = new BIG_VMSEntities())
+            {
+                var listData = new List<CustomDisplayVisitor>();
+                try
+                {
+                    var query = GetListDisplayVisitorQuery(obj).Select(item => new CustomDisplayVisitor()
+                    {
+                        AUTO_ID = item.AUTO_ID,
+                        NO = item.NO,
+                        ID_CARD = item.ID_CARD,
+
+                        TYPE = item.TYPE == "IN" ? "เข้า" : "ออก",
+                        GROUP = item.GROUP == "NORMAL" ? "บุคคลทั่วไป" :
+                                item.GROUP == "APPOINTMENT" ? "บุคคลที่นัดหมาย" :
+                                item.GROUP == "CONSTRUCTOR" ? "กลุ่มพนักงานรับเหมา" :
+                                item.GROUP == "CUSTOMER" ? "กลุ่มลูกค้า" : "ไม่ระบุ",
+
+                        FIRST_NAME = item.FIRST_NAME,
+                        LAST_NAME = item.LAST_NAME,
+                        LICENSE_PLATE = item.LICENSE_PLATE,
+                        STATUS = item.STATUS,
+                        CAR_TYPE_NAME = item.MAS_CAR_TYPE.NAME,
+                        DEPT_NAME = item.MAS_EMPLOYEE.MAS_DEPARTMENT.NAME,
+                        TIME_IN = item.CREATED_DATE,
+                        BY_PASS = item.BY_PASS,
+                        CONTACT_EMP_NAME = item.CONTACT_EMPLOYEE_NAME,
+                        REASON_TEXT = item.REASON_TEXT,
+                        BLACKLIST = ctx.TRN_BLACKLIST.Any(o => o.ID_CARD == item.ID_CARD) ? "Y" : "N",
+                        CREATED_BY = item.CREATED_BY,
+                        CREATED_DATE = item.CREATED_DATE,
+                        UPDATED_BY = item.UPDATED_BY,
+                        UPDATED_DATE = item.UPDATED_DATE,
+
+                    });
+
+
+                    if (obj.PageInfo != null)
+                    {
+                        obj.PageInfo.TOTAL_PAGE = Convert.ToInt32(Math.Ceiling(Convert.ToDouble(query.Count()) / Convert.ToDouble(obj.PageInfo.PAGE_SIZE)));
+
+                        listData = query.OrderByDescending(o => o.UPDATED_DATE)
+                                           .Skip(obj.PageInfo.PAGE_SIZE * (obj.PageInfo.PAGE - 1))
+                                           .Take(obj.PageInfo.PAGE_SIZE)
+                                           .ToList();
+
+                        result.PageInfo = obj.PageInfo;
+                    }
+                    else
+                    {
+                        Pagination page = new Pagination();
+                        page.TOTAL_PAGE = Convert.ToInt32(Math.Ceiling(Convert.ToDouble(query.Count()) / Convert.ToDouble(page.PAGE_SIZE)));
+                        listData = query.OrderByDescending(o => o.UPDATED_DATE)
+                                          .Skip(page.PAGE_SIZE * (page.PAGE - 1))
+                                          .Take(page.PAGE_SIZE)
+                                          .ToList();
+
+                        result.PageInfo = page;
+                    }
+
+                    result.ResultObj = listData;
+                    result.Status = true;
+                    result.Message = "Retrive Data Successful";
+                }
+                catch (Exception ex)
+                {
+                    result.Status = false;
+                    result.Message = ex.Message.ToString();
+                }
+
+            }
+
+            return result;
+        }
+
+        public IQueryable<TRN_VISITOR> GetListDisplayVisitorQuery(ContainerDisplayVisitor obj)
+        {
+
+            try
+            {
+                var ctx = new BIG_VMSEntities();
+                var filter = obj.Filter;
+                IQueryable<TRN_VISITOR> query = ctx.TRN_VISITOR;
+                if (obj.Filter != null)
+                {
+                    if (!string.IsNullOrEmpty(filter.ID_CARD))
+                    {
+                        query = query.Where(o => o.ID_CARD.Contains(filter.ID_CARD));
+                    }
+                    if (!string.IsNullOrEmpty(filter.TYPE))
+                    {
+                        query = query.Where(o => o.TYPE == filter.TYPE);
+                    }
+                    if (!string.IsNullOrEmpty(filter.LICENSE_PLATE))
+                    {
+                        query = query.Where(o => o.LICENSE_PLATE.Contains(filter.LICENSE_PLATE));
+                    }
+                    if (filter.NO > 0)
+                    {
+                        query = query.Where(o => o.NO == filter.NO);
+                    }
+                    if (!string.IsNullOrEmpty(filter.FIRST_NAME))
+                    {
+                        query = query.Where(o => o.FIRST_NAME.Contains(filter.FIRST_NAME));
+                    }
+                    if (!string.IsNullOrEmpty(filter.LAST_NAME))
+                    {
+                        query = query.Where(o => o.LAST_NAME.Contains(filter.LAST_NAME));
+                    }
+                    if (filter.DATE_TO != DateTime.MinValue)
+                    {
+                        var endDate = filter.DATE_TO.AddDays(1);
+                        query = query.Where(x => x.CREATED_DATE >= filter.DATE_TO && x.CREATED_DATE <= endDate);
+
+                    }
+                    if (string.IsNullOrEmpty(filter.FIRST_NAME) && string.IsNullOrEmpty(filter.LAST_NAME) &&
+                        string.IsNullOrEmpty(filter.LICENSE_PLATE) && filter.NO == 0)
+                    {
+                        var date = DateTime.Now.AddDays(-30);
+                        query = query.Where(x => x.CREATED_DATE >= date);
+                    }
+
+                    query.OrderByDescending(o => o.UPDATED_DATE);
+                    return query;
+                }
+                else
+                {
+                    query.OrderByDescending(o => o.UPDATED_DATE);
+                    return query;
+                }
+
+            }
+            catch
+            {
+                throw;
+            }
         }
     }
 }
