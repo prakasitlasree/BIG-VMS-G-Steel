@@ -287,6 +287,7 @@ namespace BIG.VMS.DATASERVICE
                 {
                     var project = ctx.TRN_PROJECT_MASTER
                         .Include("TRN_PROJECT_MEMBER")
+                        .Include(x=>x.MAS_CONTRACTOR)
                         .Where(o => o.AUTO_ID == id).FirstOrDefault();
 
                     resp.ResultObj = project;
@@ -316,6 +317,7 @@ namespace BIG.VMS.DATASERVICE
                 {
                     var project = ctx.TRN_PROJECT_MASTER
                         .Include("TRN_PROJECT_MEMBER")
+                        .Include(x=>x.MAS_CONTRACTOR)
                         .Where(o => o.AUTO_ID == id).FirstOrDefault();
 
                     resp.ResultObj = project.TRN_PROJECT_MEMBER;

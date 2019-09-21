@@ -13,6 +13,11 @@ namespace BIG.VMS.MODEL.CustomModel
         Edit,
     }
 
+    public enum VisitorModeDisplay
+    {
+
+    }
+
     public enum VisitorMode
     {
         In,

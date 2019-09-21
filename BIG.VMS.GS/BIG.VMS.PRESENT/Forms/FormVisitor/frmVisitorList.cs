@@ -17,6 +17,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BIG.VMS.PRESENT.Forms.FormVisitorNew;
 
 namespace BIG.VMS.PRESENT.Forms.Home
 {
@@ -251,7 +252,8 @@ namespace BIG.VMS.PRESENT.Forms.Home
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            frmSelectInType frm = new frmSelectInType();
+            //frmSelectInType frm = new frmSelectInType();
+            frmSelectVisitor frm = new frmSelectVisitor();
             frm.StartPosition = FormStartPosition.CenterParent;
             if (frm.ShowDialog() == DialogResult.OK)
             {

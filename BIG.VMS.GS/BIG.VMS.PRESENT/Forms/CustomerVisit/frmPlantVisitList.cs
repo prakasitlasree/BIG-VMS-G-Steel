@@ -345,5 +345,75 @@ namespace BIG.VMS.PRESENT.Forms.CustomerVisit
                 }
             }
         }
+
+        private void TableLayoutPanel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtcustName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtReqName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FlowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void TableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void TableLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void TxtPage_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnFirst_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnPrevious_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnNext_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnLast_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

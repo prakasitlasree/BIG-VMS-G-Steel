@@ -290,6 +290,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ReportDBSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormVisitorNew\frmSelectCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVisitorNew\frmSelectCard.Designer.cs">
+      <DependentUpon>frmSelectCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormVisitorNew\frmSelectConstructor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVisitorNew\frmSelectConstructor.Designer.cs">
+      <DependentUpon>frmSelectConstructor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormVisitorNew\frmSelectCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVisitorNew\frmSelectCustomer.Designer.cs">
+      <DependentUpon>frmSelectCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormVisitorNew\frmSelectVisitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVisitorNew\frmSelectVisitor.Designer.cs">
+      <DependentUpon>frmSelectVisitor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormVisitor\frmAttachment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -331,6 +355,12 @@
     </Compile>
     <Compile Include="Forms\FormVisitor\frmSelectInType.Designer.cs">
       <DependentUpon>frmSelectInType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormVisitorNew\frmVisitorNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVisitorNew\frmVisitorNew.Designer.cs">
+      <DependentUpon>frmVisitorNew.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormVisitor\frmVisitorOutList.cs">
       <SubType>Form</SubType>
@@ -560,6 +590,18 @@
     <EmbeddedResource Include="Forms\FormReport\frmReportViewer.resx">
       <DependentUpon>frmReportViewer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVisitorNew\frmSelectCard.resx">
+      <DependentUpon>frmSelectCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVisitorNew\frmSelectConstructor.resx">
+      <DependentUpon>frmSelectConstructor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVisitorNew\frmSelectCustomer.resx">
+      <DependentUpon>frmSelectCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVisitorNew\frmSelectVisitor.resx">
+      <DependentUpon>frmSelectVisitor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormVisitor\frmAttachment.resx">
       <DependentUpon>frmAttachment.cs</DependentUpon>
     </EmbeddedResource>
@@ -580,6 +622,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormVisitor\frmSelectInType.resx">
       <DependentUpon>frmSelectInType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVisitorNew\frmVisitorNew.resx">
+      <DependentUpon>frmVisitorNew.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormVisitor\frmVisitorOutList.resx">
       <DependentUpon>frmVisitorOutList.cs</DependentUpon>

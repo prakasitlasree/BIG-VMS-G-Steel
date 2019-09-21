@@ -383,7 +383,7 @@
             this.MinimizeBox = false;
             this.Name = "frmAppointment";
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "นัดล่วงหน้า";
             this.Load += new System.EventHandler(this.frmAppointment_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

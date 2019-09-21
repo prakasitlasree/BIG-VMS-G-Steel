@@ -91,7 +91,7 @@ namespace BIG.VMS.PRESENT.Forms.FormReport
         private void frmReportList_Load(object sender, EventArgs e)
         {
             BindGridData();
-            AddRangeComboBox(ddlDept, new ComboBoxServices().GetComboDepartment(), false);
+            AddRangeComboBox(ddlDept, new ComboBoxServices().GetComboDepartment(), true);
             gridReportList.DataBindingComplete += BindingComplete;
          
         }
@@ -115,7 +115,7 @@ namespace BIG.VMS.PRESENT.Forms.FormReport
                 }
             }
 
-            gridReportList.Columns[0].DefaultCellStyle.ForeColor = Color.White;
+            //gridReportList.Columns[0].DefaultCellStyle.ForeColor = Color.White;
         }
 
         private void BindGridData()

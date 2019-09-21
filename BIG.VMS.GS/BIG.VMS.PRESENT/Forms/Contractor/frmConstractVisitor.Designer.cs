@@ -71,6 +71,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnPhoto = new System.Windows.Forms.Button();
             this.brn_UploadImgCard = new System.Windows.Forms.Button();
             this.bthCardDelete = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -82,7 +83,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.btnUploadCam = new System.Windows.Forms.Button();
             this.btnDeleteCam = new System.Windows.Forms.Button();
-            this.btnPhoto = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -675,6 +675,18 @@
             this.panel4.Size = new System.Drawing.Size(432, 38);
             this.panel4.TabIndex = 5;
             // 
+            // btnPhoto
+            // 
+            this.btnPhoto.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnPhoto.Image = ((System.Drawing.Image)(resources.GetObject("btnPhoto.Image")));
+            this.btnPhoto.Location = new System.Drawing.Point(318, 0);
+            this.btnPhoto.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPhoto.Name = "btnPhoto";
+            this.btnPhoto.Size = new System.Drawing.Size(38, 38);
+            this.btnPhoto.TabIndex = 8;
+            this.btnPhoto.UseVisualStyleBackColor = true;
+            this.btnPhoto.Click += new System.EventHandler(this.BtnPhoto_Click);
+            // 
             // brn_UploadImgCard
             // 
             this.brn_UploadImgCard.Dock = System.Windows.Forms.DockStyle.Right;
@@ -806,18 +818,6 @@
             this.btnDeleteCam.TabIndex = 5;
             this.btnDeleteCam.UseVisualStyleBackColor = true;
             this.btnDeleteCam.Click += new System.EventHandler(this.btnDeleteCam_Click);
-            // 
-            // btnPhoto
-            // 
-            this.btnPhoto.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnPhoto.Image = ((System.Drawing.Image)(resources.GetObject("btnPhoto.Image")));
-            this.btnPhoto.Location = new System.Drawing.Point(318, 0);
-            this.btnPhoto.Margin = new System.Windows.Forms.Padding(0);
-            this.btnPhoto.Name = "btnPhoto";
-            this.btnPhoto.Size = new System.Drawing.Size(38, 38);
-            this.btnPhoto.TabIndex = 8;
-            this.btnPhoto.UseVisualStyleBackColor = true;
-            this.btnPhoto.Click += new System.EventHandler(this.BtnPhoto_Click);
             // 
             // frmConstractorVisitor
             // 

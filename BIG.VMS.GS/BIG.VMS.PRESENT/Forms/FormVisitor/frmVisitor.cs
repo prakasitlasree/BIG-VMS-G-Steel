@@ -334,7 +334,8 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     UPDATED_DATE = DateTime.Now,
                     YEAR = DateTime.Now.Year,
                     MONTH = DateTime.Now.Month,
-                    BY_PASS = "N"
+                    BY_PASS = "N",
+                    
 
                 };
 
@@ -875,8 +876,6 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
 
             }
         }
-
-
 
         private void brn_UploadImgCard_Click(object sender, EventArgs e)
         {

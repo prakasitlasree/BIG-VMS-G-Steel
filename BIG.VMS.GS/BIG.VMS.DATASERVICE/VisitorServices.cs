@@ -174,9 +174,9 @@ namespace BIG.VMS.DATASERVICE
                         UPDATED_BY = item.UPDATED_BY,
                         UPDATED_DATE = item.UPDATED_DATE,
 
-                        CONTACT_NAME = item.TYPE == "ConstructorIn" || 
-                        item.TYPE == "ConstructorOut" || 
-                        item.TYPE == "CustomerIn" || 
+                        CONTACT_NAME = item.TYPE == "ConstructorIn" ||
+                        item.TYPE == "ConstructorOut" ||
+                        item.TYPE == "CustomerIn" ||
                         item.TYPE == "CustomerOut" ? item.CONTACT_EMPLOYEE_NAME : item.MAS_EMPLOYEE.FIRST_NAME + " " + item.MAS_EMPLOYEE.LAST_NAME,
 
                         CAR_TYPE_NAME = item.MAS_CAR_TYPE.NAME,
@@ -184,9 +184,9 @@ namespace BIG.VMS.DATASERVICE
                         DEPT_NAME = item.MAS_EMPLOYEE.MAS_DEPARTMENT.NAME,
                         TIME_IN = item.CREATED_DATE,
 
-                        TOPIC = item.TYPE == "ConstructorIn" || 
-                        item.TYPE == "ConstructorOut" || 
-                        item.TYPE == "CustomerIn" || 
+                        TOPIC = item.TYPE == "ConstructorIn" ||
+                        item.TYPE == "ConstructorOut" ||
+                        item.TYPE == "CustomerIn" ||
                         item.TYPE == "CustomerOut" ? item.REASON_TEXT : item.MAS_REASON.REASON,
 
                     });
@@ -778,11 +778,11 @@ namespace BIG.VMS.DATASERVICE
 
                         if (filter.TYPE == nameof(VisitorMode.In))
                         {
-                            reTrnVisitor = reTrnVisitor.Where(o => o.TYPE.Trim() == "In" || o.TYPE.Trim() == "Appointment").ToList();
+                            reTrnVisitor = reTrnVisitor.Where(o => o.TYPE.Trim() == "In" || o.TYPE.Trim() == "Appointment" || o.TYPE.Trim() == "ConstructorIn" || o.TYPE.Trim() == "CustomerIn").ToList();
                         }
                         if (filter.TYPE == nameof(VisitorMode.Out))
                         {
-                            reTrnVisitor = reTrnVisitor.Where(o => o.TYPE.Trim() == "Out" || o.TYPE.Trim() == "AppointmentOut").ToList();
+                            reTrnVisitor = reTrnVisitor.Where(o => o.TYPE.Trim() == "Out" || o.TYPE.Trim() == "AppointmentOut" || o.TYPE.Trim() == "ConstructorOut" || o.TYPE.Trim() == "CustomerOut").ToList();
                         }
                         if (filter.DEPT_ID > 0)
                         {
@@ -808,9 +808,19 @@ namespace BIG.VMS.DATASERVICE
                                         LICENSE_PLATE = item.LICENSE_PLATE,
                                         PROVINCE = item.MAS_PROVINCE != null ? item.MAS_PROVINCE.NAME : "",
                                         CONTACT_NAME = item.MAS_EMPLOYEE != null ? item.MAS_EMPLOYEE.FIRST_NAME + " " + item.MAS_EMPLOYEE.LAST_NAME : "",
+
                                         TIME_IN = item.CREATED_DATE.Value != null ? Convert.ToDateTime(item.CREATED_DATE.Value, _cultureTHInfo) : item.CREATED_DATE,
-                                        TYPE = item.TYPE == "In" ? "เข้า" : (item.TYPE == "Out" ? "ออก" : (item.TYPE == "Appointment" ? "นัดล่วงหน้า(เข้า)" : (item.TYPE == "AppointmentOut" ? "นัดล่วงหน้า(ออก)" : "ไม่ระบุ"))),
-                                        DEPT_NAME = item.MAS_EMPLOYEE.MAS_DEPARTMENT != null ? item.MAS_EMPLOYEE.MAS_DEPARTMENT.NAME : "ไม่ระบุ",
+                                        TYPE = item.TYPE == "In" ? "เข้า"
+                                        : (item.TYPE == "Out" ? "ออก"
+                                        : (item.TYPE == "Appointment" ? "นัดล่วงหน้า(เข้า)"
+                                        : (item.TYPE == "AppointmentOut" ? "นัดล่วงหน้า(ออก)"
+                                        : (item.TYPE == "ConstructorIn" ? "โครงการ(ออก)"
+                                        : (item.TYPE == "ConstructorOut" ? "โครงการ(ออก)"
+                                        : (item.TYPE == "CustomerIn" ? "ลูกค้า(ออก)"
+                                        : (item.TYPE == "CustomerOut" ? "ลูกค้า(ออก)"
+                                        : "ไม่ระบุ"))))))),
+
+                                        DEPT_NAME = item.MAS_EMPLOYEE != null ? item.MAS_EMPLOYEE.MAS_DEPARTMENT != null ? item.MAS_EMPLOYEE.MAS_DEPARTMENT.NAME : "ไม่ระบุ" : "ไม่ระบุุ",
                                         CREATED_BY = item.CREATED_BY,
                                         CREATED_DATE = item.CREATED_DATE,
                                         UPDATED_BY = item.UPDATED_BY,
@@ -1206,6 +1216,37 @@ namespace BIG.VMS.DATASERVICE
                 resp.Message = ex.Message;
             }
             return resp;
+        }
+
+
+        public Response AddVisitor(TRN_VISITOR source)
+        {
+            var result = new Response();
+            using (var ctx = new BIG_VMSEntities())
+            {
+
+                try
+                {
+                    var data = ctx.TRN_VISITOR.Add(source);
+
+                    ctx.SaveChanges();
+                    result.ResultObj = source;
+                    result.Status = true;
+                    result.Message = "Save Successful";
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    result.Status = false;
+                    result.ExceptionMessage = ex.Message.ToString();
+                }
+                catch (Exception ex)
+                {
+                    result.Status = false;
+                    result.ExceptionMessage = ex.Message.ToString();
+                }
+            }
+
+            return result;
         }
     }
 }

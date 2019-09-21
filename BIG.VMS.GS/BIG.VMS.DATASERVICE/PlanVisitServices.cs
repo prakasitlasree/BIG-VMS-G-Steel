@@ -31,6 +31,10 @@ namespace BIG.VMS.DATASERVICE
                         {
                             query.Where(o => o.CUSTOMER_NAME.ToUpper().Contains(filter.CUSTOMER_NAME.ToUpper()));
                         }
+                        if (!string.IsNullOrEmpty(filter.REQUESTOR_NAME))
+                        {
+                            query.Where(o => o.REQUESTOR_FULLNAME.ToUpper().Contains(filter.REQUESTOR_NAME.ToUpper()));
+                        }
                     }
                     #endregion
 

@@ -9,5 +9,6 @@ namespace BIG.VMS.MODEL.CustomModel.Filter
     {
         public int AUTO_ID { get; set; }
         public string CUSTOMER_NAME { get; set; }
+        public string REQUESTOR_NAME { get; set; }
     }
 }

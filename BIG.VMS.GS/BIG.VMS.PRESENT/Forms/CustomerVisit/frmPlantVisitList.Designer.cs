@@ -42,6 +42,9 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.gridVisitorList = new System.Windows.Forms.DataGridView();
+            this.IN = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colEdit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.txtPage = new System.Windows.Forms.TextBox();
             this.btnFirst = new System.Windows.Forms.Button();
@@ -49,9 +52,6 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.btnLast = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.IN = new System.Windows.Forms.DataGridViewImageColumn();
-            this.colEdit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.colDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.tableLayoutPanel5.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -111,6 +111,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.Size = new System.Drawing.Size(1091, 87);
             this.tableLayoutPanel5.TabIndex = 1;
+            this.tableLayoutPanel5.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel5_Paint);
             // 
             // label1
             // 
@@ -121,6 +122,7 @@
             this.label1.Size = new System.Drawing.Size(68, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "ชื่อลูกค้า";
+            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // txtcustName
             // 
@@ -129,6 +131,7 @@
             this.txtcustName.Name = "txtcustName";
             this.txtcustName.Size = new System.Drawing.Size(309, 28);
             this.txtcustName.TabIndex = 6;
+            this.txtcustName.TextChanged += new System.EventHandler(this.TxtcustName_TextChanged);
             // 
             // label2
             // 
@@ -139,6 +142,7 @@
             this.label2.Size = new System.Drawing.Size(60, 24);
             this.label2.TabIndex = 7;
             this.label2.Text = "ชื่อผู้ขอ";
+            this.label2.Click += new System.EventHandler(this.Label2_Click);
             // 
             // txtReqName
             // 
@@ -147,6 +151,7 @@
             this.txtReqName.Name = "txtReqName";
             this.txtReqName.Size = new System.Drawing.Size(306, 28);
             this.txtReqName.TabIndex = 8;
+            this.txtReqName.TextChanged += new System.EventHandler(this.TxtReqName_TextChanged);
             // 
             // flowLayoutPanel1
             // 
@@ -156,6 +161,7 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(309, 47);
             this.flowLayoutPanel1.TabIndex = 9;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.FlowLayoutPanel1_Paint);
             // 
             // btnSearch
             // 
@@ -203,8 +209,9 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1091, 589);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1091, 599);
             this.tableLayoutPanel3.TabIndex = 1;
+            this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel3_Paint);
             // 
             // gridVisitorList
             // 
@@ -220,114 +227,9 @@
             this.gridVisitorList.Location = new System.Drawing.Point(3, 3);
             this.gridVisitorList.Name = "gridVisitorList";
             this.gridVisitorList.ReadOnly = true;
-            this.gridVisitorList.Size = new System.Drawing.Size(1085, 533);
+            this.gridVisitorList.Size = new System.Drawing.Size(1085, 543);
             this.gridVisitorList.TabIndex = 0;
             this.gridVisitorList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridVisitorList_CellContentClick);
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.BackColor = System.Drawing.Color.White;
-            this.tableLayoutPanel4.ColumnCount = 5;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.Controls.Add(this.txtPage, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.btnFirst, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.btnPrevious, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.btnNext, 3, 0);
-            this.tableLayoutPanel4.Controls.Add(this.btnLast, 4, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 542);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1085, 44);
-            this.tableLayoutPanel4.TabIndex = 1;
-            // 
-            // txtPage
-            // 
-            this.txtPage.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPage.Enabled = false;
-            this.txtPage.Location = new System.Drawing.Point(14, 8);
-            this.txtPage.Name = "txtPage";
-            this.txtPage.Size = new System.Drawing.Size(188, 28);
-            this.txtPage.TabIndex = 1;
-            this.txtPage.Text = "หน้า";
-            // 
-            // btnFirst
-            // 
-            this.btnFirst.BackColor = System.Drawing.Color.White;
-            this.btnFirst.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFirst.Image = ((System.Drawing.Image)(resources.GetObject("btnFirst.Image")));
-            this.btnFirst.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFirst.Location = new System.Drawing.Point(220, 3);
-            this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(211, 38);
-            this.btnFirst.TabIndex = 0;
-            this.btnFirst.Text = "หน้าแรก";
-            this.btnFirst.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnFirst.UseVisualStyleBackColor = false;
-            // 
-            // btnPrevious
-            // 
-            this.btnPrevious.BackColor = System.Drawing.Color.White;
-            this.btnPrevious.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPrevious.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevious.Image")));
-            this.btnPrevious.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPrevious.Location = new System.Drawing.Point(437, 3);
-            this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(211, 38);
-            this.btnPrevious.TabIndex = 1;
-            this.btnPrevious.Text = "หน้าก่อนหน้า";
-            this.btnPrevious.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPrevious.UseVisualStyleBackColor = false;
-            // 
-            // btnNext
-            // 
-            this.btnNext.BackColor = System.Drawing.Color.White;
-            this.btnNext.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
-            this.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNext.Location = new System.Drawing.Point(654, 3);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(211, 38);
-            this.btnNext.TabIndex = 2;
-            this.btnNext.Text = "หน้าถัดไป";
-            this.btnNext.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNext.UseVisualStyleBackColor = false;
-            // 
-            // btnLast
-            // 
-            this.btnLast.BackColor = System.Drawing.Color.White;
-            this.btnLast.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnLast.Image = ((System.Drawing.Image)(resources.GetObject("btnLast.Image")));
-            this.btnLast.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLast.Location = new System.Drawing.Point(871, 3);
-            this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(211, 38);
-            this.btnLast.TabIndex = 3;
-            this.btnLast.Text = "หน้าสุดท้าย";
-            this.btnLast.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLast.UseVisualStyleBackColor = false;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.AutoSize = true;
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1097, 681);
-            this.tableLayoutPanel1.TabIndex = 3;
             // 
             // IN
             // 
@@ -357,11 +259,123 @@
             this.colDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colDelete.Width = 60;
             // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.BackColor = System.Drawing.Color.White;
+            this.tableLayoutPanel4.ColumnCount = 5;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel4.Controls.Add(this.txtPage, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btnFirst, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btnPrevious, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btnNext, 3, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btnLast, 4, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 552);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1085, 44);
+            this.tableLayoutPanel4.TabIndex = 1;
+            this.tableLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel4_Paint);
+            // 
+            // txtPage
+            // 
+            this.txtPage.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPage.Enabled = false;
+            this.txtPage.Location = new System.Drawing.Point(14, 8);
+            this.txtPage.Name = "txtPage";
+            this.txtPage.Size = new System.Drawing.Size(188, 28);
+            this.txtPage.TabIndex = 1;
+            this.txtPage.Text = "หน้า";
+            this.txtPage.TextChanged += new System.EventHandler(this.TxtPage_TextChanged);
+            // 
+            // btnFirst
+            // 
+            this.btnFirst.BackColor = System.Drawing.Color.White;
+            this.btnFirst.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFirst.Image = ((System.Drawing.Image)(resources.GetObject("btnFirst.Image")));
+            this.btnFirst.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFirst.Location = new System.Drawing.Point(220, 3);
+            this.btnFirst.Name = "btnFirst";
+            this.btnFirst.Size = new System.Drawing.Size(211, 38);
+            this.btnFirst.TabIndex = 0;
+            this.btnFirst.Text = "หน้าแรก";
+            this.btnFirst.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFirst.UseVisualStyleBackColor = false;
+            this.btnFirst.Click += new System.EventHandler(this.BtnFirst_Click);
+            // 
+            // btnPrevious
+            // 
+            this.btnPrevious.BackColor = System.Drawing.Color.White;
+            this.btnPrevious.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPrevious.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevious.Image")));
+            this.btnPrevious.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPrevious.Location = new System.Drawing.Point(437, 3);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(211, 38);
+            this.btnPrevious.TabIndex = 1;
+            this.btnPrevious.Text = "หน้าก่อนหน้า";
+            this.btnPrevious.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPrevious.UseVisualStyleBackColor = false;
+            this.btnPrevious.Click += new System.EventHandler(this.BtnPrevious_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.BackColor = System.Drawing.Color.White;
+            this.btnNext.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
+            this.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNext.Location = new System.Drawing.Point(654, 3);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(211, 38);
+            this.btnNext.TabIndex = 2;
+            this.btnNext.Text = "หน้าถัดไป";
+            this.btnNext.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.BtnNext_Click);
+            // 
+            // btnLast
+            // 
+            this.btnLast.BackColor = System.Drawing.Color.White;
+            this.btnLast.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLast.Image = ((System.Drawing.Image)(resources.GetObject("btnLast.Image")));
+            this.btnLast.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLast.Location = new System.Drawing.Point(871, 3);
+            this.btnLast.Name = "btnLast";
+            this.btnLast.Size = new System.Drawing.Size(211, 38);
+            this.btnLast.TabIndex = 3;
+            this.btnLast.Text = "หน้าสุดท้าย";
+            this.btnLast.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLast.UseVisualStyleBackColor = false;
+            this.btnLast.Click += new System.EventHandler(this.BtnLast_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.AutoSize = true;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1097, 698);
+            this.tableLayoutPanel1.TabIndex = 3;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel1_Paint);
+            // 
             // frmPlantVisitList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1097, 681);
+            this.ClientSize = new System.Drawing.Size(1097, 698);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

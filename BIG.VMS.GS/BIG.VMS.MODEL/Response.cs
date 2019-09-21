@@ -14,5 +14,7 @@ namespace BIG.VMS.MODEL.CustomModel
         public string ExceptionMessage { get; set; }
 
         public dynamic ResultObj { get; set; }
+
+        public  Exception Exception { get; set; }
     }
 }
