@@ -50,6 +50,8 @@ namespace BIG.VMS.PRESENT.Forms.FormReportNew
                 if (resp.Status)
                 {
                     SetDataSourceHeader(gridReport, ListHeaderAll(), resp.ResultObj);
+                    customGrid();
+                    gridReport.DataBindingComplete += BindingComplete;
                 }
             }
             else
@@ -69,6 +71,8 @@ namespace BIG.VMS.PRESENT.Forms.FormReportNew
                 if (resp.Status)
                 {
                     SetDataSourceHeader(gridReport, ListHeader(), resp.ResultObj);
+                    customGrid();
+                    gridReport.DataBindingComplete += BindingComplete;
                 }
             }
 
@@ -103,6 +107,46 @@ namespace BIG.VMS.PRESENT.Forms.FormReportNew
             listCol.Add(new HeaderGrid { HEADER_TEXT = "วัตถุประสงค์", FIELD = "REASON_TEXT", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "บันทึกโดย", FIELD = "CREATED_BY", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             return listCol;
+        }
+
+        private void FrmReport_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void customGrid()
+        {
+            gridReport.RowTemplate.Height = 30;
+            for (int i = 0; i < gridReport.Rows.Count; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    gridReport.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(240, 248, 255);
+                }
+                else
+                {
+                    gridReport.Rows[i].DefaultCellStyle.BackColor = Color.White;
+                }
+
+            }
+        }
+
+        private void BindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            gridReport.RowTemplate.Height = 30;
+            for (int i = 0; i < gridReport.Rows.Count; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    gridReport.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(240, 248, 255);
+                }
+                else
+                {
+                    gridReport.Rows[i].DefaultCellStyle.BackColor = Color.White;
+                }
+
+            }
+           
         }
     }
 }

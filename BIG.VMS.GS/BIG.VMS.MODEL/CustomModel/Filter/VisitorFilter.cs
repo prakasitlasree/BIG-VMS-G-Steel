@@ -4,7 +4,7 @@ namespace BIG.VMS.MODEL.CustomModel
 {
     public class VisitorFilter
     {
-        public string TYPE { get; set; }
+       
         public int NO { get; set; }
         public string ID_CARD { get; set; }
         public string LICENSE_PLATE { get; set; }
@@ -15,5 +15,7 @@ namespace BIG.VMS.MODEL.CustomModel
         public int DEPT_ID { get; set; }
 
         public string GROUP { get; set; }
+        public string TYPE { get; set; }
+
     }
 }

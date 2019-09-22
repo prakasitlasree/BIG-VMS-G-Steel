@@ -148,7 +148,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                                 NO = org_obj.NO,
                                 ID_CARD = org_obj.ID_CARD,
 
-                               TYPE = org_obj.TYPE,
+                                TYPE = "OUT",
                                 FIRST_NAME = org_obj.FIRST_NAME,
                                 LAST_NAME = org_obj.LAST_NAME,
                                 CAR_TYPE_ID = org_obj.CAR_TYPE_ID,
@@ -177,7 +177,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                                 obj.TRN_ATTACHEDMENT.FirstOrDefault().REF_PHOTO2 = null;
                                 obj.TRN_ATTACHEDMENT.FirstOrDefault().REF_PHOTO3 = null;
                             }
-                            
+
                             if (isChangePhoto)
                             {
                                 if (obj.TRN_ATTACHEDMENT.Count > 0)
@@ -185,12 +185,12 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                                     obj.TRN_ATTACHEDMENT.FirstOrDefault().VISITOR_ID = 0;
                                     obj.TRN_ATTACHEDMENT.FirstOrDefault().AUTO_ID = 0;
                                     obj.TRN_ATTACHEDMENT.FirstOrDefault().TRN_VISITOR = null;
-                                    
+
                                 }
                                 else
                                 {
                                     var attach = new TRN_ATTACHEDMENT();
-                                   
+
                                     obj.TRN_ATTACHEDMENT = new List<TRN_ATTACHEDMENT>();
                                     obj.TRN_ATTACHEDMENT.Add(attach);
                                 }
@@ -299,7 +299,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
         }
 
 
-      
+
 
         private void txtNo_KeyPress(object sender, KeyPressEventArgs e)
         {

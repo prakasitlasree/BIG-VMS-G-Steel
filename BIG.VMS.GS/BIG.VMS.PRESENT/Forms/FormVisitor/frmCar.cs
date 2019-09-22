@@ -116,7 +116,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
             #endregion
 
             SELECTED_CAR_NAME_ID = Convert.ToInt32(((Control)sender).Tag.ToString());
-            SELECTED_CAR_TYPE_TEXT = carBrandText + " " + ((Control)sender).Text.ToString();
+            SELECTED_CAR_TYPE_TEXT = ((Control)sender).Text.ToString();
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

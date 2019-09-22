@@ -13,8 +13,10 @@ using BIG.VMS.PRESENT.Forms.FormVisitorNew;
 using PCSC;
 using BIG.VMS.MODEL.CustomModel.Container;
 using BIG.VMS.DATASERVICE;
+using BIG.VMS.MODEL.CustomModel.CustomContainer;
 using BIG.VMS.MODEL.EntityModel;
 using BIG.VMS.PRESENT.Forms.Master;
+using CrystalDecisions.CrystalReports.Engine;
 
 namespace BIG.VMS.PRESENT.Forms.FormVisitor
 {
@@ -454,7 +456,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                                     ? TrnProjectMaster.MAS_CONTRACTOR.NAME
                                     : "ไม่ระบุ";
                                 txtFirstName.Text = $@"กลุ่มพนักงานผู้รับเหมา {companyName}";
-                                
+
                                 txtIDCard.Text = $@"กลุ่มพนักงานผู้รับเหมา {companyName}";
                                 txtEmployee.Text = $@"{TrnProjectMaster.RESPONSIBLE_MANAGER}";
                                 txtReason.Text = $@"{TrnProjectMaster.PROJECT_NAME}";
@@ -462,7 +464,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                             else
                             {
                                 txtFirstName.Text = $@"กลุ่มลูกค้า {TrnCustomerVisit.CUSTOMER_NAME}";
-                                
+
                                 txtIDCard.Text = $@"กลุ่มลูกค้า {TrnCustomerVisit.CUSTOMER_NAME}";
                                 txtEmployee.Text = $@"{TrnCustomerVisit.CONTACT_PERSON}";
                                 txtReason.Text = $@"{TrnCustomerVisit.OBJECTIVE_OF_VISIT}";
@@ -497,9 +499,26 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
 
         private void InitialControlData()
         {
+            if (formMode == FormMode.Add && VISITOR_GROUP == VisitorGroup.APPOINTMENT)
+            {
+                if (TrnVisitor != null)
+                {
 
+                    txtFirstName.Text = TrnVisitor.FIRST_NAME;
+                    txtLastName.Text = TrnVisitor.LAST_NAME;
+                    txtIDCard.Text = TrnVisitor.ID_CARD;
+                    txtEmployee.Text = TrnVisitor.MAS_EMPLOYEE != null
+                        ? TrnVisitor.MAS_EMPLOYEE.FIRST_NAME + " " + TrnVisitor.MAS_EMPLOYEE.LAST_NAME
+                        : "ไม่ระบุ";
+                    txtReason.Text = TrnVisitor.MAS_REASON != null
+                        ? TrnVisitor.MAS_REASON.REASON
+                        : "ไม่ระบุ";
 
-            if (formMode == FormMode.Edit)
+                    _contactEmployeeId = TrnVisitor.MAS_EMPLOYEE?.AUTO_ID ?? 0;
+                    _reasonId = TrnVisitor.MAS_REASON?.AUTO_ID ?? 0;
+                }
+            }
+            else if (formMode == FormMode.Edit)
             {
 
                 if (TrnVisitor != null)
@@ -559,12 +578,8 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                                     ? TrnVisitor.MAS_REASON.REASON
                                     : "ไม่ระบุ";
 
-                                _contactEmployeeId = TrnVisitor.MAS_EMPLOYEE != null
-                                    ? TrnVisitor.MAS_EMPLOYEE.AUTO_ID
-                                    : 0;
-                                _reasonId = TrnVisitor.MAS_REASON != null
-                                    ? TrnVisitor.MAS_REASON.AUTO_ID
-                                    : 0;
+                                _contactEmployeeId = TrnVisitor.MAS_EMPLOYEE?.AUTO_ID ?? 0;
+                                _reasonId = TrnVisitor.MAS_REASON?.AUTO_ID ?? 0;
 
                             }
                             break;
@@ -771,6 +786,9 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
 
                         obj.TRN_ATTACHEDMENT.Add(attached);
                         source = obj;
+
+
+
                     }
                     break;
                 case VisitorGroup.CONSTRUCTOR:
@@ -791,7 +809,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                             CAR_TYPE_ID = _carTypeId,
                             CONTACT_EMPLOYEE_NAME = txtEmployee.Text,
                             FIRST_NAME = txtFirstName.Text,
-                           
+
                             LICENSE_PLATE = (txtCar.Text.Trim() == "เดินเท้า" && txtCar.Text.Trim() == "ไม่ระบุ") ? "ไม่ระบุ" : txtLicense.Text,
                             LICENSE_PLATE_PROVINCE_ID = _provinceId != 0 ? _provinceId : (int?)null,
                             REASON_TEXT = txtReason.Text,
@@ -828,7 +846,48 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
             if (resp.Status)
             {
 
+                if (source.GROUP == nameof(VisitorGroup.NORMAL) &&
+                    source.GROUP == nameof(VisitorGroup.APPOINTMENT))
+                {
+                    #region Normal && Appointment
+                    var obj = _vistorServices.GetVisitorReportById(((TRN_VISITOR)resp.ResultObj).AUTO_ID);
 
+                    if (obj.ResultObj.Count > 0)
+                    {
+                        List<CustomDisplayVisitor> listData = (List<CustomDisplayVisitor>)obj.ResultObj;
+
+
+                        DataTable dt = ConvertToDataTable(listData);
+                        ReportDocument rpt = new ReportDocument();
+                        string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
+                        if (listData.FirstOrDefault()?.BY_PASS == "N" || listData.FirstOrDefault()?.BY_PASS == null)
+                        {
+                            var appPath = Application.StartupPath + "\\" + "ReportSlip.rpt";
+                            rpt.Load(appPath);
+                            rpt.SetDataSource(dt);
+                            rpt.PrintToPrinter(1, true, 0, 0);
+                        }
+                        else
+                        {
+                            var appPath = Application.StartupPath + "\\" + "ReportSlipByPass.rpt";
+                            rpt.Load(appPath);
+                            rpt.SetDataSource(dt);
+                            rpt.PrintToPrinter(1, true, 0, 0);
+                        }
+
+                    }
+                    #endregion
+                }
+                else if (source.GROUP == nameof(VisitorGroup.CONSTRUCTOR))
+                {
+
+                }
+                else
+                {
+
+                }
+
+                
                 MessageBox.Show(Message.MSG_SAVE_COMPLETE, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;
                 this.Close();

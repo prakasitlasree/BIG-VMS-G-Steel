@@ -37,7 +37,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
         private void frmAllvisitor_Load(object sender, EventArgs e)
         {
 
-            InitialComboBox();
+            InitialControl();
             InitialEventHandler();
             ResetScreen();
             gridVisitorList.DataBindingComplete += BindingComplete;
@@ -71,30 +71,45 @@ namespace BIG.VMS.PRESENT.Forms.Home
                 LICENSE_PLATE = txtLicense.Text,
                 NO = txtNo.Text == "" ? 0 : Convert.ToInt32(txtNo.Text),
                 FIRST_NAME = txtName.Text,
-                LAST_NAME = txtLastName.Text
+                LAST_NAME = txtLastName.Text,
+                DATE_FROM = dtFrom.Value.Date,
+                DATE_TO = dtTo.Value.Date,
 
             };
 
-            if (comboType.SelectedIndex == 0)
+            switch (comboType.SelectedIndex)
             {
+                case 0:
+                    break;
+                case 1:
+                    filter.TYPE = "IN";
+                    break;
+                case 2:
+                    filter.TYPE = "OUT";
+                    break;
+            }
 
-            }
-            else if (comboType.SelectedIndex == 1)
+            switch (comboGroup.SelectedIndex)
             {
-                filter.TYPE = "In";
+                case 0:
+                    break;
+                case 1:
+                    filter.GROUP = nameof(VisitorGroup.NORMAL);
+                    break;
+                case 2:
+                    filter.GROUP = nameof(VisitorGroup.APPOINTMENT);
+                    break;
+                case 3:
+                    filter.GROUP = nameof(VisitorGroup.CONSTRUCTOR);
+                    break;
+                case 4:
+                    filter.GROUP = nameof(VisitorGroup.CUSTOMER);
+                    break;
             }
-            else if (comboType.SelectedIndex == 2)
-            {
-                filter.TYPE = "Out";
-            }
-            else if (comboType.SelectedIndex == 3)
-            {
-                filter.TYPE = "Appointment";
-            }
-            else if (comboType.SelectedIndex == 4)
-            {
-                filter.TYPE = "AppointmentOut";
-            }
+
+            
+
+
             _container.Filter = filter;
             _container = _service.GetContainerDisplayVisitor(_container);
             SetDataSourceHeader(gridVisitorList, ListHeader(), _container.ResultObj);
@@ -174,12 +189,17 @@ namespace BIG.VMS.PRESENT.Forms.Home
             return listCol;
         }
 
-        private void InitialComboBox()
+        private void InitialControl()
         {
 
 
+            comboGroup.SelectedIndex = 0;
             comboType.SelectedIndex = 0;
-
+            DateTime date = DateTime.Now;
+            var firstDayOfMonth = new DateTime(date.Year, date.Month, 1);
+            dtFrom.Value = firstDayOfMonth;
+            //dtTo.MaxDate = DateTime.Now.AddDays(-1);
+            dtFrom.MaxDate = DateTime.Now.AddDays(-1); ;
         }
 
         private void InitialEventHandler()
@@ -457,6 +477,11 @@ namespace BIG.VMS.PRESENT.Forms.Home
             {
                 ResetScreen();
             }
+        }
+
+        private void DtFrom_ValueChanged(object sender, EventArgs e)
+        {
+            dtTo.MinDate = dtFrom.Value;
         }
     }
 }

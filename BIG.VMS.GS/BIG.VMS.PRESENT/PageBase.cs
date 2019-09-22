@@ -63,9 +63,10 @@ namespace BIG.VMS.PRESENT
         {
             if (data != null)
             {
+                control.DataSource = null;
                 DataTable dt = ConvertToDataTable(data);
                 control.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                //control.DataSource = dt;
+              
                 List<string> columnNames = dt.Columns.Cast<DataColumn>()
                                  .Select(x => x.ColumnName)
                                  .ToList();

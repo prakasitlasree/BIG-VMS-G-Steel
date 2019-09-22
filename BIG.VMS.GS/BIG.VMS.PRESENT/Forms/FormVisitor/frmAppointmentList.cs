@@ -42,7 +42,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
             BindGridData();
             CustomGrid();
         }
-         
+
         private void InitialEventHandler()
         {
 
@@ -61,7 +61,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
 
                 ID_CARD = txtIDCard.Text,
                 FIRST_NAME = txtName.Text,
-                
+
                 LICENSE_PLATE = txtLicense.Text,
 
             };
@@ -136,7 +136,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
             {
                 if (row.Cells["STATUS"].Value.ToString() == "เข้าพบแล้ว")
                 {
-                    row.Cells[0].Value = Properties.Resources.approve;
+                    row.Cells[0].Value = Properties.Resources.transparent;
                 }
             }
             gridAppointmentList.RowTemplate.Height = 30;
@@ -208,94 +208,55 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
             {
                 if (e.ColumnIndex == 0 && gridAppointmentList.Rows[e.RowIndex].Cells["STATUS"].Value.ToString() != "เข้าพบแล้ว")
                 {
-                    frmSelectInType selectForm = new frmSelectInType();
-                    selectForm.flagAppointment = true;
-                    if(selectForm.ShowDialog() == DialogResult.OK)
-                    {
-                        if(selectForm.TYPE == "CARD")
-                        {
-                            #region card_form
-                            var id = Convert.ToInt32(gridAppointmentList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
-                            ContainerAppointment container = new ContainerAppointment();
-                            var filter = new AppointmentFilter();
-                            TRN_VISITOR visitorObj = new TRN_VISITOR();
-                            filter.AUTO_ID = id;
-                            container.Filter = filter;
-                            var obj = _service.GetItem(container);
-                            visitorObj.CONTACT_EMPLOYEE_ID = obj.TRN_APPOINTMENT.CONTACT_EMPLOYEE_ID;
-                            visitorObj.FIRST_NAME = obj.TRN_APPOINTMENT.REQUEST_FIRST_NAME;
-                            visitorObj.LAST_NAME = obj.TRN_APPOINTMENT.REQUEST_LAST_NAME;
-                            visitorObj.ID_CARD = obj.TRN_APPOINTMENT.REQUEST_ID_CARD;
-                            visitorObj.REASON_ID = obj.TRN_APPOINTMENT.REASON_ID;
-                            visitorObj.MAS_EMPLOYEE = obj.TRN_APPOINTMENT.MAS_EMPLOYEE;
-                            visitorObj.MAS_REASON = obj.TRN_APPOINTMENT.MAS_REASON;
-                            frmVisitor frm = new frmVisitor();
-                            frm.visitorObj = visitorObj;
-                            frm.formMode = FormMode.Add;
-                            frm.visitorMode = VisitorMode.Appointment;
 
-                            if (frm.ShowDialog() == DialogResult.OK)
-                            {
-                                var res = _service.UpdateStatus(id);
-                                if (res.Status)
-                                {
-                                    //MessageBox.Show(Message.MSG_SAVE_COMPLETE, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    ResetScreen();
-                                }
-                                else
-                                {
-                                    MessageBox.Show(res.ExceptionMessage, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                }
-                            }
-                            #endregion
+                    #region card_form
+                    var id = Convert.ToInt32(gridAppointmentList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
+                    ContainerAppointment container = new ContainerAppointment();
+                    var filter = new AppointmentFilter();
+                    TRN_VISITOR visitorObj = new TRN_VISITOR();
+                    filter.AUTO_ID = id;
+                    container.Filter = filter;
+
+                    var obj = _service.GetItem(container);
+                    visitorObj.CONTACT_EMPLOYEE_ID = obj.TRN_APPOINTMENT.CONTACT_EMPLOYEE_ID;
+                    visitorObj.FIRST_NAME = obj.TRN_APPOINTMENT.REQUEST_FIRST_NAME;
+                    visitorObj.LAST_NAME = obj.TRN_APPOINTMENT.REQUEST_LAST_NAME;
+                    visitorObj.ID_CARD = obj.TRN_APPOINTMENT.REQUEST_ID_CARD;
+                    visitorObj.REASON_ID = obj.TRN_APPOINTMENT.REASON_ID;
+                    visitorObj.MAS_EMPLOYEE = obj.TRN_APPOINTMENT.MAS_EMPLOYEE ;
+                    visitorObj.MAS_REASON = obj.TRN_APPOINTMENT.MAS_REASON;
+                    visitorObj.TYPE = nameof(VisitorType.IN);
+                    visitorObj.GROUP = nameof(VisitorGroup.APPOINTMENT);
+                    
+
+
+                    frmVisitorNew frm = new frmVisitorNew();
+                    frm.TrnVisitor = visitorObj;
+                    frm.formMode = FormMode.Add;
+                    frm.VISITOR_GROUP = VisitorGroup.APPOINTMENT;
+                    frm.VISITOR_TYPE = VisitorType.IN;
+
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        var res = _service.UpdateStatus(id);
+                        if (res.Status)
+                        {
+                            //MessageBox.Show(Message.MSG_SAVE_COMPLETE, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            ResetScreen();
                         }
                         else
                         {
-                            #region card_form
-                            var id = Convert.ToInt32(gridAppointmentList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
-                            ContainerAppointment container = new ContainerAppointment();
-                            var filter = new AppointmentFilter();
-                            TRN_VISITOR visitorObj = new TRN_VISITOR();
-                            filter.AUTO_ID = id;
-                            container.Filter = filter;
-                            var obj = _service.GetItem(container);
-                            visitorObj.CONTACT_EMPLOYEE_ID = obj.TRN_APPOINTMENT.CONTACT_EMPLOYEE_ID;
-                            visitorObj.FIRST_NAME = obj.TRN_APPOINTMENT.REQUEST_FIRST_NAME;
-                            visitorObj.LAST_NAME = obj.TRN_APPOINTMENT.REQUEST_LAST_NAME;
-                            visitorObj.ID_CARD = obj.TRN_APPOINTMENT.REQUEST_ID_CARD;
-                            visitorObj.REASON_ID = obj.TRN_APPOINTMENT.REASON_ID;
-                            visitorObj.MAS_EMPLOYEE = obj.TRN_APPOINTMENT.MAS_EMPLOYEE;
-                            visitorObj.MAS_REASON = obj.TRN_APPOINTMENT.MAS_REASON;
-                            frmVisitorByPass frm = new frmVisitorByPass();
-                            frm.visitorObj = visitorObj;
-                            frm.formMode = FormMode.Add;
-                            frm.visitorMode = VisitorMode.Appointment;
-
-                            if (frm.ShowDialog() == DialogResult.OK)
-                            {
-                                var res = _service.UpdateStatus(id);
-                                if (res.Status)
-                                {
-                                    //MessageBox.Show(Message.MSG_SAVE_COMPLETE, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    ResetScreen();
-                                }
-                                else
-                                {
-                                    MessageBox.Show(res.ExceptionMessage, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                }
-                            }
-                            #endregion
+                            MessageBox.Show(res.ExceptionMessage, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
-
-                  
+                    #endregion
 
                 }
             }
 
         }
 
-      
+
 
         private void btnComein_Click(object sender, EventArgs e)
         {

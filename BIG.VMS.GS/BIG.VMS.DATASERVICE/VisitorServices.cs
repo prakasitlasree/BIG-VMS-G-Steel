@@ -618,6 +618,74 @@ namespace BIG.VMS.DATASERVICE
             return result;
         }
 
+        public ContainerDisplayVisitor GetVisitorReportById(int auto_id)
+        {
+            var result = new ContainerDisplayVisitor();
+
+            List<CustomDisplayVisitor> listData = new List<CustomDisplayVisitor>();
+            CultureInfo _cultureTHInfo = new CultureInfo("th-TH");
+            try
+            {
+                using (var ctx = new BIG_VMSEntities())
+                {
+                    var reTrnVisitor = ctx.TRN_VISITOR
+                                          .Include("MAS_EMPLOYEE")
+                                          .Include("MAS_REASON")
+                                          .Include("MAS_PROVINCE")
+                                          .Include("MAS_CAR_TYPE")
+                                          .Include("TRN_ATTACHEDMENT")
+                                          .Where(x => x.AUTO_ID == auto_id).ToList();
+
+                    var reParameter = ctx.SYS_CONFIGURATION.Where(x => x.MODULE == "SLIP" && x.NAME == "COMPANY_NAME").FirstOrDefault();
+                    string company = "";
+                    if (reParameter != null)
+                    {
+                        company = reParameter.VALUE;
+                    }
+                    else
+                    {
+                        company = "BIG Visitor Management";
+                    }
+                    if (reTrnVisitor.Count > 0)
+                    {
+
+
+                        listData = (from item in reTrnVisitor
+                                    select new CustomDisplayVisitor()
+                                    {
+                                        AUTO_ID = item.AUTO_ID,
+                                        NO = item.NO,
+                                        ID_CARD = item.ID_CARD,
+                                        FULL_NAME = item.FIRST_NAME + " " + item.LAST_NAME,
+                                        CAR_TYPE_NAME = item.MAS_CAR_TYPE != null ? item.MAS_CAR_TYPE.NAME : "",
+                                        LICENSE_PLATE = string.IsNullOrEmpty(item.LICENSE_PLATE) ? "ไม่ระบุุ" : item.LICENSE_PLATE,
+                                        //PROVINCE = item.MAS_PROVINCE != null ? item.MAS_PROVINCE.NAME : "",
+                                        REASON_TEXT = item.MAS_REASON != null ? item.MAS_REASON.REASON : "",
+                                        CONTACT_EMP_NAME = item.MAS_EMPLOYEE != null ? item.MAS_EMPLOYEE.FIRST_NAME + " " + item.MAS_EMPLOYEE.LAST_NAME : item.CONTACT_EMPLOYEE_NAME,
+                                        TIME_IN = Convert.ToDateTime(item.CREATED_DATE.Value, _cultureTHInfo),
+                                        TYPE = item.TYPE == "In" ? "เข้า" : (item.TYPE == "Out" ? "ออก" : (item.TYPE == "Regulary" ? "มาประจำ" : "ไม่ระบุ")),
+                                        DEPT_NAME = item.MAS_EMPLOYEE != null ? (item.MAS_EMPLOYEE.MAS_DEPARTMENT != null ? item.MAS_EMPLOYEE.MAS_DEPARTMENT.NAME : "ไม่ระบุ") : "ไม่ระบุ",
+                                        ID_CARD_PHOTO = item.TRN_ATTACHEDMENT != null ? (item.TRN_ATTACHEDMENT.Count() > 0 ? item.TRN_ATTACHEDMENT.FirstOrDefault().ID_CARD_PHOTO : null) : null,
+                                        CONTACT_PHOTO = item.TRN_ATTACHEDMENT != null ? (item.TRN_ATTACHEDMENT.Count() > 0 ? item.TRN_ATTACHEDMENT.FirstOrDefault().CONTACT_PHOTO : null) : null,
+                                        //COMPANY_NAME = company,
+                                        CREATED_BY = item.CREATED_BY,
+                                        BY_PASS = item.BY_PASS
+
+                                    }).ToList();
+                    }
+
+                    result.ResultObj = listData;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Status = false;
+                result.ExceptionMessage = ex.Message;
+            }
+            return result;
+        }
+
+
         public List<ReportParameter> GetReportParameter()
         {
             List<ReportParameter> listData = new List<ReportParameter>();
@@ -997,6 +1065,7 @@ namespace BIG.VMS.DATASERVICE
             return result;
         }
 
+
         public Response UpdateVistorOutByAPI(int no, int auto_id, TRN_ATTACHEDMENT attachment)
         {
             Response resp = new Response();
@@ -1244,7 +1313,7 @@ namespace BIG.VMS.DATASERVICE
                     var data = ctx.TRN_VISITOR.Add(source);
 
                     ctx.SaveChanges();
-                    result.ResultObj = source;
+                    result.ResultObj = data;
                     result.Status = true;
                     result.Message = "Save Successful";
                 }
@@ -1263,7 +1332,7 @@ namespace BIG.VMS.DATASERVICE
             return result;
         }
 
-        public Response UpdateVisitor(TRN_VISITOR source,bool cardChange,bool photoChange)
+        public Response UpdateVisitor(TRN_VISITOR source, bool cardChange, bool photoChange)
         {
             var result = new Response();
             using (var ctx = new BIG_VMSEntities())
@@ -1309,7 +1378,7 @@ namespace BIG.VMS.DATASERVICE
                             {
                                 data.TRN_ATTACHEDMENT.FirstOrDefault().CONTACT_PHOTO = source.TRN_ATTACHEDMENT.FirstOrDefault()?.CONTACT_PHOTO;
                             }
-                           
+
                         }
                     }
 
@@ -1332,8 +1401,6 @@ namespace BIG.VMS.DATASERVICE
 
             return result;
         }
-
-
 
         public ContainerDisplayVisitor GetContainerDisplayVisitor(ContainerDisplayVisitor obj)
         {
@@ -1446,6 +1513,10 @@ namespace BIG.VMS.DATASERVICE
                     {
                         query = query.Where(o => o.TYPE == filter.TYPE);
                     }
+                    if (!string.IsNullOrEmpty(filter.GROUP))
+                    {
+                        query = query.Where(o => o.GROUP == filter.GROUP);
+                    }
                     if (!string.IsNullOrEmpty(filter.LICENSE_PLATE))
                     {
                         query = query.Where(o => o.LICENSE_PLATE.Contains(filter.LICENSE_PLATE));
@@ -1462,10 +1533,11 @@ namespace BIG.VMS.DATASERVICE
                     {
                         query = query.Where(o => o.LAST_NAME.Contains(filter.LAST_NAME));
                     }
-                    if (filter.DATE_TO != DateTime.MinValue)
+                    if (filter.DATE_FROM != DateTime.MinValue && filter.DATE_TO != DateTime.MinValue)
                     {
                         var endDate = filter.DATE_TO.AddDays(1);
                         query = query.Where(x => x.CREATED_DATE >= filter.DATE_TO && x.CREATED_DATE <= endDate);
+                       
 
                     }
                     if (string.IsNullOrEmpty(filter.FIRST_NAME) && string.IsNullOrEmpty(filter.LAST_NAME) &&

@@ -48,7 +48,8 @@ namespace BIG.VMS.DATASERVICE
                                     TIME_IN = item.CREATED_DATE.ToString(),
                                     TIME_OUT = visitorOut.Any(o => o.REF_ID == item.AUTO_ID)
                                         ? visitorOut.FirstOrDefault(o => o.REF_ID == item.AUTO_ID)?.CREATED_DATE.ToString()
-                                        : "ไม่ระบุุ"
+                                        : "ไม่ระบุุ",
+
 
                                 }).ToList();
 
@@ -109,8 +110,12 @@ namespace BIG.VMS.DATASERVICE
                                     CAR_INFO = item.MAS_CAR_TYPE != null ? $@"{item.MAS_CAR_TYPE.NAME} {item.LICENSE_PLATE}" : "ไม่ระบุ",
                                     EMP_NAME = item.CONTACT_EMPLOYEE_NAME,
                                     TIME = item.CREATED_DATE.ToString(),
-                                    TYPE = item.TYPE,
-                                    GROUP = item.GROUP,
+                                    TYPE = item.TYPE == nameof(VisitorType.IN) ? "เข้า" : "ออก",
+                                    GROUP =
+                                        item.GROUP == nameof(VisitorGroup.APPOINTMENT) ? "นัดล่วงหน้า" :
+                                        item.GROUP == nameof(VisitorGroup.CONSTRUCTOR) ? "ผูู้รับเหมา" :
+                                        item.GROUP == nameof(VisitorGroup.CUSTOMER) ? "กลุ่มลูกค้า" :
+                                        item.GROUP == nameof(VisitorGroup.NORMAL) ? "บุคคลทั่วไป" : "ไม่ระบุ",
 
                                 }).ToList();
 
@@ -126,6 +131,9 @@ namespace BIG.VMS.DATASERVICE
 
             return resp;
         }
+
+
+
     }
 
 

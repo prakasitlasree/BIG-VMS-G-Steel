@@ -29,6 +29,9 @@ namespace BIG.VMS.MODEL.CustomModel.CustomContainer
         public string UPDATED_BY { get; set; }
         public Nullable<System.DateTime> UPDATED_DATE { get; set; }
         public string BY_PASS { get; set; }
-        
+
+        public byte[] ID_CARD_PHOTO { get; set; }
+        public byte[] CONTACT_PHOTO { get; set; }
+
     }
 }

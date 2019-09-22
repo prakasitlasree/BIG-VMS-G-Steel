@@ -84,7 +84,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
             {
                 if (row.Cells["STATUS"].Value.ToString() == "เข้าพบแล้ว")
                 {
-                    row.Cells[0].Value = Properties.Resources.approve;
+                    row.Cells[0].Value = Properties.Resources.transparent;
                 }
             }
             gridVisitorOut.RowTemplate.Height = 30;

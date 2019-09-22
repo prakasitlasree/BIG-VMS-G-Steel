@@ -72,6 +72,7 @@
             this.label2.Size = new System.Drawing.Size(73, 25);
             this.label2.TabIndex = 3;
             this.label2.Text = "เริ่มต้น";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label1
             // 
@@ -84,6 +85,7 @@
             this.label1.Size = new System.Drawing.Size(59, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "สิ้นสุด";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnExport
             // 
@@ -155,7 +157,7 @@
             this.btnSearch.Location = new System.Drawing.Point(734, 7);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(7);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(180, 38);
+            this.btnSearch.Size = new System.Drawing.Size(241, 38);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "ค้นหา";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -201,6 +203,7 @@
             // 
             // flowLayoutPanel2
             // 
+            this.flowLayoutPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel2.Controls.Add(this.btnPrintReport);
             this.flowLayoutPanel2.Controls.Add(this.btnExport);
             this.flowLayoutPanel2.Controls.Add(this.btnClose);
@@ -241,6 +244,7 @@
             // 
             // flowLayoutPanel3
             // 
+            this.flowLayoutPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel2.SetColumnSpan(this.flowLayoutPanel3, 4);
             this.flowLayoutPanel3.Controls.Add(this.radAllGroup);
             this.flowLayoutPanel3.Controls.Add(this.radNormal);
@@ -325,7 +329,8 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 25);
             this.label3.TabIndex = 9;
-            this.label3.Text = "ประเภท";
+            this.label3.Text = "กลุ่ม";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label4
             // 
@@ -338,9 +343,11 @@
             this.label4.Size = new System.Drawing.Size(73, 25);
             this.label4.TabIndex = 8;
             this.label4.Text = "ประเภท";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel1.Controls.Add(this.radAll);
             this.flowLayoutPanel1.Controls.Add(this.radIn);
             this.flowLayoutPanel1.Controls.Add(this.radOut);
@@ -409,6 +416,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmReport";
             this.Text = "frmReport";
+            this.Load += new System.EventHandler(this.FrmReport_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);

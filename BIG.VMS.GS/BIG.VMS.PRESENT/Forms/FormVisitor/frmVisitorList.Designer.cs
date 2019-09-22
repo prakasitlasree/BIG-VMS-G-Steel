@@ -52,12 +52,18 @@
             this.txtLicense = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtNo = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboType = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnListExit = new System.Windows.Forms.Button();
             this.btnBlacklist = new System.Windows.Forms.Button();
+            this.dtFrom = new System.Windows.Forms.DateTimePicker();
+            this.dtTo = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.comboType = new System.Windows.Forms.ComboBox();
+            this.comboGroup = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnIn = new System.Windows.Forms.Button();
@@ -106,12 +112,12 @@
             this.tableLayoutPanel3.Controls.Add(this.gridVisitorList, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 241);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 284);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1175, 432);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1175, 389);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // gridVisitorList
@@ -128,7 +134,7 @@
             this.gridVisitorList.Location = new System.Drawing.Point(3, 3);
             this.gridVisitorList.Name = "gridVisitorList";
             this.gridVisitorList.ReadOnly = true;
-            this.gridVisitorList.Size = new System.Drawing.Size(1169, 376);
+            this.gridVisitorList.Size = new System.Drawing.Size(1169, 333);
             this.gridVisitorList.TabIndex = 0;
             this.gridVisitorList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridVisitorList_CellContentClick);
             // 
@@ -176,7 +182,7 @@
             this.tableLayoutPanel4.Controls.Add(this.btnNext, 3, 0);
             this.tableLayoutPanel4.Controls.Add(this.btnLast, 4, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 385);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 342);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -275,18 +281,24 @@
             this.tableLayoutPanel5.Controls.Add(this.txtLicense, 1, 1);
             this.tableLayoutPanel5.Controls.Add(this.label6, 2, 1);
             this.tableLayoutPanel5.Controls.Add(this.txtNo, 3, 1);
-            this.tableLayoutPanel5.Controls.Add(this.label4, 4, 1);
+            this.tableLayoutPanel5.Controls.Add(this.flowLayoutPanel1, 1, 3);
+            this.tableLayoutPanel5.Controls.Add(this.dtFrom, 3, 2);
+            this.tableLayoutPanel5.Controls.Add(this.dtTo, 5, 2);
+            this.tableLayoutPanel5.Controls.Add(this.label10, 2, 2);
+            this.tableLayoutPanel5.Controls.Add(this.label11, 4, 2);
+            this.tableLayoutPanel5.Controls.Add(this.label4, 0, 2);
+            this.tableLayoutPanel5.Controls.Add(this.label12, 4, 1);
             this.tableLayoutPanel5.Controls.Add(this.comboType, 5, 1);
-            this.tableLayoutPanel5.Controls.Add(this.flowLayoutPanel1, 1, 2);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel5.Controls.Add(this.comboGroup, 1, 2);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 109);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 3;
+            this.tableLayoutPanel5.RowCount = 4;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1175, 126);
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1175, 169);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // txtIDCard
@@ -307,9 +319,9 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 6);
+            this.label1.Location = new System.Drawing.Point(64, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 25);
             this.label1.TabIndex = 0;
@@ -317,9 +329,9 @@
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 43);
+            this.label2.Location = new System.Drawing.Point(3, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 25);
             this.label2.TabIndex = 1;
@@ -327,7 +339,7 @@
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(391, 6);
             this.label3.Name = "label3";
@@ -337,7 +349,7 @@
             // 
             // label5
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(761, 6);
             this.label5.Name = "label5";
@@ -356,16 +368,16 @@
             // txtLicense
             // 
             this.txtLicense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLicense.Location = new System.Drawing.Point(105, 40);
+            this.txtLicense.Location = new System.Drawing.Point(105, 41);
             this.txtLicense.Name = "txtLicense";
             this.txtLicense.Size = new System.Drawing.Size(280, 31);
             this.txtLicense.TabIndex = 7;
             // 
             // label6
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(391, 43);
+            this.label6.Location = new System.Drawing.Point(417, 44);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 25);
             this.label6.TabIndex = 11;
@@ -374,35 +386,10 @@
             // txtNo
             // 
             this.txtNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNo.Location = new System.Drawing.Point(475, 40);
+            this.txtNo.Location = new System.Drawing.Point(475, 41);
             this.txtNo.Name = "txtNo";
             this.txtNo.Size = new System.Drawing.Size(280, 31);
             this.txtNo.TabIndex = 12;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(761, 43);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 25);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "ประเภท";
-            // 
-            // comboType
-            // 
-            this.comboType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboType.FormattingEnabled = true;
-            this.comboType.Items.AddRange(new object[] {
-            "ทั้งหมด",
-            "เข้า",
-            "ออก",
-            "นัดล่วงหน้า(เข้า)",
-            "นัดล่วงหน้า(ออก)"});
-            this.comboType.Location = new System.Drawing.Point(890, 45);
-            this.comboType.Name = "comboType";
-            this.comboType.Size = new System.Drawing.Size(282, 33);
-            this.comboType.TabIndex = 14;
             // 
             // flowLayoutPanel1
             // 
@@ -411,7 +398,7 @@
             this.flowLayoutPanel1.Controls.Add(this.btnSearch);
             this.flowLayoutPanel1.Controls.Add(this.btnListExit);
             this.flowLayoutPanel1.Controls.Add(this.btnBlacklist);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(105, 77);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(105, 118);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(616, 49);
             this.flowLayoutPanel1.TabIndex = 17;
@@ -467,6 +454,95 @@
             this.btnBlacklist.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBlacklist.UseVisualStyleBackColor = false;
             this.btnBlacklist.Click += new System.EventHandler(this.btnBlacklist_Click);
+            // 
+            // dtFrom
+            // 
+            this.dtFrom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFrom.Location = new System.Drawing.Point(475, 80);
+            this.dtFrom.Name = "dtFrom";
+            this.dtFrom.Size = new System.Drawing.Size(280, 31);
+            this.dtFrom.TabIndex = 18;
+            this.dtFrom.ValueChanged += new System.EventHandler(this.DtFrom_ValueChanged);
+            // 
+            // dtTo
+            // 
+            this.dtTo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtTo.Location = new System.Drawing.Point(890, 80);
+            this.dtTo.Name = "dtTo";
+            this.dtTo.Size = new System.Drawing.Size(282, 31);
+            this.dtTo.TabIndex = 19;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(404, 83);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 25);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "เริ่มต้น";
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(825, 83);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(59, 25);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "สิ้นสุด";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(54, 83);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 25);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "กลุ่ม";
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(811, 44);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(73, 25);
+            this.label12.TabIndex = 22;
+            this.label12.Text = "ประเภท";
+            // 
+            // comboType
+            // 
+            this.comboType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboType.FormattingEnabled = true;
+            this.comboType.Items.AddRange(new object[] {
+            "ทั้งหมด",
+            "เข้า",
+            "ออก"});
+            this.comboType.Location = new System.Drawing.Point(890, 40);
+            this.comboType.Name = "comboType";
+            this.comboType.Size = new System.Drawing.Size(282, 33);
+            this.comboType.TabIndex = 23;
+            // 
+            // comboGroup
+            // 
+            this.comboGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboGroup.FormattingEnabled = true;
+            this.comboGroup.Items.AddRange(new object[] {
+            "ทั้งหมด",
+            "บุุคคลทั่วไป",
+            "บุุคคลนัดหมาย",
+            "ผูู้รับเหมา",
+            "กลุ่มลูกค้า"});
+            this.comboGroup.Location = new System.Drawing.Point(105, 79);
+            this.comboGroup.Name = "comboGroup";
+            this.comboGroup.Size = new System.Drawing.Size(280, 33);
+            this.comboGroup.TabIndex = 14;
             // 
             // panel1
             // 
@@ -693,7 +769,7 @@
         private System.Windows.Forms.TextBox txtNo;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboType;
+        private System.Windows.Forms.ComboBox comboGroup;
         private System.Windows.Forms.Button btnBlacklist;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnListExit;
@@ -709,5 +785,11 @@
         private System.Windows.Forms.DataGridViewImageColumn colEdit;
         private System.Windows.Forms.DataGridViewImageColumn colDelete;
         private System.Windows.Forms.DataGridViewImageColumn colPrint;
+        private System.Windows.Forms.DateTimePicker dtFrom;
+        private System.Windows.Forms.DateTimePicker dtTo;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox comboType;
+        private System.Windows.Forms.Label label12;
     }
 }

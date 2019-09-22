@@ -122,17 +122,12 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     var data = _blService.GetBlackListByIdCard(txtIDCard.Text);
                     if (data.TRN_BLACKLIST == null)
                     {
-                        //if (IsValidCheckPersonID(txtIDCard.Text))
-                        // {
+                        
                         if (MessageBox.Show("ต้องการบันทึกข้อมูลใช่หรือไม่ ?", "แจ้งเตือน", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
                             Save();
                         }
-                        //}
-                        //else
-                        //{
-                        //    MessageBox.Show("บัตรประชาชนไม่ถูกต้อง", "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        //}
+                       
                     }
                     else
                     {
