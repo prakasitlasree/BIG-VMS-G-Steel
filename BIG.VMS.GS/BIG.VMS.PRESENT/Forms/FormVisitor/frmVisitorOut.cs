@@ -318,7 +318,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
         {
             if (outFlag == true)
             {
-                var res = _service.GetVisitorForOutByID(inID);
+                var res = _service.GetVisitorForOutById(inID);
 
                 if (res.Status)
                 {

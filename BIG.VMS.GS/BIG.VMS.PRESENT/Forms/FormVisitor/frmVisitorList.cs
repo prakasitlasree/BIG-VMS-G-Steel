@@ -341,7 +341,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
                     {
                         #region ===================== edit =====================
                         var id = Convert.ToInt32(gridVisitorList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
-                        var obj = (TRN_VISITOR)_service.GetVisitorByAutoID(id).TRN_VISITOR;
+                        var obj = (TRN_VISITOR)_service.GetVisitorByAutoId(id).TRN_VISITOR;
 
                         frmVisitorNew frm = new frmVisitorNew();
                         frm.TrnVisitor = obj;
@@ -413,7 +413,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
                         {
                             #region ===================== print =====================
                             var id = Convert.ToInt32(gridVisitorList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
-                            var obj = _service.GetVisitorByAutoIDForReport(id);
+                            var obj = _service.GetVisitorByAutoIdForReport(id);
                             var reportPara = _service.GetReportParameter();
                             if (obj.ResultObj.Count > 0)
                             {

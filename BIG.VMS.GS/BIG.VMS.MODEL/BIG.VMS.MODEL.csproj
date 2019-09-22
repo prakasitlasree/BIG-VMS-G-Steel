@@ -81,6 +81,7 @@
       <DependentUpon>BIG_VMS_DB.tt</DependentUpon>
     </Compile>
     <Compile Include="GsteelModel\ContainerModel\ContainerProject.cs" />
+    <Compile Include="GsteelModel\CustomModel\ConstructorReport.cs" />
     <Compile Include="GsteelModel\FilterModel\FilterProject.cs" />
     <Compile Include="GsteelModel\FilterModel\FilterConstractor.cs" />
     <Compile Include="Response.cs" />

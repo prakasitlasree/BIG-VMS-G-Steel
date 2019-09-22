@@ -11,6 +11,7 @@ using BIG.VMS.MODEL.CustomModel.CustomContainer;
 using System.Globalization;
 using System.Data.Entity.Validation;
 using BIG.VMS.MODEL.CustomModel.Container;
+using BIG.VMS.MODEL.GsteelModel.CustomModel;
 
 namespace BIG.VMS.DATASERVICE
 {
@@ -448,7 +449,7 @@ namespace BIG.VMS.DATASERVICE
             return result;
         }
 
-        public ContainerVisitor GetVisitorForOutByID(int id)
+        public ContainerVisitor GetVisitorForOutById(int id)
         {
             var result = new ContainerVisitor();
             try
@@ -519,7 +520,7 @@ namespace BIG.VMS.DATASERVICE
             return result;
         }
 
-        public ContainerVisitor GetVisitorByAutoID(int auto_id)
+        public ContainerVisitor GetVisitorByAutoId(int auto_id)
         {
             var result = new ContainerVisitor();
             try
@@ -551,7 +552,7 @@ namespace BIG.VMS.DATASERVICE
             return result;
         }
 
-        public ContainerVisitor GetVisitorByAutoIDForReport(int auto_id)
+        public ContainerVisitor GetVisitorByAutoIdForReport(int auto_id)
         {
             var result = new ContainerVisitor();
 
@@ -1301,7 +1302,6 @@ namespace BIG.VMS.DATASERVICE
             return resp;
         }
 
-
         public Response AddVisitor(TRN_VISITOR source)
         {
             var result = new Response();
@@ -1400,6 +1400,65 @@ namespace BIG.VMS.DATASERVICE
             }
 
             return result;
+        }
+
+        public Response GetConstructorReport(int auto_id)
+        {
+            Response resp = new Response();
+
+            try
+            {
+                using (var ctx = new BIG_VMSEntities())
+                {
+                    var visitor = ctx.TRN_VISITOR.Where(o => o.AUTO_ID == auto_id).FirstOrDefault();
+                    if (visitor != null)
+                    {
+                        var project = ctx.TRN_PROJECT_MASTER
+                            .Include("TRN_PROJECT_MEMBER").Where(o => o.AUTO_ID == visitor.PROJECT_ID)
+                            .FirstOrDefault();
+
+                        if (project != null)
+                        {
+                            Project outputData = new Project();
+
+                            outputData.LIST_PROJECT_HEADER = new List<ProjectHeader>();
+                            ProjectHeader header = new ProjectHeader()
+                            {
+                                PROJECT_NAME = project.PROJECT_NAME,
+                                CONTRUCTOR_NAME = project.MAS_CONTRACTOR.NAME,
+                                RESP_MANAGER = project.RESPONSIBLE_MANAGER,
+                                RESP_TEL = project.RESPONSIBLE_TEL,
+                            };
+
+                            outputData.LIST_PROJECT_HEADER.Add(header);
+
+                            outputData.LIST_PROJECT_MEMBER = new List<ProjectMember>();
+
+                            foreach (var item in project.TRN_PROJECT_MEMBER)
+                            {
+                                ProjectMember member = new ProjectMember()
+                                {
+                                    ID_CARD = item.ID_CARD,
+                                    FULLNAME = item.FULLNAME
+                                };
+                                outputData.LIST_PROJECT_MEMBER.Add(member);
+
+                            }
+
+                            resp.Status = true;
+                            resp.ResultObj = outputData;
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                resp.Status = false;
+                resp.ExceptionMessage = ex.Message.ToString();
+            }
+
+            return resp;
         }
 
         public ContainerDisplayVisitor GetContainerDisplayVisitor(ContainerDisplayVisitor obj)
@@ -1537,7 +1596,7 @@ namespace BIG.VMS.DATASERVICE
                     {
                         var endDate = filter.DATE_TO.AddDays(1);
                         query = query.Where(x => x.CREATED_DATE >= filter.DATE_TO && x.CREATED_DATE <= endDate);
-                       
+
 
                     }
                     if (string.IsNullOrEmpty(filter.FIRST_NAME) && string.IsNullOrEmpty(filter.LAST_NAME) &&

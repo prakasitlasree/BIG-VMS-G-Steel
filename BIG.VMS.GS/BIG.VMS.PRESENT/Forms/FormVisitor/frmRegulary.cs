@@ -88,7 +88,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
         private void VisitorSelected_EventHadler(object sender, EventArgs e)
         {
             var Id = Convert.ToInt32(((Control)sender).Tag.ToString());
-            var obj = _service.GetVisitorByAutoID(Id);
+            var obj = _service.GetVisitorByAutoId(Id);
             frmVisitor frm = new frmVisitor();
             frm.visitorObj = obj.TRN_VISITOR;
             frm.formMode = FormMode.Add;

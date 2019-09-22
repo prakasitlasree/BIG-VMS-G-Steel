@@ -36,7 +36,7 @@
         <AssociationConnector Association="BIG_VMSModel.FK_TRN_CUSTOMER_VISIT_LIST_TRN_CUSTOMER_VISIT_LIST" />
         <AssociationConnector Association="BIG_VMSModel.FK_TRN_VISITOR_PURPOSE_TRN_VISITOR_PURPOSE" />
         <AssociationConnector Association="BIG_VMSModel.FK_TRN_PROJECT_MEMBER_TRN_PROJECT_CONTRACTOR" />
-        <EntityTypeShape EntityType="BIG_VMSModel.TRN_VISITOR" Width="1.5" PointX="8" PointY="11" />
+        <EntityTypeShape EntityType="BIG_VMSModel.TRN_VISITOR" Width="1.5" PointX="8" PointY="10.875" />
         <AssociationConnector Association="BIG_VMSModel.FK_TRN_VISITOR_MAS_CAR_TYPE" />
         <AssociationConnector Association="BIG_VMSModel.FK_TRN_VISITOR_MAS_EMPLOYEE" />
         <AssociationConnector Association="BIG_VMSModel.FK_TRN_VISITOR_MAS_PROVINCE" />

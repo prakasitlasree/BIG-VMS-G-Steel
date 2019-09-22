@@ -682,7 +682,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
         }
         private void PrintSlip(int id, int? no)
         {
-            var obj = _service.GetVisitorByAutoIDForReport(id);
+            var obj = _service.GetVisitorByAutoIdForReport(id);
             var reportPara = _service.GetReportParameter();
             if (obj.ResultObj.Count > 0)
             {

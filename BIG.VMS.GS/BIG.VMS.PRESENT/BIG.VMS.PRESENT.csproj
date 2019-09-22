@@ -270,6 +270,14 @@
     <Compile Include="Forms\FormReportNew\frmSelectReport.Designer.cs">
       <DependentUpon>frmSelectReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormReport\ContructorDBSet.cs">
+      <DependentUpon>ContructorDBSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormReport\ContructorDBSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContructorDBSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormReport\frmReportKeyIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -391,6 +399,13 @@
     </Compile>
     <Compile Include="Forms\Vendor\frmProjectList.Designer.cs">
       <DependentUpon>frmProjectList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportConstructor.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportConstructor.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="ReportSlip.cs">
       <AutoGen>True</AutoGen>
@@ -641,6 +656,11 @@
     <EmbeddedResource Include="Forms\Master\Website.resx">
       <DependentUpon>Website.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportConstructor.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportConstructor.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportSlip.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReportSlip.cs</LastGenOutput>
@@ -724,6 +744,17 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Forms\FormReport\ContructorDBSet.xsc">
+      <DependentUpon>ContructorDBSet.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\FormReport\ContructorDBSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ContructorDBSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Forms\FormReport\ContructorDBSet.xss">
+      <DependentUpon>ContructorDBSet.xsd</DependentUpon>
+    </None>
     <None Include="Forms\FormReport\ReportDBSet.xsc">
       <DependentUpon>ReportDBSet.xsd</DependentUpon>
     </None>

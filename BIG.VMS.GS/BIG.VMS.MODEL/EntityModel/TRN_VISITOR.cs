@@ -42,6 +42,8 @@ namespace BIG.VMS.MODEL.EntityModel
         public string CONTACT_EMPLOYEE_NAME { get; set; }
         public Nullable<int> REF_ID { get; set; }
         public string GROUP { get; set; }
+        public Nullable<int> CUSTOMER_ID { get; set; }
+        public Nullable<int> PROJECT_ID { get; set; }
     
         public virtual MAS_CAR_TYPE MAS_CAR_TYPE { get; set; }
         public virtual MAS_EMPLOYEE MAS_EMPLOYEE { get; set; }

@@ -300,6 +300,8 @@
           <Property Name="CONTACT_EMPLOYEE_NAME" Type="nvarchar" MaxLength="100" />
           <Property Name="REF_ID" Type="int" />
           <Property Name="GROUP" Type="nvarchar" MaxLength="100" />
+          <Property Name="CUSTOMER_ID" Type="int" />
+          <Property Name="PROJECT_ID" Type="int" />
         </EntityType>
         <Association Name="FK_MAS_CAR_BRAND_MAS_CAR_TYPE">
           <End Role="MAS_CAR_TYPE" Type="Self.MAS_CAR_TYPE" Multiplicity="0..1" />
@@ -1191,6 +1193,8 @@
           <Property Name="CONTACT_EMPLOYEE_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="REF_ID" Type="Int32" />
           <Property Name="GROUP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CUSTOMER_ID" Type="Int32" />
+          <Property Name="PROJECT_ID" Type="Int32" />
           <NavigationProperty Name="MAS_CAR_TYPE" Relationship="BIG_VMSModel.FK_TRN_VISITOR_MAS_CAR_TYPE" FromRole="TRN_VISITOR" ToRole="MAS_CAR_TYPE" />
           <NavigationProperty Name="MAS_EMPLOYEE" Relationship="BIG_VMSModel.FK_TRN_VISITOR_MAS_EMPLOYEE" FromRole="TRN_VISITOR" ToRole="MAS_EMPLOYEE" />
           <NavigationProperty Name="MAS_PROVINCE" Relationship="BIG_VMSModel.FK_TRN_VISITOR_MAS_PROVINCE" FromRole="TRN_VISITOR" ToRole="MAS_PROVINCE" />
@@ -1553,6 +1557,8 @@
           <EntitySetMapping Name="TRN_VISITOR">
             <EntityTypeMapping TypeName="BIG_VMSModel.TRN_VISITOR">
               <MappingFragment StoreEntitySet="TRN_VISITOR">
+                <ScalarProperty Name="PROJECT_ID" ColumnName="PROJECT_ID" />
+                <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
                 <ScalarProperty Name="GROUP" ColumnName="GROUP" />
                 <ScalarProperty Name="REF_ID" ColumnName="REF_ID" />
                 <ScalarProperty Name="CONTACT_EMPLOYEE_NAME" ColumnName="CONTACT_EMPLOYEE_NAME" />

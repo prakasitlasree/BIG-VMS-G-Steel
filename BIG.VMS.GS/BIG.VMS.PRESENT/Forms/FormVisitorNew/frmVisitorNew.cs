@@ -15,6 +15,8 @@ using BIG.VMS.MODEL.CustomModel.Container;
 using BIG.VMS.DATASERVICE;
 using BIG.VMS.MODEL.CustomModel.CustomContainer;
 using BIG.VMS.MODEL.EntityModel;
+using BIG.VMS.MODEL.GsteelModel.CustomModel;
+using BIG.VMS.PRESENT.Forms.FormReport;
 using BIG.VMS.PRESENT.Forms.Master;
 using CrystalDecisions.CrystalReports.Engine;
 
@@ -809,11 +811,11 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                             CAR_TYPE_ID = _carTypeId,
                             CONTACT_EMPLOYEE_NAME = txtEmployee.Text,
                             FIRST_NAME = txtFirstName.Text,
-
                             LICENSE_PLATE = (txtCar.Text.Trim() == "เดินเท้า" && txtCar.Text.Trim() == "ไม่ระบุ") ? "ไม่ระบุ" : txtLicense.Text,
                             LICENSE_PLATE_PROVINCE_ID = _provinceId != 0 ? _provinceId : (int?)null,
                             REASON_TEXT = txtReason.Text,
                             STATUS = 1,
+
                             CREATED_BY = LOGIN,
                             CREATED_DATE = DateTime.Now,
                             UPDATED_BY = LOGIN,
@@ -821,6 +823,15 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                             TRN_ATTACHEDMENT = new List<TRN_ATTACHEDMENT>()
                             #endregion
                         };
+
+                        if (VISITOR_GROUP == VisitorGroup.CONSTRUCTOR)
+                        {
+                            obj.PROJECT_ID = TrnProjectMaster.AUTO_ID;
+                        }
+                        else
+                        {
+                            obj.CUSTOMER_ID = TrnCustomerVisit.AUTO_ID;
+                        }
                         TRN_ATTACHEDMENT attached = new TRN_ATTACHEDMENT();
                         string dir = DIRECTORY_IN + "\\" + obj.NO + "\\";
                         Directory.CreateDirectory(dir);
@@ -855,8 +866,6 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     if (obj.ResultObj.Count > 0)
                     {
                         List<CustomDisplayVisitor> listData = (List<CustomDisplayVisitor>)obj.ResultObj;
-
-
                         DataTable dt = ConvertToDataTable(listData);
                         ReportDocument rpt = new ReportDocument();
                         string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
@@ -880,6 +889,24 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                 }
                 else if (source.GROUP == nameof(VisitorGroup.CONSTRUCTOR))
                 {
+                    #region Constructor
+                    var response = _vistorServices.GetConstructorReport(((TRN_VISITOR)resp.ResultObj).AUTO_ID);
+                    if (response.Status)
+                    {
+                        Project projectObj = (Project)response.ResultObj;
+                        DataTable dtHeader = ConvertToDataTable(projectObj.LIST_PROJECT_HEADER);
+                        DataTable dtMember = ConvertToDataTable(projectObj.LIST_PROJECT_MEMBER);
+                        ReportDocument rpt = new ReportDocument();
+                        string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
+                        var appPath = Application.StartupPath + "\\" + "ReportConstructor.rpt";
+                        rpt.Load(appPath);
+                        var k = rpt.Database.Tables[0];
+                        rpt.Database.Tables[0].SetDataSource(dtHeader);
+                        rpt.Database.Tables[1].SetDataSource(dtMember);
+                        rpt.PrintToPrinter(1, true, 0, 0);
+                    }
+
+                    #endregion
 
                 }
                 else
@@ -887,7 +914,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
 
                 }
 
-                
+
                 MessageBox.Show(Message.MSG_SAVE_COMPLETE, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
