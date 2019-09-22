@@ -86,7 +86,7 @@
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.Location = new System.Drawing.Point(3, 3);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(149, 40);
+            this.btnSearch.Size = new System.Drawing.Size(126, 40);
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "ค้นหา";
             this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

@@ -280,5 +280,120 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitorNew
 
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            ReadPidCard();
+            TYPE = "ID_CARD";
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void pb_driving_Click(object sender, EventArgs e)
+        {
+            DrivingLicenseCardInfo frm = new DrivingLicenseCardInfo();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                DID = new DIDCard();
+                TYPE = "DRIVER_CARD"; //Driving card ID
+                try
+                {
+                    string[] temp = frm.DID_INFO.Split('$');
+                    if (temp.Length > 0)
+                    {
+                        string[] str = { };
+                        string[] str2 = { };
+                        try
+                        {
+                            string[] no = temp[2].Replace("\r\n", "").Split('?');
+                            str = no;
+                        }
+                        catch
+                        {
+                            // ignored
+                        }
+
+                        try
+                        {
+                            string[] no2 = str[1].Replace("\r\n", "").Split('=');
+                            str2 = no2;
+                        }
+                        catch
+                        {
+
+                        }
+                        try
+                        {
+                            DID.NO = str2[0].Replace(";", "").ToString().Substring(6);
+
+
+                        }
+                        catch
+                        {
+
+                        }
+                        try
+                        {
+                            DID.FIRST_NAME_EN = temp[1].ToString();
+                        }
+                        catch
+                        {
+
+                        }
+                        try
+                        {
+                            DID.LAST_NAME_EN = temp[0].Trim().Replace("%", "").Replace("^", "").Replace(" ", "");
+                        }
+                        catch
+                        {
+
+                        }
+
+
+                    }
+                    READ_CARD_STATUS = true;
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                    DID.NO = "99999999999999";
+                    DID.FIRST_NAME_EN = "ERROR";
+                    DID.LAST_NAME_EN = "ERROR";
+
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+
+            }
+        }
+
+        private void pb_capturecard_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var frm = new CameraSelection();
+                frm.StartPosition = FormStartPosition.CenterParent;
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+
+                    if (frm.CAMERA != null)
+                    {
+                        TYPE = "OTHER_CARD";
+                        OTHER_CARD_IMAGE = frm.CAMERA;
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+        }
     }
 }
