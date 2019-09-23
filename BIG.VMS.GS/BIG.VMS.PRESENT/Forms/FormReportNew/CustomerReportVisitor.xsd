@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CustomerReportVisitor" targetNamespace="http://tempuri.org/CustomerReportVisitorAll.xsd" xmlns:mstns="http://tempuri.org/CustomerReportVisitorAll.xsd" xmlns="http://tempuri.org/CustomerReportVisitorAll.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CustomerReportVisitor" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="CustomerReportVisitor" msprop:Generator_UserDSName="CustomerReportVisitor">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ListCustomerReportVisitor" msprop:Generator_TableClassName="ListCustomerReportVisitorDataTable" msprop:Generator_TableVarName="tableListCustomerReportVisitor" msprop:Generator_RowChangedName="ListCustomerReportVisitorRowChanged" msprop:Generator_TablePropName="ListCustomerReportVisitor" msprop:Generator_RowDeletingName="ListCustomerReportVisitorRowDeleting" msprop:Generator_RowChangingName="ListCustomerReportVisitorRowChanging" msprop:Generator_RowEvHandlerName="ListCustomerReportVisitorRowChangeEventHandler" msprop:Generator_RowDeletedName="ListCustomerReportVisitorRowDeleted" msprop:Generator_RowClassName="ListCustomerReportVisitorRow" msprop:Generator_UserTableName="ListCustomerReportVisitor" msprop:Generator_RowEvArgName="ListCustomerReportVisitorRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NO" msprop:Generator_ColumnVarNameInTable="columnNO" msprop:Generator_ColumnPropNameInRow="NO" msprop:Generator_ColumnPropNameInTable="NOColumn" msprop:Generator_UserColumnName="NO" type="xs:string" minOccurs="0" />
+              <xs:element name="TIME" msprop:Generator_ColumnVarNameInTable="columnTIME" msprop:Generator_ColumnPropNameInRow="TIME" msprop:Generator_ColumnPropNameInTable="TIMEColumn" msprop:Generator_UserColumnName="TIME" type="xs:string" minOccurs="0" />
+              <xs:element name="TYPE" msprop:Generator_ColumnVarNameInTable="columnTYPE" msprop:Generator_ColumnPropNameInRow="TYPE" msprop:Generator_ColumnPropNameInTable="TYPEColumn" msprop:Generator_UserColumnName="TYPE" type="xs:string" minOccurs="0" />
+              <xs:element name="GROUP" msprop:Generator_ColumnVarNameInTable="columnGROUP" msprop:Generator_ColumnPropNameInRow="GROUP" msprop:Generator_ColumnPropNameInTable="GROUPColumn" msprop:Generator_UserColumnName="GROUP" type="xs:string" minOccurs="0" />
+              <xs:element name="ID_CARD" msprop:Generator_ColumnVarNameInTable="columnID_CARD" msprop:Generator_ColumnPropNameInRow="ID_CARD" msprop:Generator_ColumnPropNameInTable="ID_CARDColumn" msprop:Generator_UserColumnName="ID_CARD" type="xs:string" minOccurs="0" />
+              <xs:element name="FULL_NAME" msprop:Generator_ColumnVarNameInTable="columnFULL_NAME" msprop:Generator_ColumnPropNameInRow="FULL_NAME" msprop:Generator_ColumnPropNameInTable="FULL_NAMEColumn" msprop:Generator_UserColumnName="FULL_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="CAR_INFO" msprop:Generator_ColumnVarNameInTable="columnCAR_INFO" msprop:Generator_ColumnPropNameInRow="CAR_INFO" msprop:Generator_ColumnPropNameInTable="CAR_INFOColumn" msprop:Generator_UserColumnName="CAR_INFO" type="xs:string" minOccurs="0" />
+              <xs:element name="EMP_NAME" msprop:Generator_ColumnVarNameInTable="columnEMP_NAME" msprop:Generator_ColumnPropNameInRow="EMP_NAME" msprop:Generator_ColumnPropNameInTable="EMP_NAMEColumn" msprop:Generator_UserColumnName="EMP_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="REASON_TEXT" msprop:Generator_ColumnVarNameInTable="columnREASON_TEXT" msprop:Generator_ColumnPropNameInRow="REASON_TEXT" msprop:Generator_ColumnPropNameInTable="REASON_TEXTColumn" msprop:Generator_UserColumnName="REASON_TEXT" type="xs:string" minOccurs="0" />
+              <xs:element name="CREATED_BY" msprop:Generator_ColumnVarNameInTable="columnCREATED_BY" msprop:Generator_ColumnPropNameInRow="CREATED_BY" msprop:Generator_ColumnPropNameInTable="CREATED_BYColumn" msprop:Generator_UserColumnName="CREATED_BY" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

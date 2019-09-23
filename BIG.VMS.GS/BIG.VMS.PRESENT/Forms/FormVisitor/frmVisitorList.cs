@@ -17,6 +17,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BIG.VMS.MODEL.CustomModel.Container;
+using BIG.VMS.MODEL.CustomModel.General;
+using BIG.VMS.MODEL.GsteelModel.CustomModel;
 using BIG.VMS.PRESENT.Forms.FormReportNew;
 using BIG.VMS.PRESENT.Forms.FormVisitorNew;
 
@@ -106,7 +108,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
                     break;
             }
 
-            
+
 
 
             _container.Filter = filter;
@@ -299,7 +301,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
             }
         }
 
-       
+
 
         private void btnAhead_Click(object sender, EventArgs e)
         {
@@ -400,6 +402,98 @@ namespace BIG.VMS.PRESENT.Forms.Home
                     else if (e.ColumnIndex == 2)
                     {
                         #region ===================== print =====================
+                        var id = Convert.ToInt32(gridVisitorList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
+                        var visitor = (TRN_VISITOR)_service.GetVisitorByAutoId(id).TRN_VISITOR;
+                        if (visitor != null)
+                        {
+                            if (MessageBox.Show("ต้องการพิมพ์ใบเสร็จอีกครั้งหรือไม่' ?", "แจ้งเตือน", MessageBoxButtons.YesNo,
+                                    MessageBoxIcon.Information) == DialogResult.Yes)
+                            {
+                                if (visitor.GROUP == nameof(VisitorGroup.NORMAL) &&
+                                    visitor.GROUP == nameof(VisitorGroup.APPOINTMENT))
+                                {
+                                    #region Normal && Appointment
+
+                                    var obj = _service.GetVisitorReportById(id);
+
+                                    if (obj.ResultObj.Count > 0)
+                                    {
+                                        List<CustomDisplayVisitor>
+                                            listData = (List<CustomDisplayVisitor>)obj.ResultObj;
+                                        DataTable dt = ConvertToDataTable(listData);
+                                        ReportDocument rpt = new ReportDocument();
+                                        string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
+                                        if (listData.FirstOrDefault()?.BY_PASS == "N" ||
+                                            listData.FirstOrDefault()?.BY_PASS == null)
+                                        {
+                                            var appPath = Application.StartupPath + "\\" + "ReportSlip.rpt";
+                                            rpt.Load(appPath);
+                                            rpt.SetDataSource(dt);
+                                            rpt.PrintToPrinter(1, true, 0, 0);
+                                        }
+                                        else
+                                        {
+                                            var appPath = Application.StartupPath + "\\" + "ReportSlipByPass.rpt";
+                                            rpt.Load(appPath);
+                                            rpt.SetDataSource(dt);
+                                            rpt.PrintToPrinter(1, true, 0, 0);
+                                        }
+
+                                    }
+
+                                    #endregion
+                                }
+                                else if (visitor.GROUP == nameof(VisitorGroup.CONSTRUCTOR))
+                                {
+                                    #region Constructor
+
+                                    var response = _service.GetConstructorReport(id);
+                                    if (response.Status)
+                                    {
+                                        Project projectObj = (Project)response.ResultObj;
+                                        DataTable dtHeader = ConvertToDataTable(projectObj.LIST_PROJECT_HEADER);
+                                        DataTable dtMember = ConvertToDataTable(projectObj.LIST_PROJECT_MEMBER);
+                                        ReportDocument rpt = new ReportDocument();
+                                        string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
+                                        var appPath = Application.StartupPath + "\\" + "ReportConstructor.rpt";
+                                        rpt.Load(appPath);
+                                        var k = rpt.Database.Tables[0];
+                                        rpt.Database.Tables[0].SetDataSource(dtHeader);
+                                        rpt.Database.Tables[1].SetDataSource(dtMember);
+                                        rpt.PrintToPrinter(1, true, 0, 0);
+                                    }
+
+                                    #endregion
+
+                                }
+                                else
+                                {
+                                    #region Customer
+
+                                    var response = _service.GetCustomerReport(id);
+                                    if (response.Status)
+                                    {
+                                        CustomerReport CustomerObj = (CustomerReport)response.ResultObj;
+                                        DataTable dtHeader = ConvertToDataTable(CustomerObj.LIST_CUSTOMER_HEADER);
+                                        DataTable dtMember = ConvertToDataTable(CustomerObj.LIST_CUSTOMER);
+                                        ReportDocument rpt = new ReportDocument();
+                                        string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
+                                        var appPath = Application.StartupPath + "\\" + "ReportCustomer.rpt";
+                                        rpt.Load(appPath);
+                                        //var k = rpt.Database.Tables[0];
+                                        rpt.Database.Tables[0].SetDataSource(dtHeader);
+                                        rpt.Database.Tables[1].SetDataSource(dtMember);
+                                        rpt.PrintToPrinter(1, true, 0, 0);
+                                    }
+
+
+                                    #endregion
+
+                                }
+                            }
+
+
+                        }
 
                         #endregion
                     }
@@ -429,7 +523,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
             frm.ShowDialog();
         }
 
-       
+
 
         private void DtFrom_ValueChanged(object sender, EventArgs e)
         {

@@ -103,6 +103,7 @@
             this.btnExport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExport.UseVisualStyleBackColor = false;
+            this.btnExport.Click += new System.EventHandler(this.BtnExport_Click);
             // 
             // btnClose
             // 
@@ -181,6 +182,7 @@
             this.btnPrintReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPrintReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPrintReport.UseVisualStyleBackColor = false;
+            this.btnPrintReport.Click += new System.EventHandler(this.BtnPrintReport_Click);
             // 
             // tableLayoutPanel1
             // 

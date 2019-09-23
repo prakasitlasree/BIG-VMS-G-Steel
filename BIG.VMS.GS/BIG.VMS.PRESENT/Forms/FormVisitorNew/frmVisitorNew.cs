@@ -912,6 +912,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                 }
                 else
                 {
+                    #region Customer
                     var response = _vistorServices.GetCustomerReport(((TRN_VISITOR)resp.ResultObj).AUTO_ID);
                     if (response.Status)
                     {
@@ -927,6 +928,10 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                         rpt.Database.Tables[1].SetDataSource(dtMember);
                         rpt.PrintToPrinter(1, true, 0, 0);
                     }
+
+
+                    #endregion
+
                 }
 
 

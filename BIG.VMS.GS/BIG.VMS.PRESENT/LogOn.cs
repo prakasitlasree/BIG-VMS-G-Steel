@@ -36,6 +36,7 @@ namespace BIG.VMS.PRESENT
                 var obj = (MEMBER_LOGON)res.ResultObj;
                 var frm = new FrmMain();
                 LOGIN = txtUsername.Text;
+                PASSWORD = txtPassword.Text;
                 ROLE = res.ResultObj.ROLE;
                 frm.User = txtUsername.Text;
                 frm.Show(this);
@@ -244,5 +245,9 @@ namespace BIG.VMS.PRESENT
 
         }
 
+        private void LogOn_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -40,9 +40,9 @@ namespace BIG.VMS.DATASERVICE
                                 {
                                     NO = item.NO.ToString(),
                                     REASON_TEXT = item.REASON_TEXT.ToString(),
-                                    ID_CARD = item.ID_CARD.ToString(),
+                                    ID_CARD = item.ID_CARD.ToString().Replace("กลุ่มพนักงานผู้รับเหมา", ""),
                                     CREATED_BY = item.CREATED_BY.ToString(),
-                                    FULL_NAME = $@"{item.FIRST_NAME} {item.LAST_NAME}",
+                                    FULL_NAME = ($@"{item.FIRST_NAME} {item.LAST_NAME}").Replace("กลุ่มพนักงานผู้รับเหมา", ""),
                                     CAR_INFO = item.MAS_CAR_TYPE != null ? $@"{item.MAS_CAR_TYPE.NAME} {item.LICENSE_PLATE}" : "ไม่ระบุ",
                                     EMP_NAME = item.CONTACT_EMPLOYEE_NAME,
                                     TIME_IN = item.CREATED_DATE.ToString(),
@@ -104,9 +104,9 @@ namespace BIG.VMS.DATASERVICE
                                 {
                                     NO = item.NO.ToString(),
                                     REASON_TEXT = item.REASON_TEXT.ToString(),
-                                    ID_CARD = item.ID_CARD.ToString(),
+                                    ID_CARD = item.ID_CARD.ToString().Replace("กลุ่มพนักงานผู้รับเหมา", ""),
                                     CREATED_BY = item.CREATED_BY.ToString(),
-                                    FULL_NAME = $@"{item.FIRST_NAME} {item.LAST_NAME}",
+                                    FULL_NAME = ($@"{item.FIRST_NAME} {item.LAST_NAME}").Replace("กลุ่มพนักงานผู้รับเหมา", ""),
                                     CAR_INFO = item.MAS_CAR_TYPE != null ? $@"{item.MAS_CAR_TYPE.NAME} {item.LICENSE_PLATE}" : "ไม่ระบุ",
                                     EMP_NAME = item.CONTACT_EMPLOYEE_NAME,
                                     TIME = item.CREATED_DATE.ToString(),

@@ -94,29 +94,44 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
         {
             if (e.ColumnIndex == 0)
             {
-                #region ===================== delete =====================
-                if (MessageBox.Show(Message.MSG_DELETE_CONFIRM, "แจ้งเตือน", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                if (ROLE != "Admin")
                 {
-                    var id = Convert.ToInt32(gridBlackList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
-                    ContainerBlackList obj = new ContainerBlackList
-                    {
-                        TRN_BLACKLIST = new TRN_BLACKLIST
-                        {
-                            AUTO_ID = id
-                        }
-                    };
-                    var res = _service.Delete(obj);
-                    if (res.Status)
-                    {
-                        MessageBox.Show(Message.MSG_SAVE_COMPLETE, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        ResetScreen();
-                    }
-                    else
-                    {
-                        MessageBox.Show(res.ExceptionMessage, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    MessageBox.Show("ผู้ใช้นี้ไม่สามารถลบบุคคล Black List ได้", "แจ้งเตือน", MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                        return; ;
                 }
-                #endregion
+                else
+                {
+                    #region ===================== delete =====================
+                    if (MessageBox.Show(Message.MSG_DELETE_CONFIRM, "แจ้งเตือน", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                    {
+                        frmBlacklistConfirm frm = new frmBlacklistConfirm();
+                        if (frm.ShowDialog() == DialogResult.OK)
+                        {
+                            var id = Convert.ToInt32(gridBlackList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
+                            ContainerBlackList obj = new ContainerBlackList
+                            {
+                                TRN_BLACKLIST = new TRN_BLACKLIST
+                                {
+                                    AUTO_ID = id
+                                }
+                            };
+                            var res = _service.Delete(obj);
+                            if (res.Status)
+                            {
+                                MessageBox.Show(Message.MSG_SAVE_COMPLETE, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                ResetScreen();
+                            }
+                            else
+                            {
+                                MessageBox.Show(res.ExceptionMessage, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                        
+                    }
+                    #endregion
+                }
+
             }
         }
 

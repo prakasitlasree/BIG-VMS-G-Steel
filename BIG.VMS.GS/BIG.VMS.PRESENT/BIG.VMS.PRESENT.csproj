@@ -209,6 +209,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CustomerDBSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormReportNew\CustomerReportVisitor.cs">
+      <DependentUpon>CustomerReportVisitor.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormReportNew\CustomerReportVisitor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerReportVisitor.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormReportNew\CustomReportVisitorAll.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomReportVisitorAll.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormReportNew\frmReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,6 +279,12 @@
     </Compile>
     <Compile Include="Forms\FormVisitorNew\frmSelectVisitor.Designer.cs">
       <DependentUpon>frmSelectVisitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmBlacklistConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVisitor\frmBlacklistConfirm.Designer.cs">
+      <DependentUpon>frmBlacklistConfirm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormVisitor\frmBlacklistList.cs">
       <SubType>Form</SubType>
@@ -337,17 +356,24 @@
       <SubType>Component</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="ReportVisitorListAll.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportVisitorListAll.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="ReportVisitorListNotAll.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportVisitorListNotAll.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="VisitorListReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>VisitorListReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="VisitorReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VisitorReport.rpt</DependentUpon>
       <SubType>Component</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
@@ -497,6 +523,9 @@
     <EmbeddedResource Include="Forms\FormVisitorNew\frmSelectVisitor.resx">
       <DependentUpon>frmSelectVisitor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVisitor\frmBlacklistConfirm.resx">
+      <DependentUpon>frmBlacklistConfirm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormVisitor\frmBlacklistList.resx">
       <DependentUpon>frmBlacklistList.cs</DependentUpon>
     </EmbeddedResource>
@@ -538,14 +567,19 @@
       <LastGenOutput>ReportSlipByPass.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportVisitorListAll.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportVisitorListAll.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportVisitorListNotAll.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportVisitorListNotAll.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="VisitorListReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>VisitorListReport.cs</LastGenOutput>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VisitorReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>VisitorReport.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormVisitor\frmAppointment.resx">
@@ -623,6 +657,28 @@
     </None>
     <None Include="Forms\FormReportNew\CustomerDBSet.xss">
       <DependentUpon>CustomerDBSet.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\FormReportNew\CustomerReportVisitor.xsc">
+      <DependentUpon>CustomerReportVisitor.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\FormReportNew\CustomerReportVisitor.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CustomerReportVisitor.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Forms\FormReportNew\CustomerReportVisitor.xss">
+      <DependentUpon>CustomerReportVisitor.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\FormReportNew\CustomReportVisitorAll.xsc">
+      <DependentUpon>CustomReportVisitorAll.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\FormReportNew\CustomReportVisitorAll.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CustomReportVisitorAll.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Forms\FormReportNew\CustomReportVisitorAll.xss">
+      <DependentUpon>CustomReportVisitorAll.xsd</DependentUpon>
     </None>
     <None Include="Forms\FormReportNew\ReportDBSet.xsc">
       <DependentUpon>ReportDBSet.xsd</DependentUpon>

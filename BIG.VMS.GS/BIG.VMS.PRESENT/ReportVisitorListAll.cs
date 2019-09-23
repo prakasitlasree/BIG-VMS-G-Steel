@@ -16,14 +16,14 @@ namespace BIG.VMS.PRESENT {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class VisitorReport : ReportClass {
+    public class ReportVisitorListAll : ReportClass {
         
-        public VisitorReport() {
+        public ReportVisitorListAll() {
         }
         
         public override string ResourceName {
             get {
-                return "VisitorReport.rpt";
+                return "ReportVisitorListAll.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace BIG.VMS.PRESENT {
         
         public override string FullResourceName {
             get {
-                return "BIG.VMS.PRESENT.VisitorReport.rpt";
+                return "BIG.VMS.PRESENT.ReportVisitorListAll.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace BIG.VMS.PRESENT {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedVisitorReport : Component, ICachedReport {
+    public class CachedReportVisitorListAll : Component, ICachedReport {
         
-        public CachedVisitorReport() {
+        public CachedReportVisitorListAll() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace BIG.VMS.PRESENT {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            VisitorReport rpt = new VisitorReport();
+            ReportVisitorListAll rpt = new ReportVisitorListAll();
             rpt.Site = this.Site;
             return rpt;
         }

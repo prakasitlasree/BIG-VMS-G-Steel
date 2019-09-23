@@ -14,6 +14,7 @@ namespace BIG.VMS.PRESENT
     public partial class PageBase : Form
     {
         public static string LOGIN { get; set; }
+        public static string PASSWORD { get; set; }
         public static string ROLE { get; set; }
         public static string DIRECTORY_IN = Application.StartupPath + "\\IMAGES\\" + DateTime.Now.Year + "_" + DateTime.Now.Month.ToString().PadLeft(2, '0') + "\\" + DateTime.Now.Day + "\\IN\\";
         public static string DIRECTORY_OUT = Application.StartupPath + "\\IMAGES\\" + DateTime.Now.Year + "_" + DateTime.Now.Month.ToString().PadLeft(2, '0') + "\\" + DateTime.Now.Day + "\\OUT\\";
