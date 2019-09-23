@@ -47,7 +47,6 @@
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.IN = new System.Windows.Forms.DataGridViewImageColumn();
             this.VIEW = new System.Windows.Forms.DataGridViewImageColumn();
             this.colEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.colDelete = new System.Windows.Forms.DataGridViewImageColumn();
@@ -98,7 +97,6 @@
             this.gridVisitorList.BackgroundColor = System.Drawing.Color.White;
             this.gridVisitorList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridVisitorList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IN,
             this.VIEW,
             this.colEdit,
             this.colDelete});
@@ -310,15 +308,6 @@
             this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewImageColumn1.Width = 60;
             // 
-            // IN
-            // 
-            this.IN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.IN.HeaderText = "เข้า";
-            this.IN.Image = ((System.Drawing.Image)(resources.GetObject("IN.Image")));
-            this.IN.Name = "IN";
-            this.IN.ReadOnly = true;
-            this.IN.Width = 50;
-            // 
             // VIEW
             // 
             this.VIEW.HeaderText = "ดู";
@@ -394,7 +383,6 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.DataGridViewImageColumn IN;
         private System.Windows.Forms.DataGridViewImageColumn VIEW;
         private System.Windows.Forms.DataGridViewImageColumn colEdit;
         private System.Windows.Forms.DataGridViewImageColumn colDelete;

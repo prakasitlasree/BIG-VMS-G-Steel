@@ -126,7 +126,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     var res = new ContainerVisitor();
                     if (outFlag)
                     {
-                        res = _service.UpdateVisitorOutByID(_container);
+                        res = _service.UpdateVisitorOutById(_container);
                     }
                     else
                     {

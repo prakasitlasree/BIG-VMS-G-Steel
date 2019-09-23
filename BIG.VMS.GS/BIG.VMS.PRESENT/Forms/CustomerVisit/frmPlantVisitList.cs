@@ -263,52 +263,8 @@ namespace BIG.VMS.PRESENT.Forms.CustomerVisit
         {
             if (e.RowIndex > -1)
             {
+         
                 if (e.ColumnIndex == 0) //Edit
-                {
-                    var id = Convert.ToInt32(gridVisitorList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
-
-
-
-                    var response = _service.GetItem(id);
-                    if (response.Status)
-                    {
-                        if (((TRN_CUSTOMER_VISIT)response.ResultObj).TRN_CUSTOMER_VISIT_LIST.Count > 0)
-                        {
-                            var fullName = ((TRN_CUSTOMER_VISIT)response.ResultObj).TRN_CUSTOMER_VISIT_LIST.FirstOrDefault().FULLNAME.Split(' ').ToList();
-                            var firstName = "";
-                            var lastName = "";
-                            if (fullName.Count > 1)
-                            {
-                                firstName = fullName[0];
-                                lastName = fullName[1];
-                            }
-                            else
-                            {
-                                firstName = ((TRN_CUSTOMER_VISIT)response.ResultObj).TRN_CUSTOMER_VISIT_LIST.FirstOrDefault().FULLNAME;
-                            }
-
-                            var frm = new frmConstractorVisitor();
-                            frm.formMode = FormMode.Add;
-                            frm.visitorMode = VisitorMode.CustomerIn;
-                            var customer = (TRN_CUSTOMER_VISIT)response.ResultObj;
-                            TRN_VISITOR obj = new TRN_VISITOR()
-                            {
-                                CONTACT_EMPLOYEE_NAME = customer.REQUESTOR_FULLNAME,
-                                REASON_TEXT = customer.OBJECTIVE_OF_VISIT,
-                                FIRST_NAME = firstName,
-                                LAST_NAME = lastName,
-
-                            };
-                            frm.visitorObj = obj;
-                            if (frm.ShowDialog() == DialogResult.OK)
-                            {
-                                BindGridData();
-                            }
-                        }
-
-                    }
-                }
-                if (e.ColumnIndex == 1) //Edit
                 {
                     var id = Convert.ToInt32(gridVisitorList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
                     var response = _service.GetItem(id);
@@ -323,7 +279,7 @@ namespace BIG.VMS.PRESENT.Forms.CustomerVisit
                         }
                     }
                 }
-                if (e.ColumnIndex == 2) //Delete
+                if (e.ColumnIndex == 1) //Delete
                 {
                     if (MessageBox.Show("ต้องการ ลบ!!!ข้อมูลใช่หรือไม่ ?", "แจ้งเตือน", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {

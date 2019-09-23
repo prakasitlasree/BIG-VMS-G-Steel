@@ -231,7 +231,7 @@
         function GetVisitorDataOnload() {
             $.LoadingOverlay("show");
             $.ajax({
-                url: '/api/GetLastVistorTransaction',
+                url: '/api/GetLastVisitorTransaction_Api',
                 type: 'GET',
                 data: {
 
@@ -303,7 +303,7 @@
                             fileData.append('AUTO_ID', vistor_data.auto_id);
                             $.ajax({
                                 type: "POST",
-                                url: "/api/UpdateVistorImgRef",
+                                url: "/api/UpdateVisitorImgRef_Api",
                                 dataType: "json",
                                 contentType: false,
                                 processData: false,
@@ -327,7 +327,7 @@
                             fileData.append('AUTO_ID', vistor_data.auto_id);
                             $.ajax({
                                 type: "POST",
-                                url: "/api/UpdateVistorImgRef",
+                                url: "/api/UpdateVisitorImgRef_Api",
                                 dataType: "json",
                                 contentType: false,
                                 processData: false,
@@ -351,7 +351,7 @@
                             fileData.append('AUTO_ID', vistor_data.auto_id);
                             $.ajax({
                                 type: "POST",
-                                url: "/api/UpdateVistorImgRef",
+                                url: "/api/UpdateVisitorImgRef_Api",
                                 dataType: "json",
                                 contentType: false,
                                 processData: false,

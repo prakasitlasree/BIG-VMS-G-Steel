@@ -2,7 +2,6 @@
 using BIG.VMS.MODEL.CustomModel;
 using BIG.VMS.MODEL.CustomModel.Filter;
 using BIG.VMS.MODEL.EntityModel;
-using BIG.VMS.PRESENT.Forms.FormVisitorBypass;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

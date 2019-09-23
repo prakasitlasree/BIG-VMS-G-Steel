@@ -42,9 +42,6 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.gridVisitorList = new System.Windows.Forms.DataGridView();
-            this.IN = new System.Windows.Forms.DataGridViewImageColumn();
-            this.colEdit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.colDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.txtPage = new System.Windows.Forms.TextBox();
             this.btnFirst = new System.Windows.Forms.Button();
@@ -52,6 +49,8 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.btnLast = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.colEdit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.tableLayoutPanel5.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -220,7 +219,6 @@
             this.gridVisitorList.BackgroundColor = System.Drawing.Color.White;
             this.gridVisitorList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridVisitorList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IN,
             this.colEdit,
             this.colDelete});
             this.gridVisitorList.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -230,34 +228,6 @@
             this.gridVisitorList.Size = new System.Drawing.Size(1085, 543);
             this.gridVisitorList.TabIndex = 0;
             this.gridVisitorList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridVisitorList_CellContentClick);
-            // 
-            // IN
-            // 
-            this.IN.HeaderText = "เข้า";
-            this.IN.Image = ((System.Drawing.Image)(resources.GetObject("IN.Image")));
-            this.IN.Name = "IN";
-            this.IN.ReadOnly = true;
-            this.IN.Width = 60;
-            // 
-            // colEdit
-            // 
-            this.colEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colEdit.HeaderText = "แก้ไข";
-            this.colEdit.Image = ((System.Drawing.Image)(resources.GetObject("colEdit.Image")));
-            this.colEdit.Name = "colEdit";
-            this.colEdit.ReadOnly = true;
-            this.colEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colEdit.Width = 60;
-            // 
-            // colDelete
-            // 
-            this.colDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colDelete.HeaderText = "ลบ";
-            this.colDelete.Image = ((System.Drawing.Image)(resources.GetObject("colDelete.Image")));
-            this.colDelete.Name = "colDelete";
-            this.colDelete.ReadOnly = true;
-            this.colDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colDelete.Width = 60;
             // 
             // tableLayoutPanel4
             // 
@@ -371,6 +341,26 @@
             this.tableLayoutPanel1.TabIndex = 3;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel1_Paint);
             // 
+            // colEdit
+            // 
+            this.colEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colEdit.HeaderText = "แก้ไข";
+            this.colEdit.Image = ((System.Drawing.Image)(resources.GetObject("colEdit.Image")));
+            this.colEdit.Name = "colEdit";
+            this.colEdit.ReadOnly = true;
+            this.colEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colEdit.Width = 60;
+            // 
+            // colDelete
+            // 
+            this.colDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colDelete.HeaderText = "ลบ";
+            this.colDelete.Image = ((System.Drawing.Image)(resources.GetObject("colDelete.Image")));
+            this.colDelete.Name = "colDelete";
+            this.colDelete.ReadOnly = true;
+            this.colDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colDelete.Width = 60;
+            // 
             // frmPlantVisitList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -418,7 +408,6 @@
         private System.Windows.Forms.Button btnLast;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.DataGridViewImageColumn IN;
         private System.Windows.Forms.DataGridViewImageColumn colEdit;
         private System.Windows.Forms.DataGridViewImageColumn colDelete;
     }

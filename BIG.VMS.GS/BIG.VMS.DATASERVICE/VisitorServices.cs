@@ -53,7 +53,6 @@ namespace BIG.VMS.DATASERVICE
             return result;
         }
 
-
         public ContainerVisitor GetLastUserNo()
         {
             var result = new ContainerVisitor();
@@ -299,69 +298,6 @@ namespace BIG.VMS.DATASERVICE
             return result;
         }
 
-        public IQueryable<TRN_VISITOR> GetListVisitorQuery(ContainerVisitor obj)
-        {
-
-            try
-            {
-                var ctx = new BIG_VMSEntities();
-                var filter = obj.Filter;
-                IQueryable<TRN_VISITOR> query = ctx.TRN_VISITOR;
-                if (obj.Filter != null)
-                {
-                    if (!string.IsNullOrEmpty(filter.ID_CARD))
-                    {
-                        query = query.Where(o => o.ID_CARD.Contains(filter.ID_CARD));
-                    }
-                    if (!string.IsNullOrEmpty(filter.TYPE))
-                    {
-                        query = query.Where(o => o.TYPE == filter.TYPE);
-                    }
-                    if (!string.IsNullOrEmpty(filter.LICENSE_PLATE))
-                    {
-                        query = query.Where(o => o.LICENSE_PLATE.Contains(filter.LICENSE_PLATE));
-                    }
-                    if (filter.NO > 0)
-                    {
-                        query = query.Where(o => o.NO == filter.NO);
-                    }
-                    if (!string.IsNullOrEmpty(filter.FIRST_NAME))
-                    {
-                        query = query.Where(o => o.FIRST_NAME.Contains(filter.FIRST_NAME));
-                    }
-                    if (!string.IsNullOrEmpty(filter.LAST_NAME))
-                    {
-                        query = query.Where(o => o.LAST_NAME.Contains(filter.LAST_NAME));
-                    }
-                    if (filter.DATE_TO != null && filter.DATE_TO != DateTime.MinValue)
-                    {
-                        var endDate = filter.DATE_TO.AddDays(1);
-                        query = query.Where(x => x.CREATED_DATE >= filter.DATE_TO && x.CREATED_DATE <= endDate);
-
-                    }
-                    if (string.IsNullOrEmpty(filter.FIRST_NAME) && string.IsNullOrEmpty(filter.LAST_NAME) &&
-                        string.IsNullOrEmpty(filter.LICENSE_PLATE) && filter.NO == 0)
-                    {
-                        var date = DateTime.Now.AddDays(-30);
-                        query = query.Where(x => x.CREATED_DATE >= date);
-                    }
-
-                    query.OrderByDescending(o => o.UPDATED_DATE);
-                    return query;
-                }
-                else
-                {
-                    query.OrderByDescending(o => o.UPDATED_DATE);
-                    return query;
-                }
-
-            }
-            catch
-            {
-                throw;
-            }
-        }
-
         public ContainerVisitor GetVisitorForOutByNo(int no)
         {
             var result = new ContainerVisitor();
@@ -520,7 +456,7 @@ namespace BIG.VMS.DATASERVICE
             return result;
         }
 
-        public ContainerVisitor GetVisitorByAutoId(int auto_id)
+        public ContainerVisitor GetVisitorByAutoId(int autoId)
         {
             var result = new ContainerVisitor();
             try
@@ -534,7 +470,7 @@ namespace BIG.VMS.DATASERVICE
                                           .Include("MAS_PROVINCE")
                                           .Include("MAS_CAR_TYPE")
                                           .Include("TRN_ATTACHEDMENT")
-                                          .Where(x => x.AUTO_ID == auto_id).FirstOrDefault();
+                                          .Where(x => x.AUTO_ID == autoId).FirstOrDefault();
                     if (reTrnVisitor != null)
                     {
                         //var x = string.Join(",",reTrnVisitor.ID_CARD_PHOTO);
@@ -552,74 +488,7 @@ namespace BIG.VMS.DATASERVICE
             return result;
         }
 
-        public ContainerVisitor GetVisitorByAutoIdForReport(int auto_id)
-        {
-            var result = new ContainerVisitor();
-
-            List<CustomVisitor> listData = new List<CustomVisitor>();
-            CultureInfo _cultureTHInfo = new CultureInfo("th-TH");
-            try
-            {
-                using (var ctx = new BIG_VMSEntities())
-                {
-                    var reTrnVisitor = ctx.TRN_VISITOR
-                                          .Include("MAS_EMPLOYEE")
-                                          .Include("MAS_REASON")
-                                          .Include("MAS_PROVINCE")
-                                          .Include("MAS_CAR_TYPE")
-                                          .Include("TRN_ATTACHEDMENT")
-                                          .Where(x => x.AUTO_ID == auto_id).ToList();
-
-                    var reParameter = ctx.SYS_CONFIGURATION.Where(x => x.MODULE == "SLIP" && x.NAME == "COMPANY_NAME").FirstOrDefault();
-                    string company = "";
-                    if (reParameter != null)
-                    {
-                        company = reParameter.VALUE;
-                    }
-                    else
-                    {
-                        company = "BIG Visitor Management";
-                    }
-                    if (reTrnVisitor.Count > 0)
-                    {
-
-
-                        listData = (from item in reTrnVisitor
-                                    select new CustomVisitor
-                                    {
-                                        AUTO_ID = item.AUTO_ID,
-                                        NO = item.NO,
-                                        ID_CARD = item.ID_CARD,
-                                        NAME = item.FIRST_NAME + " " + item.LAST_NAME,
-                                        CAR_TYPE_NAME = item.MAS_CAR_TYPE != null ? item.MAS_CAR_TYPE.NAME : "",
-                                        LICENSE_PLATE = item.LICENSE_PLATE,
-                                        PROVINCE = item.MAS_PROVINCE != null ? item.MAS_PROVINCE.NAME : "",
-                                        TOPIC = item.MAS_REASON != null ? item.MAS_REASON.REASON : "",
-                                        CONTACT_NAME = item.MAS_EMPLOYEE != null ? item.MAS_EMPLOYEE.FIRST_NAME + " " + item.MAS_EMPLOYEE.LAST_NAME : "",
-                                        TIME_IN = item.CREATED_DATE.Value != null ? Convert.ToDateTime(item.CREATED_DATE.Value, _cultureTHInfo) : item.CREATED_DATE,
-                                        TYPE = item.TYPE == "In" ? "เข้า" : (item.TYPE == "Out" ? "ออก" : (item.TYPE == "Regulary" ? "มาประจำ" : "ไม่ระบุ")),
-                                        DEPT_NAME = item.MAS_EMPLOYEE != null ? (item.MAS_EMPLOYEE.MAS_DEPARTMENT != null ? item.MAS_EMPLOYEE.MAS_DEPARTMENT.NAME : "ไม่ระบุ") : "ไม่ระบุ",
-                                        ID_CARD_PHOTO = item.TRN_ATTACHEDMENT != null ? (item.TRN_ATTACHEDMENT.Count() > 0 ? item.TRN_ATTACHEDMENT.FirstOrDefault().ID_CARD_PHOTO : null) : null,
-                                        CONTACT_PHOTO = item.TRN_ATTACHEDMENT != null ? (item.TRN_ATTACHEDMENT.Count() > 0 ? item.TRN_ATTACHEDMENT.FirstOrDefault().CONTACT_PHOTO : null) : null,
-                                        COMPANY_NAME = company,
-                                        CREATED_BY = item.CREATED_BY,
-                                        BY_PASS = item.BY_PASS
-
-                                    }).ToList();
-                    }
-
-                    result.ResultObj = listData;
-                }
-            }
-            catch (Exception ex)
-            {
-                result.Status = false;
-                result.ExceptionMessage = ex.Message;
-            }
-            return result;
-        }
-
-        public ContainerDisplayVisitor GetVisitorReportById(int auto_id)
+        public ContainerDisplayVisitor GetVisitorReportById(int autoId)
         {
             var result = new ContainerDisplayVisitor();
 
@@ -635,7 +504,7 @@ namespace BIG.VMS.DATASERVICE
                                           .Include("MAS_PROVINCE")
                                           .Include("MAS_CAR_TYPE")
                                           .Include("TRN_ATTACHEDMENT")
-                                          .Where(x => x.AUTO_ID == auto_id).ToList();
+                                          .Where(x => x.AUTO_ID == autoId).ToList();
 
                     var reParameter = ctx.SYS_CONFIGURATION.Where(x => x.MODULE == "SLIP" && x.NAME == "COMPANY_NAME").FirstOrDefault();
                     string company = "";
@@ -686,35 +555,6 @@ namespace BIG.VMS.DATASERVICE
             return result;
         }
 
-
-        public List<ReportParameter> GetReportParameter()
-        {
-            List<ReportParameter> listData = new List<ReportParameter>();
-            try
-            {
-                using (var ctx = new BIG_VMSEntities())
-                {
-                    var reParameter = ctx.SYS_CONFIGURATION.Where(x => x.MODULE == "SLIP").ToList();
-                    if (reParameter.Count > 0)
-                    {
-                        listData = (from item in reParameter
-                                    select new ReportParameter
-                                    {
-                                        MODULE = item.MODULE,
-                                        NAME = item.NAME,
-                                        VALUE = item.VALUE,
-                                        DESCRIPTION = item.DESCRIPTION
-                                    }).ToList();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return listData;
-        }
-
         public ContainerVisitor UpdateVisitorOut(int id)
         {
             var result = new ContainerVisitor();
@@ -748,7 +588,7 @@ namespace BIG.VMS.DATASERVICE
             return result;
         }
 
-        public ContainerVisitor UpdateVisitorOutByID(ContainerVisitor obj)
+        public ContainerVisitor UpdateVisitorOutById(ContainerVisitor obj)
         {
             var result = new ContainerVisitor();
             try
@@ -781,139 +621,7 @@ namespace BIG.VMS.DATASERVICE
             return result;
         }
 
-        public ContainerVisitor GetRegularyVisitor()
-        {
-            var result = new ContainerVisitor();
-            try
-            {
-                using (var ctx = new BIG_VMSEntities())
-                {
-                    var listVisitorGroup = new List<VisitorGroupModel>();
-
-                    var group = ctx.TRN_VISITOR.Where(x => (x.TYPE == "In" || x.TYPE == "Regulary")).GroupBy(o => o.ID_CARD)
-                                               .Select(o => o.FirstOrDefault()).ToList();
-
-                    var allIdCard = group.Select(o => o.ID_CARD).ToList();
-
-                    foreach (var id in allIdCard)
-                    {
-                        VisitorGroupModel visitor = new VisitorGroupModel();
-                        visitor.Key = id;
-                        visitor.Count = ctx.TRN_VISITOR.Where(x => (x.TYPE == "In" || x.TYPE == "Regulary")).Count();
-                        listVisitorGroup.Add(visitor);
-                    }
-
-                    listVisitorGroup = listVisitorGroup.OrderByDescending(o => o.Count).Take(10).ToList();
-                    var listTopIdCard = listVisitorGroup.Select(x => x.Key).ToList();
-
-                    var listData = ctx.TRN_VISITOR.Where(x => listTopIdCard.Contains(x.ID_CARD) && ((x.TYPE == "In" || x.TYPE == "Regulary"))).GroupBy(o => o.ID_CARD).Select(o => o.FirstOrDefault()).ToList();
-
-                    result.ResultObj = listData;
-                    result.Status = true;
-                    result.Message = "Retrive Data Successful";
-                }
-            }
-            catch (Exception ex)
-            {
-                result.Status = false;
-                result.ExceptionMessage = ex.Message;
-            }
-            return result;
-        }
-
-        public ContainerVisitor GetVisitorForReport(ContainerVisitor obj)
-        {
-            var result = new ContainerVisitor();
-            var filter = obj.Filter;
-            List<CustomVisitor> listData = new List<CustomVisitor>();
-            CultureInfo _cultureTHInfo = new CultureInfo("th-TH");
-            try
-            {
-
-                using (var ctx = new BIG_VMSEntities())
-                {
-                    DateTime startDate = filter.DATE_FROM.Date;
-                    DateTime endDate = filter.DATE_TO.AddDays(1).Date;
-
-                    var query = ctx.TRN_VISITOR
-                                          .Include("MAS_EMPLOYEE")
-                                          .Include("MAS_REASON")
-                                          .Include("MAS_PROVINCE")
-                                          .Include("MAS_CAR_TYPE")
-                                          .Where(x => x.CREATED_DATE >= startDate && x.CREATED_DATE <= endDate);
-                    var reTrnVisitor = query.ToList();
-
-                    if (!string.IsNullOrEmpty(filter.TYPE))
-                    {
-
-                        if (filter.TYPE == nameof(VisitorMode.In))
-                        {
-                            reTrnVisitor = reTrnVisitor.Where(o => o.TYPE.Trim() == "In" || o.TYPE.Trim() == "Appointment" || o.TYPE.Trim() == "ConstructorIn" || o.TYPE.Trim() == "CustomerIn").ToList();
-                        }
-                        if (filter.TYPE == nameof(VisitorMode.Out))
-                        {
-                            reTrnVisitor = reTrnVisitor.Where(o => o.TYPE.Trim() == "Out" || o.TYPE.Trim() == "AppointmentOut" || o.TYPE.Trim() == "ConstructorOut" || o.TYPE.Trim() == "CustomerOut").ToList();
-                        }
-                        if (filter.DEPT_ID > 0)
-                        {
-                            reTrnVisitor = reTrnVisitor.Where(o => o.MAS_EMPLOYEE.DEPARTMENT_ID == filter.DEPT_ID).ToList();
-                        }
-
-                    }
-
-
-                    //reTrnVisitor = query.ToList();
-
-                    if (reTrnVisitor.Count > 0)
-                    {
-                        #region OBJECT
-                        listData = (from item in reTrnVisitor
-                                    select new CustomVisitor
-                                    {
-                                        AUTO_ID = item.AUTO_ID,
-                                        NO = item.NO,
-                                        ID_CARD = item.ID_CARD,
-                                        NAME = item.FIRST_NAME + " " + item.LAST_NAME,
-                                        CAR_TYPE_NAME = item.MAS_CAR_TYPE != null ? item.MAS_CAR_TYPE.NAME : "",
-                                        LICENSE_PLATE = item.LICENSE_PLATE,
-                                        PROVINCE = item.MAS_PROVINCE != null ? item.MAS_PROVINCE.NAME : "",
-                                        CONTACT_NAME = item.MAS_EMPLOYEE != null ? item.MAS_EMPLOYEE.FIRST_NAME + " " + item.MAS_EMPLOYEE.LAST_NAME : "",
-
-                                        TIME_IN = item.CREATED_DATE.Value != null ? Convert.ToDateTime(item.CREATED_DATE.Value, _cultureTHInfo) : item.CREATED_DATE,
-                                        TYPE = item.TYPE == "In" ? "เข้า"
-                                        : (item.TYPE == "Out" ? "ออก"
-                                        : (item.TYPE == "Appointment" ? "นัดล่วงหน้า(เข้า)"
-                                        : (item.TYPE == "AppointmentOut" ? "นัดล่วงหน้า(ออก)"
-                                        : (item.TYPE == "ConstructorIn" ? "โครงการ(ออก)"
-                                        : (item.TYPE == "ConstructorOut" ? "โครงการ(ออก)"
-                                        : (item.TYPE == "CustomerIn" ? "ลูกค้า(ออก)"
-                                        : (item.TYPE == "CustomerOut" ? "ลูกค้า(ออก)"
-                                        : "ไม่ระบุ"))))))),
-
-                                        DEPT_NAME = item.MAS_EMPLOYEE != null ? item.MAS_EMPLOYEE.MAS_DEPARTMENT != null ? item.MAS_EMPLOYEE.MAS_DEPARTMENT.NAME : "ไม่ระบุ" : "ไม่ระบุุ",
-                                        CREATED_BY = item.CREATED_BY,
-                                        CREATED_DATE = item.CREATED_DATE,
-                                        UPDATED_BY = item.UPDATED_BY,
-                                        UPDATED_DATE = item.UPDATED_DATE
-
-                                    }).OrderByDescending(x => x.CREATED_DATE).ToList();
-                        #endregion
-                    }
-
-                    result.ResultObj = listData;
-                }
-            }
-            catch (Exception ex)
-            {
-                result.Status = false;
-                result.ExceptionMessage = ex.Message;
-            }
-
-
-            return result;
-        }
-
-        public TransactionModel GetVistorTracsaction()
+        public TransactionModel GetVisitorTransaction()
         {
             TransactionModel obj = new TransactionModel();
             DateTime startDate = DateTime.Now.Date;
@@ -1066,242 +774,6 @@ namespace BIG.VMS.DATASERVICE
             return result;
         }
 
-
-        public Response UpdateVistorOutByAPI(int no, int auto_id, TRN_ATTACHEDMENT attachment)
-        {
-            Response resp = new Response();
-            try
-            {
-                using (var ctx = new BIG_VMSEntities())
-                {
-                    var reTrnVisitor = ctx.TRN_VISITOR.Where(o => o.AUTO_ID == auto_id).FirstOrDefault();
-                    if (reTrnVisitor != null)
-                    {
-
-                        if (reTrnVisitor.TRN_ATTACHEDMENT.Count > 0)
-                        {
-                            reTrnVisitor.TRN_ATTACHEDMENT.First().REF_PHOTO1 = attachment.REF_PHOTO1;
-                            reTrnVisitor.TRN_ATTACHEDMENT.First().REF_PHOTO2 = attachment.REF_PHOTO2;
-                            reTrnVisitor.TRN_ATTACHEDMENT.First().REF_PHOTO3 = attachment.REF_PHOTO3;
-                        }
-                        else
-                        {
-                            TRN_ATTACHEDMENT attach = new TRN_ATTACHEDMENT()
-                            {
-                                REF_PHOTO1 = attachment.REF_PHOTO1,
-                                REF_PHOTO2 = attachment.REF_PHOTO2,
-                                REF_PHOTO3 = attachment.REF_PHOTO3,
-
-                            };
-
-                            reTrnVisitor.TRN_ATTACHEDMENT.Add(attach);
-                        }
-
-                        ctx.SaveChanges();
-                        resp.Status = true;
-                        resp.Message = "บันทึกข้อมูลเรียบร้อย";
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                resp.Status = false;
-                resp.Message = ex.Message;
-            }
-
-            return resp;
-        }
-
-        public Response UpdateVistorImgRef(int no, int auto_id, string key, byte[] image)
-        {
-            Response resp = new Response();
-            try
-            {
-                using (var ctx = new BIG_VMSEntities())
-                {
-                    var reTrnVisitor = ctx.TRN_VISITOR.Where(o => o.AUTO_ID == auto_id).FirstOrDefault();
-                    if (reTrnVisitor != null)
-                    {
-
-                        if (reTrnVisitor.TRN_ATTACHEDMENT.Count > 0)
-                        {
-                            switch (key)
-                            {
-                                case ("FILE#1"):
-                                    {
-                                        reTrnVisitor.TRN_ATTACHEDMENT.First().REF_PHOTO1 = image;
-                                    }
-                                    break;
-                                case ("FILE#2"):
-                                    {
-                                        reTrnVisitor.TRN_ATTACHEDMENT.First().REF_PHOTO2 = image;
-                                    }
-                                    break;
-                                case ("FILE#3"):
-                                    {
-                                        reTrnVisitor.TRN_ATTACHEDMENT.First().REF_PHOTO3 = image;
-                                    }
-                                    break;
-                            }
-                        }
-                    }
-
-                    ctx.SaveChanges();
-                    resp.Status = true;
-
-                }
-            }
-            catch (Exception ex)
-            {
-                resp.Status = false;
-            }
-            return resp;
-        }
-
-        public Response GetVisitorTransactionByNo(int no)
-        {
-            Response resp = new Response();
-            try
-            {
-                using (var ctx = new BIG_VMSEntities())
-                {
-                    DateTime today = DateTime.Today;
-                    DateTime endOfMonth = new DateTime(today.Year, today.Month, 1).AddMonths(1).AddDays(-1);
-
-                    var startMonth = DateTime.Now.Month;
-                    var year = DateTime.Now.Year;
-                    var endMonth = DateTime.Now.Month;
-                    if (today == endOfMonth)
-                    {
-                        endMonth = endMonth - 1;
-
-                    }
-                    var startDate = DateTime.Now.AddDays(-1.5);
-                    var endDate = DateTime.Now.AddDays(1.5);
-
-
-                    var listData = ctx.TRN_VISITOR
-                                    .Include("MAS_PROVINCE")
-                                    .Include("TRN_ATTACHEDMENT")
-                                    .Where(o => o.NO == no)
-                                    .Where(o => (o.CREATED_DATE >= startDate && o.CREATED_DATE <= endDate) && o.YEAR == year)
-                                    .OrderByDescending(o => o.AUTO_ID)
-                                    .ToList();
-                    if (listData.Count > 0)
-                    {
-                        var reTrnVisitor = listData.FirstOrDefault();
-                        if (reTrnVisitor.TRN_ATTACHEDMENT.Count > 0)
-                        {
-                            var existAttachment = reTrnVisitor.TRN_ATTACHEDMENT.FirstOrDefault();
-                            if (existAttachment.REF_PHOTO1 != null || existAttachment.REF_PHOTO2 != null || existAttachment.REF_PHOTO3 != null)
-                            {
-                                resp.Status = false;
-                                resp.Message = "หมายเลขนี้ได้ทำการถ่ายรูปแล้ว";
-                            }
-                            else
-                            {
-                                reTrnVisitor.MAS_CAR_TYPE = new MODEL.EntityModel.MAS_CAR_TYPE();
-                                reTrnVisitor.MAS_EMPLOYEE = new MODEL.EntityModel.MAS_EMPLOYEE();
-                                reTrnVisitor.MAS_PROVINCE = new MODEL.EntityModel.MAS_PROVINCE();
-                                reTrnVisitor.MAS_REASON = new MODEL.EntityModel.MAS_REASON();
-                                reTrnVisitor.TRN_ATTACHEDMENT = new List<MODEL.EntityModel.TRN_ATTACHEDMENT>();
-                                resp.ResultObj = reTrnVisitor;
-                                resp.Status = true;
-                            }
-                        }
-                        else
-                        {
-                            reTrnVisitor.MAS_CAR_TYPE = new MODEL.EntityModel.MAS_CAR_TYPE();
-                            reTrnVisitor.MAS_EMPLOYEE = new MODEL.EntityModel.MAS_EMPLOYEE();
-                            reTrnVisitor.MAS_PROVINCE = new MODEL.EntityModel.MAS_PROVINCE();
-                            reTrnVisitor.MAS_REASON = new MODEL.EntityModel.MAS_REASON();
-                            reTrnVisitor.TRN_ATTACHEDMENT = new List<MODEL.EntityModel.TRN_ATTACHEDMENT>();
-                            resp.ResultObj = reTrnVisitor;
-                            resp.Status = true;
-                        }
-
-
-                    }
-                    else
-                    {
-                        resp.Message = "ไม่พบข้อมููล";
-                        resp.Status = false;
-                    }
-
-                }
-            }
-            catch (Exception ex)
-            {
-                resp.Status = false;
-                resp.Message = ex.Message;
-            }
-            return resp;
-        }
-
-        public Response GetLastVistorTransaction()
-        {
-            Response resp = new Response();
-            try
-            {
-                using (var ctx = new BIG_VMSEntities())
-                {
-
-
-                    var reTrnVisitor = ctx.TRN_VISITOR
-                                    .Include("TRN_ATTACHEDMENT")
-                                    .OrderByDescending(o => o.AUTO_ID)
-                                    .FirstOrDefault();
-
-
-                    if (reTrnVisitor != null)
-                    {
-
-                        if (reTrnVisitor.TRN_ATTACHEDMENT.Count > 0)
-                        {
-                            var existAttachment = reTrnVisitor.TRN_ATTACHEDMENT.FirstOrDefault();
-                            if (existAttachment.REF_PHOTO1 != null || existAttachment.REF_PHOTO2 != null || existAttachment.REF_PHOTO3 != null)
-                            {
-                                resp.Status = false;
-                                //resp.Message = "หมายเลขนี้ได้ทำการถ่ายรูปแล้ว";
-                            }
-                            else
-                            {
-                                reTrnVisitor.MAS_CAR_TYPE = new MODEL.EntityModel.MAS_CAR_TYPE();
-                                reTrnVisitor.MAS_EMPLOYEE = new MODEL.EntityModel.MAS_EMPLOYEE();
-                                reTrnVisitor.MAS_PROVINCE = new MODEL.EntityModel.MAS_PROVINCE();
-                                reTrnVisitor.MAS_REASON = new MODEL.EntityModel.MAS_REASON();
-                                reTrnVisitor.TRN_ATTACHEDMENT = new List<MODEL.EntityModel.TRN_ATTACHEDMENT>();
-                                resp.ResultObj = reTrnVisitor;
-                                resp.Status = true;
-                            }
-                        }
-                        else
-                        {
-                            reTrnVisitor.MAS_CAR_TYPE = new MODEL.EntityModel.MAS_CAR_TYPE();
-                            reTrnVisitor.MAS_EMPLOYEE = new MODEL.EntityModel.MAS_EMPLOYEE();
-                            reTrnVisitor.MAS_PROVINCE = new MODEL.EntityModel.MAS_PROVINCE();
-                            reTrnVisitor.MAS_REASON = new MODEL.EntityModel.MAS_REASON();
-                            reTrnVisitor.TRN_ATTACHEDMENT = new List<MODEL.EntityModel.TRN_ATTACHEDMENT>();
-                            resp.ResultObj = reTrnVisitor;
-                            resp.Status = true;
-                        }
-                    }
-                    else
-                    {
-                        //resp.Message = "ไม่พบข้อมููล";
-                        resp.Status = false;
-                    }
-
-                }
-            }
-            catch (Exception ex)
-            {
-                resp.Status = false;
-                resp.Message = ex.Message;
-            }
-            return resp;
-        }
-
         public Response AddVisitor(TRN_VISITOR source)
         {
             var result = new Response();
@@ -1402,7 +874,7 @@ namespace BIG.VMS.DATASERVICE
             return result;
         }
 
-        public Response GetConstructorReport(int auto_id)
+        public Response GetConstructorReport(int autoId)
         {
             Response resp = new Response();
 
@@ -1410,7 +882,7 @@ namespace BIG.VMS.DATASERVICE
             {
                 using (var ctx = new BIG_VMSEntities())
                 {
-                    var visitor = ctx.TRN_VISITOR.Where(o => o.AUTO_ID == auto_id).FirstOrDefault();
+                    var visitor = ctx.TRN_VISITOR.Where(o => o.AUTO_ID == autoId).FirstOrDefault();
                     if (visitor != null)
                     {
                         var project = ctx.TRN_PROJECT_MASTER
@@ -1428,6 +900,8 @@ namespace BIG.VMS.DATASERVICE
                                 CONTRUCTOR_NAME = project.MAS_CONTRACTOR.NAME,
                                 RESP_MANAGER = project.RESPONSIBLE_MANAGER,
                                 RESP_TEL = project.RESPONSIBLE_TEL,
+                                CONTRUCTOR_TEL = project.MAS_CONTRACTOR.TEL
+                                
                             };
 
                             outputData.LIST_PROJECT_HEADER.Add(header);
@@ -1620,6 +1094,305 @@ namespace BIG.VMS.DATASERVICE
             {
                 throw;
             }
+        }
+
+        public IQueryable<TRN_VISITOR> GetListVisitorQuery(ContainerVisitor obj)
+        {
+
+            try
+            {
+                var ctx = new BIG_VMSEntities();
+                var filter = obj.Filter;
+                IQueryable<TRN_VISITOR> query = ctx.TRN_VISITOR;
+                if (obj.Filter != null)
+                {
+                    if (!string.IsNullOrEmpty(filter.ID_CARD))
+                    {
+                        query = query.Where(o => o.ID_CARD.Contains(filter.ID_CARD));
+                    }
+                    if (!string.IsNullOrEmpty(filter.TYPE))
+                    {
+                        query = query.Where(o => o.TYPE == filter.TYPE);
+                    }
+                    if (!string.IsNullOrEmpty(filter.LICENSE_PLATE))
+                    {
+                        query = query.Where(o => o.LICENSE_PLATE.Contains(filter.LICENSE_PLATE));
+                    }
+                    if (filter.NO > 0)
+                    {
+                        query = query.Where(o => o.NO == filter.NO);
+                    }
+                    if (!string.IsNullOrEmpty(filter.FIRST_NAME))
+                    {
+                        query = query.Where(o => o.FIRST_NAME.Contains(filter.FIRST_NAME));
+                    }
+                    if (!string.IsNullOrEmpty(filter.LAST_NAME))
+                    {
+                        query = query.Where(o => o.LAST_NAME.Contains(filter.LAST_NAME));
+                    }
+                    if (filter.DATE_TO != null && filter.DATE_TO != DateTime.MinValue)
+                    {
+                        var endDate = filter.DATE_TO.AddDays(1);
+                        query = query.Where(x => x.CREATED_DATE >= filter.DATE_TO && x.CREATED_DATE <= endDate);
+
+                    }
+                    if (string.IsNullOrEmpty(filter.FIRST_NAME) && string.IsNullOrEmpty(filter.LAST_NAME) &&
+                        string.IsNullOrEmpty(filter.LICENSE_PLATE) && filter.NO == 0)
+                    {
+                        var date = DateTime.Now.AddDays(-30);
+                        query = query.Where(x => x.CREATED_DATE >= date);
+                    }
+
+                    query.OrderByDescending(o => o.UPDATED_DATE);
+                    return query;
+                }
+                else
+                {
+                    query.OrderByDescending(o => o.UPDATED_DATE);
+                    return query;
+                }
+
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+
+        public Response GetVisitorTransactionByNo_Api(int no)
+        {
+            Response resp = new Response();
+            try
+            {
+                using (var ctx = new BIG_VMSEntities())
+                {
+                    DateTime today = DateTime.Today;
+                    DateTime endOfMonth = new DateTime(today.Year, today.Month, 1).AddMonths(1).AddDays(-1);
+
+                    var startMonth = DateTime.Now.Month;
+                    var year = DateTime.Now.Year;
+                    var endMonth = DateTime.Now.Month;
+                    if (today == endOfMonth)
+                    {
+                        endMonth = endMonth - 1;
+
+                    }
+                    var startDate = DateTime.Now.AddDays(-1.5);
+                    var endDate = DateTime.Now.AddDays(1.5);
+
+
+                    var listData = ctx.TRN_VISITOR
+                                    .Include("MAS_PROVINCE")
+                                    .Include("TRN_ATTACHEDMENT")
+                                    .Where(o => o.NO == no)
+                                    .Where(o => (o.CREATED_DATE >= startDate && o.CREATED_DATE <= endDate) && o.YEAR == year)
+                                    .OrderByDescending(o => o.AUTO_ID)
+                                    .ToList();
+                    if (listData.Count > 0)
+                    {
+                        var reTrnVisitor = listData.FirstOrDefault();
+                        if (reTrnVisitor.TRN_ATTACHEDMENT.Count > 0)
+                        {
+                            var existAttachment = reTrnVisitor.TRN_ATTACHEDMENT.FirstOrDefault();
+                            if (existAttachment.REF_PHOTO1 != null || existAttachment.REF_PHOTO2 != null || existAttachment.REF_PHOTO3 != null)
+                            {
+                                resp.Status = false;
+                                resp.Message = "หมายเลขนี้ได้ทำการถ่ายรูปแล้ว";
+                            }
+                            else
+                            {
+                                reTrnVisitor.MAS_CAR_TYPE = new MODEL.EntityModel.MAS_CAR_TYPE();
+                                reTrnVisitor.MAS_EMPLOYEE = new MODEL.EntityModel.MAS_EMPLOYEE();
+                                reTrnVisitor.MAS_PROVINCE = new MODEL.EntityModel.MAS_PROVINCE();
+                                reTrnVisitor.MAS_REASON = new MODEL.EntityModel.MAS_REASON();
+                                reTrnVisitor.TRN_ATTACHEDMENT = new List<MODEL.EntityModel.TRN_ATTACHEDMENT>();
+                                resp.ResultObj = reTrnVisitor;
+                                resp.Status = true;
+                            }
+                        }
+                        else
+                        {
+                            reTrnVisitor.MAS_CAR_TYPE = new MODEL.EntityModel.MAS_CAR_TYPE();
+                            reTrnVisitor.MAS_EMPLOYEE = new MODEL.EntityModel.MAS_EMPLOYEE();
+                            reTrnVisitor.MAS_PROVINCE = new MODEL.EntityModel.MAS_PROVINCE();
+                            reTrnVisitor.MAS_REASON = new MODEL.EntityModel.MAS_REASON();
+                            reTrnVisitor.TRN_ATTACHEDMENT = new List<MODEL.EntityModel.TRN_ATTACHEDMENT>();
+                            resp.ResultObj = reTrnVisitor;
+                            resp.Status = true;
+                        }
+
+
+                    }
+                    else
+                    {
+                        resp.Message = "ไม่พบข้อมููล";
+                        resp.Status = false;
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                resp.Status = false;
+                resp.Message = ex.Message;
+            }
+            return resp;
+        }
+
+        public Response GetLastVisitorTransaction_Api()
+        {
+            Response resp = new Response();
+            try
+            {
+                using (var ctx = new BIG_VMSEntities())
+                {
+
+
+                    var reTrnVisitor = ctx.TRN_VISITOR
+                                    .Include("TRN_ATTACHEDMENT")
+                                    .OrderByDescending(o => o.AUTO_ID)
+                                    .FirstOrDefault();
+
+
+                    if (reTrnVisitor != null)
+                    {
+
+                        if (reTrnVisitor.TRN_ATTACHEDMENT.Count > 0)
+                        {
+                            var existAttachment = reTrnVisitor.TRN_ATTACHEDMENT.FirstOrDefault();
+                            if (existAttachment.REF_PHOTO1 != null || existAttachment.REF_PHOTO2 != null || existAttachment.REF_PHOTO3 != null)
+                            {
+                                resp.Status = false;
+                                //resp.Message = "หมายเลขนี้ได้ทำการถ่ายรูปแล้ว";
+                            }
+                            else
+                            {
+                                reTrnVisitor.MAS_CAR_TYPE = new MODEL.EntityModel.MAS_CAR_TYPE();
+                                reTrnVisitor.MAS_EMPLOYEE = new MODEL.EntityModel.MAS_EMPLOYEE();
+                                reTrnVisitor.MAS_PROVINCE = new MODEL.EntityModel.MAS_PROVINCE();
+                                reTrnVisitor.MAS_REASON = new MODEL.EntityModel.MAS_REASON();
+                                reTrnVisitor.TRN_ATTACHEDMENT = new List<MODEL.EntityModel.TRN_ATTACHEDMENT>();
+                                resp.ResultObj = reTrnVisitor;
+                                resp.Status = true;
+                            }
+                        }
+                        else
+                        {
+                            reTrnVisitor.MAS_CAR_TYPE = new MODEL.EntityModel.MAS_CAR_TYPE();
+                            reTrnVisitor.MAS_EMPLOYEE = new MODEL.EntityModel.MAS_EMPLOYEE();
+                            reTrnVisitor.MAS_PROVINCE = new MODEL.EntityModel.MAS_PROVINCE();
+                            reTrnVisitor.MAS_REASON = new MODEL.EntityModel.MAS_REASON();
+                            reTrnVisitor.TRN_ATTACHEDMENT = new List<MODEL.EntityModel.TRN_ATTACHEDMENT>();
+                            resp.ResultObj = reTrnVisitor;
+                            resp.Status = true;
+                        }
+                    }
+                    else
+                    {
+                        //resp.Message = "ไม่พบข้อมููล";
+                        resp.Status = false;
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                resp.Status = false;
+                resp.Message = ex.Message;
+            }
+            return resp;
+        }
+
+        public Response UpdateVisitorOutBy_Api(int no, int autoId, TRN_ATTACHEDMENT attachment)
+        {
+            Response resp = new Response();
+            try
+            {
+                using (var ctx = new BIG_VMSEntities())
+                {
+                    var reTrnVisitor = ctx.TRN_VISITOR.Where(o => o.AUTO_ID == autoId).FirstOrDefault();
+                    if (reTrnVisitor != null)
+                    {
+
+                        if (reTrnVisitor.TRN_ATTACHEDMENT.Count > 0)
+                        {
+                            reTrnVisitor.TRN_ATTACHEDMENT.First().REF_PHOTO1 = attachment.REF_PHOTO1;
+                            reTrnVisitor.TRN_ATTACHEDMENT.First().REF_PHOTO2 = attachment.REF_PHOTO2;
+                            reTrnVisitor.TRN_ATTACHEDMENT.First().REF_PHOTO3 = attachment.REF_PHOTO3;
+                        }
+                        else
+                        {
+                            TRN_ATTACHEDMENT attach = new TRN_ATTACHEDMENT()
+                            {
+                                REF_PHOTO1 = attachment.REF_PHOTO1,
+                                REF_PHOTO2 = attachment.REF_PHOTO2,
+                                REF_PHOTO3 = attachment.REF_PHOTO3,
+
+                            };
+
+                            reTrnVisitor.TRN_ATTACHEDMENT.Add(attach);
+                        }
+
+                        ctx.SaveChanges();
+                        resp.Status = true;
+                        resp.Message = "บันทึกข้อมูลเรียบร้อย";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                resp.Status = false;
+                resp.Message = ex.Message;
+            }
+
+            return resp;
+        }
+
+        public Response UpdateVisitorImgRef_Api(int no, int autoId, string key, byte[] image)
+        {
+            Response resp = new Response();
+            try
+            {
+                using (var ctx = new BIG_VMSEntities())
+                {
+                    var reTrnVisitor = ctx.TRN_VISITOR.Where(o => o.AUTO_ID == autoId).FirstOrDefault();
+                    if (reTrnVisitor != null)
+                    {
+
+                        if (reTrnVisitor.TRN_ATTACHEDMENT.Count > 0)
+                        {
+                            switch (key)
+                            {
+                                case ("FILE#1"):
+                                    {
+                                        reTrnVisitor.TRN_ATTACHEDMENT.First().REF_PHOTO1 = image;
+                                    }
+                                    break;
+                                case ("FILE#2"):
+                                    {
+                                        reTrnVisitor.TRN_ATTACHEDMENT.First().REF_PHOTO2 = image;
+                                    }
+                                    break;
+                                case ("FILE#3"):
+                                    {
+                                        reTrnVisitor.TRN_ATTACHEDMENT.First().REF_PHOTO3 = image;
+                                    }
+                                    break;
+                            }
+                        }
+                    }
+
+                    ctx.SaveChanges();
+                    resp.Status = true;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                resp.Status = false;
+            }
+            return resp;
         }
     }
 }

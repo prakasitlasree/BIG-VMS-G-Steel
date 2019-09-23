@@ -20,13 +20,13 @@ namespace BIG.VMS.GS.API.Controllers
         }
         public JsonResult GetVisitorData(int no)
         {
-            var resp = new VisitorServices().GetVisitorTransactionByNo(no);
+            var resp = new VisitorServices().GetVisitorTransactionByNo_Api(no);
             return Json(resp, JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult GetLastVistorTransaction()
         {
-            var resp = new VisitorServices().GetLastVistorTransaction();
+            var resp = new VisitorServices().GetLastVisitorTransaction_Api();
             return Json(resp, JsonRequestBehavior.AllowGet);
         }
 
@@ -66,7 +66,7 @@ namespace BIG.VMS.GS.API.Controllers
 
             }
 
-            var resp = new VisitorServices().UpdateVistorOutByAPI(no, auto_id, attachment);
+            var resp = new VisitorServices().UpdateVisitorOutBy_Api(no, auto_id, attachment);
 
             return Json(resp, JsonRequestBehavior.AllowGet);
         }
@@ -83,7 +83,7 @@ namespace BIG.VMS.GS.API.Controllers
             {
                 HttpPostedFileBase file = files[i];
                 byte[] image = GetImageBinary(file);
-                resp = new VisitorServices().UpdateVistorImgRef(no, auto_id, files.AllKeys[i], image);
+                resp = new VisitorServices().UpdateVisitorImgRef_Api(no, auto_id, files.AllKeys[i], image);
             }
 
             return Json(resp, JsonRequestBehavior.AllowGet);

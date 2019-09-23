@@ -212,19 +212,8 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
                 if (e.RowIndex > -1)
                 {
 
-                    if (e.ColumnIndex == 0) //In
-                    {
-
-                        var id = Convert.ToInt32(gridVisitorList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
-                        var result = service.GetProjectbyProjectID(id);
-                        if (result.Status)
-                        {
-                            frmConstractorEmpList frm = new frmConstractorEmpList();
-                            frm._TRN_PROJECT_MASTER = result.ResultObj;
-                            frm.ShowDialog();
-                        }
-                    }
-                    if (e.ColumnIndex == 1)
+                   
+                    if (e.ColumnIndex == 0)
                     {
                         #region ===================== edit =====================
                         var id = Convert.ToInt32(gridVisitorList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
@@ -241,7 +230,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
                         }
                         #endregion
                     }
-                    else if (e.ColumnIndex == 2)
+                    else if (e.ColumnIndex == 1)
                     {
                         #region ===================== Edit =====================
                         var id = Convert.ToInt32(gridVisitorList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
@@ -258,7 +247,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
                         }
                         #endregion
                     }
-                    else if (e.ColumnIndex == 3)
+                    else if (e.ColumnIndex == 2)
                     {
                         #region ===================== delete =====================
                         var id = Convert.ToInt32(gridVisitorList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);

@@ -256,33 +256,6 @@
         jlif/eddK9Nf+Nni8GD8/4bFgosEl84/yWRPfAuwzFCxJSy/4gAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="IN.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="IN.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAABGdJREFUSEud
-        k3tMW2UYhxsyUcDNTcGJBVoupWALCEY6YNwWykBSbpFJJixzBllEAkuoMhuQQIMuk1AWylJoWFEc4Rau
-        GaBEN0cmY0VxMKDAKIOKFUY6xhm3P/bzA6rRQE+qb/LkvDnn5Pfkfc93GOZUYptOndgxj6SuBSR1L+6G
-        3E/o0CO+bR6xzXMQNe0Q36qDMYK+4prm1FFVQ/BOyIZPkhj8uEzwRBnwjE4HV3gGbmEpiLvYjqSKHyAZ
-        WELp8CNUaShE1WnNE4gaZtShRV2wtdoHB2d3JOdIkSqRobCtH1enKLTqn6JZt4nG2Q3Ua9dQp11Fy+wa
-        hKpJ8wTRV7XqkMJu2FrvQ6jsFup1wJXpdSgnVlE5tgLF2ONdqCYphCvHzRMcr5lSB+V3bE8gKOjG5TEK
-        pUMGWipGlhGqGDVPIFRq1IGSNtiRCfw+bUfpr8soJrumo+RnA4LLh00Lll985e+HYYpx9ZHcFiJ4Bt7i
-        FkgHDci7tUBLEZEclQ3RCLg8LB9mbr/gp5y+7S9uxMvWluBlNUByewk5P+ppOU8kQV8OmhYYeJ7YqCnB
-        JpcDjvJBt985IrCxBPfDWoj7HiKzd94kWYRz1/UQXBgAYykwEIZ4EQyxMYS3dognfZA/1tIj8LSpHF3k
-        rPMzvoHt88/CLa0aH934A2k9uj1J/1aH09d0iGzQIkDaDwZVkINNlRQb1UaURQQpuXcRVIw3Vt8NBurK
-        MMp2x6H9NnA8VYm0Xj1SO2f/xalrhM45xDRqEfT1fYSQn8y/oA+Mx5JsUMLXQEXxQR0nRBKEfKxsXaN8
-        tvsniUeIRI5fXmXCPrkCJ7/7HSfaZ7Z5p2MGJzsfIKZpGv4qDfyvaCBQTUBQO4U3826AYcjNAhVBBJFe
-        JGwLEhxBOGYknAcqxBOrRIasFOTx4iDq1kPUrMXbrTMQ1t2HX7UGPlUavK7UwPcvVFN4I7eXCD7OBBXs
-        DiqUSLYIIQR7gjrqiZVALlYCuHgS4IF1HzZKrWxgmSCDuH8BZTenwSkfAV8xBn7lHlRPwDenB4xFPgvb
-        eLmQ6xbOWOQ54yHpKT8OVn1dscaxR6GbPw4c2g+bmC8gH1rA1J0+HD5/HZ5E4HF5N1wykU92l+ljOviS
-        Hdb5btDb2yFFmPuIdaYG9gesYB1dDFYZCfi8D64VY+DI7+2JGxF7ZXTQC3TMnR/NKf/O9+7Jl8AkAsvI
-        AnCqpuAiH4Vr+T2TuJAp+Gdb6QXGlsES3xzgJJWA+YIVLMIlcK2cBPvSCC0sMp1HWrNpQY2l9XPGluF2
-        tlPtkmAUBOfCWTFJ1kRCaHCSk/W912Ba8M9yeb9FzY69QATWsAjMAVsxASfZMC2O5WSFqXXmCVinG0dY
-        McVgHrSBhSALLIUGjrK79JAPzUquNU/gkFr/ATNaWuRw0OoTRkD+byzFOBxICA0rDvLRrxxOqPKNEf+h
-        wmQ/scgJ2SO0m5BJYBvf/J8l+Ey9dUIcS+/2kFWISaC98ckexWD8CYinFvQA//qhAAAAAElFTkSuQmCC
-</value>
-  </data>
   <metadata name="colEdit.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

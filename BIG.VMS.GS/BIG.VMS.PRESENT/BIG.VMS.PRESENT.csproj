@@ -156,24 +156,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\Enums.cs" />
-    <Compile Include="Forms\Appointment\frmGSAppointment.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Appointment\frmGSAppointment.Designer.cs">
-      <DependentUpon>frmGSAppointment.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Appointment\frmGSAppointmentList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Appointment\frmGSAppointmentList.Designer.cs">
-      <DependentUpon>frmGSAppointmentList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Contractor\frmConstractorEmpList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Contractor\frmConstractorEmpList.Designer.cs">
-      <DependentUpon>frmConstractorEmpList.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Contractor\frmContractor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,18 +186,6 @@
     <Compile Include="Forms\Contractor\frmProjectMember.Designer.cs">
       <DependentUpon>frmProjectMember.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Contractor\frmConstractVisitor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Contractor\frmConstractVisitor.Designer.cs">
-      <DependentUpon>frmConstractVisitor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\CustomerVisit\frmCustomerVisitor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\CustomerVisit\frmConstractorVisitor.Designer.cs">
-      <DependentUpon>frmCustomerVisitor.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\CustomerVisit\frmPlantVisit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,30 +204,6 @@
     <Compile Include="Forms\CustomerVisit\frmPlantVisitor.Designer.cs">
       <DependentUpon>frmPlantVisitor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormCarMasterDetail\frmCarBrandMaster.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormCarMasterDetail\frmCarBrandMaster.Designer.cs">
-      <DependentUpon>frmCarBrandMaster.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FormCarMasterDetail\frmCarMasterDetail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormCarMasterDetail\frmCarMasterDetail.Designer.cs">
-      <DependentUpon>frmCarMasterDetail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FormCarMasterDetail\frmCarModelMaster.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormCarMasterDetail\frmCarModelMaster.Designer.cs">
-      <DependentUpon>frmCarModelMaster.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FormCarMasterDetail\frmCarTypeMaster.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormCarMasterDetail\frmCarTypeMaster.Designer.cs">
-      <DependentUpon>frmCarTypeMaster.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FormReportNew\frmReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -270,36 +216,24 @@
     <Compile Include="Forms\FormReportNew\frmSelectReport.Designer.cs">
       <DependentUpon>frmSelectReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormReport\ContructorDBSet.cs">
+    <Compile Include="Forms\FormReportNew\ContructorDBSet.cs">
       <DependentUpon>ContructorDBSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormReport\ContructorDBSet.Designer.cs">
+    <Compile Include="Forms\FormReportNew\ContructorDBSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ContructorDBSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormReport\frmReportKeyIn.cs">
+    <Compile Include="Forms\FormReportNew\frmReportViewer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormReport\frmReportKeyIn.Designer.cs">
-      <DependentUpon>frmReportKeyIn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FormReport\frmReportList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormReport\frmReportList.Designer.cs">
-      <DependentUpon>frmReportList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FormReport\frmReportViewer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormReport\frmReportViewer.Designer.cs">
+    <Compile Include="Forms\FormReportNew\frmReportViewer.Designer.cs">
       <DependentUpon>frmReportViewer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormReport\ReportDBSet.cs">
+    <Compile Include="Forms\FormReportNew\ReportDBSet.cs">
       <DependentUpon>ReportDBSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormReport\ReportDBSet.Designer.cs">
+    <Compile Include="Forms\FormReportNew\ReportDBSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ReportDBSet.xsd</DependentUpon>
@@ -328,23 +262,11 @@
     <Compile Include="Forms\FormVisitorNew\frmSelectVisitor.Designer.cs">
       <DependentUpon>frmSelectVisitor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormVisitor\frmAttachment.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormVisitor\frmAttachment.Designer.cs">
-      <DependentUpon>frmAttachment.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FormVisitor\frmBlacklistList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormVisitor\frmBlacklistList.Designer.cs">
       <DependentUpon>frmBlacklistList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FormVisitor\frmBypassVisitor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormVisitor\frmBypassVisitor.Designer.cs">
-      <DependentUpon>frmBypassVisitor.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormVisitor\frmKeyboard.cs">
       <SubType>Form</SubType>
@@ -364,12 +286,6 @@
     <Compile Include="Forms\FormVisitor\frmSelectAppointment.Designer.cs">
       <DependentUpon>frmSelectAppointment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormVisitor\frmSelectInType.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormVisitor\frmSelectInType.Designer.cs">
-      <DependentUpon>frmSelectInType.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FormVisitorNew\frmVisitorNew.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -387,18 +303,6 @@
     </Compile>
     <Compile Include="Forms\Master\Website.Designer.cs">
       <DependentUpon>Website.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Vendor\frmProject.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Vendor\frmProject.Designer.cs">
-      <DependentUpon>frmProject.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Vendor\frmProjectList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Vendor\frmProjectList.Designer.cs">
-      <DependentUpon>frmProjectList.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportConstructor.cs">
       <AutoGen>True</AutoGen>
@@ -471,24 +375,6 @@
     <Compile Include="Forms\FormVisitor\frmProvince.Designer.cs">
       <DependentUpon>frmProvince.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormVisitor\frmReason.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormVisitor\frmReason.Designer.cs">
-      <DependentUpon>frmReason.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FormVisitor\frmRegulary.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormVisitor\frmRegulary.Designer.cs">
-      <DependentUpon>frmRegulary.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FormVisitor\frmVisitor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormVisitor\frmVisitor.Designer.cs">
-      <DependentUpon>frmVisitor.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FormVisitor\frmVisitorOut.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -554,9 +440,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\CardHelper.cs" />
-    <EmbeddedResource Include="Forms\Contractor\frmConstractorEmpList.resx">
-      <DependentUpon>frmConstractorEmpList.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Contractor\frmContractor.resx">
       <DependentUpon>frmContractor.cs</DependentUpon>
     </EmbeddedResource>
@@ -572,12 +455,6 @@
     <EmbeddedResource Include="Forms\Contractor\frmProjectMember.resx">
       <DependentUpon>frmProjectMember.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Contractor\frmConstractVisitor.resx">
-      <DependentUpon>frmConstractVisitor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CustomerVisit\frmCustomerVisitor.resx">
-      <DependentUpon>frmCustomerVisitor.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomerVisit\frmPlantVisit.resx">
       <DependentUpon>frmPlantVisit.cs</DependentUpon>
     </EmbeddedResource>
@@ -587,31 +464,13 @@
     <EmbeddedResource Include="Forms\CustomerVisit\frmPlantVisitor.resx">
       <DependentUpon>frmPlantVisitor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormCarMasterDetail\frmCarBrandMaster.resx">
-      <DependentUpon>frmCarBrandMaster.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormCarMasterDetail\frmCarMasterDetail.resx">
-      <DependentUpon>frmCarMasterDetail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormCarMasterDetail\frmCarModelMaster.resx">
-      <DependentUpon>frmCarModelMaster.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormCarMasterDetail\frmCarTypeMaster.resx">
-      <DependentUpon>frmCarTypeMaster.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormReportNew\frmReport.resx">
       <DependentUpon>frmReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormReportNew\frmSelectREport.resx">
       <DependentUpon>frmSelectReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormReport\frmReportKeyIn.resx">
-      <DependentUpon>frmReportKeyIn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormReport\frmReportList.resx">
-      <DependentUpon>frmReportList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormReport\frmReportViewer.resx">
+    <EmbeddedResource Include="Forms\FormReportNew\frmReportViewer.resx">
       <DependentUpon>frmReportViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormVisitorNew\frmSelectCard.resx">
@@ -626,14 +485,8 @@
     <EmbeddedResource Include="Forms\FormVisitorNew\frmSelectVisitor.resx">
       <DependentUpon>frmSelectVisitor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormVisitor\frmAttachment.resx">
-      <DependentUpon>frmAttachment.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormVisitor\frmBlacklistList.resx">
       <DependentUpon>frmBlacklistList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormVisitor\frmBypassVisitor.resx">
-      <DependentUpon>frmBypassVisitor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormVisitor\frmKeyboard.resx">
       <DependentUpon>frmKeyboard.cs</DependentUpon>
@@ -643,9 +496,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormVisitor\frmSelectAppointment.resx">
       <DependentUpon>frmSelectAppointment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormVisitor\frmSelectInType.resx">
-      <DependentUpon>frmSelectInType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormVisitorNew\frmVisitorNew.resx">
       <DependentUpon>frmVisitorNew.cs</DependentUpon>
@@ -699,15 +549,6 @@
     <EmbeddedResource Include="Forms\FormVisitor\frmProvince.resx">
       <DependentUpon>frmProvince.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormVisitor\frmReason.resx">
-      <DependentUpon>frmReason.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormVisitor\frmRegulary.resx">
-      <DependentUpon>frmRegulary.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormVisitor\frmVisitor.resx">
-      <DependentUpon>frmVisitor.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormVisitor\frmVisitorOut.resx">
       <DependentUpon>frmVisitorOut.cs</DependentUpon>
     </EmbeddedResource>
@@ -744,26 +585,26 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Forms\FormReport\ContructorDBSet.xsc">
+    <None Include="Forms\FormReportNew\ContructorDBSet.xsc">
       <DependentUpon>ContructorDBSet.xsd</DependentUpon>
     </None>
-    <None Include="Forms\FormReport\ContructorDBSet.xsd">
+    <None Include="Forms\FormReportNew\ContructorDBSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>ContructorDBSet.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Forms\FormReport\ContructorDBSet.xss">
+    <None Include="Forms\FormReportNew\ContructorDBSet.xss">
       <DependentUpon>ContructorDBSet.xsd</DependentUpon>
     </None>
-    <None Include="Forms\FormReport\ReportDBSet.xsc">
+    <None Include="Forms\FormReportNew\ReportDBSet.xsc">
       <DependentUpon>ReportDBSet.xsd</DependentUpon>
     </None>
-    <None Include="Forms\FormReport\ReportDBSet.xsd">
+    <None Include="Forms\FormReportNew\ReportDBSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>ReportDBSet.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Forms\FormReport\ReportDBSet.xss">
+    <None Include="Forms\FormReportNew\ReportDBSet.xss">
       <DependentUpon>ReportDBSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />

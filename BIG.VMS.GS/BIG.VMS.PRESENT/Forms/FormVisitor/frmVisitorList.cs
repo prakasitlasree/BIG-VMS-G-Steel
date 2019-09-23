@@ -5,7 +5,6 @@ using BIG.VMS.MODEL.CustomModel.CustomContainer;
 using BIG.VMS.MODEL.EntityModel;
 using BIG.VMS.PRESENT.Forms.FormReport;
 using BIG.VMS.PRESENT.Forms.FormVisitor;
-using BIG.VMS.PRESENT.Forms.FormVisitorBypass;
 using CrystalDecisions.CrystalReports.Engine;
 using System;
 using System.Collections.Generic;
@@ -157,7 +156,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
             CustomGrid();
             SetControl();
 
-            TransactionModel obj = _service.GetVistorTracsaction();
+            TransactionModel obj = _service.GetVisitorTransaction();
             lblAllCount.Text = obj.ALL_VISITOR_IN.ToString();
             lblTodayIn.Text = obj.TODAY_VISITOR_IN.ToString();
             lblTodayOut.Text = obj.TODAY_VISITOR_OUT.ToString();
@@ -300,15 +299,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
             }
         }
 
-        private void btnRegular_Click(object sender, EventArgs e)
-        {
-            frmRegulary frm = new frmRegulary();
-            frm.StartPosition = FormStartPosition.CenterParent;
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                ResetScreen();
-            }
-        }
+       
 
         private void btnAhead_Click(object sender, EventArgs e)
         {
@@ -408,38 +399,9 @@ namespace BIG.VMS.PRESENT.Forms.Home
                     }
                     else if (e.ColumnIndex == 2)
                     {
-                        var type = gridVisitorList.Rows[e.RowIndex].Cells["TYPE"].Value.ToString();
-                        if (type != "ออก" && type != "นัดล่วงหน้า(ออก)" && type != "ลููกค้า(ออก)" && type != "โครงการ(ออก)")
-                        {
-                            #region ===================== print =====================
-                            var id = Convert.ToInt32(gridVisitorList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
-                            var obj = _service.GetVisitorByAutoIdForReport(id);
-                            var reportPara = _service.GetReportParameter();
-                            if (obj.ResultObj.Count > 0)
-                            {
-                                List<CustomVisitor> listData = (List<CustomVisitor>)obj.ResultObj;
-                                DataTable dt = ConvertToDataTable(listData);
+                        #region ===================== print =====================
 
-                                ReportDocument rpt = new ReportDocument();
-                                string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
-                                if (listData.FirstOrDefault().BY_PASS == "N" || listData.FirstOrDefault().BY_PASS == null)
-                                {
-                                    var appPath = Application.StartupPath + "\\" + "ReportSlip.rpt";
-                                    rpt.Load(appPath);
-                                    rpt.SetDataSource(dt);
-                                    rpt.PrintToPrinter(1, true, 0, 0);
-                                }
-                                else
-                                {
-                                    var appPath = Application.StartupPath + "\\" + "ReportSlipByPass.rpt";
-                                    rpt.Load(appPath);
-                                    rpt.SetDataSource(dt);
-                                    rpt.PrintToPrinter(1, true, 0, 0);
-                                }
-                            }
-                            #endregion
-                        }
-
+                        #endregion
                     }
 
                 }
@@ -467,17 +429,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
             frm.ShowDialog();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            frmVisitorByPass frm = new frmVisitorByPass();
-            frm.StartPosition = FormStartPosition.CenterParent;
-            frm.formMode = FormMode.Add;
-            frm.visitorMode = VisitorMode.In;
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                ResetScreen();
-            }
-        }
+       
 
         private void DtFrom_ValueChanged(object sender, EventArgs e)
         {

@@ -191,15 +191,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
             }
         }
 
-        private void btnTopic_Click(object sender, EventArgs e)
-        {
-            frmReason frm = new frmReason();
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                reasonId = frm.SELECTED_REASON_ID;
-                txtTopic.Text = frm.SELECTED_REASON_TEXT;
-            }
-        }
+       
 
         private void btnReadCard_Click(object sender, EventArgs e)
         {
