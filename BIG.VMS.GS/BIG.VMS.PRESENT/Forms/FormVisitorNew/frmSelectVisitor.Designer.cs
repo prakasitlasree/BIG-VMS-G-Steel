@@ -56,6 +56,7 @@
             this.btnNormal.BackColor = System.Drawing.Color.Green;
             this.btnNormal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNormal.ForeColor = System.Drawing.Color.White;
             this.btnNormal.Location = new System.Drawing.Point(3, 3);
             this.btnNormal.Name = "btnNormal";
             this.btnNormal.Size = new System.Drawing.Size(285, 134);
@@ -71,6 +72,7 @@
             this.btnAppointment.BackColor = System.Drawing.Color.Crimson;
             this.btnAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAppointment.ForeColor = System.Drawing.Color.White;
             this.btnAppointment.Location = new System.Drawing.Point(294, 3);
             this.btnAppointment.Name = "btnAppointment";
             this.btnAppointment.Size = new System.Drawing.Size(285, 134);
@@ -82,9 +84,10 @@
             // 
             // btnCustomer
             // 
-            this.btnCustomer.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomer.ForeColor = System.Drawing.Color.White;
             this.btnCustomer.Location = new System.Drawing.Point(3, 143);
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.Size = new System.Drawing.Size(285, 134);

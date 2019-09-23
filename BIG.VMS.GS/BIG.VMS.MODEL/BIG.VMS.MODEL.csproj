@@ -47,7 +47,6 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -74,16 +73,17 @@
     <Compile Include="CustomModel\Filter\BlacklistFilter.cs" />
     <Compile Include="CustomModel\Filter\ContractorFilter.cs" />
     <Compile Include="CustomModel\Filter\PlanVisitFilter.cs" />
+    <Compile Include="CustomModel\General\CustomerReport.cs" />
     <Compile Include="CustomModel\HeaderGrid.cs" />
     <Compile Include="CustomModel\PIDCard.cs" />
     <Compile Include="CustomModel\Filter\VisitorFilter.cs" />
     <Compile Include="EntityModel\TRN_VISITOR.cs">
       <DependentUpon>BIG_VMS_DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="GsteelModel\ContainerModel\ContainerProject.cs" />
-    <Compile Include="GsteelModel\CustomModel\ConstructorReport.cs" />
-    <Compile Include="GsteelModel\FilterModel\FilterProject.cs" />
-    <Compile Include="GsteelModel\FilterModel\FilterConstractor.cs" />
+    <Compile Include="CustomModel\Container\ContainerProject.cs" />
+    <Compile Include="CustomModel\General\ConstructorReport.cs" />
+    <Compile Include="CustomModel\Filter\FilterProject.cs" />
+    <Compile Include="CustomModel\Filter\FilterConstractor.cs" />
     <Compile Include="Response.cs" />
     <Compile Include="CustomModel\VisitorGroupModel.cs" />
     <Compile Include="DGVPrinter.cs" />
@@ -149,8 +149,8 @@
     <Compile Include="EntityModel\TRN_PROJECT_MEMBER.cs">
       <DependentUpon>BIG_VMS_DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="GsteelModel\ContainerModel\ContainerConstractor.cs" />
-    <Compile Include="GsteelModel\CustomModel\Constractor.cs" />
+    <Compile Include="CustomModel\Container\ContainerConstractor.cs" />
+    <Compile Include="CustomModel\General\Constractor.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="IBase.cs" />
     <Compile Include="CustomModel\Container\ContainerAuthentication.cs" />

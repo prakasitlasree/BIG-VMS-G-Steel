@@ -14,6 +14,7 @@ using PCSC;
 using BIG.VMS.MODEL.CustomModel.Container;
 using BIG.VMS.DATASERVICE;
 using BIG.VMS.MODEL.CustomModel.CustomContainer;
+using BIG.VMS.MODEL.CustomModel.General;
 using BIG.VMS.MODEL.EntityModel;
 using BIG.VMS.MODEL.GsteelModel.CustomModel;
 using BIG.VMS.PRESENT.Forms.FormReport;
@@ -229,11 +230,11 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
             {
                 if (formMode == FormMode.Add)
                 {
-                    Save();
+                    SaveTrnVisitor();
                 }
                 else if (formMode == FormMode.Edit)
                 {
-                    Update();
+                    UpdateTrnVisitor();
                 }
 
             }
@@ -733,7 +734,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
             }
         }
 
-        private void Save()
+        private void SaveTrnVisitor()
         {
 
             TRN_VISITOR source = new TRN_VISITOR();
@@ -911,7 +912,21 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                 }
                 else
                 {
-
+                    var response = _vistorServices.GetCustomerReport(((TRN_VISITOR)resp.ResultObj).AUTO_ID);
+                    if (response.Status)
+                    {
+                        CustomerReport CustomerObj = (CustomerReport)response.ResultObj;
+                        DataTable dtHeader = ConvertToDataTable(CustomerObj.LIST_CUSTOMER_HEADER);
+                        DataTable dtMember = ConvertToDataTable(CustomerObj.LIST_CUSTOMER);
+                        ReportDocument rpt = new ReportDocument();
+                        string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
+                        var appPath = Application.StartupPath + "\\" + "ReportCustomer.rpt";
+                        rpt.Load(appPath);
+                        //var k = rpt.Database.Tables[0];
+                        rpt.Database.Tables[0].SetDataSource(dtHeader);
+                        rpt.Database.Tables[1].SetDataSource(dtMember);
+                        rpt.PrintToPrinter(1, true, 0, 0);
+                    }
                 }
 
 
@@ -927,7 +942,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
         }
 
 
-        private void Update()
+        private void UpdateTrnVisitor()
         {
 
             TRN_VISITOR source = new TRN_VISITOR();

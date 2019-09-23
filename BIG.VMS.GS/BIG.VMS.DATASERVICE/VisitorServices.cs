@@ -11,6 +11,7 @@ using BIG.VMS.MODEL.CustomModel.CustomContainer;
 using System.Globalization;
 using System.Data.Entity.Validation;
 using BIG.VMS.MODEL.CustomModel.Container;
+using BIG.VMS.MODEL.CustomModel.General;
 using BIG.VMS.MODEL.GsteelModel.CustomModel;
 
 namespace BIG.VMS.DATASERVICE
@@ -916,6 +917,67 @@ namespace BIG.VMS.DATASERVICE
                                     FULLNAME = item.FULLNAME
                                 };
                                 outputData.LIST_PROJECT_MEMBER.Add(member);
+
+                            }
+
+                            resp.Status = true;
+                            resp.ResultObj = outputData;
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                resp.Status = false;
+                resp.ExceptionMessage = ex.Message.ToString();
+            }
+
+            return resp;
+        }
+
+        public Response GetCustomerReport(int autoId)
+        {
+            Response resp = new Response();
+
+            try
+            {
+                using (var ctx = new BIG_VMSEntities())
+                {
+                    var visitor = ctx.TRN_VISITOR.Where(o => o.AUTO_ID == autoId).FirstOrDefault();
+                    if (visitor != null)
+                    {
+                        var customer = ctx.TRN_CUSTOMER_VISIT
+                            .Include("TRN_CUSTOMER_VISIT_LIST").Where(o => o.AUTO_ID == visitor.CUSTOMER_ID)
+                            .FirstOrDefault();
+
+                        if (customer != null)
+                        {
+                            CustomerReport outputData = new CustomerReport();
+
+                            outputData.LIST_CUSTOMER_HEADER = new List<CUSTOMER_HEADER>();
+                            CUSTOMER_HEADER header = new CUSTOMER_HEADER()
+                            {
+                                CUST_GROUP_NAME = customer.CUSTOMER_NAME,
+                                CUST_OBJECTIVE = customer.OBJECTIVE_OF_VISIT,
+                                REQ_DEPT = customer.REQUESTOR_DEPARTMENT,
+                                REQ_NAME = customer.REQUESTOR_FULLNAME,
+                                REQ_POSITION = customer.REQUESTOR_POSITION
+
+                            };
+
+                            outputData.LIST_CUSTOMER_HEADER.Add(header);
+
+                            outputData.LIST_CUSTOMER = new List<CUSTOMER>();
+
+                            foreach (var item in customer.TRN_CUSTOMER_VISIT_LIST)
+                            {
+                                CUSTOMER member = new CUSTOMER()
+                                {
+                                   CUST_NAME = item.FULLNAME,
+                                   
+                                };
+                                outputData.LIST_CUSTOMER.Add(member);
 
                             }
 

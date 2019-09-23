@@ -20,11 +20,10 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
     {
         private readonly VisitorServices _service = new VisitorServices();
         private ContainerVisitor _container = new ContainerVisitor();
-        private bool isChangePhoto;
+       
         public bool outFlag = false;
         public int inID = 0;
-        private int selectOutId = 0;
-
+        private int _selectOutId = 0;
 
         public frmVisitorOut()
         {
@@ -48,7 +47,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     if (_container.TRN_VISITOR != null && _container.TRN_VISITOR.AUTO_ID > 0)
                     {
                         btnSave.Enabled = true;
-                        selectOutId = _container.TRN_VISITOR.AUTO_ID;
+                        _selectOutId = _container.TRN_VISITOR.AUTO_ID;
                         txtPersonInfo.Text = _container.TRN_VISITOR.FIRST_NAME + " " + _container.TRN_VISITOR.LAST_NAME;
                         if (_container.TRN_VISITOR.MAS_PROVINCE != null)
                         {
@@ -130,7 +129,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     }
                     else
                     {
-                        res = _service.UpdateVisitorOut(selectOutId);
+                        res = _service.UpdateVisitorOut(_selectOutId);
                     }
 
                     if (res.Status)
@@ -178,34 +177,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                                 obj.TRN_ATTACHEDMENT.FirstOrDefault().REF_PHOTO3 = null;
                             }
 
-                            if (isChangePhoto)
-                            {
-                                if (obj.TRN_ATTACHEDMENT.Count > 0)
-                                {
-                                    obj.TRN_ATTACHEDMENT.FirstOrDefault().VISITOR_ID = 0;
-                                    obj.TRN_ATTACHEDMENT.FirstOrDefault().AUTO_ID = 0;
-                                    obj.TRN_ATTACHEDMENT.FirstOrDefault().TRN_VISITOR = null;
-
-                                }
-                                else
-                                {
-                                    var attach = new TRN_ATTACHEDMENT();
-
-                                    obj.TRN_ATTACHEDMENT = new List<TRN_ATTACHEDMENT>();
-                                    obj.TRN_ATTACHEDMENT.Add(attach);
-                                }
-                            }
-                            else
-                            {
-                                if (obj.TRN_ATTACHEDMENT.Count > 0)
-                                {
-                                    obj.TRN_ATTACHEDMENT.FirstOrDefault().VISITOR_ID = 0;
-                                    obj.TRN_ATTACHEDMENT.FirstOrDefault().AUTO_ID = 0;
-                                    obj.TRN_ATTACHEDMENT.FirstOrDefault().TRN_VISITOR = null;
-                                    obj.TRN_ATTACHEDMENT.FirstOrDefault().CONTACT_PHOTO = org_obj.TRN_ATTACHEDMENT.FirstOrDefault().CONTACT_PHOTO;
-                                }
-
-                            }
+                            
 
 
                             var container = new ContainerVisitor { TRN_VISITOR = obj };
