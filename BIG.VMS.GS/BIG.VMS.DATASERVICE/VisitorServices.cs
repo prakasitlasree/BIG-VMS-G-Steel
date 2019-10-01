@@ -1131,16 +1131,16 @@ namespace BIG.VMS.DATASERVICE
                     if (filter.DATE_FROM != DateTime.MinValue && filter.DATE_TO != DateTime.MinValue)
                     {
                         var endDate = filter.DATE_TO.AddDays(1);
-                        query = query.Where(x => x.CREATED_DATE >= filter.DATE_TO && x.CREATED_DATE <= endDate);
+                        query = query.Where(x => x.CREATED_DATE >= filter.DATE_FROM && x.CREATED_DATE <= endDate);
 
 
                     }
-                    if (string.IsNullOrEmpty(filter.FIRST_NAME) && string.IsNullOrEmpty(filter.LAST_NAME) &&
-                        string.IsNullOrEmpty(filter.LICENSE_PLATE) && filter.NO == 0)
-                    {
-                        var date = DateTime.Now.AddDays(-30);
-                        query = query.Where(x => x.CREATED_DATE >= date);
-                    }
+                    //if (string.IsNullOrEmpty(filter.FIRST_NAME) && string.IsNullOrEmpty(filter.LAST_NAME) &&
+                    //    string.IsNullOrEmpty(filter.LICENSE_PLATE) && filter.NO == 0)
+                    //{
+                    //    var date = DateTime.Now.AddDays(-30);
+                    //    query = query.Where(x => x.CREATED_DATE >= date);
+                    //}
 
                     query.OrderByDescending(o => o.UPDATED_DATE);
                     return query;
