@@ -14,11 +14,12 @@ using System.Windows.Forms;
 
 namespace BIG.VMS.PRESENT.Forms.FormVisitor
 {
-    public partial class frmAppointmenList : PageBase
+    public partial class frmAppointmentList : PageBase
     {
         private readonly AppointmentServices _service = new AppointmentServices();
         private ContainerAppointment _container = new ContainerAppointment();
-        public frmAppointmenList()
+        public string FILTER_STATUS = "";
+        public frmAppointmentList()
         {
             InitializeComponent();
         }
@@ -64,6 +65,11 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                 LICENSE_PLATE = txtLicense.Text,
 
             };
+
+            if (!string.IsNullOrEmpty(FILTER_STATUS))
+            {
+                filter.STATUS = FILTER_STATUS;
+            }
 
             if (chkDate.Checked)
             {

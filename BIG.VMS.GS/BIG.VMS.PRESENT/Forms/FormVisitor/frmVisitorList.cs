@@ -305,7 +305,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
 
         private void btnAhead_Click(object sender, EventArgs e)
         {
-            frmAppointmenList frm = new frmAppointmenList();
+            frmAppointmentList frm = new frmAppointmentList(); 
             frm.StartPosition = FormStartPosition.CenterParent;
             if (frm.ShowDialog() == DialogResult.OK)
             {

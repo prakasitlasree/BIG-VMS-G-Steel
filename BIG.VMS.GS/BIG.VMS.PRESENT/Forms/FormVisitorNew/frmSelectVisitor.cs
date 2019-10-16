@@ -37,7 +37,9 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitorNew
 
         private void BtnAppointment_Click(object sender, EventArgs e)
         {
-            frmAppointment frm = new frmAppointment();
+            //frmAppointment frm = new frmAppointment(); comment by p'x
+            frmAppointmentList frm = new frmAppointmentList();
+            frm.FILTER_STATUS = "รอเข้าพบ";
             frm.ShowDialog();
         }
 

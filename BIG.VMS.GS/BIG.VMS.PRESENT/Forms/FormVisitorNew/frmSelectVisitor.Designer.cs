@@ -61,7 +61,7 @@
             this.btnNormal.Name = "btnNormal";
             this.btnNormal.Size = new System.Drawing.Size(285, 134);
             this.btnNormal.TabIndex = 0;
-            this.btnNormal.Tag = "ID_CARD";
+            this.btnNormal.Tag = "in-general";
             this.btnNormal.Text = "(1) เข้า-บุคคลทั่วไป";
             this.btnNormal.UseVisualStyleBackColor = false;
             this.btnNormal.Click += new System.EventHandler(this.BtnNormal_Click);
@@ -77,8 +77,8 @@
             this.btnAppointment.Name = "btnAppointment";
             this.btnAppointment.Size = new System.Drawing.Size(285, 134);
             this.btnAppointment.TabIndex = 1;
-            this.btnAppointment.Tag = "DRIVER";
-            this.btnAppointment.Text = "(2) เช้า-นัดหมายล่วงหน้า";
+            this.btnAppointment.Tag = "in-appointment";
+            this.btnAppointment.Text = "(2) เข้า-นัดหมายล่วงหน้า";
             this.btnAppointment.UseVisualStyleBackColor = false;
             this.btnAppointment.Click += new System.EventHandler(this.BtnAppointment_Click);
             // 
@@ -92,7 +92,7 @@
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.Size = new System.Drawing.Size(285, 134);
             this.btnCustomer.TabIndex = 2;
-            this.btnCustomer.Tag = "OTHER";
+            this.btnCustomer.Tag = "in-customer";
             this.btnCustomer.Text = "(3) เข้า-กลุ่มลูกค้า";
             this.btnCustomer.UseVisualStyleBackColor = false;
             this.btnCustomer.Click += new System.EventHandler(this.BtnCustomer_Click);
@@ -107,7 +107,7 @@
             this.btnConstructor.Name = "btnConstructor";
             this.btnConstructor.Size = new System.Drawing.Size(285, 134);
             this.btnConstructor.TabIndex = 3;
-            this.btnConstructor.Tag = "OTHER";
+            this.btnConstructor.Tag = "in-subcontract";
             this.btnConstructor.Text = "(4) เข้า-ผู้รับเหมา";
             this.btnConstructor.UseVisualStyleBackColor = false;
             this.btnConstructor.Click += new System.EventHandler(this.BtnConstructor_Click);

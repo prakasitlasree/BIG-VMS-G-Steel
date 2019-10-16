@@ -74,7 +74,7 @@ namespace BIG.VMS.PRESENT
 
         private void appointment_Click(object sender, EventArgs e)
         {
-            frmAppointmenList frm = new frmAppointmenList();
+            frmAppointmentList frm = new frmAppointmentList();
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.WindowState = FormWindowState.Maximized;
             frm.MdiParent = this;
