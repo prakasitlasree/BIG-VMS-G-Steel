@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BIG.VMS.PRESENT.Forms.Utitility;
+using System;
 using System.Windows.Forms;
 
 namespace BIG.VMS.PRESENT
@@ -17,7 +18,9 @@ namespace BIG.VMS.PRESENT
             System.IO.Directory.CreateDirectory(todayOutPath);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LogOn());
+            //Application.Run(new LogOn());
+            Application.Run(new frmDownloadPicture());
+
         }
     }
 }
