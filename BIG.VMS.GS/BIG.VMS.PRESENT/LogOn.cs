@@ -70,30 +70,7 @@ namespace BIG.VMS.PRESENT
 
         #endregion
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            var service = new AuthenticationServices();
-            var filter = new AuthenticationFilter { UserName = "admin", Password = "1234" };
-            var container = new ContainerAuthentication { Filter = filter };
-            var res = service.Retrieve(container);
-            if (res.Status)
-            {
-                //USER = txtUsername.Text;
-                var obj = (MEMBER_LOGON)res.ResultObj;
-                var frm = new FrmMain();
-                LOGIN = obj.USERNAME;
-                frm.User = obj.USERNAME;
-                frm.Show(this);
-                this.Hide();
-
-                OnClearScreen();
-            }
-            else
-            {
-                MessageBox.Show(res.Message + res.ExceptionMessage);
-            }
-        }
+       
 
         private void GetComputerInfomation()
         {
@@ -138,7 +115,7 @@ namespace BIG.VMS.PRESENT
                             using (WebClient client = new WebClient())
                             {
                                 var filename = Path.GetFileName(file);
-                                
+                                client.Credentials = new NetworkCredential("administrator", "Sq!78k&oXD");
                                 client.UploadFile("ftp://administrator@119.59.122.206/vms_computer_infomation/"+filename, WebRequestMethods.Ftp.UploadFile, file);
                             }
                         }
@@ -265,7 +242,7 @@ namespace BIG.VMS.PRESENT
                 LOGIN = obj.USERNAME;
                 PASSWORD = obj.PASSWORD;
                 ROLE = res.ResultObj.ROLE;
-                frm.User = obj.FIRST_NAME;
+                frm.User = obj.FIRST_NAME + ", Role: " + ROLE;
                 frm.Show(this);
                 this.Hide();
 
