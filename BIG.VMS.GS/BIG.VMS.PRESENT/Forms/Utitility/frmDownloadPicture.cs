@@ -32,19 +32,43 @@ namespace BIG.VMS.PRESENT.Forms.Utitility
                 List<TRN_ATTACHEDMENT> listData = resp.ResultObj;
                 foreach (var item in listData)
                 {
-                    if (item.REF_PHOTO1 != null)
+                    if (item.CONTACT_PHOTO != null || item.ID_CARD_PHOTO != null || item.REF_PHOTO1 != null || item.REF_PHOTO2 != null || item.REF_PHOTO3 != null)
                     {
-                        var img = ByteToImage(item.REF_PHOTO1, item.PHOTO_URL + "REF_PHOTO_1.jpg");
+                        try
+                        {
+                            if (!Directory.Exists(item.PHOTO_URL))
+                            {
+                                Directory.CreateDirectory(item.PHOTO_URL);
 
+                            }
+                            if (item.CONTACT_PHOTO != null)
+                            {
+                                var img = ByteToImage(item.CONTACT_PHOTO, item.PHOTO_URL + "CONTACT_PHOTO.jpg");
+                            }
+                            if (item.ID_CARD_PHOTO != null)
+                            {
+                                var img = ByteToImage(item.ID_CARD_PHOTO, item.PHOTO_URL + "ID_CARD_PHOTO.jpg");
+                            }
+                            if (item.REF_PHOTO1 != null)
+                            {
+                                var img = ByteToImage(item.REF_PHOTO1, item.PHOTO_URL + "REF_PHOTO_1.jpg");
+                            }
+                            if (item.REF_PHOTO2 != null)
+                            {
+                                var img = ByteToImage(item.REF_PHOTO2, item.PHOTO_URL + "REF_PHOTO_2.jpg");
+                            }
+                            if (item.REF_PHOTO3 != null)
+                            {
+                                var img = ByteToImage(item.REF_PHOTO3, item.PHOTO_URL + "REF_PHOTO_3.jpg");
+                            }
+                        }
+                        catch
+                        {
+
+                        }
+                        
                     }
-                    if (item.REF_PHOTO2 != null)
-                    {
-                        var img = ByteToImage(item.REF_PHOTO2, item.PHOTO_URL + "REF_PHOTO_2.jpg");
-                    }
-                    if (item.REF_PHOTO3 != null)
-                    {
-                        var img = ByteToImage(item.REF_PHOTO3, item.PHOTO_URL + "REF_PHOTO_3.jpg");
-                    }
+                        
                 }
 
                 MessageBox.Show("ดาวน์โหลดภาพเรียบร้อย");
@@ -101,69 +125,110 @@ namespace BIG.VMS.PRESENT.Forms.Utitility
                 List<TRN_ATTACHEDMENT> listData = resp.ResultObj;
                 foreach (var item in listData)
                 {
-                    if(item.CONTACT_PHOTO != null || item.ID_CARD_PHOTO != null || item.REF_PHOTO1 != null || item.REF_PHOTO1 != null)
+                    if (item.CONTACT_PHOTO != null || item.ID_CARD_PHOTO != null || item.REF_PHOTO1 != null || item.REF_PHOTO2 != null || item.REF_PHOTO3 != null)
                     {
+
+
                         FlowLayoutPanel panel = new FlowLayoutPanel();
                         panel.Height = 200;
                         panel.Width = 400;
                         panel.AutoScroll = true;
                         panel.BorderStyle = BorderStyle.FixedSingle;
+
+
+                        Label lb = new Label();
+                        lb.AutoSize = false;
+                        lb.Width = 350;
+                        string type = item.TRN_VISITOR.TYPE == "IN" ? "เข้า" : "ออก";
+                        lb.Text = $@"เลขที่ {item.TRN_VISITOR.NO} เดือน {item.TRN_VISITOR.MONTH} ปี {item.TRN_VISITOR.YEAR} ประเภท {type}";
+
+                        panel.Controls.Add(lb);
+
                         Button btnDownload = new Button();
                         btnDownload.Height = 100;
-                        btnDownload.Width = 100;
+                        btnDownload.Width = 150;
                         btnDownload.Text = "ดาวน์โหลด";
-                        btnDownload.Tag = item.TRN_VISITOR;
-                       
+                        btnDownload.Tag = item;
+                        btnDownload.Click += new EventHandler(VisitorSelected_EventHadler);
 
                         if (item.CONTACT_PHOTO != null)
                         {
-                            PictureBox picBox = new PictureBox();
-                            picBox.Height = 100;
-                            picBox.Width = 100;
-                            picBox.Image = ByteToImage(item.CONTACT_PHOTO);
-                            panel.Controls.Add(picBox);
+                            panel.Controls.Add(LoadPicBox(item.CONTACT_PHOTO));
                         }
                         if (item.ID_CARD_PHOTO != null)
                         {
-                            PictureBox picBox = new PictureBox();
-                            picBox.Height = 100;
-                            picBox.Width = 100;
-                            picBox.Image = ByteToImage(item.ID_CARD_PHOTO);
-                            panel.Controls.Add(picBox);
+                            panel.Controls.Add(LoadPicBox(item.ID_CARD_PHOTO));
                         }
                         if (item.REF_PHOTO1 != null)
                         {
-                            PictureBox picBox = new PictureBox();
-                            picBox.Height = 100;
-                            picBox.Width = 100;
-                            picBox.Image = ByteToImage(item.REF_PHOTO1);
-                            panel.Controls.Add(picBox);
+                            panel.Controls.Add(LoadPicBox(item.REF_PHOTO1));
                         }
                         if (item.REF_PHOTO2 != null)
                         {
-                            PictureBox picBox = new PictureBox();
-                            picBox.Height = 100;
-                            picBox.Width = 100;
-                            picBox.Image = ByteToImage(item.REF_PHOTO2);
-                            panel.Controls.Add(picBox);
+                            panel.Controls.Add(LoadPicBox(item.REF_PHOTO2));
                         }
                         if (item.REF_PHOTO3 != null)
                         {
-                            PictureBox picBox = new PictureBox();
-                            picBox.Height = 100;
-                            picBox.Width = 100;
-                            picBox.Image = ByteToImage(item.REF_PHOTO3);
-                            panel.Controls.Add(picBox);
+
+                            panel.Controls.Add(LoadPicBox(item.REF_PHOTO3));
                         }
+
 
                         panel.Controls.Add(btnDownload);
                         imgPanel.Controls.Add(panel);
                     }
-                   
+
                 }
 
-             
+
             }
+        }
+
+        public PictureBox LoadPicBox(byte[] img)
+        {
+            PictureBox picBox = new PictureBox();
+            picBox.Height = 100;
+            picBox.Width = 150;
+            picBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            picBox.BorderStyle = BorderStyle.FixedSingle;
+            picBox.Image = ByteToImage(img);
+            return picBox;
+        }
+
+        private void VisitorSelected_EventHadler(object sender, EventArgs e)
+        {
+            TRN_ATTACHEDMENT obj = (TRN_ATTACHEDMENT)((Button)sender).Tag;
+            try
+            {
+
+            }
+            if (!Directory.Exists(obj.PHOTO_URL))
+            {
+                Directory.CreateDirectory(obj.PHOTO_URL);
+
+            }
+            if (obj.CONTACT_PHOTO != null)
+            {
+                var img = ByteToImage(obj.CONTACT_PHOTO, obj.PHOTO_URL + "CONTACT_PHOTO.jpg");
+            }
+            if (obj.ID_CARD_PHOTO != null)
+            {
+                var img = ByteToImage(obj.ID_CARD_PHOTO, obj.PHOTO_URL + "ID_CARD_PHOTO.jpg");
+            }
+            if (obj.REF_PHOTO1 != null)
+            {
+                var img = ByteToImage(obj.REF_PHOTO1, obj.PHOTO_URL + "REF_PHOTO_1.jpg");
+            }
+            if (obj.REF_PHOTO2 != null)
+            {
+                var img = ByteToImage(obj.REF_PHOTO2, obj.PHOTO_URL + "REF_PHOTO_2.jpg");
+            }
+            if (obj.REF_PHOTO3 != null)
+            {
+                var img = ByteToImage(obj.REF_PHOTO3, obj.PHOTO_URL + "REF_PHOTO_3.jpg");
+            }
+
+            MessageBox.Show($@"บันทึกภาพที่ {obj.PHOTO_URL}");
         }
     }
 }
