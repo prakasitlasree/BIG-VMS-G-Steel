@@ -38,7 +38,7 @@ namespace BIG.VMS.PRESENT
                 LOGIN = txtUsername.Text;
                 PASSWORD = txtPassword.Text;
                 ROLE = res.ResultObj.ROLE;
-                frm.User = txtUsername.Text;
+                frm.User = txtUsername.Text + ", Role: " + ROLE;
                 frm.Show(this);
                 this.Hide();
 
@@ -247,6 +247,34 @@ namespace BIG.VMS.PRESENT
 
         private void LogOn_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void btn_x_Click(object sender, EventArgs e)
+        {
+
+            var service = new AuthenticationServices();
+            var filter = new AuthenticationFilter { UserName = "Prakasit", Password = "1234" };
+            var container = new ContainerAuthentication { Filter = filter };
+            var res = service.Retrieve(container);
+            if (res.Status)
+            {
+                //USER = txtUsername.Text;
+                var obj = (MEMBER_LOGON)res.ResultObj;
+                var frm = new FrmMain();
+                LOGIN = obj.USERNAME;
+                PASSWORD = obj.PASSWORD;
+                ROLE = res.ResultObj.ROLE;
+                frm.User = obj.FIRST_NAME;
+                frm.Show(this);
+                this.Hide();
+
+                OnClearScreen();
+            }
+            else
+            {
+                MessageBox.Show(res.Message + res.ExceptionMessage);
+            }
 
         }
     }
