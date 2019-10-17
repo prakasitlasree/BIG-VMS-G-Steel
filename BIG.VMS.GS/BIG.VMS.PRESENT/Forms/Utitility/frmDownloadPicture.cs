@@ -26,6 +26,11 @@ namespace BIG.VMS.PRESENT.Forms.Utitility
 
         private void btnDownload_Click(object sender, EventArgs e)
         {
+            Download();
+        }
+
+        private void Download()
+        {
             var resp = service.DownloadImage(container);
             if (resp.Status)
             {
@@ -66,18 +71,16 @@ namespace BIG.VMS.PRESENT.Forms.Utitility
                         {
 
                         }
-                        
+
                     }
-                        
+
                 }
 
                 MessageBox.Show("ดาวน์โหลดภาพเรียบร้อย");
             }
         }
 
-
-
-        public Bitmap ByteToImage(byte[] blob, string url)
+        private Bitmap ByteToImage(byte[] blob, string url)
         {
             try
             {
@@ -100,7 +103,7 @@ namespace BIG.VMS.PRESENT.Forms.Utitility
             }
         }
 
-        public Bitmap ByteToImage(byte[] blob)
+        private Bitmap ByteToImage(byte[] blob)
         {
             try
             {
@@ -184,7 +187,7 @@ namespace BIG.VMS.PRESENT.Forms.Utitility
             }
         }
 
-        public PictureBox LoadPicBox(byte[] img)
+        private PictureBox LoadPicBox(byte[] img)
         {
             PictureBox picBox = new PictureBox();
             picBox.Height = 100;
@@ -231,6 +234,11 @@ namespace BIG.VMS.PRESENT.Forms.Utitility
             }
 
             MessageBox.Show($@"บันทึกภาพที่ {obj.PHOTO_URL}");
+        }
+
+        private void btnDownloadnew_Click(object sender, EventArgs e)
+        {
+            Download();
         }
     }
 }

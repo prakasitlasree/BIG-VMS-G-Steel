@@ -18,8 +18,8 @@ namespace BIG.VMS.PRESENT
             System.IO.Directory.CreateDirectory(todayOutPath);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new LogOn());
-            Application.Run(new frmDownloadPicture());
+            Application.Run(new LogOn());
+            //Application.Run(new frmDownloadPicture());
 
         }
     }
