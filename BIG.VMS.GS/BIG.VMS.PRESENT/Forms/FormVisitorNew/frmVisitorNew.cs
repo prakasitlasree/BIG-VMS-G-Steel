@@ -460,7 +460,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                                     : "ไม่ระบุ";
                                 txtFirstName.Text = $@"กลุ่มพนักงานผู้รับเหมา {companyName}";
 
-                                txtIDCard.Text = $@"กลุ่มพนักงานผู้รับเหมา {companyName}";
+                                //txtIDCard.Text = $@"กลุ่มพนักงานผู้รับเหมา {companyName}"; comment ไว้ให้เค้า กรอกเองหรืออ่านบัตร
                                 txtEmployee.Text = $@"{TrnProjectMaster.RESPONSIBLE_MANAGER}";
                                 txtReason.Text = $@"{TrnProjectMaster.PROJECT_NAME}";
                             }
@@ -468,7 +468,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                             {
                                 txtFirstName.Text = $@"กลุ่มลูกค้า {TrnCustomerVisit.CUSTOMER_NAME}";
 
-                                txtIDCard.Text = $@"กลุ่มลูกค้า {TrnCustomerVisit.CUSTOMER_NAME}";
+                                //txtIDCard.Text = $@"กลุ่มลูกค้า {TrnCustomerVisit.CUSTOMER_NAME}"; comment ไว้ให้เค้า กรอกเองหรืออ่านบัตร
                                 txtEmployee.Text = $@"{TrnCustomerVisit.CONTACT_PERSON}";
                                 txtReason.Text = $@"{TrnCustomerVisit.OBJECTIVE_OF_VISIT}";
                             }
