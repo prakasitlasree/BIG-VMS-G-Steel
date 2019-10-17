@@ -50,5 +50,7 @@ namespace BIG.VMS.MODEL.EntityModel
         public virtual MAS_PROVINCE MAS_PROVINCE { get; set; }
         public virtual MAS_REASON MAS_REASON { get; set; }
         public virtual ICollection<TRN_ATTACHEDMENT> TRN_ATTACHEDMENT { get; set; }
+        public virtual TRN_CUSTOMER_VISIT TRN_CUSTOMER_VISIT { get; set; }
+        public virtual TRN_PROJECT_MASTER TRN_PROJECT_MASTER { get; set; }
     }
 }

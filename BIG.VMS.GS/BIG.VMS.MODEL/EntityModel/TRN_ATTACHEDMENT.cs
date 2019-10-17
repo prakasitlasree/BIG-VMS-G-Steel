@@ -22,6 +22,10 @@ namespace BIG.VMS.MODEL.EntityModel
         public byte[] REF_PHOTO1 { get; set; }
         public byte[] REF_PHOTO2 { get; set; }
         public byte[] REF_PHOTO3 { get; set; }
+        public Nullable<System.DateTime> CREATED_DATE { get; set; }
+        public string CREATED_BY { get; set; }
+        public Nullable<System.DateTime> UPDATED_DATE { get; set; }
+        public string UPDATED_BY { get; set; }
     
         public virtual TRN_VISITOR TRN_VISITOR { get; set; }
     }

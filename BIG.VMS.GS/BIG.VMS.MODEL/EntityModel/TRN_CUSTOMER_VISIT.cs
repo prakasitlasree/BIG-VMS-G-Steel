@@ -18,6 +18,7 @@ namespace BIG.VMS.MODEL.EntityModel
         {
             this.TRN_CUSTOMER_VISIT_LIST = new HashSet<TRN_CUSTOMER_VISIT_LIST>();
             this.TRN_CUSTOMER_VISIT_PURPOSE = new HashSet<TRN_CUSTOMER_VISIT_PURPOSE>();
+            this.TRN_VISITOR = new HashSet<TRN_VISITOR>();
         }
     
         public int AUTO_ID { get; set; }
@@ -39,5 +40,6 @@ namespace BIG.VMS.MODEL.EntityModel
         public virtual MAS_EMPLOYEE MAS_EMPLOYEE { get; set; }
         public virtual ICollection<TRN_CUSTOMER_VISIT_LIST> TRN_CUSTOMER_VISIT_LIST { get; set; }
         public virtual ICollection<TRN_CUSTOMER_VISIT_PURPOSE> TRN_CUSTOMER_VISIT_PURPOSE { get; set; }
+        public virtual ICollection<TRN_VISITOR> TRN_VISITOR { get; set; }
     }
 }

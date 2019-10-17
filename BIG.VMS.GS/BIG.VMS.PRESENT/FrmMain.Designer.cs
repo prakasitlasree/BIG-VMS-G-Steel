@@ -43,6 +43,7 @@
             this.contractorlist = new System.Windows.Forms.ToolStripMenuItem();
             this.เวบไซตToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.website = new System.Windows.Forms.ToolStripMenuItem();
+            this.downloadPic = new System.Windows.Forms.ToolStripMenuItem();
             this.help = new System.Windows.Forms.ToolStripMenuItem();
             this.test_readcard = new System.Windows.Forms.ToolStripMenuItem();
             this.logout = new System.Windows.Forms.ToolStripMenuItem();
@@ -158,7 +159,8 @@
             // เวบไซตToolStripMenuItem
             // 
             this.เวบไซตToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.website});
+            this.website,
+            this.downloadPic});
             this.เวบไซตToolStripMenuItem.Name = "เวบไซตToolStripMenuItem";
             this.เวบไซตToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.เวบไซตToolStripMenuItem.Text = "เว็บไซต์";
@@ -166,9 +168,16 @@
             // website
             // 
             this.website.Name = "website";
-            this.website.Size = new System.Drawing.Size(143, 22);
+            this.website.Size = new System.Drawing.Size(155, 22);
             this.website.Text = "อัพโหลดรูปภาพ";
             this.website.Click += new System.EventHandler(this.website_Click);
+            // 
+            // downloadPic
+            // 
+            this.downloadPic.Name = "downloadPic";
+            this.downloadPic.Size = new System.Drawing.Size(155, 22);
+            this.downloadPic.Text = "ดาวน์โหลดรูปภาพ";
+            this.downloadPic.Click += new System.EventHandler(this.downloadPic_Click);
             // 
             // help
             // 
@@ -239,7 +248,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BIG Visitor Management";
@@ -279,5 +288,6 @@
         private System.Windows.Forms.ToolStripMenuItem logout;
         private System.Windows.Forms.ToolStripStatusLabel lbLogout;
         private System.Windows.Forms.ToolStripMenuItem contractorlist;
+        private System.Windows.Forms.ToolStripMenuItem downloadPic;
     }
 }

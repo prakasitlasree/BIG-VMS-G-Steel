@@ -902,7 +902,7 @@ namespace BIG.VMS.DATASERVICE
                                 RESP_MANAGER = project.RESPONSIBLE_MANAGER,
                                 RESP_TEL = project.RESPONSIBLE_TEL,
                                 CONTRUCTOR_TEL = project.MAS_CONTRACTOR.TEL
-                                
+
                             };
 
                             outputData.LIST_PROJECT_HEADER.Add(header);
@@ -974,8 +974,8 @@ namespace BIG.VMS.DATASERVICE
                             {
                                 CUSTOMER member = new CUSTOMER()
                                 {
-                                   CUST_NAME = item.FULLNAME,
-                                   
+                                    CUST_NAME = item.FULLNAME,
+
                                 };
                                 outputData.LIST_CUSTOMER.Add(member);
 
@@ -1452,7 +1452,36 @@ namespace BIG.VMS.DATASERVICE
             }
             catch (Exception ex)
             {
+                resp.Exception = ex;
                 resp.Status = false;
+            }
+            return resp;
+        }
+
+        public Response DownloadImage(ContainerDisplayVisitor obj)
+        {
+            Response resp = new Response();
+            var ctx = new BIG_VMSEntities();
+            var filter = obj.Filter;
+
+            var query = ctx.TRN_ATTACHEDMENT;
+
+            if (obj.Filter != null)
+            {
+
+            }
+
+            try
+            {
+
+                var listData = query.ToList();
+                resp.Status = true;
+                resp.ResultObj = listData;
+            }
+            catch (Exception ex)
+            {
+                resp.Status = false;
+                resp.Exception = ex;
             }
             return resp;
         }

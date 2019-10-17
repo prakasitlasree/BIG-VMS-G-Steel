@@ -156,6 +156,10 @@
           <Property Name="REF_PHOTO1" Type="varbinary(max)" />
           <Property Name="REF_PHOTO2" Type="varbinary(max)" />
           <Property Name="REF_PHOTO3" Type="varbinary(max)" />
+          <Property Name="CREATED_DATE" Type="datetime" />
+          <Property Name="CREATED_BY" Type="nvarchar" MaxLength="50" />
+          <Property Name="UPDATED_DATE" Type="datetime" />
+          <Property Name="UPDATED_BY" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="TRN_BLACKLIST">
           <Key>
@@ -519,6 +523,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TRN_VISITOR_TRN_CUSTOMER_VISIT">
+          <End Role="TRN_CUSTOMER_VISIT" Type="Self.TRN_CUSTOMER_VISIT" Multiplicity="0..1" />
+          <End Role="TRN_VISITOR" Type="Self.TRN_VISITOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRN_CUSTOMER_VISIT">
+              <PropertyRef Name="AUTO_ID" />
+            </Principal>
+            <Dependent Role="TRN_VISITOR">
+              <PropertyRef Name="CUSTOMER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TRN_VISITOR_TRN_PROJECT_MASTER">
+          <End Role="TRN_PROJECT_MASTER" Type="Self.TRN_PROJECT_MASTER" Multiplicity="0..1" />
+          <End Role="TRN_VISITOR" Type="Self.TRN_VISITOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRN_PROJECT_MASTER">
+              <PropertyRef Name="AUTO_ID" />
+            </Principal>
+            <Dependent Role="TRN_VISITOR">
+              <PropertyRef Name="PROJECT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="BIG_VMSModelStoreContainer">
           <EntitySet Name="MAS_CAR_BRAND" EntityType="Self.MAS_CAR_BRAND" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MAS_CAR_MODEL" EntityType="Self.MAS_CAR_MODEL" Schema="dbo" store:Type="Tables" />
@@ -611,6 +639,14 @@
           <AssociationSet Name="FK_TRN_VISITOR_PURPOSE_TRN_VISITOR_PURPOSE" Association="Self.FK_TRN_VISITOR_PURPOSE_TRN_VISITOR_PURPOSE">
             <End Role="TRN_CUSTOMER_VISIT" EntitySet="TRN_CUSTOMER_VISIT" />
             <End Role="TRN_CUSTOMER_VISIT_PURPOSE" EntitySet="TRN_CUSTOMER_VISIT_PURPOSE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TRN_VISITOR_TRN_CUSTOMER_VISIT" Association="Self.FK_TRN_VISITOR_TRN_CUSTOMER_VISIT">
+            <End Role="TRN_CUSTOMER_VISIT" EntitySet="TRN_CUSTOMER_VISIT" />
+            <End Role="TRN_VISITOR" EntitySet="TRN_VISITOR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TRN_VISITOR_TRN_PROJECT_MASTER" Association="Self.FK_TRN_VISITOR_TRN_PROJECT_MASTER">
+            <End Role="TRN_PROJECT_MASTER" EntitySet="TRN_PROJECT_MASTER" />
+            <End Role="TRN_VISITOR" EntitySet="TRN_VISITOR" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -709,6 +745,14 @@
           <AssociationSet Name="FK_TRN_ATTACHEDMENT_TRN_VISITOR" Association="BIG_VMSModel.FK_TRN_ATTACHEDMENT_TRN_VISITOR">
             <End Role="TRN_VISITOR" EntitySet="TRN_VISITOR" />
             <End Role="TRN_ATTACHEDMENT" EntitySet="TRN_ATTACHEDMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TRN_VISITOR_TRN_CUSTOMER_VISIT" Association="BIG_VMSModel.FK_TRN_VISITOR_TRN_CUSTOMER_VISIT">
+            <End Role="TRN_CUSTOMER_VISIT" EntitySet="TRN_CUSTOMER_VISIT" />
+            <End Role="TRN_VISITOR" EntitySet="TRN_VISITOR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TRN_VISITOR_TRN_PROJECT_MASTER" Association="BIG_VMSModel.FK_TRN_VISITOR_TRN_PROJECT_MASTER">
+            <End Role="TRN_PROJECT_MASTER" EntitySet="TRN_PROJECT_MASTER" />
+            <End Role="TRN_VISITOR" EntitySet="TRN_VISITOR" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="sysdiagrams">
@@ -885,6 +929,10 @@
           <Property Name="REF_PHOTO2" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="REF_PHOTO3" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="TRN_VISITOR" Relationship="BIG_VMSModel.FK_TRN_ATTACHEDMENT_TRN_VISITOR" FromRole="TRN_ATTACHEDMENT" ToRole="TRN_VISITOR" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="TRN_BLACKLIST">
           <Key>
@@ -923,6 +971,7 @@
           <NavigationProperty Name="MAS_EMPLOYEE" Relationship="BIG_VMSModel.FK_TRN_CUSTOMER_VISIT_MAS_EMPLOYEE" FromRole="TRN_CUSTOMER_VISIT" ToRole="MAS_EMPLOYEE" />
           <NavigationProperty Name="TRN_CUSTOMER_VISIT_LIST" Relationship="BIG_VMSModel.FK_TRN_CUSTOMER_VISIT_LIST_TRN_CUSTOMER_VISIT_LIST" FromRole="TRN_CUSTOMER_VISIT" ToRole="TRN_CUSTOMER_VISIT_LIST" />
           <NavigationProperty Name="TRN_CUSTOMER_VISIT_PURPOSE" Relationship="BIG_VMSModel.FK_TRN_VISITOR_PURPOSE_TRN_VISITOR_PURPOSE" FromRole="TRN_CUSTOMER_VISIT" ToRole="TRN_CUSTOMER_VISIT_PURPOSE" />
+          <NavigationProperty Name="TRN_VISITOR" Relationship="BIG_VMSModel.FK_TRN_VISITOR_TRN_CUSTOMER_VISIT" FromRole="TRN_CUSTOMER_VISIT" ToRole="TRN_VISITOR" />
         </EntityType>
         <EntityType Name="TRN_CUSTOMER_VISIT_LIST">
           <Key>
@@ -996,6 +1045,7 @@
           <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
           <NavigationProperty Name="MAS_CONTRACTOR" Relationship="BIG_VMSModel.FK_TRN_PROJECT_CONTRACTOR_MAS_CONTRACTOR" FromRole="TRN_PROJECT_MASTER" ToRole="MAS_CONTRACTOR" />
           <NavigationProperty Name="TRN_PROJECT_MEMBER" Relationship="BIG_VMSModel.FK_TRN_PROJECT_MEMBER_TRN_PROJECT_CONTRACTOR" FromRole="TRN_PROJECT_MASTER" ToRole="TRN_PROJECT_MEMBER" />
+          <NavigationProperty Name="TRN_VISITOR" Relationship="BIG_VMSModel.FK_TRN_VISITOR_TRN_PROJECT_MASTER" FromRole="TRN_PROJECT_MASTER" ToRole="TRN_VISITOR" />
         </EntityType>
         <EntityType Name="TRN_PROJECT_MEMBER">
           <Key>
@@ -1200,6 +1250,8 @@
           <NavigationProperty Name="MAS_PROVINCE" Relationship="BIG_VMSModel.FK_TRN_VISITOR_MAS_PROVINCE" FromRole="TRN_VISITOR" ToRole="MAS_PROVINCE" />
           <NavigationProperty Name="MAS_REASON" Relationship="BIG_VMSModel.FK_TRN_VISITOR_MAS_REASON" FromRole="TRN_VISITOR" ToRole="MAS_REASON" />
           <NavigationProperty Name="TRN_ATTACHEDMENT" Relationship="BIG_VMSModel.FK_TRN_ATTACHEDMENT_TRN_VISITOR" FromRole="TRN_VISITOR" ToRole="TRN_ATTACHEDMENT" />
+          <NavigationProperty Name="TRN_CUSTOMER_VISIT" Relationship="BIG_VMSModel.FK_TRN_VISITOR_TRN_CUSTOMER_VISIT" FromRole="TRN_VISITOR" ToRole="TRN_CUSTOMER_VISIT" />
+          <NavigationProperty Name="TRN_PROJECT_MASTER" Relationship="BIG_VMSModel.FK_TRN_VISITOR_TRN_PROJECT_MASTER" FromRole="TRN_VISITOR" ToRole="TRN_PROJECT_MASTER" />
         </EntityType>
         <Association Name="FK_TRN_VISITOR_MAS_CAR_TYPE">
           <End Type="BIG_VMSModel.MAS_CAR_TYPE" Role="MAS_CAR_TYPE" Multiplicity="0..1" />
@@ -1258,6 +1310,30 @@
             </Principal>
             <Dependent Role="TRN_ATTACHEDMENT">
               <PropertyRef Name="VISITOR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TRN_VISITOR_TRN_CUSTOMER_VISIT">
+          <End Type="BIG_VMSModel.TRN_CUSTOMER_VISIT" Role="TRN_CUSTOMER_VISIT" Multiplicity="0..1" />
+          <End Type="BIG_VMSModel.TRN_VISITOR" Role="TRN_VISITOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRN_CUSTOMER_VISIT">
+              <PropertyRef Name="AUTO_ID" />
+            </Principal>
+            <Dependent Role="TRN_VISITOR">
+              <PropertyRef Name="CUSTOMER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TRN_VISITOR_TRN_PROJECT_MASTER">
+          <End Type="BIG_VMSModel.TRN_PROJECT_MASTER" Role="TRN_PROJECT_MASTER" Multiplicity="0..1" />
+          <End Type="BIG_VMSModel.TRN_VISITOR" Role="TRN_VISITOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRN_PROJECT_MASTER">
+              <PropertyRef Name="AUTO_ID" />
+            </Principal>
+            <Dependent Role="TRN_VISITOR">
+              <PropertyRef Name="PROJECT_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1421,6 +1497,10 @@
           <EntitySetMapping Name="TRN_ATTACHEDMENT">
             <EntityTypeMapping TypeName="BIG_VMSModel.TRN_ATTACHEDMENT">
               <MappingFragment StoreEntitySet="TRN_ATTACHEDMENT">
+                <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
+                <ScalarProperty Name="UPDATED_DATE" ColumnName="UPDATED_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
                 <ScalarProperty Name="REF_PHOTO3" ColumnName="REF_PHOTO3" />
                 <ScalarProperty Name="REF_PHOTO2" ColumnName="REF_PHOTO2" />
                 <ScalarProperty Name="REF_PHOTO1" ColumnName="REF_PHOTO1" />

@@ -42,6 +42,8 @@
         <AssociationConnector Association="BIG_VMSModel.FK_TRN_VISITOR_MAS_PROVINCE" />
         <AssociationConnector Association="BIG_VMSModel.FK_TRN_VISITOR_MAS_REASON" />
         <AssociationConnector Association="BIG_VMSModel.FK_TRN_ATTACHEDMENT_TRN_VISITOR" />
+        <AssociationConnector Association="BIG_VMSModel.FK_TRN_VISITOR_TRN_CUSTOMER_VISIT" />
+        <AssociationConnector Association="BIG_VMSModel.FK_TRN_VISITOR_TRN_PROJECT_MASTER" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

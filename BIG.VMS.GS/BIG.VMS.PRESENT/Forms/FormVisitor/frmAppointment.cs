@@ -136,6 +136,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                         msg += Environment.NewLine + "เหตุผล : " + blData.REASON;
                         msg += Environment.NewLine + "ณ วันที่ : " + blData.CREATED_DATE;
                         MessageBox.Show(msg, "บุคคล Blacklist", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.Close();
                     }
 
                 }

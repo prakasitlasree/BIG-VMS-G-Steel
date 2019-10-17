@@ -328,6 +328,12 @@
     <Compile Include="Forms\Master\Website.Designer.cs">
       <DependentUpon>Website.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Utitility\frmDownloadPicture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Utitility\frmDownloadPicture.Designer.cs">
+      <DependentUpon>frmDownloadPicture.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportConstructor.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -546,6 +552,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Master\Website.resx">
       <DependentUpon>Website.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Utitility\frmDownloadPicture.resx">
+      <DependentUpon>frmDownloadPicture.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportConstructor.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

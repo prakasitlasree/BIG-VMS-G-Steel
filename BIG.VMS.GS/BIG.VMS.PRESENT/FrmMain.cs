@@ -9,6 +9,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using BIG.VMS.PRESENT.Forms.FormReportNew;
+using BIG.VMS.PRESENT.Forms.Utitility;
 
 namespace BIG.VMS.PRESENT
 {
@@ -175,6 +176,15 @@ namespace BIG.VMS.PRESENT
         private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
 
+        }
+
+        private void downloadPic_Click(object sender, EventArgs e)
+        {
+            var frm = new frmDownloadPicture();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.MdiParent = this;
+            frm.Show();
         }
     }
 }
