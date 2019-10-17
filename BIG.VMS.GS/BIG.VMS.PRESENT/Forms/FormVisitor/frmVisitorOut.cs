@@ -170,16 +170,15 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                                 BY_PASS = org_obj.BY_PASS
                             };
 
+
                             if (obj.TRN_ATTACHEDMENT.Count > 0)
                             {
                                 obj.TRN_ATTACHEDMENT.FirstOrDefault().REF_PHOTO1 = null;
                                 obj.TRN_ATTACHEDMENT.FirstOrDefault().REF_PHOTO2 = null;
-                                obj.TRN_ATTACHEDMENT.FirstOrDefault().REF_PHOTO3 = null;
+                                obj.TRN_ATTACHEDMENT.FirstOrDefault().REF_PHOTO3 = null;                      
+                                obj.TRN_ATTACHEDMENT.FirstOrDefault().TRN_VISITOR = null;
                             }
-
-                            
-
-
+                             
                             var container = new ContainerVisitor { TRN_VISITOR = obj };
                             res = _service.Create(container);
 
@@ -187,7 +186,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                             {
                                 string dir = DIRECTORY_OUT + "\\" + obj.NO + "\\";
                                 Directory.CreateDirectory(dir);
-
+                                
                                 if (obj.TRN_ATTACHEDMENT.Count > 0)
                                 {
                                     SaveImage(picImage, dir + "PHOTO.jpg");
@@ -223,7 +222,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

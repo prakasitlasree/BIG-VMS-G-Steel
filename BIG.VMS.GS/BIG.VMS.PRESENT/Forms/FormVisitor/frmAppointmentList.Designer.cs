@@ -1,6 +1,6 @@
 ﻿namespace BIG.VMS.PRESENT.Forms.FormVisitor
 {
-    partial class frmAppointmenList
+    partial class frmAppointmentList
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAppointmenList));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAppointmentList));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.gridAppointmentList = new System.Windows.Forms.DataGridView();
-            this.colMeeted = new System.Windows.Forms.DataGridViewImageColumn();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.txtPage = new System.Windows.Forms.TextBox();
             this.btnFirst = new System.Windows.Forms.Button();
@@ -51,6 +50,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtIDCard = new System.Windows.Forms.TextBox();
+            this.colMeeted = new System.Windows.Forms.DataGridViewImageColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridAppointmentList)).BeginInit();
@@ -107,17 +107,6 @@
             this.gridAppointmentList.Size = new System.Drawing.Size(1153, 479);
             this.gridAppointmentList.TabIndex = 0;
             this.gridAppointmentList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridAppointmentList_CellContentClick);
-            // 
-            // colMeeted
-            // 
-            this.colMeeted.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colMeeted.HeaderText = "การเข้าพบ";
-            this.colMeeted.Image = ((System.Drawing.Image)(resources.GetObject("colMeeted.Image")));
-            this.colMeeted.Name = "colMeeted";
-            this.colMeeted.ReadOnly = true;
-            this.colMeeted.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMeeted.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colMeeted.Width = 120;
             // 
             // tableLayoutPanel4
             // 
@@ -355,7 +344,18 @@
             this.txtIDCard.Size = new System.Drawing.Size(296, 31);
             this.txtIDCard.TabIndex = 10;
             // 
-            // frmAppointmenList
+            // colMeeted
+            // 
+            this.colMeeted.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colMeeted.HeaderText = "การเข้าพบ";
+            this.colMeeted.Image = ((System.Drawing.Image)(resources.GetObject("colMeeted.Image")));
+            this.colMeeted.Name = "colMeeted";
+            this.colMeeted.ReadOnly = true;
+            this.colMeeted.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMeeted.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colMeeted.Width = 120;
+            // 
+            // frmAppointmentList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -365,7 +365,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
-            this.Name = "frmAppointmenList";
+            this.Name = "frmAppointmentList";
             this.ShowInTaskbar = false;
             this.Text = "นัดหมายล่วงหน้า";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAppointmenList_FormClosing);
@@ -404,7 +404,7 @@
         private System.Windows.Forms.Button btnPrevious;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnLast;
-        private System.Windows.Forms.DataGridViewImageColumn colMeeted;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridViewImageColumn colMeeted;
     }
 }

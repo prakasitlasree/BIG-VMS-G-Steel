@@ -194,6 +194,10 @@ namespace BIG.VMS.DATASERVICE
                     {
                         query = query.Where(o => o.REQUEST_LAST_NAME.Contains(filter.LAST_NAME));
                     }
+                    if (!string.IsNullOrEmpty(filter.STATUS))
+                    {
+                        query = query.Where(o => o.STATUS.Contains(filter.STATUS));
+                    }
                     if (filter.CONTACT_DATE != null && filter.CONTACT_DATE != DateTime.MinValue)
                     {
                         var dateFrom = filter.CONTACT_DATE.AddDays(1);

@@ -727,7 +727,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ResourceFile\icon\" />
-    <Folder Include="ResourceFile\ico\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="delivery.ico" />
@@ -778,6 +777,7 @@
     <Content Include="ResourceFile\finger_icon2.jpg" />
     <Content Include="ResourceFile\Flow-HRMI.gif" />
     <Content Include="ResourceFile\icon24_edit_male_user.png" />
+    <None Include="ResourceFile\ico\apply.ico" />
     <Content Include="ResourceFile\idcard_template.jpg" />
     <Content Include="ResourceFile\lock_1.png" />
     <Content Include="ResourceFile\lock_2.png" />
