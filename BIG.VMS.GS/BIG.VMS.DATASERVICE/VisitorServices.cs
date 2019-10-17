@@ -252,13 +252,18 @@ namespace BIG.VMS.DATASERVICE
                             {
                                 attach.CONTACT_PHOTO = visitorObj.TRN_ATTACHEDMENT.FirstOrDefault().CONTACT_PHOTO;
                                 attach.ID_CARD_PHOTO = visitorObj.TRN_ATTACHEDMENT.FirstOrDefault().ID_CARD_PHOTO;
-
+                                attach.UPDATED_DATE = DateTime.Now;
+                                attach.UPDATED_BY = visitorObj.UPDATED_BY;
                             }
                             else
                             {
                                 var att = new TRN_ATTACHEDMENT();
                                 att.CONTACT_PHOTO = visitorObj.TRN_ATTACHEDMENT.FirstOrDefault().CONTACT_PHOTO;
                                 att.ID_CARD_PHOTO = visitorObj.TRN_ATTACHEDMENT.FirstOrDefault().ID_CARD_PHOTO;
+                                attach.UPDATED_DATE = DateTime.Now;
+                                attach.UPDATED_BY = visitorObj.UPDATED_BY;
+                                attach.UPDATED_DATE = DateTime.Now;
+                                attach.UPDATED_BY = visitorObj.UPDATED_BY;
                                 att.VISITOR_ID = visitorObj.AUTO_ID;
                             }
 

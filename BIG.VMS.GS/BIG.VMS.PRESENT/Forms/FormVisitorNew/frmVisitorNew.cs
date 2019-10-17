@@ -779,10 +779,18 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                         if (flgCardImgChange)
                         {
                             attached.ID_CARD_PHOTO = ImageToByte(picCard);
+                            attached.CREATED_BY = LOGIN;
+                            attached.CREATED_DATE = DateTime.Now;
+                            attached.UPDATED_BY = LOGIN;
+                            attached.UPDATED_DATE = DateTime.Now;
                             picPhoto.Image.Save(dir + "PHOTO.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
                         }
                         if (flgPhotoImgChange)
                         {
+                            attached.CREATED_BY = LOGIN;
+                            attached.CREATED_DATE = DateTime.Now;
+                            attached.UPDATED_BY = LOGIN;
+                            attached.UPDATED_DATE = DateTime.Now;
                             attached.CONTACT_PHOTO = ImageToByte(picPhoto);
                             picCard.Image.Save(dir + "ID_CARD.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
                         }
@@ -840,11 +848,19 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                         if (flgCardImgChange)
                         {
                             attached.ID_CARD_PHOTO = ImageToByte(picCard);
+                            attached.CREATED_BY = LOGIN;
+                            attached.CREATED_DATE = DateTime.Now;
+                            attached.UPDATED_BY = LOGIN;
+                            attached.UPDATED_DATE = DateTime.Now;
                             picPhoto.Image.Save(dir + "PHOTO.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
                         }
                         if (flgPhotoImgChange)
                         {
                             attached.CONTACT_PHOTO = ImageToByte(picPhoto);
+                            attached.CREATED_BY = LOGIN;
+                            attached.CREATED_DATE = DateTime.Now;
+                            attached.UPDATED_BY = LOGIN;
+                            attached.UPDATED_DATE = DateTime.Now;
                             picCard.Image.Save(dir + "ID_CARD.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
                         }
 
@@ -993,11 +1009,19 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                         if (flgCardImgChange)
                         {
                             attached.ID_CARD_PHOTO = ImageToByte(picCard);
+                            attached.CREATED_BY = LOGIN;
+                            attached.CREATED_DATE = DateTime.Now;
+                            attached.UPDATED_BY = LOGIN;
+                            attached.UPDATED_DATE = DateTime.Now;
                             picCard.Image.Save(dir + "ID_CARD.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
                         }
                         if (flgPhotoImgChange)
                         {
                             attached.CONTACT_PHOTO = ImageToByte(picPhoto);
+                            attached.CREATED_BY = LOGIN;
+                            attached.CREATED_DATE = DateTime.Now;
+                            attached.UPDATED_BY = LOGIN;
+                            attached.UPDATED_DATE = DateTime.Now;
                             picCard.Image.Save(dir + "PHOTO.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
                         }
 
@@ -1042,11 +1066,19 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                         if (flgCardImgChange)
                         {
                             attached.ID_CARD_PHOTO = ImageToByte(picCard);
+                            attached.CREATED_BY = LOGIN;
+                            attached.CREATED_DATE = DateTime.Now;
+                            attached.UPDATED_BY = LOGIN;
+                            attached.UPDATED_DATE = DateTime.Now;
                             picCard.Image.Save(dir + "ID_CARD.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
                         }
                         if (flgPhotoImgChange)
                         {
                             attached.CONTACT_PHOTO = ImageToByte(picPhoto);
+                            attached.CREATED_BY = LOGIN;
+                            attached.CREATED_DATE = DateTime.Now;
+                            attached.UPDATED_BY = LOGIN;
+                            attached.UPDATED_DATE = DateTime.Now;
                             picPhoto.Image.Save(dir + "PHOTO.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
                         }
 
