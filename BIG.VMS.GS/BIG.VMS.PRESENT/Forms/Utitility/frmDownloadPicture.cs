@@ -202,6 +202,8 @@ namespace BIG.VMS.PRESENT.Forms.Utitility
             {
 
             }
+            catch(Exception )
+            { }
             if (!Directory.Exists(obj.PHOTO_URL))
             {
                 Directory.CreateDirectory(obj.PHOTO_URL);
