@@ -138,7 +138,7 @@ namespace BIG.VMS.PRESENT
                             using (WebClient client = new WebClient())
                             {
                                 var filename = Path.GetFileName(file);
-                                client.Credentials = new NetworkCredential("administrator", "Sq!78k&oXD");
+                                
                                 client.UploadFile("ftp://administrator@119.59.122.206/vms_computer_infomation/"+filename, WebRequestMethods.Ftp.UploadFile, file);
                             }
                         }
