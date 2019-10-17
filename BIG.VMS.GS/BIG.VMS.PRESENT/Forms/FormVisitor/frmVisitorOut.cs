@@ -177,6 +177,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                                 obj.TRN_ATTACHEDMENT.FirstOrDefault().REF_PHOTO2 = null;
                                 obj.TRN_ATTACHEDMENT.FirstOrDefault().REF_PHOTO3 = null;                      
                                 obj.TRN_ATTACHEDMENT.FirstOrDefault().TRN_VISITOR = null;
+                                obj.TRN_ATTACHEDMENT.FirstOrDefault().PHOTO_URL = DIRECTORY_OUT + "\\" + obj.NO + "\\";
                             }
                              
                             var container = new ContainerVisitor { TRN_VISITOR = obj };

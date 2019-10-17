@@ -32,6 +32,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.gridAppointmentList = new System.Windows.Forms.DataGridView();
+            this.colMeeted = new System.Windows.Forms.DataGridViewImageColumn();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.txtPage = new System.Windows.Forms.TextBox();
             this.btnFirst = new System.Windows.Forms.Button();
@@ -50,7 +51,6 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtIDCard = new System.Windows.Forms.TextBox();
-            this.colMeeted = new System.Windows.Forms.DataGridViewImageColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridAppointmentList)).BeginInit();
@@ -107,6 +107,17 @@
             this.gridAppointmentList.Size = new System.Drawing.Size(1153, 479);
             this.gridAppointmentList.TabIndex = 0;
             this.gridAppointmentList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridAppointmentList_CellContentClick);
+            // 
+            // colMeeted
+            // 
+            this.colMeeted.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colMeeted.HeaderText = "การเข้าพบ";
+            this.colMeeted.Image = ((System.Drawing.Image)(resources.GetObject("colMeeted.Image")));
+            this.colMeeted.Name = "colMeeted";
+            this.colMeeted.ReadOnly = true;
+            this.colMeeted.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMeeted.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colMeeted.Width = 120;
             // 
             // tableLayoutPanel4
             // 
@@ -277,6 +288,7 @@
             // 
             this.dtContactDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtContactDate.Enabled = false;
+            this.dtContactDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtContactDate.Location = new System.Drawing.Point(557, 40);
             this.dtContactDate.Name = "dtContactDate";
             this.dtContactDate.Size = new System.Drawing.Size(296, 31);
@@ -343,17 +355,6 @@
             this.txtIDCard.Name = "txtIDCard";
             this.txtIDCard.Size = new System.Drawing.Size(296, 31);
             this.txtIDCard.TabIndex = 10;
-            // 
-            // colMeeted
-            // 
-            this.colMeeted.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colMeeted.HeaderText = "การเข้าพบ";
-            this.colMeeted.Image = ((System.Drawing.Image)(resources.GetObject("colMeeted.Image")));
-            this.colMeeted.Name = "colMeeted";
-            this.colMeeted.ReadOnly = true;
-            this.colMeeted.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMeeted.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colMeeted.Width = 120;
             // 
             // frmAppointmentList
             // 

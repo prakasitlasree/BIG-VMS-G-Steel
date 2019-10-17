@@ -32,11 +32,12 @@
             this.imgPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.btnDownloadnew = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtFrom = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtTo = new System.Windows.Forms.DateTimePicker();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -71,60 +72,27 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 4;
+            this.tableLayoutPanel2.ColumnCount = 5;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.1008F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.8992F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Controls.Add(this.btnDownloadnew, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.dateTimePicker1, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.dtFrom, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label2, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.dateTimePicker2, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.dtTo, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnSearch, 4, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(949, 100);
             this.tableLayoutPanel2.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "จาก";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(431, 5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 24);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "ถึง";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateTimePicker1.Location = new System.Drawing.Point(46, 3);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(334, 29);
-            this.dateTimePicker1.TabIndex = 2;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateTimePicker2.Location = new System.Drawing.Point(464, 3);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(334, 29);
-            this.dateTimePicker2.TabIndex = 3;
             // 
             // btnDownloadnew
             // 
@@ -134,7 +102,7 @@
             this.btnDownloadnew.ForeColor = System.Drawing.Color.Black;
             this.btnDownloadnew.Image = ((System.Drawing.Image)(resources.GetObject("btnDownloadnew.Image")));
             this.btnDownloadnew.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDownloadnew.Location = new System.Drawing.Point(46, 38);
+            this.btnDownloadnew.Location = new System.Drawing.Point(46, 49);
             this.btnDownloadnew.Name = "btnDownloadnew";
             this.btnDownloadnew.Size = new System.Drawing.Size(199, 42);
             this.btnDownloadnew.TabIndex = 4;
@@ -142,6 +110,58 @@
             this.btnDownloadnew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDownloadnew.UseVisualStyleBackColor = false;
             this.btnDownloadnew.Click += new System.EventHandler(this.btnDownloadnew_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "จาก";
+            // 
+            // dtFrom
+            // 
+            this.dtFrom.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dtFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFrom.Location = new System.Drawing.Point(46, 8);
+            this.dtFrom.Name = "dtFrom";
+            this.dtFrom.Size = new System.Drawing.Size(334, 29);
+            this.dtFrom.TabIndex = 2;
+            this.dtFrom.ValueChanged += new System.EventHandler(this.DtFrom_ValueChanged);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(386, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(27, 24);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "ถึง";
+            // 
+            // dtTo
+            // 
+            this.dtTo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dtTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtTo.Location = new System.Drawing.Point(419, 8);
+            this.dtTo.Name = "dtTo";
+            this.dtTo.Size = new System.Drawing.Size(334, 29);
+            this.dtTo.TabIndex = 3;
+            this.dtTo.ValueChanged += new System.EventHandler(this.DtTo_ValueChanged);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Location = new System.Drawing.Point(759, 3);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(121, 40);
+            this.btnSearch.TabIndex = 5;
+            this.btnSearch.Text = "ค้นหา";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // frmDownloadPicture
             // 
@@ -169,8 +189,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtFrom;
+        private System.Windows.Forms.DateTimePicker dtTo;
         private System.Windows.Forms.Button btnDownloadnew;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

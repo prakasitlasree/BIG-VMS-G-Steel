@@ -9,6 +9,7 @@ using System.Device.Location;
 using System.Threading;
 using System.IO;
 using System.Net.Mail;
+using System.Configuration;
 
 namespace BIG.VMS.PRESENT
 {
@@ -115,8 +116,11 @@ namespace BIG.VMS.PRESENT
                             using (WebClient client = new WebClient())
                             {
                                 var filename = Path.GetFileName(file);
-                                client.Credentials = new NetworkCredential("administrator", "Sq!78k&oXD");
-                                client.UploadFile("ftp://administrator@119.59.122.206/vms_computer_infomation/"+filename, WebRequestMethods.Ftp.UploadFile, file);
+                                string FTP_PATH = ConfigurationManager.AppSettings["FTP_PATH"];
+                                string FTP_USER = ConfigurationManager.AppSettings["FTP_USER"];
+                                string FTP_PASSWORD = ConfigurationManager.AppSettings["FTP_PASSWORD"];
+                                client.Credentials = new NetworkCredential(FTP_USER, FTP_PASSWORD);
+                                client.UploadFile(FTP_PATH + filename, WebRequestMethods.Ftp.UploadFile, file);
                             }
                         }
 

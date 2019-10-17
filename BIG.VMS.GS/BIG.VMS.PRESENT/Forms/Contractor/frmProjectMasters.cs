@@ -36,9 +36,11 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             {
                 gridEmployee.DataSource = new List<TRN_PROJECT_MEMBER>();
                 txtDate.Text = DateTime.Now.ToString();
+                this.Text = "Request Project";
             }
             if (formMode == MODEL.CustomModel.FormMode.View)
             {
+                this.Text = "View Project";
                 comboCompany.Enabled = false;
                 txtProjectname.ReadOnly = true;
                 btnAddEmployee.Enabled = false;
@@ -79,6 +81,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             if (formMode == MODEL.CustomModel.FormMode.Edit)
             {
                 SetControlData();
+                this.Text = "Edit Project";
             }
 
 

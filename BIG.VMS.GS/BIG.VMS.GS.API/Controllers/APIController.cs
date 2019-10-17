@@ -24,7 +24,7 @@ namespace BIG.VMS.GS.API.Controllers
             return Json(resp, JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult GetLastVistorTransaction()
+        public JsonResult GetLastVisitorTransaction_Api()
         {
             var resp = new VisitorServices().GetLastVisitorTransaction_Api();
             return Json(resp, JsonRequestBehavior.AllowGet);
@@ -72,7 +72,7 @@ namespace BIG.VMS.GS.API.Controllers
         }
 
         [HttpPost]
-        public JsonResult UpdateVistorImgRef()
+        public JsonResult UpdateVisitorImgRef_Api()
         {
             Response resp = new MODEL.CustomModel.Response();
             HttpFileCollectionBase files = Request.Files;

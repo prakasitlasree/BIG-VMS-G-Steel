@@ -36,5 +36,10 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
         {
             this.Close();
         }
+
+        private void FrmBlacklistConfirm_Load(object sender, EventArgs e)
+        {
+            lbUser.Text = LOGIN;
+        }
     }
 }
