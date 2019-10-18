@@ -34,13 +34,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.Lbl_FirstName = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.Lbl_IDCard = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.numSeq = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtLastname = new System.Windows.Forms.TextBox();
+            this.Lbl_IDCard = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSeq)).BeginInit();
@@ -108,13 +108,13 @@
             this.Lbl_FirstName.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Lbl_FirstName.AutoSize = true;
             this.Lbl_FirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_FirstName.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Lbl_FirstName.Location = new System.Drawing.Point(78, 33);
+            this.Lbl_FirstName.ForeColor = System.Drawing.Color.Red;
+            this.Lbl_FirstName.Location = new System.Drawing.Point(72, 33);
             this.Lbl_FirstName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_FirstName.Name = "Lbl_FirstName";
-            this.Lbl_FirstName.Size = new System.Drawing.Size(49, 25);
+            this.Lbl_FirstName.Size = new System.Drawing.Size(55, 25);
             this.Lbl_FirstName.TabIndex = 0;
-            this.Lbl_FirstName.Text = "* ชื่อ";
+            this.Lbl_FirstName.Text = " ชื่อ *";
             // 
             // txtName
             // 
@@ -126,6 +126,71 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(286, 31);
             this.txtName.TabIndex = 0;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.Controls.Add(this.btnSave);
+            this.flowLayoutPanel1.Controls.Add(this.btnCancel);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(135, 153);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(262, 63);
+            this.flowLayoutPanel1.TabIndex = 1;
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.LightGreen;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.Location = new System.Drawing.Point(9, 10);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(9, 10, 9, 10);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(113, 43);
+            this.btnSave.TabIndex = 3;
+            this.btnSave.Text = "บันทึก";
+            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.SeaShell;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancel.Location = new System.Drawing.Point(140, 10);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(9, 10, 9, 10);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(113, 43);
+            this.btnCancel.TabIndex = 4;
+            this.btnCancel.Text = "ยกเลิก";
+            this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
+            // 
+            // numSeq
+            // 
+            this.numSeq.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numSeq.Location = new System.Drawing.Point(135, 112);
+            this.numSeq.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.numSeq.Name = "numSeq";
+            this.numSeq.Size = new System.Drawing.Size(103, 31);
+            this.numSeq.TabIndex = 22;
+            // 
+            // txtLastname
+            // 
+            this.txtLastname.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtLastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastname.Location = new System.Drawing.Point(135, 71);
+            this.txtLastname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtLastname.MaxLength = 1000;
+            this.txtLastname.Name = "txtLastname";
+            this.txtLastname.Size = new System.Drawing.Size(286, 31);
+            this.txtLastname.TabIndex = 24;
             // 
             // Lbl_IDCard
             // 
@@ -140,83 +205,18 @@
             this.Lbl_IDCard.TabIndex = 1;
             this.Lbl_IDCard.Text = "ลำดับ";
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.Controls.Add(this.btnSave);
-            this.flowLayoutPanel1.Controls.Add(this.btnCancel);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(135, 153);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(322, 63);
-            this.flowLayoutPanel1.TabIndex = 1;
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.LightGreen;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSave.Location = new System.Drawing.Point(9, 10);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(9, 10, 9, 10);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(154, 43);
-            this.btnSave.TabIndex = 3;
-            this.btnSave.Text = "บันทึก";
-            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.SeaShell;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
-            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancel.Location = new System.Drawing.Point(181, 10);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(9, 10, 9, 10);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(132, 43);
-            this.btnCancel.TabIndex = 4;
-            this.btnCancel.Text = "ยกเลิก";
-            this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
-            // 
-            // numSeq
-            // 
-            this.numSeq.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numSeq.Location = new System.Drawing.Point(135, 112);
-            this.numSeq.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.numSeq.Name = "numSeq";
-            this.numSeq.Size = new System.Drawing.Size(180, 31);
-            this.numSeq.TabIndex = 22;
-            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(35, 74);
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(29, 74);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 25);
+            this.label1.Size = new System.Drawing.Size(98, 25);
             this.label1.TabIndex = 23;
-            this.label1.Text = "* นามสกุล";
-            // 
-            // txtLastname
-            // 
-            this.txtLastname.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtLastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLastname.Location = new System.Drawing.Point(135, 71);
-            this.txtLastname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtLastname.MaxLength = 1000;
-            this.txtLastname.Name = "txtLastname";
-            this.txtLastname.Size = new System.Drawing.Size(286, 31);
-            this.txtLastname.TabIndex = 24;
+            this.label1.Text = "นามสกุล * ";
             // 
             // frmPlantVisitor
             // 

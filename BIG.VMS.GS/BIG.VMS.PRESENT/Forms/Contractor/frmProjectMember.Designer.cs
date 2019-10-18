@@ -106,7 +106,7 @@
             this.txtName.Location = new System.Drawing.Point(91, 66);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(420, 23);
-            this.txtName.TabIndex = 1;
+            this.txtName.TabIndex = 3;
             // 
             // Lbl_IDCard
             // 
@@ -139,7 +139,7 @@
             this.txtIDCard.Location = new System.Drawing.Point(91, 37);
             this.txtIDCard.Name = "txtIDCard";
             this.txtIDCard.Size = new System.Drawing.Size(420, 23);
-            this.txtIDCard.TabIndex = 23;
+            this.txtIDCard.TabIndex = 2;
             // 
             // comboType
             // 
@@ -152,7 +152,7 @@
             this.comboType.Location = new System.Drawing.Point(91, 3);
             this.comboType.Name = "comboType";
             this.comboType.Size = new System.Drawing.Size(420, 28);
-            this.comboType.TabIndex = 26;
+            this.comboType.TabIndex = 1;
             // 
             // flowLayoutPanel1
             // 
@@ -173,8 +173,8 @@
             this.btnSave.Location = new System.Drawing.Point(6, 6);
             this.btnSave.Margin = new System.Windows.Forms.Padding(6);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(159, 38);
-            this.btnSave.TabIndex = 5;
+            this.btnSave.Size = new System.Drawing.Size(120, 38);
+            this.btnSave.TabIndex = 7;
             this.btnSave.Text = "บันทึก";
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSave.UseVisualStyleBackColor = false;
@@ -187,11 +187,11 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnClose.Location = new System.Drawing.Point(177, 6);
+            this.btnClose.Location = new System.Drawing.Point(138, 6);
             this.btnClose.Margin = new System.Windows.Forms.Padding(6);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(151, 38);
-            this.btnClose.TabIndex = 6;
+            this.btnClose.Size = new System.Drawing.Size(120, 38);
+            this.btnClose.TabIndex = 8;
             this.btnClose.Text = "ยกเลิก";
             this.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClose.UseVisualStyleBackColor = false;
@@ -216,7 +216,7 @@
             this.txtLastName.Location = new System.Drawing.Point(91, 95);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(420, 23);
-            this.txtLastName.TabIndex = 28;
+            this.txtLastName.TabIndex = 4;
             // 
             // label3
             // 
@@ -251,7 +251,7 @@
             this.txtPosition.Multiline = true;
             this.txtPosition.Name = "txtPosition";
             this.txtPosition.Size = new System.Drawing.Size(420, 77);
-            this.txtPosition.TabIndex = 2;
+            this.txtPosition.TabIndex = 5;
             // 
             // flowLayoutPanel2
             // 
@@ -271,7 +271,7 @@
             this.radRequire.Location = new System.Drawing.Point(3, 3);
             this.radRequire.Name = "radRequire";
             this.radRequire.Size = new System.Drawing.Size(61, 24);
-            this.radRequire.TabIndex = 0;
+            this.radRequire.TabIndex = 6;
             this.radRequire.TabStop = true;
             this.radRequire.Text = "อบรม";
             this.radRequire.UseVisualStyleBackColor = true;
