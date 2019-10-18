@@ -197,7 +197,7 @@
                             var id_card = "หมายเลขบัตร:" + response.ResultObj.ID_CARD;
                             var license_plate = "ทะเบียนรถ:" + response.ResultObj.LICENSE_PLATE
                             var info = name + " " + id_card + " " + license_plate;
-                            if (response.ResultObj.TYPE == "In" || response.ResultObj.TYPE == "Appointment") {
+                            if (response.ResultObj.TYPE == "IN" || response.ResultObj.TYPE == "Appointment") {
                                 $('#txtType').val("เข้า")
                             }
                             else {
@@ -243,7 +243,7 @@
                         var id_card = "หมายเลขบัตร:" + response.ResultObj.ID_CARD;
                         var license_plate = "ทะเบียนรถ:" + response.ResultObj.LICENSE_PLATE
                         var info = name + " " + id_card + " " + license_plate;
-                        if (response.ResultObj.TYPE == "In" || response.ResultObj.TYPE == "Appointment") {
+                        if (response.ResultObj.TYPE == "IN" || response.ResultObj.TYPE == "Appointment") {
                             $('#txtType').val("เข้า")
                         }
                         else {

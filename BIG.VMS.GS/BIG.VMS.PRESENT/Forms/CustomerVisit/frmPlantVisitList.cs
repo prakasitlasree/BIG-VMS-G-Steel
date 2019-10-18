@@ -133,9 +133,9 @@ namespace BIG.VMS.PRESENT.Forms.CustomerVisit
             listCol.Add(new HeaderGrid { HEADER_TEXT = "จุดประสงค์", FIELD = "OBJECTIVE_OF_VISIT", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "วันที่เข้า", FIELD = "DATE_TIME_OF_VISIT", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "ชื่อผู้ติดต่อ", FIELD = "CONTACT_PERSON", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
-
-            listCol.Add(new HeaderGrid { HEADER_TEXT = "วันที่บันทึก", FIELD = "UPDATED_DATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "ผู้บันทึก", FIELD = "UPDATED_BY", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "วันที่บันทึก", FIELD = "UPDATED_DATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+           
 
 
             return listCol;

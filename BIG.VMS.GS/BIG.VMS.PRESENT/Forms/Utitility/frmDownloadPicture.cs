@@ -31,20 +31,27 @@ namespace BIG.VMS.PRESENT.Forms.Utitility
 
         private void Download()
         {
+            container.Filter = new VisitorFilter();
+            container.Filter.DATE_FROM = dtFrom.Value;
+            container.Filter.DATE_TO = dtTo.Value.AddDays(1);
             var resp = service.DownloadImage(container);
+            List<string> errorImage = new List<string>();
             if (resp.Status)
             {
                 List<TRN_ATTACHEDMENT> listData = resp.ResultObj;
                 foreach (var item in listData)
                 {
-                    if (item.CONTACT_PHOTO != null || item.ID_CARD_PHOTO != null || item.REF_PHOTO1 != null || item.REF_PHOTO2 != null || item.REF_PHOTO3 != null)
+                    if (item.CONTACT_PHOTO != null ||
+                        item.ID_CARD_PHOTO != null ||
+                        item.REF_PHOTO1 != null ||
+                        item.REF_PHOTO2 != null ||
+                        item.REF_PHOTO3 != null)
                     {
                         try
                         {
                             if (!Directory.Exists(item.PHOTO_URL))
                             {
                                 Directory.CreateDirectory(item.PHOTO_URL);
-
                             }
                             if (item.CONTACT_PHOTO != null)
                             {
@@ -67,16 +74,22 @@ namespace BIG.VMS.PRESENT.Forms.Utitility
                                 var img = ByteToImage(item.REF_PHOTO3, item.PHOTO_URL + "REF_PHOTO_3.jpg");
                             }
                         }
-                        catch
+                        catch (Exception ex)
                         {
-
+                            errorImage.Add($@"ไม่สามารถดาวน์โหลดภาพเลขที่ {item.TRN_VISITOR.NO} เนื่องจาก {ex.Message}");
+                            
                         }
 
                     }
 
                 }
 
-                MessageBox.Show("ดาวน์โหลดภาพเรียบร้อย");
+                MessageBox.Show("ดาวน์โหลดภาพเรียบร้อย", "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if(errorImage.Count > 0)
+                {
+                    string msg = string.Join(",", errorImage);
+                    MessageBox.Show(msg, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -88,10 +101,9 @@ namespace BIG.VMS.PRESENT.Forms.Utitility
                 byte[] pData = blob;
                 mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
                 Bitmap bm = new Bitmap(mStream, false);
-                if (Directory.Exists(url))
-                {
-                    bm.Save(url, System.Drawing.Imaging.ImageFormat.Jpeg);
-                }
+
+                bm.Save(url, System.Drawing.Imaging.ImageFormat.Jpeg);
+
 
 
                 mStream.Dispose();
@@ -120,31 +132,34 @@ namespace BIG.VMS.PRESENT.Forms.Utitility
             }
         }
 
-        private void frmDownloadPicture_Load(object sender, EventArgs e)
+        public void BindingLayout()
         {
+            container.Filter = new VisitorFilter();
+            container.Filter.DATE_FROM = dtFrom.Value;
+            container.Filter.DATE_TO = dtTo.Value.AddDays(1);
+
             var resp = service.DownloadImage(container);
             if (resp.Status)
             {
+
                 List<TRN_ATTACHEDMENT> listData = resp.ResultObj;
+                imgPanel.Controls.Clear();
                 foreach (var item in listData)
                 {
                     if (item.CONTACT_PHOTO != null || item.ID_CARD_PHOTO != null || item.REF_PHOTO1 != null || item.REF_PHOTO2 != null || item.REF_PHOTO3 != null)
                     {
 
-
                         FlowLayoutPanel panel = new FlowLayoutPanel();
-                        panel.Height = 200;
-                        panel.Width = 400;
+                        panel.Height = 370;
+                        panel.Width = 350;
                         panel.AutoScroll = true;
                         panel.BorderStyle = BorderStyle.FixedSingle;
-
 
                         Label lb = new Label();
                         lb.AutoSize = false;
                         lb.Width = 350;
                         string type = item.TRN_VISITOR.TYPE == "IN" ? "เข้า" : "ออก";
                         lb.Text = $@"เลขที่ {item.TRN_VISITOR.NO} เดือน {item.TRN_VISITOR.MONTH} ปี {item.TRN_VISITOR.YEAR} ประเภท {type}";
-
                         panel.Controls.Add(lb);
 
                         Button btnDownload = new Button();
@@ -152,6 +167,7 @@ namespace BIG.VMS.PRESENT.Forms.Utitility
                         btnDownload.Width = 150;
                         btnDownload.Text = "ดาวน์โหลด";
                         btnDownload.Tag = item;
+                        btnDownload.FlatStyle = FlatStyle.Flat;
                         btnDownload.Click += new EventHandler(VisitorSelected_EventHadler);
 
                         if (item.CONTACT_PHOTO != null)
@@ -172,7 +188,6 @@ namespace BIG.VMS.PRESENT.Forms.Utitility
                         }
                         if (item.REF_PHOTO3 != null)
                         {
-
                             panel.Controls.Add(LoadPicBox(item.REF_PHOTO3));
                         }
 
@@ -182,9 +197,16 @@ namespace BIG.VMS.PRESENT.Forms.Utitility
                     }
 
                 }
-
-
             }
+        }
+
+        private void frmDownloadPicture_Load(object sender, EventArgs e)
+        {
+            var firstDayOfMonth = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            dtFrom.MaxDate = dtTo.Value;
+            dtTo.MinDate = dtFrom.Value;
+            dtFrom.Value = firstDayOfMonth;
+            BindingLayout();
         }
 
         private PictureBox LoadPicBox(byte[] img)
@@ -203,42 +225,59 @@ namespace BIG.VMS.PRESENT.Forms.Utitility
             TRN_ATTACHEDMENT obj = (TRN_ATTACHEDMENT)((Button)sender).Tag;
             try
             {
+                if (!Directory.Exists(obj.PHOTO_URL))
+                {
+                    Directory.CreateDirectory(obj.PHOTO_URL);
+                }
+                if (obj.CONTACT_PHOTO != null)
+                {
+                    var img = ByteToImage(obj.CONTACT_PHOTO, obj.PHOTO_URL + "CONTACT_PHOTO.jpg");
+                }
+                if (obj.ID_CARD_PHOTO != null)
+                {
+                    var img = ByteToImage(obj.ID_CARD_PHOTO, obj.PHOTO_URL + "ID_CARD_PHOTO.jpg");
+                }
+                if (obj.REF_PHOTO1 != null)
+                {
+                    var img = ByteToImage(obj.REF_PHOTO1, obj.PHOTO_URL + "REF_PHOTO_1.jpg");
+                }
+                if (obj.REF_PHOTO2 != null)
+                {
+                    var img = ByteToImage(obj.REF_PHOTO2, obj.PHOTO_URL + "REF_PHOTO_2.jpg");
+                }
+                if (obj.REF_PHOTO3 != null)
+                {
+                    var img = ByteToImage(obj.REF_PHOTO3, obj.PHOTO_URL + "REF_PHOTO_3.jpg");
+                }
+                MessageBox.Show($@"บันทึกภาพที่ {obj.PHOTO_URL}", "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($@"บันทึกภาพไม่สำเร็จ {ex.Message}", "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
-            }
-            catch(Exception )
-            { }
-            if (!Directory.Exists(obj.PHOTO_URL))
-            {
-                Directory.CreateDirectory(obj.PHOTO_URL);
 
-            }
-            if (obj.CONTACT_PHOTO != null)
-            {
-                var img = ByteToImage(obj.CONTACT_PHOTO, obj.PHOTO_URL + "CONTACT_PHOTO.jpg");
-            }
-            if (obj.ID_CARD_PHOTO != null)
-            {
-                var img = ByteToImage(obj.ID_CARD_PHOTO, obj.PHOTO_URL + "ID_CARD_PHOTO.jpg");
-            }
-            if (obj.REF_PHOTO1 != null)
-            {
-                var img = ByteToImage(obj.REF_PHOTO1, obj.PHOTO_URL + "REF_PHOTO_1.jpg");
-            }
-            if (obj.REF_PHOTO2 != null)
-            {
-                var img = ByteToImage(obj.REF_PHOTO2, obj.PHOTO_URL + "REF_PHOTO_2.jpg");
-            }
-            if (obj.REF_PHOTO3 != null)
-            {
-                var img = ByteToImage(obj.REF_PHOTO3, obj.PHOTO_URL + "REF_PHOTO_3.jpg");
-            }
 
-            MessageBox.Show($@"บันทึกภาพที่ {obj.PHOTO_URL}");
         }
 
         private void btnDownloadnew_Click(object sender, EventArgs e)
         {
             Download();
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            BindingLayout();
+        }
+
+        private void DtTo_ValueChanged(object sender, EventArgs e)
+        {
+            dtFrom.MaxDate = dtTo.Value;
+        }
+
+        private void DtFrom_ValueChanged(object sender, EventArgs e)
+        {
+            dtTo.MinDate = dtFrom.Value;
         }
     }
 }

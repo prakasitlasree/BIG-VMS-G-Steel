@@ -1469,12 +1469,9 @@ namespace BIG.VMS.DATASERVICE
             var ctx = new BIG_VMSEntities();
             var filter = obj.Filter;
 
-            var query = ctx.TRN_ATTACHEDMENT;
+            var query = ctx.TRN_ATTACHEDMENT.Include("TRN_VISITOR")
+                .Where(o => (o.CREATED_DATE >= filter.DATE_FROM && o.CREATED_DATE <= filter.DATE_TO));
 
-            if (obj.Filter != null)
-            {
-
-            }
 
             try
             {

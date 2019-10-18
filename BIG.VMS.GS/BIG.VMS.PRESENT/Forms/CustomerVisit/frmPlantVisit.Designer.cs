@@ -185,6 +185,7 @@
             // 
             this.visitordate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.visitordate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.visitordate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.visitordate.Location = new System.Drawing.Point(653, 8);
             this.visitordate.Name = "visitordate";
             this.visitordate.Size = new System.Drawing.Size(245, 23);
@@ -296,7 +297,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(907, 275);
+            this.tabPage2.Size = new System.Drawing.Size(907, 269);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Visitor List";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -314,7 +315,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(901, 269);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(901, 263);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // gridVisitor

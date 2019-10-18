@@ -162,6 +162,8 @@
             // 
             // comboCompany
             // 
+            this.comboCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboCompany.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboCompany.FormattingEnabled = true;
             this.comboCompany.Location = new System.Drawing.Point(244, 2);
             this.comboCompany.Margin = new System.Windows.Forms.Padding(2);
@@ -288,6 +290,7 @@
             // 
             this.dtHraExpire.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dtHraExpire.Enabled = false;
+            this.dtHraExpire.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtHraExpire.Location = new System.Drawing.Point(327, 87);
             this.dtHraExpire.Margin = new System.Windows.Forms.Padding(2);
             this.dtHraExpire.Name = "dtHraExpire";
@@ -326,6 +329,7 @@
             // dtHraIssue
             // 
             this.dtHraIssue.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dtHraIssue.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtHraIssue.Location = new System.Drawing.Point(327, 47);
             this.dtHraIssue.Margin = new System.Windows.Forms.Padding(2);
             this.dtHraIssue.Name = "dtHraIssue";
@@ -425,6 +429,7 @@
             // dtExpireDate
             // 
             this.dtExpireDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dtExpireDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtExpireDate.Location = new System.Drawing.Point(245, 87);
             this.dtExpireDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtExpireDate.Name = "dtExpireDate";
@@ -445,6 +450,7 @@
             // dtIssuseDate
             // 
             this.dtIssuseDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dtIssuseDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtIssuseDate.Location = new System.Drawing.Point(245, 47);
             this.dtIssuseDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtIssuseDate.Name = "dtIssuseDate";
@@ -561,6 +567,7 @@
             // 
             // dtPurchase
             // 
+            this.dtPurchase.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtPurchase.Location = new System.Drawing.Point(349, 289);
             this.dtPurchase.Margin = new System.Windows.Forms.Padding(2);
             this.dtPurchase.Name = "dtPurchase";
@@ -638,6 +645,7 @@
             // dtTo
             // 
             this.dtTo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dtTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtTo.Location = new System.Drawing.Point(122, 5);
             this.dtTo.Margin = new System.Windows.Forms.Padding(2);
             this.dtTo.Name = "dtTo";
@@ -870,6 +878,7 @@
             // dtFrom
             // 
             this.dtFrom.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dtFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtFrom.Location = new System.Drawing.Point(122, 4);
             this.dtFrom.Margin = new System.Windows.Forms.Padding(2);
             this.dtFrom.Name = "dtFrom";
@@ -964,9 +973,9 @@
             this.btnAddEmployee.Location = new System.Drawing.Point(2, 2);
             this.btnAddEmployee.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddEmployee.Name = "btnAddEmployee";
-            this.btnAddEmployee.Size = new System.Drawing.Size(199, 43);
+            this.btnAddEmployee.Size = new System.Drawing.Size(197, 43);
             this.btnAddEmployee.TabIndex = 0;
-            this.btnAddEmployee.Text = "เพิ่มพนักงานเข้า-ออก";
+            this.btnAddEmployee.Text = "Add Employee";
             this.btnAddEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddEmployee.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAddEmployee.UseVisualStyleBackColor = false;
@@ -1305,7 +1314,7 @@
             this.btnSave1.Name = "btnSave1";
             this.btnSave1.Size = new System.Drawing.Size(132, 36);
             this.btnSave1.TabIndex = 18;
-            this.btnSave1.Text = "บันทึก";
+            this.btnSave1.Text = "Save";
             this.btnSave1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSave1.UseVisualStyleBackColor = false;
             this.btnSave1.Click += new System.EventHandler(this.BtnSave_Click);
@@ -1322,7 +1331,7 @@
             this.btnClose2.Name = "btnClose2";
             this.btnClose2.Size = new System.Drawing.Size(124, 36);
             this.btnClose2.TabIndex = 19;
-            this.btnClose2.Text = "ยกเลิก";
+            this.btnClose2.Text = "Close";
             this.btnClose2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClose2.UseVisualStyleBackColor = false;
             this.btnClose2.Click += new System.EventHandler(this.BtnClose_Click);
@@ -1344,7 +1353,7 @@
             this.MinimizeBox = false;
             this.Name = "frmProjectMasters";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "ผู้รับเหมา";
+            this.Text = "Project Request Form";
             this.Load += new System.EventHandler(this.FrmProjectMasters_Load);
             this.tabPage4.ResumeLayout(false);
             this.tableLayoutPanel12.ResumeLayout(false);

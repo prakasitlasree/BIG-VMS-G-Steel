@@ -75,8 +75,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     break;
             }
         }
-
-
+    
         private void CustomGrid()
         {
 
