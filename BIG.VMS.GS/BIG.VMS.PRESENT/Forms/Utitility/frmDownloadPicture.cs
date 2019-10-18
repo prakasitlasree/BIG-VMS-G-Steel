@@ -35,19 +35,23 @@ namespace BIG.VMS.PRESENT.Forms.Utitility
             container.Filter.DATE_FROM = dtFrom.Value;
             container.Filter.DATE_TO = dtTo.Value.AddDays(1);
             var resp = service.DownloadImage(container);
+            List<string> errorImage = new List<string>();
             if (resp.Status)
             {
                 List<TRN_ATTACHEDMENT> listData = resp.ResultObj;
                 foreach (var item in listData)
                 {
-                    if (item.CONTACT_PHOTO != null || item.ID_CARD_PHOTO != null || item.REF_PHOTO1 != null || item.REF_PHOTO2 != null || item.REF_PHOTO3 != null)
+                    if (item.CONTACT_PHOTO != null ||
+                        item.ID_CARD_PHOTO != null ||
+                        item.REF_PHOTO1 != null ||
+                        item.REF_PHOTO2 != null ||
+                        item.REF_PHOTO3 != null)
                     {
                         try
                         {
                             if (!Directory.Exists(item.PHOTO_URL))
                             {
                                 Directory.CreateDirectory(item.PHOTO_URL);
-
                             }
                             if (item.CONTACT_PHOTO != null)
                             {
@@ -72,14 +76,20 @@ namespace BIG.VMS.PRESENT.Forms.Utitility
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show($@"ไม่สามารถดาวน์โหลดภาพเลขที่ {item.TRN_VISITOR.NO} เนื่องจาก {ex.Message}");
+                            errorImage.Add($@"ไม่สามารถดาวน์โหลดภาพเลขที่ {item.TRN_VISITOR.NO} เนื่องจาก {ex.Message}");
+                            
                         }
 
                     }
 
                 }
 
-                MessageBox.Show("ดาวน์โหลดภาพเรียบร้อย");
+                MessageBox.Show("ดาวน์โหลดภาพเรียบร้อย", "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if(errorImage.Count > 0)
+                {
+                    string msg = string.Join(",", errorImage);
+                    MessageBox.Show(msg, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -122,13 +132,12 @@ namespace BIG.VMS.PRESENT.Forms.Utitility
             }
         }
 
-        private void frmDownloadPicture_Load(object sender, EventArgs e)
+        public void BindingLayout()
         {
-            var firstDayOfMonth = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
-            dtFrom.Value = firstDayOfMonth;
             container.Filter = new VisitorFilter();
             container.Filter.DATE_FROM = dtFrom.Value;
             container.Filter.DATE_TO = dtTo.Value.AddDays(1);
+
             var resp = service.DownloadImage(container);
             if (resp.Status)
             {
@@ -140,20 +149,17 @@ namespace BIG.VMS.PRESENT.Forms.Utitility
                     if (item.CONTACT_PHOTO != null || item.ID_CARD_PHOTO != null || item.REF_PHOTO1 != null || item.REF_PHOTO2 != null || item.REF_PHOTO3 != null)
                     {
 
-                    
                         FlowLayoutPanel panel = new FlowLayoutPanel();
                         panel.Height = 370;
                         panel.Width = 350;
                         panel.AutoScroll = true;
                         panel.BorderStyle = BorderStyle.FixedSingle;
 
-
                         Label lb = new Label();
                         lb.AutoSize = false;
                         lb.Width = 350;
                         string type = item.TRN_VISITOR.TYPE == "IN" ? "เข้า" : "ออก";
                         lb.Text = $@"เลขที่ {item.TRN_VISITOR.NO} เดือน {item.TRN_VISITOR.MONTH} ปี {item.TRN_VISITOR.YEAR} ประเภท {type}";
-
                         panel.Controls.Add(lb);
 
                         Button btnDownload = new Button();
@@ -161,6 +167,7 @@ namespace BIG.VMS.PRESENT.Forms.Utitility
                         btnDownload.Width = 150;
                         btnDownload.Text = "ดาวน์โหลด";
                         btnDownload.Tag = item;
+                        btnDownload.FlatStyle = FlatStyle.Flat;
                         btnDownload.Click += new EventHandler(VisitorSelected_EventHadler);
 
                         if (item.CONTACT_PHOTO != null)
@@ -181,7 +188,6 @@ namespace BIG.VMS.PRESENT.Forms.Utitility
                         }
                         if (item.REF_PHOTO3 != null)
                         {
-
                             panel.Controls.Add(LoadPicBox(item.REF_PHOTO3));
                         }
 
@@ -191,9 +197,16 @@ namespace BIG.VMS.PRESENT.Forms.Utitility
                     }
 
                 }
-
-
             }
+        }
+
+        private void frmDownloadPicture_Load(object sender, EventArgs e)
+        {
+            var firstDayOfMonth = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            dtFrom.MaxDate = dtTo.Value;
+            dtTo.MinDate = dtFrom.Value;
+            dtFrom.Value = firstDayOfMonth;
+            BindingLayout();
         }
 
         private PictureBox LoadPicBox(byte[] img)
@@ -236,11 +249,11 @@ namespace BIG.VMS.PRESENT.Forms.Utitility
                 {
                     var img = ByteToImage(obj.REF_PHOTO3, obj.PHOTO_URL + "REF_PHOTO_3.jpg");
                 }
-                MessageBox.Show($@"บันทึกภาพที่ {obj.PHOTO_URL}");
+                MessageBox.Show($@"บันทึกภาพที่ {obj.PHOTO_URL}", "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($@"บันทึกภาพไม่สำเร็จ {ex.Message}");
+                MessageBox.Show($@"บันทึกภาพไม่สำเร็จ {ex.Message}", "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
 
@@ -254,74 +267,7 @@ namespace BIG.VMS.PRESENT.Forms.Utitility
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            container.Filter = new VisitorFilter();
-            container.Filter.DATE_FROM = dtFrom.Value;
-            container.Filter.DATE_TO = dtTo.Value.AddDays(1);
-            var resp = service.DownloadImage(container);
-            if (resp.Status)
-            {
-
-                List<TRN_ATTACHEDMENT> listData = resp.ResultObj;
-                imgPanel.Controls.Clear();
-                foreach (var item in listData)
-                {
-                    if (item.CONTACT_PHOTO != null || item.ID_CARD_PHOTO != null || item.REF_PHOTO1 != null || item.REF_PHOTO2 != null || item.REF_PHOTO3 != null)
-                    {
-
-                       
-                        FlowLayoutPanel panel = new FlowLayoutPanel();
-                        panel.Height = 370;
-                        panel.Width = 350;
-                        panel.AutoScroll = true;
-                        panel.BorderStyle = BorderStyle.FixedSingle;
-
-
-                        Label lb = new Label();
-                        lb.AutoSize = false;
-                        lb.Width = 350;
-                        string type = item.TRN_VISITOR.TYPE == "IN" ? "เข้า" : "ออก";
-                        lb.Text = $@"เลขที่ {item.TRN_VISITOR.NO} เดือน {item.TRN_VISITOR.MONTH} ปี {item.TRN_VISITOR.YEAR} ประเภท {type}";
-
-                        panel.Controls.Add(lb);
-
-                        Button btnDownload = new Button();
-                        btnDownload.Height = 100;
-                        btnDownload.Width = 150;
-                        btnDownload.Text = "ดาวน์โหลด";
-                        btnDownload.Tag = item;
-                        btnDownload.Click += new EventHandler(VisitorSelected_EventHadler);
-
-                        if (item.CONTACT_PHOTO != null)
-                        {
-                            panel.Controls.Add(LoadPicBox(item.CONTACT_PHOTO));
-                        }
-                        if (item.ID_CARD_PHOTO != null)
-                        {
-                            panel.Controls.Add(LoadPicBox(item.ID_CARD_PHOTO));
-                        }
-                        if (item.REF_PHOTO1 != null)
-                        {
-                            panel.Controls.Add(LoadPicBox(item.REF_PHOTO1));
-                        }
-                        if (item.REF_PHOTO2 != null)
-                        {
-                            panel.Controls.Add(LoadPicBox(item.REF_PHOTO2));
-                        }
-                        if (item.REF_PHOTO3 != null)
-                        {
-
-                            panel.Controls.Add(LoadPicBox(item.REF_PHOTO3));
-                        }
-
-
-                        panel.Controls.Add(btnDownload);
-                        imgPanel.Controls.Add(panel);
-                    }
-
-                }
-
-
-            }
+            BindingLayout();
         }
 
         private void DtTo_ValueChanged(object sender, EventArgs e)

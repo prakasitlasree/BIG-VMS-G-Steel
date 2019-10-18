@@ -13,11 +13,12 @@ namespace BIG.VMS.GS.API.Controllers
 {
     public class APIController : Controller
     {
-        // GET: API
+    
         public ActionResult Index()
         {
             return View();
         }
+
         public JsonResult GetVisitorData(int no)
         {
             var resp = new VisitorServices().GetVisitorTransactionByNo_Api(no);

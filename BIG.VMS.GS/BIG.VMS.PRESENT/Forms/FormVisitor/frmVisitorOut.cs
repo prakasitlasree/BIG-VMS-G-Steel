@@ -20,7 +20,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
     {
         private readonly VisitorServices _service = new VisitorServices();
         private ContainerVisitor _container = new ContainerVisitor();
-       
+
         public bool outFlag = false;
         public int inID = 0;
         private int _selectOutId = 0;
@@ -43,7 +43,6 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                 {
                     _container = res;
 
-
                     if (_container.TRN_VISITOR != null && _container.TRN_VISITOR.AUTO_ID > 0)
                     {
                         btnSave.Enabled = true;
@@ -65,11 +64,8 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                                 {
                                     picCard.Image = ByteToImage(_container.TRN_VISITOR.TRN_ATTACHEDMENT.FirstOrDefault().ID_CARD_PHOTO);
                                 }
-
                             }
-
                         }
-
                         else
                         {
                             txtCarInfo.Text = "ไม่ได้นำรถมา";
@@ -143,10 +139,8 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
 
                             var obj = new TRN_VISITOR()
                             {
-
                                 NO = org_obj.NO,
                                 ID_CARD = org_obj.ID_CARD,
-
                                 TYPE = "OUT",
                                 FIRST_NAME = org_obj.FIRST_NAME,
                                 LAST_NAME = org_obj.LAST_NAME,
@@ -167,7 +161,9 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                                 TRN_ATTACHEDMENT = org_obj.TRN_ATTACHEDMENT,
                                 REF_ID = org_obj.AUTO_ID,
                                 GROUP = org_obj.GROUP,
-                                BY_PASS = org_obj.BY_PASS
+                                BY_PASS = org_obj.BY_PASS,
+                                PROJECT_ID = org_obj.PROJECT_ID,
+                                CUSTOMER_ID = org_obj.CUSTOMER_ID
                             };
 
 
@@ -175,11 +171,11 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                             {
                                 obj.TRN_ATTACHEDMENT.FirstOrDefault().REF_PHOTO1 = null;
                                 obj.TRN_ATTACHEDMENT.FirstOrDefault().REF_PHOTO2 = null;
-                                obj.TRN_ATTACHEDMENT.FirstOrDefault().REF_PHOTO3 = null;                      
+                                obj.TRN_ATTACHEDMENT.FirstOrDefault().REF_PHOTO3 = null;
                                 obj.TRN_ATTACHEDMENT.FirstOrDefault().TRN_VISITOR = null;
                                 obj.TRN_ATTACHEDMENT.FirstOrDefault().PHOTO_URL = DIRECTORY_OUT + "\\" + obj.NO + "\\";
                             }
-                             
+
                             var container = new ContainerVisitor { TRN_VISITOR = obj };
                             res = _service.Create(container);
 
@@ -187,11 +183,11 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                             {
                                 string dir = DIRECTORY_OUT + "\\" + obj.NO + "\\";
                                 Directory.CreateDirectory(dir);
-                                
+
                                 if (obj.TRN_ATTACHEDMENT.Count > 0)
                                 {
-                                    SaveImage(picImage, dir + "PHOTO.jpg");
-                                    SaveImage(picCard, dir + "ID_CARD.jpg");
+                                    SaveImage(picImage, dir + "CONTACT_PHOTO.jpg");
+                                    SaveImage(picCard, dir + "ID_CARD_PHOTO.jpg");
                                 }
 
                                 MessageBox.Show(Message.MSG_SAVE_COMPLETE, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -232,7 +228,6 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
             this.Close();
         }
 
-
         private void SaveImage(PictureBox source, string path)
         {
             try
@@ -269,9 +264,6 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                 throw;
             }
         }
-
-
-
 
         private void txtNo_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -342,11 +334,6 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     }
                 }
             };
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void txtNo_Click(object sender, EventArgs e)
