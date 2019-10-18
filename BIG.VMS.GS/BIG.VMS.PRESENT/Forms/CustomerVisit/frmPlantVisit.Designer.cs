@@ -49,11 +49,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.gridVisitor = new System.Windows.Forms.DataGridView();
-            this.AUTO_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CUSTOMER_VISIT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SEQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FULLNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TRN_CUSTOMER_VISIT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAddvisitor = new System.Windows.Forms.Button();
             this.txtDepartment = new System.Windows.Forms.TextBox();
             this.lb4 = new System.Windows.Forms.Label();
@@ -71,6 +66,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.AUTO_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUSTOMER_VISIT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SEQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FULLNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TRN_CUSTOMER_VISIT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabmain.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tb2.SuspendLayout();
@@ -164,6 +164,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
             this.label5.Location = new System.Drawing.Point(35, 11);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(162, 17);
@@ -175,6 +176,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
             this.label6.Location = new System.Drawing.Point(101, 51);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 17);
@@ -196,6 +198,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Red;
             this.label8.Location = new System.Drawing.Point(570, 11);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(77, 17);
@@ -218,6 +221,7 @@
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Red;
             this.label10.Location = new System.Drawing.Point(33, 91);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(164, 17);
@@ -249,6 +253,7 @@
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Red;
             this.label7.Location = new System.Drawing.Point(91, 120);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(106, 17);
@@ -338,49 +343,6 @@
             this.gridVisitor.Size = new System.Drawing.Size(895, 207);
             this.gridVisitor.TabIndex = 0;
             // 
-            // AUTO_ID
-            // 
-            this.AUTO_ID.DataPropertyName = "AUTO_ID";
-            this.AUTO_ID.HeaderText = "AUTO_ID";
-            this.AUTO_ID.Name = "AUTO_ID";
-            this.AUTO_ID.ReadOnly = true;
-            this.AUTO_ID.Visible = false;
-            this.AUTO_ID.Width = 104;
-            // 
-            // CUSTOMER_VISIT_ID
-            // 
-            this.CUSTOMER_VISIT_ID.DataPropertyName = "CUSTOMER_VISIT_ID";
-            this.CUSTOMER_VISIT_ID.HeaderText = "CUSTOMER_VISIT_ID";
-            this.CUSTOMER_VISIT_ID.Name = "CUSTOMER_VISIT_ID";
-            this.CUSTOMER_VISIT_ID.ReadOnly = true;
-            this.CUSTOMER_VISIT_ID.Visible = false;
-            this.CUSTOMER_VISIT_ID.Width = 201;
-            // 
-            // SEQ
-            // 
-            this.SEQ.DataPropertyName = "SEQ";
-            this.SEQ.HeaderText = "No.";
-            this.SEQ.Name = "SEQ";
-            this.SEQ.ReadOnly = true;
-            this.SEQ.Width = 58;
-            // 
-            // FULLNAME
-            // 
-            this.FULLNAME.DataPropertyName = "FULLNAME";
-            this.FULLNAME.HeaderText = "Full Name";
-            this.FULLNAME.Name = "FULLNAME";
-            this.FULLNAME.ReadOnly = true;
-            this.FULLNAME.Width = 105;
-            // 
-            // TRN_CUSTOMER_VISIT
-            // 
-            this.TRN_CUSTOMER_VISIT.DataPropertyName = "TRN_CUSTOMER_VISIT";
-            this.TRN_CUSTOMER_VISIT.HeaderText = "TRN_CUSTOMER_VISIT";
-            this.TRN_CUSTOMER_VISIT.Name = "TRN_CUSTOMER_VISIT";
-            this.TRN_CUSTOMER_VISIT.ReadOnly = true;
-            this.TRN_CUSTOMER_VISIT.Visible = false;
-            this.TRN_CUSTOMER_VISIT.Width = 216;
-            // 
             // btnAddvisitor
             // 
             this.btnAddvisitor.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -390,10 +352,10 @@
             this.btnAddvisitor.ForeColor = System.Drawing.SystemColors.Desktop;
             this.btnAddvisitor.Image = ((System.Drawing.Image)(resources.GetObject("btnAddvisitor.Image")));
             this.btnAddvisitor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddvisitor.Location = new System.Drawing.Point(783, 6);
+            this.btnAddvisitor.Location = new System.Drawing.Point(810, 6);
             this.btnAddvisitor.Margin = new System.Windows.Forms.Padding(6);
             this.btnAddvisitor.Name = "btnAddvisitor";
-            this.btnAddvisitor.Size = new System.Drawing.Size(112, 35);
+            this.btnAddvisitor.Size = new System.Drawing.Size(85, 35);
             this.btnAddvisitor.TabIndex = 1;
             this.btnAddvisitor.Text = "Add";
             this.btnAddvisitor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -454,6 +416,7 @@
             this.lb2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb2.AutoSize = true;
             this.lb2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb2.ForeColor = System.Drawing.Color.Red;
             this.lb2.Location = new System.Drawing.Point(60, 44);
             this.lb2.Name = "lb2";
             this.lb2.Size = new System.Drawing.Size(137, 17);
@@ -465,6 +428,7 @@
             this.lb1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb1.AutoSize = true;
             this.lb1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb1.ForeColor = System.Drawing.Color.Red;
             this.lb1.Location = new System.Drawing.Point(73, 9);
             this.lb1.Name = "lb1";
             this.lb1.Size = new System.Drawing.Size(124, 17);
@@ -598,6 +562,49 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // AUTO_ID
+            // 
+            this.AUTO_ID.DataPropertyName = "AUTO_ID";
+            this.AUTO_ID.HeaderText = "AUTO_ID";
+            this.AUTO_ID.Name = "AUTO_ID";
+            this.AUTO_ID.ReadOnly = true;
+            this.AUTO_ID.Visible = false;
+            this.AUTO_ID.Width = 104;
+            // 
+            // CUSTOMER_VISIT_ID
+            // 
+            this.CUSTOMER_VISIT_ID.DataPropertyName = "CUSTOMER_VISIT_ID";
+            this.CUSTOMER_VISIT_ID.HeaderText = "CUSTOMER_VISIT_ID";
+            this.CUSTOMER_VISIT_ID.Name = "CUSTOMER_VISIT_ID";
+            this.CUSTOMER_VISIT_ID.ReadOnly = true;
+            this.CUSTOMER_VISIT_ID.Visible = false;
+            this.CUSTOMER_VISIT_ID.Width = 201;
+            // 
+            // SEQ
+            // 
+            this.SEQ.DataPropertyName = "SEQ";
+            this.SEQ.HeaderText = "No.";
+            this.SEQ.Name = "SEQ";
+            this.SEQ.ReadOnly = true;
+            this.SEQ.Width = 58;
+            // 
+            // FULLNAME
+            // 
+            this.FULLNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FULLNAME.DataPropertyName = "FULLNAME";
+            this.FULLNAME.HeaderText = "Full Name";
+            this.FULLNAME.Name = "FULLNAME";
+            this.FULLNAME.ReadOnly = true;
+            // 
+            // TRN_CUSTOMER_VISIT
+            // 
+            this.TRN_CUSTOMER_VISIT.DataPropertyName = "TRN_CUSTOMER_VISIT";
+            this.TRN_CUSTOMER_VISIT.HeaderText = "TRN_CUSTOMER_VISIT";
+            this.TRN_CUSTOMER_VISIT.Name = "TRN_CUSTOMER_VISIT";
+            this.TRN_CUSTOMER_VISIT.ReadOnly = true;
+            this.TRN_CUSTOMER_VISIT.Visible = false;
+            this.TRN_CUSTOMER_VISIT.Width = 216;
+            // 
             // frmPlantVisit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -669,12 +676,12 @@
         private System.Windows.Forms.Button btnAddvisitor;
         private System.Windows.Forms.Label lbType;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.NumericUpDown numNo;
+        private System.Windows.Forms.DateTimePicker dtVisitTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn AUTO_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn CUSTOMER_VISIT_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn SEQ;
         private System.Windows.Forms.DataGridViewTextBoxColumn FULLNAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn TRN_CUSTOMER_VISIT;
-        private System.Windows.Forms.NumericUpDown numNo;
-        private System.Windows.Forms.DateTimePicker dtVisitTime;
     }
 }
