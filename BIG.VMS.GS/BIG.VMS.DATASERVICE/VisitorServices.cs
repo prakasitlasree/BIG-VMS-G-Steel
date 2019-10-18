@@ -1487,5 +1487,31 @@ namespace BIG.VMS.DATASERVICE
             }
             return resp;
         }
+
+        public Response GetVisitorImage(int id)
+        {
+            var result = new Response();
+            using (var ctx = new BIG_VMSEntities())
+            {
+
+                try
+                {
+                    result.ResultObj = ctx.TRN_ATTACHEDMENT.Where(o => o.TRN_VISITOR.AUTO_ID == id).FirstOrDefault();
+                    result.Status = true;
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    result.Status = false;
+                    result.ExceptionMessage = ex.Message.ToString();
+                }
+                catch (Exception ex)
+                {
+                    result.Status = false;
+                    result.ExceptionMessage = ex.Message.ToString();
+                }
+            }
+
+            return result;
+        }
     }
 }

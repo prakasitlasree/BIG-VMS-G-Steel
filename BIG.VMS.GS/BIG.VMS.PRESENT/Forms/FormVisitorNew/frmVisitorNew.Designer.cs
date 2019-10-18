@@ -206,10 +206,10 @@
             // 
             this.btnUploadCam.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnUploadCam.Image = ((System.Drawing.Image)(resources.GetObject("btnUploadCam.Image")));
-            this.btnUploadCam.Location = new System.Drawing.Point(350, 0);
+            this.btnUploadCam.Location = new System.Drawing.Point(348, 0);
             this.btnUploadCam.Margin = new System.Windows.Forms.Padding(0);
             this.btnUploadCam.Name = "btnUploadCam";
-            this.btnUploadCam.Size = new System.Drawing.Size(38, 32);
+            this.btnUploadCam.Size = new System.Drawing.Size(38, 31);
             this.btnUploadCam.TabIndex = 4;
             this.btnUploadCam.UseVisualStyleBackColor = true;
             // 
@@ -268,6 +268,7 @@
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.BackColor = System.Drawing.SystemColors.Control;
+            this.tableLayoutPanel5.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Controls.Add(this.panel4, 0, 0);
@@ -293,19 +294,19 @@
             this.panel4.Controls.Add(this.bthCardDelete);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.Location = new System.Drawing.Point(4, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(432, 38);
+            this.panel4.Size = new System.Drawing.Size(430, 37);
             this.panel4.TabIndex = 5;
             // 
             // btnTakeCard
             // 
             this.btnTakeCard.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnTakeCard.Image = ((System.Drawing.Image)(resources.GetObject("btnTakeCard.Image")));
-            this.btnTakeCard.Location = new System.Drawing.Point(318, 0);
+            this.btnTakeCard.Location = new System.Drawing.Point(316, 0);
             this.btnTakeCard.Margin = new System.Windows.Forms.Padding(0);
             this.btnTakeCard.Name = "btnTakeCard";
-            this.btnTakeCard.Size = new System.Drawing.Size(38, 38);
+            this.btnTakeCard.Size = new System.Drawing.Size(38, 37);
             this.btnTakeCard.TabIndex = 9;
             this.btnTakeCard.UseVisualStyleBackColor = true;
             this.btnTakeCard.Visible = false;
@@ -315,10 +316,10 @@
             // 
             this.brn_UploadImgCard.Dock = System.Windows.Forms.DockStyle.Right;
             this.brn_UploadImgCard.Image = ((System.Drawing.Image)(resources.GetObject("brn_UploadImgCard.Image")));
-            this.brn_UploadImgCard.Location = new System.Drawing.Point(356, 0);
+            this.brn_UploadImgCard.Location = new System.Drawing.Point(354, 0);
             this.brn_UploadImgCard.Margin = new System.Windows.Forms.Padding(0);
             this.brn_UploadImgCard.Name = "brn_UploadImgCard";
-            this.brn_UploadImgCard.Size = new System.Drawing.Size(38, 38);
+            this.brn_UploadImgCard.Size = new System.Drawing.Size(38, 37);
             this.brn_UploadImgCard.TabIndex = 3;
             this.brn_UploadImgCard.UseVisualStyleBackColor = true;
             // 
@@ -326,10 +327,10 @@
             // 
             this.bthCardDelete.Dock = System.Windows.Forms.DockStyle.Right;
             this.bthCardDelete.Image = ((System.Drawing.Image)(resources.GetObject("bthCardDelete.Image")));
-            this.bthCardDelete.Location = new System.Drawing.Point(394, 0);
+            this.bthCardDelete.Location = new System.Drawing.Point(392, 0);
             this.bthCardDelete.Margin = new System.Windows.Forms.Padding(0);
             this.bthCardDelete.Name = "bthCardDelete";
-            this.bthCardDelete.Size = new System.Drawing.Size(38, 38);
+            this.bthCardDelete.Size = new System.Drawing.Size(38, 37);
             this.bthCardDelete.TabIndex = 6;
             this.bthCardDelete.UseVisualStyleBackColor = true;
             this.bthCardDelete.Click += new System.EventHandler(this.BthCardDelete_Click);
@@ -350,9 +351,9 @@
             this.picCard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picCard.Image = global::BIG.VMS.PRESENT.Properties.Resources.emploee;
             this.picCard.InitialImage = null;
-            this.picCard.Location = new System.Drawing.Point(3, 47);
+            this.picCard.Location = new System.Drawing.Point(4, 48);
             this.picCard.Name = "picCard";
-            this.picCard.Size = new System.Drawing.Size(432, 171);
+            this.picCard.Size = new System.Drawing.Size(430, 169);
             this.picCard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCard.TabIndex = 0;
             this.picCard.TabStop = false;
@@ -363,11 +364,11 @@
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.Controls.Add(this.picPhoto, 0, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 268);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(4, 268);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(432, 173);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(430, 172);
             this.tableLayoutPanel10.TabIndex = 6;
             // 
             // picPhoto
@@ -378,7 +379,7 @@
             this.picPhoto.Image = global::BIG.VMS.PRESENT.Properties.Resources.emploee;
             this.picPhoto.Location = new System.Drawing.Point(3, 3);
             this.picPhoto.Name = "picPhoto";
-            this.picPhoto.Size = new System.Drawing.Size(426, 167);
+            this.picPhoto.Size = new System.Drawing.Size(424, 166);
             this.picPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picPhoto.TabIndex = 1;
             this.picPhoto.TabStop = false;
@@ -389,11 +390,11 @@
             this.tableLayoutPanel7.ColumnCount = 1;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.Controls.Add(this.panel3, 0, 0);
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 224);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(4, 224);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(432, 38);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(430, 37);
             this.tableLayoutPanel7.TabIndex = 5;
             // 
             // panel3
@@ -405,17 +406,17 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(426, 32);
+            this.panel3.Size = new System.Drawing.Size(424, 31);
             this.panel3.TabIndex = 0;
             // 
             // btnTakePhotos
             // 
             this.btnTakePhotos.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnTakePhotos.Image = ((System.Drawing.Image)(resources.GetObject("btnTakePhotos.Image")));
-            this.btnTakePhotos.Location = new System.Drawing.Point(312, 0);
+            this.btnTakePhotos.Location = new System.Drawing.Point(310, 0);
             this.btnTakePhotos.Margin = new System.Windows.Forms.Padding(0);
             this.btnTakePhotos.Name = "btnTakePhotos";
-            this.btnTakePhotos.Size = new System.Drawing.Size(38, 32);
+            this.btnTakePhotos.Size = new System.Drawing.Size(38, 31);
             this.btnTakePhotos.TabIndex = 9;
             this.btnTakePhotos.UseVisualStyleBackColor = true;
             this.btnTakePhotos.Click += new System.EventHandler(this.BtnTakePhotos_Click);
@@ -424,7 +425,7 @@
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 6);
+            this.label9.Location = new System.Drawing.Point(3, 5);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(145, 25);
             this.label9.TabIndex = 3;
@@ -434,10 +435,10 @@
             // 
             this.btnDeleteCam.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnDeleteCam.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteCam.Image")));
-            this.btnDeleteCam.Location = new System.Drawing.Point(388, 0);
+            this.btnDeleteCam.Location = new System.Drawing.Point(386, 0);
             this.btnDeleteCam.Margin = new System.Windows.Forms.Padding(0);
             this.btnDeleteCam.Name = "btnDeleteCam";
-            this.btnDeleteCam.Size = new System.Drawing.Size(38, 32);
+            this.btnDeleteCam.Size = new System.Drawing.Size(38, 31);
             this.btnDeleteCam.TabIndex = 5;
             this.btnDeleteCam.UseVisualStyleBackColor = true;
             this.btnDeleteCam.Click += new System.EventHandler(this.BtnDeleteCam_Click);
