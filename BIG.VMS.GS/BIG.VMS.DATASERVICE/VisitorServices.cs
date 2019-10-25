@@ -1274,6 +1274,8 @@ namespace BIG.VMS.DATASERVICE
                                 reTrnVisitor.MAS_PROVINCE = new MODEL.EntityModel.MAS_PROVINCE();
                                 reTrnVisitor.MAS_REASON = new MODEL.EntityModel.MAS_REASON();
                                 reTrnVisitor.TRN_ATTACHEDMENT = new List<MODEL.EntityModel.TRN_ATTACHEDMENT>();
+                                reTrnVisitor.TRN_PROJECT_MASTER = new MODEL.EntityModel.TRN_PROJECT_MASTER(); ;
+                                reTrnVisitor.TRN_CUSTOMER_VISIT = new MODEL.EntityModel.TRN_CUSTOMER_VISIT(); ;
                                 resp.ResultObj = reTrnVisitor;
                                 resp.Status = true;
                             }
@@ -1285,6 +1287,8 @@ namespace BIG.VMS.DATASERVICE
                             reTrnVisitor.MAS_PROVINCE = new MODEL.EntityModel.MAS_PROVINCE();
                             reTrnVisitor.MAS_REASON = new MODEL.EntityModel.MAS_REASON();
                             reTrnVisitor.TRN_ATTACHEDMENT = new List<MODEL.EntityModel.TRN_ATTACHEDMENT>();
+                            reTrnVisitor.TRN_PROJECT_MASTER = new MODEL.EntityModel.TRN_PROJECT_MASTER(); ;
+                            reTrnVisitor.TRN_CUSTOMER_VISIT = new MODEL.EntityModel.TRN_CUSTOMER_VISIT(); ;
                             resp.ResultObj = reTrnVisitor;
                             resp.Status = true;
                         }
@@ -1340,6 +1344,9 @@ namespace BIG.VMS.DATASERVICE
                                 reTrnVisitor.MAS_PROVINCE = new MODEL.EntityModel.MAS_PROVINCE();
                                 reTrnVisitor.MAS_REASON = new MODEL.EntityModel.MAS_REASON();
                                 reTrnVisitor.TRN_ATTACHEDMENT = new List<MODEL.EntityModel.TRN_ATTACHEDMENT>();
+                                reTrnVisitor.TRN_PROJECT_MASTER = new MODEL.EntityModel.TRN_PROJECT_MASTER(); ;
+                                reTrnVisitor.TRN_CUSTOMER_VISIT = new MODEL.EntityModel.TRN_CUSTOMER_VISIT(); ;
+                            
                                 resp.ResultObj = reTrnVisitor;
                                 resp.Status = true;
                             }
@@ -1351,6 +1358,8 @@ namespace BIG.VMS.DATASERVICE
                             reTrnVisitor.MAS_PROVINCE = new MODEL.EntityModel.MAS_PROVINCE();
                             reTrnVisitor.MAS_REASON = new MODEL.EntityModel.MAS_REASON();
                             reTrnVisitor.TRN_ATTACHEDMENT = new List<MODEL.EntityModel.TRN_ATTACHEDMENT>();
+                            reTrnVisitor.TRN_PROJECT_MASTER = new MODEL.EntityModel.TRN_PROJECT_MASTER(); ;
+                            reTrnVisitor.TRN_CUSTOMER_VISIT = new MODEL.EntityModel.TRN_CUSTOMER_VISIT(); ;
                             resp.ResultObj = reTrnVisitor;
                             resp.Status = true;
                         }
@@ -1486,6 +1495,32 @@ namespace BIG.VMS.DATASERVICE
                 resp.Exception = ex;
             }
             return resp;
+        }
+
+        public Response GetVisitorImage(int id)
+        {
+            var result = new Response();
+            using (var ctx = new BIG_VMSEntities())
+            {
+
+                try
+                {
+                    result.ResultObj = ctx.TRN_ATTACHEDMENT.Where(o => o.TRN_VISITOR.AUTO_ID == id).FirstOrDefault();
+                    result.Status = true;
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    result.Status = false;
+                    result.ExceptionMessage = ex.Message.ToString();
+                }
+                catch (Exception ex)
+                {
+                    result.Status = false;
+                    result.ExceptionMessage = ex.Message.ToString();
+                }
+            }
+
+            return result;
         }
     }
 }

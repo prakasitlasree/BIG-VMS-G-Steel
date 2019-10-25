@@ -32,7 +32,10 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitorNew
             frm.formMode = FormMode.Add;
 
             frm.ShowDialog();
-
+            if (frm.DialogResult == DialogResult.OK)
+            {
+                this.Close();
+            }   
         }
 
         private void BtnAppointment_Click(object sender, EventArgs e)
@@ -41,6 +44,10 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitorNew
             frmAppointmentList frm = new frmAppointmentList();
             frm.FILTER_STATUS = "รอเข้าพบ";
             frm.ShowDialog();
+            if (frm.DialogResult == DialogResult.OK)
+            {
+                this.Close();
+            }
         }
 
         private void BtnCustomer_Click(object sender, EventArgs e)
@@ -55,6 +62,11 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitorNew
                 frmVisitor.TrnCustomerVisit = frm.TrnCustomerVisit;
                 frm.Hide();
                 frmVisitor.ShowDialog();
+
+                if (frmVisitor.DialogResult == DialogResult.OK)
+                {
+                    this.Close();
+                }
             }
             
         }
@@ -71,6 +83,11 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitorNew
                 frmVisitor.TrnProjectMaster = frm.TrnProjectMaster;
                 frm.Hide();
                 frmVisitor.ShowDialog();
+
+                if (frmVisitor.DialogResult == DialogResult.OK)
+                {
+                    this.Close();
+                }
             }
         }
     }

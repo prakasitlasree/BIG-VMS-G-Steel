@@ -668,6 +668,10 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                 case VisitorGroup.NORMAL:
                 case VisitorGroup.APPOINTMENT:
                     {
+                        if(formMode == FormMode.Edit)
+                        {
+                            return true;
+                        }
                         List<string> listMsg = new List<string>();
                         if (string.IsNullOrEmpty(txtFirstName.Text)) listMsg.Add("ชื่อจริง");
                         if (string.IsNullOrEmpty(txtLastName.Text)) listMsg.Add("นามสกุล");
@@ -691,6 +695,10 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                 case VisitorGroup.CONSTRUCTOR:
                 case VisitorGroup.CUSTOMER:
                     {
+                        if (formMode == FormMode.Edit)
+                        {
+                            return true;
+                        }
                         List<string> listMsg = new List<string>();
                         if (string.IsNullOrEmpty(txtFirstName.Text)) listMsg.Add("ชื่อจริง");
 

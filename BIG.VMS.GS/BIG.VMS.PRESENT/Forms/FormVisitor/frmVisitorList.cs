@@ -21,6 +21,7 @@ using BIG.VMS.MODEL.CustomModel.General;
 using BIG.VMS.MODEL.GsteelModel.CustomModel;
 using BIG.VMS.PRESENT.Forms.FormReportNew;
 using BIG.VMS.PRESENT.Forms.FormVisitorNew;
+using BIG.VMS.PRESENT.Forms.Utitility;
 
 namespace BIG.VMS.PRESENT.Forms.Home
 {
@@ -305,7 +306,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
 
         private void btnAhead_Click(object sender, EventArgs e)
         {
-            frmAppointmentList frm = new frmAppointmentList(); 
+            frmAppointmentList frm = new frmAppointmentList();
             frm.StartPosition = FormStartPosition.CenterParent;
             if (frm.ShowDialog() == DialogResult.OK)
             {
@@ -373,7 +374,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
                         #endregion
                     }
 
-                    else if (e.ColumnIndex == 1)
+                    else if (e.ColumnIndex == 2)
                     {
                         #region ===================== delete =====================
                         if (MessageBox.Show(Message.MSG_DELETE_CONFIRM, "แจ้งเตือน", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
@@ -399,7 +400,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
                         }
                         #endregion
                     }
-                    else if (e.ColumnIndex == 2)
+                    else if (e.ColumnIndex == 3)
                     {
                         #region ===================== print =====================
                         var id = Convert.ToInt32(gridVisitorList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
@@ -496,6 +497,13 @@ namespace BIG.VMS.PRESENT.Forms.Home
                         }
 
                         #endregion
+                    }
+                    else if (e.ColumnIndex == 1)
+                    {
+                        var id = Convert.ToInt32(gridVisitorList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
+                        frmViewImage frm = new frmViewImage();
+                        frm.visitorId = id;
+                        frm.ShowDialog();
                     }
 
                 }

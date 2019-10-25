@@ -107,7 +107,7 @@
             this.Lbl_FirstName.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Lbl_FirstName.AutoSize = true;
             this.Lbl_FirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_FirstName.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Lbl_FirstName.ForeColor = System.Drawing.Color.Red;
             this.Lbl_FirstName.Location = new System.Drawing.Point(77, 31);
             this.Lbl_FirstName.Name = "Lbl_FirstName";
             this.Lbl_FirstName.Size = new System.Drawing.Size(49, 25);
@@ -122,7 +122,7 @@
             this.txtName.MaxLength = 1000;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(474, 31);
-            this.txtName.TabIndex = 0;
+            this.txtName.TabIndex = 1;
             // 
             // txtAddress
             // 
@@ -133,14 +133,14 @@
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtAddress.Size = new System.Drawing.Size(474, 77);
-            this.txtAddress.TabIndex = 2;
+            this.txtAddress.TabIndex = 3;
             // 
             // Lbl_IDCard
             // 
             this.Lbl_IDCard.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Lbl_IDCard.AutoSize = true;
             this.Lbl_IDCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_IDCard.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Lbl_IDCard.ForeColor = System.Drawing.Color.Red;
             this.Lbl_IDCard.Location = new System.Drawing.Point(30, 62);
             this.Lbl_IDCard.Name = "Lbl_IDCard";
             this.Lbl_IDCard.Size = new System.Drawing.Size(96, 25);
@@ -152,7 +152,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label3.ForeColor = System.Drawing.Color.Red;
             this.label3.Location = new System.Drawing.Point(66, 117);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 25);
@@ -166,7 +166,7 @@
             this.flowLayoutPanel1.Controls.Add(this.btnCancel);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(132, 174);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(334, 49);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(264, 49);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // btnSave
@@ -179,8 +179,8 @@
             this.btnSave.Location = new System.Drawing.Point(6, 6);
             this.btnSave.Margin = new System.Windows.Forms.Padding(6);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(159, 37);
-            this.btnSave.TabIndex = 3;
+            this.btnSave.Size = new System.Drawing.Size(120, 37);
+            this.btnSave.TabIndex = 4;
             this.btnSave.Text = "บันทึก";
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSave.UseVisualStyleBackColor = false;
@@ -193,11 +193,11 @@
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancel.Location = new System.Drawing.Point(177, 6);
+            this.btnCancel.Location = new System.Drawing.Point(138, 6);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(6);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(151, 37);
-            this.btnCancel.TabIndex = 4;
+            this.btnCancel.Size = new System.Drawing.Size(120, 37);
+            this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "ยกเลิก";
             this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -209,7 +209,7 @@
             this.txtTel.Mask = "000-000-0000";
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(474, 20);
-            this.txtTel.TabIndex = 22;
+            this.txtTel.TabIndex = 2;
             // 
             // frmContractor
             // 

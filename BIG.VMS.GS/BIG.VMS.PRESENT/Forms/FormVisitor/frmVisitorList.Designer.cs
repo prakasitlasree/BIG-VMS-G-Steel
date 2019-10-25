@@ -32,9 +32,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.gridVisitorList = new System.Windows.Forms.DataGridView();
-            this.colEdit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.colDelete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.colPrint = new System.Windows.Forms.DataGridViewImageColumn();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.txtPage = new System.Windows.Forms.TextBox();
             this.btnFirst = new System.Windows.Forms.Button();
@@ -77,6 +74,10 @@
             this.lblTodayIn = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.colEdit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.IMAGE = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colDelete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colPrint = new System.Windows.Forms.DataGridViewImageColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridVisitorList)).BeginInit();
@@ -112,7 +113,7 @@
             this.tableLayoutPanel3.Controls.Add(this.gridVisitorList, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 284);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 290);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -128,6 +129,7 @@
             this.gridVisitorList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridVisitorList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colEdit,
+            this.IMAGE,
             this.colDelete,
             this.colPrint});
             this.gridVisitorList.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -137,35 +139,6 @@
             this.gridVisitorList.Size = new System.Drawing.Size(1169, 333);
             this.gridVisitorList.TabIndex = 0;
             this.gridVisitorList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridVisitorList_CellContentClick);
-            // 
-            // colEdit
-            // 
-            this.colEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colEdit.HeaderText = "แก้ไข";
-            this.colEdit.Image = ((System.Drawing.Image)(resources.GetObject("colEdit.Image")));
-            this.colEdit.Name = "colEdit";
-            this.colEdit.ReadOnly = true;
-            this.colEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colEdit.Width = 60;
-            // 
-            // colDelete
-            // 
-            this.colDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colDelete.HeaderText = "ลบ";
-            this.colDelete.Image = ((System.Drawing.Image)(resources.GetObject("colDelete.Image")));
-            this.colDelete.Name = "colDelete";
-            this.colDelete.ReadOnly = true;
-            this.colDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colDelete.Width = 60;
-            // 
-            // colPrint
-            // 
-            this.colPrint.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colPrint.HeaderText = "พิมพ์";
-            this.colPrint.Image = ((System.Drawing.Image)(resources.GetObject("colPrint.Image")));
-            this.colPrint.Name = "colPrint";
-            this.colPrint.ReadOnly = true;
-            this.colPrint.Width = 60;
             // 
             // tableLayoutPanel4
             // 
@@ -264,6 +237,7 @@
             // 
             this.tableLayoutPanel5.BackColor = System.Drawing.SystemColors.Control;
             this.tableLayoutPanel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tableLayoutPanel5.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel5.ColumnCount = 6;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -298,30 +272,30 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1175, 169);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1175, 175);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // txtIDCard
             // 
             this.txtIDCard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtIDCard.Location = new System.Drawing.Point(890, 3);
+            this.txtIDCard.Location = new System.Drawing.Point(892, 4);
             this.txtIDCard.Name = "txtIDCard";
-            this.txtIDCard.Size = new System.Drawing.Size(282, 31);
+            this.txtIDCard.Size = new System.Drawing.Size(279, 31);
             this.txtIDCard.TabIndex = 10;
             // 
             // txtLastName
             // 
             this.txtLastName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLastName.Location = new System.Drawing.Point(475, 3);
+            this.txtLastName.Location = new System.Drawing.Point(477, 4);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(280, 31);
+            this.txtLastName.Size = new System.Drawing.Size(278, 31);
             this.txtLastName.TabIndex = 8;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(64, 6);
+            this.label1.Location = new System.Drawing.Point(65, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 25);
             this.label1.TabIndex = 0;
@@ -331,7 +305,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 44);
+            this.label2.Location = new System.Drawing.Point(4, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 25);
             this.label2.TabIndex = 1;
@@ -341,7 +315,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(391, 6);
+            this.label3.Location = new System.Drawing.Point(392, 7);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 25);
             this.label3.TabIndex = 2;
@@ -351,7 +325,7 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(761, 6);
+            this.label5.Location = new System.Drawing.Point(762, 7);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(123, 25);
             this.label5.TabIndex = 4;
@@ -360,24 +334,24 @@
             // txtName
             // 
             this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtName.Location = new System.Drawing.Point(105, 3);
+            this.txtName.Location = new System.Drawing.Point(107, 4);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(280, 31);
+            this.txtName.Size = new System.Drawing.Size(278, 31);
             this.txtName.TabIndex = 6;
             // 
             // txtLicense
             // 
             this.txtLicense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLicense.Location = new System.Drawing.Point(105, 41);
+            this.txtLicense.Location = new System.Drawing.Point(107, 43);
             this.txtLicense.Name = "txtLicense";
-            this.txtLicense.Size = new System.Drawing.Size(280, 31);
+            this.txtLicense.Size = new System.Drawing.Size(278, 31);
             this.txtLicense.TabIndex = 7;
             // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(417, 44);
+            this.label6.Location = new System.Drawing.Point(418, 46);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 25);
             this.label6.TabIndex = 11;
@@ -386,9 +360,9 @@
             // txtNo
             // 
             this.txtNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNo.Location = new System.Drawing.Point(475, 41);
+            this.txtNo.Location = new System.Drawing.Point(477, 43);
             this.txtNo.Name = "txtNo";
-            this.txtNo.Size = new System.Drawing.Size(280, 31);
+            this.txtNo.Size = new System.Drawing.Size(278, 31);
             this.txtNo.TabIndex = 12;
             // 
             // flowLayoutPanel1
@@ -398,7 +372,7 @@
             this.flowLayoutPanel1.Controls.Add(this.btnSearch);
             this.flowLayoutPanel1.Controls.Add(this.btnListExit);
             this.flowLayoutPanel1.Controls.Add(this.btnBlacklist);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(105, 118);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(107, 122);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(616, 49);
             this.flowLayoutPanel1.TabIndex = 17;
@@ -459,9 +433,9 @@
             // 
             this.dtFrom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dtFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFrom.Location = new System.Drawing.Point(475, 80);
+            this.dtFrom.Location = new System.Drawing.Point(477, 83);
             this.dtFrom.Name = "dtFrom";
-            this.dtFrom.Size = new System.Drawing.Size(280, 31);
+            this.dtFrom.Size = new System.Drawing.Size(278, 31);
             this.dtFrom.TabIndex = 18;
             this.dtFrom.ValueChanged += new System.EventHandler(this.DtFrom_ValueChanged);
             // 
@@ -469,16 +443,16 @@
             // 
             this.dtTo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dtTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtTo.Location = new System.Drawing.Point(890, 80);
+            this.dtTo.Location = new System.Drawing.Point(892, 83);
             this.dtTo.Name = "dtTo";
-            this.dtTo.Size = new System.Drawing.Size(282, 31);
+            this.dtTo.Size = new System.Drawing.Size(279, 31);
             this.dtTo.TabIndex = 19;
             // 
             // label10
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(404, 83);
+            this.label10.Location = new System.Drawing.Point(405, 86);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(65, 25);
             this.label10.TabIndex = 20;
@@ -488,7 +462,7 @@
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(825, 83);
+            this.label11.Location = new System.Drawing.Point(826, 86);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(59, 25);
             this.label11.TabIndex = 21;
@@ -498,7 +472,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(54, 83);
+            this.label4.Location = new System.Drawing.Point(55, 86);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 25);
             this.label4.TabIndex = 13;
@@ -508,7 +482,7 @@
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(811, 44);
+            this.label12.Location = new System.Drawing.Point(812, 46);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(73, 25);
             this.label12.TabIndex = 22;
@@ -523,9 +497,9 @@
             "ทั้งหมด",
             "เข้า",
             "ออก"});
-            this.comboType.Location = new System.Drawing.Point(890, 40);
+            this.comboType.Location = new System.Drawing.Point(892, 42);
             this.comboType.Name = "comboType";
-            this.comboType.Size = new System.Drawing.Size(282, 33);
+            this.comboType.Size = new System.Drawing.Size(279, 33);
             this.comboType.TabIndex = 23;
             // 
             // comboGroup
@@ -539,9 +513,9 @@
             "บุุคคลนัดหมาย",
             "ผูู้รับเหมา",
             "กลุ่มลูกค้า"});
-            this.comboGroup.Location = new System.Drawing.Point(105, 79);
+            this.comboGroup.Location = new System.Drawing.Point(107, 82);
             this.comboGroup.Name = "comboGroup";
-            this.comboGroup.Size = new System.Drawing.Size(280, 33);
+            this.comboGroup.Size = new System.Drawing.Size(278, 33);
             this.comboGroup.TabIndex = 14;
             // 
             // panel1
@@ -711,6 +685,42 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "จำนวนคนเข้าวันนี้";
             // 
+            // colEdit
+            // 
+            this.colEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colEdit.HeaderText = "แก้ไข";
+            this.colEdit.Image = ((System.Drawing.Image)(resources.GetObject("colEdit.Image")));
+            this.colEdit.Name = "colEdit";
+            this.colEdit.ReadOnly = true;
+            this.colEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colEdit.Width = 60;
+            // 
+            // IMAGE
+            // 
+            this.IMAGE.HeaderText = "ดูรูปภาพ";
+            this.IMAGE.Image = ((System.Drawing.Image)(resources.GetObject("IMAGE.Image")));
+            this.IMAGE.Name = "IMAGE";
+            this.IMAGE.ReadOnly = true;
+            // 
+            // colDelete
+            // 
+            this.colDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colDelete.HeaderText = "ลบ";
+            this.colDelete.Image = ((System.Drawing.Image)(resources.GetObject("colDelete.Image")));
+            this.colDelete.Name = "colDelete";
+            this.colDelete.ReadOnly = true;
+            this.colDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colDelete.Width = 60;
+            // 
+            // colPrint
+            // 
+            this.colPrint.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colPrint.HeaderText = "พิมพ์";
+            this.colPrint.Image = ((System.Drawing.Image)(resources.GetObject("colPrint.Image")));
+            this.colPrint.Name = "colPrint";
+            this.colPrint.ReadOnly = true;
+            this.colPrint.Width = 60;
+            // 
             // frmVisitorList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -782,14 +792,15 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.DataGridViewImageColumn colEdit;
-        private System.Windows.Forms.DataGridViewImageColumn colDelete;
-        private System.Windows.Forms.DataGridViewImageColumn colPrint;
         private System.Windows.Forms.DateTimePicker dtFrom;
         private System.Windows.Forms.DateTimePicker dtTo;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox comboType;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DataGridViewImageColumn colEdit;
+        private System.Windows.Forms.DataGridViewImageColumn IMAGE;
+        private System.Windows.Forms.DataGridViewImageColumn colDelete;
+        private System.Windows.Forms.DataGridViewImageColumn colPrint;
     }
 }

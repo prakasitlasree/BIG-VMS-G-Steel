@@ -114,7 +114,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
 
         private void BindGridData()
         {
-           
+
             var filter = new FilterProject()
             {
                 PROJECT_NAME = txtProjectName.Text,
@@ -129,7 +129,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
                 SetDataSourceHeader(gridVisitorList, ListHeader(), result.ListData);
                 SetPageControl(_container);
             }
-            
+
 
         }
 
@@ -144,7 +144,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             listCol.Add(new HeaderGrid { HEADER_TEXT = "หัวหน้าผูรับผิดชอบ", FIELD = "RESPONSIBLE_DEP_HEAD", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "วันที่เพิ่ม", FIELD = "REGISTER_DATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "เบอร์โทรผู้รับผิดชอบ", FIELD = "RESPONSIBLE_TEL", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
-             listCol.Add(new HeaderGrid { HEADER_TEXT = "วันทำงาน", FIELD = "WORKING_DAY", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "วันทำงาน", FIELD = "WORKING_DAY", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "วันที่เริ่ม", FIELD = "PROJECT_START_DATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "วันที่สิ้นสุด", FIELD = "PROJECT_END_DATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "เวลาทำงาน", FIELD = "PROJECT_WORKING_TIME", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
@@ -155,10 +155,10 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             listCol.Add(new HeaderGrid { HEADER_TEXT = "วันที่รับรอง", FIELD = "SAFETY_TRAINING_ISSUED_DATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "วันหมดอายุการรับรอง", FIELD = "SAFETY_TRAINING_EXPIRED_DATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "ผู้รับรองฝ่ายความปลอดภัย", FIELD = "SAFETY_MANAGER_APP_BY", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
-            listCol.Add(new HeaderGrid { HEADER_TEXT = "ID_BADGE_TYPE", FIELD = "ID_BADGE_TYPE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
-            listCol.Add(new HeaderGrid { HEADER_TEXT = "ID_BADGE_ISSUED_DATE", FIELD = "ID_BADGE_ISSUED_DATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
-            listCol.Add(new HeaderGrid { HEADER_TEXT = "ID_BADGE_EXPIRED_DATE", FIELD = "ID_BADGE_EXPIRED_DATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
-            listCol.Add(new HeaderGrid { HEADER_TEXT = "HRA_MANAGER_APP_BY", FIELD = "HRA_MANAGER_APP_BY", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "ประเภทบัตรประจำตัว", FIELD = "ID_BADGE_TYPE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "วันออกบัตร", FIELD = "ID_BADGE_ISSUED_DATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "วันหมดอายุ", FIELD = "ID_BADGE_EXPIRED_DATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
+            listCol.Add(new HeaderGrid { HEADER_TEXT = "ผู้จัดการ HRA", FIELD = "HRA_MANAGER_APP_BY", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
 
 
             return listCol;
@@ -167,7 +167,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             BindGridData();
-            
+
         }
 
 
@@ -202,9 +202,9 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             }
         }
 
-      
 
-      
+
+
         private void GridVisitorList_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -212,7 +212,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
                 if (e.RowIndex > -1)
                 {
 
-                   
+
                     if (e.ColumnIndex == 0)
                     {
                         #region ===================== edit =====================
@@ -264,8 +264,8 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
                                 MessageBox.Show(resp.Message + resp.ExceptionMessage);
                             }
                         }
-                            
-                       
+
+
                         #endregion
                     }
                 }

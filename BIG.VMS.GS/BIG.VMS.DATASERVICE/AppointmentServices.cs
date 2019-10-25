@@ -204,6 +204,9 @@ namespace BIG.VMS.DATASERVICE
                         var dateTo = filter.CONTACT_DATE.AddDays(-1);
                         query = query.Where(o => o.CONTACT_DATE < dateFrom && o.CONTACT_DATE >= dateTo);
                     }
+
+                    query = query.Where(o => o.STATUS == "รอเข้าพบ");
+
                     return query;
                 }
                 else
