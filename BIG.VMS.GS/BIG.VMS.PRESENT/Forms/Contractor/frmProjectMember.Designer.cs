@@ -95,7 +95,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(514, 304);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(560, 304);
             this.tableLayoutPanel4.TabIndex = 1;
             this.tableLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel4_Paint);
             // 
@@ -105,7 +105,7 @@
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(91, 66);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(420, 23);
+            this.txtName.Size = new System.Drawing.Size(466, 23);
             this.txtName.TabIndex = 3;
             // 
             // Lbl_IDCard
@@ -138,7 +138,7 @@
             this.txtIDCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIDCard.Location = new System.Drawing.Point(91, 37);
             this.txtIDCard.Name = "txtIDCard";
-            this.txtIDCard.Size = new System.Drawing.Size(420, 23);
+            this.txtIDCard.Size = new System.Drawing.Size(466, 23);
             this.txtIDCard.TabIndex = 2;
             // 
             // comboType
@@ -151,16 +151,17 @@
             "อื่น ๆ"});
             this.comboType.Location = new System.Drawing.Point(91, 3);
             this.comboType.Name = "comboType";
-            this.comboType.Size = new System.Drawing.Size(420, 28);
+            this.comboType.Size = new System.Drawing.Size(466, 28);
             this.comboType.TabIndex = 1;
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.Controls.Add(this.btnSave);
             this.flowLayoutPanel1.Controls.Add(this.btnClose);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(91, 243);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(411, 53);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(298, 50);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // btnSave
@@ -173,7 +174,7 @@
             this.btnSave.Location = new System.Drawing.Point(6, 6);
             this.btnSave.Margin = new System.Windows.Forms.Padding(6);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(120, 38);
+            this.btnSave.Size = new System.Drawing.Size(142, 38);
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "บันทึก";
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -187,10 +188,10 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnClose.Location = new System.Drawing.Point(138, 6);
+            this.btnClose.Location = new System.Drawing.Point(160, 6);
             this.btnClose.Margin = new System.Windows.Forms.Padding(6);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(120, 38);
+            this.btnClose.Size = new System.Drawing.Size(132, 38);
             this.btnClose.TabIndex = 8;
             this.btnClose.Text = "ยกเลิก";
             this.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -215,7 +216,7 @@
             this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastName.Location = new System.Drawing.Point(91, 95);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(420, 23);
+            this.txtLastName.Size = new System.Drawing.Size(466, 23);
             this.txtLastName.TabIndex = 4;
             // 
             // label3
@@ -250,7 +251,7 @@
             this.txtPosition.MaxLength = 14;
             this.txtPosition.Multiline = true;
             this.txtPosition.Name = "txtPosition";
-            this.txtPosition.Size = new System.Drawing.Size(420, 77);
+            this.txtPosition.Size = new System.Drawing.Size(466, 77);
             this.txtPosition.TabIndex = 5;
             // 
             // flowLayoutPanel2
@@ -295,7 +296,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(538, 330);
+            this.ClientSize = new System.Drawing.Size(584, 330);
             this.Controls.Add(this.tableLayoutPanel4);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

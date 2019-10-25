@@ -50,7 +50,7 @@
             this.imgPanel.Location = new System.Drawing.Point(10, 116);
             this.imgPanel.Margin = new System.Windows.Forms.Padding(10);
             this.imgPanel.Name = "imgPanel";
-            this.imgPanel.Size = new System.Drawing.Size(935, 336);
+            this.imgPanel.Size = new System.Drawing.Size(864, 515);
             this.imgPanel.TabIndex = 1;
             // 
             // tableLayoutPanel1
@@ -67,7 +67,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(955, 482);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(884, 661);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // tableLayoutPanel2
@@ -91,7 +91,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(949, 100);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(878, 100);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // btnDownloadnew
@@ -157,7 +157,7 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Location = new System.Drawing.Point(759, 3);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(121, 40);
+            this.btnSearch.Size = new System.Drawing.Size(116, 40);
             this.btnSearch.TabIndex = 5;
             this.btnSearch.Text = "ค้นหา";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -167,7 +167,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(955, 482);
+            this.ClientSize = new System.Drawing.Size(884, 661);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

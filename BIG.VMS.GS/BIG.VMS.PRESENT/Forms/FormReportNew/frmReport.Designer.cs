@@ -158,7 +158,7 @@
             this.btnSearch.Location = new System.Drawing.Point(734, 7);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(7);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(241, 38);
+            this.btnSearch.Size = new System.Drawing.Size(128, 38);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "ค้นหา";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -200,7 +200,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(996, 643);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(884, 661);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // flowLayoutPanel2
@@ -209,10 +209,10 @@
             this.flowLayoutPanel2.Controls.Add(this.btnPrintReport);
             this.flowLayoutPanel2.Controls.Add(this.btnExport);
             this.flowLayoutPanel2.Controls.Add(this.btnClose);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(6, 572);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(6, 590);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(6);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(984, 65);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(872, 65);
             this.flowLayoutPanel2.TabIndex = 10;
             // 
             // tableLayoutPanel2
@@ -239,9 +239,9 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(984, 162);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(872, 207);
             this.tableLayoutPanel2.TabIndex = 11;
             // 
             // flowLayoutPanel3
@@ -256,7 +256,7 @@
             this.flowLayoutPanel3.Location = new System.Drawing.Point(93, 58);
             this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(6);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(882, 43);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(770, 87);
             this.flowLayoutPanel3.TabIndex = 10;
             // 
             // radAllGroup
@@ -313,7 +313,7 @@
             // 
             this.radConstructor.AutoSize = true;
             this.radConstructor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radConstructor.Location = new System.Drawing.Point(673, 6);
+            this.radConstructor.Location = new System.Drawing.Point(6, 47);
             this.radConstructor.Margin = new System.Windows.Forms.Padding(6);
             this.radConstructor.Name = "radConstructor";
             this.radConstructor.Size = new System.Drawing.Size(165, 29);
@@ -326,7 +326,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(7, 67);
+            this.label3.Location = new System.Drawing.Point(7, 89);
             this.label3.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 25);
@@ -339,7 +339,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(7, 122);
+            this.label4.Location = new System.Drawing.Point(7, 167);
             this.label4.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 25);
@@ -353,7 +353,7 @@
             this.flowLayoutPanel1.Controls.Add(this.radAll);
             this.flowLayoutPanel1.Controls.Add(this.radIn);
             this.flowLayoutPanel1.Controls.Add(this.radOut);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(93, 113);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(93, 158);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(283, 43);
@@ -402,22 +402,22 @@
             this.gridReport.BackgroundColor = System.Drawing.Color.White;
             this.gridReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridReport.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridReport.Location = new System.Drawing.Point(3, 177);
+            this.gridReport.Location = new System.Drawing.Point(3, 222);
             this.gridReport.Name = "gridReport";
             this.gridReport.RowTemplate.Height = 30;
-            this.gridReport.Size = new System.Drawing.Size(990, 386);
+            this.gridReport.Size = new System.Drawing.Size(878, 359);
             this.gridReport.TabIndex = 12;
             // 
             // frmReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(996, 643);
+            this.ClientSize = new System.Drawing.Size(884, 661);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmReport";
-            this.Text = "frmReport";
+            this.Text = "รายงาน";
             this.Load += new System.EventHandler(this.FrmReport_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);

@@ -43,36 +43,40 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
             this.tableLayoutPanel1.Controls.Add(this.groupBox1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(538, 298);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(404, 242);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtCardinfo);
-            this.groupBox1.Location = new System.Drawing.Point(23, 3);
+            this.groupBox1.Location = new System.Drawing.Point(17, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(492, 232);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(369, 188);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // txtCardinfo
             // 
             this.txtCardinfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtCardinfo.Location = new System.Drawing.Point(3, 18);
+            this.txtCardinfo.Location = new System.Drawing.Point(2, 15);
+            this.txtCardinfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtCardinfo.Multiline = true;
             this.txtCardinfo.Name = "txtCardinfo";
-            this.txtCardinfo.Size = new System.Drawing.Size(486, 211);
+            this.txtCardinfo.Size = new System.Drawing.Size(365, 171);
             this.txtCardinfo.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -80,19 +84,22 @@
             this.flowLayoutPanel1.Controls.Add(this.btn_Ok);
             this.flowLayoutPanel1.Controls.Add(this.btn_Clear);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(23, 241);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(17, 195);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(492, 54);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(370, 45);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // btn_Ok
             // 
             this.btn_Ok.BackColor = System.Drawing.Color.Blue;
+            this.btn_Ok.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Ok.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Ok.ForeColor = System.Drawing.Color.White;
-            this.btn_Ok.Location = new System.Drawing.Point(3, 3);
+            this.btn_Ok.Location = new System.Drawing.Point(2, 2);
+            this.btn_Ok.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Ok.Name = "btn_Ok";
-            this.btn_Ok.Size = new System.Drawing.Size(234, 51);
+            this.btn_Ok.Size = new System.Drawing.Size(176, 41);
             this.btn_Ok.TabIndex = 0;
             this.btn_Ok.Text = "(1) ตกลง";
             this.btn_Ok.UseVisualStyleBackColor = false;
@@ -101,11 +108,13 @@
             // btn_Clear
             // 
             this.btn_Clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_Clear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Clear.ForeColor = System.Drawing.Color.White;
-            this.btn_Clear.Location = new System.Drawing.Point(243, 3);
+            this.btn_Clear.Location = new System.Drawing.Point(182, 2);
+            this.btn_Clear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Clear.Name = "btn_Clear";
-            this.btn_Clear.Size = new System.Drawing.Size(234, 51);
+            this.btn_Clear.Size = new System.Drawing.Size(176, 41);
             this.btn_Clear.TabIndex = 1;
             this.btn_Clear.Text = "(2) อ่านอีกครั้ง";
             this.btn_Clear.UseVisualStyleBackColor = false;
@@ -113,11 +122,12 @@
             // 
             // DrivingLicenseCardInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(538, 298);
+            this.ClientSize = new System.Drawing.Size(404, 242);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DrivingLicenseCardInfo";

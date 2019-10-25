@@ -75,7 +75,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(609, 229);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(560, 229);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // lbType
@@ -86,7 +86,7 @@
             this.lbType.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbType.Location = new System.Drawing.Point(132, 0);
             this.lbType.Name = "lbType";
-            this.lbType.Size = new System.Drawing.Size(474, 25);
+            this.lbType.Size = new System.Drawing.Size(425, 25);
             this.lbType.TabIndex = 21;
             this.lbType.Text = "เพิ่มผู้รับเหมา";
             // 
@@ -116,23 +116,23 @@
             // 
             // txtName
             // 
-            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(132, 28);
             this.txtName.MaxLength = 1000;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(474, 31);
+            this.txtName.Size = new System.Drawing.Size(425, 31);
             this.txtName.TabIndex = 1;
             // 
             // txtAddress
             // 
-            this.txtAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtAddress.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress.Location = new System.Drawing.Point(132, 91);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtAddress.Size = new System.Drawing.Size(474, 77);
+            this.txtAddress.Size = new System.Drawing.Size(425, 77);
             this.txtAddress.TabIndex = 3;
             // 
             // Lbl_IDCard
@@ -173,7 +173,8 @@
             // 
             this.btnSave.BackColor = System.Drawing.Color.LightGreen;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.Black;
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave.Location = new System.Drawing.Point(6, 6);
@@ -190,7 +191,8 @@
             // 
             this.btnCancel.BackColor = System.Drawing.Color.SeaShell;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancel.Location = new System.Drawing.Point(138, 6);
@@ -205,10 +207,11 @@
             // 
             // txtTel
             // 
+            this.txtTel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtTel.Location = new System.Drawing.Point(132, 65);
             this.txtTel.Mask = "000-000-0000";
             this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(474, 20);
+            this.txtTel.Size = new System.Drawing.Size(425, 20);
             this.txtTel.TabIndex = 2;
             // 
             // frmContractor
@@ -216,7 +219,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(637, 253);
+            this.ClientSize = new System.Drawing.Size(584, 253);
             this.Controls.Add(this.tableLayoutPanel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

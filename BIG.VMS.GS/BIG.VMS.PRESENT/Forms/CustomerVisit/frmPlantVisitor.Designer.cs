@@ -74,7 +74,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(509, 228);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(553, 228);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // lbType
@@ -86,7 +86,7 @@
             this.lbType.Location = new System.Drawing.Point(135, 0);
             this.lbType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbType.Name = "lbType";
-            this.lbType.Size = new System.Drawing.Size(370, 25);
+            this.lbType.Size = new System.Drawing.Size(414, 25);
             this.lbType.TabIndex = 21;
             this.lbType.Text = "เพิ่มลูกค้า";
             // 
@@ -135,20 +135,21 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(135, 153);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(262, 63);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(323, 63);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.LightGreen;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.Black;
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave.Location = new System.Drawing.Point(9, 10);
             this.btnSave.Margin = new System.Windows.Forms.Padding(9, 10, 9, 10);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(113, 43);
+            this.btnSave.Size = new System.Drawing.Size(144, 43);
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "บันทึก";
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -159,13 +160,14 @@
             // 
             this.btnCancel.BackColor = System.Drawing.Color.SeaShell;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancel.Location = new System.Drawing.Point(140, 10);
+            this.btnCancel.Location = new System.Drawing.Point(171, 10);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(9, 10, 9, 10);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(113, 43);
+            this.btnCancel.Size = new System.Drawing.Size(143, 43);
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "ยกเลิก";
             this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -222,7 +224,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(552, 262);
+            this.ClientSize = new System.Drawing.Size(584, 262);
             this.Controls.Add(this.tableLayoutPanel4);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

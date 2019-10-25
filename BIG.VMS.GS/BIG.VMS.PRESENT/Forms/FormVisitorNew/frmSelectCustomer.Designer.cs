@@ -71,7 +71,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(842, 444);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(884, 661);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // tableLayoutPanel3
@@ -80,13 +80,13 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Controls.Add(this.gridVisitorList, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 1);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 102);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(836, 340);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(878, 556);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // gridVisitorList
@@ -102,7 +102,7 @@
             this.gridVisitorList.Name = "gridVisitorList";
             this.gridVisitorList.ReadOnly = true;
             this.gridVisitorList.RowTemplate.Height = 30;
-            this.gridVisitorList.Size = new System.Drawing.Size(830, 284);
+            this.gridVisitorList.Size = new System.Drawing.Size(872, 500);
             this.gridVisitorList.TabIndex = 0;
             this.gridVisitorList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridVisitorList_CellContentClick);
             // 
@@ -129,18 +129,18 @@
             this.tableLayoutPanel4.Controls.Add(this.btnNext, 3, 0);
             this.tableLayoutPanel4.Controls.Add(this.btnLast, 4, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 293);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 509);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(830, 44);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(872, 44);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // txtPage
             // 
             this.txtPage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPage.Enabled = false;
-            this.txtPage.Location = new System.Drawing.Point(19, 6);
+            this.txtPage.Location = new System.Drawing.Point(23, 6);
             this.txtPage.Name = "txtPage";
             this.txtPage.Size = new System.Drawing.Size(128, 31);
             this.txtPage.TabIndex = 1;
@@ -152,9 +152,9 @@
             this.btnFirst.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnFirst.Image = ((System.Drawing.Image)(resources.GetObject("btnFirst.Image")));
             this.btnFirst.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFirst.Location = new System.Drawing.Point(169, 3);
+            this.btnFirst.Location = new System.Drawing.Point(177, 3);
             this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(160, 38);
+            this.btnFirst.Size = new System.Drawing.Size(168, 38);
             this.btnFirst.TabIndex = 0;
             this.btnFirst.Text = "หน้าแรก";
             this.btnFirst.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -166,9 +166,9 @@
             this.btnPrevious.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnPrevious.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevious.Image")));
             this.btnPrevious.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPrevious.Location = new System.Drawing.Point(335, 3);
+            this.btnPrevious.Location = new System.Drawing.Point(351, 3);
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(160, 38);
+            this.btnPrevious.Size = new System.Drawing.Size(168, 38);
             this.btnPrevious.TabIndex = 1;
             this.btnPrevious.Text = "หน้าก่อนหน้า";
             this.btnPrevious.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -180,9 +180,9 @@
             this.btnNext.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
             this.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNext.Location = new System.Drawing.Point(501, 3);
+            this.btnNext.Location = new System.Drawing.Point(525, 3);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(160, 38);
+            this.btnNext.Size = new System.Drawing.Size(168, 38);
             this.btnNext.TabIndex = 2;
             this.btnNext.Text = "หน้าถัดไป";
             this.btnNext.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -194,9 +194,9 @@
             this.btnLast.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnLast.Image = ((System.Drawing.Image)(resources.GetObject("btnLast.Image")));
             this.btnLast.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLast.Location = new System.Drawing.Point(667, 3);
+            this.btnLast.Location = new System.Drawing.Point(699, 3);
             this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(160, 38);
+            this.btnLast.Size = new System.Drawing.Size(170, 38);
             this.btnLast.TabIndex = 3;
             this.btnLast.Text = "หน้าสุดท้าย";
             this.btnLast.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -212,7 +212,7 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 315F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 86F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 590F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 592F));
             this.tableLayoutPanel5.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.txtcustName, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.label2, 2, 0);
@@ -223,7 +223,7 @@
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(836, 93);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(878, 93);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // label1
@@ -320,7 +320,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(842, 444);
+            this.ClientSize = new System.Drawing.Size(884, 661);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

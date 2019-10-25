@@ -63,7 +63,7 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
@@ -83,7 +83,7 @@
             this.tableLayoutPanel2.Controls.Add(this.btn_OK, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(391, 338);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -94,10 +94,11 @@
             // 
             this.btn_Cancel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btn_Cancel.BackColor = System.Drawing.Color.IndianRed;
+            this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cancel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_Cancel.Location = new System.Drawing.Point(195, 17);
-            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(150, 53);
             this.btn_Cancel.TabIndex = 2;
@@ -109,10 +110,11 @@
             // 
             this.btn_OK.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btn_OK.BackColor = System.Drawing.Color.Blue;
+            this.btn_OK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_OK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_OK.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_OK.Location = new System.Drawing.Point(41, 17);
-            this.btn_OK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_OK.Margin = new System.Windows.Forms.Padding(2);
             this.btn_OK.Name = "btn_OK";
             this.btn_OK.Size = new System.Drawing.Size(150, 53);
             this.btn_OK.TabIndex = 1;
@@ -126,7 +128,7 @@
             this.imgCurrentImage.BackColor = System.Drawing.Color.WhiteSmoke;
             this.imgCurrentImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.imgCurrentImage.Location = new System.Drawing.Point(417, 43);
-            this.imgCurrentImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.imgCurrentImage.Margin = new System.Windows.Forms.Padding(2);
             this.imgCurrentImage.Name = "imgCurrentImage";
             this.imgCurrentImage.Size = new System.Drawing.Size(334, 291);
             this.imgCurrentImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -138,7 +140,7 @@
             this.panel1.Controls.Add(this.videoSourcePlayer);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(2, 43);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(385, 291);
             this.panel1.TabIndex = 13;
@@ -160,10 +162,11 @@
             // 
             this.btnCapture.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCapture.BackColor = System.Drawing.Color.Green;
+            this.btnCapture.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCapture.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCapture.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCapture.Location = new System.Drawing.Point(119, 353);
-            this.btnCapture.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCapture.Margin = new System.Windows.Forms.Padding(2);
             this.btnCapture.Name = "btnCapture";
             this.btnCapture.Size = new System.Drawing.Size(150, 57);
             this.btnCapture.TabIndex = 0;
@@ -199,7 +202,7 @@
             this.tableLayoutPanel3.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.snapshotResolutionsCombo, 3, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(2, 2);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -208,7 +211,8 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(195, 0);
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label3.Location = new System.Drawing.Point(195, 11);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 14);
             this.label3.TabIndex = 6;
@@ -216,29 +220,30 @@
             // 
             // videoResolutionsCombo
             // 
+            this.videoResolutionsCombo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.videoResolutionsCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.videoResolutionsCombo.FormattingEnabled = true;
-            this.videoResolutionsCombo.Location = new System.Drawing.Point(99, 3);
+            this.videoResolutionsCombo.Location = new System.Drawing.Point(99, 8);
             this.videoResolutionsCombo.Name = "videoResolutionsCombo";
             this.videoResolutionsCombo.Size = new System.Drawing.Size(90, 21);
             this.videoResolutionsCombo.TabIndex = 4;
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 37);
+            this.label1.Size = new System.Drawing.Size(83, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Video resoluton:";
             // 
             // snapshotResolutionsCombo
             // 
+            this.snapshotResolutionsCombo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.snapshotResolutionsCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.snapshotResolutionsCombo.FormattingEnabled = true;
-            this.snapshotResolutionsCombo.Location = new System.Drawing.Point(291, 3);
+            this.snapshotResolutionsCombo.Location = new System.Drawing.Point(291, 8);
             this.snapshotResolutionsCombo.Name = "snapshotResolutionsCombo";
             this.snapshotResolutionsCombo.Size = new System.Drawing.Size(91, 21);
             this.snapshotResolutionsCombo.TabIndex = 7;
@@ -250,7 +255,7 @@
             this.ClientSize = new System.Drawing.Size(779, 428);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CameraSelection";
@@ -265,6 +270,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgCurrentImage)).EndInit();
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -112,11 +112,11 @@
             this.tableLayoutPanel8.Controls.Add(this.btnLicense, 1, 0);
             this.tableLayoutPanel8.Controls.Add(this.txtLicense, 0, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(180, 292);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(180, 279);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(633, 66);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(446, 63);
             this.tableLayoutPanel8.TabIndex = 19;
             this.tableLayoutPanel8.Visible = false;
             // 
@@ -129,10 +129,10 @@
             this.btnLicense.ForeColor = System.Drawing.Color.Black;
             this.btnLicense.Image = ((System.Drawing.Image)(resources.GetObject("btnLicense.Image")));
             this.btnLicense.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLicense.Location = new System.Drawing.Point(322, 6);
+            this.btnLicense.Location = new System.Drawing.Point(229, 6);
             this.btnLicense.Margin = new System.Windows.Forms.Padding(6);
             this.btnLicense.Name = "btnLicense";
-            this.btnLicense.Size = new System.Drawing.Size(305, 54);
+            this.btnLicense.Size = new System.Drawing.Size(211, 51);
             this.btnLicense.TabIndex = 0;
             this.btnLicense.Text = "ทะเบียนรถ";
             this.btnLicense.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -145,15 +145,15 @@
             this.txtLicense.Enabled = false;
             this.txtLicense.Location = new System.Drawing.Point(3, 17);
             this.txtLicense.Name = "txtLicense";
-            this.txtLicense.Size = new System.Drawing.Size(310, 31);
+            this.txtLicense.Size = new System.Drawing.Size(217, 29);
             this.txtLicense.TabIndex = 3;
             // 
             // chkKeyIn
             // 
             this.chkKeyIn.AutoSize = true;
-            this.chkKeyIn.Location = new System.Drawing.Point(180, 37);
+            this.chkKeyIn.Location = new System.Drawing.Point(180, 36);
             this.chkKeyIn.Name = "chkKeyIn";
-            this.chkKeyIn.Size = new System.Drawing.Size(145, 29);
+            this.chkKeyIn.Size = new System.Drawing.Size(126, 28);
             this.chkKeyIn.TabIndex = 17;
             this.chkKeyIn.Text = "กรอกข้อมูลเอง";
             this.chkKeyIn.UseVisualStyleBackColor = true;
@@ -165,7 +165,7 @@
             this.Lbl_IDCard.AutoSize = true;
             this.Lbl_IDCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_IDCard.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.Lbl_IDCard.Location = new System.Drawing.Point(23, 149);
+            this.Lbl_IDCard.Location = new System.Drawing.Point(23, 142);
             this.Lbl_IDCard.Name = "Lbl_IDCard";
             this.Lbl_IDCard.Size = new System.Drawing.Size(151, 25);
             this.Lbl_IDCard.TabIndex = 1;
@@ -177,7 +177,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label3.Location = new System.Drawing.Point(96, 112);
+            this.label3.Location = new System.Drawing.Point(96, 107);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 25);
             this.label3.TabIndex = 16;
@@ -187,29 +187,29 @@
             // 
             this.txtIDCard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtIDCard.Enabled = false;
-            this.txtIDCard.Location = new System.Drawing.Point(180, 146);
+            this.txtIDCard.Location = new System.Drawing.Point(180, 140);
             this.txtIDCard.MaxLength = 250;
             this.txtIDCard.Name = "txtIDCard";
-            this.txtIDCard.Size = new System.Drawing.Size(633, 31);
+            this.txtIDCard.Size = new System.Drawing.Size(446, 29);
             this.txtIDCard.TabIndex = 2;
             // 
             // txtLastName
             // 
             this.txtLastName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLastName.Enabled = false;
-            this.txtLastName.Location = new System.Drawing.Point(180, 109);
+            this.txtLastName.Location = new System.Drawing.Point(180, 105);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(633, 31);
+            this.txtLastName.Size = new System.Drawing.Size(446, 29);
             this.txtLastName.TabIndex = 1;
             // 
             // btnUploadCam
             // 
             this.btnUploadCam.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnUploadCam.Image = ((System.Drawing.Image)(resources.GetObject("btnUploadCam.Image")));
-            this.btnUploadCam.Location = new System.Drawing.Point(348, 0);
+            this.btnUploadCam.Location = new System.Drawing.Point(253, 0);
             this.btnUploadCam.Margin = new System.Windows.Forms.Padding(0);
             this.btnUploadCam.Name = "btnUploadCam";
-            this.btnUploadCam.Size = new System.Drawing.Size(38, 31);
+            this.btnUploadCam.Size = new System.Drawing.Size(35, 30);
             this.btnUploadCam.TabIndex = 4;
             this.btnUploadCam.UseVisualStyleBackColor = true;
             // 
@@ -222,10 +222,10 @@
             this.btnProvince.ForeColor = System.Drawing.Color.Black;
             this.btnProvince.Image = ((System.Drawing.Image)(resources.GetObject("btnProvince.Image")));
             this.btnProvince.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnProvince.Location = new System.Drawing.Point(322, 6);
+            this.btnProvince.Location = new System.Drawing.Point(229, 6);
             this.btnProvince.Margin = new System.Windows.Forms.Padding(6);
             this.btnProvince.Name = "btnProvince";
-            this.btnProvince.Size = new System.Drawing.Size(305, 54);
+            this.btnProvince.Size = new System.Drawing.Size(211, 51);
             this.btnProvince.TabIndex = 0;
             this.btnProvince.Text = "เลือกจังหวัด";
             this.btnProvince.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -238,7 +238,7 @@
             this.txtProvince.Enabled = false;
             this.txtProvince.Location = new System.Drawing.Point(3, 17);
             this.txtProvince.Name = "txtProvince";
-            this.txtProvince.Size = new System.Drawing.Size(310, 31);
+            this.txtProvince.Size = new System.Drawing.Size(217, 29);
             this.txtProvince.TabIndex = 11;
             // 
             // lbTime
@@ -276,14 +276,14 @@
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel10, 0, 3);
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel7, 0, 2);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(825, 3);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(638, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 4;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(438, 444);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(337, 426);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // panel4
@@ -296,17 +296,17 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(4, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(430, 37);
+            this.panel4.Size = new System.Drawing.Size(329, 36);
             this.panel4.TabIndex = 5;
             // 
             // btnTakeCard
             // 
             this.btnTakeCard.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnTakeCard.Image = ((System.Drawing.Image)(resources.GetObject("btnTakeCard.Image")));
-            this.btnTakeCard.Location = new System.Drawing.Point(316, 0);
+            this.btnTakeCard.Location = new System.Drawing.Point(224, 0);
             this.btnTakeCard.Margin = new System.Windows.Forms.Padding(0);
             this.btnTakeCard.Name = "btnTakeCard";
-            this.btnTakeCard.Size = new System.Drawing.Size(38, 37);
+            this.btnTakeCard.Size = new System.Drawing.Size(35, 36);
             this.btnTakeCard.TabIndex = 9;
             this.btnTakeCard.UseVisualStyleBackColor = true;
             this.btnTakeCard.Visible = false;
@@ -316,10 +316,10 @@
             // 
             this.brn_UploadImgCard.Dock = System.Windows.Forms.DockStyle.Right;
             this.brn_UploadImgCard.Image = ((System.Drawing.Image)(resources.GetObject("brn_UploadImgCard.Image")));
-            this.brn_UploadImgCard.Location = new System.Drawing.Point(354, 0);
+            this.brn_UploadImgCard.Location = new System.Drawing.Point(259, 0);
             this.brn_UploadImgCard.Margin = new System.Windows.Forms.Padding(0);
             this.brn_UploadImgCard.Name = "brn_UploadImgCard";
-            this.brn_UploadImgCard.Size = new System.Drawing.Size(38, 37);
+            this.brn_UploadImgCard.Size = new System.Drawing.Size(35, 36);
             this.brn_UploadImgCard.TabIndex = 3;
             this.brn_UploadImgCard.UseVisualStyleBackColor = true;
             // 
@@ -327,10 +327,10 @@
             // 
             this.bthCardDelete.Dock = System.Windows.Forms.DockStyle.Right;
             this.bthCardDelete.Image = ((System.Drawing.Image)(resources.GetObject("bthCardDelete.Image")));
-            this.bthCardDelete.Location = new System.Drawing.Point(392, 0);
+            this.bthCardDelete.Location = new System.Drawing.Point(294, 0);
             this.bthCardDelete.Margin = new System.Windows.Forms.Padding(0);
             this.bthCardDelete.Name = "bthCardDelete";
-            this.bthCardDelete.Size = new System.Drawing.Size(38, 37);
+            this.bthCardDelete.Size = new System.Drawing.Size(35, 36);
             this.bthCardDelete.TabIndex = 6;
             this.bthCardDelete.UseVisualStyleBackColor = true;
             this.bthCardDelete.Click += new System.EventHandler(this.BthCardDelete_Click);
@@ -340,7 +340,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(6, 7);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(250, 25);
+            this.label7.Size = new System.Drawing.Size(224, 24);
             this.label7.TabIndex = 6;
             this.label7.Text = "รูปบัตรประชาชน/ใบขับขี่/อื่นๆ";
             // 
@@ -351,9 +351,9 @@
             this.picCard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picCard.Image = global::BIG.VMS.PRESENT.Properties.Resources.emploee;
             this.picCard.InitialImage = null;
-            this.picCard.Location = new System.Drawing.Point(4, 48);
+            this.picCard.Location = new System.Drawing.Point(4, 47);
             this.picCard.Name = "picCard";
-            this.picCard.Size = new System.Drawing.Size(430, 169);
+            this.picCard.Size = new System.Drawing.Size(329, 162);
             this.picCard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCard.TabIndex = 0;
             this.picCard.TabStop = false;
@@ -364,11 +364,11 @@
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.Controls.Add(this.picPhoto, 0, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(4, 268);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(4, 259);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(430, 172);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(329, 163);
             this.tableLayoutPanel10.TabIndex = 6;
             // 
             // picPhoto
@@ -379,7 +379,7 @@
             this.picPhoto.Image = global::BIG.VMS.PRESENT.Properties.Resources.emploee;
             this.picPhoto.Location = new System.Drawing.Point(3, 3);
             this.picPhoto.Name = "picPhoto";
-            this.picPhoto.Size = new System.Drawing.Size(424, 166);
+            this.picPhoto.Size = new System.Drawing.Size(323, 157);
             this.picPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picPhoto.TabIndex = 1;
             this.picPhoto.TabStop = false;
@@ -390,11 +390,12 @@
             this.tableLayoutPanel7.ColumnCount = 1;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.Controls.Add(this.panel3, 0, 0);
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(4, 224);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(4, 216);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(430, 37);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(329, 36);
             this.tableLayoutPanel7.TabIndex = 5;
             // 
             // panel3
@@ -403,20 +404,19 @@
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.btnUploadCam);
             this.panel3.Controls.Add(this.btnDeleteCam);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(424, 31);
+            this.panel3.Size = new System.Drawing.Size(323, 30);
             this.panel3.TabIndex = 0;
             // 
             // btnTakePhotos
             // 
             this.btnTakePhotos.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnTakePhotos.Image = ((System.Drawing.Image)(resources.GetObject("btnTakePhotos.Image")));
-            this.btnTakePhotos.Location = new System.Drawing.Point(310, 0);
+            this.btnTakePhotos.Location = new System.Drawing.Point(218, 0);
             this.btnTakePhotos.Margin = new System.Windows.Forms.Padding(0);
             this.btnTakePhotos.Name = "btnTakePhotos";
-            this.btnTakePhotos.Size = new System.Drawing.Size(38, 31);
+            this.btnTakePhotos.Size = new System.Drawing.Size(35, 30);
             this.btnTakePhotos.TabIndex = 9;
             this.btnTakePhotos.UseVisualStyleBackColor = true;
             this.btnTakePhotos.Click += new System.EventHandler(this.BtnTakePhotos_Click);
@@ -427,7 +427,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(3, 5);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(145, 25);
+            this.label9.Size = new System.Drawing.Size(129, 24);
             this.label9.TabIndex = 3;
             this.label9.Text = "รูปถ่ายผุ้มาติดต่อ";
             // 
@@ -435,10 +435,10 @@
             // 
             this.btnDeleteCam.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnDeleteCam.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteCam.Image")));
-            this.btnDeleteCam.Location = new System.Drawing.Point(386, 0);
+            this.btnDeleteCam.Location = new System.Drawing.Point(288, 0);
             this.btnDeleteCam.Margin = new System.Windows.Forms.Padding(0);
             this.btnDeleteCam.Name = "btnDeleteCam";
-            this.btnDeleteCam.Size = new System.Drawing.Size(38, 31);
+            this.btnDeleteCam.Size = new System.Drawing.Size(35, 30);
             this.btnDeleteCam.TabIndex = 5;
             this.btnDeleteCam.UseVisualStyleBackColor = true;
             this.btnDeleteCam.Click += new System.EventHandler(this.BtnDeleteCam_Click);
@@ -449,7 +449,7 @@
             this.Lbl_FirstName.AutoSize = true;
             this.Lbl_FirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_FirstName.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.Lbl_FirstName.Location = new System.Drawing.Point(139, 75);
+            this.Lbl_FirstName.Location = new System.Drawing.Point(139, 72);
             this.Lbl_FirstName.Name = "Lbl_FirstName";
             this.Lbl_FirstName.Size = new System.Drawing.Size(35, 25);
             this.Lbl_FirstName.TabIndex = 0;
@@ -460,7 +460,7 @@
             this.lbl_keyin.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_keyin.AutoSize = true;
             this.lbl_keyin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_keyin.Location = new System.Drawing.Point(3, 39);
+            this.lbl_keyin.Location = new System.Drawing.Point(3, 37);
             this.lbl_keyin.Name = "lbl_keyin";
             this.lbl_keyin.Size = new System.Drawing.Size(171, 25);
             this.lbl_keyin.TabIndex = 19;
@@ -474,7 +474,7 @@
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(989, 93);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(855, 88);
             this.flowLayoutPanel2.TabIndex = 3;
             // 
             // btnReadCard
@@ -488,9 +488,9 @@
             this.btnReadCard.Location = new System.Drawing.Point(6, 6);
             this.btnReadCard.Margin = new System.Windows.Forms.Padding(6);
             this.btnReadCard.Name = "btnReadCard";
-            this.btnReadCard.Size = new System.Drawing.Size(319, 80);
+            this.btnReadCard.Size = new System.Drawing.Size(248, 77);
             this.btnReadCard.TabIndex = 0;
-            this.btnReadCard.Text = "(1) อ่านบัตร / ถ่ายรูปบัตร";
+            this.btnReadCard.Text = "(1) อ่านบัตร /\r\n     ถ่ายรูปบัตร";
             this.btnReadCard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnReadCard.UseVisualStyleBackColor = false;
             this.btnReadCard.Click += new System.EventHandler(this.BtnReadCard_Click);
@@ -503,10 +503,10 @@
             this.btnVehicle.ForeColor = System.Drawing.Color.Black;
             this.btnVehicle.Image = ((System.Drawing.Image)(resources.GetObject("btnVehicle.Image")));
             this.btnVehicle.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnVehicle.Location = new System.Drawing.Point(337, 6);
+            this.btnVehicle.Location = new System.Drawing.Point(266, 6);
             this.btnVehicle.Margin = new System.Windows.Forms.Padding(6);
             this.btnVehicle.Name = "btnVehicle";
-            this.btnVehicle.Size = new System.Drawing.Size(280, 80);
+            this.btnVehicle.Size = new System.Drawing.Size(257, 77);
             this.btnVehicle.TabIndex = 2;
             this.btnVehicle.Text = "(2) เลือกประเภทรถยนต์";
             this.btnVehicle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -521,10 +521,10 @@
             this.btnMeet.ForeColor = System.Drawing.Color.Black;
             this.btnMeet.Image = ((System.Drawing.Image)(resources.GetObject("btnMeet.Image")));
             this.btnMeet.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMeet.Location = new System.Drawing.Point(629, 6);
+            this.btnMeet.Location = new System.Drawing.Point(535, 6);
             this.btnMeet.Margin = new System.Windows.Forms.Padding(6);
             this.btnMeet.Name = "btnMeet";
-            this.btnMeet.Size = new System.Drawing.Size(336, 80);
+            this.btnMeet.Size = new System.Drawing.Size(308, 77);
             this.btnMeet.TabIndex = 1;
             this.btnMeet.Text = "(3) เลือกบุคคลที่ต้องการเข้าพบ";
             this.btnMeet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -539,10 +539,10 @@
             this.btnBlacklist.ForeColor = System.Drawing.Color.Black;
             this.btnBlacklist.Image = ((System.Drawing.Image)(resources.GetObject("btnBlacklist.Image")));
             this.btnBlacklist.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBlacklist.Location = new System.Drawing.Point(430, 6);
+            this.btnBlacklist.Location = new System.Drawing.Point(396, 6);
             this.btnBlacklist.Margin = new System.Windows.Forms.Padding(6);
             this.btnBlacklist.Name = "btnBlacklist";
-            this.btnBlacklist.Size = new System.Drawing.Size(200, 80);
+            this.btnBlacklist.Size = new System.Drawing.Size(183, 77);
             this.btnBlacklist.TabIndex = 3;
             this.btnBlacklist.Text = "Blacklist";
             this.btnBlacklist.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -566,7 +566,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Crimson;
-            this.label2.Location = new System.Drawing.Point(44, 186);
+            this.label2.Location = new System.Drawing.Point(44, 177);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(130, 25);
             this.label2.TabIndex = 13;
@@ -576,9 +576,9 @@
             // 
             this.txtCar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCar.Enabled = false;
-            this.txtCar.Location = new System.Drawing.Point(180, 183);
+            this.txtCar.Location = new System.Drawing.Point(180, 175);
             this.txtCar.Name = "txtCar";
-            this.txtCar.Size = new System.Drawing.Size(633, 31);
+            this.txtCar.Size = new System.Drawing.Size(446, 29);
             this.txtCar.TabIndex = 14;
             // 
             // tableLayoutPanel2
@@ -589,11 +589,11 @@
             this.tableLayoutPanel2.Controls.Add(this.btnProvince, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtProvince, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(180, 220);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(180, 210);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(633, 66);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(446, 63);
             this.tableLayoutPanel2.TabIndex = 18;
             this.tableLayoutPanel2.Visible = false;
             // 
@@ -608,7 +608,7 @@
             this.btnSave.Location = new System.Drawing.Point(6, 6);
             this.btnSave.Margin = new System.Windows.Forms.Padding(6);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(200, 80);
+            this.btnSave.Size = new System.Drawing.Size(183, 77);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "บันทึก/พิมพ์";
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -623,10 +623,10 @@
             this.BtnTakePhoto.ForeColor = System.Drawing.Color.Black;
             this.BtnTakePhoto.Image = ((System.Drawing.Image)(resources.GetObject("BtnTakePhoto.Image")));
             this.BtnTakePhoto.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnTakePhoto.Location = new System.Drawing.Point(218, 6);
+            this.BtnTakePhoto.Location = new System.Drawing.Point(201, 6);
             this.BtnTakePhoto.Margin = new System.Windows.Forms.Padding(6);
             this.BtnTakePhoto.Name = "BtnTakePhoto";
-            this.BtnTakePhoto.Size = new System.Drawing.Size(200, 80);
+            this.BtnTakePhoto.Size = new System.Drawing.Size(183, 77);
             this.BtnTakePhoto.TabIndex = 1;
             this.BtnTakePhoto.Text = "ถ่ายรูปผู้ติดต่อ";
             this.BtnTakePhoto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -639,7 +639,7 @@
             this.Lbl_Vahicle.AutoSize = true;
             this.Lbl_Vahicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_Vahicle.ForeColor = System.Drawing.Color.Crimson;
-            this.Lbl_Vahicle.Location = new System.Drawing.Point(108, 240);
+            this.Lbl_Vahicle.Location = new System.Drawing.Point(108, 229);
             this.Lbl_Vahicle.Name = "Lbl_Vahicle";
             this.Lbl_Vahicle.Size = new System.Drawing.Size(66, 25);
             this.Lbl_Vahicle.TabIndex = 2;
@@ -652,7 +652,7 @@
             this.Lbl_LicensePlate.AutoSize = true;
             this.Lbl_LicensePlate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_LicensePlate.ForeColor = System.Drawing.Color.Crimson;
-            this.Lbl_LicensePlate.Location = new System.Drawing.Point(26, 312);
+            this.Lbl_LicensePlate.Location = new System.Drawing.Point(26, 298);
             this.Lbl_LicensePlate.Name = "Lbl_LicensePlate";
             this.Lbl_LicensePlate.Size = new System.Drawing.Size(148, 25);
             this.Lbl_LicensePlate.TabIndex = 3;
@@ -665,7 +665,7 @@
             this.Lbl_Topic.AutoSize = true;
             this.Lbl_Topic.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_Topic.ForeColor = System.Drawing.Color.OliveDrab;
-            this.Lbl_Topic.Location = new System.Drawing.Point(66, 408);
+            this.Lbl_Topic.Location = new System.Drawing.Point(66, 389);
             this.Lbl_Topic.Name = "Lbl_Topic";
             this.Lbl_Topic.Size = new System.Drawing.Size(108, 25);
             this.Lbl_Topic.TabIndex = 4;
@@ -677,7 +677,7 @@
             this.Lbl_MeetPeople.AutoSize = true;
             this.Lbl_MeetPeople.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_MeetPeople.ForeColor = System.Drawing.Color.OliveDrab;
-            this.Lbl_MeetPeople.Location = new System.Drawing.Point(16, 367);
+            this.Lbl_MeetPeople.Location = new System.Drawing.Point(16, 350);
             this.Lbl_MeetPeople.Name = "Lbl_MeetPeople";
             this.Lbl_MeetPeople.Size = new System.Drawing.Size(158, 25);
             this.Lbl_MeetPeople.TabIndex = 5;
@@ -687,18 +687,18 @@
             // 
             this.txtReason.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtReason.Enabled = false;
-            this.txtReason.Location = new System.Drawing.Point(180, 405);
+            this.txtReason.Location = new System.Drawing.Point(180, 387);
             this.txtReason.Name = "txtReason";
-            this.txtReason.Size = new System.Drawing.Size(633, 31);
+            this.txtReason.Size = new System.Drawing.Size(446, 29);
             this.txtReason.TabIndex = 10;
             // 
             // txtEmployee
             // 
             this.txtEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmployee.Enabled = false;
-            this.txtEmployee.Location = new System.Drawing.Point(180, 364);
+            this.txtEmployee.Location = new System.Drawing.Point(180, 348);
             this.txtEmployee.Name = "txtEmployee";
-            this.txtEmployee.Size = new System.Drawing.Size(633, 31);
+            this.txtEmployee.Size = new System.Drawing.Size(446, 29);
             this.txtEmployee.TabIndex = 12;
             // 
             // flowLayoutPanel1
@@ -708,9 +708,9 @@
             this.flowLayoutPanel1.Controls.Add(this.BtnTakePhoto);
             this.flowLayoutPanel1.Controls.Add(this.btnBlacklist);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 564);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 541);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1266, 94);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(978, 91);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
             // tableLayoutPanel1
@@ -729,7 +729,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.88502F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 68.98638F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1272, 661);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 635);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // panel1
@@ -742,7 +742,7 @@
             this.panel1.Location = new System.Drawing.Point(6, 6);
             this.panel1.Margin = new System.Windows.Forms.Padding(6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1260, 93);
+            this.panel1.Size = new System.Drawing.Size(972, 88);
             this.panel1.TabIndex = 0;
             // 
             // txtNo
@@ -751,9 +751,9 @@
             this.txtNo.Enabled = false;
             this.txtNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNo.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.txtNo.Location = new System.Drawing.Point(1139, 50);
+            this.txtNo.Location = new System.Drawing.Point(861, 48);
             this.txtNo.Name = "txtNo";
-            this.txtNo.Size = new System.Drawing.Size(118, 31);
+            this.txtNo.Size = new System.Drawing.Size(109, 31);
             this.txtNo.TabIndex = 1;
             // 
             // label1
@@ -762,7 +762,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(1187, 16);
+            this.label1.Location = new System.Drawing.Point(905, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 25);
             this.label1.TabIndex = 0;
@@ -777,11 +777,11 @@
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel5, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 108);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 103);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1266, 450);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(978, 432);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // tableLayoutPanel4
@@ -825,9 +825,9 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 15F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(816, 444);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 14F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(629, 426);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // tableLayoutPanel9
@@ -843,7 +843,7 @@
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(633, 28);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(349, 27);
             this.tableLayoutPanel9.TabIndex = 21;
             // 
             // lbDayLeft
@@ -852,7 +852,7 @@
             this.lbDayLeft.AutoSize = true;
             this.lbDayLeft.Location = new System.Drawing.Point(170, 1);
             this.lbDayLeft.Name = "lbDayLeft";
-            this.lbDayLeft.Size = new System.Drawing.Size(142, 25);
+            this.lbDayLeft.Size = new System.Drawing.Size(129, 24);
             this.lbDayLeft.TabIndex = 23;
             this.lbDayLeft.Text = "จำนวนวันที่เหลือ";
             this.lbDayLeft.Visible = false;
@@ -861,9 +861,9 @@
             // 
             this.txtFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFirstName.Enabled = false;
-            this.txtFirstName.Location = new System.Drawing.Point(180, 72);
+            this.txtFirstName.Location = new System.Drawing.Point(180, 70);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(633, 31);
+            this.txtFirstName.Size = new System.Drawing.Size(446, 29);
             this.txtFirstName.TabIndex = 1;
             // 
             // openFileDialog1
@@ -872,11 +872,11 @@
             // 
             // frmVisitorNew
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1272, 661);
+            this.ClientSize = new System.Drawing.Size(984, 635);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmVisitorNew";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

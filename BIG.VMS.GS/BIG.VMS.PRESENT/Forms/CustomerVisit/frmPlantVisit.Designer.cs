@@ -49,6 +49,11 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.gridVisitor = new System.Windows.Forms.DataGridView();
+            this.AUTO_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUSTOMER_VISIT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SEQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FULLNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TRN_CUSTOMER_VISIT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAddvisitor = new System.Windows.Forms.Button();
             this.txtDepartment = new System.Windows.Forms.TextBox();
             this.lb4 = new System.Windows.Forms.Label();
@@ -66,11 +71,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.AUTO_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CUSTOMER_VISIT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SEQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FULLNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TRN_CUSTOMER_VISIT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabmain.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tb2.SuspendLayout();
@@ -345,6 +345,49 @@
             this.gridVisitor.Size = new System.Drawing.Size(895, 207);
             this.gridVisitor.TabIndex = 0;
             // 
+            // AUTO_ID
+            // 
+            this.AUTO_ID.DataPropertyName = "AUTO_ID";
+            this.AUTO_ID.HeaderText = "AUTO_ID";
+            this.AUTO_ID.Name = "AUTO_ID";
+            this.AUTO_ID.ReadOnly = true;
+            this.AUTO_ID.Visible = false;
+            this.AUTO_ID.Width = 104;
+            // 
+            // CUSTOMER_VISIT_ID
+            // 
+            this.CUSTOMER_VISIT_ID.DataPropertyName = "CUSTOMER_VISIT_ID";
+            this.CUSTOMER_VISIT_ID.HeaderText = "CUSTOMER_VISIT_ID";
+            this.CUSTOMER_VISIT_ID.Name = "CUSTOMER_VISIT_ID";
+            this.CUSTOMER_VISIT_ID.ReadOnly = true;
+            this.CUSTOMER_VISIT_ID.Visible = false;
+            this.CUSTOMER_VISIT_ID.Width = 201;
+            // 
+            // SEQ
+            // 
+            this.SEQ.DataPropertyName = "SEQ";
+            this.SEQ.HeaderText = "No.";
+            this.SEQ.Name = "SEQ";
+            this.SEQ.ReadOnly = true;
+            this.SEQ.Width = 58;
+            // 
+            // FULLNAME
+            // 
+            this.FULLNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FULLNAME.DataPropertyName = "FULLNAME";
+            this.FULLNAME.HeaderText = "Full Name";
+            this.FULLNAME.Name = "FULLNAME";
+            this.FULLNAME.ReadOnly = true;
+            // 
+            // TRN_CUSTOMER_VISIT
+            // 
+            this.TRN_CUSTOMER_VISIT.DataPropertyName = "TRN_CUSTOMER_VISIT";
+            this.TRN_CUSTOMER_VISIT.HeaderText = "TRN_CUSTOMER_VISIT";
+            this.TRN_CUSTOMER_VISIT.Name = "TRN_CUSTOMER_VISIT";
+            this.TRN_CUSTOMER_VISIT.ReadOnly = true;
+            this.TRN_CUSTOMER_VISIT.Visible = false;
+            this.TRN_CUSTOMER_VISIT.Width = 216;
+            // 
             // btnAddvisitor
             // 
             this.btnAddvisitor.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -563,49 +606,6 @@
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // AUTO_ID
-            // 
-            this.AUTO_ID.DataPropertyName = "AUTO_ID";
-            this.AUTO_ID.HeaderText = "AUTO_ID";
-            this.AUTO_ID.Name = "AUTO_ID";
-            this.AUTO_ID.ReadOnly = true;
-            this.AUTO_ID.Visible = false;
-            this.AUTO_ID.Width = 104;
-            // 
-            // CUSTOMER_VISIT_ID
-            // 
-            this.CUSTOMER_VISIT_ID.DataPropertyName = "CUSTOMER_VISIT_ID";
-            this.CUSTOMER_VISIT_ID.HeaderText = "CUSTOMER_VISIT_ID";
-            this.CUSTOMER_VISIT_ID.Name = "CUSTOMER_VISIT_ID";
-            this.CUSTOMER_VISIT_ID.ReadOnly = true;
-            this.CUSTOMER_VISIT_ID.Visible = false;
-            this.CUSTOMER_VISIT_ID.Width = 201;
-            // 
-            // SEQ
-            // 
-            this.SEQ.DataPropertyName = "SEQ";
-            this.SEQ.HeaderText = "No.";
-            this.SEQ.Name = "SEQ";
-            this.SEQ.ReadOnly = true;
-            this.SEQ.Width = 58;
-            // 
-            // FULLNAME
-            // 
-            this.FULLNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.FULLNAME.DataPropertyName = "FULLNAME";
-            this.FULLNAME.HeaderText = "Full Name";
-            this.FULLNAME.Name = "FULLNAME";
-            this.FULLNAME.ReadOnly = true;
-            // 
-            // TRN_CUSTOMER_VISIT
-            // 
-            this.TRN_CUSTOMER_VISIT.DataPropertyName = "TRN_CUSTOMER_VISIT";
-            this.TRN_CUSTOMER_VISIT.HeaderText = "TRN_CUSTOMER_VISIT";
-            this.TRN_CUSTOMER_VISIT.Name = "TRN_CUSTOMER_VISIT";
-            this.TRN_CUSTOMER_VISIT.ReadOnly = true;
-            this.TRN_CUSTOMER_VISIT.Visible = false;
-            this.TRN_CUSTOMER_VISIT.Width = 216;
             // 
             // frmPlantVisit
             // 

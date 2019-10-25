@@ -80,8 +80,9 @@
             // 
             this.btnIdCard.BackColor = System.Drawing.Color.LimeGreen;
             this.btnIdCard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnIdCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIdCard.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnIdCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIdCard.ForeColor = System.Drawing.Color.White;
             this.btnIdCard.Location = new System.Drawing.Point(4, 4);
             this.btnIdCard.Name = "btnIdCard";
             this.btnIdCard.Size = new System.Drawing.Size(250, 122);
@@ -134,8 +135,9 @@
             // 
             this.btnDriverCard.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnDriverCard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDriverCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDriverCard.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDriverCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDriverCard.ForeColor = System.Drawing.Color.White;
             this.btnDriverCard.Location = new System.Drawing.Point(4, 4);
             this.btnDriverCard.Name = "btnDriverCard";
             this.btnDriverCard.Size = new System.Drawing.Size(250, 122);
@@ -176,8 +178,9 @@
             // 
             this.btnOtherCard.BackColor = System.Drawing.Color.Crimson;
             this.btnOtherCard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnOtherCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOtherCard.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnOtherCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOtherCard.ForeColor = System.Drawing.Color.White;
             this.btnOtherCard.Location = new System.Drawing.Point(4, 4);
             this.btnOtherCard.Name = "btnOtherCard";
             this.btnOtherCard.Size = new System.Drawing.Size(250, 122);
