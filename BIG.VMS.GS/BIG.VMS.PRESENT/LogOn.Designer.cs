@@ -152,6 +152,7 @@
             // btnLogon
             // 
             this.btnLogon.BackColor = System.Drawing.Color.Crimson;
+            this.btnLogon.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLogon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogon.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnLogon.Location = new System.Drawing.Point(2, 2);

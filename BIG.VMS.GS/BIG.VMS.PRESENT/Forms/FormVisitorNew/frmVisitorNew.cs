@@ -1141,6 +1141,16 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void brn_UploadImgCard_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUploadCam_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public class Configuration
