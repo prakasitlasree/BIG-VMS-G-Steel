@@ -28,19 +28,21 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
 
         public VisitorGroup VISITOR_GROUP { get; set; }
         public VisitorType VISITOR_TYPE { get; set; }
+        public PIDCard CARD { get; set; }
+
         public TRN_CUSTOMER_VISIT TrnCustomerVisit = new TRN_CUSTOMER_VISIT();
         public TRN_PROJECT_MASTER TrnProjectMaster = new TRN_PROJECT_MASTER();
         public TRN_VISITOR TrnVisitor = new TRN_VISITOR();
-        public PIDCard CARD { get; set; }
+     
         private readonly BlackListServices _blService = new BlackListServices();
         private readonly VisitorServices _vistorServices = new VisitorServices();
+
         private Timer _timer = null;
         private int _carTypeId = 0;
         private int _provinceId = 0;
         private int _contactEmployeeId = 0;
         private int _reasonId = 0;
         private string _cardType = string.Empty;
-
 
         private bool flgCardImgChange = false;
         private bool flgPhotoImgChange = false;
@@ -962,7 +964,6 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
 
         }
 
-
         private void UpdateTrnVisitor()
         {
 
@@ -1132,8 +1133,6 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                 MessageBox.Show(ex.Message);
             }
         }
-
-
     }
 
     public class Configuration

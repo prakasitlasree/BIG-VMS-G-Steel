@@ -23,16 +23,10 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             InitializeComponent();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void frmContractor_Load(object sender, EventArgs e)
         {
             SetControl();
         }
-
 
         private void SetControl()
         {
@@ -121,6 +115,11 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
                
             }
            
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private bool ValidateControl()

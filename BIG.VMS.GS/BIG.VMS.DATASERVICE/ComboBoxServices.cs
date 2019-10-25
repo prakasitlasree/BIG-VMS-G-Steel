@@ -260,7 +260,7 @@ namespace BIG.VMS.DATASERVICE
                 using (BIG_VMSEntities ctx = new BIG_VMSEntities())
                 {
 
-                    var list = ctx.MAS_DEPARTMENT;
+                    var list = ctx.MAS_DEPARTMENT.Where(O => O.SHOW_FLAG == "Y").OrderBy(O => O.SHOW_SEQ);
                     foreach (var item in list)
                     {
                         ComboBoxItem data = new ComboBoxItem();

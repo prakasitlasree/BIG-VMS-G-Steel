@@ -271,6 +271,7 @@
             this.clbfac_req.Name = "clbfac_req";
             this.clbfac_req.Size = new System.Drawing.Size(245, 137);
             this.clbfac_req.TabIndex = 10;
+            this.clbfac_req.Visible = false;
             // 
             // label11
             // 
@@ -282,6 +283,7 @@
             this.label11.Size = new System.Drawing.Size(131, 17);
             this.label11.TabIndex = 20;
             this.label11.Text = "Facility requirement";
+            this.label11.Visible = false;
             // 
             // numNo
             // 
@@ -386,7 +388,7 @@
             this.btnAddvisitor.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnAddvisitor.BackColor = System.Drawing.Color.LightGreen;
             this.btnAddvisitor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddvisitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddvisitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddvisitor.ForeColor = System.Drawing.SystemColors.Desktop;
             this.btnAddvisitor.Image = ((System.Drawing.Image)(resources.GetObject("btnAddvisitor.Image")));
             this.btnAddvisitor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
