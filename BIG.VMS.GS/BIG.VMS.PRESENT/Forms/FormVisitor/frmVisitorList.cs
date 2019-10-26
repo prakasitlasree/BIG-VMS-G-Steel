@@ -160,6 +160,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
                 if (row.Cells["TYPE"].Value.ToString() == "ออก")
                 {
                     row.Cells[2].Value = Properties.Resources.transparent;
+                    row.Cells[3].Value = Properties.Resources.transparent;
                 }
                 if (row.Cells["BLACKLIST"].Value.ToString() == "Y")
                 {
@@ -435,98 +436,115 @@ namespace BIG.VMS.PRESENT.Forms.Home
                     else if (e.ColumnIndex == 3)
                     {
                         #region ===================== print =====================
-                        var id = Convert.ToInt32(gridVisitorList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
-                        var visitor = (TRN_VISITOR)_service.GetVisitorByAutoId(id).TRN_VISITOR;
-                        if (visitor != null)
+                        if (gridVisitorList.Rows[e.RowIndex].Cells["TYPE"].Value.ToString() != "ออก")
                         {
-                            if (MessageBox.Show("ต้องการพิมพ์ใบเสร็จอีกครั้งหรือไม่' ?", "แจ้งเตือน", MessageBoxButtons.YesNo,
-                                    MessageBoxIcon.Information) == DialogResult.Yes)
+                            var id = Convert.ToInt32(gridVisitorList.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
+                            var visitor = (TRN_VISITOR)_service.GetVisitorByAutoId(id).TRN_VISITOR;
+                            if (visitor != null)
                             {
-                                if (visitor.GROUP == nameof(VisitorGroup.NORMAL) &&
-                                    visitor.GROUP == nameof(VisitorGroup.APPOINTMENT))
+                                if (MessageBox.Show("ต้องการพิมพ์ใบเสร็จอีกครั้งหรือไม่' ?", "แจ้งเตือน", MessageBoxButtons.YesNo,
+                                        MessageBoxIcon.Information) == DialogResult.Yes)
                                 {
-                                    #region Normal && Appointment
-
-                                    var obj = _service.GetVisitorReportById(id);
-
-                                    if (obj.ResultObj.Count > 0)
+                                    //var x = nameof(VisitorGroup.NORMAL);
+                                    if (visitor.GROUP == nameof(VisitorGroup.NORMAL) ||
+                                        visitor.GROUP == nameof(VisitorGroup.APPOINTMENT))
                                     {
-                                        List<CustomDisplayVisitor>
-                                            listData = (List<CustomDisplayVisitor>)obj.ResultObj;
-                                        DataTable dt = ConvertToDataTable(listData);
-                                        ReportDocument rpt = new ReportDocument();
-                                        string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
-                                        if (listData.FirstOrDefault()?.BY_PASS == "N" ||
-                                            listData.FirstOrDefault()?.BY_PASS == null)
+                                        #region Normal && Appointment
+
+                                        var obj = _service.GetVisitorReportById(id);
+
+                                        if (obj.ResultObj.Count > 0)
                                         {
-                                            var appPath = Application.StartupPath + "\\" + "ReportSlip.rpt";
-                                            rpt.Load(appPath);
-                                            rpt.SetDataSource(dt);
-                                            rpt.PrintToPrinter(1, true, 0, 0);
+                                            List<CustomDisplayVisitor>
+                                                listData = (List<CustomDisplayVisitor>)obj.ResultObj;
+                                            DataTable dt = ConvertToDataTable(listData);
+                                            ReportDocument rpt = new ReportDocument();
+                                            string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
+                                            if (listData.FirstOrDefault()?.BY_PASS == "N" ||
+                                                listData.FirstOrDefault()?.BY_PASS == null)
+                                            {
+                                                var appPath = Application.StartupPath + "\\" + "ReportSlip.rpt";
+                                                rpt.Load(appPath);
+                                                rpt.SetDataSource(dt);
+                                                rpt.PrintToPrinter(1, true, 0, 0);
+                                                frmReportViewer view = new frmReportViewer();
+                                                view.crystalReportViewer1.ReportSource = rpt;
+                                                view.Show();
+                                            }
+                                            else
+                                            {
+                                                var appPath = Application.StartupPath + "\\" + "ReportSlipByPass.rpt";
+                                                rpt.Load(appPath);
+                                                rpt.SetDataSource(dt);
+                                                rpt.PrintToPrinter(1, true, 0, 0);
+                                                frmReportViewer view = new frmReportViewer();
+                                                view.crystalReportViewer1.ReportSource = rpt;
+                                                view.Show();
+                                            }
+
                                         }
-                                        else
+
+                                        #endregion
+                                    }
+                                    else if (visitor.GROUP == nameof(VisitorGroup.CONSTRUCTOR))
+                                    {
+                                        #region Constructor
+
+                                        var response = _service.GetConstructorReport(id);
+                                        if (response.Status)
                                         {
-                                            var appPath = Application.StartupPath + "\\" + "ReportSlipByPass.rpt";
+                                            Project projectObj = (Project)response.ResultObj;
+                                            DataTable dtHeader = ConvertToDataTable(projectObj.LIST_PROJECT_HEADER);
+                                            DataTable dtMember = ConvertToDataTable(projectObj.LIST_PROJECT_MEMBER);
+                                            ReportDocument rpt = new ReportDocument();
+                                            string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
+                                            var appPath = Application.StartupPath + "\\" + "ReportConstructor.rpt";
                                             rpt.Load(appPath);
-                                            rpt.SetDataSource(dt);
+                                            var k = rpt.Database.Tables[0];
+                                            rpt.Database.Tables[0].SetDataSource(dtHeader);
+                                            rpt.Database.Tables[1].SetDataSource(dtMember);
                                             rpt.PrintToPrinter(1, true, 0, 0);
+                                            frmReportViewer view = new frmReportViewer();
+                                            view.crystalReportViewer1.ReportSource = rpt;
+                                            view.Show();
                                         }
 
+                                        #endregion
+
                                     }
-
-                                    #endregion
-                                }
-                                else if (visitor.GROUP == nameof(VisitorGroup.CONSTRUCTOR))
-                                {
-                                    #region Constructor
-
-                                    var response = _service.GetConstructorReport(id);
-                                    if (response.Status)
+                                    else
                                     {
-                                        Project projectObj = (Project)response.ResultObj;
-                                        DataTable dtHeader = ConvertToDataTable(projectObj.LIST_PROJECT_HEADER);
-                                        DataTable dtMember = ConvertToDataTable(projectObj.LIST_PROJECT_MEMBER);
-                                        ReportDocument rpt = new ReportDocument();
-                                        string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
-                                        var appPath = Application.StartupPath + "\\" + "ReportConstructor.rpt";
-                                        rpt.Load(appPath);
-                                        var k = rpt.Database.Tables[0];
-                                        rpt.Database.Tables[0].SetDataSource(dtHeader);
-                                        rpt.Database.Tables[1].SetDataSource(dtMember);
-                                        rpt.PrintToPrinter(1, true, 0, 0);
+                                        #region Customer
+
+                                        var response = _service.GetCustomerReport(id);
+                                        if (response.Status)
+                                        {
+                                            CustomerReport CustomerObj = (CustomerReport)response.ResultObj;
+                                            DataTable dtHeader = ConvertToDataTable(CustomerObj.LIST_CUSTOMER_HEADER);
+                                            DataTable dtMember = ConvertToDataTable(CustomerObj.LIST_CUSTOMER);
+                                            ReportDocument rpt = new ReportDocument();
+                                            string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
+                                            var appPath = Application.StartupPath + "\\" + "ReportCustomer.rpt";
+                                            rpt.Load(appPath);
+                                            //var k = rpt.Database.Tables[0];
+                                            rpt.Database.Tables[0].SetDataSource(dtHeader);
+                                            rpt.Database.Tables[1].SetDataSource(dtMember);
+                                            rpt.PrintToPrinter(1, true, 0, 0);
+                                            frmReportViewer view = new frmReportViewer();
+                                            view.crystalReportViewer1.ReportSource = rpt;
+                                            view.Show();
+                                        }
+
+
+                                        #endregion
+
                                     }
-
-                                    #endregion
-
                                 }
-                                else
-                                {
-                                    #region Customer
-
-                                    var response = _service.GetCustomerReport(id);
-                                    if (response.Status)
-                                    {
-                                        CustomerReport CustomerObj = (CustomerReport)response.ResultObj;
-                                        DataTable dtHeader = ConvertToDataTable(CustomerObj.LIST_CUSTOMER_HEADER);
-                                        DataTable dtMember = ConvertToDataTable(CustomerObj.LIST_CUSTOMER);
-                                        ReportDocument rpt = new ReportDocument();
-                                        string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
-                                        var appPath = Application.StartupPath + "\\" + "ReportCustomer.rpt";
-                                        rpt.Load(appPath);
-                                        //var k = rpt.Database.Tables[0];
-                                        rpt.Database.Tables[0].SetDataSource(dtHeader);
-                                        rpt.Database.Tables[1].SetDataSource(dtMember);
-                                        rpt.PrintToPrinter(1, true, 0, 0);
-                                    }
 
 
-                                    #endregion
-
-                                }
                             }
-
-
                         }
+
 
                         #endregion
                     }
