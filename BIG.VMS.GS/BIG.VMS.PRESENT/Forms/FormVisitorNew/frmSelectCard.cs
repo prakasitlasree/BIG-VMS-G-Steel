@@ -28,6 +28,27 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitorNew
         public frmSelectCard()
         {
             InitializeComponent();
+
+            ListCardReader();
+            string fileName = CardHelper.StartupPath + "\\RDNIDLib.DLD";
+            if (System.IO.File.Exists(fileName) == false)
+            {
+                MessageBox.Show("RDNIDLib.DLD not found");
+            }
+
+            System.Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+            this.Text = String.Format("R&D NID Card Plus C# {0}.{1}.{2}.{3}", version.Major, version.Minor, version.Build, version.Revision);
+
+            byte[] _lic = CardHelper.String2Byte(fileName);
+
+            int nres = 0;
+            nres = RDNID.openNIDLibRD(_lic);
+            if (nres != 0)
+            {
+                String m;
+                m = String.Format(" error no {0} ", nres);
+                MessageBox.Show(m);
+            }
         }
 
         private void FrmSelectCard_Load(object sender, EventArgs e)
