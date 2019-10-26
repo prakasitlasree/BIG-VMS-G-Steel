@@ -107,7 +107,7 @@
             this.flowLayoutPanel3.Location = new System.Drawing.Point(2, 2);
             this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(742, 80);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(803, 80);
             this.flowLayoutPanel3.TabIndex = 19;
             // 
             // btnIn
@@ -121,7 +121,7 @@
             this.btnIn.Location = new System.Drawing.Point(2, 2);
             this.btnIn.Margin = new System.Windows.Forms.Padding(2);
             this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(104, 75);
+            this.btnIn.Size = new System.Drawing.Size(132, 75);
             this.btnIn.TabIndex = 1;
             this.btnIn.Text = "เข้า";
             this.btnIn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -137,10 +137,10 @@
             this.btnOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOut.ForeColor = System.Drawing.Color.Black;
             this.btnOut.Image = ((System.Drawing.Image)(resources.GetObject("btnOut.Image")));
-            this.btnOut.Location = new System.Drawing.Point(110, 2);
+            this.btnOut.Location = new System.Drawing.Point(138, 2);
             this.btnOut.Margin = new System.Windows.Forms.Padding(2);
             this.btnOut.Name = "btnOut";
-            this.btnOut.Size = new System.Drawing.Size(108, 75);
+            this.btnOut.Size = new System.Drawing.Size(141, 75);
             this.btnOut.TabIndex = 2;
             this.btnOut.Text = "ออก";
             this.btnOut.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -151,12 +151,12 @@
             // btnNotOut
             // 
             this.btnNotOut.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnNotOut.BackColor = System.Drawing.Color.DarkViolet;
+            this.btnNotOut.BackColor = System.Drawing.Color.BlueViolet;
             this.btnNotOut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNotOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNotOut.ForeColor = System.Drawing.Color.White;
             this.btnNotOut.Image = ((System.Drawing.Image)(resources.GetObject("btnNotOut.Image")));
-            this.btnNotOut.Location = new System.Drawing.Point(222, 2);
+            this.btnNotOut.Location = new System.Drawing.Point(283, 2);
             this.btnNotOut.Margin = new System.Windows.Forms.Padding(2);
             this.btnNotOut.Name = "btnNotOut";
             this.btnNotOut.Size = new System.Drawing.Size(164, 75);
@@ -170,12 +170,12 @@
             // btn_BL
             // 
             this.btn_BL.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btn_BL.BackColor = System.Drawing.Color.Red;
+            this.btn_BL.BackColor = System.Drawing.Color.Maroon;
             this.btn_BL.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_BL.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_BL.ForeColor = System.Drawing.Color.White;
             this.btn_BL.Image = ((System.Drawing.Image)(resources.GetObject("btn_BL.Image")));
-            this.btn_BL.Location = new System.Drawing.Point(390, 2);
+            this.btn_BL.Location = new System.Drawing.Point(451, 2);
             this.btn_BL.Margin = new System.Windows.Forms.Padding(2);
             this.btn_BL.Name = "btn_BL";
             this.btn_BL.Size = new System.Drawing.Size(171, 75);
@@ -196,7 +196,7 @@
             this.panel3.Controls.Add(this.lblTodayIn);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label7);
-            this.panel3.Location = new System.Drawing.Point(565, 2);
+            this.panel3.Location = new System.Drawing.Point(626, 2);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(175, 76);
@@ -440,7 +440,7 @@
             this.btnSearch.Location = new System.Drawing.Point(82, 65);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(208, 36);
+            this.btnSearch.Size = new System.Drawing.Size(175, 36);
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "ค้นหา";
             this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
