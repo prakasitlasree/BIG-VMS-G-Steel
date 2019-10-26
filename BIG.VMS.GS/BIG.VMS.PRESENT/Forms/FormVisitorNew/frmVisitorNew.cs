@@ -884,7 +884,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
             if (resp.Status)
             {
 
-                if (source.GROUP == nameof(VisitorGroup.NORMAL) &&
+                if (source.GROUP == nameof(VisitorGroup.NORMAL) ||
                     source.GROUP == nameof(VisitorGroup.APPOINTMENT))
                 {
                     #region Normal && Appointment
