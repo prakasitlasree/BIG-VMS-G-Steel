@@ -33,8 +33,8 @@
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnIn = new System.Windows.Forms.Button();
             this.btnOut = new System.Windows.Forms.Button();
-            this.btnReport = new System.Windows.Forms.Button();
-            this.btnAhead = new System.Windows.Forms.Button();
+            this.btnNotOut = new System.Windows.Forms.Button();
+            this.btn_BL = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblTodayOut = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -42,18 +42,6 @@
             this.lblTodayIn = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.gridVisitorList = new System.Windows.Forms.DataGridView();
-            this.colEdit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.IMAGE = new System.Windows.Forms.DataGridViewImageColumn();
-            this.colDelete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.colPrint = new System.Windows.Forms.DataGridViewImageColumn();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtPage = new System.Windows.Forms.TextBox();
-            this.btnFirst = new System.Windows.Forms.Button();
-            this.btnPrevious = new System.Windows.Forms.Button();
-            this.btnNext = new System.Windows.Forms.Button();
-            this.btnLast = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.txtIDCard = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
@@ -67,24 +55,28 @@
             this.txtNo = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.btnListExit = new System.Windows.Forms.Button();
-            this.btnBlacklist = new System.Windows.Forms.Button();
-            this.dtFrom = new System.Windows.Forms.DateTimePicker();
-            this.dtTo = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.comboType = new System.Windows.Forms.ComboBox();
             this.comboGroup = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.gridVisitorList = new System.Windows.Forms.DataGridView();
+            this.colEdit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.IMAGE = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colDelete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colPrint = new System.Windows.Forms.DataGridViewImageColumn();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtPage = new System.Windows.Forms.TextBox();
+            this.btnFirst = new System.Windows.Forms.Button();
+            this.btnPrevious = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnLast = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridVisitorList)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -92,8 +84,8 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel3, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
@@ -111,13 +103,13 @@
             this.flowLayoutPanel3.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanel3.Controls.Add(this.btnIn);
             this.flowLayoutPanel3.Controls.Add(this.btnOut);
-            this.flowLayoutPanel3.Controls.Add(this.btnReport);
-            this.flowLayoutPanel3.Controls.Add(this.btnAhead);
+            this.flowLayoutPanel3.Controls.Add(this.btnNotOut);
+            this.flowLayoutPanel3.Controls.Add(this.btn_BL);
             this.flowLayoutPanel3.Controls.Add(this.panel3);
             this.flowLayoutPanel3.Location = new System.Drawing.Point(2, 2);
             this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(837, 80);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(779, 80);
             this.flowLayoutPanel3.TabIndex = 19;
             // 
             // btnIn
@@ -158,43 +150,41 @@
             this.btnOut.UseVisualStyleBackColor = false;
             this.btnOut.Click += new System.EventHandler(this.btnOut_Click);
             // 
-            // btnReport
+            // btnNotOut
             // 
-            this.btnReport.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnReport.BackColor = System.Drawing.Color.Lavender;
-            this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReport.ForeColor = System.Drawing.Color.Black;
-            this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
-            this.btnReport.Location = new System.Drawing.Point(294, 2);
-            this.btnReport.Margin = new System.Windows.Forms.Padding(2);
-            this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(142, 75);
-            this.btnReport.TabIndex = 5;
-            this.btnReport.Text = "รายงาน";
-            this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnReport.UseVisualStyleBackColor = false;
-            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            this.btnNotOut.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnNotOut.BackColor = System.Drawing.Color.HotPink;
+            this.btnNotOut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNotOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNotOut.ForeColor = System.Drawing.Color.Black;
+            this.btnNotOut.Location = new System.Drawing.Point(294, 2);
+            this.btnNotOut.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNotOut.Name = "btnNotOut";
+            this.btnNotOut.Size = new System.Drawing.Size(152, 75);
+            this.btnNotOut.TabIndex = 18;
+            this.btnNotOut.Text = "ยังไม่ออก";
+            this.btnNotOut.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNotOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNotOut.UseVisualStyleBackColor = false;
+            this.btnNotOut.Click += new System.EventHandler(this.btnNotOut_Click);
             // 
-            // btnAhead
+            // btn_BL
             // 
-            this.btnAhead.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnAhead.BackColor = System.Drawing.Color.LightBlue;
-            this.btnAhead.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAhead.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAhead.ForeColor = System.Drawing.Color.Black;
-            this.btnAhead.Image = ((System.Drawing.Image)(resources.GetObject("btnAhead.Image")));
-            this.btnAhead.Location = new System.Drawing.Point(440, 2);
-            this.btnAhead.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAhead.Name = "btnAhead";
-            this.btnAhead.Size = new System.Drawing.Size(213, 75);
-            this.btnAhead.TabIndex = 4;
-            this.btnAhead.Text = "นัดล่วงหน้า";
-            this.btnAhead.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAhead.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAhead.UseVisualStyleBackColor = false;
-            this.btnAhead.Click += new System.EventHandler(this.btnAhead_Click);
+            this.btn_BL.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_BL.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_BL.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_BL.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_BL.ForeColor = System.Drawing.Color.Black;
+            this.btn_BL.Location = new System.Drawing.Point(450, 2);
+            this.btn_BL.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_BL.Name = "btn_BL";
+            this.btn_BL.Size = new System.Drawing.Size(145, 75);
+            this.btn_BL.TabIndex = 19;
+            this.btn_BL.Text = "แบล็คลิสต์";
+            this.btn_BL.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_BL.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_BL.UseVisualStyleBackColor = false;
+            this.btn_BL.Click += new System.EventHandler(this.btn_BL_Click);
             // 
             // panel3
             // 
@@ -206,7 +196,7 @@
             this.panel3.Controls.Add(this.lblTodayIn);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label7);
-            this.panel3.Location = new System.Drawing.Point(657, 2);
+            this.panel3.Location = new System.Drawing.Point(599, 2);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(178, 76);
@@ -274,181 +264,6 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "จำนวนคนเข้าวันนี้";
             // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Controls.Add(this.gridVisitorList, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 1);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(2, 235);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(882, 304);
-            this.tableLayoutPanel3.TabIndex = 1;
-            // 
-            // gridVisitorList
-            // 
-            this.gridVisitorList.AllowUserToAddRows = false;
-            this.gridVisitorList.AllowUserToDeleteRows = false;
-            this.gridVisitorList.BackgroundColor = System.Drawing.Color.White;
-            this.gridVisitorList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridVisitorList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colEdit,
-            this.IMAGE,
-            this.colDelete,
-            this.colPrint});
-            this.gridVisitorList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridVisitorList.Location = new System.Drawing.Point(2, 2);
-            this.gridVisitorList.Margin = new System.Windows.Forms.Padding(2);
-            this.gridVisitorList.Name = "gridVisitorList";
-            this.gridVisitorList.ReadOnly = true;
-            this.gridVisitorList.Size = new System.Drawing.Size(878, 255);
-            this.gridVisitorList.TabIndex = 0;
-            this.gridVisitorList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridVisitorList_CellContentClick);
-            // 
-            // colEdit
-            // 
-            this.colEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colEdit.HeaderText = "แก้ไข";
-            this.colEdit.Image = ((System.Drawing.Image)(resources.GetObject("colEdit.Image")));
-            this.colEdit.Name = "colEdit";
-            this.colEdit.ReadOnly = true;
-            this.colEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colEdit.Width = 60;
-            // 
-            // IMAGE
-            // 
-            this.IMAGE.HeaderText = "ดูรูปภาพ";
-            this.IMAGE.Image = ((System.Drawing.Image)(resources.GetObject("IMAGE.Image")));
-            this.IMAGE.Name = "IMAGE";
-            this.IMAGE.ReadOnly = true;
-            // 
-            // colDelete
-            // 
-            this.colDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colDelete.HeaderText = "ลบ";
-            this.colDelete.Image = ((System.Drawing.Image)(resources.GetObject("colDelete.Image")));
-            this.colDelete.Name = "colDelete";
-            this.colDelete.ReadOnly = true;
-            this.colDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colDelete.Width = 60;
-            // 
-            // colPrint
-            // 
-            this.colPrint.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colPrint.HeaderText = "พิมพ์";
-            this.colPrint.Image = ((System.Drawing.Image)(resources.GetObject("colPrint.Image")));
-            this.colPrint.Name = "colPrint";
-            this.colPrint.ReadOnly = true;
-            this.colPrint.Width = 60;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.BackColor = System.Drawing.Color.White;
-            this.tableLayoutPanel4.ColumnCount = 5;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.Controls.Add(this.txtPage, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.btnFirst, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.btnPrevious, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.btnNext, 3, 0);
-            this.tableLayoutPanel4.Controls.Add(this.btnLast, 4, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(2, 261);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(878, 41);
-            this.tableLayoutPanel4.TabIndex = 1;
-            // 
-            // txtPage
-            // 
-            this.txtPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPage.Enabled = false;
-            this.txtPage.Location = new System.Drawing.Point(2, 7);
-            this.txtPage.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPage.Name = "txtPage";
-            this.txtPage.Size = new System.Drawing.Size(171, 26);
-            this.txtPage.TabIndex = 1;
-            this.txtPage.Text = "หน้า";
-            // 
-            // btnFirst
-            // 
-            this.btnFirst.BackColor = System.Drawing.Color.White;
-            this.btnFirst.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFirst.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFirst.Image = ((System.Drawing.Image)(resources.GetObject("btnFirst.Image")));
-            this.btnFirst.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFirst.Location = new System.Drawing.Point(177, 2);
-            this.btnFirst.Margin = new System.Windows.Forms.Padding(2);
-            this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(171, 37);
-            this.btnFirst.TabIndex = 0;
-            this.btnFirst.Text = "หน้าแรก";
-            this.btnFirst.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnFirst.UseVisualStyleBackColor = false;
-            // 
-            // btnPrevious
-            // 
-            this.btnPrevious.BackColor = System.Drawing.Color.White;
-            this.btnPrevious.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrevious.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrevious.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevious.Image")));
-            this.btnPrevious.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPrevious.Location = new System.Drawing.Point(352, 2);
-            this.btnPrevious.Margin = new System.Windows.Forms.Padding(2);
-            this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(171, 37);
-            this.btnPrevious.TabIndex = 1;
-            this.btnPrevious.Text = "หน้าก่อนหน้า";
-            this.btnPrevious.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPrevious.UseVisualStyleBackColor = false;
-            // 
-            // btnNext
-            // 
-            this.btnNext.BackColor = System.Drawing.Color.White;
-            this.btnNext.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
-            this.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNext.Location = new System.Drawing.Point(527, 2);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(2);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(171, 37);
-            this.btnNext.TabIndex = 2;
-            this.btnNext.Text = "หน้าถัดไป";
-            this.btnNext.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNext.UseVisualStyleBackColor = false;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            // 
-            // btnLast
-            // 
-            this.btnLast.BackColor = System.Drawing.Color.White;
-            this.btnLast.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLast.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLast.Image = ((System.Drawing.Image)(resources.GetObject("btnLast.Image")));
-            this.btnLast.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLast.Location = new System.Drawing.Point(702, 2);
-            this.btnLast.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(174, 37);
-            this.btnLast.TabIndex = 3;
-            this.btnLast.Text = "หน้าสุดท้าย";
-            this.btnLast.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLast.UseVisualStyleBackColor = false;
-            // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.BackColor = System.Drawing.SystemColors.Control;
@@ -471,25 +286,19 @@
             this.tableLayoutPanel5.Controls.Add(this.txtLicense, 1, 1);
             this.tableLayoutPanel5.Controls.Add(this.label6, 2, 1);
             this.tableLayoutPanel5.Controls.Add(this.txtNo, 3, 1);
-            this.tableLayoutPanel5.Controls.Add(this.flowLayoutPanel1, 1, 3);
-            this.tableLayoutPanel5.Controls.Add(this.dtFrom, 3, 2);
-            this.tableLayoutPanel5.Controls.Add(this.dtTo, 5, 2);
-            this.tableLayoutPanel5.Controls.Add(this.label10, 2, 2);
-            this.tableLayoutPanel5.Controls.Add(this.label11, 4, 2);
-            this.tableLayoutPanel5.Controls.Add(this.label4, 0, 2);
-            this.tableLayoutPanel5.Controls.Add(this.label12, 4, 1);
-            this.tableLayoutPanel5.Controls.Add(this.comboType, 5, 1);
-            this.tableLayoutPanel5.Controls.Add(this.comboGroup, 1, 2);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Controls.Add(this.flowLayoutPanel1, 1, 2);
+            this.tableLayoutPanel5.Controls.Add(this.comboGroup, 5, 1);
+            this.tableLayoutPanel5.Controls.Add(this.label4, 4, 1);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(2, 86);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 4;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowCount = 3;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(882, 145);
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(882, 106);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // txtIDCard
@@ -597,12 +406,10 @@
             this.flowLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel5.SetColumnSpan(this.flowLayoutPanel1, 5);
             this.flowLayoutPanel1.Controls.Add(this.btnSearch);
-            this.flowLayoutPanel1.Controls.Add(this.btnListExit);
-            this.flowLayoutPanel1.Controls.Add(this.btnBlacklist);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(82, 100);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(82, 67);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(675, 38);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(164, 36);
             this.flowLayoutPanel1.TabIndex = 17;
             // 
             // btnSearch
@@ -623,122 +430,6 @@
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // btnListExit
-            // 
-            this.btnListExit.BackColor = System.Drawing.SystemColors.Info;
-            this.btnListExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnListExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListExit.ForeColor = System.Drawing.Color.Black;
-            this.btnListExit.Image = ((System.Drawing.Image)(resources.GetObject("btnListExit.Image")));
-            this.btnListExit.Location = new System.Drawing.Point(166, 2);
-            this.btnListExit.Margin = new System.Windows.Forms.Padding(2);
-            this.btnListExit.Name = "btnListExit";
-            this.btnListExit.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnListExit.Size = new System.Drawing.Size(288, 34);
-            this.btnListExit.TabIndex = 16;
-            this.btnListExit.Text = "รายการคนที่ยังไม่ออก";
-            this.btnListExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnListExit.UseVisualStyleBackColor = false;
-            this.btnListExit.Click += new System.EventHandler(this.btnListExit_Click);
-            // 
-            // btnBlacklist
-            // 
-            this.btnBlacklist.BackColor = System.Drawing.Color.MistyRose;
-            this.btnBlacklist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBlacklist.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBlacklist.ForeColor = System.Drawing.Color.Black;
-            this.btnBlacklist.Image = ((System.Drawing.Image)(resources.GetObject("btnBlacklist.Image")));
-            this.btnBlacklist.Location = new System.Drawing.Point(458, 2);
-            this.btnBlacklist.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBlacklist.Name = "btnBlacklist";
-            this.btnBlacklist.Size = new System.Drawing.Size(215, 34);
-            this.btnBlacklist.TabIndex = 15;
-            this.btnBlacklist.Text = "Blacklist";
-            this.btnBlacklist.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBlacklist.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBlacklist.UseVisualStyleBackColor = false;
-            this.btnBlacklist.Click += new System.EventHandler(this.btnBlacklist_Click);
-            // 
-            // dtFrom
-            // 
-            this.dtFrom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFrom.Location = new System.Drawing.Point(360, 68);
-            this.dtFrom.Margin = new System.Windows.Forms.Padding(2);
-            this.dtFrom.Name = "dtFrom";
-            this.dtFrom.Size = new System.Drawing.Size(208, 26);
-            this.dtFrom.TabIndex = 18;
-            this.dtFrom.ValueChanged += new System.EventHandler(this.DtFrom_ValueChanged);
-            // 
-            // dtTo
-            // 
-            this.dtTo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtTo.Location = new System.Drawing.Point(669, 68);
-            this.dtTo.Margin = new System.Windows.Forms.Padding(2);
-            this.dtTo.Name = "dtTo";
-            this.dtTo.Size = new System.Drawing.Size(210, 26);
-            this.dtTo.TabIndex = 19;
-            // 
-            // label10
-            // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(305, 71);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(50, 20);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "เริ่มต้น";
-            // 
-            // label11
-            // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(621, 71);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(43, 20);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "สิ้นสุด";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(41, 71);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 20);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "กลุ่ม";
-            // 
-            // label12
-            // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(607, 38);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(57, 20);
-            this.label12.TabIndex = 22;
-            this.label12.Text = "ประเภท";
-            // 
-            // comboType
-            // 
-            this.comboType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboType.FormattingEnabled = true;
-            this.comboType.Items.AddRange(new object[] {
-            "ทั้งหมด",
-            "เข้า",
-            "ออก"});
-            this.comboType.Location = new System.Drawing.Point(669, 34);
-            this.comboType.Margin = new System.Windows.Forms.Padding(2);
-            this.comboType.Name = "comboType";
-            this.comboType.Size = new System.Drawing.Size(210, 28);
-            this.comboType.TabIndex = 23;
-            // 
             // comboGroup
             // 
             this.comboGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -750,11 +441,200 @@
             "บุุคคลนัดหมาย",
             "ผูู้รับเหมา",
             "กลุ่มลูกค้า"});
-            this.comboGroup.Location = new System.Drawing.Point(82, 67);
+            this.comboGroup.Location = new System.Drawing.Point(669, 34);
             this.comboGroup.Margin = new System.Windows.Forms.Padding(2);
             this.comboGroup.Name = "comboGroup";
-            this.comboGroup.Size = new System.Drawing.Size(208, 28);
+            this.comboGroup.Size = new System.Drawing.Size(210, 28);
             this.comboGroup.TabIndex = 14;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(628, 38);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 20);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "กลุ่ม";
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.gridVisitorList, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 1);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(2, 196);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(882, 343);
+            this.tableLayoutPanel3.TabIndex = 1;
+            // 
+            // gridVisitorList
+            // 
+            this.gridVisitorList.AllowUserToAddRows = false;
+            this.gridVisitorList.AllowUserToDeleteRows = false;
+            this.gridVisitorList.BackgroundColor = System.Drawing.Color.White;
+            this.gridVisitorList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridVisitorList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colEdit,
+            this.IMAGE,
+            this.colDelete,
+            this.colPrint});
+            this.gridVisitorList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridVisitorList.Location = new System.Drawing.Point(2, 2);
+            this.gridVisitorList.Margin = new System.Windows.Forms.Padding(2);
+            this.gridVisitorList.Name = "gridVisitorList";
+            this.gridVisitorList.ReadOnly = true;
+            this.gridVisitorList.Size = new System.Drawing.Size(878, 294);
+            this.gridVisitorList.TabIndex = 0;
+            this.gridVisitorList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridVisitorList_CellContentClick);
+            // 
+            // colEdit
+            // 
+            this.colEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colEdit.HeaderText = "แก้ไข";
+            this.colEdit.Image = ((System.Drawing.Image)(resources.GetObject("colEdit.Image")));
+            this.colEdit.Name = "colEdit";
+            this.colEdit.ReadOnly = true;
+            this.colEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colEdit.Visible = false;
+            this.colEdit.Width = 60;
+            // 
+            // IMAGE
+            // 
+            this.IMAGE.HeaderText = "ดูรูปภาพ";
+            this.IMAGE.Image = ((System.Drawing.Image)(resources.GetObject("IMAGE.Image")));
+            this.IMAGE.Name = "IMAGE";
+            this.IMAGE.ReadOnly = true;
+            this.IMAGE.Visible = false;
+            // 
+            // colDelete
+            // 
+            this.colDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colDelete.HeaderText = "ลบ";
+            this.colDelete.Image = ((System.Drawing.Image)(resources.GetObject("colDelete.Image")));
+            this.colDelete.Name = "colDelete";
+            this.colDelete.ReadOnly = true;
+            this.colDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colDelete.Visible = false;
+            this.colDelete.Width = 60;
+            // 
+            // colPrint
+            // 
+            this.colPrint.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colPrint.HeaderText = "พิมพ์";
+            this.colPrint.Image = ((System.Drawing.Image)(resources.GetObject("colPrint.Image")));
+            this.colPrint.Name = "colPrint";
+            this.colPrint.ReadOnly = true;
+            this.colPrint.Width = 60;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.BackColor = System.Drawing.Color.White;
+            this.tableLayoutPanel4.ColumnCount = 5;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel4.Controls.Add(this.txtPage, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btnFirst, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btnPrevious, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btnNext, 3, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btnLast, 4, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(2, 300);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(878, 41);
+            this.tableLayoutPanel4.TabIndex = 1;
+            // 
+            // txtPage
+            // 
+            this.txtPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPage.Enabled = false;
+            this.txtPage.Location = new System.Drawing.Point(2, 7);
+            this.txtPage.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPage.Name = "txtPage";
+            this.txtPage.Size = new System.Drawing.Size(171, 26);
+            this.txtPage.TabIndex = 1;
+            this.txtPage.Text = "หน้า";
+            // 
+            // btnFirst
+            // 
+            this.btnFirst.BackColor = System.Drawing.Color.White;
+            this.btnFirst.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFirst.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFirst.Image = ((System.Drawing.Image)(resources.GetObject("btnFirst.Image")));
+            this.btnFirst.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFirst.Location = new System.Drawing.Point(177, 2);
+            this.btnFirst.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFirst.Name = "btnFirst";
+            this.btnFirst.Size = new System.Drawing.Size(171, 37);
+            this.btnFirst.TabIndex = 0;
+            this.btnFirst.Text = "หน้าแรก";
+            this.btnFirst.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFirst.UseVisualStyleBackColor = false;
+            // 
+            // btnPrevious
+            // 
+            this.btnPrevious.BackColor = System.Drawing.Color.White;
+            this.btnPrevious.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrevious.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevious.Image")));
+            this.btnPrevious.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPrevious.Location = new System.Drawing.Point(352, 2);
+            this.btnPrevious.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(171, 37);
+            this.btnPrevious.TabIndex = 1;
+            this.btnPrevious.Text = "หน้าก่อนหน้า";
+            this.btnPrevious.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPrevious.UseVisualStyleBackColor = false;
+            // 
+            // btnNext
+            // 
+            this.btnNext.BackColor = System.Drawing.Color.White;
+            this.btnNext.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
+            this.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNext.Location = new System.Drawing.Point(527, 2);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(171, 37);
+            this.btnNext.TabIndex = 2;
+            this.btnNext.Text = "หน้าถัดไป";
+            this.btnNext.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // btnLast
+            // 
+            this.btnLast.BackColor = System.Drawing.Color.White;
+            this.btnLast.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLast.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLast.Image = ((System.Drawing.Image)(resources.GetObject("btnLast.Image")));
+            this.btnLast.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLast.Location = new System.Drawing.Point(702, 2);
+            this.btnLast.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLast.Name = "btnLast";
+            this.btnLast.Size = new System.Drawing.Size(174, 37);
+            this.btnLast.TabIndex = 3;
+            this.btnLast.Text = "หน้าสุดท้าย";
+            this.btnLast.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLast.UseVisualStyleBackColor = false;
             // 
             // frmVisitorList
             // 
@@ -774,13 +654,13 @@
             this.flowLayoutPanel3.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridVisitorList)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -798,8 +678,6 @@
         private System.Windows.Forms.TextBox txtPage;
         private System.Windows.Forms.Button btnOut;
         private System.Windows.Forms.Button btnIn;
-        private System.Windows.Forms.Button btnAhead;
-        private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.TextBox txtIDCard;
         private System.Windows.Forms.TextBox txtLastName;
@@ -814,8 +692,6 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboGroup;
-        private System.Windows.Forms.Button btnBlacklist;
-        private System.Windows.Forms.Button btnListExit;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblAllCount;
@@ -825,15 +701,11 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.DateTimePicker dtFrom;
-        private System.Windows.Forms.DateTimePicker dtTo;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboType;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataGridViewImageColumn colEdit;
         private System.Windows.Forms.DataGridViewImageColumn IMAGE;
         private System.Windows.Forms.DataGridViewImageColumn colDelete;
         private System.Windows.Forms.DataGridViewImageColumn colPrint;
+        private System.Windows.Forms.Button btnNotOut;
+        private System.Windows.Forms.Button btn_BL;
     }
 }

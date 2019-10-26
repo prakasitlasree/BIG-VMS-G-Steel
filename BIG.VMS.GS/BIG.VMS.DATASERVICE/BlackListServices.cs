@@ -114,7 +114,7 @@ namespace BIG.VMS.DATASERVICE
                             blackList = blackList.Where(o => o.ID_CARD == obj.Filter.ID_CARD).ToList();
                         }
                     }
-                    result.ResultObj = blackList;
+                    result.ResultObj = blackList.OrderByDescending(x=>x.UPDATED_DATE).ToList();
                     result.Status = true;
 
                 }

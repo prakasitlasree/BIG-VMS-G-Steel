@@ -59,7 +59,7 @@
             this.gridBlackList.Name = "gridBlackList";
             this.gridBlackList.ReadOnly = true;
             this.gridBlackList.RowTemplate.Height = 30;
-            this.gridBlackList.Size = new System.Drawing.Size(968, 532);
+            this.gridBlackList.Size = new System.Drawing.Size(968, 472);
             this.gridBlackList.TabIndex = 1;
             this.gridBlackList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridBlackList_CellContentClick);
             // 
@@ -85,7 +85,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 661);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 601);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -189,7 +189,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 661);
+            this.ClientSize = new System.Drawing.Size(984, 601);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

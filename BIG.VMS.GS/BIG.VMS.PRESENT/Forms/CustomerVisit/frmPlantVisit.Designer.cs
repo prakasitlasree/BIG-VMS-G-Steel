@@ -90,19 +90,20 @@
             this.tabmain.Controls.Add(this.tabPage1);
             this.tabmain.Controls.Add(this.tabPage2);
             this.tabmain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabmain.Location = new System.Drawing.Point(3, 22);
+            this.tabmain.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabmain.Location = new System.Drawing.Point(3, 19);
             this.tabmain.Name = "tabmain";
             this.tabmain.SelectedIndex = 0;
-            this.tabmain.Size = new System.Drawing.Size(915, 302);
+            this.tabmain.Size = new System.Drawing.Size(915, 305);
             this.tabmain.TabIndex = 0;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.tb2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(907, 269);
+            this.tabPage1.Size = new System.Drawing.Size(907, 276);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Visitor Group/Company";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -136,7 +137,7 @@
             this.tb2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tb2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tb2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tb2.Size = new System.Drawing.Size(901, 263);
+            this.tb2.Size = new System.Drawing.Size(901, 270);
             this.tb2.TabIndex = 16;
             // 
             // dtVisitTime
@@ -236,7 +237,7 @@
             this.txtobjective.Multiline = true;
             this.txtobjective.Name = "txtobjective";
             this.txtobjective.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtobjective.Size = new System.Drawing.Size(244, 137);
+            this.txtobjective.Size = new System.Drawing.Size(244, 144);
             this.txtobjective.TabIndex = 7;
             // 
             // txtcontractperson
@@ -274,7 +275,7 @@
             "Other..."});
             this.clbfac_req.Location = new System.Drawing.Point(653, 123);
             this.clbfac_req.Name = "clbfac_req";
-            this.clbfac_req.Size = new System.Drawing.Size(245, 137);
+            this.clbfac_req.Size = new System.Drawing.Size(245, 144);
             this.clbfac_req.TabIndex = 10;
             this.clbfac_req.Visible = false;
             // 
@@ -293,9 +294,9 @@
             // numNo
             // 
             this.numNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.numNo.Location = new System.Drawing.Point(203, 47);
+            this.numNo.Location = new System.Drawing.Point(203, 48);
             this.numNo.Name = "numNo";
-            this.numNo.Size = new System.Drawing.Size(120, 26);
+            this.numNo.Size = new System.Drawing.Size(120, 23);
             this.numNo.TabIndex = 21;
             // 
             // tabPage2
@@ -304,7 +305,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(907, 269);
+            this.tabPage2.Size = new System.Drawing.Size(907, 275);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Visitor List";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -322,7 +323,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(901, 263);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(901, 269);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // gridVisitor
@@ -411,7 +412,7 @@
             // 
             this.txtDepartment.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDepartment.Location = new System.Drawing.Point(660, 41);
+            this.txtDepartment.Location = new System.Drawing.Point(625, 41);
             this.txtDepartment.Name = "txtDepartment";
             this.txtDepartment.Size = new System.Drawing.Size(252, 23);
             this.txtDepartment.TabIndex = 3;
@@ -421,7 +422,7 @@
             this.lb4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb4.AutoSize = true;
             this.lb4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb4.Location = new System.Drawing.Point(572, 44);
+            this.lb4.Location = new System.Drawing.Point(537, 44);
             this.lb4.Name = "lb4";
             this.lb4.Size = new System.Drawing.Size(82, 17);
             this.lb4.TabIndex = 6;
@@ -431,7 +432,7 @@
             // 
             this.txtGroup.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGroup.Location = new System.Drawing.Point(660, 6);
+            this.txtGroup.Location = new System.Drawing.Point(625, 6);
             this.txtGroup.Name = "txtGroup";
             this.txtGroup.Size = new System.Drawing.Size(252, 23);
             this.txtGroup.TabIndex = 2;
@@ -441,7 +442,7 @@
             this.lb3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb3.AutoSize = true;
             this.lb3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb3.Location = new System.Drawing.Point(572, 9);
+            this.lb3.Location = new System.Drawing.Point(537, 9);
             this.lb3.Name = "lb3";
             this.lb3.Size = new System.Drawing.Size(82, 17);
             this.lb3.TabIndex = 4;
@@ -513,7 +514,7 @@
             this.tb1.ColumnCount = 4;
             this.tb1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tb1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tb1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tb1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
             this.tb1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tb1.Controls.Add(this.lb1, 0, 0);
             this.tb1.Controls.Add(this.lb2, 0, 1);
@@ -545,11 +546,11 @@
             // 
             this.lbType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbType.AutoSize = true;
-            this.lbType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbType.ForeColor = System.Drawing.Color.Black;
-            this.lbType.Location = new System.Drawing.Point(9, -5);
+            this.lbType.Location = new System.Drawing.Point(9, 2);
             this.lbType.Name = "lbType";
-            this.lbType.Size = new System.Drawing.Size(171, 20);
+            this.lbType.Size = new System.Drawing.Size(152, 17);
             this.lbType.TabIndex = 22;
             this.lbType.Text = "Add new customer visit";
             // 
@@ -557,6 +558,7 @@
             // 
             this.group_detail.Controls.Add(this.tabmain);
             this.group_detail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.group_detail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.group_detail.Location = new System.Drawing.Point(3, 105);
             this.group_detail.Name = "group_detail";
             this.group_detail.Size = new System.Drawing.Size(921, 327);
