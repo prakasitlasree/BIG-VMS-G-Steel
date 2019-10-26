@@ -925,7 +925,8 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                         DataTable dtMember = ConvertToDataTable(projectObj.LIST_PROJECT_MEMBER);
                         ReportDocument rpt = new ReportDocument();
                         string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
-                        var appPath = Application.StartupPath + "\\" + "ReportConstructor.rpt";
+                        //var appPath = Application.StartupPath + "\\" + "ReportConstructor.rpt";
+                        var appPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ReportConstructor.rpt");
                         rpt.Load(appPath);
                         var k = rpt.Database.Tables[0];
                         rpt.Database.Tables[0].SetDataSource(dtHeader);
@@ -947,7 +948,8 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                         DataTable dtMember = ConvertToDataTable(CustomerObj.LIST_CUSTOMER);
                         ReportDocument rpt = new ReportDocument();
                         string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
-                        var appPath = Application.StartupPath + "\\" + "ReportCustomer.rpt";
+                        //var appPath = Application.StartupPath + "\\" + "ReportCustomer.rpt";
+                        var appPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ReportCustomer.rpt");
                         rpt.Load(appPath);
                         //var k = rpt.Database.Tables[0];
                         rpt.Database.Tables[0].SetDataSource(dtHeader);

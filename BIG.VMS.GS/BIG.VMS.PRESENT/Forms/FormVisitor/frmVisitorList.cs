@@ -36,9 +36,30 @@ namespace BIG.VMS.PRESENT.Forms.Home
             InitializeComponent();
         }
 
+        private void SetRoleControl()
+        {
+            if (ROLE.Trim().ToUpper() == "ADMIN")
+            {
+                gridVisitorList.Columns[0].Visible = true;
+                gridVisitorList.Columns[1].Visible = true;
+                gridVisitorList.Columns[2].Visible = true;
+                gridVisitorList.Columns[3].Visible = true;
+
+            }
+            if (ROLE.Trim().ToUpper() == "GUARD")
+            {
+
+
+            }
+            if (ROLE.Trim().ToUpper() == "USER")
+            {
+
+            }
+        }
+
         private void frmAllvisitor_Load(object sender, EventArgs e)
         {
-
+            SetRoleControl();
             InitialControl();
             InitialEventHandler();
             ResetScreen();
@@ -175,7 +196,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
 
             listCol.Add(new HeaderGrid { HEADER_TEXT = "เลขที่", FIELD = "NO", VISIBLE = true, ALIGN = align.Center, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "ประเภท", FIELD = "TYPE", VISIBLE = true, ALIGN = align.Center, AUTO_SIZE = autoSize.CellContent });
-           
+
             listCol.Add(new HeaderGrid { HEADER_TEXT = "ชื่อ-สกุล", FIELD = "FULL_NAME", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "บัตรประชาชน", FIELD = "ID_CARD", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "บุคคลที่ต้องการพบ", FIELD = "CONTACT_EMP_NAME", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
@@ -185,7 +206,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
             listCol.Add(new HeaderGrid { HEADER_TEXT = "กลุ่ม", FIELD = "GROUP", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "ประเภทรถ", FIELD = "CAR_TYPE_NAME", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "ทะเบียนรถ", FIELD = "LICENSE_PLATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
-            
+
             listCol.Add(new HeaderGrid { HEADER_TEXT = "วันที่บันทึก", FIELD = "CREATED_DATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             listCol.Add(new HeaderGrid { HEADER_TEXT = "ผู้บันทึก", FIELD = "CREATED_BY", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
             //listCol.Add(new HeaderGrid { HEADER_TEXT = "วันที่แก้ไข", FIELD = "UPDATED_DATE", VISIBLE = true, ALIGN = align.Left, AUTO_SIZE = autoSize.CellContent });
@@ -201,9 +222,9 @@ namespace BIG.VMS.PRESENT.Forms.Home
             //comboType.SelectedIndex = 0;
             DateTime date = DateTime.Now;
             var firstDayOfMonth = new DateTime(date.Year, date.Month, 1);
-           // dtFrom.Value = firstDayOfMonth;
+            // dtFrom.Value = firstDayOfMonth;
             //dtTo.MaxDate = DateTime.Now.AddDays(-1);
-           // dtFrom.MaxDate = DateTime.Now.AddDays(-1); ;
+            // dtFrom.MaxDate = DateTime.Now.AddDays(-1); ;
         }
 
         private void InitialEventHandler()
@@ -509,7 +530,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
 
                         #endregion
                     }
-                   
+
 
                 }
             }

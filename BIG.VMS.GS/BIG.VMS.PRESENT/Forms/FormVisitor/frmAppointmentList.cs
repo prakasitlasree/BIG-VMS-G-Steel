@@ -263,14 +263,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
 
 
 
-        private void btnComein_Click(object sender, EventArgs e)
-        {
-            frmSelectAppointment frm = new frmSelectAppointment();
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-
-            }
-        }
+        
 
         private void frmAppointmenList_FormClosing(object sender, FormClosingEventArgs e)
         {

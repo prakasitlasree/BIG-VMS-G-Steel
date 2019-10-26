@@ -305,12 +305,6 @@
     <Compile Include="Forms\FormVisitor\frmNumber.Designer.cs">
       <DependentUpon>frmNumber.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormVisitor\frmSelectAppointment.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormVisitor\frmSelectAppointment.Designer.cs">
-      <DependentUpon>frmSelectAppointment.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FormVisitorNew\frmVisitorNew.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -547,9 +541,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormVisitor\frmNumber.resx">
       <DependentUpon>frmNumber.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormVisitor\frmSelectAppointment.resx">
-      <DependentUpon>frmSelectAppointment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormVisitorNew\frmVisitorNew.resx">
       <DependentUpon>frmVisitorNew.cs</DependentUpon>

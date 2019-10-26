@@ -158,7 +158,7 @@
             this.btnLogon.Location = new System.Drawing.Point(2, 2);
             this.btnLogon.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogon.Name = "btnLogon";
-            this.btnLogon.Size = new System.Drawing.Size(85, 36);
+            this.btnLogon.Size = new System.Drawing.Size(93, 36);
             this.btnLogon.TabIndex = 2;
             this.btnLogon.Text = "เข้าระบบ";
             this.btnLogon.UseVisualStyleBackColor = false;

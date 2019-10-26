@@ -17,6 +17,8 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
         public int SELECTED_PROVINCE_ID { get; set; }
         public string SELECTED_PROVINCE_TEXT { get; set; }
 
+     
+
         public frmProvince()
         {
             InitializeComponent();

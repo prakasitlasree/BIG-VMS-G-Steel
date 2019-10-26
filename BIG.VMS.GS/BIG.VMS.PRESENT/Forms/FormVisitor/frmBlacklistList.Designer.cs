@@ -54,12 +54,12 @@
             this.gridBlackList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colDelete});
             this.gridBlackList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridBlackList.Location = new System.Drawing.Point(8, 121);
-            this.gridBlackList.Margin = new System.Windows.Forms.Padding(8);
+            this.gridBlackList.Location = new System.Drawing.Point(3, 106);
             this.gridBlackList.Name = "gridBlackList";
             this.gridBlackList.ReadOnly = true;
+            this.gridBlackList.RowHeadersVisible = false;
             this.gridBlackList.RowTemplate.Height = 30;
-            this.gridBlackList.Size = new System.Drawing.Size(968, 472);
+            this.gridBlackList.Size = new System.Drawing.Size(778, 402);
             this.gridBlackList.TabIndex = 1;
             this.gridBlackList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridBlackList_CellContentClick);
             // 
@@ -85,7 +85,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 601);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 511);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -102,13 +102,12 @@
             this.tableLayoutPanel2.Controls.Add(this.txtIDCard, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel1, 3, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(8, 8);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(8);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(968, 97);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(778, 97);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // label2
@@ -189,7 +188,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 601);
+            this.ClientSize = new System.Drawing.Size(784, 511);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

@@ -26,8 +26,24 @@ namespace BIG.VMS.PRESENT
 
         }
 
+        private void SetRoleControl()
+        {
+            if (ROLE.Trim().ToUpper() == "GUARD")
+            {
+                menuAppointment.Visible = false;
+                menuContact.Visible = false;
+                menuReport.Visible = false;
+                
+            }
+            if (ROLE.Trim().ToUpper() == "USER")
+            {
+                menuInOut.Visible = false;
+            }
+        }
+
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            SetRoleControl();
             toolStripStatusLabel2.Text = User;
             //============ เปลี่ยนสี MDI form ===============
             foreach (Control ctrl in this.Controls)
@@ -50,10 +66,10 @@ namespace BIG.VMS.PRESENT
         {
             if (MessageBox.Show(Message.LOGOUT, Message.MSG_WARNING_CAPTION, MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                OnCloseAllChildrenForm(); 
+                OnCloseAllChildrenForm();
                 Dispose(true);
                 Application.ExitThread();
-                Application.Exit(); 
+                Application.Exit();
             }
             else
             {
@@ -71,7 +87,7 @@ namespace BIG.VMS.PRESENT
         }
 
         #endregion
-   
+
 
         private void appointment_Click(object sender, EventArgs e)
         {
