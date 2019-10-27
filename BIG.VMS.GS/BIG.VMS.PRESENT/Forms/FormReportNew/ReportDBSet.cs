@@ -8,7 +8,8 @@
         {
         }
 
-        partial class ReportParameterDataTable
+        partial class 
+            DataTable
         {
         }
 

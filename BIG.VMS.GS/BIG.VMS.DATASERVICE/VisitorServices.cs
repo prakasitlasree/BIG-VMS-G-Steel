@@ -543,7 +543,7 @@ namespace BIG.VMS.DATASERVICE
                                         DEPT_NAME = item.MAS_EMPLOYEE != null ? (item.MAS_EMPLOYEE.MAS_DEPARTMENT != null ? item.MAS_EMPLOYEE.MAS_DEPARTMENT.NAME : "ไม่ระบุ") : "ไม่ระบุ",
                                         ID_CARD_PHOTO = item.TRN_ATTACHEDMENT != null ? (item.TRN_ATTACHEDMENT.Count() > 0 ? item.TRN_ATTACHEDMENT.FirstOrDefault().ID_CARD_PHOTO : null) : null,
                                         CONTACT_PHOTO = item.TRN_ATTACHEDMENT != null ? (item.TRN_ATTACHEDMENT.Count() > 0 ? item.TRN_ATTACHEDMENT.FirstOrDefault().CONTACT_PHOTO : null) : null,
-                                        //COMPANY_NAME = company,
+                                        COMPANY_NAME = company,
                                         CREATED_BY = item.CREATED_BY,
                                         BY_PASS = item.BY_PASS
 
@@ -895,6 +895,9 @@ namespace BIG.VMS.DATASERVICE
                             .Include("TRN_PROJECT_MEMBER").Where(o => o.AUTO_ID == visitor.PROJECT_ID)
                             .FirstOrDefault();
 
+                        var company = ctx.SYS_CONFIGURATION.Where(o => o.NAME == "COMPANY_NAME").Select(o => o.VALUE).FirstOrDefault();
+
+
                         if (project != null)
                         {
                             Project outputData = new Project();
@@ -906,8 +909,8 @@ namespace BIG.VMS.DATASERVICE
                                 CONTRUCTOR_NAME = project.MAS_CONTRACTOR.NAME,
                                 RESP_MANAGER = project.RESPONSIBLE_MANAGER,
                                 RESP_TEL = project.RESPONSIBLE_TEL,
-                                CONTRUCTOR_TEL = project.MAS_CONTRACTOR.TEL
-
+                                CONTRUCTOR_TEL = project.MAS_CONTRACTOR.TEL,
+                                COMPANY_NAME = string.IsNullOrEmpty(company) ? "" : company.ToString()
                             };
 
                             outputData.LIST_PROJECT_HEADER.Add(header);
@@ -956,6 +959,8 @@ namespace BIG.VMS.DATASERVICE
                             .Include("TRN_CUSTOMER_VISIT_LIST").Where(o => o.AUTO_ID == visitor.CUSTOMER_ID)
                             .FirstOrDefault();
 
+                        var company = ctx.SYS_CONFIGURATION.Where(o => o.NAME == "COMPANY_NAME").Select(o => o.VALUE).FirstOrDefault();
+
                         if (customer != null)
                         {
                             CustomerReport outputData = new CustomerReport();
@@ -967,8 +972,8 @@ namespace BIG.VMS.DATASERVICE
                                 CUST_OBJECTIVE = customer.OBJECTIVE_OF_VISIT,
                                 REQ_DEPT = customer.REQUESTOR_DEPARTMENT,
                                 REQ_NAME = customer.REQUESTOR_FULLNAME,
-                                REQ_POSITION = customer.REQUESTOR_POSITION
-
+                                REQ_POSITION = customer.REQUESTOR_POSITION,
+                                COMPANY_NAME = string.IsNullOrEmpty(company) ? "" : company.ToString()
                             };
 
                             outputData.LIST_CUSTOMER_HEADER.Add(header);
@@ -1346,7 +1351,7 @@ namespace BIG.VMS.DATASERVICE
                                 reTrnVisitor.TRN_ATTACHEDMENT = new List<MODEL.EntityModel.TRN_ATTACHEDMENT>();
                                 reTrnVisitor.TRN_PROJECT_MASTER = new MODEL.EntityModel.TRN_PROJECT_MASTER(); ;
                                 reTrnVisitor.TRN_CUSTOMER_VISIT = new MODEL.EntityModel.TRN_CUSTOMER_VISIT(); ;
-                            
+
                                 resp.ResultObj = reTrnVisitor;
                                 resp.Status = true;
                             }

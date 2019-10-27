@@ -12,6 +12,7 @@ namespace BIG.VMS.MODEL.CustomModel.General
         public string REQ_DEPT { get; set; }
         public string CUST_GROUP_NAME { get; set; }
         public string CUST_OBJECTIVE { get; set; }
+        public string COMPANY_NAME { get; set; }
     }
 
     public class CUSTOMER

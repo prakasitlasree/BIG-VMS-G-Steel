@@ -324,6 +324,8 @@ namespace BIG.VMS.PRESENT.Forms.FormReportNew {
             
             private global::System.Data.DataColumn columnCONTRUCTOR_TEL;
             
+            private global::System.Data.DataColumn columnCOMPANY_NAME;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public PROJECT_HEADERDataTable() {
@@ -399,6 +401,14 @@ namespace BIG.VMS.PRESENT.Forms.FormReportNew {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn COMPANY_NAMEColumn {
+                get {
+                    return this.columnCOMPANY_NAME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -434,14 +444,15 @@ namespace BIG.VMS.PRESENT.Forms.FormReportNew {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PROJECT_HEADERRow AddPROJECT_HEADERRow(string PROJECT_NAME, string RESP_MANAGER, string RESP_TEL, string CONTRUCTOR_NAME, string CONTRUCTOR_TEL) {
+            public PROJECT_HEADERRow AddPROJECT_HEADERRow(string PROJECT_NAME, string RESP_MANAGER, string RESP_TEL, string CONTRUCTOR_NAME, string CONTRUCTOR_TEL, string COMPANY_NAME) {
                 PROJECT_HEADERRow rowPROJECT_HEADERRow = ((PROJECT_HEADERRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         PROJECT_NAME,
                         RESP_MANAGER,
                         RESP_TEL,
                         CONTRUCTOR_NAME,
-                        CONTRUCTOR_TEL};
+                        CONTRUCTOR_TEL,
+                        COMPANY_NAME};
                 rowPROJECT_HEADERRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPROJECT_HEADERRow);
                 return rowPROJECT_HEADERRow;
@@ -469,6 +480,7 @@ namespace BIG.VMS.PRESENT.Forms.FormReportNew {
                 this.columnRESP_TEL = base.Columns["RESP_TEL"];
                 this.columnCONTRUCTOR_NAME = base.Columns["CONTRUCTOR_NAME"];
                 this.columnCONTRUCTOR_TEL = base.Columns["CONTRUCTOR_TEL"];
+                this.columnCOMPANY_NAME = base.Columns["COMPANY_NAME"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -484,6 +496,8 @@ namespace BIG.VMS.PRESENT.Forms.FormReportNew {
                 base.Columns.Add(this.columnCONTRUCTOR_NAME);
                 this.columnCONTRUCTOR_TEL = new global::System.Data.DataColumn("CONTRUCTOR_TEL", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCONTRUCTOR_TEL);
+                this.columnCOMPANY_NAME = new global::System.Data.DataColumn("COMPANY_NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCOMPANY_NAME);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -967,6 +981,22 @@ namespace BIG.VMS.PRESENT.Forms.FormReportNew {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string COMPANY_NAME {
+                get {
+                    try {
+                        return ((string)(this[this.tablePROJECT_HEADER.COMPANY_NAMEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'COMPANY_NAME\' in table \'PROJECT_HEADER\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePROJECT_HEADER.COMPANY_NAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsPROJECT_NAMENull() {
                 return this.IsNull(this.tablePROJECT_HEADER.PROJECT_NAMEColumn);
             }
@@ -1023,6 +1053,18 @@ namespace BIG.VMS.PRESENT.Forms.FormReportNew {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetCONTRUCTOR_TELNull() {
                 this[this.tablePROJECT_HEADER.CONTRUCTOR_TELColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCOMPANY_NAMENull() {
+                return this.IsNull(this.tablePROJECT_HEADER.COMPANY_NAMEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCOMPANY_NAMENull() {
+                this[this.tablePROJECT_HEADER.COMPANY_NAMEColumn] = global::System.Convert.DBNull;
             }
         }
         
