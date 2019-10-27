@@ -41,8 +41,20 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lbr1 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label7 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
+            this.flowLayoutPanel4.SuspendLayout();
+            this.flowLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -54,12 +66,12 @@
             this.tableLayoutPanel1.Controls.Add(this.txtReason, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.txtLastName, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtFirstName, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.txtIDCard, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel3, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel4, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel5, 0, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(16, 15);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -76,34 +88,34 @@
             // txtReason
             // 
             this.txtReason.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtReason.Location = new System.Drawing.Point(166, 114);
+            this.txtReason.Location = new System.Drawing.Point(209, 114);
             this.txtReason.Multiline = true;
             this.txtReason.Name = "txtReason";
             this.txtReason.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtReason.Size = new System.Drawing.Size(452, 136);
+            this.txtReason.Size = new System.Drawing.Size(409, 136);
             this.txtReason.TabIndex = 7;
             // 
             // txtLastName
             // 
             this.txtLastName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLastName.Location = new System.Drawing.Point(166, 77);
+            this.txtLastName.Location = new System.Drawing.Point(209, 77);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(452, 31);
+            this.txtLastName.Size = new System.Drawing.Size(409, 31);
             this.txtLastName.TabIndex = 6;
             // 
             // txtFirstName
             // 
             this.txtFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFirstName.Location = new System.Drawing.Point(166, 40);
+            this.txtFirstName.Location = new System.Drawing.Point(209, 40);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(452, 31);
+            this.txtFirstName.Size = new System.Drawing.Size(409, 31);
             this.txtFirstName.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 6);
+            this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(157, 25);
             this.label1.TabIndex = 0;
@@ -113,7 +125,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(125, 43);
+            this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 25);
             this.label2.TabIndex = 1;
@@ -123,7 +135,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(82, 80);
+            this.label3.Location = new System.Drawing.Point(3, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 25);
             this.label3.TabIndex = 2;
@@ -133,7 +145,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(95, 169);
+            this.label4.Location = new System.Drawing.Point(3, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 25);
             this.label4.TabIndex = 3;
@@ -142,18 +154,18 @@
             // txtIDCard
             // 
             this.txtIDCard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtIDCard.Location = new System.Drawing.Point(166, 3);
+            this.txtIDCard.Location = new System.Drawing.Point(209, 3);
             this.txtIDCard.Name = "txtIDCard";
-            this.txtIDCard.Size = new System.Drawing.Size(452, 31);
+            this.txtIDCard.Size = new System.Drawing.Size(409, 31);
             this.txtIDCard.TabIndex = 4;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.btnSave);
             this.flowLayoutPanel1.Controls.Add(this.btnCancel);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(166, 256);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(209, 256);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(452, 49);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(409, 49);
             this.flowLayoutPanel1.TabIndex = 9;
             // 
             // btnSave
@@ -192,6 +204,87 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.label1);
+            this.flowLayoutPanel2.Controls.Add(this.lbr1);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(200, 31);
+            this.flowLayoutPanel2.TabIndex = 10;
+            // 
+            // lbr1
+            // 
+            this.lbr1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lbr1.AutoSize = true;
+            this.lbr1.ForeColor = System.Drawing.Color.Red;
+            this.lbr1.Location = new System.Drawing.Point(166, 0);
+            this.lbr1.Name = "lbr1";
+            this.lbr1.Size = new System.Drawing.Size(20, 25);
+            this.lbr1.TabIndex = 1;
+            this.lbr1.Text = "*";
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Controls.Add(this.label2);
+            this.flowLayoutPanel3.Controls.Add(this.label5);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 40);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(200, 31);
+            this.flowLayoutPanel3.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(44, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(20, 25);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "*";
+            // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.Controls.Add(this.label3);
+            this.flowLayoutPanel4.Controls.Add(this.label6);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 77);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(200, 30);
+            this.flowLayoutPanel4.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(87, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(20, 25);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "*";
+            // 
+            // flowLayoutPanel5
+            // 
+            this.flowLayoutPanel5.Controls.Add(this.label4);
+            this.flowLayoutPanel5.Controls.Add(this.label7);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 114);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(200, 33);
+            this.flowLayoutPanel5.TabIndex = 13;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(74, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(20, 25);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "*";
+            // 
             // frmBlackList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -212,6 +305,14 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel3.PerformLayout();
+            this.flowLayoutPanel4.ResumeLayout(false);
+            this.flowLayoutPanel4.PerformLayout();
+            this.flowLayoutPanel5.ResumeLayout(false);
+            this.flowLayoutPanel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -230,5 +331,13 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Label lbr1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
+        private System.Windows.Forms.Label label7;
     }
 }
