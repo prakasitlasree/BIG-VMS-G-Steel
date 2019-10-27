@@ -8,7 +8,7 @@
         {
         }
 
-        partial class 
+        partial class
             DataTable
         {
         }

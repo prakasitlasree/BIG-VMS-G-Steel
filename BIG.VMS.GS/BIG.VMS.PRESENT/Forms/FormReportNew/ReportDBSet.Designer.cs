@@ -353,7 +353,7 @@ namespace BIG.VMS.PRESENT.Forms.FormReportNew {
             
             private global::System.Data.DataColumn columnID_CARD;
             
-            private global::System.Data.DataColumn columnNAME;
+            private global::System.Data.DataColumn columnFULL_NAME;
             
             private global::System.Data.DataColumn columnCAR_TYPE_NAME;
             
@@ -432,9 +432,9 @@ namespace BIG.VMS.PRESENT.Forms.FormReportNew {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NAMEColumn {
+            public global::System.Data.DataColumn FULL_NAMEColumn {
                 get {
-                    return this.columnNAME;
+                    return this.columnFULL_NAME;
                 }
             }
             
@@ -582,7 +582,7 @@ namespace BIG.VMS.PRESENT.Forms.FormReportNew {
             public VisitorRow AddVisitorRow(
                         string NO, 
                         string ID_CARD, 
-                        string NAME, 
+                        string FULL_NAME, 
                         string CAR_TYPE_NAME, 
                         string LICENSE_PLATE, 
                         string PROVINCE, 
@@ -600,7 +600,7 @@ namespace BIG.VMS.PRESENT.Forms.FormReportNew {
                 object[] columnValuesArray = new object[] {
                         NO,
                         ID_CARD,
-                        NAME,
+                        FULL_NAME,
                         CAR_TYPE_NAME,
                         LICENSE_PLATE,
                         PROVINCE,
@@ -638,7 +638,7 @@ namespace BIG.VMS.PRESENT.Forms.FormReportNew {
             internal void InitVars() {
                 this.columnNO = base.Columns["NO"];
                 this.columnID_CARD = base.Columns["ID_CARD"];
-                this.columnNAME = base.Columns["NAME"];
+                this.columnFULL_NAME = base.Columns["FULL_NAME"];
                 this.columnCAR_TYPE_NAME = base.Columns["CAR_TYPE_NAME"];
                 this.columnLICENSE_PLATE = base.Columns["LICENSE_PLATE"];
                 this.columnPROVINCE = base.Columns["PROVINCE"];
@@ -661,8 +661,8 @@ namespace BIG.VMS.PRESENT.Forms.FormReportNew {
                 base.Columns.Add(this.columnNO);
                 this.columnID_CARD = new global::System.Data.DataColumn("ID_CARD", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_CARD);
-                this.columnNAME = new global::System.Data.DataColumn("NAME", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNAME);
+                this.columnFULL_NAME = new global::System.Data.DataColumn("FULL_NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFULL_NAME);
                 this.columnCAR_TYPE_NAME = new global::System.Data.DataColumn("CAR_TYPE_NAME", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCAR_TYPE_NAME);
                 this.columnLICENSE_PLATE = new global::System.Data.DataColumn("LICENSE_PLATE", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1413,17 +1413,17 @@ namespace BIG.VMS.PRESENT.Forms.FormReportNew {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string NAME {
+            public string FULL_NAME {
                 get {
                     try {
-                        return ((string)(this[this.tableVisitor.NAMEColumn]));
+                        return ((string)(this[this.tableVisitor.FULL_NAMEColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NAME\' in table \'Visitor\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'FULL_NAME\' in table \'Visitor\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableVisitor.NAMEColumn] = value;
+                    this[this.tableVisitor.FULL_NAMEColumn] = value;
                 }
             }
             
@@ -1661,14 +1661,14 @@ namespace BIG.VMS.PRESENT.Forms.FormReportNew {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNAMENull() {
-                return this.IsNull(this.tableVisitor.NAMEColumn);
+            public bool IsFULL_NAMENull() {
+                return this.IsNull(this.tableVisitor.FULL_NAMEColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNAMENull() {
-                this[this.tableVisitor.NAMEColumn] = global::System.Convert.DBNull;
+            public void SetFULL_NAMENull() {
+                this[this.tableVisitor.FULL_NAMEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
