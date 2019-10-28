@@ -460,7 +460,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                                 var companyName = TrnProjectMaster.MAS_CONTRACTOR != null
                                     ? TrnProjectMaster.MAS_CONTRACTOR.NAME
                                     : "ไม่ระบุ";
-                                txtFirstName.Text = $@"กลุ่มพนักงานผู้รับเหมา {companyName}";
+                                txtFirstName.Text = $@"กลุ่มผู้รับเหมา {companyName}";
 
                                 //txtIDCard.Text = $@"กลุ่มพนักงานผู้รับเหมา {companyName}"; comment ไว้ให้เค้า กรอกเองหรืออ่านบัตร
                                 txtEmployee.Text = $@"{TrnProjectMaster.RESPONSIBLE_MANAGER}";
@@ -468,8 +468,8 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                             }
                             else
                             {
-                                txtFirstName.Text = $@"กลุ่มลูกค้า {TrnCustomerVisit.CUSTOMER_NAME}";
-
+                                //CUSTOMER GROUP 
+                                txtFirstName.Text = $@"กลุ่มลูกค้า {TrnCustomerVisit.CUSTOMER_NAME}"; 
                                 //txtIDCard.Text = $@"กลุ่มลูกค้า {TrnCustomerVisit.CUSTOMER_NAME}"; comment ไว้ให้เค้า กรอกเองหรืออ่านบัตร
                                 txtEmployee.Text = $@"{TrnCustomerVisit.CONTACT_PERSON}";
                                 txtReason.Text = $@"{TrnCustomerVisit.OBJECTIVE_OF_VISIT}";

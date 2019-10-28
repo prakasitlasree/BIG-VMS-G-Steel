@@ -130,11 +130,11 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Crimson;
-            this.label6.Location = new System.Drawing.Point(114, 272);
+            this.label6.Location = new System.Drawing.Point(75, 272);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 25);
+            this.label6.Size = new System.Drawing.Size(100, 25);
             this.label6.TabIndex = 24;
-            this.label6.Text = "เวลา";
+            this.label6.Text = "เวลาเข้าพบ";
             // 
             // Lbl_IDCard
             // 
@@ -144,9 +144,9 @@
             this.Lbl_IDCard.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.Lbl_IDCard.Location = new System.Drawing.Point(10, 105);
             this.Lbl_IDCard.Name = "Lbl_IDCard";
-            this.Lbl_IDCard.Size = new System.Drawing.Size(151, 25);
+            this.Lbl_IDCard.Size = new System.Drawing.Size(165, 25);
             this.Lbl_IDCard.TabIndex = 1;
-            this.Lbl_IDCard.Text = "เลขบัตรประชาชน";
+            this.Lbl_IDCard.Text = "เลขบัตรประชาชน *";
             // 
             // label3
             // 
@@ -156,9 +156,9 @@
             this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label3.Location = new System.Drawing.Point(83, 68);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 25);
+            this.label3.Size = new System.Drawing.Size(92, 25);
             this.label3.TabIndex = 16;
-            this.label3.Text = "นามสกุล";
+            this.label3.Text = "นามสกุล *";
             // 
             // Lbl_FirstName
             // 
@@ -168,35 +168,35 @@
             this.Lbl_FirstName.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.Lbl_FirstName.Location = new System.Drawing.Point(126, 31);
             this.Lbl_FirstName.Name = "Lbl_FirstName";
-            this.Lbl_FirstName.Size = new System.Drawing.Size(35, 25);
+            this.Lbl_FirstName.Size = new System.Drawing.Size(49, 25);
             this.Lbl_FirstName.TabIndex = 0;
-            this.Lbl_FirstName.Text = "ชื่อ";
+            this.Lbl_FirstName.Text = "ชื่อ *";
             // 
             // txtIDCard
             // 
             this.txtIDCard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtIDCard.Location = new System.Drawing.Point(167, 102);
+            this.txtIDCard.Location = new System.Drawing.Point(181, 102);
             this.txtIDCard.MaxLength = 14;
             this.txtIDCard.Name = "txtIDCard";
-            this.txtIDCard.Size = new System.Drawing.Size(639, 31);
+            this.txtIDCard.Size = new System.Drawing.Size(625, 31);
             this.txtIDCard.TabIndex = 2;
             this.txtIDCard.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIDCard_KeyPress);
             // 
             // txtLastName
             // 
             this.txtLastName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLastName.Location = new System.Drawing.Point(167, 65);
+            this.txtLastName.Location = new System.Drawing.Point(181, 65);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(639, 31);
+            this.txtLastName.Size = new System.Drawing.Size(625, 31);
             this.txtLastName.TabIndex = 1;
             // 
             // txtFirstName
             // 
             this.txtFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFirstName.Location = new System.Drawing.Point(167, 28);
+            this.txtFirstName.Location = new System.Drawing.Point(181, 28);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(639, 31);
+            this.txtFirstName.Size = new System.Drawing.Size(625, 31);
             this.txtFirstName.TabIndex = 0;
             // 
             // label4
@@ -204,7 +204,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(38, 0);
+            this.label4.Location = new System.Drawing.Point(52, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(123, 25);
             this.label4.TabIndex = 20;
@@ -216,9 +216,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(167, 0);
+            this.label5.Location = new System.Drawing.Point(181, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(639, 25);
+            this.label5.Size = new System.Drawing.Size(625, 25);
             this.label5.TabIndex = 21;
             this.label5.Text = "นัดล่วงหน้า";
             // 
@@ -227,9 +227,9 @@
             this.dtContactDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dtContactDate.CustomFormat = "dd-MM-yy";
             this.dtContactDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtContactDate.Location = new System.Drawing.Point(167, 213);
+            this.dtContactDate.Location = new System.Drawing.Point(181, 213);
             this.dtContactDate.Name = "dtContactDate";
-            this.dtContactDate.Size = new System.Drawing.Size(639, 31);
+            this.dtContactDate.Size = new System.Drawing.Size(625, 31);
             this.dtContactDate.TabIndex = 4;
             // 
             // label1
@@ -238,21 +238,21 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Crimson;
-            this.label1.Location = new System.Drawing.Point(68, 216);
+            this.label1.Location = new System.Drawing.Point(56, 216);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 25);
+            this.label1.Size = new System.Drawing.Size(119, 25);
             this.label1.TabIndex = 23;
-            this.label1.Text = "วันที่จะเข้า";
+            this.label1.Text = "วันที่จะเข้าพบ";
             // 
             // dtTime
             // 
             this.dtTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dtTime.CustomFormat = "hh:mm:ss";
             this.dtTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtTime.Location = new System.Drawing.Point(167, 269);
+            this.dtTime.Location = new System.Drawing.Point(181, 269);
             this.dtTime.Name = "dtTime";
             this.dtTime.ShowUpDown = true;
-            this.dtTime.Size = new System.Drawing.Size(639, 31);
+            this.dtTime.Size = new System.Drawing.Size(625, 31);
             this.dtTime.TabIndex = 25;
             // 
             // Lbl_Topic
@@ -263,9 +263,9 @@
             this.Lbl_Topic.ForeColor = System.Drawing.Color.OliveDrab;
             this.Lbl_Topic.Location = new System.Drawing.Point(53, 179);
             this.Lbl_Topic.Name = "Lbl_Topic";
-            this.Lbl_Topic.Size = new System.Drawing.Size(108, 25);
+            this.Lbl_Topic.Size = new System.Drawing.Size(122, 25);
             this.Lbl_Topic.TabIndex = 4;
-            this.Lbl_Topic.Text = "วัตถุประสงค์";
+            this.Lbl_Topic.Text = "วัตถุประสงค์ *";
             // 
             // Lbl_MeetPeople
             // 
@@ -275,26 +275,26 @@
             this.Lbl_MeetPeople.ForeColor = System.Drawing.Color.OliveDrab;
             this.Lbl_MeetPeople.Location = new System.Drawing.Point(3, 142);
             this.Lbl_MeetPeople.Name = "Lbl_MeetPeople";
-            this.Lbl_MeetPeople.Size = new System.Drawing.Size(158, 25);
+            this.Lbl_MeetPeople.Size = new System.Drawing.Size(172, 25);
             this.Lbl_MeetPeople.TabIndex = 5;
-            this.Lbl_MeetPeople.Text = "บุคคลที่ต้องการพบ";
+            this.Lbl_MeetPeople.Text = "บุคคลที่ต้องการพบ *";
             // 
             // txtTopic
             // 
             this.txtTopic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTopic.Enabled = false;
-            this.txtTopic.Location = new System.Drawing.Point(167, 176);
+            this.txtTopic.Location = new System.Drawing.Point(181, 176);
             this.txtTopic.Name = "txtTopic";
-            this.txtTopic.Size = new System.Drawing.Size(639, 31);
+            this.txtTopic.Size = new System.Drawing.Size(625, 31);
             this.txtTopic.TabIndex = 10;
             // 
             // txtMeet
             // 
             this.txtMeet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMeet.Enabled = false;
-            this.txtMeet.Location = new System.Drawing.Point(167, 139);
+            this.txtMeet.Location = new System.Drawing.Point(181, 139);
             this.txtMeet.Name = "txtMeet";
-            this.txtMeet.Size = new System.Drawing.Size(639, 31);
+            this.txtMeet.Size = new System.Drawing.Size(625, 31);
             this.txtMeet.TabIndex = 12;
             // 
             // flowLayoutPanel2

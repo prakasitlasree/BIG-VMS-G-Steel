@@ -626,11 +626,11 @@
             // 
             this.lbTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTime.AutoSize = true;
-            this.lbTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTime.ForeColor = System.Drawing.Color.Red;
             this.lbTime.Location = new System.Drawing.Point(48, 1);
             this.lbTime.Name = "lbTime";
-            this.lbTime.Size = new System.Drawing.Size(116, 25);
+            this.lbTime.Size = new System.Drawing.Size(100, 24);
             this.lbTime.TabIndex = 22;
             this.lbTime.Text = "time stamp";
             // 
@@ -650,7 +650,7 @@
             // 
             this.lbDayLeft.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbDayLeft.AutoSize = true;
-            this.lbDayLeft.Location = new System.Drawing.Point(170, 1);
+            this.lbDayLeft.Location = new System.Drawing.Point(154, 1);
             this.lbDayLeft.Name = "lbDayLeft";
             this.lbDayLeft.Size = new System.Drawing.Size(129, 24);
             this.lbDayLeft.TabIndex = 23;

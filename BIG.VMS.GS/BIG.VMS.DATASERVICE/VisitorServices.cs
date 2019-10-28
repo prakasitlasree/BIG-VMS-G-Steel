@@ -797,8 +797,17 @@ namespace BIG.VMS.DATASERVICE
                 }
                 catch (DbEntityValidationException ex)
                 {
+                    string message = "";
+                    foreach (var eve in ex.EntityValidationErrors)
+                    {
+                        foreach (var ve in eve.ValidationErrors)
+                        {
+                            message += ve.PropertyName + " " + ve.ErrorMessage;
+
+                        }
+                    }
                     result.Status = false;
-                    result.ExceptionMessage = ex.Message.ToString();
+                    result.ExceptionMessage = ex.Message + message;
                 }
                 catch (Exception ex)
                 {
@@ -867,8 +876,17 @@ namespace BIG.VMS.DATASERVICE
                 }
                 catch (DbEntityValidationException ex)
                 {
+                    string message = "";
+                    foreach (var eve in ex.EntityValidationErrors)
+                    {
+                        foreach (var ve in eve.ValidationErrors)
+                        {
+                            message += ve.PropertyName + " " + ve.ErrorMessage;
+
+                        }
+                    }
                     result.Status = false;
-                    result.ExceptionMessage = ex.Message.ToString();
+                    result.ExceptionMessage = ex.Message + message;
                 }
                 catch (Exception ex)
                 {
