@@ -106,7 +106,7 @@
             this.btnDownloadnew.Name = "btnDownloadnew";
             this.btnDownloadnew.Size = new System.Drawing.Size(199, 42);
             this.btnDownloadnew.TabIndex = 4;
-            this.btnDownloadnew.Text = "Download All";
+            this.btnDownloadnew.Text = "ดาวน์โหลดทั้งหมด";
             this.btnDownloadnew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDownloadnew.UseVisualStyleBackColor = false;
             this.btnDownloadnew.Click += new System.EventHandler(this.btnDownloadnew_Click);

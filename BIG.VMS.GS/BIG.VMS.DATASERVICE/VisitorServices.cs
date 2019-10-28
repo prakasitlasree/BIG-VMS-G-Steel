@@ -1510,7 +1510,7 @@ namespace BIG.VMS.DATASERVICE
             try
             {
 
-                var listData = query.ToList();
+                var listData = query.OrderByDescending(x => x.CREATED_DATE).ToList();
                 resp.Status = true;
                 resp.ResultObj = listData;
             }

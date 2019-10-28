@@ -359,7 +359,7 @@ namespace BIG.VMS.DATASERVICE
             {
                 using (BIG_VMSEntities ctx = new BIG_VMSEntities())
                 {
-                    var list = ctx.MAS_PROVINCE.OrderByDescending(o => o.PRIORITY).ThenBy(o => o.NAME).Take(10).ToList();
+                    var list = ctx.MAS_PROVINCE.Where(o => o.PRIORITY > 0 || o.PRIORITY != null).ToList();
                     foreach (var item in list)
                     {
                         ComboBoxItem data = new ComboBoxItem();
