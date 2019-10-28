@@ -469,7 +469,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
                                                 rpt.PrintToPrinter(1, true, 0, 0);
                                                 frmReportViewer view = new frmReportViewer();
                                                 view.crystalReportViewer1.ReportSource = rpt;
-                                                view.Show();
+                                                //view.Show();
                                             }
                                             else
                                             {
@@ -479,7 +479,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
                                                 rpt.PrintToPrinter(1, true, 0, 0);
                                                 frmReportViewer view = new frmReportViewer();
                                                 view.crystalReportViewer1.ReportSource = rpt;
-                                                view.Show();
+                                                //view.Show();
                                             }
 
                                         }
@@ -506,7 +506,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
                                             rpt.PrintToPrinter(1, true, 0, 0);
                                             frmReportViewer view = new frmReportViewer();
                                             view.crystalReportViewer1.ReportSource = rpt;
-                                            view.Show();
+                                            //view.Show();
                                         }
 
                                         #endregion
@@ -532,7 +532,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
                                             rpt.PrintToPrinter(1, true, 0, 0);
                                             frmReportViewer view = new frmReportViewer();
                                             view.crystalReportViewer1.ReportSource = rpt;
-                                            view.Show();
+                                            //view.Show();
                                         }
 
 

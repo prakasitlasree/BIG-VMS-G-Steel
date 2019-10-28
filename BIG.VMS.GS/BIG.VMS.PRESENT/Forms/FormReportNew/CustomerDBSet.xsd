@@ -21,6 +21,7 @@
               <xs:element name="CUST_GROUP_NAME" msprop:Generator_ColumnVarNameInTable="columnCUST_GROUP_NAME" msprop:Generator_ColumnPropNameInRow="CUST_GROUP_NAME" msprop:Generator_ColumnPropNameInTable="CUST_GROUP_NAMEColumn" msprop:Generator_UserColumnName="CUST_GROUP_NAME" type="xs:string" minOccurs="0" />
               <xs:element name="CUST_OBJECTIVE" msprop:Generator_ColumnVarNameInTable="columnCUST_OBJECTIVE" msprop:Generator_ColumnPropNameInRow="CUST_OBJECTIVE" msprop:Generator_ColumnPropNameInTable="CUST_OBJECTIVEColumn" msprop:Generator_UserColumnName="CUST_OBJECTIVE" type="xs:string" minOccurs="0" />
               <xs:element name="COMPANY_NAME" msprop:Generator_ColumnVarNameInTable="columnCOMPANY_NAME" msprop:Generator_ColumnPropNameInRow="COMPANY_NAME" msprop:Generator_ColumnPropNameInTable="COMPANY_NAMEColumn" msprop:Generator_UserColumnName="COMPANY_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="NO" msprop:Generator_ColumnVarNameInTable="columnNO" msprop:Generator_ColumnPropNameInRow="NO" msprop:Generator_ColumnPropNameInTable="NOColumn" msprop:Generator_UserColumnName="NO" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

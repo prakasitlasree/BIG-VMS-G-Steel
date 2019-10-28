@@ -7,6 +7,7 @@ namespace BIG.VMS.MODEL.GsteelModel.CustomModel
 {
     public class ProjectHeader
     {
+        public string NO { get; set; }
         public  string PROJECT_NAME { get; set; }
         public string RESP_MANAGER { get; set; }
         public string RESP_TEL { get; set; }

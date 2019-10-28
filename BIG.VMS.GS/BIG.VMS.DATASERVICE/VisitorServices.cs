@@ -923,6 +923,7 @@ namespace BIG.VMS.DATASERVICE
                             outputData.LIST_PROJECT_HEADER = new List<ProjectHeader>();
                             ProjectHeader header = new ProjectHeader()
                             {
+                                NO = visitor.NO.ToString(),
                                 PROJECT_NAME = project.PROJECT_NAME,
                                 CONTRUCTOR_NAME = project.MAS_CONTRACTOR.NAME,
                                 RESP_MANAGER = project.RESPONSIBLE_MANAGER,
@@ -986,6 +987,7 @@ namespace BIG.VMS.DATASERVICE
                             outputData.LIST_CUSTOMER_HEADER = new List<CUSTOMER_HEADER>();
                             CUSTOMER_HEADER header = new CUSTOMER_HEADER()
                             {
+                                NO = visitor.NO.ToString(),
                                 CUST_GROUP_NAME = customer.CUSTOMER_NAME,
                                 CUST_OBJECTIVE = customer.OBJECTIVE_OF_VISIT,
                                 REQ_DEPT = customer.REQUESTOR_DEPARTMENT,

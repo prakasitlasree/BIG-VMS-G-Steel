@@ -7,12 +7,14 @@ namespace BIG.VMS.MODEL.CustomModel.General
 {
     public class CUSTOMER_HEADER
     {
+        public string NO { get; set; }
         public string REQ_NAME { get; set; }
         public string REQ_POSITION { get; set; }
         public string REQ_DEPT { get; set; }
         public string CUST_GROUP_NAME { get; set; }
         public string CUST_OBJECTIVE { get; set; }
         public string COMPANY_NAME { get; set; }
+        
     }
 
     public class CUSTOMER
