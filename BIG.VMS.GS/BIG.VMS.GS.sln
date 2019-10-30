@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIG.VMS.PRESENT", "BIG.VMS.PRESENT\BIG.VMS.PRESENT.csproj", "{DAF9B415-2617-4101-A2C8-49FDA5831F02}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIG.VMS.CUSTOM.CONTROL", "BIG.VMS.CUSTOM.CONTROL\BIG.VMS.CUSTOM.CONTROL.csproj", "{454365A3-A664-4A1A-891C-129447864F6A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIG.VMS.GS.API", "BIG.VMS.GS.API\BIG.VMS.GS.API.csproj", "{29605C32-CB7E-45B1-A323-DF14039DCD80}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "BIG.VMS.G-Steel", "BIG.VMS.G-Steel\BIG.VMS.G-Steel.vdproj", "{CF4836A6-D9A8-413F-9857-CF41C3C8B967}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +73,10 @@ Global
 		{29605C32-CB7E-45B1-A323-DF14039DCD80}.Release|Any CPU.Build.0 = Release|Any CPU
 		{29605C32-CB7E-45B1-A323-DF14039DCD80}.Release|x86.ActiveCfg = Release|Any CPU
 		{29605C32-CB7E-45B1-A323-DF14039DCD80}.Release|x86.Build.0 = Release|Any CPU
+		{CF4836A6-D9A8-413F-9857-CF41C3C8B967}.Debug|Any CPU.ActiveCfg = Debug
+		{CF4836A6-D9A8-413F-9857-CF41C3C8B967}.Debug|x86.ActiveCfg = Debug
+		{CF4836A6-D9A8-413F-9857-CF41C3C8B967}.Release|Any CPU.ActiveCfg = Release
+		{CF4836A6-D9A8-413F-9857-CF41C3C8B967}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
