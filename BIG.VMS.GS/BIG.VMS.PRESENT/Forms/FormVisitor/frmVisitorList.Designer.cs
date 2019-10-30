@@ -107,13 +107,13 @@
             this.flowLayoutPanel3.Location = new System.Drawing.Point(2, 2);
             this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(754, 80);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(759, 80);
             this.flowLayoutPanel3.TabIndex = 19;
             // 
             // btnIn
             // 
             this.btnIn.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnIn.BackColor = System.Drawing.Color.Lime;
+            this.btnIn.BackColor = System.Drawing.Color.LimeGreen;
             this.btnIn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIn.ForeColor = System.Drawing.Color.Black;
@@ -132,7 +132,7 @@
             // btnOut
             // 
             this.btnOut.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnOut.BackColor = System.Drawing.Color.Moccasin;
+            this.btnOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnOut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOut.ForeColor = System.Drawing.Color.Black;
@@ -151,17 +151,16 @@
             // btnNotOut
             // 
             this.btnNotOut.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnNotOut.BackColor = System.Drawing.Color.LightPink;
+            this.btnNotOut.BackColor = System.Drawing.Color.Gold;
             this.btnNotOut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNotOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNotOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNotOut.ForeColor = System.Drawing.Color.Black;
             this.btnNotOut.Location = new System.Drawing.Point(274, 2);
             this.btnNotOut.Margin = new System.Windows.Forms.Padding(2);
             this.btnNotOut.Name = "btnNotOut";
-            this.btnNotOut.Size = new System.Drawing.Size(155, 75);
-            this.btnNotOut.TabIndex = 18;
-            this.btnNotOut.Text = "รายชื่อคนยังไม่ออก";
-            this.btnNotOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNotOut.Size = new System.Drawing.Size(150, 75);
+            this.btnNotOut.TabIndex = 11;
+            this.btnNotOut.Text = "     รายชื่อ       ผู้ที่ยังไม่ออก";
             this.btnNotOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNotOut.UseVisualStyleBackColor = false;
             this.btnNotOut.Click += new System.EventHandler(this.btnNotOut_Click);
@@ -169,17 +168,16 @@
             // btn_BL
             // 
             this.btn_BL.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btn_BL.BackColor = System.Drawing.Color.LightPink;
+            this.btn_BL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btn_BL.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_BL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_BL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_BL.ForeColor = System.Drawing.Color.Black;
-            this.btn_BL.Location = new System.Drawing.Point(433, 2);
+            this.btn_BL.Location = new System.Drawing.Point(428, 2);
             this.btn_BL.Margin = new System.Windows.Forms.Padding(2);
             this.btn_BL.Name = "btn_BL";
-            this.btn_BL.Size = new System.Drawing.Size(140, 75);
-            this.btn_BL.TabIndex = 19;
-            this.btn_BL.Text = "รายชื่อแบล็คลิสต์";
-            this.btn_BL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_BL.Size = new System.Drawing.Size(150, 75);
+            this.btn_BL.TabIndex = 12;
+            this.btn_BL.Text = "      รายชื่อ         แบล็คลิสต์";
             this.btn_BL.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_BL.UseVisualStyleBackColor = false;
             this.btn_BL.Click += new System.EventHandler(this.btn_BL_Click);
@@ -194,7 +192,7 @@
             this.panel3.Controls.Add(this.lblTodayIn);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label7);
-            this.panel3.Location = new System.Drawing.Point(577, 2);
+            this.panel3.Location = new System.Drawing.Point(582, 2);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(175, 76);
