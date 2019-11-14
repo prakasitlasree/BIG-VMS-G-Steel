@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BIG.VMS.MODEL.CustomModel;
 using BIG.VMS.PRESENT.Forms.Master;
+using ThaiNationalIDCard;
 
 namespace BIG.VMS.PRESENT.Forms.FormVisitorNew
 {
@@ -22,6 +23,8 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitorNew
         public PIDCard CARD { get; set; }
         public string CARD_TYPE { get; set; }
         public DIDCard DID { get; set; }
+
+        private ThaiIDCard idcard;
 
         public Image OTHER_CARD_IMAGE { get; set; }
 
@@ -53,6 +56,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitorNew
 
         private void FrmSelectCard_Load(object sender, EventArgs e)
         {
+            idcard = new ThaiIDCard();
             //btnDriverCard.Click += new EventHandler(ButtonClick);
         }
 
@@ -71,11 +75,13 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitorNew
 
         private void BtnIdCard_Click(object sender, EventArgs e)
         {
-            ReadPidCard();
+            //ReadPidCard();
+            ReadNewPID();
             TYPE = "ID_CARD";
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
         private void ListCardReader()
         {
             byte[] szReaders = new byte[1024 * 2];
@@ -93,6 +99,63 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitorNew
                 }
             }
         }
+
+        private void ReadNewPID()
+        {
+            try
+            {
+                CARD = new PIDCard();
+                CARD_TYPE = "PID";
+                Personal personal = idcard.readAllPhoto();
+                if (personal != null)
+                {
+                    CARD.NO = personal.Citizenid;
+                    CARD.TH_TITLE = personal.Th_Prefix;
+                    CARD.TH_FIRST_NAME = personal.Th_Firstname;
+                    CARD.TH_LAST_NAME = personal.Th_Lastname;
+                    CARD.EN_TITLE = personal.En_Prefix;
+                    CARD.EN_FIRST_NAME = personal.En_Firstname;
+                    CARD.EN_LAST_NAME = personal.En_Lastname;
+                    CARD.BIRTH_DATE = CardHelper.DateFormat(personal.Birthday.ToString("yyyyMMdd"));
+                    CARD.HOME_NO = personal.addrHouseNo;
+                    CARD.MOO = personal.addrVillageNo;
+                    CARD.SOI = personal.addrLane;
+                    CARD.ROAD = personal.addrRoad;
+                    CARD.TUMBON = personal.addrTambol;
+                    CARD.AMPHOE = personal.addrAmphur;
+                    CARD.PROVINCE = personal.addrProvince;
+                    CARD.GENDER = personal.Sex;
+
+                    CARD.PHOTO = personal.PhotoBitmap;
+                    CARD.CARD_IMAGE = personal.PhotoBitmap;
+
+                    try
+                    {
+                        byte[] byteImage = null;
+                        Bitmap bitmap = null;
+                        MemoryStream stream = new MemoryStream();
+                        bitmap.Save(stream, personal.PhotoBitmap.RawFormat);
+                        byteImage = stream.ToArray();
+
+                        CARD.BYTE_IMAGE = byteImage;
+                    }
+                    catch 
+                    { 
+                    }
+                    READ_CARD_STATUS = true;
+                }
+                else if (idcard.ErrorCode() > 0)
+                {
+                    MessageBox.Show(idcard.Error());
+                }
+            }
+            catch (Exception ex)
+            {
+                READ_CARD_STATUS = false;
+                MessageBox.Show("ไม่พบเครื่องอ่านบัตรประชาชน หรืออ่านบัตรไม่สำเร็จ!!! " + ex.Message);
+            }
+        }
+
         protected int ReadPidCard()
         {
             try
@@ -304,8 +367,9 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitorNew
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            ReadPidCard();
+            //ReadPidCard();
             TYPE = "ID_CARD";
+            ReadNewPID();
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
