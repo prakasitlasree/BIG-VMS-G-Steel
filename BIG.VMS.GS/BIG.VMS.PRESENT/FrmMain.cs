@@ -10,6 +10,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using BIG.VMS.PRESENT.Forms.FormReportNew;
 using BIG.VMS.PRESENT.Forms.Utitility;
+using BIG.VMS.PRESENT.Forms.Employee;
 
 namespace BIG.VMS.PRESENT
 {
@@ -201,6 +202,25 @@ namespace BIG.VMS.PRESENT
             frm.WindowState = FormWindowState.Maximized;
             frm.MdiParent = this;
             frm.Show();
+        }
+
+        private void แผนกToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void รายชอแผนกToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEmployeeList frm = new frmEmployeeList();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void MenuInOut_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

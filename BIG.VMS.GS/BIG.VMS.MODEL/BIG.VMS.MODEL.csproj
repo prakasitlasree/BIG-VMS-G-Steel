@@ -58,9 +58,15 @@
     <Compile Include="CustomModel\Container\ContainerCarModel.cs" />
     <Compile Include="CustomModel\Container\ContainerCarType.cs" />
     <Compile Include="CustomModel\Container\ContainerContractor.cs" />
+    <Compile Include="CustomModel\Container\ContainerDepartment.cs" />
     <Compile Include="CustomModel\Container\ContainerDisplayVisitor.cs" />
+    <Compile Include="CustomModel\Container\ContainerEmployee.cs" />
     <Compile Include="CustomModel\Container\ContainerPlanVisit.cs" />
+    <Compile Include="CustomModel\Container\ContainerReason.cs" />
     <Compile Include="CustomModel\CustomContainer\CustomAppointment.cs" />
+    <Compile Include="CustomModel\CustomContainer\CustomDepartment.cs" />
+    <Compile Include="CustomModel\CustomContainer\CustomEmployee.cs" />
+    <Compile Include="CustomModel\CustomContainer\CustomReason.cs" />
     <Compile Include="CustomModel\CustomContainer\CustomReportVisitorAll.cs" />
     <Compile Include="CustomModel\CustomContainer\CustomVisitor.cs" />
     <Compile Include="CustomModel\CustomContainer\CustomDisplayVisitor.cs" />
@@ -75,6 +81,9 @@
     <Compile Include="CustomModel\Container\ContainerVisitor.cs" />
     <Compile Include="CustomModel\Filter\BlacklistFilter.cs" />
     <Compile Include="CustomModel\Filter\ContractorFilter.cs" />
+    <Compile Include="CustomModel\Filter\FilterDepartment.cs" />
+    <Compile Include="CustomModel\Filter\FilterEmployee.cs" />
+    <Compile Include="CustomModel\Filter\FilterReason.cs" />
     <Compile Include="CustomModel\Filter\PlanVisitFilter.cs" />
     <Compile Include="CustomModel\General\CustomerReport.cs" />
     <Compile Include="CustomModel\HeaderGrid.cs" />

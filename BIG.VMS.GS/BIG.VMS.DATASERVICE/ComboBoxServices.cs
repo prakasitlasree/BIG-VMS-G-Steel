@@ -252,13 +252,14 @@ namespace BIG.VMS.DATASERVICE
             return listData;
         }
 
-        public List<ComboBoxItem> GetComboDepartment()
+        public List<ComboBoxItem> GetComboDepartment(bool select = false)
         {
             List<ComboBoxItem> listData = new List<ComboBoxItem>();
             try
             {
                 using (BIG_VMSEntities ctx = new BIG_VMSEntities())
                 {
+                  
 
                     var list = ctx.MAS_DEPARTMENT.Where(O => O.SHOW_FLAG == "Y").OrderBy(O => O.SHOW_SEQ);
                     foreach (var item in list)
@@ -269,13 +270,21 @@ namespace BIG.VMS.DATASERVICE
                         listData.Add(data);
                     }
 
+                    if (select)
+                    {
+                        ComboBoxItem data = new ComboBoxItem();
+                        data.Text = "=== เลือกทั้งหมด ===";
+                        data.Value = 0;
+                        listData.Add(data);
+                    }
+
                 }
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            return listData.OrderByDescending(x => x.Value).ToList();
+            return listData.OrderBy(x => x.Value).ToList();
         }
 
         public List<ComboBoxItem> GetComboDepartment(string filter)
@@ -490,5 +499,7 @@ namespace BIG.VMS.DATASERVICE
             }
             return listData;
         }
+
+       
     }
 }

@@ -100,18 +100,7 @@ namespace BIG.VMS.PRESENT.Forms.Home
 
             };
 
-            //switch (comboType.SelectedIndex)
-            //{
-            //    case 0:
-            //        break;
-            //    case 1:
-            //        filter.TYPE = "IN";
-            //        break;
-            //    case 2:
-            //        filter.TYPE = "OUT";
-            //        break;
-            //}
-
+          
             switch (comboGroup.SelectedIndex)
             {
                 case 0:

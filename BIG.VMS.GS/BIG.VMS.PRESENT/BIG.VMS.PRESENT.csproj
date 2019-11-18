@@ -202,6 +202,18 @@
     <Compile Include="Forms\CustomerVisit\frmPlantVisitor.Designer.cs">
       <DependentUpon>frmPlantVisitor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Employee\frmEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Employee\frmEmployee.Designer.cs">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Employee\frmEmployeeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Employee\frmEmployeeList.Designer.cs">
+      <DependentUpon>frmEmployeeList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormReportNew\CustomerDBSet.cs">
       <DependentUpon>CustomerDBSet.xsd</DependentUpon>
     </Compile>
@@ -509,6 +521,12 @@
     <EmbeddedResource Include="Forms\CustomerVisit\frmPlantVisitor.resx">
       <DependentUpon>frmPlantVisitor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Employee\frmEmployee.resx">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Employee\frmEmployeeList.resx">
+      <DependentUpon>frmEmployeeList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormReportNew\frmReport.resx">
       <DependentUpon>frmReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -736,6 +754,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Forms\Departure\" />
     <Folder Include="ResourceFile\icon\" />
   </ItemGroup>
   <ItemGroup>

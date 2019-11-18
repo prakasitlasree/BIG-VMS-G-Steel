@@ -51,6 +51,9 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lbLogout = new System.Windows.Forms.ToolStripStatusLabel();
+            this.พนกงานToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.แผนกToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.รายชอแผนกToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -63,6 +66,7 @@
             this.menuAppointment,
             this.menuReport,
             this.menuContact,
+            this.พนกงานToolStripMenuItem,
             this.menuSite,
             this.menuHelp});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -79,11 +83,12 @@
             this.menuInOut.Name = "menuInOut";
             this.menuInOut.Size = new System.Drawing.Size(122, 20);
             this.menuInOut.Text = "หน้าหลัก (ผ่านเข้าออก)";
+            this.menuInOut.Click += new System.EventHandler(this.MenuInOut_Click);
             // 
             // visitor_transaction
             // 
             this.visitor_transaction.Name = "visitor_transaction";
-            this.visitor_transaction.Size = new System.Drawing.Size(155, 22);
+            this.visitor_transaction.Size = new System.Drawing.Size(180, 22);
             this.visitor_transaction.Text = "ระบบผ่านเข้า-ออก";
             this.visitor_transaction.Click += new System.EventHandler(this.visitor_transaction_Click);
             // 
@@ -168,14 +173,14 @@
             // website
             // 
             this.website.Name = "website";
-            this.website.Size = new System.Drawing.Size(155, 22);
+            this.website.Size = new System.Drawing.Size(180, 22);
             this.website.Text = "อัพโหลดรูปภาพ";
             this.website.Click += new System.EventHandler(this.website_Click);
             // 
             // downloadPic
             // 
             this.downloadPic.Name = "downloadPic";
-            this.downloadPic.Size = new System.Drawing.Size(155, 22);
+            this.downloadPic.Size = new System.Drawing.Size(180, 22);
             this.downloadPic.Text = "ดาวน์โหลดรูปภาพ";
             this.downloadPic.Click += new System.EventHandler(this.downloadPic_Click);
             // 
@@ -191,14 +196,14 @@
             // test_readcard
             // 
             this.test_readcard.Name = "test_readcard";
-            this.test_readcard.Size = new System.Drawing.Size(152, 22);
+            this.test_readcard.Size = new System.Drawing.Size(144, 22);
             this.test_readcard.Text = "ทดสอบอ่านบัตร";
             this.test_readcard.Click += new System.EventHandler(this.test_readcard_Click);
             // 
             // logout
             // 
             this.logout.Name = "logout";
-            this.logout.Size = new System.Drawing.Size(152, 22);
+            this.logout.Size = new System.Drawing.Size(144, 22);
             this.logout.Text = "ออกจากระบบ";
             this.logout.Click += new System.EventHandler(this.logout_Click_1);
             // 
@@ -237,6 +242,29 @@
             this.lbLogout.Size = new System.Drawing.Size(45, 17);
             this.lbLogout.Text = "Logout";
             this.lbLogout.Click += new System.EventHandler(this.lbLogout_Click);
+            // 
+            // พนกงานToolStripMenuItem
+            // 
+            this.พนกงานToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.แผนกToolStripMenuItem,
+            this.รายชอแผนกToolStripMenuItem});
+            this.พนกงานToolStripMenuItem.Name = "พนกงานToolStripMenuItem";
+            this.พนกงานToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.พนกงานToolStripMenuItem.Text = "พนักงาน";
+            // 
+            // แผนกToolStripMenuItem
+            // 
+            this.แผนกToolStripMenuItem.Name = "แผนกToolStripMenuItem";
+            this.แผนกToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.แผนกToolStripMenuItem.Text = "แผนก";
+            this.แผนกToolStripMenuItem.Click += new System.EventHandler(this.แผนกToolStripMenuItem_Click);
+            // 
+            // รายชอแผนกToolStripMenuItem
+            // 
+            this.รายชอแผนกToolStripMenuItem.Name = "รายชอแผนกToolStripMenuItem";
+            this.รายชอแผนกToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.รายชอแผนกToolStripMenuItem.Text = "รายชื่อพนักงาน";
+            this.รายชอแผนกToolStripMenuItem.Click += new System.EventHandler(this.รายชอแผนกToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
@@ -289,5 +317,8 @@
         private System.Windows.Forms.ToolStripStatusLabel lbLogout;
         private System.Windows.Forms.ToolStripMenuItem contractorlist;
         private System.Windows.Forms.ToolStripMenuItem downloadPic;
+        private System.Windows.Forms.ToolStripMenuItem พนกงานToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem แผนกToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem รายชอแผนกToolStripMenuItem;
     }
 }
