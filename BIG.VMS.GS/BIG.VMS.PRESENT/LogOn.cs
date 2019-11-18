@@ -235,7 +235,7 @@ namespace BIG.VMS.PRESENT
         {
 
             var service = new AuthenticationServices();
-            var filter = new AuthenticationFilter { UserName = "Prakasit", Password = "1234" };
+            var filter = new AuthenticationFilter { UserName = "guard", Password = "1234" };
             var container = new ContainerAuthentication { Filter = filter };
             var res = service.Retrieve(container);
             if (res.Status)

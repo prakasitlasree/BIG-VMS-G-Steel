@@ -110,6 +110,10 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                         }
 
                     }
+                    else
+                    {
+                        MessageBox.Show("Read card status is false, Please contact K.Prakasit 093-4127373");
+                    }
 
                     #endregion
 
