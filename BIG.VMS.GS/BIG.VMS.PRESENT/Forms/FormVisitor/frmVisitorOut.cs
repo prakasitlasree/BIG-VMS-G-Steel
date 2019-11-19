@@ -112,9 +112,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
             Save();
 
         }
-
-
-
+         
         private void Save()
         {
             try
@@ -197,8 +195,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                                     obj.TRN_ATTACHEDMENT.FirstOrDefault().SLIP_PHOTO = res.TRN_VISITOR.TRN_ATTACHEDMENT.FirstOrDefault().SLIP_PHOTO;
                                 }
                             }
-
-
+                             
                             if (obj.TRN_ATTACHEDMENT.Count > 0)
                             {
                                 obj.TRN_ATTACHEDMENT.FirstOrDefault().REF_PHOTO1 = null;
@@ -212,16 +209,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                             res = _service.Create(container);
 
                             if (res.Status)
-                            {
-                                string dir = DIRECTORY_OUT + "\\" + obj.NO + "\\";
-                                Directory.CreateDirectory(dir);
-
-                                if (obj.TRN_ATTACHEDMENT.Count > 0)
-                                {
-                                    SaveImage(picImage, dir + "CONTACT_PHOTO.jpg");
-                                    SaveImage(picCard, dir + "ID_CARD_PHOTO.jpg");
-                                }
-
+                            { 
                                 MessageBox.Show(Message.MSG_SAVE_COMPLETE, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.DialogResult = DialogResult.OK;
                                 this.Close();
@@ -406,38 +394,33 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
             Image image = BIG.VMS.PRESENT.Properties.Resources.emploee; ;
             try
             {
-                //var frm = new CameraSelection();
-                //frm.StartPosition = FormStartPosition.CenterParent;
-                //if (frm.ShowDialog() == DialogResult.OK)
-                //{
-                //    if (frm.CAMERA != null)
-                //    {
-                //        picSlip.Image = frm.CAMERA;
-                //        flgSlipChange = true;
-                //    }
-                //}
-
-                OpenFileDialog res = new OpenFileDialog();
-
-
-                res.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.tif;...";
-                res.Multiselect = false;
-
-
-                if (res.ShowDialog() == DialogResult.OK)
+                var frm = new CameraSelection();
+                frm.StartPosition = FormStartPosition.CenterParent;
+                if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    if (!string.IsNullOrEmpty(res.FileName))
+                    if (frm.CAMERA != null)
                     {
-
-                        Image img = Image.FromFile(res.FileName);
-                        picSlip.Image = img;
+                        picSlip.Image = frm.CAMERA;
                         flgSlipChange = true;
-
                     }
-
-
                 }
 
+                #region=== comment
+                //OpenFileDialog res = new OpenFileDialog(); 
+                //res.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.tif;...";
+                //res.Multiselect = false; 
+                //if (res.ShowDialog() == DialogResult.OK)
+                //{
+                //    if (!string.IsNullOrEmpty(res.FileName))
+                //    {
+
+                //        Image img = Image.FromFile(res.FileName);
+                //        picSlip.Image = img;
+                //        flgSlipChange = true;
+
+                //    } 
+                //} 
+                #endregion
             }
             catch (Exception ex)
             {

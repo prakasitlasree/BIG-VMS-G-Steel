@@ -614,10 +614,7 @@ namespace BIG.VMS.DATASERVICE
                 {
 
                     var reTrnVisitor = ctx.TRN_VISITOR.Where(o => o.AUTO_ID == obj.TRN_VISITOR.AUTO_ID).FirstOrDefault();
-
-
-
-
+                     
                     if (reTrnVisitor != null)
                     {
                         if (image != null)
@@ -627,7 +624,7 @@ namespace BIG.VMS.DATASERVICE
                             {
                                 attach.SLIP_PHOTO = image;
                             }
-                            
+                             
                         }
 
                         reTrnVisitor.STATUS = 2;
