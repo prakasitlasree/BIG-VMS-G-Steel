@@ -29,7 +29,7 @@ namespace BIG.VMS.DATASERVICE
                     {
                         query = query.Where(o => o.NAME.Contains(filter.NAME));
                     }
-                  
+
 
                     query.OrderBy(o => o.SHOW_SEQ);
                     return query;
@@ -134,10 +134,10 @@ namespace BIG.VMS.DATASERVICE
                     if (data != null)
                     {
                         data.NAME = dept.NAME;
-                       
+
                         data.SHOW_FLAG = dept.SHOW_FLAG;
                         data.SHOW_SEQ = dept.SHOW_SEQ;
-                     
+
                     }
                     ctx.SaveChanges();
                     result.ResultObj = data;
@@ -175,12 +175,27 @@ namespace BIG.VMS.DATASERVICE
 
                 try
                 {
-                    var data = ctx.MAS_DEPARTMENT.Where(o => o.AUTO_ID == id).FirstOrDefault();
-                    ctx.MAS_DEPARTMENT.Remove(data);
-                    ctx.SaveChanges();
-                    result.ResultObj = data;
-                    result.Status = true;
-                    result.Message = "Save Successful";
+                    var data = ctx.MAS_DEPARTMENT
+                        .Include("MAS_REASON").Where(o => o.AUTO_ID == id).FirstOrDefault();
+                    if (data.MAS_REASON != null)
+                    {
+                        if (data.MAS_REASON.Count > 0)
+                        {
+                            result.ResultObj = data;
+                            result.Status = false;
+                            result.Message = $@"กรุณาลบข้อมูลเหตุผลของแผนก {data.NAME} ก่อน";
+                        }
+                        else
+                        {
+                            ctx.MAS_DEPARTMENT.Remove(data);
+                            ctx.SaveChanges();
+                            result.ResultObj = data;
+                            result.Status = true;
+                            result.Message = "Save Successful";
+                        }
+
+                    }
+
                 }
                 catch (DbEntityValidationException ex)
                 {
@@ -221,9 +236,9 @@ namespace BIG.VMS.DATASERVICE
                         AUTO_ID = item.AUTO_ID,
 
 
-                      NAME = item.NAME,
-                      SHOW_FLAG = item.SHOW_FLAG,
-                      SHOW_SEQ = item.SHOW_SEQ
+                        NAME = item.NAME,
+                        SHOW_FLAG = item.SHOW_FLAG,
+                        SHOW_SEQ = item.SHOW_SEQ
 
                     }).ToList();
 

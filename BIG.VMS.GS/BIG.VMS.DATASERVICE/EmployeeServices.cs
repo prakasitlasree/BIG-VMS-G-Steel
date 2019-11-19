@@ -207,11 +207,26 @@ namespace BIG.VMS.DATASERVICE
                 try
                 {
                     var data = ctx.MAS_EMPLOYEE.Where(o => o.AUTO_ID == id).FirstOrDefault();
-                    ctx.MAS_EMPLOYEE.Remove(data);
-                    ctx.SaveChanges();
-                    result.ResultObj = data;
-                    result.Status = true;
-                    result.Message = "Save Successful";
+                    if (data.TRN_VISITOR != null)
+                    {
+                        if (data.TRN_VISITOR.Count > 0)
+                        {
+                            result.ResultObj = data;
+                            result.Status = false;
+                            result.Message = $@"มีผู้ติดต่อที่ติดต่อ({data.FIRST_NAME})นี้อยู่ ไม่สามารถลบได้";
+                        }
+                        else
+                        {
+                            ctx.MAS_EMPLOYEE.Remove(data);
+                            ctx.SaveChanges();
+                            result.ResultObj = data;
+                            result.Status = true;
+                            result.Message = "Save Successful";
+                        }
+                    }
+                    
+
+
                 }
                 catch (DbEntityValidationException ex)
                 {

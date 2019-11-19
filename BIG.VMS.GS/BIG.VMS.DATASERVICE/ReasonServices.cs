@@ -29,6 +29,11 @@ namespace BIG.VMS.DATASERVICE
                     {
                         query = query.Where(o => o.REASON.Contains(filter.REASON));
                     }
+                    if (filter.DEPT_ID > 0)
+                    {
+                        query = query.Where(o => o.DEPT_ID == filter.DEPT_ID);
+
+                    }
 
 
                     query.OrderBy(o => o.SHOW_SEQ);
@@ -134,7 +139,7 @@ namespace BIG.VMS.DATASERVICE
                     if (data != null)
                     {
                         data.REASON = reason.REASON;
-
+                        data.DEPT_ID = reason.DEPT_ID;
                         data.SHOW_FLAG = reason.SHOW_FLAG;
                         data.SHOW_SEQ = reason.SHOW_SEQ;
 
@@ -175,12 +180,27 @@ namespace BIG.VMS.DATASERVICE
 
                 try
                 {
+
                     var data = ctx.MAS_REASON.Where(o => o.AUTO_ID == id).FirstOrDefault();
-                    ctx.MAS_REASON.Remove(data);
-                    ctx.SaveChanges();
-                    result.ResultObj = data;
-                    result.Status = true;
-                    result.Message = "Save Successful";
+                    if (data.TRN_VISITOR != null)
+                    {
+                        if (data.TRN_VISITOR.Count > 0)
+                        {
+                            result.ResultObj = data;
+                            result.Status = false;
+                            result.Message = $@"มีผู้ติดต่อที่ใช้เหตุผล({data.REASON})นี้อยู่ ไม่สามารถลบได้";
+                        }
+                        else
+                        {
+                            ctx.MAS_REASON.Remove(data);
+                            ctx.SaveChanges();
+                            result.ResultObj = data;
+                            result.Status = true;
+                            result.Message = "Save Successful";
+                        }
+                    }
+                   
+                 
                 }
                 catch (DbEntityValidationException ex)
                 {

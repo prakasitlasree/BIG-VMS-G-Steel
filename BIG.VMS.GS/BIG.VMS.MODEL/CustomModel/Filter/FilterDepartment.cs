@@ -11,5 +11,6 @@ namespace BIG.VMS.MODEL.CustomModel.Filter
         public string NAME { get; set; }
         public string SHOW_FLAG { get; set; }
         public Nullable<int> SHOW_SEQ { get; set; }
+       
     }
 }

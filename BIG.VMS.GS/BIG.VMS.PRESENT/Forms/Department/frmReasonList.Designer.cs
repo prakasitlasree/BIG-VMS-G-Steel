@@ -1,6 +1,6 @@
-﻿namespace BIG.VMS.PRESENT.Forms.Employee
+﻿namespace BIG.VMS.PRESENT.Forms.Department
 {
-    partial class frmEmployeeList
+    partial class frmReasonList
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmployeeList));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReasonList));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtLastName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboDept = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.txtReason = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.gridEmployee = new System.Windows.Forms.DataGridView();
             this.VIEW = new System.Windows.Forms.DataGridViewImageColumn();
@@ -70,7 +66,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(884, 561);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.TabIndex = 2;
             // 
             // tableLayoutPanel5
             // 
@@ -78,22 +74,14 @@
             this.tableLayoutPanel5.BackColor = System.Drawing.SystemColors.Control;
             this.tableLayoutPanel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.tableLayoutPanel5.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel5.ColumnCount = 7;
+            this.tableLayoutPanel5.ColumnCount = 3;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Controls.Add(this.txtLastName, 3, 0);
             this.tableLayoutPanel5.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label3, 2, 0);
-            this.tableLayoutPanel5.Controls.Add(this.txtName, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label4, 4, 0);
-            this.tableLayoutPanel5.Controls.Add(this.comboDept, 5, 0);
             this.tableLayoutPanel5.Controls.Add(this.btnSearch, 1, 1);
             this.tableLayoutPanel5.Controls.Add(this.btnAdd, 2, 1);
+            this.tableLayoutPanel5.Controls.Add(this.txtReason, 1, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(2, 2);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(2);
@@ -105,15 +93,6 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(880, 76);
             this.tableLayoutPanel5.TabIndex = 2;
             // 
-            // txtLastName
-            // 
-            this.txtLastName.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtLastName.Location = new System.Drawing.Point(293, 3);
-            this.txtLastName.Margin = new System.Windows.Forms.Padding(2);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(175, 29);
-            this.txtLastName.TabIndex = 3;
-            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -124,54 +103,6 @@
             this.label1.Size = new System.Drawing.Size(30, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "ชื่อ";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(218, 5);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 24);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "นามสกุล";
-            // 
-            // txtName
-            // 
-            this.txtName.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtName.Location = new System.Drawing.Point(38, 3);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(175, 29);
-            this.txtName.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(473, 5);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 24);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "แผนก";
-            // 
-            // comboDept
-            // 
-            this.comboDept.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboDept.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboDept.FormattingEnabled = true;
-            this.comboDept.Items.AddRange(new object[] {
-            "ทั้งหมด",
-            "บุุคคลทั่วไป",
-            "บุุคคลนัดหมาย",
-            "ผูู้รับเหมา",
-            "กลุ่มลูกค้า"});
-            this.comboDept.Location = new System.Drawing.Point(532, 3);
-            this.comboDept.Margin = new System.Windows.Forms.Padding(2);
-            this.comboDept.Name = "comboDept";
-            this.comboDept.Size = new System.Drawing.Size(175, 28);
-            this.comboDept.TabIndex = 7;
             // 
             // btnSearch
             // 
@@ -189,12 +120,11 @@
             this.btnSearch.Text = "ค้นหา";
             this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.Honeydew;
-            this.tableLayoutPanel5.SetColumnSpan(this.btnAdd, 2);
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
@@ -208,7 +138,17 @@
             this.btnAdd.Text = "เพิ่ม";
             this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // txtReason
+            // 
+            this.txtReason.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tableLayoutPanel5.SetColumnSpan(this.txtReason, 2);
+            this.txtReason.Location = new System.Drawing.Point(38, 3);
+            this.txtReason.Margin = new System.Windows.Forms.Padding(2);
+            this.txtReason.Name = "txtReason";
+            this.txtReason.Size = new System.Drawing.Size(355, 29);
+            this.txtReason.TabIndex = 2;
             // 
             // tableLayoutPanel3
             // 
@@ -243,9 +183,10 @@
             this.gridEmployee.Name = "gridEmployee";
             this.gridEmployee.ReadOnly = true;
             this.gridEmployee.RowHeadersVisible = false;
+            this.gridEmployee.RowTemplate.Height = 30;
             this.gridEmployee.Size = new System.Drawing.Size(876, 428);
             this.gridEmployee.TabIndex = 0;
-            this.gridEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridEmployee_CellContentClick);
+            this.gridEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridEmployee_CellContentClick);
             // 
             // VIEW
             // 
@@ -378,17 +319,22 @@
             this.btnLast.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLast.UseVisualStyleBackColor = false;
             // 
-            // frmEmployeeList
+            // frmReasonList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
-            this.Name = "frmEmployeeList";
-            this.Text = "รายชื่อพนักงาน";
-            this.Load += new System.EventHandler(this.FrmEmployeeList_Load);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "frmReasonList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "เหตุผล";
+            this.Load += new System.EventHandler(this.frmReasonList_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
@@ -404,6 +350,11 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.TextBox txtReason;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.DataGridView gridEmployee;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
@@ -412,15 +363,6 @@
         private System.Windows.Forms.Button btnPrevious;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnLast;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.TextBox txtLastName;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.ComboBox comboDept;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridViewImageColumn VIEW;
         private System.Windows.Forms.DataGridViewImageColumn colEdit;
         private System.Windows.Forms.DataGridViewImageColumn colDelete;

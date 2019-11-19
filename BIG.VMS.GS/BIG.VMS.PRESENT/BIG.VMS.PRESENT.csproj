@@ -210,6 +210,30 @@
     <Compile Include="Forms\CustomerVisit\frmPlantVisitor.Designer.cs">
       <DependentUpon>frmPlantVisitor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Department\frmDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Department\frmDepartment.Designer.cs">
+      <DependentUpon>frmDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Department\frmDepartmentList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Department\frmDepartmentList.Designer.cs">
+      <DependentUpon>frmDepartmentList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Department\frmReason.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Department\frmReason.Designer.cs">
+      <DependentUpon>frmReason.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Department\frmReasonList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Department\frmReasonList.Designer.cs">
+      <DependentUpon>frmReasonList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Employee\frmEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -529,6 +553,18 @@
     <EmbeddedResource Include="Forms\CustomerVisit\frmPlantVisitor.resx">
       <DependentUpon>frmPlantVisitor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Department\frmDepartment.resx">
+      <DependentUpon>frmDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Department\frmDepartmentList.resx">
+      <DependentUpon>frmDepartmentList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Department\frmReason.resx">
+      <DependentUpon>frmReason.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Department\frmReasonList.resx">
+      <DependentUpon>frmReasonList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Employee\frmEmployee.resx">
       <DependentUpon>frmEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -762,7 +798,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Forms\Departure\" />
     <Folder Include="ResourceFile\icon\" />
   </ItemGroup>
   <ItemGroup>
