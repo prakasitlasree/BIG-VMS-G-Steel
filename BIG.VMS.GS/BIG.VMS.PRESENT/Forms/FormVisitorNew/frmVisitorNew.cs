@@ -33,7 +33,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
         public TRN_CUSTOMER_VISIT TrnCustomerVisit = new TRN_CUSTOMER_VISIT();
         public TRN_PROJECT_MASTER TrnProjectMaster = new TRN_PROJECT_MASTER();
         public TRN_VISITOR TrnVisitor = new TRN_VISITOR();
-     
+
         private readonly BlackListServices _blService = new BlackListServices();
         private readonly VisitorServices _vistorServices = new VisitorServices();
 
@@ -473,7 +473,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                             else
                             {
                                 //CUSTOMER GROUP 
-                                txtFirstName.Text = $@"กลุ่มลูกค้า {TrnCustomerVisit.CUSTOMER_NAME}"; 
+                                txtFirstName.Text = $@"กลุ่มลูกค้า {TrnCustomerVisit.CUSTOMER_NAME}";
                                 //txtIDCard.Text = $@"กลุ่มลูกค้า {TrnCustomerVisit.CUSTOMER_NAME}"; comment ไว้ให้เค้า กรอกเองหรืออ่านบัตร
                                 txtEmployee.Text = $@"{TrnCustomerVisit.CONTACT_PERSON}";
                                 txtReason.Text = $@"{TrnCustomerVisit.OBJECTIVE_OF_VISIT}";
@@ -672,7 +672,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                 case VisitorGroup.NORMAL:
                 case VisitorGroup.APPOINTMENT:
                     {
-                        if(formMode == FormMode.Edit)
+                        if (formMode == FormMode.Edit)
                         {
                             return true;
                         }
@@ -1150,12 +1150,69 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
 
         private void brn_UploadImgCard_Click(object sender, EventArgs e)
         {
+            try
+            {
 
+                OpenFileDialog res = new OpenFileDialog();
+
+                //Filter
+                res.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.tif;...";
+                res.Multiselect = false;
+
+                //When the user select the file
+                if (res.ShowDialog() == DialogResult.OK)
+                {
+                    if(!string.IsNullOrEmpty(res.FileName))
+                    {
+                        //Get the file's path
+                        Image image = Image.FromFile(res.FileName);
+                        picCard.Image = image;
+                        flgCardImgChange = true;
+                        //Do something
+                    }
+
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnUploadCam_Click(object sender, EventArgs e)
         {
 
+            try
+            {
+
+                OpenFileDialog res = new OpenFileDialog();
+
+                //Filter
+                res.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.tif;...";
+                res.Multiselect = false;
+
+                //When the user select the file
+                if (res.ShowDialog() == DialogResult.OK)
+                {
+                    if (!string.IsNullOrEmpty(res.FileName))
+                    {
+                        //Get the file's path
+                        Image image = Image.FromFile(res.FileName);
+                        picCard.Image = image;
+                        flgPhotoImgChange = true;
+                        //Do something
+                    }
+
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 
