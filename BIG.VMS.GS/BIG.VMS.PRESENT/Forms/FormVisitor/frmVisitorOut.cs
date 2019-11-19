@@ -47,12 +47,19 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     if (_container.TRN_VISITOR != null && _container.TRN_VISITOR.AUTO_ID > 0)
                     {
                         btnSave.Enabled = true;
+                        btnSave.BackColor = Color.LightGreen;
+
+                        btnPhotoSlip.Enabled = true;
+                        btnPhotoSlip.BackColor = Color.LightGreen;
+
                         _selectOutId = _container.TRN_VISITOR.AUTO_ID;
                         txtPersonInfo.Text = _container.TRN_VISITOR.FIRST_NAME + " " + _container.TRN_VISITOR.LAST_NAME;
+
                         if (_container.TRN_VISITOR.MAS_PROVINCE != null)
                         {
                             txtCarInfo.Text = _container.TRN_VISITOR.MAS_PROVINCE.NAME + " " + _container.TRN_VISITOR.LICENSE_PLATE;
                         }
+
                         if (_container.TRN_VISITOR.TRN_ATTACHEDMENT != null)
                         {
                             if (_container.TRN_VISITOR.TRN_ATTACHEDMENT.Count > 0)
@@ -69,19 +76,24 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                         }
                         else
                         {
-                            txtCarInfo.Text = "ไม่ได้นำรถมา";
+                            txtCarInfo.Text = "ไม่ได้ถ่ายรูปไว้";
                         }
 
                     }
                     else
                     {
-
+                        btnSave.Enabled = false;
+                        btnSave.BackColor = Color.LightGray;
+                        btnPhotoSlip.Enabled = false;
+                        btnPhotoSlip.BackColor = Color.LightGray;
+                        picCard.Image = Properties.Resources.emploee;
+                        picImage.Image = Properties.Resources.emploee;
+                        picSlip.Image = Properties.Resources.emploee; 
                         MessageBox.Show(res.Message, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         txtPersonInfo.Text = "";
                         txtCarInfo.Text = "";
                         _container.TRN_VISITOR = null;
-                        btnSave.Enabled = false;
-
+                          
 
                     }
                 }
@@ -120,23 +132,22 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                 if (_container.TRN_VISITOR != null)
                 {
                     var res = new ContainerVisitor();
-                    if (outFlag)
-                    {
-                        if (flgSlipChange)
-                        {
-                            res = _service.UpdateVisitorOutById(_container, ImageToByte(picSlip));
-                            string dir = DIRECTORY_OUT + "\\" + _container.TRN_VISITOR.NO + "\\";
-                            Directory.CreateDirectory(dir);
-                            picSlip.Image.Save(dir + "SLIP.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-                        }
-                        else
-                        {
-                            res = _service.UpdateVisitorOutById(_container);
-                        }
-
-                    }
-                    else
-                    {
+                    //if (outFlag)
+                    //{
+                    //    if (flgSlipChange)
+                    //    {
+                    //        res = _service.UpdateVisitorOutById(_container, ImageToByte(picSlip));
+                    //        string dir = DIRECTORY_OUT + "\\" + _container.TRN_VISITOR.NO + "\\";
+                    //        Directory.CreateDirectory(dir);
+                    //        picSlip.Image.Save(dir + "SLIP.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                    //    }
+                    //    else
+                    //    {
+                    //        res = _service.UpdateVisitorOutById(_container);
+                    //    } 
+                    //}
+                    //else
+                    //{
                         if (flgSlipChange)
                         {
                             res = _service.UpdateVisitorOutById(_container, ImageToByte(picSlip));
@@ -148,7 +159,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                         {
                             res = _service.UpdateVisitorOut(_selectOutId);
                         }
-                    }
+                    //}
 
                     if (res.Status)
                     {

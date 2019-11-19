@@ -37,31 +37,31 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtNo = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnFind = new System.Windows.Forms.Button();
+            this.btnPhotoSlip = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.picSlip = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.picImage = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.picCard = new System.Windows.Forms.PictureBox();
-            this.btnFind = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnClose = new System.Windows.Forms.Button();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.picSlip = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnPhotoSlip = new System.Windows.Forms.Button();
             this.tableLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSlip)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCard)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSlip)).BeginInit();
-            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtCarInfo
@@ -77,7 +77,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.LightGreen;
+            this.btnSave.BackColor = System.Drawing.Color.LightGray;
             this.btnSave.Enabled = false;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -177,6 +177,51 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(785, 427);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.AutoSize = true;
+            this.flowLayoutPanel2.Controls.Add(this.btnFind);
+            this.flowLayoutPanel2.Controls.Add(this.btnPhotoSlip);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(482, 3);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(298, 46);
+            this.flowLayoutPanel2.TabIndex = 7;
+            // 
+            // btnFind
+            // 
+            this.btnFind.BackColor = System.Drawing.Color.LightCyan;
+            this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFind.ForeColor = System.Drawing.Color.Black;
+            this.btnFind.Image = ((System.Drawing.Image)(resources.GetObject("btnFind.Image")));
+            this.btnFind.Location = new System.Drawing.Point(3, 3);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(114, 40);
+            this.btnFind.TabIndex = 2;
+            this.btnFind.Text = "ค้นหา";
+            this.btnFind.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFind.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFind.UseVisualStyleBackColor = false;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
+            // 
+            // btnPhotoSlip
+            // 
+            this.btnPhotoSlip.BackColor = System.Drawing.Color.LightGray;
+            this.btnPhotoSlip.Enabled = false;
+            this.btnPhotoSlip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPhotoSlip.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPhotoSlip.ForeColor = System.Drawing.Color.Black;
+            this.btnPhotoSlip.Image = ((System.Drawing.Image)(resources.GetObject("btnPhotoSlip.Image")));
+            this.btnPhotoSlip.Location = new System.Drawing.Point(123, 3);
+            this.btnPhotoSlip.Name = "btnPhotoSlip";
+            this.btnPhotoSlip.Size = new System.Drawing.Size(172, 40);
+            this.btnPhotoSlip.TabIndex = 3;
+            this.btnPhotoSlip.Text = "ถ่ายรูปใบเสร็จ";
+            this.btnPhotoSlip.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPhotoSlip.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPhotoSlip.UseVisualStyleBackColor = false;
+            this.btnPhotoSlip.Click += new System.EventHandler(this.btnPhotoSlip_Click);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
@@ -195,6 +240,46 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(779, 245);
             this.tableLayoutPanel1.TabIndex = 13;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.picSlip, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.label4, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(521, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(255, 239);
+            this.tableLayoutPanel3.TabIndex = 2;
+            // 
+            // picSlip
+            // 
+            this.picSlip.BackColor = System.Drawing.Color.White;
+            this.picSlip.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picSlip.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picSlip.Enabled = false;
+            this.picSlip.Image = ((System.Drawing.Image)(resources.GetObject("picSlip.Image")));
+            this.picSlip.Location = new System.Drawing.Point(3, 28);
+            this.picSlip.Name = "picSlip";
+            this.picSlip.Size = new System.Drawing.Size(249, 208);
+            this.picSlip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSlip.TabIndex = 9;
+            this.picSlip.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(123, 25);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "รูปถ่ายใบเสร็จ";
             // 
             // tableLayoutPanel5
             // 
@@ -275,23 +360,6 @@
             this.picCard.TabIndex = 7;
             this.picCard.TabStop = false;
             // 
-            // btnFind
-            // 
-            this.btnFind.BackColor = System.Drawing.Color.LightCyan;
-            this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFind.ForeColor = System.Drawing.Color.Black;
-            this.btnFind.Image = ((System.Drawing.Image)(resources.GetObject("btnFind.Image")));
-            this.btnFind.Location = new System.Drawing.Point(3, 3);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(114, 40);
-            this.btnFind.TabIndex = 2;
-            this.btnFind.Text = "ค้นหา";
-            this.btnFind.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFind.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnFind.UseVisualStyleBackColor = false;
-            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -321,73 +389,6 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Controls.Add(this.picSlip, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.label4, 0, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(521, 3);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(255, 239);
-            this.tableLayoutPanel3.TabIndex = 2;
-            // 
-            // picSlip
-            // 
-            this.picSlip.BackColor = System.Drawing.Color.White;
-            this.picSlip.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picSlip.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picSlip.Enabled = false;
-            this.picSlip.Image = ((System.Drawing.Image)(resources.GetObject("picSlip.Image")));
-            this.picSlip.Location = new System.Drawing.Point(3, 28);
-            this.picSlip.Name = "picSlip";
-            this.picSlip.Size = new System.Drawing.Size(249, 208);
-            this.picSlip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picSlip.TabIndex = 9;
-            this.picSlip.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 25);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "รูปถ่ายใบเสร็จ";
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.AutoSize = true;
-            this.flowLayoutPanel2.Controls.Add(this.btnFind);
-            this.flowLayoutPanel2.Controls.Add(this.btnPhotoSlip);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(482, 3);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(298, 46);
-            this.flowLayoutPanel2.TabIndex = 7;
-            // 
-            // btnPhotoSlip
-            // 
-            this.btnPhotoSlip.BackColor = System.Drawing.Color.Fuchsia;
-            this.btnPhotoSlip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPhotoSlip.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPhotoSlip.ForeColor = System.Drawing.Color.Black;
-            this.btnPhotoSlip.Image = ((System.Drawing.Image)(resources.GetObject("btnPhotoSlip.Image")));
-            this.btnPhotoSlip.Location = new System.Drawing.Point(123, 3);
-            this.btnPhotoSlip.Name = "btnPhotoSlip";
-            this.btnPhotoSlip.Size = new System.Drawing.Size(172, 40);
-            this.btnPhotoSlip.TabIndex = 3;
-            this.btnPhotoSlip.Text = "ถ่ายรูปใบเสร็จ";
-            this.btnPhotoSlip.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPhotoSlip.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPhotoSlip.UseVisualStyleBackColor = false;
-            this.btnPhotoSlip.Click += new System.EventHandler(this.btnPhotoSlip_Click);
-            // 
             // frmVisitorOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -407,7 +408,11 @@
             this.Load += new System.EventHandler(this.frmVisitorOut_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSlip)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).EndInit();
@@ -415,10 +420,6 @@
             this.tableLayoutPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCard)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSlip)).EndInit();
-            this.flowLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
