@@ -93,7 +93,11 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                         txtFirstName.Text = card.EN_FIRST_NAME;
                         txtLastName.Text = card.EN_LAST_NAME;
                         txtIDCard.Text = card.NO;
-                        picCard.Image = card.CARD_IMAGE;
+
+                        Bitmap img = new Bitmap((Bitmap)card.CARD_IMAGE);
+                        picCard.Image = (Bitmap)img.Clone();
+
+
                         flgCardImgChange = true;
                         var data = _blService.GetBlackListByIdCard(txtIDCard.Text);
                         if (data.TRN_BLACKLIST != null)
@@ -1162,7 +1166,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                 //When the user select the file
                 if (res.ShowDialog() == DialogResult.OK)
                 {
-                    if(!string.IsNullOrEmpty(res.FileName))
+                    if (!string.IsNullOrEmpty(res.FileName))
                     {
                         //Get the file's path
                         Image image = Image.FromFile(res.FileName);
@@ -1200,7 +1204,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     {
                         //Get the file's path
                         Image image = Image.FromFile(res.FileName);
-                        picCard.Image = image;
+                        picPhoto.Image = image;
                         flgPhotoImgChange = true;
                         //Do something
                     }

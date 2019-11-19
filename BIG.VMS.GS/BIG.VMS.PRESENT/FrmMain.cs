@@ -35,11 +35,13 @@ namespace BIG.VMS.PRESENT
                 menuAppointment.Visible = false;
                 menuContact.Visible = false;
                 menuReport.Visible = false;
-                
+                menuEmployee.Visible = false;
+
             }
             if (ROLE.Trim().ToUpper() == "USER")
             {
                 menuInOut.Visible = false;
+                menuEmployee.Visible = false;
             }
         }
 
@@ -224,6 +226,11 @@ namespace BIG.VMS.PRESENT
         }
 
         private void MenuInOut_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuEmployee_Click(object sender, EventArgs e)
         {
 
         }
