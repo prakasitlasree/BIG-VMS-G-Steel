@@ -131,11 +131,17 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitorNew
 
                     try
                     {
+                        //byte[] byteImage = null;
+                        //Bitmap bitmap = null;
+                        //MemoryStream stream = new MemoryStream();
+                        //bitmap.Save(stream, personal.PhotoBitmap.RawFormat);
+                        //byteImage = stream.ToArray();
+
+                        //CARD.BYTE_IMAGE = byteImage;
                         byte[] byteImage = null;
-                        Bitmap bitmap = null;
-                        MemoryStream stream = new MemoryStream();
-                        bitmap.Save(stream, personal.PhotoBitmap.RawFormat);
-                        byteImage = stream.ToArray();
+                        byteImage = personal.PhotoRaw;// stream.ToArray();
+
+                        CARD.BYTE_IMAGE = byteImage;
 
                         CARD.BYTE_IMAGE = byteImage;
                     }
