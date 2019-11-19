@@ -24,6 +24,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
         public bool outFlag = false;
         public int inID = 0;
         private int _selectOutId = 0;
+        public bool flgSlipChange = false;
 
         public frmVisitorOut()
         {
@@ -112,6 +113,8 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
 
         }
 
+
+
         private void Save()
         {
             try
@@ -121,11 +124,32 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     var res = new ContainerVisitor();
                     if (outFlag)
                     {
-                        res = _service.UpdateVisitorOutById(_container);
+                        if (flgSlipChange)
+                        {
+                            res = _service.UpdateVisitorOutById(_container, ImageToByte(picSlip));
+                            string dir = DIRECTORY_OUT + "\\" + _container.TRN_VISITOR.NO + "\\";
+                            Directory.CreateDirectory(dir);
+                            picSlip.Image.Save(dir + "SLIP.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                        }
+                        else
+                        {
+                            res = _service.UpdateVisitorOutById(_container);
+                        }
+
                     }
                     else
                     {
-                        res = _service.UpdateVisitorOut(_selectOutId);
+                        if (flgSlipChange)
+                        {
+                            res = _service.UpdateVisitorOutById(_container, ImageToByte(picSlip));
+                            string dir = DIRECTORY_OUT + "\\" + _container.TRN_VISITOR.NO + "\\";
+                            Directory.CreateDirectory(dir);
+                            picSlip.Image.Save(dir + "SLIP.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                        }
+                        else
+                        {
+                            res = _service.UpdateVisitorOut(_selectOutId);
+                        }
                     }
 
                     if (res.Status)
@@ -165,6 +189,14 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                                 PROJECT_ID = org_obj.PROJECT_ID,
                                 CUSTOMER_ID = org_obj.CUSTOMER_ID
                             };
+
+                            if (res.TRN_VISITOR.TRN_ATTACHEDMENT != null && org_obj.TRN_ATTACHEDMENT != null)
+                            {
+                                if (res.TRN_VISITOR.TRN_ATTACHEDMENT.Count > 0 && org_obj.TRN_ATTACHEDMENT.Count > 0)
+                                {
+                                    obj.TRN_ATTACHEDMENT.FirstOrDefault().SLIP_PHOTO = res.TRN_VISITOR.TRN_ATTACHEDMENT.FirstOrDefault().SLIP_PHOTO;
+                                }
+                            }
 
 
                             if (obj.TRN_ATTACHEDMENT.Count > 0)
@@ -360,6 +392,57 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
         private void BtnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnPhotoSlip_Click(object sender, EventArgs e)
+        {
+
+
+            Image image = BIG.VMS.PRESENT.Properties.Resources.emploee; ;
+            try
+            {
+                //var frm = new CameraSelection();
+                //frm.StartPosition = FormStartPosition.CenterParent;
+                //if (frm.ShowDialog() == DialogResult.OK)
+                //{
+                //    if (frm.CAMERA != null)
+                //    {
+                //        picSlip.Image = frm.CAMERA;
+                //        flgSlipChange = true;
+                //    }
+                //}
+
+                OpenFileDialog res = new OpenFileDialog();
+
+
+                res.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.tif;...";
+                res.Multiselect = false;
+
+
+                if (res.ShowDialog() == DialogResult.OK)
+                {
+                    if (!string.IsNullOrEmpty(res.FileName))
+                    {
+
+                        Image img = Image.FromFile(res.FileName);
+                        picSlip.Image = img;
+                        flgSlipChange = true;
+
+                    }
+
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

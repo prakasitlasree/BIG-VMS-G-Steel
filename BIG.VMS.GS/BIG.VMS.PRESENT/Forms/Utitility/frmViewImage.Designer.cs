@@ -32,31 +32,36 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
+            this.picCard = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.picPhoto = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
+            this.picRef2 = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.picRef1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
-            this.picCard = new System.Windows.Forms.PictureBox();
-            this.picPhoto = new System.Windows.Forms.PictureBox();
-            this.picRef1 = new System.Windows.Forms.PictureBox();
-            this.picRef2 = new System.Windows.Forms.PictureBox();
             this.picRef3 = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.picSlip = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCard)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPhoto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRef1)).BeginInit();
+            this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picRef2)).BeginInit();
+            this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRef1)).BeginInit();
+            this.tableLayoutPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picRef3)).BeginInit();
+            this.tableLayoutPanel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSlip)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -71,12 +76,14 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel6, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel7, 2, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(15, 15);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(779, 505);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -108,6 +115,18 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "รูปบัตร";
             // 
+            // picCard
+            // 
+            this.picCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picCard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picCard.Image = ((System.Drawing.Image)(resources.GetObject("picCard.Image")));
+            this.picCard.Location = new System.Drawing.Point(4, 29);
+            this.picCard.Name = "picCard";
+            this.picCard.Size = new System.Drawing.Size(238, 206);
+            this.picCard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCard.TabIndex = 1;
+            this.picCard.TabStop = false;
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
@@ -115,7 +134,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.picPhoto, 0, 1);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(266, 7);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(6);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -136,33 +155,17 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "รูปถ่าย";
             // 
-            // tableLayoutPanel4
+            // picPhoto
             // 
-            this.tableLayoutPanel4.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel4.ColumnCount = 1;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.picRef1, 0, 1);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(7, 259);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(6);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(246, 239);
-            this.tableLayoutPanel4.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 1);
-            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 24);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "รูปสิ่งของ 1";
+            this.picPhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picPhoto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picPhoto.Image = ((System.Drawing.Image)(resources.GetObject("picPhoto.Image")));
+            this.picPhoto.Location = new System.Drawing.Point(4, 29);
+            this.picPhoto.Name = "picPhoto";
+            this.picPhoto.Size = new System.Drawing.Size(238, 206);
+            this.picPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picPhoto.TabIndex = 1;
+            this.picPhoto.TabStop = false;
             // 
             // tableLayoutPanel5
             // 
@@ -192,6 +195,58 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "รูปสิ่งของ 2";
             // 
+            // picRef2
+            // 
+            this.picRef2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picRef2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picRef2.Image = ((System.Drawing.Image)(resources.GetObject("picRef2.Image")));
+            this.picRef2.Location = new System.Drawing.Point(4, 29);
+            this.picRef2.Name = "picRef2";
+            this.picRef2.Size = new System.Drawing.Size(238, 206);
+            this.picRef2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picRef2.TabIndex = 1;
+            this.picRef2.TabStop = false;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.picRef1, 0, 1);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(7, 259);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(6);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(246, 239);
+            this.tableLayoutPanel4.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 1);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 24);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "รูปสิ่งของ 1";
+            // 
+            // picRef1
+            // 
+            this.picRef1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picRef1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picRef1.Image = ((System.Drawing.Image)(resources.GetObject("picRef1.Image")));
+            this.picRef1.Location = new System.Drawing.Point(4, 29);
+            this.picRef1.Name = "picRef1";
+            this.picRef1.Size = new System.Drawing.Size(238, 206);
+            this.picRef1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picRef1.TabIndex = 1;
+            this.picRef1.TabStop = false;
+            // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
@@ -219,54 +274,6 @@
             this.label5.Size = new System.Drawing.Size(86, 24);
             this.label5.TabIndex = 0;
             this.label5.Text = "รูปสิ่งของ 3";
-            // 
-            // picCard
-            // 
-            this.picCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picCard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picCard.Image = ((System.Drawing.Image)(resources.GetObject("picCard.Image")));
-            this.picCard.Location = new System.Drawing.Point(4, 29);
-            this.picCard.Name = "picCard";
-            this.picCard.Size = new System.Drawing.Size(238, 206);
-            this.picCard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picCard.TabIndex = 1;
-            this.picCard.TabStop = false;
-            // 
-            // picPhoto
-            // 
-            this.picPhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picPhoto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picPhoto.Image = ((System.Drawing.Image)(resources.GetObject("picPhoto.Image")));
-            this.picPhoto.Location = new System.Drawing.Point(4, 29);
-            this.picPhoto.Name = "picPhoto";
-            this.picPhoto.Size = new System.Drawing.Size(238, 206);
-            this.picPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picPhoto.TabIndex = 1;
-            this.picPhoto.TabStop = false;
-            // 
-            // picRef1
-            // 
-            this.picRef1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picRef1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picRef1.Image = ((System.Drawing.Image)(resources.GetObject("picRef1.Image")));
-            this.picRef1.Location = new System.Drawing.Point(4, 29);
-            this.picRef1.Name = "picRef1";
-            this.picRef1.Size = new System.Drawing.Size(238, 206);
-            this.picRef1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picRef1.TabIndex = 1;
-            this.picRef1.TabStop = false;
-            // 
-            // picRef2
-            // 
-            this.picRef2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picRef2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picRef2.Image = ((System.Drawing.Image)(resources.GetObject("picRef2.Image")));
-            this.picRef2.Location = new System.Drawing.Point(4, 29);
-            this.picRef2.Name = "picRef2";
-            this.picRef2.Size = new System.Drawing.Size(238, 206);
-            this.picRef2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picRef2.TabIndex = 1;
-            this.picRef2.TabStop = false;
             // 
             // picRef3
             // 
@@ -296,6 +303,46 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel7.ColumnCount = 1;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.Controls.Add(this.label6, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.picSlip, 0, 1);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(525, 7);
+            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(6);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 2;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(247, 239);
+            this.tableLayoutPanel7.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 1);
+            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(107, 24);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "รูปถ่ายใบเสร็จ";
+            // 
+            // picSlip
+            // 
+            this.picSlip.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picSlip.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picSlip.Image = ((System.Drawing.Image)(resources.GetObject("picSlip.Image")));
+            this.picSlip.Location = new System.Drawing.Point(4, 29);
+            this.picSlip.Name = "picSlip";
+            this.picSlip.Size = new System.Drawing.Size(239, 206);
+            this.picSlip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSlip.TabIndex = 1;
+            this.picSlip.TabStop = false;
+            // 
             // frmViewImage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -317,19 +364,22 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCard)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPhoto)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRef2)).EndInit();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRef1)).EndInit();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picCard)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPhoto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRef1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRef2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRef3)).EndInit();
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSlip)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -353,5 +403,8 @@
         private System.Windows.Forms.PictureBox picRef2;
         private System.Windows.Forms.PictureBox picRef3;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox picSlip;
     }
 }

@@ -26,6 +26,7 @@ namespace BIG.VMS.MODEL.EntityModel
         public string CREATED_BY { get; set; }
         public Nullable<System.DateTime> UPDATED_DATE { get; set; }
         public string UPDATED_BY { get; set; }
+        public byte[] SLIP_PHOTO { get; set; }
     
         public virtual TRN_VISITOR TRN_VISITOR { get; set; }
     }

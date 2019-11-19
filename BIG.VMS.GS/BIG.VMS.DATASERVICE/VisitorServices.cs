@@ -13,6 +13,7 @@ using System.Data.Entity.Validation;
 using BIG.VMS.MODEL.CustomModel.Container;
 using BIG.VMS.MODEL.CustomModel.General;
 using BIG.VMS.MODEL.GsteelModel.CustomModel;
+using System.Drawing;
 
 namespace BIG.VMS.DATASERVICE
 {
@@ -25,7 +26,7 @@ namespace BIG.VMS.DATASERVICE
             {
                 using (var ctx = new BIG_VMSEntities())
                 {
-                    var reTrnVisitor = ctx.TRN_VISITOR.OrderByDescending(x => x.NO).FirstOrDefault();
+                    var reTrnVisitor = ctx.TRN_VISITOR.Include("TRN_ATTACHEDMENT").OrderByDescending(x => x.NO).FirstOrDefault();
                     if (reTrnVisitor != null)
                     {
 
@@ -561,7 +562,7 @@ namespace BIG.VMS.DATASERVICE
             return result;
         }
 
-        public ContainerVisitor UpdateVisitorOut(int id)
+        public ContainerVisitor UpdateVisitorOut(int id, byte[] image = null)
         {
             var result = new ContainerVisitor();
             try
@@ -573,8 +574,18 @@ namespace BIG.VMS.DATASERVICE
 
 
 
+
                     if (reTrnVisitor != null)
                     {
+                        if (image != null)
+                        {
+                            var attach = ctx.TRN_ATTACHEDMENT.Where(o => o.VISITOR_ID == reTrnVisitor.AUTO_ID).FirstOrDefault();
+                            if (attach != null)
+                            {
+                                attach.SLIP_PHOTO = image;
+                            }
+
+                        }
 
                         reTrnVisitor.STATUS = 2;
                         ctx.SaveChanges();
@@ -594,7 +605,7 @@ namespace BIG.VMS.DATASERVICE
             return result;
         }
 
-        public ContainerVisitor UpdateVisitorOutById(ContainerVisitor obj)
+        public ContainerVisitor UpdateVisitorOutById(ContainerVisitor obj, byte[] image = null)
         {
             var result = new ContainerVisitor();
             try
@@ -606,8 +617,18 @@ namespace BIG.VMS.DATASERVICE
 
 
 
+
                     if (reTrnVisitor != null)
                     {
+                        if (image != null)
+                        {
+                            var attach = ctx.TRN_ATTACHEDMENT.Where(o => o.VISITOR_ID == reTrnVisitor.AUTO_ID).FirstOrDefault();
+                            if (attach != null)
+                            {
+                                attach.SLIP_PHOTO = image;
+                            }
+                            
+                        }
 
                         reTrnVisitor.STATUS = 2;
                         ctx.SaveChanges();

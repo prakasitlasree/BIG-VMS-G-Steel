@@ -152,6 +152,7 @@
           <Property Name="VISITOR_ID" Type="int" />
           <Property Name="ID_CARD_PHOTO" Type="varbinary(max)" />
           <Property Name="CONTACT_PHOTO" Type="varbinary(max)" />
+          <Property Name="SLIP_PHOTO" Type="varbinary(max)" />
           <Property Name="PHOTO_URL" Type="nvarchar" MaxLength="250" />
           <Property Name="REF_PHOTO1" Type="varbinary(max)" />
           <Property Name="REF_PHOTO2" Type="varbinary(max)" />
@@ -933,6 +934,7 @@
           <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
           <Property Name="UPDATED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="TRN_VISITOR" Relationship="BIG_VMSModel.FK_TRN_ATTACHEDMENT_TRN_VISITOR" FromRole="TRN_ATTACHEDMENT" ToRole="TRN_VISITOR" />
+          <Property Name="SLIP_PHOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="TRN_BLACKLIST">
           <Key>
@@ -1497,6 +1499,7 @@
           <EntitySetMapping Name="TRN_ATTACHEDMENT">
             <EntityTypeMapping TypeName="BIG_VMSModel.TRN_ATTACHEDMENT">
               <MappingFragment StoreEntitySet="TRN_ATTACHEDMENT">
+                <ScalarProperty Name="SLIP_PHOTO" ColumnName="SLIP_PHOTO" />
                 <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
                 <ScalarProperty Name="UPDATED_DATE" ColumnName="UPDATED_DATE" />
                 <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />

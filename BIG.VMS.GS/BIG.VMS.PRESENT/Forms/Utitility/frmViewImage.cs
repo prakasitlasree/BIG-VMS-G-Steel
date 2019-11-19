@@ -56,6 +56,7 @@ namespace BIG.VMS.PRESENT.Forms.Utitility
                         TRN_ATTACHEDMENT attachment = resp.ResultObj;
                         if (attachment.ID_CARD_PHOTO == null &&
                             attachment.CONTACT_PHOTO == null &&
+                            attachment.SLIP_PHOTO == null &&
                             attachment.REF_PHOTO1 == null &&
                             attachment.REF_PHOTO2 == null &&
                             attachment.REF_PHOTO3 == null)
@@ -72,6 +73,11 @@ namespace BIG.VMS.PRESENT.Forms.Utitility
                             if (attachment.CONTACT_PHOTO != null)
                             {
                                 picPhoto.Image = ByteToImage(attachment.CONTACT_PHOTO);
+                            }
+                            if (attachment.SLIP_PHOTO != null)
+                            {
+                                picSlip.Image = ByteToImage(attachment.SLIP_PHOTO);
+
                             }
                             if (attachment.REF_PHOTO1 != null)
                             {
