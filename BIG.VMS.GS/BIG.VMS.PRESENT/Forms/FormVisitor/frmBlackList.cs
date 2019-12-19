@@ -31,13 +31,19 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
             txtFirstName.Text = FIRST_NAME;
             txtLastName.Text = LAST_NAME;
             txtIDCard.Text = ID_CARD;
+            InitialDropdown();
+        }
+
+        private void InitialDropdown()
+        {
+            AddRangeComboBox(comboConstrut, new ComboBoxServices().GetComboConstractor());
         }
 
         private void btnBlacklist_Click(object sender, EventArgs e)
         {
-            
+
         }
-         
+
         private void Save()
         {
             var obj = new TRN_BLACKLIST
@@ -50,7 +56,8 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                 CREATED_DATE = DateTime.Now,
                 UPDATED_DATE = DateTime.Now,
                 CREATED_BY = LOGIN,
-                UPDATED_BY = LOGIN
+                UPDATED_BY = LOGIN,
+                CONTRACTOR_NAME = Convert.ToInt32(comboConstrut.SelectedValue) != 0 ? comboConstrut.Text : ""
             };
 
             var container = new ContainerBlackList { TRN_BLACKLIST = obj };
@@ -70,7 +77,7 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
             }
         }
 
-        
+
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
