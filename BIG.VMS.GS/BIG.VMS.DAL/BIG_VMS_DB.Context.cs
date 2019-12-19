@@ -39,12 +39,12 @@ namespace BIG.VMS.DAL
         public DbSet<SYS_CONFIGURATION> SYS_CONFIGURATION { get; set; }
         public DbSet<TRN_APPOINTMENT> TRN_APPOINTMENT { get; set; }
         public DbSet<TRN_ATTACHEDMENT> TRN_ATTACHEDMENT { get; set; }
-        public DbSet<TRN_BLACKLIST> TRN_BLACKLIST { get; set; }
         public DbSet<TRN_CUSTOMER_VISIT> TRN_CUSTOMER_VISIT { get; set; }
         public DbSet<TRN_CUSTOMER_VISIT_LIST> TRN_CUSTOMER_VISIT_LIST { get; set; }
         public DbSet<TRN_CUSTOMER_VISIT_PURPOSE> TRN_CUSTOMER_VISIT_PURPOSE { get; set; }
         public DbSet<TRN_PROJECT_MASTER> TRN_PROJECT_MASTER { get; set; }
-        public DbSet<TRN_PROJECT_MEMBER> TRN_PROJECT_MEMBER { get; set; }
         public DbSet<TRN_VISITOR> TRN_VISITOR { get; set; }
+        public DbSet<TRN_BLACKLIST> TRN_BLACKLIST { get; set; }
+        public DbSet<TRN_PROJECT_MEMBER> TRN_PROJECT_MEMBER { get; set; }
     }
 }

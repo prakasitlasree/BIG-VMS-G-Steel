@@ -16,8 +16,8 @@ namespace BIG.VMS.MODEL.EntityModel
     {
         public TRN_PROJECT_MASTER()
         {
-            this.TRN_PROJECT_MEMBER = new HashSet<TRN_PROJECT_MEMBER>();
             this.TRN_VISITOR = new HashSet<TRN_VISITOR>();
+            this.TRN_PROJECT_MEMBER = new HashSet<TRN_PROJECT_MEMBER>();
         }
     
         public int AUTO_ID { get; set; }
@@ -49,7 +49,7 @@ namespace BIG.VMS.MODEL.EntityModel
         public Nullable<System.DateTime> UPDATED_DATE { get; set; }
     
         public virtual MAS_CONTRACTOR MAS_CONTRACTOR { get; set; }
-        public virtual ICollection<TRN_PROJECT_MEMBER> TRN_PROJECT_MEMBER { get; set; }
         public virtual ICollection<TRN_VISITOR> TRN_VISITOR { get; set; }
+        public virtual ICollection<TRN_PROJECT_MEMBER> TRN_PROJECT_MEMBER { get; set; }
     }
 }

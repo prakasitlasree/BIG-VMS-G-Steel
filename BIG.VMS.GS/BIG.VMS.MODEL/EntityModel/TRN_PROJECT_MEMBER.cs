@@ -21,6 +21,8 @@ namespace BIG.VMS.MODEL.EntityModel
         public string FULLNAME { get; set; }
         public string POSITION { get; set; }
         public string SAFETY_TRAINING_FLAG { get; set; }
+        public Nullable<System.DateTime> TRAINING_ISSUE_DATE { get; set; }
+        public Nullable<System.DateTime> TRAINING_EXPIRE_DATE { get; set; }
     
         public virtual TRN_PROJECT_MASTER TRN_PROJECT_MASTER { get; set; }
     }

@@ -170,6 +170,7 @@
           <Property Name="ID_CARD" Type="nvarchar" MaxLength="50" />
           <Property Name="FIRST_NAME" Type="nvarchar" MaxLength="500" />
           <Property Name="LAST_NAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="CONTRACTOR_NAME" Type="nvarchar" MaxLength="500" />
           <Property Name="REASON" Type="nvarchar(max)" />
           <Property Name="STATUS" Type="nvarchar" MaxLength="50" />
           <Property Name="CREATED_DATE" Type="date" />
@@ -277,6 +278,8 @@
           <Property Name="FULLNAME" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="POSITION" Type="nvarchar" MaxLength="50" />
           <Property Name="SAFETY_TRAINING_FLAG" Type="nvarchar" MaxLength="1" />
+          <Property Name="TRAINING_ISSUE_DATE" Type="datetime" />
+          <Property Name="TRAINING_EXPIRE_DATE" Type="datetime" />
         </EntityType>
         <EntityType Name="TRN_VISITOR">
           <Key>
@@ -668,12 +671,10 @@
           <EntitySet Name="SYS_CONFIGURATION" EntityType="BIG_VMSModel.SYS_CONFIGURATION" />
           <EntitySet Name="TRN_APPOINTMENT" EntityType="BIG_VMSModel.TRN_APPOINTMENT" />
           <EntitySet Name="TRN_ATTACHEDMENT" EntityType="BIG_VMSModel.TRN_ATTACHEDMENT" />
-          <EntitySet Name="TRN_BLACKLIST" EntityType="BIG_VMSModel.TRN_BLACKLIST" />
           <EntitySet Name="TRN_CUSTOMER_VISIT" EntityType="BIG_VMSModel.TRN_CUSTOMER_VISIT" />
           <EntitySet Name="TRN_CUSTOMER_VISIT_LIST" EntityType="BIG_VMSModel.TRN_CUSTOMER_VISIT_LIST" />
           <EntitySet Name="TRN_CUSTOMER_VISIT_PURPOSE" EntityType="BIG_VMSModel.TRN_CUSTOMER_VISIT_PURPOSE" />
           <EntitySet Name="TRN_PROJECT_MASTER" EntityType="BIG_VMSModel.TRN_PROJECT_MASTER" />
-          <EntitySet Name="TRN_PROJECT_MEMBER" EntityType="BIG_VMSModel.TRN_PROJECT_MEMBER" />
           <AssociationSet Name="FK_MAS_CAR_BRAND_MAS_CAR_TYPE" Association="BIG_VMSModel.FK_MAS_CAR_BRAND_MAS_CAR_TYPE">
             <End Role="MAS_CAR_TYPE" EntitySet="MAS_CAR_TYPE" />
             <End Role="MAS_CAR_BRAND" EntitySet="MAS_CAR_BRAND" />
@@ -722,10 +723,6 @@
             <End Role="TRN_CUSTOMER_VISIT" EntitySet="TRN_CUSTOMER_VISIT" />
             <End Role="TRN_CUSTOMER_VISIT_PURPOSE" EntitySet="TRN_CUSTOMER_VISIT_PURPOSE" />
           </AssociationSet>
-          <AssociationSet Name="FK_TRN_PROJECT_MEMBER_TRN_PROJECT_CONTRACTOR" Association="BIG_VMSModel.FK_TRN_PROJECT_MEMBER_TRN_PROJECT_CONTRACTOR">
-            <End Role="TRN_PROJECT_MASTER" EntitySet="TRN_PROJECT_MASTER" />
-            <End Role="TRN_PROJECT_MEMBER" EntitySet="TRN_PROJECT_MEMBER" />
-          </AssociationSet>
           <EntitySet Name="TRN_VISITOR" EntityType="BIG_VMSModel.TRN_VISITOR" />
           <AssociationSet Name="FK_TRN_VISITOR_MAS_CAR_TYPE" Association="BIG_VMSModel.FK_TRN_VISITOR_MAS_CAR_TYPE">
             <End Role="MAS_CAR_TYPE" EntitySet="MAS_CAR_TYPE" />
@@ -754,6 +751,12 @@
           <AssociationSet Name="FK_TRN_VISITOR_TRN_PROJECT_MASTER" Association="BIG_VMSModel.FK_TRN_VISITOR_TRN_PROJECT_MASTER">
             <End Role="TRN_PROJECT_MASTER" EntitySet="TRN_PROJECT_MASTER" />
             <End Role="TRN_VISITOR" EntitySet="TRN_VISITOR" />
+          </AssociationSet>
+          <EntitySet Name="TRN_BLACKLIST" EntityType="BIG_VMSModel.TRN_BLACKLIST" />
+          <EntitySet Name="TRN_PROJECT_MEMBER" EntityType="BIG_VMSModel.TRN_PROJECT_MEMBER" />
+          <AssociationSet Name="FK_TRN_PROJECT_MEMBER_TRN_PROJECT_CONTRACTOR" Association="BIG_VMSModel.FK_TRN_PROJECT_MEMBER_TRN_PROJECT_CONTRACTOR">
+            <End Role="TRN_PROJECT_MASTER" EntitySet="TRN_PROJECT_MASTER" />
+            <End Role="TRN_PROJECT_MEMBER" EntitySet="TRN_PROJECT_MEMBER" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="sysdiagrams">
@@ -936,21 +939,6 @@
           <NavigationProperty Name="TRN_VISITOR" Relationship="BIG_VMSModel.FK_TRN_ATTACHEDMENT_TRN_VISITOR" FromRole="TRN_ATTACHEDMENT" ToRole="TRN_VISITOR" />
           <Property Name="SLIP_PHOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <EntityType Name="TRN_BLACKLIST">
-          <Key>
-            <PropertyRef Name="AUTO_ID" />
-          </Key>
-          <Property Name="AUTO_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ID_CARD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="FIRST_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="LAST_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="REASON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CREATED_DATE" Type="DateTime" Precision="0" />
-          <Property Name="CREATED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
-          <Property Name="UPDATED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="TRN_CUSTOMER_VISIT">
           <Key>
             <PropertyRef Name="AUTO_ID" />
@@ -1046,21 +1034,8 @@
           <Property Name="UPDATED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
           <NavigationProperty Name="MAS_CONTRACTOR" Relationship="BIG_VMSModel.FK_TRN_PROJECT_CONTRACTOR_MAS_CONTRACTOR" FromRole="TRN_PROJECT_MASTER" ToRole="MAS_CONTRACTOR" />
-          <NavigationProperty Name="TRN_PROJECT_MEMBER" Relationship="BIG_VMSModel.FK_TRN_PROJECT_MEMBER_TRN_PROJECT_CONTRACTOR" FromRole="TRN_PROJECT_MASTER" ToRole="TRN_PROJECT_MEMBER" />
           <NavigationProperty Name="TRN_VISITOR" Relationship="BIG_VMSModel.FK_TRN_VISITOR_TRN_PROJECT_MASTER" FromRole="TRN_PROJECT_MASTER" ToRole="TRN_VISITOR" />
-        </EntityType>
-        <EntityType Name="TRN_PROJECT_MEMBER">
-          <Key>
-            <PropertyRef Name="AUTO_ID" />
-          </Key>
-          <Property Name="AUTO_ID" Type="Int32" Nullable="false" />
-          <Property Name="PROJECT_ID" Type="Int32" Nullable="false" />
-          <Property Name="CARD_TYPE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ID_CARD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="FULLNAME" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="POSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="SAFETY_TRAINING_FLAG" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="TRN_PROJECT_MASTER" Relationship="BIG_VMSModel.FK_TRN_PROJECT_MEMBER_TRN_PROJECT_CONTRACTOR" FromRole="TRN_PROJECT_MEMBER" ToRole="TRN_PROJECT_MASTER" />
+          <NavigationProperty Name="TRN_PROJECT_MEMBER" Relationship="BIG_VMSModel.FK_TRN_PROJECT_MEMBER_TRN_PROJECT_CONTRACTOR" FromRole="TRN_PROJECT_MASTER" ToRole="TRN_PROJECT_MEMBER" />
         </EntityType>
         <Association Name="FK_MAS_CAR_BRAND_MAS_CAR_TYPE">
           <End Type="BIG_VMSModel.MAS_CAR_TYPE" Role="MAS_CAR_TYPE" Multiplicity="0..1" />
@@ -1206,18 +1181,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TRN_PROJECT_MEMBER_TRN_PROJECT_CONTRACTOR">
-          <End Type="BIG_VMSModel.TRN_PROJECT_MASTER" Role="TRN_PROJECT_MASTER" Multiplicity="1" />
-          <End Type="BIG_VMSModel.TRN_PROJECT_MEMBER" Role="TRN_PROJECT_MEMBER" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TRN_PROJECT_MASTER">
-              <PropertyRef Name="AUTO_ID" />
-            </Principal>
-            <Dependent Role="TRN_PROJECT_MEMBER">
-              <PropertyRef Name="PROJECT_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="TRN_VISITOR">
           <Key>
             <PropertyRef Name="AUTO_ID" />
@@ -1335,6 +1298,49 @@
               <PropertyRef Name="AUTO_ID" />
             </Principal>
             <Dependent Role="TRN_VISITOR">
+              <PropertyRef Name="PROJECT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TRN_BLACKLIST">
+          <Key>
+            <PropertyRef Name="AUTO_ID" />
+          </Key>
+          <Property Name="AUTO_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_CARD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FIRST_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="LAST_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CONTRACTOR_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="REASON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="0" />
+          <Property Name="CREATED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TRN_PROJECT_MEMBER">
+          <Key>
+            <PropertyRef Name="AUTO_ID" />
+          </Key>
+          <Property Name="AUTO_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PROJECT_ID" Type="Int32" Nullable="false" />
+          <Property Name="CARD_TYPE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID_CARD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FULLNAME" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="POSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SAFETY_TRAINING_FLAG" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="TRAINING_ISSUE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="TRAINING_EXPIRE_DATE" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="TRN_PROJECT_MASTER" Relationship="BIG_VMSModel.FK_TRN_PROJECT_MEMBER_TRN_PROJECT_CONTRACTOR" FromRole="TRN_PROJECT_MEMBER" ToRole="TRN_PROJECT_MASTER" />
+        </EntityType>
+        <Association Name="FK_TRN_PROJECT_MEMBER_TRN_PROJECT_CONTRACTOR">
+          <End Type="BIG_VMSModel.TRN_PROJECT_MASTER" Role="TRN_PROJECT_MASTER" Multiplicity="1" />
+          <End Type="BIG_VMSModel.TRN_PROJECT_MEMBER" Role="TRN_PROJECT_MEMBER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRN_PROJECT_MASTER">
+              <PropertyRef Name="AUTO_ID" />
+            </Principal>
+            <Dependent Role="TRN_PROJECT_MEMBER">
               <PropertyRef Name="PROJECT_ID" />
             </Dependent>
           </ReferentialConstraint>
@@ -1515,22 +1521,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TRN_BLACKLIST">
-            <EntityTypeMapping TypeName="BIG_VMSModel.TRN_BLACKLIST">
-              <MappingFragment StoreEntitySet="TRN_BLACKLIST">
-                <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
-                <ScalarProperty Name="UPDATED_DATE" ColumnName="UPDATED_DATE" />
-                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
-                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
-                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
-                <ScalarProperty Name="REASON" ColumnName="REASON" />
-                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
-                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
-                <ScalarProperty Name="ID_CARD" ColumnName="ID_CARD" />
-                <ScalarProperty Name="AUTO_ID" ColumnName="AUTO_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TRN_CUSTOMER_VISIT">
             <EntityTypeMapping TypeName="BIG_VMSModel.TRN_CUSTOMER_VISIT">
               <MappingFragment StoreEntitySet="TRN_CUSTOMER_VISIT">
@@ -1624,19 +1614,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TRN_PROJECT_MEMBER">
-            <EntityTypeMapping TypeName="BIG_VMSModel.TRN_PROJECT_MEMBER">
-              <MappingFragment StoreEntitySet="TRN_PROJECT_MEMBER">
-                <ScalarProperty Name="SAFETY_TRAINING_FLAG" ColumnName="SAFETY_TRAINING_FLAG" />
-                <ScalarProperty Name="POSITION" ColumnName="POSITION" />
-                <ScalarProperty Name="FULLNAME" ColumnName="FULLNAME" />
-                <ScalarProperty Name="ID_CARD" ColumnName="ID_CARD" />
-                <ScalarProperty Name="CARD_TYPE" ColumnName="CARD_TYPE" />
-                <ScalarProperty Name="PROJECT_ID" ColumnName="PROJECT_ID" />
-                <ScalarProperty Name="AUTO_ID" ColumnName="AUTO_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TRN_VISITOR">
             <EntityTypeMapping TypeName="BIG_VMSModel.TRN_VISITOR">
               <MappingFragment StoreEntitySet="TRN_VISITOR">
@@ -1664,6 +1641,38 @@
                 <ScalarProperty Name="NO" ColumnName="NO" />
                 <ScalarProperty Name="MONTH" ColumnName="MONTH" />
                 <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="AUTO_ID" ColumnName="AUTO_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRN_BLACKLIST">
+            <EntityTypeMapping TypeName="BIG_VMSModel.TRN_BLACKLIST">
+              <MappingFragment StoreEntitySet="TRN_BLACKLIST">
+                <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
+                <ScalarProperty Name="UPDATED_DATE" ColumnName="UPDATED_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="REASON" ColumnName="REASON" />
+                <ScalarProperty Name="CONTRACTOR_NAME" ColumnName="CONTRACTOR_NAME" />
+                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="ID_CARD" ColumnName="ID_CARD" />
+                <ScalarProperty Name="AUTO_ID" ColumnName="AUTO_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRN_PROJECT_MEMBER">
+            <EntityTypeMapping TypeName="BIG_VMSModel.TRN_PROJECT_MEMBER">
+              <MappingFragment StoreEntitySet="TRN_PROJECT_MEMBER">
+                <ScalarProperty Name="TRAINING_EXPIRE_DATE" ColumnName="TRAINING_EXPIRE_DATE" />
+                <ScalarProperty Name="TRAINING_ISSUE_DATE" ColumnName="TRAINING_ISSUE_DATE" />
+                <ScalarProperty Name="SAFETY_TRAINING_FLAG" ColumnName="SAFETY_TRAINING_FLAG" />
+                <ScalarProperty Name="POSITION" ColumnName="POSITION" />
+                <ScalarProperty Name="FULLNAME" ColumnName="FULLNAME" />
+                <ScalarProperty Name="ID_CARD" ColumnName="ID_CARD" />
+                <ScalarProperty Name="CARD_TYPE" ColumnName="CARD_TYPE" />
+                <ScalarProperty Name="PROJECT_ID" ColumnName="PROJECT_ID" />
                 <ScalarProperty Name="AUTO_ID" ColumnName="AUTO_ID" />
               </MappingFragment>
             </EntityTypeMapping>

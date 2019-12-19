@@ -18,6 +18,7 @@ namespace BIG.VMS.MODEL.EntityModel
         public string ID_CARD { get; set; }
         public string FIRST_NAME { get; set; }
         public string LAST_NAME { get; set; }
+        public string CONTRACTOR_NAME { get; set; }
         public string REASON { get; set; }
         public string STATUS { get; set; }
         public Nullable<System.DateTime> CREATED_DATE { get; set; }
