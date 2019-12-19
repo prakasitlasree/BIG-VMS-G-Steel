@@ -183,7 +183,13 @@ namespace BIG.VMS.DATASERVICE
                         {
                             result.ResultObj = data;
                             result.Status = false;
-                            result.Message = $@"กรุณาลบข้อมูลเหตุผลของแผนก {data.NAME} ก่อน";
+                            result.Message = $@"กรุณาลบข้อมูลเหตุผลทั้งหมดของแผนก {data.NAME} ก่อน";
+                        }
+                        else if(data.MAS_EMPLOYEE.Count > 0)
+                        {
+                            result.ResultObj = data;
+                            result.Status = false;
+                            result.Message = $@"กรุณาลบข้อมูลพนักงานทั้งหมดของแผนก {data.NAME} ก่อน";
                         }
                         else
                         {
@@ -191,7 +197,7 @@ namespace BIG.VMS.DATASERVICE
                             ctx.SaveChanges();
                             result.ResultObj = data;
                             result.Status = true;
-                            result.Message = "Save Successful";
+                            result.Message = "บันทึกข้อมูลเรียบร้อย";
                         }
 
                     }

@@ -2,6 +2,7 @@
 using BIG.VMS.MODEL.CustomModel;
 using BIG.VMS.MODEL.CustomModel.Container;
 using BIG.VMS.MODEL.CustomModel.Filter;
+using BIG.VMS.PRESENT.Forms.Employee;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -208,6 +209,19 @@ namespace BIG.VMS.PRESENT.Forms.Department
 
                     frmReasonList frm = new frmReasonList();
                     frm.dept_id = id;
+                    frm.formMode = FormMode.Edit;
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        //ResetScreen();
+                    }
+                }
+                if (e.ColumnIndex == 4) //Edit
+                {
+
+                    var id = Convert.ToInt32(gridEmployee.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
+
+                    frmEmployeeList frm = new frmEmployeeList();
+                    frm.deptId = id;
                     frm.formMode = FormMode.Edit;
                     if (frm.ShowDialog() == DialogResult.OK)
                     {

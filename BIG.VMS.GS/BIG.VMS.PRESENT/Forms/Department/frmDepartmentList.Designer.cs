@@ -41,12 +41,13 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.gridEmployee = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.VIEW = new System.Windows.Forms.DataGridViewImageColumn();
             this.colEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.colDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.REASON = new System.Windows.Forms.DataGridViewImageColumn();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.EMPLOYEE = new System.Windows.Forms.DataGridViewImageColumn();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEmployee)).BeginInit();
@@ -249,7 +250,8 @@
             this.VIEW,
             this.colEdit,
             this.colDelete,
-            this.REASON});
+            this.REASON,
+            this.EMPLOYEE});
             this.gridEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridEmployee.Location = new System.Drawing.Point(2, 2);
             this.gridEmployee.Margin = new System.Windows.Forms.Padding(2);
@@ -259,46 +261,6 @@
             this.gridEmployee.Size = new System.Drawing.Size(876, 428);
             this.gridEmployee.TabIndex = 0;
             this.gridEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridEmployee_CellContentClick);
-            // 
-            // VIEW
-            // 
-            this.VIEW.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.VIEW.HeaderText = "ดู";
-            this.VIEW.Image = ((System.Drawing.Image)(resources.GetObject("VIEW.Image")));
-            this.VIEW.Name = "VIEW";
-            this.VIEW.ReadOnly = true;
-            this.VIEW.Width = 50;
-            // 
-            // colEdit
-            // 
-            this.colEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colEdit.HeaderText = "แก้ไข";
-            this.colEdit.Image = ((System.Drawing.Image)(resources.GetObject("colEdit.Image")));
-            this.colEdit.Name = "colEdit";
-            this.colEdit.ReadOnly = true;
-            this.colEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colEdit.Width = 60;
-            // 
-            // colDelete
-            // 
-            this.colDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colDelete.HeaderText = "ลบ";
-            this.colDelete.Image = ((System.Drawing.Image)(resources.GetObject("colDelete.Image")));
-            this.colDelete.Name = "colDelete";
-            this.colDelete.ReadOnly = true;
-            this.colDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colDelete.Width = 60;
-            // 
-            // REASON
-            // 
-            this.REASON.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.REASON.HeaderText = "เหตุผล";
-            this.REASON.Image = ((System.Drawing.Image)(resources.GetObject("REASON.Image")));
-            this.REASON.Name = "REASON";
-            this.REASON.ReadOnly = true;
-            this.REASON.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.REASON.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.REASON.Width = 75;
             // 
             // tableLayoutPanel5
             // 
@@ -341,6 +303,53 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(884, 561);
             this.tableLayoutPanel1.TabIndex = 1;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // VIEW
+            // 
+            this.VIEW.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.VIEW.HeaderText = "ดู";
+            this.VIEW.Image = ((System.Drawing.Image)(resources.GetObject("VIEW.Image")));
+            this.VIEW.Name = "VIEW";
+            this.VIEW.ReadOnly = true;
+            this.VIEW.Width = 50;
+            // 
+            // colEdit
+            // 
+            this.colEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colEdit.HeaderText = "แก้ไข";
+            this.colEdit.Image = ((System.Drawing.Image)(resources.GetObject("colEdit.Image")));
+            this.colEdit.Name = "colEdit";
+            this.colEdit.ReadOnly = true;
+            this.colEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colEdit.Width = 60;
+            // 
+            // colDelete
+            // 
+            this.colDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colDelete.HeaderText = "ลบ";
+            this.colDelete.Image = ((System.Drawing.Image)(resources.GetObject("colDelete.Image")));
+            this.colDelete.Name = "colDelete";
+            this.colDelete.ReadOnly = true;
+            this.colDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colDelete.Width = 60;
+            // 
+            // REASON
+            // 
+            this.REASON.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.REASON.HeaderText = "เหตุผล";
+            this.REASON.Image = ((System.Drawing.Image)(resources.GetObject("REASON.Image")));
+            this.REASON.Name = "REASON";
+            this.REASON.ReadOnly = true;
+            this.REASON.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.REASON.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.REASON.Width = 75;
+            // 
+            // EMPLOYEE
+            // 
+            this.EMPLOYEE.HeaderText = "พนักงาน";
+            this.EMPLOYEE.Image = ((System.Drawing.Image)(resources.GetObject("EMPLOYEE.Image")));
+            this.EMPLOYEE.Name = "EMPLOYEE";
+            this.EMPLOYEE.ReadOnly = true;
             // 
             // frmDepartmentList
             // 
@@ -385,5 +394,6 @@
         private System.Windows.Forms.DataGridViewImageColumn colEdit;
         private System.Windows.Forms.DataGridViewImageColumn colDelete;
         private System.Windows.Forms.DataGridViewImageColumn REASON;
+        private System.Windows.Forms.DataGridViewImageColumn EMPLOYEE;
     }
 }
