@@ -100,19 +100,33 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
 
                         flgCardImgChange = true;
                         var data = _blService.GetBlackListByIdCard(txtIDCard.Text);
+                        var msg = "เลขบัตรประชาชน : " + txtIDCard.Text + Environment.NewLine + "ชื่อ-สกุล : " + txtFirstName.Text + " " + txtLastName.Text;
                         if (data.TRN_BLACKLIST != null)
                         {
                             var blData = data.TRN_BLACKLIST;
-                            var msg = "เลขบัตรประชาชน : " + blData.ID_CARD + Environment.NewLine + "ชื่อ-สกุล : " + blData.FIRST_NAME + " " + blData.LAST_NAME;
+                            
                             msg += Environment.NewLine + "เหตุผล : " + blData.REASON;
+                            if (!string.IsNullOrEmpty(blData.CONTRACTOR_NAME))
+                            {
+                                msg += Environment.NewLine + "บริษัท/ผู้รับเหมา : " + blData.CONTRACTOR_NAME;
+                            } 
                             msg += Environment.NewLine + "ณ วันที่ : " + blData.UPDATED_DATE;
-                            if (MessageBox.Show(msg, "บุคคล Blacklist", MessageBoxButtons.OK, MessageBoxIcon.Error) ==
-                                DialogResult.OK)
+                            if (MessageBox.Show(msg, "บุคคล Blacklist !!!!", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
                             {
                                 this.Close();
                             };
                         }
-
+                        if (VISITOR_GROUP == VisitorGroup.CONSTRUCTOR)
+                        {
+                            var member = TrnProjectMaster.TRN_PROJECT_MEMBER.Where(x => x.ID_CARD == txtIDCard.Text.Trim()).FirstOrDefault();
+                            if (member == null)
+                            {
+                                if (MessageBox.Show("ไม่พบรายชื่อในโครงการ !!!! " + msg, "ไม่พบรายชื่อในโครงการ !!!! ", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
+                                {
+                                    this.Close();
+                                };
+                            }
+                        }
                     }
                     else
                     {
