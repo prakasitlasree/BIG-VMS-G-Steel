@@ -278,8 +278,8 @@
           <Property Name="FULLNAME" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="POSITION" Type="nvarchar" MaxLength="50" />
           <Property Name="SAFETY_TRAINING_FLAG" Type="nvarchar" MaxLength="1" />
-          <Property Name="TRAINING_ISSUE_DATE" Type="datetime" />
-          <Property Name="TRAINING_EXPIRE_DATE" Type="datetime" />
+          <Property Name="TRAINING_ISSUE_DATE" Type="date" />
+          <Property Name="TRAINING_EXPIRE_DATE" Type="date" />
         </EntityType>
         <EntityType Name="TRN_VISITOR">
           <Key>
@@ -1329,8 +1329,8 @@
           <Property Name="FULLNAME" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="POSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SAFETY_TRAINING_FLAG" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
-          <Property Name="TRAINING_ISSUE_DATE" Type="DateTime" Precision="3" />
-          <Property Name="TRAINING_EXPIRE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="TRAINING_ISSUE_DATE" Type="DateTime" Precision="0" />
+          <Property Name="TRAINING_EXPIRE_DATE" Type="DateTime" Precision="0" />
           <NavigationProperty Name="TRN_PROJECT_MASTER" Relationship="BIG_VMSModel.FK_TRN_PROJECT_MEMBER_TRN_PROJECT_CONTRACTOR" FromRole="TRN_PROJECT_MEMBER" ToRole="TRN_PROJECT_MASTER" />
         </EntityType>
         <Association Name="FK_TRN_PROJECT_MEMBER_TRN_PROJECT_CONTRACTOR">
