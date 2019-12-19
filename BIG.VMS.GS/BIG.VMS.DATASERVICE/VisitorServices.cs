@@ -954,16 +954,24 @@ namespace BIG.VMS.DATASERVICE
 
                             outputData.LIST_PROJECT_MEMBER = new List<ProjectMember>();
 
-                            foreach (var item in project.TRN_PROJECT_MEMBER)
-                            {
-                                ProjectMember member = new ProjectMember()
-                                {
-                                    ID_CARD = item.ID_CARD,
-                                    FULLNAME = item.FULLNAME
-                                };
-                                outputData.LIST_PROJECT_MEMBER.Add(member);
+                            //modify as dec'2019 change request -เพิ่มการอ่านบัตรรายบุคคลของโปรแกรม ในส่วนของผู้รับเหมา
+                            //foreach (var item in project.TRN_PROJECT_MEMBER)
+                            //{
+                            //    ProjectMember member = new ProjectMember()
+                            //    {
+                            //        ID_CARD = item.ID_CARD,
+                            //        FULLNAME = item.FULLNAME
+                            //    };
+                            //    outputData.LIST_PROJECT_MEMBER.Add(member); 
+                            //}
 
-                            }
+                            var member = new ProjectMember()
+                            {
+                                ID_CARD = visitor.ID_CARD,
+                                FULLNAME = visitor.FIRST_NAME + " " + visitor.LAST_NAME
+                            };
+                            //must return only read id card
+                            outputData.LIST_PROJECT_MEMBER.Add(member);
 
                             resp.Status = true;
                             resp.ResultObj = outputData;
