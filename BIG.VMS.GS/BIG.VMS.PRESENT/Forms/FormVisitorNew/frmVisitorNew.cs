@@ -929,8 +929,13 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                     var response = _vistorServices.GetConstructorReport(((TRN_VISITOR)resp.ResultObj).AUTO_ID);
                     if (response.Status)
                     {
+                        var project = TrnProjectMaster;
                         Project projectObj = (Project)response.ResultObj;
                         DataTable dtHeader = ConvertToDataTable(projectObj.LIST_PROJECT_HEADER);
+                        dtHeader.Columns.Add("SAFETY_TRAINING_ISSUED_DATE");
+                        dtHeader.Columns.Add("SAFETY_TRAINING_EXPIRED_DATE");
+                        dtHeader.Rows[0]["SAFETY_TRAINING_ISSUED_DATE"] = project.SAFETY_TRAINING_ISSUED_DATE;
+                        dtHeader.Rows[0]["SAFETY_TRAINING_EXPIRED_DATE"] = project.SAFETY_TRAINING_EXPIRED_DATE;
                         DataTable dtMember = ConvertToDataTable(projectObj.LIST_PROJECT_MEMBER);
                         ReportDocument rpt = new ReportDocument();
                         string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
