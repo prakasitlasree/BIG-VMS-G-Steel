@@ -19,7 +19,7 @@ namespace BIG.VMS.PRESENT.Forms.Employee
         private readonly EmployeeServices _service = new EmployeeServices();
         private ContainerEmployee _container = new ContainerEmployee();
         private ComboBoxServices _comboService = new ComboBoxServices();
-
+        public int deptId = 0;
         public frmEmployeeList()
         {
             InitializeComponent();
@@ -39,11 +39,25 @@ namespace BIG.VMS.PRESENT.Forms.Employee
         private void FrmEmployeeList_Load(object sender, EventArgs e)
         {
             InitialEventHandler();
-            ResetScreen();
-            comboDept.DataSource = _comboService.GetComboDepartment(true);
-            comboDept.DisplayMember = "Text";
-            comboDept.ValueMember = "Value";
-            gridEmployee.DataBindingComplete += BindingComplete;
+            if(deptId > 0)
+            {
+             
+                comboDept.DataSource = _comboService.GetComboDepartment(true);
+                comboDept.DisplayMember = "Text";
+                comboDept.ValueMember = "Value";
+                comboDept.SelectedValue = deptId;
+                ResetScreen();
+                gridEmployee.DataBindingComplete += BindingComplete;
+            }
+            else
+            {
+                ResetScreen();
+                comboDept.DataSource = _comboService.GetComboDepartment(true);
+                comboDept.DisplayMember = "Text";
+                comboDept.ValueMember = "Value";
+                gridEmployee.DataBindingComplete += BindingComplete;
+            }
+            
         }
 
         private void BindGridData()

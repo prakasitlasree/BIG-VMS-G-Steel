@@ -48,6 +48,10 @@
             this.radRequire = new System.Windows.Forms.RadioButton();
             this.radNotRequire = new System.Windows.Forms.RadioButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.dtTrainIssue = new System.Windows.Forms.DateTimePicker();
+            this.dtTrainExpire = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -77,25 +81,31 @@
             this.tableLayoutPanel4.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.txtIDCard, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.comboType, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.flowLayoutPanel1, 1, 6);
             this.tableLayoutPanel4.Controls.Add(this.label4, 0, 3);
             this.tableLayoutPanel4.Controls.Add(this.txtLastName, 1, 3);
             this.tableLayoutPanel4.Controls.Add(this.label3, 0, 4);
             this.tableLayoutPanel4.Controls.Add(this.label2, 0, 5);
             this.tableLayoutPanel4.Controls.Add(this.txtPosition, 1, 4);
             this.tableLayoutPanel4.Controls.Add(this.flowLayoutPanel2, 1, 5);
+            this.tableLayoutPanel4.Controls.Add(this.flowLayoutPanel1, 1, 8);
+            this.tableLayoutPanel4.Controls.Add(this.dtTrainIssue, 1, 6);
+            this.tableLayoutPanel4.Controls.Add(this.dtTrainExpire, 1, 7);
+            this.tableLayoutPanel4.Controls.Add(this.label5, 0, 6);
+            this.tableLayoutPanel4.Controls.Add(this.label6, 0, 7);
             this.tableLayoutPanel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel4.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 7;
+            this.tableLayoutPanel4.RowCount = 9;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(560, 304);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(560, 364);
             this.tableLayoutPanel4.TabIndex = 1;
             this.tableLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel4_Paint);
             // 
@@ -159,9 +169,9 @@
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.Controls.Add(this.btnSave);
             this.flowLayoutPanel1.Controls.Add(this.btnClose);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(91, 243);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(91, 312);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(298, 50);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(298, 49);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // btnSave
@@ -237,7 +247,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(20, 212);
+            this.label2.Location = new System.Drawing.Point(20, 211);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 20);
             this.label2.TabIndex = 24;
@@ -292,11 +302,51 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // dtTrainIssue
+            // 
+            this.dtTrainIssue.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtTrainIssue.Location = new System.Drawing.Point(91, 242);
+            this.dtTrainIssue.Name = "dtTrainIssue";
+            this.dtTrainIssue.Size = new System.Drawing.Size(415, 29);
+            this.dtTrainIssue.TabIndex = 28;
+            // 
+            // dtTrainExpire
+            // 
+            this.dtTrainExpire.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtTrainExpire.Location = new System.Drawing.Point(91, 277);
+            this.dtTrainExpire.Name = "dtTrainExpire";
+            this.dtTrainExpire.Size = new System.Drawing.Size(415, 29);
+            this.dtTrainExpire.TabIndex = 29;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(3, 246);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(82, 20);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "วันเริ่มอบรม";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(9, 281);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 20);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "วันหมดอายุ";
+            // 
             // frmProjectMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 330);
+            this.ClientSize = new System.Drawing.Size(584, 401);
             this.Controls.Add(this.tableLayoutPanel4);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -334,5 +384,9 @@
         private System.Windows.Forms.ComboBox comboType;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.DateTimePicker dtTrainIssue;
+        private System.Windows.Forms.DateTimePicker dtTrainExpire;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

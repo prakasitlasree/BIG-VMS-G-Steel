@@ -51,7 +51,9 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
                     FULLNAME = txtName.Text + " " + txtLastName.Text,
                     ID_CARD = txtIDCard.Text,
                     SAFETY_TRAINING_FLAG = radRequire.Checked ? "Y" : "N",
-                    POSITION = txtPosition.Text
+                    POSITION = txtPosition.Text,
+                    TRAINING_ISSUE_DATE = dtTrainIssue.Value,
+                    TRAINING_EXPIRE_DATE = dtTrainExpire.Value
                 };
 
                 TRN_PROJECT_MEMBER = obj;

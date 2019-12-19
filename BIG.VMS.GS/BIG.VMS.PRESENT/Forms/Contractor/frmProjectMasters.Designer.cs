@@ -93,21 +93,17 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.txtForemanTel = new System.Windows.Forms.TextBox();
             this.btnAddEmployee = new System.Windows.Forms.Button();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.txtForeman = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.gridEmployee = new System.Windows.Forms.DataGridView();
-            this.DELETE = new System.Windows.Forms.DataGridViewImageColumn();
-            this.AUTO_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TRN_PROJECT_MASTER = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PROJECT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CARD_TYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_CARD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FULLNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.POSITION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SAFETY_TRAINING_FLAG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.txtProjectname = new System.Windows.Forms.TextBox();
@@ -122,11 +118,17 @@
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSave1 = new System.Windows.Forms.Button();
             this.btnClose2 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label25 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label27 = new System.Windows.Forms.Label();
+            this.DELETE = new System.Windows.Forms.DataGridViewImageColumn();
+            this.AUTO_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TRN_PROJECT_MASTER = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PROJECT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CARD_TYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_CARD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FULLNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.POSITION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SAFETY_TRAINING_FLAG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TRAINISSUE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TRAINEXPIRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -141,6 +143,9 @@
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEmployee)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -149,9 +154,6 @@
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
-            this.tableLayoutPanel8.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -953,6 +955,16 @@
             this.tableLayoutPanel9.Size = new System.Drawing.Size(836, 31);
             this.tableLayoutPanel9.TabIndex = 17;
             // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.flowLayoutPanel3.Controls.Add(this.label6);
+            this.flowLayoutPanel3.Controls.Add(this.label27);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(412, 25);
+            this.flowLayoutPanel3.TabIndex = 20;
+            // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -965,6 +977,18 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "Responsible Telephone:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label27
+            // 
+            this.label27.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.Red;
+            this.label27.Location = new System.Drawing.Point(396, 7);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(0, 17);
+            this.label27.TabIndex = 8;
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtForemanTel
             // 
@@ -991,13 +1015,38 @@
             this.btnAddEmployee.UseVisualStyleBackColor = false;
             this.btnAddEmployee.Click += new System.EventHandler(this.BtnAddEmployee_Click);
             // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.AutoSize = true;
+            this.tableLayoutPanel8.ColumnCount = 2;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.23866F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.76134F));
+            this.tableLayoutPanel8.Controls.Add(this.txtForeman, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.flowLayoutPanel1, 0, 0);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(2, 261);
+            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 1;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(840, 30);
+            this.tableLayoutPanel8.TabIndex = 16;
+            // 
             // txtForeman
             // 
-            this.txtForeman.Location = new System.Drawing.Point(422, 2);
+            this.txtForeman.Location = new System.Drawing.Point(424, 2);
             this.txtForeman.Margin = new System.Windows.Forms.Padding(2);
             this.txtForeman.Name = "txtForeman";
             this.txtForeman.Size = new System.Drawing.Size(414, 26);
             this.txtForeman.TabIndex = 6;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.label5);
+            this.flowLayoutPanel1.Controls.Add(this.label25);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(414, 24);
+            this.flowLayoutPanel1.TabIndex = 20;
             // 
             // label5
             // 
@@ -1011,6 +1060,17 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Responsible Manager/Foreman at G-Steel :";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label25
+            // 
+            this.label25.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label25.AutoSize = true;
+            this.label25.ForeColor = System.Drawing.Color.Red;
+            this.label25.Location = new System.Drawing.Point(396, 2);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(15, 20);
+            this.label25.TabIndex = 6;
+            this.label25.Text = "*";
             // 
             // gridEmployee
             // 
@@ -1027,7 +1087,9 @@
             this.ID_CARD,
             this.FULLNAME,
             this.POSITION,
-            this.SAFETY_TRAINING_FLAG});
+            this.SAFETY_TRAINING_FLAG,
+            this.TRAINISSUE,
+            this.TRAINEXPIRE});
             this.gridEmployee.Location = new System.Drawing.Point(2, 49);
             this.gridEmployee.Margin = new System.Windows.Forms.Padding(2);
             this.gridEmployee.Name = "gridEmployee";
@@ -1037,90 +1099,6 @@
             this.gridEmployee.Size = new System.Drawing.Size(836, 208);
             this.gridEmployee.TabIndex = 0;
             this.gridEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridEmployee_CellContentClick);
-            // 
-            // DELETE
-            // 
-            this.DELETE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.DELETE.HeaderText = "ลบ";
-            this.DELETE.Image = ((System.Drawing.Image)(resources.GetObject("DELETE.Image")));
-            this.DELETE.Name = "DELETE";
-            this.DELETE.ReadOnly = true;
-            this.DELETE.Width = 50;
-            // 
-            // AUTO_ID
-            // 
-            this.AUTO_ID.DataPropertyName = "AUTO_ID";
-            this.AUTO_ID.HeaderText = "AUTO_ID";
-            this.AUTO_ID.MinimumWidth = 6;
-            this.AUTO_ID.Name = "AUTO_ID";
-            this.AUTO_ID.ReadOnly = true;
-            this.AUTO_ID.Visible = false;
-            this.AUTO_ID.Width = 104;
-            // 
-            // TRN_PROJECT_MASTER
-            // 
-            this.TRN_PROJECT_MASTER.DataPropertyName = "TRN_PROJECT_MASTER";
-            this.TRN_PROJECT_MASTER.HeaderText = "TRN_PROJECT_MASTER";
-            this.TRN_PROJECT_MASTER.MinimumWidth = 6;
-            this.TRN_PROJECT_MASTER.Name = "TRN_PROJECT_MASTER";
-            this.TRN_PROJECT_MASTER.ReadOnly = true;
-            this.TRN_PROJECT_MASTER.Visible = false;
-            this.TRN_PROJECT_MASTER.Width = 224;
-            // 
-            // PROJECT_ID
-            // 
-            this.PROJECT_ID.DataPropertyName = "PROJECT_ID";
-            this.PROJECT_ID.HeaderText = "PROJECT_ID";
-            this.PROJECT_ID.MinimumWidth = 6;
-            this.PROJECT_ID.Name = "PROJECT_ID";
-            this.PROJECT_ID.ReadOnly = true;
-            this.PROJECT_ID.Visible = false;
-            this.PROJECT_ID.Width = 133;
-            // 
-            // CARD_TYPE
-            // 
-            this.CARD_TYPE.DataPropertyName = "CARD_TYPE";
-            this.CARD_TYPE.HeaderText = "ประเภทบัตร";
-            this.CARD_TYPE.MinimumWidth = 6;
-            this.CARD_TYPE.Name = "CARD_TYPE";
-            this.CARD_TYPE.ReadOnly = true;
-            this.CARD_TYPE.Width = 107;
-            // 
-            // ID_CARD
-            // 
-            this.ID_CARD.DataPropertyName = "ID_CARD";
-            this.ID_CARD.HeaderText = "รหัสบัตร";
-            this.ID_CARD.MinimumWidth = 6;
-            this.ID_CARD.Name = "ID_CARD";
-            this.ID_CARD.ReadOnly = true;
-            this.ID_CARD.Width = 83;
-            // 
-            // FULLNAME
-            // 
-            this.FULLNAME.DataPropertyName = "FULLNAME";
-            this.FULLNAME.HeaderText = "ชื่อ-สกุล";
-            this.FULLNAME.MinimumWidth = 6;
-            this.FULLNAME.Name = "FULLNAME";
-            this.FULLNAME.ReadOnly = true;
-            this.FULLNAME.Width = 81;
-            // 
-            // POSITION
-            // 
-            this.POSITION.DataPropertyName = "POSITION";
-            this.POSITION.HeaderText = "ตำแหน่ง";
-            this.POSITION.MinimumWidth = 6;
-            this.POSITION.Name = "POSITION";
-            this.POSITION.ReadOnly = true;
-            this.POSITION.Width = 84;
-            // 
-            // SAFETY_TRAINING_FLAG
-            // 
-            this.SAFETY_TRAINING_FLAG.DataPropertyName = "SAFETY_TRAINING_FLAG";
-            this.SAFETY_TRAINING_FLAG.HeaderText = "การอบรม";
-            this.SAFETY_TRAINING_FLAG.MinimumWidth = 6;
-            this.SAFETY_TRAINING_FLAG.Name = "SAFETY_TRAINING_FLAG";
-            this.SAFETY_TRAINING_FLAG.ReadOnly = true;
-            this.SAFETY_TRAINING_FLAG.Width = 91;
             // 
             // tabControl1
             // 
@@ -1332,63 +1310,105 @@
             this.btnClose2.UseVisualStyleBackColor = false;
             this.btnClose2.Click += new System.EventHandler(this.BtnClose_Click);
             // 
-            // tableLayoutPanel8
+            // DELETE
             // 
-            this.tableLayoutPanel8.AutoSize = true;
-            this.tableLayoutPanel8.ColumnCount = 2;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.23866F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.76134F));
-            this.tableLayoutPanel8.Controls.Add(this.txtForeman, 1, 0);
-            this.tableLayoutPanel8.Controls.Add(this.flowLayoutPanel1, 0, 0);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(2, 261);
-            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(2);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 1;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(838, 30);
-            this.tableLayoutPanel8.TabIndex = 16;
+            this.DELETE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.DELETE.HeaderText = "ลบ";
+            this.DELETE.Image = ((System.Drawing.Image)(resources.GetObject("DELETE.Image")));
+            this.DELETE.Name = "DELETE";
+            this.DELETE.ReadOnly = true;
+            this.DELETE.Width = 50;
             // 
-            // flowLayoutPanel1
+            // AUTO_ID
             // 
-            this.flowLayoutPanel1.Controls.Add(this.label5);
-            this.flowLayoutPanel1.Controls.Add(this.label25);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(414, 24);
-            this.flowLayoutPanel1.TabIndex = 20;
+            this.AUTO_ID.DataPropertyName = "AUTO_ID";
+            this.AUTO_ID.HeaderText = "AUTO_ID";
+            this.AUTO_ID.MinimumWidth = 6;
+            this.AUTO_ID.Name = "AUTO_ID";
+            this.AUTO_ID.ReadOnly = true;
+            this.AUTO_ID.Visible = false;
+            this.AUTO_ID.Width = 104;
             // 
-            // label25
+            // TRN_PROJECT_MASTER
             // 
-            this.label25.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label25.AutoSize = true;
-            this.label25.ForeColor = System.Drawing.Color.Red;
-            this.label25.Location = new System.Drawing.Point(396, 2);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(15, 20);
-            this.label25.TabIndex = 6;
-            this.label25.Text = "*";
+            this.TRN_PROJECT_MASTER.DataPropertyName = "TRN_PROJECT_MASTER";
+            this.TRN_PROJECT_MASTER.HeaderText = "TRN_PROJECT_MASTER";
+            this.TRN_PROJECT_MASTER.MinimumWidth = 6;
+            this.TRN_PROJECT_MASTER.Name = "TRN_PROJECT_MASTER";
+            this.TRN_PROJECT_MASTER.ReadOnly = true;
+            this.TRN_PROJECT_MASTER.Visible = false;
+            this.TRN_PROJECT_MASTER.Width = 224;
             // 
-            // flowLayoutPanel3
+            // PROJECT_ID
             // 
-            this.flowLayoutPanel3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.flowLayoutPanel3.Controls.Add(this.label6);
-            this.flowLayoutPanel3.Controls.Add(this.label27);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(412, 25);
-            this.flowLayoutPanel3.TabIndex = 20;
+            this.PROJECT_ID.DataPropertyName = "PROJECT_ID";
+            this.PROJECT_ID.HeaderText = "PROJECT_ID";
+            this.PROJECT_ID.MinimumWidth = 6;
+            this.PROJECT_ID.Name = "PROJECT_ID";
+            this.PROJECT_ID.ReadOnly = true;
+            this.PROJECT_ID.Visible = false;
+            this.PROJECT_ID.Width = 133;
             // 
-            // label27
+            // CARD_TYPE
             // 
-            this.label27.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.Red;
-            this.label27.Location = new System.Drawing.Point(396, 7);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(0, 17);
-            this.label27.TabIndex = 8;
-            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.CARD_TYPE.DataPropertyName = "CARD_TYPE";
+            this.CARD_TYPE.HeaderText = "ประเภทบัตร";
+            this.CARD_TYPE.MinimumWidth = 6;
+            this.CARD_TYPE.Name = "CARD_TYPE";
+            this.CARD_TYPE.ReadOnly = true;
+            this.CARD_TYPE.Width = 107;
+            // 
+            // ID_CARD
+            // 
+            this.ID_CARD.DataPropertyName = "ID_CARD";
+            this.ID_CARD.HeaderText = "รหัสบัตร";
+            this.ID_CARD.MinimumWidth = 6;
+            this.ID_CARD.Name = "ID_CARD";
+            this.ID_CARD.ReadOnly = true;
+            this.ID_CARD.Width = 83;
+            // 
+            // FULLNAME
+            // 
+            this.FULLNAME.DataPropertyName = "FULLNAME";
+            this.FULLNAME.HeaderText = "ชื่อ-สกุล";
+            this.FULLNAME.MinimumWidth = 6;
+            this.FULLNAME.Name = "FULLNAME";
+            this.FULLNAME.ReadOnly = true;
+            this.FULLNAME.Width = 81;
+            // 
+            // POSITION
+            // 
+            this.POSITION.DataPropertyName = "POSITION";
+            this.POSITION.HeaderText = "ตำแหน่ง";
+            this.POSITION.MinimumWidth = 6;
+            this.POSITION.Name = "POSITION";
+            this.POSITION.ReadOnly = true;
+            this.POSITION.Width = 84;
+            // 
+            // SAFETY_TRAINING_FLAG
+            // 
+            this.SAFETY_TRAINING_FLAG.DataPropertyName = "SAFETY_TRAINING_FLAG";
+            this.SAFETY_TRAINING_FLAG.HeaderText = "การอบรม";
+            this.SAFETY_TRAINING_FLAG.MinimumWidth = 6;
+            this.SAFETY_TRAINING_FLAG.Name = "SAFETY_TRAINING_FLAG";
+            this.SAFETY_TRAINING_FLAG.ReadOnly = true;
+            this.SAFETY_TRAINING_FLAG.Width = 91;
+            // 
+            // TRAINISSUE
+            // 
+            this.TRAINISSUE.DataPropertyName = "TRAINING_ISSUE_DATE";
+            this.TRAINISSUE.HeaderText = "วันเริ่มอบรม";
+            this.TRAINISSUE.Name = "TRAINISSUE";
+            this.TRAINISSUE.ReadOnly = true;
+            this.TRAINISSUE.Width = 107;
+            // 
+            // TRAINEXPIRE
+            // 
+            this.TRAINEXPIRE.DataPropertyName = "TRAINING_EXPIRE_DATE";
+            this.TRAINEXPIRE.HeaderText = "วันหมดอายุ";
+            this.TRAINEXPIRE.Name = "TRAINEXPIRE";
+            this.TRAINEXPIRE.ReadOnly = true;
+            this.TRAINEXPIRE.Width = 101;
             // 
             // frmProjectMasters
             // 
@@ -1433,6 +1453,12 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel9.PerformLayout();
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEmployee)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -1446,12 +1472,6 @@
             this.tableLayoutPanel6.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
-            this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel8.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
-            this.flowLayoutPanel3.ResumeLayout(false);
-            this.flowLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1541,6 +1561,11 @@
         private System.Windows.Forms.Button btnSave1;
         private System.Windows.Forms.Button btnClose2;
         private System.Windows.Forms.Button btnAddEmployee;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.Label label27;
         private System.Windows.Forms.DataGridViewImageColumn DELETE;
         private System.Windows.Forms.DataGridViewTextBoxColumn AUTO_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn TRN_PROJECT_MASTER;
@@ -1550,10 +1575,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FULLNAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn POSITION;
         private System.Windows.Forms.DataGridViewTextBoxColumn SAFETY_TRAINING_FLAG;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TRAINISSUE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TRAINEXPIRE;
     }
 }
