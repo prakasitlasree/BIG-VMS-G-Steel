@@ -179,7 +179,45 @@ namespace BIG.VMS.DATASERVICE
             return resp;
         }
 
+        public Response UpdateProjectMember(TRN_PROJECT_MEMBER source)
+        {
+            var resp = new Response();
 
+            try
+            {
+                using (var ctx = new BIG_VMSEntities())
+                {
+                    var obj = ctx.TRN_PROJECT_MEMBER.Where(o => o.AUTO_ID == source.AUTO_ID).FirstOrDefault();
+                    if(obj != null)
+                    {
+                        obj.CARD_TYPE = source.CARD_TYPE;
+                        obj.FULLNAME = source.FULLNAME;
+                        obj.ID_CARD = source.ID_CARD;
+                        obj.POSITION = source.POSITION;
+                        obj.SAFETY_TRAINING_FLAG = source.SAFETY_TRAINING_FLAG;
+                        obj.TRAINING_EXPIRE_DATE = source.TRAINING_EXPIRE_DATE;
+                        obj.TRAINING_ISSUE_DATE = source.TRAINING_ISSUE_DATE;
+                        ctx.SaveChanges();
+                        resp.Status = true;
+                    }
+                    else
+                    {
+                        resp.Status = false;
+                    }
+                    
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                resp.Status = false;
+                resp.ExceptionMessage = ex.Message.ToString();
+            }
+
+
+            return resp;
+        }
         public Response DeleteProjectMember(int id)
         {
             var resp = new Response();
@@ -212,6 +250,75 @@ namespace BIG.VMS.DATASERVICE
             return resp;
         }
 
+        public Response GetProjectMember(int id)
+        {
+            var resp = new Response();
+
+            try
+            {
+                using (var ctx = new BIG_VMSEntities())
+                {
+                    var obj = ctx.TRN_PROJECT_MEMBER.Where(o => o.AUTO_ID == id).FirstOrDefault();
+
+                    if (obj != null)
+                    {
+
+                        resp.ResultObj = obj;
+                        resp.Status = true;
+                    }
+                    else
+                    {
+                        resp.Status = false;
+                    }
+
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                resp.Status = false;
+                resp.ExceptionMessage = ex.Message.ToString();
+            }
+
+
+            return resp;
+        }
+
+        public Response GetListProjectMember(int id)
+        {
+            var resp = new Response();
+
+            try
+            {
+                using (var ctx = new BIG_VMSEntities())
+                {
+                    var obj = ctx.TRN_PROJECT_MEMBER.Where(o => o.PROJECT_ID == id).ToList();
+
+                    if (obj != null)
+                    {
+
+                        resp.ResultObj = obj;
+                        resp.Status = true;
+                    }
+                    else
+                    {
+                        resp.Status = false;
+                    }
+
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                resp.Status = false;
+                resp.ExceptionMessage = ex.Message.ToString();
+            }
+
+
+            return resp;
+        }
 
         public Response UpdateContractor(MAS_CONTRACTOR source)
         {

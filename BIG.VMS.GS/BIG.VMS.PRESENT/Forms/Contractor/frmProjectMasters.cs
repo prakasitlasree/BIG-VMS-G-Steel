@@ -76,6 +76,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
                 btnAddEmployee.Enabled = false;
                 btnSave1.Enabled = false;
                 gridEmployee.Columns[0].Visible = false;
+                gridEmployee.Columns[1].Visible = false;
                 SetControlData();
             }
             if (formMode == MODEL.CustomModel.FormMode.Edit)
@@ -400,6 +401,49 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             if (e.RowIndex > -1)
             {
                 if (e.ColumnIndex == 0) //Edit
+                {
+                    var id = Convert.ToInt32(gridEmployee.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
+                    var listEmployee = (List<TRN_PROJECT_MEMBER>)gridEmployee.DataSource;
+                    if (id > 0)
+                    {
+                        var resp = service.GetProjectMember(id);
+                        if (resp.Status)
+                        {
+                            frmProjectMember frm = new frmProjectMember();
+                            frm.TRN_PROJECT_MEMBER = resp.ResultObj;
+                            frm.formMode = MODEL.CustomModel.FormMode.Edit;
+                            if (frm.ShowDialog() == DialogResult.OK)
+                            {
+                                var resp2 = service.GetListProjectMember(((TRN_PROJECT_MEMBER)resp.ResultObj).PROJECT_ID);
+                                if (resp2.Status)
+                                {
+                                    gridEmployee.DataSource = (List<TRN_PROJECT_MEMBER>)resp2.ResultObj;
+                                }
+                            }
+                        }
+
+                    }
+                    else
+                    {
+                        var temp = (List<TRN_PROJECT_MEMBER>)gridEmployee.DataSource;
+                        var obj = temp[e.RowIndex];
+                        frmProjectMember frm = new frmProjectMember();
+                        frm.TRN_PROJECT_MEMBER = obj;
+                        frm.formMode = MODEL.CustomModel.FormMode.Edit;
+                        if (frm.ShowDialog() == DialogResult.OK)
+                        {
+                            temp[e.RowIndex] = frm.TRN_PROJECT_MEMBER;
+                        }
+                        //gridEmployee.DataSource = null;
+
+                        //var bindingSource1 = new System.Windows.Forms.BindingSource { DataSource = temp };
+                       // dataGridView1.DataSource = bindingSource1;
+                        gridEmployee.DataSource = temp;
+                        gridEmployee.Refresh();
+                    }
+
+                }
+                if (e.ColumnIndex == 1) //Delete
                 {
                     if (MessageBox.Show(Message.MSG_DELETE_CONFIRM, "แจ้งเตือน", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                     {

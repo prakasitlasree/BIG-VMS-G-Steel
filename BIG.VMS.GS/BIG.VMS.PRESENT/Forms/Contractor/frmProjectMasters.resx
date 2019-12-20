@@ -135,6 +135,27 @@
         in8AAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="EDIT.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="EDIT.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAALSSURBVEhLrdRrSJNRGAfwM3XzyvKyaWmGVq5IZKEGiQYpQWWRiBCUiilNISRZURMhRAsyNG0p
+        dFfoikF+CMFLWqE4U5sO8rLZEleE2wrRDTc33f6dxUsQle1V//B+Oe9zfs85z4dD1isz1eKF2QeJ+HIm
+        Wq/M2yJkltcnqtIYNToOwl4dB5tkM76lCzAsiQpnfq8t81OKWw1VF6HOCcJyUQQWUgNhivSBYXsAlIVR
+        a7tJS1V+E5jIZQUY3UZgifKFKYQHcxAP03uC9Ewp+6hrd3aOT4SjuiYLTtrA9ckLszFCCKxCHkwCHoxb
+        A8CUswvF39lt8Vi2emGsh+BqWQbMVsBGm9QXnICKQ2AL5uLT3mD2DSiucOGWeS9Y9Bw4Rwim7hKUS4/B
+        MAuY6VXqT+fivT/BUGZYFbPNvVC89xc+w8HiIMGSgsDx2gOvcrk4m5OBaSOgN86hO827mdnmXijeb7cl
+        /Ibb+wgW2z2hvRIB3SU+XmYSVGTvw9BxIWt8zL6U+Hf8cgQmS/nQyPwwKfXH4JFA1rhmyZm0Iq6+4Ivp
+        SiEUWZvY4eO1Io0DKbCYuCviOor3HQ1lh49dF024cOt/8OkKAXoPs5z5aHWM0i28UoCeQwKWJ68TtbmD
+        6yj+9kAIO3yoJPqxA8lujaUrjSX+IpacNH9thNVMH6wZig78G+9MDWaHu9JfIFK6XkXHXA1sI5w/cA0z
+        8/aUIPZ48w6y29B7A1j4CBgG4PyQgMU2Am1l+E98UkbxciFak/nscVfepIeqgDmKdwG6h8DUTdiUEoyX
+        eNMGflCfC0Rr0obV4S0Jvp53xP4wDcsB43M4tdeAMSkwfgq2tlgo8/h4ssu3mClnn2din9vSMA6KuATz
+        3fnA5zI4BzOglUWiYz//KcUbmNLVpSmej/PhnpBu9ECdiAeVJNLSGMkppnATU7K2yEXc7/fEAXgU59NM
+        0fvM8jqFkB/lAGLLVx4vawAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="DELETE.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -202,7 +223,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABa
-        CwAAAk1TRnQBSQFMAgEBBAEAARABAQEQAQEBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CwAAAk1TRnQBSQFMAgEBBAEAARgBAQEYAQEBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAASADAAEBAQABCAYAAQgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA

@@ -118,6 +118,7 @@
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSave1 = new System.Windows.Forms.Button();
             this.btnClose2 = new System.Windows.Forms.Button();
+            this.EDIT = new System.Windows.Forms.DataGridViewImageColumn();
             this.DELETE = new System.Windows.Forms.DataGridViewImageColumn();
             this.AUTO_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TRN_PROJECT_MASTER = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -1079,6 +1080,7 @@
             this.gridEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.gridEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridEmployee.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.EDIT,
             this.DELETE,
             this.AUTO_ID,
             this.TRN_PROJECT_MASTER,
@@ -1309,6 +1311,14 @@
             this.btnClose2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClose2.UseVisualStyleBackColor = false;
             this.btnClose2.Click += new System.EventHandler(this.BtnClose_Click);
+            // 
+            // EDIT
+            // 
+            this.EDIT.HeaderText = "แก้ไข";
+            this.EDIT.Image = ((System.Drawing.Image)(resources.GetObject("EDIT.Image")));
+            this.EDIT.Name = "EDIT";
+            this.EDIT.ReadOnly = true;
+            this.EDIT.Width = 49;
             // 
             // DELETE
             // 
@@ -1566,6 +1576,7 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.DataGridViewImageColumn EDIT;
         private System.Windows.Forms.DataGridViewImageColumn DELETE;
         private System.Windows.Forms.DataGridViewTextBoxColumn AUTO_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn TRN_PROJECT_MASTER;
