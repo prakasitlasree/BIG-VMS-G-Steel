@@ -104,6 +104,18 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.gridEmployee = new System.Windows.Forms.DataGridView();
+            this.EDIT = new System.Windows.Forms.DataGridViewImageColumn();
+            this.DELETE = new System.Windows.Forms.DataGridViewImageColumn();
+            this.AUTO_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TRN_PROJECT_MASTER = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PROJECT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CARD_TYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_CARD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FULLNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.POSITION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SAFETY_TRAINING_FLAG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TRAINISSUE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TRAINEXPIRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.txtProjectname = new System.Windows.Forms.TextBox();
@@ -118,18 +130,6 @@
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSave1 = new System.Windows.Forms.Button();
             this.btnClose2 = new System.Windows.Forms.Button();
-            this.EDIT = new System.Windows.Forms.DataGridViewImageColumn();
-            this.DELETE = new System.Windows.Forms.DataGridViewImageColumn();
-            this.AUTO_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TRN_PROJECT_MASTER = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PROJECT_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CARD_TYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_CARD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FULLNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.POSITION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SAFETY_TRAINING_FLAG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TRAINISSUE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TRAINEXPIRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -998,6 +998,7 @@
             this.txtForemanTel.Name = "txtForemanTel";
             this.txtForemanTel.Size = new System.Drawing.Size(414, 26);
             this.txtForemanTel.TabIndex = 8;
+            this.txtForemanTel.TextChanged += new System.EventHandler(this.txtForemanTel_TextChanged);
             // 
             // btnAddEmployee
             // 
@@ -1101,6 +1102,114 @@
             this.gridEmployee.Size = new System.Drawing.Size(836, 208);
             this.gridEmployee.TabIndex = 0;
             this.gridEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridEmployee_CellContentClick);
+            // 
+            // EDIT
+            // 
+            this.EDIT.HeaderText = "แก้ไข";
+            this.EDIT.Image = ((System.Drawing.Image)(resources.GetObject("EDIT.Image")));
+            this.EDIT.Name = "EDIT";
+            this.EDIT.ReadOnly = true;
+            this.EDIT.Width = 49;
+            // 
+            // DELETE
+            // 
+            this.DELETE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.DELETE.HeaderText = "ลบ";
+            this.DELETE.Image = ((System.Drawing.Image)(resources.GetObject("DELETE.Image")));
+            this.DELETE.Name = "DELETE";
+            this.DELETE.ReadOnly = true;
+            this.DELETE.Width = 50;
+            // 
+            // AUTO_ID
+            // 
+            this.AUTO_ID.DataPropertyName = "AUTO_ID";
+            this.AUTO_ID.HeaderText = "AUTO_ID";
+            this.AUTO_ID.MinimumWidth = 6;
+            this.AUTO_ID.Name = "AUTO_ID";
+            this.AUTO_ID.ReadOnly = true;
+            this.AUTO_ID.Visible = false;
+            this.AUTO_ID.Width = 104;
+            // 
+            // TRN_PROJECT_MASTER
+            // 
+            this.TRN_PROJECT_MASTER.DataPropertyName = "TRN_PROJECT_MASTER";
+            this.TRN_PROJECT_MASTER.HeaderText = "TRN_PROJECT_MASTER";
+            this.TRN_PROJECT_MASTER.MinimumWidth = 6;
+            this.TRN_PROJECT_MASTER.Name = "TRN_PROJECT_MASTER";
+            this.TRN_PROJECT_MASTER.ReadOnly = true;
+            this.TRN_PROJECT_MASTER.Visible = false;
+            this.TRN_PROJECT_MASTER.Width = 224;
+            // 
+            // PROJECT_ID
+            // 
+            this.PROJECT_ID.DataPropertyName = "PROJECT_ID";
+            this.PROJECT_ID.HeaderText = "PROJECT_ID";
+            this.PROJECT_ID.MinimumWidth = 6;
+            this.PROJECT_ID.Name = "PROJECT_ID";
+            this.PROJECT_ID.ReadOnly = true;
+            this.PROJECT_ID.Visible = false;
+            this.PROJECT_ID.Width = 133;
+            // 
+            // CARD_TYPE
+            // 
+            this.CARD_TYPE.DataPropertyName = "CARD_TYPE";
+            this.CARD_TYPE.HeaderText = "ประเภทบัตร";
+            this.CARD_TYPE.MinimumWidth = 6;
+            this.CARD_TYPE.Name = "CARD_TYPE";
+            this.CARD_TYPE.ReadOnly = true;
+            this.CARD_TYPE.Width = 107;
+            // 
+            // ID_CARD
+            // 
+            this.ID_CARD.DataPropertyName = "ID_CARD";
+            this.ID_CARD.HeaderText = "รหัสบัตร";
+            this.ID_CARD.MinimumWidth = 6;
+            this.ID_CARD.Name = "ID_CARD";
+            this.ID_CARD.ReadOnly = true;
+            this.ID_CARD.Width = 83;
+            // 
+            // FULLNAME
+            // 
+            this.FULLNAME.DataPropertyName = "FULLNAME";
+            this.FULLNAME.HeaderText = "ชื่อ-สกุล";
+            this.FULLNAME.MinimumWidth = 6;
+            this.FULLNAME.Name = "FULLNAME";
+            this.FULLNAME.ReadOnly = true;
+            this.FULLNAME.Width = 81;
+            // 
+            // POSITION
+            // 
+            this.POSITION.DataPropertyName = "POSITION";
+            this.POSITION.HeaderText = "ตำแหน่ง";
+            this.POSITION.MinimumWidth = 6;
+            this.POSITION.Name = "POSITION";
+            this.POSITION.ReadOnly = true;
+            this.POSITION.Width = 84;
+            // 
+            // SAFETY_TRAINING_FLAG
+            // 
+            this.SAFETY_TRAINING_FLAG.DataPropertyName = "SAFETY_TRAINING_FLAG";
+            this.SAFETY_TRAINING_FLAG.HeaderText = "การอบรม";
+            this.SAFETY_TRAINING_FLAG.MinimumWidth = 6;
+            this.SAFETY_TRAINING_FLAG.Name = "SAFETY_TRAINING_FLAG";
+            this.SAFETY_TRAINING_FLAG.ReadOnly = true;
+            this.SAFETY_TRAINING_FLAG.Width = 91;
+            // 
+            // TRAINISSUE
+            // 
+            this.TRAINISSUE.DataPropertyName = "TRAINING_ISSUE_DATE";
+            this.TRAINISSUE.HeaderText = "วันเริ่มอบรม";
+            this.TRAINISSUE.Name = "TRAINISSUE";
+            this.TRAINISSUE.ReadOnly = true;
+            this.TRAINISSUE.Width = 107;
+            // 
+            // TRAINEXPIRE
+            // 
+            this.TRAINEXPIRE.DataPropertyName = "TRAINING_EXPIRE_DATE";
+            this.TRAINEXPIRE.HeaderText = "วันหมดอายุ";
+            this.TRAINEXPIRE.Name = "TRAINEXPIRE";
+            this.TRAINEXPIRE.ReadOnly = true;
+            this.TRAINEXPIRE.Width = 101;
             // 
             // tabControl1
             // 
@@ -1311,114 +1420,6 @@
             this.btnClose2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClose2.UseVisualStyleBackColor = false;
             this.btnClose2.Click += new System.EventHandler(this.BtnClose_Click);
-            // 
-            // EDIT
-            // 
-            this.EDIT.HeaderText = "แก้ไข";
-            this.EDIT.Image = ((System.Drawing.Image)(resources.GetObject("EDIT.Image")));
-            this.EDIT.Name = "EDIT";
-            this.EDIT.ReadOnly = true;
-            this.EDIT.Width = 49;
-            // 
-            // DELETE
-            // 
-            this.DELETE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.DELETE.HeaderText = "ลบ";
-            this.DELETE.Image = ((System.Drawing.Image)(resources.GetObject("DELETE.Image")));
-            this.DELETE.Name = "DELETE";
-            this.DELETE.ReadOnly = true;
-            this.DELETE.Width = 50;
-            // 
-            // AUTO_ID
-            // 
-            this.AUTO_ID.DataPropertyName = "AUTO_ID";
-            this.AUTO_ID.HeaderText = "AUTO_ID";
-            this.AUTO_ID.MinimumWidth = 6;
-            this.AUTO_ID.Name = "AUTO_ID";
-            this.AUTO_ID.ReadOnly = true;
-            this.AUTO_ID.Visible = false;
-            this.AUTO_ID.Width = 104;
-            // 
-            // TRN_PROJECT_MASTER
-            // 
-            this.TRN_PROJECT_MASTER.DataPropertyName = "TRN_PROJECT_MASTER";
-            this.TRN_PROJECT_MASTER.HeaderText = "TRN_PROJECT_MASTER";
-            this.TRN_PROJECT_MASTER.MinimumWidth = 6;
-            this.TRN_PROJECT_MASTER.Name = "TRN_PROJECT_MASTER";
-            this.TRN_PROJECT_MASTER.ReadOnly = true;
-            this.TRN_PROJECT_MASTER.Visible = false;
-            this.TRN_PROJECT_MASTER.Width = 224;
-            // 
-            // PROJECT_ID
-            // 
-            this.PROJECT_ID.DataPropertyName = "PROJECT_ID";
-            this.PROJECT_ID.HeaderText = "PROJECT_ID";
-            this.PROJECT_ID.MinimumWidth = 6;
-            this.PROJECT_ID.Name = "PROJECT_ID";
-            this.PROJECT_ID.ReadOnly = true;
-            this.PROJECT_ID.Visible = false;
-            this.PROJECT_ID.Width = 133;
-            // 
-            // CARD_TYPE
-            // 
-            this.CARD_TYPE.DataPropertyName = "CARD_TYPE";
-            this.CARD_TYPE.HeaderText = "ประเภทบัตร";
-            this.CARD_TYPE.MinimumWidth = 6;
-            this.CARD_TYPE.Name = "CARD_TYPE";
-            this.CARD_TYPE.ReadOnly = true;
-            this.CARD_TYPE.Width = 107;
-            // 
-            // ID_CARD
-            // 
-            this.ID_CARD.DataPropertyName = "ID_CARD";
-            this.ID_CARD.HeaderText = "รหัสบัตร";
-            this.ID_CARD.MinimumWidth = 6;
-            this.ID_CARD.Name = "ID_CARD";
-            this.ID_CARD.ReadOnly = true;
-            this.ID_CARD.Width = 83;
-            // 
-            // FULLNAME
-            // 
-            this.FULLNAME.DataPropertyName = "FULLNAME";
-            this.FULLNAME.HeaderText = "ชื่อ-สกุล";
-            this.FULLNAME.MinimumWidth = 6;
-            this.FULLNAME.Name = "FULLNAME";
-            this.FULLNAME.ReadOnly = true;
-            this.FULLNAME.Width = 81;
-            // 
-            // POSITION
-            // 
-            this.POSITION.DataPropertyName = "POSITION";
-            this.POSITION.HeaderText = "ตำแหน่ง";
-            this.POSITION.MinimumWidth = 6;
-            this.POSITION.Name = "POSITION";
-            this.POSITION.ReadOnly = true;
-            this.POSITION.Width = 84;
-            // 
-            // SAFETY_TRAINING_FLAG
-            // 
-            this.SAFETY_TRAINING_FLAG.DataPropertyName = "SAFETY_TRAINING_FLAG";
-            this.SAFETY_TRAINING_FLAG.HeaderText = "การอบรม";
-            this.SAFETY_TRAINING_FLAG.MinimumWidth = 6;
-            this.SAFETY_TRAINING_FLAG.Name = "SAFETY_TRAINING_FLAG";
-            this.SAFETY_TRAINING_FLAG.ReadOnly = true;
-            this.SAFETY_TRAINING_FLAG.Width = 91;
-            // 
-            // TRAINISSUE
-            // 
-            this.TRAINISSUE.DataPropertyName = "TRAINING_ISSUE_DATE";
-            this.TRAINISSUE.HeaderText = "วันเริ่มอบรม";
-            this.TRAINISSUE.Name = "TRAINISSUE";
-            this.TRAINISSUE.ReadOnly = true;
-            this.TRAINISSUE.Width = 107;
-            // 
-            // TRAINEXPIRE
-            // 
-            this.TRAINEXPIRE.DataPropertyName = "TRAINING_EXPIRE_DATE";
-            this.TRAINEXPIRE.HeaderText = "วันหมดอายุ";
-            this.TRAINEXPIRE.Name = "TRAINEXPIRE";
-            this.TRAINEXPIRE.ReadOnly = true;
-            this.TRAINEXPIRE.Width = 101;
             // 
             // frmProjectMasters
             // 

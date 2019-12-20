@@ -468,5 +468,14 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
                 }
             }
         }
+
+        private void txtForemanTel_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtForemanTel.Text, "[^0-9]"))
+            {
+                MessageBox.Show("กรุณากรอกตัวเลขเท่านั้น!!!!");
+                txtForemanTel.Text = txtForemanTel.Text.Remove(txtForemanTel.Text.Length - 1);
+            }
+        }
     }
 }

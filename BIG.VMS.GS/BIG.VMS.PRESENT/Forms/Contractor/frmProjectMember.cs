@@ -32,6 +32,10 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             {
                 listMsg.Add("วันที่เริ่มต้น หรือ วันหมดอายุของการอบรม");
             }
+            if (dtTrainExpire.Value < dtTrainIssue.Value)
+            {
+                listMsg.Add("วันที่เริ่มต้นอบรม ต้องน้อยกว่า วันหมดอายุของการอบรม");
+            }
             string joined = string.Join("," + Environment.NewLine, listMsg);
 
             if (listMsg.Count > 0)
@@ -170,6 +174,13 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
 
         }
 
-       
+        private void txtIDCard_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtIDCard.Text, "[^0-9]"))
+            {
+                MessageBox.Show("กรุณากรอกตัวเลขเท่านั้น!!!!");
+                txtIDCard.Text = txtIDCard.Text.Remove(txtIDCard.Text.Length - 1);
+            }
+        }
     }
 }

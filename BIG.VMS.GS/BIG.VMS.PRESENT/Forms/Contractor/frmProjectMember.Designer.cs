@@ -89,9 +89,9 @@
             this.tableLayoutPanel4.Controls.Add(this.flowLayoutPanel2, 1, 5);
             this.tableLayoutPanel4.Controls.Add(this.flowLayoutPanel1, 1, 8);
             this.tableLayoutPanel4.Controls.Add(this.dtTrainIssue, 1, 6);
-            this.tableLayoutPanel4.Controls.Add(this.dtTrainExpire, 1, 7);
             this.tableLayoutPanel4.Controls.Add(this.label5, 0, 6);
             this.tableLayoutPanel4.Controls.Add(this.label6, 0, 7);
+            this.tableLayoutPanel4.Controls.Add(this.dtTrainExpire, 1, 7);
             this.tableLayoutPanel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel4.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -150,6 +150,7 @@
             this.txtIDCard.Name = "txtIDCard";
             this.txtIDCard.Size = new System.Drawing.Size(466, 23);
             this.txtIDCard.TabIndex = 2;
+            this.txtIDCard.TextChanged += new System.EventHandler(this.txtIDCard_TextChanged);
             // 
             // comboType
             // 
@@ -187,11 +188,11 @@
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(26, 152);
+            this.label3.Location = new System.Drawing.Point(26, 121);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 20);
             this.label3.TabIndex = 16;
@@ -219,7 +220,6 @@
             this.txtPosition.Name = "txtPosition";
             this.txtPosition.Size = new System.Drawing.Size(466, 77);
             this.txtPosition.TabIndex = 5;
-            
             // 
             // flowLayoutPanel2
             // 
@@ -301,18 +301,23 @@
             // 
             // dtTrainIssue
             // 
+            this.dtTrainIssue.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dtTrainIssue.CustomFormat = "dd-MM-yyyy";
             this.dtTrainIssue.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtTrainIssue.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtTrainIssue.Location = new System.Drawing.Point(91, 242);
             this.dtTrainIssue.Name = "dtTrainIssue";
-            this.dtTrainIssue.Size = new System.Drawing.Size(425, 29);
+            this.dtTrainIssue.Size = new System.Drawing.Size(292, 29);
             this.dtTrainIssue.TabIndex = 28;
             // 
             // dtTrainExpire
             // 
+            this.dtTrainExpire.CustomFormat = "dd-MM-yy";
             this.dtTrainExpire.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtTrainExpire.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtTrainExpire.Location = new System.Drawing.Point(91, 277);
             this.dtTrainExpire.Name = "dtTrainExpire";
-            this.dtTrainExpire.Size = new System.Drawing.Size(425, 29);
+            this.dtTrainExpire.Size = new System.Drawing.Size(292, 29);
             this.dtTrainExpire.TabIndex = 29;
             // 
             // label5
