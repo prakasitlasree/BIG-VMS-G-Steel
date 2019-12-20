@@ -947,6 +947,8 @@ namespace BIG.VMS.DATASERVICE
                                 RESP_MANAGER = project.RESPONSIBLE_MANAGER,
                                 RESP_TEL = project.RESPONSIBLE_TEL,
                                 CONTRUCTOR_TEL = project.MAS_CONTRACTOR.TEL,
+                                PROJECT_START_DATE = (DateTime)project.PROJECT_START_DATE,
+                                PROJECT_END_DATE = (DateTime)project.PROJECT_END_DATE,
                                 COMPANY_NAME = string.IsNullOrEmpty(company) ? "" : company.ToString()
                             };
 

@@ -28,6 +28,10 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             if (string.IsNullOrEmpty(txtIDCard.Text)) listMsg.Add("รหัสบัตร");
             if (string.IsNullOrEmpty(txtName.Text)) listMsg.Add("ชื่อ");
             if (string.IsNullOrEmpty(txtPosition.Text)) listMsg.Add("ตำแหน่ง");
+            if (radRequire.Checked && (dtTrainExpire.Value == null || dtTrainIssue.Value == null ))
+            {
+                listMsg.Add("วันที่เริ่มต้น หรือ วันหมดอายุของการอบรม");
+            }
             string joined = string.Join("," + Environment.NewLine, listMsg);
 
             if (listMsg.Count > 0)
@@ -165,5 +169,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             }
 
         }
+
+       
     }
 }

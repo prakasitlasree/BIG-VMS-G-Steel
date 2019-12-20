@@ -365,6 +365,14 @@ namespace BIG.VMS.DATASERVICE
                     var project = ctx.TRN_PROJECT_MASTER.Where(o => o.AUTO_ID == id).First();
                     if (project != null)
                     {
+                        var ListMember = ctx.TRN_PROJECT_MEMBER.Where(x => x.PROJECT_ID == id).ToList();
+                        if (ListMember.Count> 0)
+                        {
+                            foreach (var item in ListMember)
+                            {
+                                ctx.TRN_PROJECT_MEMBER.Remove(item);
+                            }
+                        }
                         ctx.TRN_PROJECT_MASTER.Remove(project);
                         ctx.SaveChanges();
                         resp.Status = true;

@@ -42,7 +42,7 @@
         <AssociationConnector Association="BIG_VMSModel.FK_TRN_VISITOR_TRN_CUSTOMER_VISIT" />
         <AssociationConnector Association="BIG_VMSModel.FK_TRN_VISITOR_TRN_PROJECT_MASTER" />
         <EntityTypeShape EntityType="BIG_VMSModel.TRN_BLACKLIST" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="BIG_VMSModel.TRN_PROJECT_MEMBER" Width="2.25" PointX="10.25" PointY="3" />
+        <EntityTypeShape EntityType="BIG_VMSModel.TRN_PROJECT_MEMBER" Width="1.5" PointX="10.25" PointY="3" />
         <AssociationConnector Association="BIG_VMSModel.FK_TRN_PROJECT_MEMBER_TRN_PROJECT_CONTRACTOR" />
         </Diagram>
     </edmx:Diagrams>

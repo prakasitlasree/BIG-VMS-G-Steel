@@ -96,22 +96,57 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
 
                         Bitmap img = new Bitmap((Bitmap)card.CARD_IMAGE);
                         picCard.Image = (Bitmap)img.Clone();
-
-
+                         
+                        #region ===== check blacklist =========
                         flgCardImgChange = true;
                         var data = _blService.GetBlackListByIdCard(txtIDCard.Text);
+                        var msg = "เลขบัตรประชาชน : " + txtIDCard.Text + Environment.NewLine + "ชื่อ-สกุล : " + txtFirstName.Text + " " + txtLastName.Text;
                         if (data.TRN_BLACKLIST != null)
                         {
                             var blData = data.TRN_BLACKLIST;
-                            var msg = "เลขบัตรประชาชน : " + blData.ID_CARD + Environment.NewLine + "ชื่อ-สกุล : " + blData.FIRST_NAME + " " + blData.LAST_NAME;
+                            
                             msg += Environment.NewLine + "เหตุผล : " + blData.REASON;
+                            if (!string.IsNullOrEmpty(blData.CONTRACTOR_NAME))
+                            {
+                                msg += Environment.NewLine + "บริษัท/ผู้รับเหมา : " + blData.CONTRACTOR_NAME;
+                            } 
                             msg += Environment.NewLine + "ณ วันที่ : " + blData.UPDATED_DATE;
-                            if (MessageBox.Show(msg, "บุคคล Blacklist", MessageBoxButtons.OK, MessageBoxIcon.Error) ==
-                                DialogResult.OK)
+                            if (MessageBox.Show(msg, "บุคคล Blacklist !!!!", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
                             {
                                 this.Close();
                             };
                         }
+                        #endregion
+
+                        #region ======= check id card must in project =======
+                        if (VISITOR_GROUP == VisitorGroup.CONSTRUCTOR)
+                        {
+                            var member = TrnProjectMaster.TRN_PROJECT_MEMBER.Where(x => x.ID_CARD == txtIDCard.Text.Trim()).FirstOrDefault();
+                            if (member == null)
+                            {
+                                if (MessageBox.Show("ไม่พบรายชื่อในโครงการ !!!! " + msg, "ไม่พบรายชื่อในโครงการ !!!! ", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
+                                {
+                                    this.Close();
+                                };
+                            }
+                            else
+                            {
+                                if (member.SAFETY_TRAINING_FLAG =="Y" && member.TRAINING_EXPIRE_DATE.HasValue)
+                                { 
+                                    int dayLeft = Convert.ToInt32((Convert.ToDateTime(member.TRAINING_EXPIRE_DATE) - DateTime.Now).TotalDays);
+
+                                    if (dayLeft < 0)
+                                    {
+                                        if (MessageBox.Show($@"วันอบรมหมดอายุ!!! วันสิ้นสุดคือ {member.TRAINING_EXPIRE_DATE.Value.ToShortDateString()} "" ตรวจสอบข้อมูลที่เมนู การนัดหมาย-> Vendor Management-> ผู้รับเหมา -> โครงการ -> " + TrnProjectMaster.PROJECT_NAME + "", "วันอบรมหมดอายุ!!!", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
+                                        {
+                                            this.Close(); 
+                                        };
+                                    }
+                                }
+                            }
+                        }
+                        #endregion
+
 
                     }
                     else
@@ -656,19 +691,50 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
         {
             bool status = false;
 
+            //var data = _blService.GetBlackListByIdCard(txtIDCard.Text);
+            //if (data.TRN_BLACKLIST != null)
+            //{
+            //    var blData = data.TRN_BLACKLIST;
+            //    var msg = "เลขบัตรประชาชน : " + blData.ID_CARD + Environment.NewLine + "ชื่อ-สกุล : " + blData.FIRST_NAME + " " + blData.LAST_NAME;
+            //    msg += Environment.NewLine + "เหตุผล : " + blData.REASON;
+            //    msg += Environment.NewLine + "ณ วันที่ : " + blData.UPDATED_DATE;
+            //    if (MessageBox.Show(msg, "บุคคล Blacklist", MessageBoxButtons.OK, MessageBoxIcon.Error) ==
+            //        DialogResult.OK)
+            //    {
+            //        this.Close();
+            //        return false;
+            //    };
+            //}
+
             var data = _blService.GetBlackListByIdCard(txtIDCard.Text);
+            var msg = "เลขบัตรประชาชน : " + txtIDCard.Text + Environment.NewLine + "ชื่อ-สกุล : " + txtFirstName.Text + " " + txtLastName.Text;
             if (data.TRN_BLACKLIST != null)
             {
                 var blData = data.TRN_BLACKLIST;
-                var msg = "เลขบัตรประชาชน : " + blData.ID_CARD + Environment.NewLine + "ชื่อ-สกุล : " + blData.FIRST_NAME + " " + blData.LAST_NAME;
+
                 msg += Environment.NewLine + "เหตุผล : " + blData.REASON;
+                if (!string.IsNullOrEmpty(blData.CONTRACTOR_NAME))
+                {
+                    msg += Environment.NewLine + "บริษัท/ผู้รับเหมา : " + blData.CONTRACTOR_NAME;
+                }
                 msg += Environment.NewLine + "ณ วันที่ : " + blData.UPDATED_DATE;
-                if (MessageBox.Show(msg, "บุคคล Blacklist", MessageBoxButtons.OK, MessageBoxIcon.Error) ==
-                    DialogResult.OK)
+                if (MessageBox.Show(msg, "บุคคล Blacklist !!!!", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
                 {
                     this.Close();
                     return false;
                 };
+            }
+            if (VISITOR_GROUP == VisitorGroup.CONSTRUCTOR)
+            {
+                var member = TrnProjectMaster.TRN_PROJECT_MEMBER.Where(x => x.ID_CARD == txtIDCard.Text.Trim()).FirstOrDefault();
+                if (member == null)
+                {
+                    if (MessageBox.Show("ไม่พบรายชื่อในโครงการ !!!! " + msg, "ไม่พบรายชื่อในโครงการ !!!! ", MessageBoxButtons.OK, MessageBoxIcon.Error) == DialogResult.OK)
+                    {
+                        this.Close();
+                        return false;
+                    };
+                }
             }
 
             switch (this.VISITOR_GROUP)
@@ -800,8 +866,16 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                             attached.CREATED_BY = LOGIN;
                             attached.CREATED_DATE = DateTime.Now;
                             attached.UPDATED_BY = LOGIN;
-                            attached.UPDATED_DATE = DateTime.Now;
-                            picPhoto.Image.Save(dir + "PHOTO.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                            attached.UPDATED_DATE = DateTime.Now; 
+                            try
+                            {
+                                // picCard.Image.Save(dir + "PHOTO.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                                Bitmap bm = new Bitmap(picCard.Image);
+                                bm.Save(dir + "ID_CARD.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                            }
+                            catch
+                            {
+                            }
                         }
                         if (flgPhotoImgChange)
                         {
@@ -810,7 +884,16 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                             attached.UPDATED_BY = LOGIN;
                             attached.UPDATED_DATE = DateTime.Now;
                             attached.CONTACT_PHOTO = ImageToByte(picPhoto);
-                            picCard.Image.Save(dir + "ID_CARD.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                            
+                            try
+                            {
+                                // picPhoto.Image.Save(dir + "ID_CARD.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                                Bitmap bm = new Bitmap(picPhoto.Image);
+                                bm.Save(dir + "PHOTO.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                            }
+                            catch
+                            {
+                            }
                         }
 
                         obj.TRN_ATTACHEDMENT.Add(attached);
@@ -870,8 +953,16 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                             attached.CREATED_BY = LOGIN;
                             attached.CREATED_DATE = DateTime.Now;
                             attached.UPDATED_BY = LOGIN;
-                            attached.UPDATED_DATE = DateTime.Now;
-                            picPhoto.Image.Save(dir + "PHOTO.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                            attached.UPDATED_DATE = DateTime.Now; 
+                            try
+                            {
+                                // picCard.Image.Save(dir + "ID_CARD.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                                Bitmap bm = new Bitmap(picCard.Image);
+                                bm.Save(dir + "ID_CARD.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                            }
+                            catch
+                            {
+                            }
                         }
                         if (flgPhotoImgChange)
                         {
@@ -879,8 +970,16 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                             attached.CREATED_BY = LOGIN;
                             attached.CREATED_DATE = DateTime.Now;
                             attached.UPDATED_BY = LOGIN;
-                            attached.UPDATED_DATE = DateTime.Now;
-                            picCard.Image.Save(dir + "ID_CARD.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                            attached.UPDATED_DATE = DateTime.Now; 
+                            try
+                            {
+                                // picPhoto.Image.Save(dir + "ID_CARD.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                                Bitmap bm = new Bitmap(picPhoto.Image);
+                                bm.Save(dir + "PHOTO.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                            }
+                            catch
+                            {
+                            }
                         }
 
                         obj.TRN_ATTACHEDMENT.Add(attached);
@@ -934,8 +1033,15 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
                         DataTable dtHeader = ConvertToDataTable(projectObj.LIST_PROJECT_HEADER);
                         dtHeader.Columns.Add("SAFETY_TRAINING_ISSUED_DATE");
                         dtHeader.Columns.Add("SAFETY_TRAINING_EXPIRED_DATE");
-                        dtHeader.Rows[0]["SAFETY_TRAINING_ISSUED_DATE"] = project.SAFETY_TRAINING_ISSUED_DATE;
-                        dtHeader.Rows[0]["SAFETY_TRAINING_EXPIRED_DATE"] = project.SAFETY_TRAINING_EXPIRED_DATE;
+                        if (project.PROJECT_START_DATE.Value != null)
+                        {
+                            dtHeader.Rows[0]["SAFETY_TRAINING_ISSUED_DATE"] = project.PROJECT_START_DATE.Value.ToShortDateString(); // PROJECT_START_DATE
+                        }
+                        if (project.PROJECT_END_DATE.Value != null)
+                        {
+                            dtHeader.Rows[0]["SAFETY_TRAINING_EXPIRED_DATE"] = project.PROJECT_END_DATE.Value.ToShortDateString(); // PROJECT_END_DATE
+                        }
+                       
                         DataTable dtMember = ConvertToDataTable(projectObj.LIST_PROJECT_MEMBER);
                         ReportDocument rpt = new ReportDocument();
                         string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
@@ -1225,9 +1331,5 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
             }
         }
     }
-
-    public class Configuration
-    {
-
-    }
+     
 }

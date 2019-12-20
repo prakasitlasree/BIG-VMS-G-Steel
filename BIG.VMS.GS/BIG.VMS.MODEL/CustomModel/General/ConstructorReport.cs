@@ -14,6 +14,8 @@ namespace BIG.VMS.MODEL.GsteelModel.CustomModel
         public string CONTRUCTOR_NAME { get; set; }
         public string CONTRUCTOR_TEL { get; set; }
         public string COMPANY_NAME { get; set; }
+        public DateTime PROJECT_START_DATE { get; set; }
+        public DateTime PROJECT_END_DATE { get; set; }
     }
 
     public class ProjectMember

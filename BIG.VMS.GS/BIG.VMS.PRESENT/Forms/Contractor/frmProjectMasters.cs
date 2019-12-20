@@ -156,9 +156,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             {
                 txtOtherTime.Text = obj.PROJECT_WORKING_TIME;
                 radOther.Checked = true;
-            }
-
-
+            } 
         }
 
         private void InitialDropdown()
@@ -282,9 +280,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
                             project.ID_BADGE_EXPIRED_DATE = dtHraIssue.Value;
                         }
 
-                        project.TRN_PROJECT_MEMBER = (List<TRN_PROJECT_MEMBER>)gridEmployee.DataSource;
-
-
+                        project.TRN_PROJECT_MEMBER = (List<TRN_PROJECT_MEMBER>)gridEmployee.DataSource; 
                         var resp = service.UpdateProject(project);
                         if (resp.Status)
                         {
@@ -297,9 +293,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
                         {
                             MessageBox.Show(resp.Message + resp.ExceptionMessage);
                         }
-                    }
-
-
+                    } 
                 }
             }
 
@@ -328,9 +322,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
             else
             {
                 return true;
-            }
-
-
+            } 
         }
 
         private void BtnAddEmployee_Click(object sender, EventArgs e)
@@ -400,7 +392,7 @@ namespace BIG.VMS.PRESENT.Forms.Contractor
 
             if (e.RowIndex > -1)
             {
-                if (e.ColumnIndex == 0) //Edit
+                if (e.ColumnIndex == 0) //delete
                 {
                     var id = Convert.ToInt32(gridEmployee.Rows[e.RowIndex].Cells["AUTO_ID"].Value);
                     var listEmployee = (List<TRN_PROJECT_MEMBER>)gridEmployee.DataSource;

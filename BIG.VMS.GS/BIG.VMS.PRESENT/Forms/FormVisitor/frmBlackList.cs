@@ -93,7 +93,15 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
             {
                 if (MessageBox.Show("ต้องการบันทึกข้อมูลใช่หรือไม่ ?", "แจ้งเตือน", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    Save();
+                    if (ValidateExistingIDCard(txtIDCard.Text.Trim()))
+                    {
+                        Save();
+                    }
+                    else
+                    { 
+                        MessageBox.Show("รหัสบัตรประชาชนซ้ำ!!! " + txtIDCard.Text, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                   
                 }
             }
             else
@@ -109,9 +117,42 @@ namespace BIG.VMS.PRESENT.Forms.FormVisitor
             }
         }
 
+        private bool ValidateExistingIDCard(string idcard)
+        {
+            try
+            {
+                var obj = _service.GetBlackListByIdCard(idcard);
+                if (!obj.ResultObj)
+                {
+                    //ไม่เจอ
+                    return true;
+                }
+                else
+                {
+                    //เจอ
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+           
+        }
+
         private void btnCancel_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtIDCard_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtIDCard.Text, "[^0-9]"))
+            {
+                MessageBox.Show("กรุณากรอกตัวเลขเท่านั้น!!!!");
+                txtIDCard.Text = txtIDCard.Text.Remove(txtIDCard.Text.Length - 1);
+            }
         }
     }
 }
