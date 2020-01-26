@@ -29,6 +29,7 @@ namespace BIG.VMS.PRESENT.Forms.Employee
         {
             frmEmployee frm = new frmEmployee();
             frm.formMode = FormMode.Add;
+            frm.dept_id = deptId;
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 ResetScreen();

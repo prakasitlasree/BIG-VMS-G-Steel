@@ -20,7 +20,7 @@ namespace BIG.VMS.PRESENT.Forms.Employee
         private ContainerEmployee _container = new ContainerEmployee();
         private ComboBoxServices _comboService = new ComboBoxServices();
         public int employee_id = 0;
-
+        public int dept_id = 0;
         public frmEmployee()
         {
             InitializeComponent();
@@ -31,6 +31,10 @@ namespace BIG.VMS.PRESENT.Forms.Employee
             comboDept.DataSource = _comboService.GetComboDepartment(true);
             comboDept.DisplayMember = "Text";
             comboDept.ValueMember = "Value";
+            if (formMode == FormMode.Add && dept_id > 0)
+            {
+                comboDept.SelectedValue = dept_id;
+            }
             if (formMode == FormMode.View)
             {
                 btnSave.Visible = false;

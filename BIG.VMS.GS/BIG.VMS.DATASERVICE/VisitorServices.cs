@@ -1306,6 +1306,7 @@ namespace BIG.VMS.DATASERVICE
                                     .Include("MAS_PROVINCE")
                                     .Include("TRN_ATTACHEDMENT")
                                     .Where(o => o.NO == no)
+                                    .Where(o=>o.TYPE == "IN")
                                     .Where(o => (o.CREATED_DATE >= startDate && o.CREATED_DATE <= endDate) && o.YEAR == year)
                                     .OrderByDescending(o => o.AUTO_ID)
                                     .ToList();
@@ -1375,6 +1376,7 @@ namespace BIG.VMS.DATASERVICE
 
                     var reTrnVisitor = ctx.TRN_VISITOR
                                     .Include("TRN_ATTACHEDMENT")
+                                    .Where(o=>o.TYPE == "IN")
                                     .OrderByDescending(o => o.AUTO_ID)
                                     .FirstOrDefault();
 

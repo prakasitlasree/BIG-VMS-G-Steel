@@ -201,5 +201,10 @@ namespace BIG.VMS.PRESENT.Forms.FormReportNew
             wb.SaveAs(appPath + "ExportExcel" + date + ".xlsx");
             MessageBox.Show("บันทึก Excel ที่ " + appPath + " เรียบร้อย", "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
